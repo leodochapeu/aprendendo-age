@@ -11,8 +11,16 @@ const PANTHEON_TINT_RGBA: Record<string, string> = {
   Astecas: "rgba(165, 78, 28, 0.2)", // laranja barro
 };
 
+/** Nomes que aparecem nos dados, mas apontam para a mesma cor do catálogo. */
+const PANTHEON_TINT_ALIASES: Record<string, string> = {
+  Asteca: "Astecas",
+  Aztec: "Astecas",
+  Aztecs: "Astecas",
+};
+
 export function pantheonCardTint(panteao: string): string | undefined {
-  return PANTHEON_TINT_RGBA[panteao];
+  const key = PANTHEON_TINT_ALIASES[panteao] ?? panteao;
+  return PANTHEON_TINT_RGBA[key];
 }
 
 /**
