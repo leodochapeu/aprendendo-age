@@ -7,7 +7,7 @@
  * continua a poder usar o token explícito ao lado.
  */
 
-import { A, B, NOT_IF_ICON, U } from "./startKeywordBoundaries";
+import { A, B, isInsideHighlightTag, NOT_IF_ICON, U } from "./startKeywordBoundaries";
 
 type BuildingWrap = "blue" | "orange" | "pink" | "purple";
 
@@ -100,10 +100,10 @@ export function expandBuildingKeywords(text: string): string {
       `${B}(${phraseSource(phrase)})${NOT_IF_ICON}${A}`,
       U,
     );
-    t = t.replace(
-      re,
-      (_f, p1: string) => `<highlight-${wrap}>${p1}</highlight-${wrap}> :${token}:`,
-    );
+    t = t.replace(re, (match, p1: string, offset: number, full: string) => {
+      if (isInsideHighlightTag(full, offset)) return match;
+      return `<highlight-${wrap}>${p1}</highlight-${wrap}> :${token}:`;
+    });
   }
   return t;
 }

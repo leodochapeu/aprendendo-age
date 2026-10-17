@@ -4,7 +4,7 @@
  *
  * Evita ícone duplicado quando o nome segue logo após «:aomr_*: » (ex.: títulos).
  */
-import { A, B, NOT_IF_ICON, U } from "@/lib/startKeywordBoundaries";
+import { A, B, isInsideHighlightTag, NOT_IF_ICON, U } from "@/lib/startKeywordBoundaries";
 
 function phraseSource(phrase: string): string {
   return phrase
@@ -108,6 +108,7 @@ export function expandStartGodHeroKeywords(text: string): string {
       U,
     );
     t = t.replace(re, (match, p1: string, offset: number, full: string) => {
+      if (isInsideHighlightTag(full, offset)) return match;
       const before = full.slice(0, offset);
       if (endsWithAomrTokenColonSpace(before)) return match;
       return `<highlight-${wrap}>${p1}</highlight-${wrap}> :${token}:`;

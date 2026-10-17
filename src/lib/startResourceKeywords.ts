@@ -13,7 +13,7 @@ import {
   expandClassicalAgeInlineKeywords,
   expandStartGodHeroKeywords,
 } from "@/lib/startGodHeroKeywords";
-import { A, B, NOT_IF_ICON, U } from "@/lib/startKeywordBoundaries";
+import { A, B, isInsideHighlightTag, NOT_IF_ICON, U } from "@/lib/startKeywordBoundaries";
 
 /** Remove markup legado «palavra + ícone» antes de regravar o JSON (migração). */
 export function stripLegacyResourceMarkup(text: string): string {
@@ -162,11 +162,10 @@ export function expandStartUnitKeywords(text: string): string {
       U,
     );
     if (wrap) {
-      t = t.replace(
-        re,
-        (_f, p1: string) =>
-          `<highlight-${wrap}>${p1}</highlight-${wrap}> :${token}:`,
-      );
+      t = t.replace(re, (match, p1: string, offset: number, full: string) => {
+        if (isInsideHighlightTag(full, offset)) return match;
+        return `<highlight-${wrap}>${p1}</highlight-${wrap}> :${token}:`;
+      });
     } else {
       t = t.replace(re, (m) => `${m} :${token}:`);
     }
@@ -206,21 +205,27 @@ export function expandResourceKeywords(text: string): string {
   const boundaryAfter = String.raw`(?![\p{L}\p{M}\p{N}_])`;
   const u = "giu" as const;
   let t = text;
+  const wrapResource = (tag: "red" | "brown" | "yellow" | "blue", token: string) => {
+    return (match: string, m: string, offset: number, full: string) => {
+      if (isInsideHighlightTag(full, offset)) return match;
+      return `<highlight-${tag}>${m}</highlight-${tag}>:${token}:`;
+    };
+  };
   t = t.replace(
     new RegExp(`${boundaryBefore}(comida)${NOT_IF_ICON}${boundaryAfter}`, u),
-    (_x, m: string) => `<highlight-red>${m}</highlight-red>:foodaom:`,
+    wrapResource("red", "foodaom"),
   );
   t = t.replace(
     new RegExp(`${boundaryBefore}(madeira)${NOT_IF_ICON}${boundaryAfter}`, u),
-    (_x, m: string) => `<highlight-brown>${m}</highlight-brown>:woodaom:`,
+    wrapResource("brown", "woodaom"),
   );
   t = t.replace(
     new RegExp(`${boundaryBefore}(ouro)${NOT_IF_ICON}${boundaryAfter}`, u),
-    (_x, m: string) => `<highlight-yellow>${m}</highlight-yellow>:goldaom:`,
+    wrapResource("yellow", "goldaom"),
   );
   t = t.replace(
     new RegExp(`${boundaryBefore}(favor)${NOT_IF_ICON}${boundaryAfter}`, u),
-    (_x, m: string) => `<highlight-blue>${m}</highlight-blue>:favoraom:`,
+    wrapResource("blue", "favoraom"),
   );
   return t;
 }

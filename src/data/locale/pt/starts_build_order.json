@@ -2598,7 +2598,7 @@
             },
             {
               "kind": "callout",
-              "text": "Nesse caso, é bom ter <highlight-pink>visão</highlight-pink> :los_icon_aoe3de: <highlight-pink></highlight-pink> do <highlight-red>Adversário</highlight-red> e observar seus próximos passos!"
+              "text": "Nesse caso, é bom ter <highlight-pink>visão</highlight-pink> :los_icon_aoe3de: do <highlight-red>Adversário</highlight-red> e observar seus próximos passos!"
             },
             {
               "kind": "callout",
@@ -2606,7 +2606,7 @@
             },
             {
               "kind": "callout",
-              "text": "Normalmente, a maioria dos adversários <highlight-red>raidam</highlight-red><highlight-default>ou</highlight-default><highlight-red>agressivam</highlight-red> no início."
+              "text": "Normalmente, a maioria dos adversários <highlight-red>raidam</highlight-red> ou <highlight-red>agressivam</highlight-red> no início."
             },
             {
               "kind": "callout",
@@ -3180,7 +3180,7 @@
               "type": null
             },
             {
-              "description": "TC :aomr_town_center_norse_icon: : Alterne entre Anão para o ouro e Coletor para madeira<highlight-default>até 3</highlight-default>",
+              "description": "TC :aomr_town_center_norse_icon: : Alterne entre Anão para o ouro e Coletor para madeira até 3",
               "food": "3",
               "wood": "3",
               "gold": "3",
@@ -4481,7 +4481,7 @@
               "type": null
             },
             {
-              "description": "Ataque com poder divino <highlight-purple>Descontrução</highlight-purple> :aomr_deconstruction_icon: <highlight-purple></highlight-purple> no Templo rival",
+              "description": "Ataque com poder divino <highlight-purple>Descontrução</highlight-purple> :aomr_deconstruction_icon: no Templo rival",
               "food": null,
               "wood": null,
               "gold": null,
@@ -5595,7 +5595,7 @@
               "type": null
             },
             {
-              "description": "Próximo Camponês <highlight-brown></highlight-brown> e Kuafu inicial na madeira<highlight-default>(até 50)</highlight-default>",
+              "description": "Próximo Camponês e Kuafu inicial na madeira (até 50)",
               "food": "2",
               "wood": "2",
               "gold": "-",
@@ -5622,7 +5622,7 @@
               "type": null
             },
             {
-              "description": "Depois do <highlight-orange>Kuafu</highlight-orange> :aomr_kuafu_icon: e o Camponês pegar 50 de madeira transferi-los para o ouro e comida respectivamente.<highlight-gray></highlight-gray>(<strong>≈</strong><code><strong>0:37</strong></code>)",
+              "description": "Depois do <highlight-orange>Kuafu</highlight-orange> :aomr_kuafu_icon: e o Camponês pegar 50 de madeira transferi-los para o ouro e comida respectivamente. (<strong>≈</strong><code><strong>0:37</strong></code>)",
               "food": "4",
               "wood": "0",
               "gold": "1",
@@ -5631,7 +5631,7 @@
               "type": null
             },
             {
-              "description": "+1 Camponês na comida depois roda <highlight-orange><highlight-default_background>Kuafu</highlight-default_background></highlight-orange> :aomr_kuafu_icon: (<strong>≈</strong><code><strong>1:10</strong></code>)",
+              "description": "+1 Camponês na comida depois roda <highlight-orange>Kuafu</highlight-orange> :aomr_kuafu_icon: (<strong>≈</strong><code><strong>1:10</strong></code>)",
               "food": "5",
               "wood": "0",
               "gold": "1",
@@ -5887,7 +5887,7 @@
               "type": "hint"
             },
             {
-              "description": "1 Plebeu no <highlight-red></highlight-red>ouro + Moinho de Água",
+              "description": "1 Plebeu no ouro + Moinho de Água",
               "food": "3",
               "wood": "-",
               "gold": "1",
@@ -5941,7 +5941,7 @@
               "type": "blue"
             },
             {
-              "description": "Pre-queue na tecnologia Guardiões Sagrados <highlight-pink></highlight-pink>→ para pegar Relíquias :aomr_relic_anim:",
+              "description": "Pre-queue na tecnologia Guardiões Sagrados → para pegar Relíquias :aomr_relic_anim:",
               "food": "-",
               "wood": "-",
               "gold": "-",
@@ -6876,7 +6876,7 @@
               "type": null
             },
             {
-              "description": "+1 Plebeu na madeira<highlight-default>(Total: 7)</highlight-default>",
+              "description": "+1 Plebeu na madeira (Total: 7)",
               "food": "9",
               "wood": "7",
               "gold": "2",
