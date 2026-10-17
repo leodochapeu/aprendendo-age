@@ -13832,7 +13832,8 @@
         "id": 84,
         "nome": "Huitzilopochtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Lanceiro Tlamanih</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Arqueiro Tequihua</highlight-blue> (:aomr_time_icon::aomr_speed_icon:)"
   },
   {
     "nome": "Alcance de Tepeyóllotl",
@@ -13868,7 +13869,8 @@
         "id": 83,
         "nome": "Tezcatlipoca"
       }
-    ]
+    ],
+    "beneficia": ":aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Cavaleiro Jaguar</highlight-teal> (:rangeicon::hackdamage:)"
   },
   {
     "nome": "Banquete da Sustância",
@@ -13900,7 +13902,8 @@
         "id": 82,
         "nome": "Quetzalcoatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_cow_icon: <highlight-red>Criação</highlight-red>"
   },
   {
     "nome": "Revelria de Ometochtli",
@@ -13940,7 +13943,8 @@
         "id": 87,
         "nome": "Patecatl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_centzon_icon:</highlight-pink><highlight-pink>Centzon Totochtin</highlight-pink>+:aomr_farm_icon: <highlight-teal>Fazenda</highlight-teal> (:foodaom::aomr_hit_points_icon:)"
   },
   {
     "nome": "Infusões de Ocpatli",
@@ -13988,7 +13992,8 @@
         "id": 87,
         "nome": "Patecatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>Soldado humano</highlight-red>+:aomr_type_villager_icon: <highlight-blue>Aldeão</highlight-blue> (:aomr_hit_points_icon:)"
   },
   {
     "nome": "Cultivo de Maguey",
@@ -14028,7 +14033,8 @@
         "id": 87,
         "nome": "Patecatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_villager_icon: <highlight-blue>Aldeão</highlight-blue>+:aomr_farm_icon: <highlight-teal>Fazenda</highlight-teal> (:foodaom:)"
   },
   {
     "nome": "Espírito do Velho Coiote",
@@ -14068,7 +14074,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_chaneque_icon:</highlight-pink><highlight-pink>Chaneque</highlight-pink>+:aomr_spike_trap_icon: <highlight-gray>Armadilha de Espinhos</highlight-gray> (:hackarmor:)"
   },
   {
     "nome": "Treinamento no Cuicacalli",
@@ -14108,7 +14115,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red> (:piercearmor:)"
   },
   {
     "nome": "Tambores Teponaztli",
@@ -14148,7 +14156,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Herói</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Soldado humano</highlight-red>+:aomr_type_villager_icon: <highlight-blue>Aldeão</highlight-blue> (:aomr_speed_icon:)"
   },
   {
     "nome": "Nahuallatolli",
@@ -14188,7 +14197,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_building_icon: <highlight-orange>Armadilha</highlight-orange>"
   },
   {
     "nome": "Presságio de Malinalco",
@@ -14228,7 +14238,8 @@
         "id": 85,
         "nome": "Malinalxochitl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_maquizcoatl_icon:</highlight-pink><highlight-pink>Maquizcoatl</highlight-pink>"
   },
   {
     "nome": "Ferrão de Yappan",
@@ -14268,7 +14279,8 @@
         "id": 85,
         "nome": "Malinalxochitl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Lanceiro Tlamanih</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Arqueiro Tequihua</highlight-blue>"
   },
   {
     "nome": "Transe de Toloache",
@@ -14316,7 +14328,8 @@
         "id": 85,
         "nome": "Malinalxochitl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Esmagador Otontin</highlight-red>+:aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>"
   },
   {
     "nome": "Asas de Itzpapalotl",
@@ -14356,7 +14369,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_obsidian_butterfly_icon:</highlight-pink><highlight-pink>Borboleta de Obsidiana</highlight-pink> (:hackdamage::aomr_speed_icon:)"
   },
   {
     "nome": "Talhe de Obsidiana",
@@ -14396,7 +14410,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Guerreiro Águia</highlight-blue> (:hackdamage:)"
   },
   {
     "nome": "Guerras Floridas",
@@ -14436,7 +14451,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": ":favoraom: <highlight-yellow>Favor</highlight-yellow>"
   },
   {
     "nome": "Fragmentos de Itztli",
@@ -14476,7 +14492,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_arrow_canoe_icon: <highlight-blue>Canoa de Flecha</highlight-blue> (:hackdamage:)"
   },
   {
     "nome": "Saia Serpente",
@@ -14521,7 +14538,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_anaconda_icon: <highlight-red>Anaconda</highlight-red>+:aomr_type_wall_icon: <highlight-brown>Muro</highlight-brown>+:aomr_wonder_icon: <highlight-gray>Maravilha</highlight-gray>"
   },
   {
     "nome": "Santuários de Coatepec",
@@ -14566,7 +14584,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_farm_icon: <highlight-teal>Fazenda</highlight-teal>+:aomr_armory_icon: <highlight-gray>Armaria</highlight-gray>+:aomr_war_hut_icon: <highlight-gray>Cabana de Guerra</highlight-gray>"
   },
   {
     "nome": "Cordão de Corações",
@@ -14605,7 +14624,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>Soldado humano</highlight-red> (:crushdamage:)"
   },
   {
     "nome": "Escamas de Cipactli",
@@ -14645,7 +14665,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_atlatl_siege_canoe_icon: <highlight-blue>Canoa de Cerco Estólica</highlight-blue>"
   },
   {
     "nome": "Centzon Huitznahua",
@@ -14685,7 +14706,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_tzitzimitl_icon:</highlight-pink><highlight-pink>Tzitzimitl</highlight-pink> (:hackdamage:)"
   },
   {
     "nome": "Pedra de Coyolxauhqui",
@@ -14730,7 +14752,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": ":aomr_great_temple_icon: <highlight-gray>Grande Templo</highlight-gray>+:aomr_type_building_icon: <highlight-gray>Templo</highlight-gray> (:foodaom::goldaom::woodaom:)"
   },
   {
     "nome": "Penitência de Tecciztécatl",
@@ -14769,7 +14792,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": ":aomr_villager_aztec_icon: <highlight-blue>Plebeu</highlight-blue> (:favoraom:)"
   },
   {
     "nome": "Metzliapán",
@@ -14809,7 +14833,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_axolotl_icon:</highlight-pink><highlight-pink>Axolote</highlight-pink>+<highlight-pink>:aomr_axolotl_mutant_icon:</highlight-pink><highlight-pink>Axolote (Mutante)</highlight-pink>"
   },
   {
     "nome": "Colar de Globos Oculares",
@@ -14849,7 +14874,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Herói</highlight-yellow> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Presságio da Morte",
@@ -14889,7 +14915,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Teixiptla</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Efeito de Descida de Mictlans</highlight-red>"
   },
   {
     "nome": "Ossos Preciosos",
@@ -14933,7 +14960,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_archer_icon: <highlight-blue>Artilharia</highlight-blue> (:hackdamage:)"
   },
   {
     "nome": "Mictecah",
@@ -14973,7 +15001,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_shorn_one_icon: <highlight-red>Tosquiado</highlight-red> (:hackdamage:&:aomr_type_hero_icon:)"
   },
   {
     "nome": "Água Queimada",
@@ -15012,7 +15041,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>AbstractFortress</highlight-red>+:aomr_type_tower_icon: <highlight-gray>Torre</highlight-gray> (:aomr_hit_points_icon:)"
   },
   {
     "nome": "Tlaloques",
@@ -15052,7 +15082,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>AbstractCalpulli</highlight-red>+:aomr_calpulli_icon: <highlight-gray>Calpulli</highlight-gray> (:favoraom::foodaom::goldaom::woodaom:)"
   },
   {
     "nome": "Tonacatépetl",
@@ -15092,7 +15123,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_calpulli_livestock_pen_icon: <highlight-gray>Calpulli (Curral)</highlight-gray>"
   },
   {
     "nome": "Quatro Jarros",
@@ -15132,7 +15164,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_great_temple_icon: <highlight-gray>Grande Templo</highlight-gray>"
   },
   {
     "nome": "Tocha do Infortúnio",
@@ -15172,7 +15205,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_soul_guide_icon:</highlight-pink><highlight-pink>Guia das Almas</highlight-pink>"
   },
   {
     "nome": "Estrela da Noite",
@@ -15212,7 +15246,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_great_temple_icon: <highlight-gray>Grande Templo</highlight-gray>"
   },
   {
     "nome": "Membros Torcidos",
@@ -15253,7 +15288,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red> (:hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Quinametzin de Pele de Pedra",
@@ -15294,7 +15330,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_quinametzin_icon:</highlight-pink><highlight-pink>Quinametzin</highlight-pink> (:rangeicon::hackdamage::los_icon_aoe3de::aomr_hit_points_icon:)"
   },
   {
     "nome": "Chinampas",
@@ -15320,7 +15357,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_villager_icon: <highlight-blue>Aldeão</highlight-blue>+:aomr_farm_icon: <highlight-teal>Fazenda</highlight-teal> (:foodaom:)"
   },
   {
     "nome": "Torre de Vigia Tzompantli",
@@ -15345,7 +15383,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_tower_icon: <highlight-gray>Torre</highlight-gray>"
   },
   {
     "nome": "Provações de Temiminaloyan",
@@ -15370,7 +15409,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_tower_icon: <highlight-gray>Torre</highlight-gray>"
   },
   {
     "nome": "Ameias (Asteca)",
@@ -15396,7 +15436,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_building_icon: <highlight-gray>Construção</highlight-gray>+:aomr_type_tower_icon: <highlight-gray>Torre</highlight-gray> (:rangeicon:&:aomr_type_cavalry_icon:)"
   },
   {
     "nome": "Armas de Pederneira",
@@ -15421,7 +15462,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-orange>+Dano</highlight-orange>"
   },
   {
     "nome": "Armas de Jade",
@@ -15446,7 +15488,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-orange>+Dano</highlight-orange>"
   },
   {
     "nome": "Armas de Obsidiana",
@@ -15471,7 +15514,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-orange>+Dano</highlight-orange>"
   },
   {
     "nome": "Armadura de Penas",
@@ -15496,7 +15540,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Herói</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Soldado humano</highlight-red>+:aomr_type_ship_icon: <highlight-blue>Navio</highlight-blue> (:crusharmor::hackarmor:)"
   },
   {
     "nome": "Armadura Cerimonial",
@@ -15521,7 +15566,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Herói</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Soldado humano</highlight-red>+:aomr_type_ship_icon: <highlight-blue>Navio</highlight-blue> (:crusharmor::hackarmor:)"
   },
   {
     "nome": "Armadura Sagrada",
@@ -15546,7 +15592,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Herói</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Soldado humano</highlight-red>+:aomr_type_ship_icon: <highlight-blue>Navio</highlight-blue> (:crusharmor::hackarmor:)"
   },
   {
     "nome": "Escudos Emplumados",
@@ -15571,7 +15618,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-brown>:piercearmor:</highlight-brown><highlight-brown>Anti-perfurante</highlight-brown>"
   },
   {
     "nome": "Escudo Cerimonial",
@@ -15596,7 +15644,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-brown>:piercearmor:</highlight-brown><highlight-brown>Anti-perfurante</highlight-brown>"
   },
   {
     "nome": "Escudos Sagrados",
@@ -15621,7 +15670,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-brown>:piercearmor:</highlight-brown><highlight-brown>Anti-perfurante</highlight-brown>"
   },
   {
     "nome": "Soldados de Cabana de Guerra Médios",
@@ -15647,7 +15697,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Lanceiro Tlamanih</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Arqueiro Tequihua</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Soldados de Cabana de Guerra Pesada",
@@ -15673,7 +15724,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Lanceiro Tlamanih</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Arqueiro Tequihua</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Soldados da Cabana de Guerra Campeões",
@@ -15699,7 +15751,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Lanceiro Tlamanih</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Arqueiro Tequihua</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Armadilhas Avançadas",
@@ -15725,7 +15778,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_spike_trap_icon: <highlight-gray>Armadilha de Espinhos</highlight-gray>+:aomr_smoke_trap_icon: <highlight-gray>Armadilha de Fumaça</highlight-gray> (:hackdamage:)"
   },
   {
     "nome": "Convocar Soldados de Cabana de Guerra",
@@ -15751,7 +15805,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Lanceiro Tlamanih</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Arqueiro Tequihua</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Soldados da Cabana de Guerra Conscritos",
@@ -15777,7 +15832,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Lanceiro Tlamanih</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Arqueiro Tequihua</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Soldados da Cabana do Nobre Médios",
@@ -15803,7 +15859,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Guerreiro Águia</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Soldados da Cabana do Nobre Pesados",
@@ -15829,7 +15886,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Guerreiro Águia</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Soldados da Cabana do Nobre Campeões",
@@ -15855,7 +15913,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Guerreiro Águia</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Convocar Soldados da Cabana do Nobre",
@@ -15881,7 +15940,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Guerreiro Águia</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Soldados da Cabana do Nobre Conscritos",
@@ -15907,7 +15967,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Guerreiro Coiote</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Guerreiro Jaguatirica</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Guerreiro Águia</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Soldados do Grande Templo Médios",
@@ -15933,7 +15994,8 @@
         "id": 2,
         "nome": "Clássica :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Esmagador Otontin</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Tosquiado</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Cavaleiro Jaguar</highlight-teal> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Soldados do Grande Templo Pesados",
@@ -15959,7 +16021,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Esmagador Otontin</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Tosquiado</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Cavaleiro Jaguar</highlight-teal> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Soldados do Grande Templo Campeões",
@@ -15985,7 +16048,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Esmagador Otontin</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Tosquiado</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Cavaleiro Jaguar</highlight-teal> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Convocar Soldados do Grande Templo",
@@ -16011,7 +16075,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Esmagador Otontin</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Tosquiado</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Cavaleiro Jaguar</highlight-teal> (:aomr_time_icon:)"
   },
   {
     "nome": "Soldados do Grande Templo Conscritos",
@@ -16037,7 +16102,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Esmagador Otontin</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Tosquiado</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Cavaleiro Jaguar</highlight-teal> (:aomr_time_icon:)"
   },
   {
     "nome": "Cerimônia do Novo Fogo",
@@ -16061,7 +16127,8 @@
         "id": 3,
         "nome": "Heróica :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_cow_icon: <highlight-red>Criação</highlight-red> (:favoraom:)"
   },
   {
     "nome": "Guarda Cósmica",
@@ -16085,7 +16152,8 @@
         "id": 4,
         "nome": "Mítica :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>Unidades</highlight-red> (:favoraom:)"
   },
   {
     "nome": "A Chegada dos Deuses (Huitzilopochtli)",
@@ -16115,7 +16183,8 @@
         "id": 84,
         "nome": "Huitzilopochtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Sacerdote de Guerra</highlight-yellow> (:favoraom:)"
   },
   {
     "nome": "A Chegada dos Deuses (Tezcatlipoca)",
@@ -16145,7 +16214,8 @@
         "id": 83,
         "nome": "Tezcatlipoca"
       }
-    ]
+    ],
+    "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Sacerdote de Guerra</highlight-yellow> (:favoraom:)"
   },
   {
     "nome": "A Chegada dos Deuses (Quetzalcoatl)",
@@ -16175,6 +16245,7 @@
         "id": 82,
         "nome": "Quetzalcoatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Sacerdote de Guerra</highlight-yellow> (:favoraom:)"
   }
 ]

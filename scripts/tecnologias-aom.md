@@ -13,6 +13,8 @@ Extrai custos, tempo, era, ícone e prédios de pesquisa do jogo para `tecnologi
 |-------------|--------|--------|
 | `npm run data:extract-tecnologias` | `extract-tecnologias-aom.py` | Extrai do `Data.bar` / cache |
 | `npm run data:merge-tecnologias` | `merge-tecnologias-aom.py` | Atualiza PT e EN no catálogo |
+| — | `fill-tecnologias-beneficia.py` | Gera `beneficia` (ícone + nome) a partir dos efeitos |
+| — | `sync-tech-icons-aom.py` | Exporta ícones WebP + `token_asset_map.json` |
 
 ## Uso
 
@@ -27,6 +29,10 @@ python scripts/merge-tecnologias-aom.py --index 0-9 --dry-run
 
 # Gravar alterações
 python scripts/merge-tecnologias-aom.py --tech "Hand Axe",Sarissa --write
+
+# Preencher beneficia (ex.: astecas id=7, só vazios)
+python scripts/fill-tecnologias-beneficia.py --pantheon-id 7 --only-empty --dry-run
+python scripts/fill-tecnologias-beneficia.py --pantheon-id 7 --only-empty --write
 ```
 
 ## Campos

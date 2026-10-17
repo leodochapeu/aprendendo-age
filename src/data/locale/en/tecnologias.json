@@ -13832,7 +13832,8 @@
         "id": 84,
         "nome": "Huitzilopochtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Tlamanih Spearman</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Tequihua Archer</highlight-blue> (:aomr_time_icon::aomr_speed_icon:)"
   },
   {
     "nome": "Tepeyollotl's Reach",
@@ -13868,7 +13869,8 @@
         "id": 83,
         "nome": "Tezcatlipoca"
       }
-    ]
+    ],
+    "beneficia": ":aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Jaguar Rider</highlight-teal> (:rangeicon::hackdamage:)"
   },
   {
     "nome": "Feast of Sustenance",
@@ -13900,7 +13902,8 @@
         "id": 82,
         "nome": "Quetzalcoatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_cow_icon: <highlight-red>Livestock</highlight-red>"
   },
   {
     "nome": "Ometochtli's Revelry",
@@ -13940,7 +13943,8 @@
         "id": 87,
         "nome": "Patecatl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_centzon_icon:</highlight-pink><highlight-pink>Centzon Totochtin</highlight-pink>+:aomr_farm_icon: <highlight-teal>Farm</highlight-teal> (:foodaom::aomr_hit_points_icon:)"
   },
   {
     "nome": "Ocpatli Infusions",
@@ -13988,7 +13992,8 @@
         "id": 87,
         "nome": "Patecatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>Human Soldier</highlight-red>+:aomr_type_villager_icon: <highlight-blue>Villager</highlight-blue> (:aomr_hit_points_icon:)"
   },
   {
     "nome": "Maguey Cultivation",
@@ -14028,7 +14033,8 @@
         "id": 87,
         "nome": "Patecatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_villager_icon: <highlight-blue>Villager</highlight-blue>+:aomr_farm_icon: <highlight-teal>Farm</highlight-teal> (:foodaom:)"
   },
   {
     "nome": "Old Coyote's Spirit",
@@ -14068,7 +14074,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_chaneque_icon:</highlight-pink><highlight-pink>Chaneque</highlight-pink>+:aomr_spike_trap_icon: <highlight-gray>Spike Trap</highlight-gray> (:hackarmor:)"
   },
   {
     "nome": "Cuicacalli Training",
@@ -14108,7 +14115,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red> (:piercearmor:)"
   },
   {
     "nome": "Teponaztli Drums",
@@ -14148,7 +14156,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Hero</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Human Soldier</highlight-red>+:aomr_type_villager_icon: <highlight-blue>Villager</highlight-blue> (:aomr_speed_icon:)"
   },
   {
     "nome": "Nahuallatolli",
@@ -14188,7 +14197,8 @@
         "id": 86,
         "nome": "Huehuecóyotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_building_icon: <highlight-orange>Trap</highlight-orange>"
   },
   {
     "nome": "Omen of Malinalco",
@@ -14228,7 +14238,8 @@
         "id": 85,
         "nome": "Malinalxochitl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_maquizcoatl_icon:</highlight-pink><highlight-pink>Maquizcoatl</highlight-pink>"
   },
   {
     "nome": "Sting of Yappan",
@@ -14268,7 +14279,8 @@
         "id": 85,
         "nome": "Malinalxochitl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Tlamanih Spearman</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Tequihua Archer</highlight-blue>"
   },
   {
     "nome": "Toloache Trance",
@@ -14316,7 +14328,8 @@
         "id": 85,
         "nome": "Malinalxochitl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_medium_otontin_smasher_icon: <highlight-red>Otontin Smasher</highlight-red>"
   },
   {
     "nome": "Wings of Itzpapalotl",
@@ -14356,7 +14369,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_obsidian_butterfly_icon:</highlight-pink><highlight-pink>Obsidian Butterfly</highlight-pink> (:hackdamage::aomr_speed_icon:)"
   },
   {
     "nome": "Obsidian Knapping",
@@ -14396,7 +14410,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Eagle Warrior</highlight-blue> (:hackdamage:)"
   },
   {
     "nome": "Flowery Wars",
@@ -14436,7 +14451,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": ":favoraom: <highlight-yellow>Favor</highlight-yellow>"
   },
   {
     "nome": "Shards of Itztli",
@@ -14476,7 +14492,8 @@
         "id": 88,
         "nome": "Itzpapalotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_arrow_canoe_icon: <highlight-blue>Arrow Canoe</highlight-blue> (:hackdamage:)"
   },
   {
     "nome": "Serpent Skirt",
@@ -14521,7 +14538,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_anaconda_icon: <highlight-red>Anaconda</highlight-red>+:aomr_type_wall_icon: <highlight-brown>Wall</highlight-brown>+:aomr_wonder_icon: <highlight-gray>Wonder</highlight-gray>"
   },
   {
     "nome": "Coatepec Shrines",
@@ -14566,7 +14584,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_farm_icon: <highlight-teal>Farm</highlight-teal>+:aomr_armory_icon: <highlight-gray>Armory</highlight-gray>+:aomr_war_hut_icon: <highlight-gray>War Hut</highlight-gray>"
   },
   {
     "nome": "String of Hearts",
@@ -14605,7 +14624,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>Human Soldier</highlight-red> (:crushdamage:)"
   },
   {
     "nome": "Cipactli’s Scales",
@@ -14645,7 +14665,8 @@
         "id": 89,
         "nome": "Coatlicue"
       }
-    ]
+    ],
+    "beneficia": ":aomr_atlatl_siege_canoe_icon: <highlight-blue>Atlatl Siege Canoe</highlight-blue>"
   },
   {
     "nome": "Centzon Huitznahua",
@@ -14685,7 +14706,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_tzitzimitl_icon:</highlight-pink><highlight-pink>Tzitzimitl</highlight-pink> (:hackdamage:)"
   },
   {
     "nome": "Coyolxauhqui's Stone",
@@ -14730,7 +14752,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": ":aomr_great_temple_icon: <highlight-gray>Great Temple</highlight-gray>+:aomr_type_building_icon: <highlight-gray>Temple</highlight-gray> (:foodaom::goldaom::woodaom:)"
   },
   {
     "nome": "Tecciztécatl's Penance",
@@ -14769,7 +14792,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": ":aomr_villager_aztec_icon: <highlight-blue>Settler</highlight-blue> (:favoraom:)"
   },
   {
     "nome": "Metzliapán",
@@ -14809,7 +14833,8 @@
         "id": 90,
         "nome": "Coyolxauhqui"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_axolotl_icon:</highlight-pink><highlight-pink>Axolotl</highlight-pink>+<highlight-pink>:aomr_axolotl_mutant_icon:</highlight-pink><highlight-pink>Axolotl (Mutant)</highlight-pink>"
   },
   {
     "nome": "Necklace of Eyeballs",
@@ -14849,7 +14874,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Hero</highlight-yellow> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Omen of Death",
@@ -14889,7 +14915,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Teixiptla</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>VFX Mictlans Descent</highlight-red>"
   },
   {
     "nome": "Precious Bones",
@@ -14933,7 +14960,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_archer_icon: <highlight-blue>Ranged</highlight-blue> (:hackdamage:)"
   },
   {
     "nome": "Mictecah",
@@ -14973,7 +15001,8 @@
         "id": 93,
         "nome": "Mictlantecuhtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_shorn_one_icon: <highlight-red>Shorn One</highlight-red> (:hackdamage:&:aomr_type_hero_icon:)"
   },
   {
     "nome": "Burnt Water",
@@ -15012,7 +15041,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>AbstractFortress</highlight-red>+:aomr_type_tower_icon: <highlight-gray>Tower</highlight-gray> (:aomr_hit_points_icon:)"
   },
   {
     "nome": "Tlaloques",
@@ -15052,7 +15082,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>AbstractCalpulli</highlight-red>+:aomr_calpulli_icon: <highlight-gray>Calpulli</highlight-gray> (:favoraom::foodaom::goldaom::woodaom:)"
   },
   {
     "nome": "Tonacatépetl",
@@ -15092,7 +15123,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_calpulli_livestock_pen_icon: <highlight-gray>Calpulli (Livestock Pen)</highlight-gray>"
   },
   {
     "nome": "Four Jars",
@@ -15132,7 +15164,8 @@
         "id": 91,
         "nome": "Tlaloc"
       }
-    ]
+    ],
+    "beneficia": ":aomr_great_temple_icon: <highlight-gray>Great Temple</highlight-gray>"
   },
   {
     "nome": "Torch of Misfortune",
@@ -15172,7 +15205,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_soul_guide_icon:</highlight-pink><highlight-pink>Soul Guide</highlight-pink>"
   },
   {
     "nome": "Evening Star",
@@ -15212,7 +15246,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_great_temple_icon: <highlight-gray>Great Temple</highlight-gray>"
   },
   {
     "nome": "Twisted Limbs",
@@ -15253,7 +15288,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red> (:hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Stoneskin Quinametzin",
@@ -15294,7 +15330,8 @@
         "id": 92,
         "nome": "Xolotl"
       }
-    ]
+    ],
+    "beneficia": "<highlight-pink>:aomr_quinametzin_icon:</highlight-pink><highlight-pink>Quinametzin</highlight-pink> (:rangeicon::hackdamage::los_icon_aoe3de::aomr_hit_points_icon:)"
   },
   {
     "nome": "Chinampas",
@@ -15320,7 +15357,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_villager_icon: <highlight-blue>Villager</highlight-blue>+:aomr_farm_icon: <highlight-teal>Farm</highlight-teal> (:foodaom:)"
   },
   {
     "nome": "Tzompantli Watch Tower",
@@ -15345,7 +15383,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_tower_icon: <highlight-gray>Tower</highlight-gray>"
   },
   {
     "nome": "Temiminaloyan Trials",
@@ -15370,7 +15409,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_tower_icon: <highlight-gray>Tower</highlight-gray>"
   },
   {
     "nome": "Crenellations (Aztec)",
@@ -15396,7 +15436,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_building_icon: <highlight-gray>Building</highlight-gray>+:aomr_type_tower_icon: <highlight-gray>Tower</highlight-gray> (:rangeicon:&:aomr_type_cavalry_icon:)"
   },
   {
     "nome": "Flint Weapons",
@@ -15421,7 +15462,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-orange>+Damage</highlight-orange>"
   },
   {
     "nome": "Jade Weapons",
@@ -15446,7 +15488,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-orange>+Damage</highlight-orange>"
   },
   {
     "nome": "Obsidian Weapons",
@@ -15471,7 +15514,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-orange>+Damage</highlight-orange>"
   },
   {
     "nome": "Feathered Armor",
@@ -15496,7 +15540,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Hero</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Human Soldier</highlight-red>+:aomr_type_ship_icon: <highlight-blue>Ship</highlight-blue> (:crusharmor::hackarmor:)"
   },
   {
     "nome": "Ceremonial Armor",
@@ -15521,7 +15566,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Hero</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Human Soldier</highlight-red>+:aomr_type_ship_icon: <highlight-blue>Ship</highlight-blue> (:crusharmor::hackarmor:)"
   },
   {
     "nome": "Sacred Armor",
@@ -15546,7 +15592,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_hero_icon: <highlight-yellow>Hero</highlight-yellow>+:aomr_type_human_soldier_icon: <highlight-red>Human Soldier</highlight-red>+:aomr_type_ship_icon: <highlight-blue>Ship</highlight-blue> (:crusharmor::hackarmor:)"
   },
   {
     "nome": "Feathered Shields",
@@ -15571,7 +15618,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-brown>:piercearmor:</highlight-brown><highlight-brown>Pierce Armor</highlight-brown>"
   },
   {
     "nome": "Ceremonial Shields",
@@ -15596,7 +15644,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-brown>:piercearmor:</highlight-brown><highlight-brown>Pierce Armor</highlight-brown>"
   },
   {
     "nome": "Sacred Shields",
@@ -15621,7 +15670,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": "<highlight-brown>:piercearmor:</highlight-brown><highlight-brown>Pierce Armor</highlight-brown>"
   },
   {
     "nome": "Medium War Hut Soldiers",
@@ -15647,7 +15697,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Tlamanih Spearman</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Tequihua Archer</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Heavy War Hut Soldiers",
@@ -15673,7 +15724,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Tlamanih Spearman</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Tequihua Archer</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Champion War Hut Soldiers",
@@ -15699,7 +15751,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Tlamanih Spearman</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Tequihua Archer</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Advanced Traps",
@@ -15725,7 +15778,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_spike_trap_icon: <highlight-gray>Spike Trap</highlight-gray>+:aomr_smoke_trap_icon: <highlight-gray>Smoke Trap</highlight-gray> (:hackdamage:)"
   },
   {
     "nome": "Levy War Hut Soldiers",
@@ -15751,7 +15805,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Tlamanih Spearman</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Tequihua Archer</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Conscript War Hut Soldiers",
@@ -15777,7 +15832,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_tlamanih_spearman_icon: <highlight-red>Tlamanih Spearman</highlight-red>+:aomr_tequihua_archer_icon: <highlight-blue>Tequihua Archer</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Medium Noble's Hut Soldiers",
@@ -15803,7 +15859,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Eagle Warrior</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Heavy Noble's Hut Soldiers",
@@ -15829,7 +15886,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Eagle Warrior</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Champion Noble's Hut Soldiers",
@@ -15855,7 +15913,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Eagle Warrior</highlight-blue> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Levy Noble's Hut Soldiers",
@@ -15881,7 +15940,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Eagle Warrior</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Conscript Noble's Hut Soldiers",
@@ -15907,7 +15967,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_coyote_warrior_icon: <highlight-red>Coyote Warrior</highlight-red>+:aomr_ocelotl_warrior_icon: <highlight-red>Ocelotl Warrior</highlight-red>+:aomr_eagle_warrior_icon: <highlight-blue>Eagle Warrior</highlight-blue> (:aomr_time_icon:)"
   },
   {
     "nome": "Medium Great Temple Soldiers",
@@ -15933,7 +15994,8 @@
         "id": 2,
         "nome": "Classical :aomr_classical_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Otontin Smasher</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Shorn One</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Jaguar Rider</highlight-teal> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Heavy Great Temple Soldiers",
@@ -15959,7 +16021,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Otontin Smasher</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Shorn One</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Jaguar Rider</highlight-teal> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Champion Great Temple Soldiers",
@@ -15985,7 +16048,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Otontin Smasher</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Shorn One</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Jaguar Rider</highlight-teal> (:los_icon_aoe3de::hackdamage::aomr_hit_points_icon:)"
   },
   {
     "nome": "Levy Great Temple Soldiers",
@@ -16011,7 +16075,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Otontin Smasher</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Shorn One</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Jaguar Rider</highlight-teal> (:aomr_time_icon:)"
   },
   {
     "nome": "Conscript Great Temple Soldiers",
@@ -16037,7 +16102,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_medium_otontin_smasher_icon: <highlight-red>Otontin Smasher</highlight-red>+:aomr_medium_shorn_one_icon: <highlight-red>Shorn One</highlight-red>+:aomr_jaguar_rider_icon: <highlight-teal>Jaguar Rider</highlight-teal> (:aomr_time_icon:)"
   },
   {
     "nome": "New Fire Ceremony",
@@ -16061,7 +16127,8 @@
         "id": 3,
         "nome": "Heroic :aomr_heroic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_cow_icon: <highlight-red>Livestock</highlight-red> (:favoraom:)"
   },
   {
     "nome": "Cosmic Guard",
@@ -16085,7 +16152,8 @@
         "id": 4,
         "nome": "Mythic :aomr_mythic_age_icon:"
       }
-    ]
+    ],
+    "beneficia": ":aomr_type_human_soldier_icon: <highlight-red>Units</highlight-red> (:favoraom:)"
   },
   {
     "nome": "Arrival of the Gods (Huitzilopochtli)",
@@ -16115,7 +16183,8 @@
         "id": 84,
         "nome": "Huitzilopochtli"
       }
-    ]
+    ],
+    "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Warrior Priest</highlight-yellow> (:favoraom:)"
   },
   {
     "nome": "Arrival of the Gods (Tezcatlipoca)",
@@ -16145,7 +16214,8 @@
         "id": 83,
         "nome": "Tezcatlipoca"
       }
-    ]
+    ],
+    "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Warrior Priest</highlight-yellow> (:favoraom:)"
   },
   {
     "nome": "Arrival of the Gods (Quetzalcoatl)",
@@ -16175,6 +16245,7 @@
         "id": 82,
         "nome": "Quetzalcoatl"
       }
-    ]
+    ],
+    "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Warrior Priest</highlight-yellow> (:favoraom:)"
   }
 ]

@@ -57,6 +57,10 @@ TECH_CATALOG_ALIASES = {
     "Arrival of the Gods (Huitzilopochtli)": "GreatTempleArrivalOfTheGodsHuitzilopochtli",
     "Arrival of the Gods (Tezcatlipoca)": "GreatTempleArrivalOfTheGodsTezcatlipoca",
     "Arrival of the Gods (Quetzalcoatl)": "GreatTempleArrivalOfTheGodsQuetzalcoatl",
+    "Feast of Sustenance": "FeastOfTlaxochimaco",
+    "New Fire Ceremony": "GreatTempleNewFireCeremony",
+    "Cosmic Guard": "GreatTempleCosmicGuard",
+    "Coyolxauhqui's Stone": "CoyolxauhquiStone",
 }
 
 
