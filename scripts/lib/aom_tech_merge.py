@@ -53,6 +53,10 @@ TECH_CATALOG_ALIASES = {
     "Argive Patronage": "ArgivePatronageZeus",
     "Empyrian Speed": "EmpyreanSpeed",
     "Divine Judgment": "DivineJudgement",
+    "Crenellations (Aztec)": "CrenellationsAztec",
+    "Arrival of the Gods (Huitzilopochtli)": "GreatTempleArrivalOfTheGodsHuitzilopochtli",
+    "Arrival of the Gods (Tezcatlipoca)": "GreatTempleArrivalOfTheGodsTezcatlipoca",
+    "Arrival of the Gods (Quetzalcoatl)": "GreatTempleArrivalOfTheGodsQuetzalcoatl",
 }
 
 
@@ -204,12 +208,17 @@ def merge_construcao_origem(
         prior = by_nome.get(nome) or (
             by_id.get(ext.get("id")) if ext.get("id") is not None else None
         )
-        building_id = (
-            (prior or {}).get("id")
-            or ext.get("id")
-            or building_ids.get(proto)
-            or building_ids.get(nome)
-        )
+        # Só completa id pelo mapa global se o extract já trouxe id
+        # (evita Armory grega/japonesa em techs aztecas sem Armaria no catálogo).
+        building_id = (prior or {}).get("id") or ext.get("id")
+        if building_id is None and proto and proto not in (
+            "Armory",
+            "Temple",
+            "Dock",
+            "Market",
+            "SentryTower",
+        ):
+            building_id = building_ids.get(proto) or building_ids.get(nome)
         item: dict[str, Any] = {"nome": nome}
         if building_id is not None:
             item["id"] = building_id
@@ -247,12 +256,18 @@ def build_merged_row(
     merged = deepcopy(existing)
     locale_key = locale.lower()
 
-    if locale_key == "en":
-        merged["nome"] = extracted.get("ingles") or extracted.get("nome") or merged.get("nome")
-    else:
-        merged["nome"] = extracted.get("nome") or merged.get("nome")
+    # Aliases disambiguam techs com o mesmo display name do jogo
+    # (ex.: Arrival of the Gods / Crenellations Aztec).
+    catalog_ingles = decode_catalog_name((existing.get("ingles") or "").strip())
+    preserve_display_name = catalog_ingles in TECH_CATALOG_ALIASES
 
-    merged["ingles"] = extracted.get("ingles") or merged.get("ingles")
+    if not preserve_display_name:
+        if locale_key == "en":
+            merged["nome"] = extracted.get("ingles") or extracted.get("nome") or merged.get("nome")
+        else:
+            merged["nome"] = extracted.get("nome") or merged.get("nome")
+
+        merged["ingles"] = extracted.get("ingles") or merged.get("ingles")
 
     for field in ("comida", "madeira", "ouro", "favor", "tempo_s", "icon"):
         if field in extracted:

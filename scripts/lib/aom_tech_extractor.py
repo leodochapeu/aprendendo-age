@@ -63,6 +63,10 @@ BUILDING_PROTO_TO_ENGLISH = {
     "Shrine": "Shrine",
     "Watermill": "Watermill",
     "Calpulli": "Calpulli",
+    "WarHut": "War Hut",
+    "NoblesHut": "Noble's Hut",
+    "GreatTemple": "Great Temple",
+    "SentryTower": "Sentry Tower",
 }
 
 SECONDARY_RESEARCH_BUILDINGS = frozenset(
@@ -135,10 +139,16 @@ def parse_tech_nodes(techtree_path: Path) -> dict[str, ET.Element]:
 def parse_tech_researchers(proto_units: dict[str, ET.Element]) -> dict[str, list[str]]:
     researchers: dict[str, list[str]] = {}
     for building_name, building in proto_units.items():
-        techs = [node.text.strip() for node in building.findall("tech") if node.text]
-        if not techs:
+        # `<command>` também referencia techs (ex.: GreatTempleArrivalOfTheGods*).
+        names = [
+            node.text.strip()
+            for tag in ("tech", "command")
+            for node in building.findall(tag)
+            if node.text and node.text.strip()
+        ]
+        if not names:
             continue
-        for tech_name in techs:
+        for tech_name in names:
             researchers.setdefault(tech_name, []).append(building_name)
     return researchers
 
@@ -215,6 +225,9 @@ def resolve_building_entries(
         ]
         if by_pantheon:
             candidates = by_pantheon
+        elif candidates:
+            # Não usar Armaria Grega etc. quando o panteão pedido não tem entrada.
+            return [{"proto": building_proto, "nome": english}]
 
     if len(candidates) > 1 and building is not None:
         pantheon = detect_pantheon(building)

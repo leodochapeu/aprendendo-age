@@ -13801,5 +13801,2380 @@
         "id": 1
       }
     ]
+  },
+  {
+    "nome": "Asas do Sul",
+    "ingles": "Wings of the South",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_wings_of_the_south_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "ouro": 150,
+    "favor": 12,
+    "tempo_s": 25,
+    "eras": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      }
+    ]
+  },
+  {
+    "nome": "Alcance de Tepeyóllotl",
+    "ingles": "Tepeyollotl's Reach",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_tepeyollotls_reach_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      },
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "ouro": 150,
+    "favor": 10,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      }
+    ]
+  },
+  {
+    "nome": "Banquete da Sustância",
+    "ingles": "Feast of Sustenance",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_feast_of_tlaxochimaco_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "comida": 75,
+    "favor": 25,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      }
+    ]
+  },
+  {
+    "nome": "Revelria de Ometochtli",
+    "ingles": "Ometochtli's Revelry",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_ometochtlis_revelry_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "ouro": 200,
+    "favor": 14,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 87,
+        "nome": "Patecatl"
+      }
+    ]
+  },
+  {
+    "nome": "Infusões de Ocpatli",
+    "ingles": "Ocpatli Infusions",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_ocpatli_infusions_icon",
+    "construcao_origem": [
+      {
+        "nome": "Calpulli",
+        "id": 10
+      },
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      },
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 150,
+    "favor": 20,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 87,
+        "nome": "Patecatl"
+      }
+    ]
+  },
+  {
+    "nome": "Cultivo de Maguey",
+    "ingles": "Maguey Cultivation",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_maguey_cultivation_icon",
+    "construcao_origem": [
+      {
+        "nome": "Calpulli",
+        "id": 10
+      }
+    ],
+    "madeira": 150,
+    "favor": 10,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 87,
+        "nome": "Patecatl"
+      }
+    ]
+  },
+  {
+    "nome": "Espírito do Velho Coiote",
+    "ingles": "Old Coyote's Spirit",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_old_coyotes_spirit_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "madeira": 200,
+    "favor": 16,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 86,
+        "nome": "Huehuecóyotl"
+      }
+    ]
+  },
+  {
+    "nome": "Treinamento no Cuicacalli",
+    "ingles": "Cuicacalli Training",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_cuicacalli_training_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 150,
+    "favor": 12,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 86,
+        "nome": "Huehuecóyotl"
+      }
+    ]
+  },
+  {
+    "nome": "Tambores Teponaztli",
+    "ingles": "Teponaztli Drums",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_teponaztli_drums_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "ouro": 150,
+    "favor": 10,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 86,
+        "nome": "Huehuecóyotl"
+      }
+    ]
+  },
+  {
+    "nome": "Nahuallatolli",
+    "ingles": "Nahuallatolli",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_nahuallatolli_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "madeira": 100,
+    "favor": 15,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 86,
+        "nome": "Huehuecóyotl"
+      }
+    ]
+  },
+  {
+    "nome": "Presságio de Malinalco",
+    "ingles": "Omen of Malinalco",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_omen_of_malinalco_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "comida": 120,
+    "favor": 12,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 85,
+        "nome": "Malinalxochitl"
+      }
+    ]
+  },
+  {
+    "nome": "Ferrão de Yappan",
+    "ingles": "Sting of Yappan",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_sting_of_yappan_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "ouro": 150,
+    "favor": 15,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 85,
+        "nome": "Malinalxochitl"
+      }
+    ]
+  },
+  {
+    "nome": "Transe de Toloache",
+    "ingles": "Toloache Trance",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_toloache_trance_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      },
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      },
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "ouro": 200,
+    "favor": 20,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 85,
+        "nome": "Malinalxochitl"
+      }
+    ]
+  },
+  {
+    "nome": "Asas de Itzpapalotl",
+    "ingles": "Wings of Itzpapalotl",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_wings_of_itzpapalotl_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "ouro": 200,
+    "favor": 22,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 88,
+        "nome": "Itzpapalotl"
+      }
+    ]
+  },
+  {
+    "nome": "Talhe de Obsidiana",
+    "ingles": "Obsidian Knapping",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_obsidian_knapping_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "ouro": 150,
+    "favor": 25,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 88,
+        "nome": "Itzpapalotl"
+      }
+    ]
+  },
+  {
+    "nome": "Guerras Floridas",
+    "ingles": "Flowery Wars",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_flowery_wars_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "comida": 250,
+    "madeira": 50,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 88,
+        "nome": "Itzpapalotl"
+      }
+    ]
+  },
+  {
+    "nome": "Fragmentos de Itztli",
+    "ingles": "Shards of Itztli",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_shards_of_itztli_icon",
+    "construcao_origem": [
+      {
+        "nome": "Doca (Asteca)",
+        "id": 79
+      }
+    ],
+    "madeira": 150,
+    "favor": 15,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 88,
+        "nome": "Itzpapalotl"
+      }
+    ]
+  },
+  {
+    "nome": "Saia Serpente",
+    "ingles": "Serpent Skirt",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_serpent_skirt_icon",
+    "construcao_origem": [
+      {
+        "nome": "TownCenter"
+      },
+      {
+        "nome": "VillageCenter"
+      },
+      {
+        "nome": "CitadelCenter"
+      }
+    ],
+    "ouro": 200,
+    "favor": 15,
+    "tempo_s": 15,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 89,
+        "nome": "Coatlicue"
+      }
+    ]
+  },
+  {
+    "nome": "Santuários de Coatepec",
+    "ingles": "Coatepec Shrines",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_coatepec_shrines_icon",
+    "construcao_origem": [
+      {
+        "nome": "TownCenter"
+      },
+      {
+        "nome": "VillageCenter"
+      },
+      {
+        "nome": "CitadelCenter"
+      }
+    ],
+    "madeira": 150,
+    "favor": 25,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 89,
+        "nome": "Coatlicue"
+      }
+    ]
+  },
+  {
+    "nome": "Cordão de Corações",
+    "ingles": "String of Hearts",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_string_of_hearts_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "comida": 300,
+    "favor": 15,
+    "tempo_s": 50,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 89,
+        "nome": "Coatlicue"
+      }
+    ]
+  },
+  {
+    "nome": "Escamas de Cipactli",
+    "ingles": "Cipactli’s Scales",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_cipactlis_scales_icon",
+    "construcao_origem": [
+      {
+        "nome": "Doca (Asteca)",
+        "id": 79
+      }
+    ],
+    "ouro": 200,
+    "favor": 15,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 89,
+        "nome": "Coatlicue"
+      }
+    ]
+  },
+  {
+    "nome": "Centzon Huitznahua",
+    "ingles": "Centzon Huitznahua",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_centzon_huitznahua_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "ouro": 250,
+    "favor": 20,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 90,
+        "nome": "Coyolxauhqui"
+      }
+    ]
+  },
+  {
+    "nome": "Pedra de Coyolxauhqui",
+    "ingles": "Coyolxauhqui's Stone",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_coyolxauhqui_stone_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      },
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 75,
+    "ouro": 75,
+    "favor": 30,
+    "tempo_s": 15,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 90,
+        "nome": "Coyolxauhqui"
+      }
+    ]
+  },
+  {
+    "nome": "Penitência de Tecciztécatl",
+    "ingles": "Tecciztécatl's Penance",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_tecciztecatls_penance_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "madeira": 250,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 90,
+        "nome": "Coyolxauhqui"
+      }
+    ]
+  },
+  {
+    "nome": "Metzliapán",
+    "ingles": "Metzliapán",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_metzliapan_icon",
+    "construcao_origem": [
+      {
+        "nome": "Doca (Asteca)",
+        "id": 79
+      }
+    ],
+    "comida": 200,
+    "favor": 10,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 90,
+        "nome": "Coyolxauhqui"
+      }
+    ]
+  },
+  {
+    "nome": "Colar de Globos Oculares",
+    "ingles": "Necklace of Eyeballs",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_necklace_of_eyeballs_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "ouro": 300,
+    "favor": 25,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 93,
+        "nome": "Mictlantecuhtli"
+      }
+    ]
+  },
+  {
+    "nome": "Presságio da Morte",
+    "ingles": "Omen of Death",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_omen_of_death_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "comida": 150,
+    "favor": 20,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 93,
+        "nome": "Mictlantecuhtli"
+      }
+    ]
+  },
+  {
+    "nome": "Ossos Preciosos",
+    "ingles": "Precious Bones",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_precious_bones_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      },
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "ouro": 250,
+    "favor": 15,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 93,
+        "nome": "Mictlantecuhtli"
+      }
+    ]
+  },
+  {
+    "nome": "Mictecah",
+    "ingles": "Mictecah",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_mictecah_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "madeira": 350,
+    "favor": 30,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 93,
+        "nome": "Mictlantecuhtli"
+      }
+    ]
+  },
+  {
+    "nome": "Água Queimada",
+    "ingles": "Burnt Water",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_burnt_water_icon",
+    "construcao_origem": [
+      {
+        "nome": "Torre de Sentinela"
+      }
+    ],
+    "madeira": 300,
+    "favor": 20,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 91,
+        "nome": "Tlaloc"
+      }
+    ]
+  },
+  {
+    "nome": "Tlaloques",
+    "ingles": "Tlaloques",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_tlaloques_icon",
+    "construcao_origem": [
+      {
+        "nome": "Calpulli",
+        "id": 10
+      }
+    ],
+    "comida": 150,
+    "favor": 20,
+    "tempo_s": 15,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 91,
+        "nome": "Tlaloc"
+      }
+    ]
+  },
+  {
+    "nome": "Tonacatépetl",
+    "ingles": "Tonacatépetl",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_tonacatepetl_icon",
+    "construcao_origem": [
+      {
+        "nome": "Calpulli",
+        "id": 10
+      }
+    ],
+    "ouro": 200,
+    "favor": 20,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 91,
+        "nome": "Tlaloc"
+      }
+    ]
+  },
+  {
+    "nome": "Quatro Jarros",
+    "ingles": "Four Jars",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_four_jars_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "ouro": 200,
+    "favor": 20,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 91,
+        "nome": "Tlaloc"
+      }
+    ]
+  },
+  {
+    "nome": "Tocha do Infortúnio",
+    "ingles": "Torch of Misfortune",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_torch_of_misfortune_icon",
+    "construcao_origem": [
+      {
+        "nome": "Templo (Asteca)",
+        "id": 7
+      }
+    ],
+    "madeira": 300,
+    "favor": 20,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 92,
+        "nome": "Xolotl"
+      }
+    ]
+  },
+  {
+    "nome": "Estrela da Noite",
+    "ingles": "Evening Star",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_evening_star_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 250,
+    "favor": 25,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 92,
+        "nome": "Xolotl"
+      }
+    ]
+  },
+  {
+    "nome": "Membros Torcidos",
+    "ingles": "Twisted Limbs",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_twisted_limbs_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 200,
+    "ouro": 200,
+    "favor": 25,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 92,
+        "nome": "Xolotl"
+      }
+    ]
+  },
+  {
+    "nome": "Quinametzin de Pele de Pedra",
+    "ingles": "Stoneskin Quinametzin",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_stoneskin_quinametzin_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 300,
+    "ouro": 200,
+    "favor": 15,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      },
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      },
+      {
+        "id": 92,
+        "nome": "Xolotl"
+      }
+    ]
+  },
+  {
+    "nome": "Chinampas",
+    "ingles": "Chinampas",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_chinampas_icon",
+    "construcao_origem": [
+      {
+        "nome": "Calpulli",
+        "id": 10
+      }
+    ],
+    "madeira": 250,
+    "ouro": 300,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Torre de Vigia Tzompantli",
+    "ingles": "Tzompantli Watch Tower",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_tzompantli_watch_tower_icon",
+    "construcao_origem": [
+      {
+        "nome": "Torre de Sentinela"
+      }
+    ],
+    "madeira": 250,
+    "ouro": 150,
+    "tempo_s": 15,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Provações de Temiminaloyan",
+    "ingles": "Temiminaloyan Trials",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_temiminaloyan_trials_icon",
+    "construcao_origem": [
+      {
+        "nome": "Torre de Sentinela"
+      }
+    ],
+    "comida": 400,
+    "ouro": 150,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Ameias (Asteca)",
+    "ingles": "Crenellations (Aztec)",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_crenellations_icon",
+    "construcao_origem": [
+      {
+        "nome": "Torre de Sentinela",
+        "id": 70
+      }
+    ],
+    "comida": 150,
+    "madeira": 150,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Armas de Pederneira",
+    "ingles": "Flint Weapons",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_flint_weapons_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "comida": 100,
+    "ouro": 100,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Armas de Jade",
+    "ingles": "Jade Weapons",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_jade_weapons_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "comida": 200,
+    "ouro": 200,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Armas de Obsidiana",
+    "ingles": "Obsidian Weapons",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_obsidian_weapons_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "comida": 450,
+    "ouro": 450,
+    "tempo_s": 50,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Armadura de Penas",
+    "ingles": "Feathered Armor",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_feathered_armor_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "comida": 75,
+    "ouro": 75,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Armadura Cerimonial",
+    "ingles": "Ceremonial Armor",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_ceremonial_armor_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "comida": 200,
+    "ouro": 150,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Armadura Sagrada",
+    "ingles": "Sacred Armor",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_sacred_armor_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "comida": 400,
+    "ouro": 400,
+    "tempo_s": 50,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Escudos Emplumados",
+    "ingles": "Feathered Shields",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_feathered_shields_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "madeira": 75,
+    "ouro": 75,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Escudo Cerimonial",
+    "ingles": "Ceremonial Shields",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_ceremonial_shields_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "madeira": 200,
+    "ouro": 150,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Escudos Sagrados",
+    "ingles": "Sacred Shields",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_sacred_shields_icon",
+    "construcao_origem": [
+      {
+        "nome": "Armaria"
+      }
+    ],
+    "madeira": 400,
+    "ouro": 350,
+    "tempo_s": 50,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados de Cabana de Guerra Médios",
+    "ingles": "Medium War Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_medium_war_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "comida": 150,
+    "ouro": 150,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados de Cabana de Guerra Pesada",
+    "ingles": "Heavy War Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_heavy_war_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "comida": 300,
+    "ouro": 300,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados da Cabana de Guerra Campeões",
+    "ingles": "Champion War Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_champion_war_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "comida": 500,
+    "ouro": 400,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Armadilhas Avançadas",
+    "ingles": "Advanced Traps",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_advanced_traps_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "madeira": 200,
+    "ouro": 200,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Convocar Soldados de Cabana de Guerra",
+    "ingles": "Levy War Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_levy_war_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "comida": 75,
+    "madeira": 150,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados da Cabana de Guerra Conscritos",
+    "ingles": "Conscript War Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_conscript_war_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana de Guerra",
+        "id": 74
+      }
+    ],
+    "comida": 100,
+    "madeira": 200,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados da Cabana do Nobre Médios",
+    "ingles": "Medium Noble's Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_medium_nobles_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 150,
+    "ouro": 150,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados da Cabana do Nobre Pesados",
+    "ingles": "Heavy Noble's Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_heavy_nobles_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 300,
+    "ouro": 300,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados da Cabana do Nobre Campeões",
+    "ingles": "Champion Noble's Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_champion_nobles_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 500,
+    "ouro": 400,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Convocar Soldados da Cabana do Nobre",
+    "ingles": "Levy Noble's Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_levy_nobles_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 150,
+    "madeira": 75,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados da Cabana do Nobre Conscritos",
+    "ingles": "Conscript Noble's Hut Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_conscript_nobles_hut_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Cabana do Nobre",
+        "id": 75
+      }
+    ],
+    "comida": 200,
+    "madeira": 100,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados do Grande Templo Médios",
+    "ingles": "Medium Great Temple Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_medium_great_temple_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 150,
+    "ouro": 150,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados do Grande Templo Pesados",
+    "ingles": "Heavy Great Temple Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_heavy_great_temple_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 300,
+    "ouro": 300,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados do Grande Templo Campeões",
+    "ingles": "Champion Great Temple Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_champion_great_temple_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 500,
+    "ouro": 400,
+    "tempo_s": 40,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Convocar Soldados do Grande Templo",
+    "ingles": "Levy Great Temple Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_levy_great_temple_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 150,
+    "madeira": 75,
+    "tempo_s": 20,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Soldados do Grande Templo Conscritos",
+    "ingles": "Conscript Great Temple Soldiers",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_conscript_great_temple_soldiers_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "comida": 200,
+    "madeira": 100,
+    "tempo_s": 30,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Cerimônia do Novo Fogo",
+    "ingles": "New Fire Ceremony",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_new_fire_ceremony_ability_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "tempo_s": 0,
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "Guarda Cósmica",
+    "ingles": "Cosmic Guard",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_cosmic_guard_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "tempo_s": 0,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ]
+  },
+  {
+    "nome": "A Chegada dos Deuses (Huitzilopochtli)",
+    "ingles": "Arrival of the Gods (Huitzilopochtli)",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_arrival_of_the_gods_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "tempo_s": 0,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      }
+    ]
+  },
+  {
+    "nome": "A Chegada dos Deuses (Tezcatlipoca)",
+    "ingles": "Arrival of the Gods (Tezcatlipoca)",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_arrival_of_the_gods_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "tempo_s": 0,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      }
+    ]
+  },
+  {
+    "nome": "A Chegada dos Deuses (Quetzalcoatl)",
+    "ingles": "Arrival of the Gods (Quetzalcoatl)",
+    "panteoes": [
+      {
+        "id": 7,
+        "nome": "Asteca"
+      }
+    ],
+    "icon": "aomr_arrival_of_the_gods_icon",
+    "construcao_origem": [
+      {
+        "nome": "Grande Templo",
+        "id": 77
+      }
+    ],
+    "tempo_s": 0,
+    "eras": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      }
+    ]
   }
 ]
