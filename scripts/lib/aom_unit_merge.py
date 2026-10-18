@@ -56,6 +56,8 @@ TIPO_LABEL_EN = {
     "Unidade mítica": "Mythic",
     "Arma de cerco": "Cerco",
     "Herói": "Hero",
+    "Batedor": "Scout",
+    "Aldeão": "Villager",
 }
 
 # Classes geridas pelo extrator. Qualquer outro rótulo em `tipo` é editorial
@@ -111,7 +113,10 @@ CATALOG_PROTO_ALIASES = {
     "Prometeus": "Promethean",
     "Autômato": "Automaton",
     "Automato": "Automaton",
+    "Oracle": "Oracle",
     "Oracle (Hero)": "OracleHero",
+    "Oráculo": "Oracle",
+    "Oráculo (Herói)": "OracleHero",
     "Murmillo (Hero)": "MurmilloHero",
     "Katapeltes (Hero)": "KatapeltesHero",
     "Turma (Hero)": "TurmaHero",

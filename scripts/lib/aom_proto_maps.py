@@ -44,6 +44,8 @@ UNIT_TYPE_ICON = {
     "Herói": "aomr_type_hero_icon",
     "Arma de cerco": "aomr_type_siege_weapon_icon",
     "Aldeão": "aomr_type_villager_icon",
+    "Batedor": "aomr_type_scout_icon",
+    "Scout": "aomr_type_scout_icon",
 }
 
 # Templos de campanha/cenário — ignorados; usa-se apenas o proto `Temple`.

@@ -50,7 +50,7 @@ function tipoTypeToneTextClass(typeLabel: string): string {
   if (t.startsWith("Cavalaria")) return "text-emerald-300";
   if (t.startsWith("Artilharia")) return "text-sky-300";
   if (t.startsWith("Herói") || t.startsWith("Hero")) return "text-yellow-300";
-  if (t.startsWith("Batedor")) return "text-zinc-300";
+  if (t.startsWith("Batedor") || t.startsWith("Scout")) return "text-zinc-300";
   if (
     t.startsWith("Mítica") ||
     t.startsWith("Mythic") ||
@@ -91,7 +91,7 @@ export function tipoTypeTagShellClass(typeLabel: string): string {
   if (t.startsWith("Herói") || t.startsWith("Hero")) {
     return `border-yellow-500/55 bg-yellow-950/40 ${text}`;
   }
-  if (t.startsWith("Batedor")) {
+  if (t.startsWith("Batedor") || t.startsWith("Scout")) {
     return `border-zinc-600 bg-zinc-900/90 ${text}`;
   }
   if (

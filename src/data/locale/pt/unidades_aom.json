@@ -745,6 +745,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -2272,6 +2276,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -3677,6 +3685,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -3807,6 +3819,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -3861,6 +3877,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -7742,6 +7762,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -9498,6 +9522,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -11946,6 +11974,10 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -12136,6 +12168,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -16227,5 +16263,52 @@
       }
     ],
     "icon": "aomr_lykaon_wolf_icon"
+  },
+  {
+    "id": 285,
+    "nome": "Oráculo",
+    "ingles": "Oracle",
+    "tipo": [
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 90,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 0,
+    "armadura_anticorte": 15,
+    "armadura_antiperfurante": 45,
+    "armadura_anticontusao": 99,
+    "construcao": [
+      {
+        "nome": "Templo (Atlante)",
+        "id": 24
+      }
+    ],
+    "comida": 40,
+    "madeira": 0,
+    "ouro": 60,
+    "favor": 0,
+    "custo_total": 100,
+    "populacao": 1,
+    "tempo_treinamento": 11,
+    "velocidade_movimento": 3.8,
+    "forte_contra": null,
+    "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
+    "icon": "aomr_oracle_icon"
   }
 ]
