@@ -1082,5 +1082,14 @@
   "aomr_ahuizotl_icon": "/assets/unit_humans/unit_aztec/ahuizotl_icon.webp",
   "aomr_ayotochtli_icon": "/assets/unit_humans/unit_aztec/ayotochtli_icon.webp",
   "aomr_titan_cipactli_icon": "/assets/unit_humans/unit_aztec/titan_cipactli_icon.webp",
-  "aomr_tunkuluchu_icon": "/assets/unit_humans/unit_aztec/tunkuluchu_icon.webp"
+  "aomr_tunkuluchu_icon": "/assets/unit_humans/unit_aztec/tunkuluchu_icon.webp",
+  "aomr_caravan_aztec_icon": "/assets/unit_humans/unit_aztec/caravan_aztec_icon.webp",
+  "aomr_fishing_ship_aztec_icon": "/assets/unit_humans/unit_aztec/fishing_ship_aztec_icon.webp",
+  "aomr_large_scorpion_icon": "/assets/unit_humans/unit_aztec/large_scorpion_icon.webp",
+  "aomr_teixiptla_huitz_icon": "/assets/unit_humans/unit_aztec/teixiptla_huitz_icon.webp",
+  "aomr_teixiptla_quetz_icon": "/assets/unit_humans/unit_aztec/teixiptla_quetz_icon.webp",
+  "aomr_teixiptla_tezca_icon": "/assets/unit_humans/unit_aztec/teixiptla_tezca_icon.webp",
+  "aomr_tepoztli_canoe_icon": "/assets/unit_humans/unit_aztec/tepoztli_canoe_icon.webp",
+  "aomr_tlacanexquimilli_icon": "/assets/unit_humans/unit_aztec/tlacanexquimilli_icon.webp",
+  "aomr_transport_ship_aztec_icon": "/assets/unit_humans/unit_aztec/transport_ship_aztec_icon.webp"
 }

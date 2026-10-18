@@ -9330,7 +9330,8 @@
     "forte_contra": "Artilharia :aomr_type_archer_icon:",
     "fraco_contra": "Cavalaria :aomr_type_cavalry_icon:",
     "icon": "aomr_quimchim_spy_icon",
-    "tempo_treinamento": 4
+    "tempo_treinamento": 4,
+    "favor": 0
   },
   {
     "id": 161,
@@ -9384,7 +9385,8 @@
     "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
     "icon": "aomr_warrior_priest_hero_icon",
     "tempo_treinamento": 11,
-    "dano_perfurante": 10
+    "dano_perfurante": 10,
+    "favor": 0
   },
   {
     "id": 162,
@@ -9444,7 +9446,8 @@
     "forte_contra": "Cavalaria :aomr_type_cavalry_icon:",
     "fraco_contra": "Artilharia :aomr_type_archer_icon:",
     "icon": "aomr_tlamanih_spearman_icon",
-    "tempo_treinamento": 9
+    "tempo_treinamento": 9,
+    "favor": 0
   },
   {
     "id": 163,
@@ -9505,7 +9508,8 @@
     "forte_contra": "Infantaria :aomr_type_infantry_icon:",
     "fraco_contra": "Cavalaria :aomr_type_cavalry_icon:",
     "icon": "aomr_tequihua_archer_icon",
-    "tempo_treinamento": 13.5
+    "tempo_treinamento": 13.5,
+    "favor": 0
   },
   {
     "id": 164,
@@ -9565,7 +9569,8 @@
     "forte_contra": "Artilharia :aomr_type_archer_icon:",
     "fraco_contra": "Cavalaria :aomr_type_cavalry_icon:",
     "icon": "aomr_coyote_warrior_icon",
-    "tempo_treinamento": 12
+    "tempo_treinamento": 12,
+    "favor": 0
   },
   {
     "id": 165,
@@ -9613,7 +9618,8 @@
     "forte_contra": "Infantaria :aomr_type_infantry_icon: | Cavalaria :aomr_type_cavalry_icon:",
     "fraco_contra": "Artilharia :aomr_type_archer_icon:",
     "icon": "aomr_ocelotl_warrior_icon",
-    "tempo_treinamento": 17
+    "tempo_treinamento": 17,
+    "favor": 0
   },
   {
     "id": 167,
@@ -9668,7 +9674,8 @@
     "forte_contra": "Infantaria :aomr_type_infantry_icon: | Cavalaria :aomr_type_cavalry_icon: | Artilharia :aomr_type_archer_icon:",
     "fraco_contra": "Cavalaria :aomr_type_cavalry_icon:",
     "icon": "aomr_eagle_warrior_icon",
-    "tempo_treinamento": 21
+    "tempo_treinamento": 21,
+    "favor": 0
   },
   {
     "id": 168,
@@ -9676,12 +9683,12 @@
     "ingles": "Otontin Smasher",
     "tipo": [
       {
-        "type": "Cerco",
-        "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -9727,7 +9734,8 @@
     "fraco_contra": "Infantaria :aomr_type_infantry_icon:",
     "icon": "aomr_medium_otontin_smasher_icon",
     "tempo_treinamento": 11,
-    "dano_cortante": 11
+    "dano_cortante": 11,
+    "favor": 0
   },
   {
     "id": 169,
@@ -9787,7 +9795,8 @@
     "forte_contra": "Infantaria :aomr_type_infantry_icon:",
     "fraco_contra": "Artilharia :aomr_type_archer_icon:",
     "icon": "aomr_medium_shorn_one_icon",
-    "tempo_treinamento": 8
+    "tempo_treinamento": 8,
+    "favor": 0
   },
   {
     "id": 170,
@@ -9847,7 +9856,8 @@
     "forte_contra": "Infantaria :aomr_type_infantry_icon: | Cavalaria :aomr_type_cavalry_icon:",
     "fraco_contra": "Infantaria :aomr_type_infantry_icon:",
     "icon": "aomr_jaguar_rider_icon",
-    "tempo_treinamento": 8.5
+    "tempo_treinamento": 8.5,
+    "favor": 0
   },
   {
     "id": 171,
@@ -10602,5 +10612,675 @@
     "fraco_contra": "Herói :aomr_type_hero_icon:",
     "dano_cortante": 80,
     "alcance": 2
+  },
+  {
+    "id": 183,
+    "nome": "Settler",
+    "ingles": "Settler",
+    "tipo": [
+      {
+        "type": "Villager",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Archaic :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 55,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 24,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Town Center (Aztec)",
+        "id": 9
+      }
+    ],
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 50,
+    "populacao": 1,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_aztec_icon",
+    "dano_perfurante": 12,
+    "alcance": 12
+  },
+  {
+    "id": 184,
+    "nome": "Arrow Canoe",
+    "ingles": "Arrow Canoe",
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 290,
+    "velocidade_de_ataque_atk_s": 1.425,
+    "dps": 11.4,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Dock (Aztec)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_arrow_canoe_icon",
+    "dano_perfurante": 8,
+    "alcance": 15
+  },
+  {
+    "id": 185,
+    "nome": "Tepoztli Canoe",
+    "ingles": "Tepoztli Canoe",
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 320,
+    "velocidade_de_ataque_atk_s": 1.425,
+    "dps": 35.625,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 10,
+    "construcao": [
+      {
+        "nome": "Dock (Aztec)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 7,
+    "icon": "aomr_tepoztli_canoe_icon",
+    "dano_cortante": 25,
+    "alcance": 2
+  },
+  {
+    "id": 186,
+    "nome": "Atlatl Siege Canoe",
+    "ingles": "Atlatl Siege Canoe",
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractArcherShip",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 250,
+    "velocidade_de_ataque_atk_s": 1.9,
+    "dps": 3.8,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Dock (Aztec)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_atlatl_siege_canoe_icon",
+    "dano_perfurante": 2,
+    "alcance": 20
+  },
+  {
+    "id": 187,
+    "nome": "Fishing Ship (Aztec)",
+    "ingles": "Fishing Ship (Aztec)",
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Archaic :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 100,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Dock (Aztec)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 50,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 50,
+    "populacao": 1,
+    "tempo_treinamento": 18,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_fishing_ship_aztec_icon"
+  },
+  {
+    "id": 188,
+    "nome": "Transport Ship (Aztec)",
+    "ingles": "Transport Ship (Aztec)",
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 180,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 80,
+    "construcao": [
+      {
+        "nome": "Dock (Aztec)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 110,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 110,
+    "populacao": 1,
+    "tempo_treinamento": 19,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_transport_ship_aztec_icon"
+  },
+  {
+    "id": 189,
+    "nome": "Pochtecatl Caravan",
+    "ingles": "Pochtecatl Caravan",
+    "tipo": [
+      {
+        "type": "Villager",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heroic :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 115,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Market (Aztec)",
+        "id": 80
+      }
+    ],
+    "comida": 100,
+    "madeira": 25,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 125,
+    "populacao": 1,
+    "tempo_treinamento": 18,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_caravan_aztec_icon"
+  },
+  {
+    "id": 190,
+    "nome": "Teixiptla (Huitzilopochtli)",
+    "ingles": "Teixiptla (Huitzilopochtli)",
+    "tipo": [
+      {
+        "type": "Hero",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "10"
+      }
+    ],
+    "pontos_de_vida": 300,
+    "velocidade_de_ataque_atk_s": 3,
+    "dps": 36,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 20,
+    "custo_total": 20,
+    "populacao": 2,
+    "tempo_treinamento": 6,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_teixiptla_huitz_icon",
+    "dano_divino": 12,
+    "alcance": 1.5,
+    "god_dono": [
+      {
+        "id": 84,
+        "nome": "Huitzilopochtli"
+      }
+    ],
+    "fraco_contra": null
+  },
+  {
+    "id": 191,
+    "nome": "Teixiptla (Tezcatlipoca)",
+    "ingles": "Teixiptla (Tezcatlipoca)",
+    "tipo": [
+      {
+        "type": "Hero",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "9"
+      }
+    ],
+    "pontos_de_vida": 250,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 16,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 20,
+    "custo_total": 20,
+    "populacao": 2,
+    "tempo_treinamento": 6,
+    "velocidade_movimento": 5,
+    "icon": "aomr_teixiptla_tezca_icon",
+    "dano_cortante": 8,
+    "alcance": 1,
+    "god_dono": [
+      {
+        "id": 83,
+        "nome": "Tezcatlipoca"
+      }
+    ],
+    "fraco_contra": null
+  },
+  {
+    "id": 192,
+    "nome": "Teixiptla (Quetzalcoatl)",
+    "ingles": "Teixiptla (Quetzalcoatl)",
+    "tipo": [
+      {
+        "type": "Hero",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 200,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 20,
+    "custo_total": 20,
+    "populacao": 2,
+    "tempo_treinamento": 6,
+    "velocidade_movimento": 4.5,
+    "icon": "aomr_teixiptla_quetz_icon",
+    "god_dono": [
+      {
+        "id": 82,
+        "nome": "Quetzalcoatl"
+      }
+    ],
+    "fraco_contra": null
+  },
+  {
+    "id": 193,
+    "nome": "Large Scorpion",
+    "ingles": "Large Scorpion",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "1.5"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      },
+      {
+        "type": "AbstractVillager",
+        "icon": "",
+        "value": "0.1"
+      }
+    ],
+    "pontos_de_vida": 150,
+    "velocidade_de_ataque_atk_s": 1.1,
+    "dps": 8.8,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 35,
+    "construcao": [],
+    "comida": 100,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 3,
+    "custo_total": 103,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_large_scorpion_icon",
+    "dano_cortante": 8,
+    "alcance": 0.5,
+    "god_dono": [
+      {
+        "id": 85,
+        "nome": "Malinalxochitl"
+      }
+    ],
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 194,
+    "nome": "Tlacanexquimilli",
+    "ingles": "Tlacanexquimilli",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mythic :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 175,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 9,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 40,
+    "construcao": [],
+    "comida": 100,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 8,
+    "custo_total": 108,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_tlacanexquimilli_icon",
+    "dano_cortante": 9,
+    "alcance": 0.75,
+    "god_dono": [
+      {
+        "id": 92,
+        "nome": "Xolotl"
+      }
+    ],
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 195,
+    "nome": "Anaconda",
+    "ingles": "Anaconda",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heroic :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 120,
+    "velocidade_de_ataque_atk_s": 2.2,
+    "dps": 88,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 50,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_anaconda_icon",
+    "dano_cortante": 40,
+    "alcance": 0.5,
+    "god_dono": [
+      {
+        "id": 89,
+        "nome": "Coatlicue"
+      }
+    ],
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
   }
 ]
