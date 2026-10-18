@@ -81,6 +81,7 @@ const TIPO_ICON_ORDER = [
   "aomr_type_siege_weapon_icon",
   "aomr_type_hero_icon",
   "aomr_type_myth_unit_icon",
+  "aomr_type_flying_unit_icon",
   "aomr_type_scout_icon",
   "aomr_type_ship_icon",
   "aomr_type_villager_icon",

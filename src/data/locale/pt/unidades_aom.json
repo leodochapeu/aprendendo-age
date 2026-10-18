@@ -472,6 +472,10 @@
         "icon": "aomr_type_myth_unit_icon"
       },
       {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
+      },
+      {
         "type": "Batedor",
         "icon": "aomr_type_scout_icon"
       }
@@ -3134,6 +3138,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -4865,6 +4873,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -4983,12 +4995,16 @@
   },
   {
     "id": 72,
-    "nome": "Roc",
+    "nome": "Roca",
     "ingles": "Roc",
     "tipo": [
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -5031,11 +5047,11 @@
     "habilidades": [
       {
         "nome": "Terra",
-        "descricao": "Pode pousar para carregar ou descarregar unidades. Quando pousado, o Roc também pode ser atacado por unidades corpo a corpo."
+        "descricao": "Pode pousar para carregar ou descarregar unidades. Quando pousado, a Roca também pode ser atacada por unidades corpo a corpo."
       },
       {
         "nome": "Voar",
-        "descricao": "Pode decolar e voar para transportar unidades. Se o Roc for abatido, as unidades guarnecidas sofrerão dano com a queda."
+        "descricao": "Pode decolar e voar para transportar unidades. Se a Roca for abatida, as unidades guarnecidas sofrerão dano com a queda."
       }
     ],
     "historia": "Nome científico – Aepyornis maximus\nTamanho – 30 m de envergadura\nDieta – carnívora, supostamente elefantes\n\nRelatos do roc, um pássaro gigante, vêm a nós das Mil e Uma Noites e dos relatos de Marco Polo. Sinbad descreve o roc como enorme, com asas de 14 metros de comprimento e um corpo volumoso. Em um conto, um roc carrega Sinbad para a segurança após um naufrágio; em outro, rocs destroem navios lançando enormes pedras sobre eles. Marco Polo fala de rocs de Madagascar e como um enviado de lá presenteou a corte chinesa com uma enorme pena de roc. Uma ave imensa incapaz de voar pode realmente ter sobrevivido na ilha até o século XVI, antes de ser extinta."
@@ -7042,6 +7058,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -7774,6 +7794,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -8828,6 +8852,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -10117,6 +10145,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -11553,6 +11585,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -11677,6 +11713,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -11721,6 +11761,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
@@ -13758,6 +13802,10 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [
