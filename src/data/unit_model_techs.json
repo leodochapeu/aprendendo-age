@@ -8950,14 +8950,14 @@
             "rank": 4
           },
           {
-            "tag": "elitedojosoldiers",
-            "catalog": "elitedojosoldiers",
-            "rank": 5
-          },
-          {
             "tag": "championdojosoldiers",
             "catalog": "championdojosoldiers",
             "rank": 6
+          },
+          {
+            "tag": "elitedojosoldiers",
+            "catalog": "elitedojosoldiers",
+            "rank": 7
           }
         ]
       }
@@ -9066,14 +9066,14 @@
             "rank": 4
           },
           {
-            "tag": "elitedojosoldiers",
-            "catalog": "elitedojosoldiers",
-            "rank": 5
-          },
-          {
             "tag": "championdojosoldiers",
             "catalog": "championdojosoldiers",
             "rank": 6
+          },
+          {
+            "tag": "elitedojosoldiers",
+            "catalog": "elitedojosoldiers",
+            "rank": 7
           }
         ]
       }
@@ -11319,504 +11319,6 @@
       ]
     }
   },
-  "58": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/58/body-base.glb"
-        }
-      ],
-      "weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/58/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb"
-        }
-      ],
-      "shield": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/58/shield-base.glb"
-        }
-      ],
-      "bow": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/58/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb"
-        }
-      ]
-    }
-  },
-  "59": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/59/body-base.glb"
-        }
-      ],
-      "weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/59/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb"
-        }
-      ],
-      "shield": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/59/shield-base.glb"
-        }
-      ],
-      "bow": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/59/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb"
-        }
-      ]
-    }
-  },
   "68": {
     "groups": [
       {
@@ -12040,300 +11542,6 @@
             "bottomlessstomach"
           ],
           "url": "/assets/unit-models/tech/80/body-bottomlessstomach.glb"
-        }
-      ]
-    }
-  },
-  "82": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/82/body-base.glb"
-        }
-      ],
-      "weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/82/weapon-base.glb"
-        }
-      ],
-      "shield": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/82/shield-base.glb"
-        }
-      ],
-      "bow": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/82/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb"
-        }
-      ]
-    }
-  },
-  "84": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/84/body-base.glb"
-        }
-      ],
-      "rider": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/84/rider-slice-base.glb"
-        }
-      ],
-      "rider-weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb"
         }
       ]
     }
@@ -20118,7 +19326,7 @@
           {
             "tag": "elitedojosoldiers",
             "catalog": "elitedojosoldiers",
-            "rank": 5
+            "rank": 7
           }
         ]
       },
@@ -20308,5 +19516,1009 @@
         }
       ]
     }
+  },
+  "58": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/58/body-base.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/58/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/weapon-ironweapons.glb",
+          "stance": "hack"
+        }
+      ],
+      "shield": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/58/shield-base.glb"
+        }
+      ],
+      "bow": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/58/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/58/bow-ironweapons.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "59": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/59/body-base.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/59/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/weapon-ironweapons.glb",
+          "stance": "hack"
+        }
+      ],
+      "shield": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/59/shield-base.glb"
+        }
+      ],
+      "bow": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/59/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/59/bow-ironweapons.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "82": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/82/body-base.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/82/weapon-base.glb",
+          "stance": "hack"
+        }
+      ],
+      "shield": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/82/shield-base.glb",
+          "stance": "hack"
+        }
+      ],
+      "bow": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/82/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-base.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-copperweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-bronzeweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb",
+          "stance": "pierce"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/82/bow-ironweapons.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "84": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/84/body-base.glb"
+        }
+      ],
+      "rider": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/84/rider-slice-base.glb"
+        }
+      ],
+      "rider-weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/84/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        }
+      ],
+      "rider-javelin": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/84/rider-javelin-slice-base.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "114": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/114/body-base.glb"
+        }
+      ],
+      "rider": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/114/rider-slice-base.glb"
+        }
+      ],
+      "rider-weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/114/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        }
+      ],
+      "rider-javelin": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/114/rider-javelin-slice-base.glb",
+          "stance": "pierce"
+        }
+      ],
+      "rider-shield": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/114/rider-shield-slice-base.glb"
+        }
+      ],
+      "rider-helmet": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/114/rider-helmet-slice-base.glb"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "116": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/116/body-base.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/116/weapon-base.glb",
+          "stance": "hack"
+        }
+      ],
+      "bow": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/116/bow-base.glb",
+          "stance": "pierce"
+        }
+      ],
+      "medusahead": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/116/medusahead-base.glb",
+          "stance": "hack"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "159": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/159/body-base.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/159/weapon-base.glb",
+          "stance": "hack"
+        }
+      ],
+      "bow": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/159/bow-base.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
   }
 }

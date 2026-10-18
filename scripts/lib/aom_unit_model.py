@@ -1572,7 +1572,7 @@ def visual_primitives(
     attached: list[str] = []
     for name, source in attachments:
         low = name.lower()
-        if low in PROJECTILE_ATTACHMENTS:
+        if low in PROJECTILE_ATTACHMENTS and low != (only_head or "").lower():
             continue
         if has_weapon and low in TOOL_ATTACHMENTS:
             continue

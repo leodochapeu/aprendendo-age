@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { UnidadeModelViewer } from "@/components/unidade/UnidadeModelViewer";
 import tokenAssetMap from "@/data/token_asset_map.json";
 import { useCatalog } from "@/hooks/useCatalog";
 import { resolveTokenIconSrc } from "@/lib/tokenIconUrl";
-import { projectionUrls, toggleTechTag, unitTechVisual, type TechGroup } from "@/lib/unitModelTechs";
+import { useTranslation } from "@/hooks/useTranslation";
+import { projectionUrls, toggleTechTag, unitTechVisual, type TechGroup, type WeaponStance } from "@/lib/unitModelTechs";
 
 type UnidadeProjectionProps = {
   unitId: number;
@@ -38,11 +39,22 @@ for (const [token, src] of Object.entries(tokenAssetMap)) {
   iconByTag.set(tag, { src, label });
 }
 
+const STANCE_BUTTON =
+  "inline-flex h-10 min-w-10 cursor-pointer items-center justify-center rounded-lg border px-1.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40";
+
 export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: UnidadeProjectionProps) {
   const { tecnologias } = useCatalog();
+  const { t } = useTranslation();
   const visual = unitTechVisual(unitId);
   const [selected, setSelected] = useState<string[]>([]);
-  const urls = projectionUrls(visual, selected, fallbackUrl);
+  const [stance, setStance] = useState<WeaponStance>("hack");
+  useEffect(() => {
+    setSelected([]);
+    setStance("hack");
+  }, [unitId]);
+  const urls = projectionUrls(visual, selected, fallbackUrl, stance);
+  const hackIcon = resolveTokenIconSrc("hackdamage");
+  const pierceIcon = resolveTokenIconSrc("piercedamage");
 
   const byCatalog = useMemo(() => {
     const map = new Map<string, { nome: string; icon?: string }>();
@@ -71,7 +83,7 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
         <div className="mb-3 flex flex-wrap items-center gap-3">
           {visual.groups.map((group) => (
             <div key={group.id} className="flex flex-wrap gap-1.5">
-              {group.options.map((option) => {
+              {[...group.options].sort((a, b) => a.rank - b.rank || a.tag.localeCompare(b.tag)).map((option) => {
                 const info = byCatalog.get(option.tag) ?? byCatalog.get(option.catalog);
                 const fallback = iconByTag.get(option.tag);
                 const pressed = selected.includes(option.tag);
@@ -101,6 +113,32 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
               })}
             </div>
           ))}
+          {visual.stance ? (
+            <div className="ml-auto flex gap-1.5">
+              {(
+                [
+                  ["hack", hackIcon, t("spreadsheet.unidades.hackDamage")],
+                  ["pierce", pierceIcon, t("spreadsheet.unidades.pierceDamage")],
+                ] as const
+              ).map(([mode, icon, label]) => (
+                <button
+                  key={mode}
+                  type="button"
+                  title={label}
+                  aria-label={label}
+                  aria-pressed={stance === mode}
+                  onClick={() => setStance(mode)}
+                  className={`${STANCE_BUTTON} ${
+                    stance === mode
+                      ? "border-amber-400/70 bg-amber-500/15 ring-1 ring-amber-400/60"
+                      : "border-aom-border bg-black/25 hover:border-amber-400/40 hover:bg-amber-500/10"
+                  }`}
+                >
+                  {icon ? <img src={icon} alt="" className="h-7 w-7 object-contain" /> : null}
+                </button>
+              ))}
+            </div>
+          ) : null}
         </div>
       ) : null}
       <UnidadeModelViewer urls={urls} hero={hero} />

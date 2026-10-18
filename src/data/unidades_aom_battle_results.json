@@ -1207,15 +1207,6 @@
   },
   {
     "attacker": "hoplita",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "hoplita",
-    "mode": "attributes_fallback",
-    "attacker_id": 1,
-    "defender_id": 143
-  },
-  {
-    "attacker": "hoplita",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "hoplita",
@@ -2626,15 +2617,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 2,
     "defender_id": 142
-  },
-  {
-    "attacker": "hippeis",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "hippeis",
-    "mode": "mode_category_battle",
-    "attacker_id": 2,
-    "defender_id": 143
   },
   {
     "attacker": "hippeis",
@@ -4051,15 +4033,6 @@
   },
   {
     "attacker": "toxotes",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 3,
-    "defender_id": 143
-  },
-  {
-    "attacker": "toxotes",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -5470,15 +5443,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 4,
     "defender_id": 142
-  },
-  {
-    "attacker": "hipaspista",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 4,
-    "defender_id": 143
   },
   {
     "attacker": "hipaspista",
@@ -6895,15 +6859,6 @@
   },
   {
     "attacker": "prodromos",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "prodromos",
-    "mode": "attributes_fallback",
-    "attacker_id": 5,
-    "defender_id": 143
-  },
-  {
-    "attacker": "prodromos",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "prodromos",
@@ -8314,15 +8269,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 6,
     "defender_id": 142
-  },
-  {
-    "attacker": "peltasta",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "peltasta",
-    "mode": "mode_category_battle",
-    "attacker_id": 6,
-    "defender_id": 143
   },
   {
     "attacker": "peltasta",
@@ -9739,15 +9685,6 @@
   },
   {
     "attacker": "machadeiro",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 7,
-    "defender_id": 143
-  },
-  {
-    "attacker": "machadeiro",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -11158,15 +11095,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 8,
     "defender_id": 142
-  },
-  {
-    "attacker": "lanceiro",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 8,
-    "defender_id": 143
   },
   {
     "attacker": "lanceiro",
@@ -12583,15 +12511,6 @@
   },
   {
     "attacker": "fundeiro",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "fundeiro",
-    "mode": "mode_category_battle",
-    "attacker_id": 9,
-    "defender_id": 143
-  },
-  {
-    "attacker": "fundeiro",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "fundeiro",
@@ -14002,15 +13921,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 10,
     "defender_id": 142
-  },
-  {
-    "attacker": "cameleiro",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "cameleiro",
-    "mode": "mode_category_battle",
-    "attacker_id": 10,
-    "defender_id": 143
   },
   {
     "attacker": "cameleiro",
@@ -15427,15 +15337,6 @@
   },
   {
     "attacker": "arqueiro-em-biga",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "arqueiro-em-biga",
-    "mode": "attributes_fallback",
-    "attacker_id": 12,
-    "defender_id": 143
-  },
-  {
-    "attacker": "arqueiro-em-biga",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "arqueiro-em-biga",
@@ -16846,15 +16747,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 13,
     "defender_id": 142
-  },
-  {
-    "attacker": "elefante-de-guerra",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "elefante-de-guerra",
-    "mode": "mode_category_battle",
-    "attacker_id": 13,
-    "defender_id": 143
   },
   {
     "attacker": "elefante-de-guerra",
@@ -18271,15 +18163,6 @@
   },
   {
     "attacker": "berserker",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 14,
-    "defender_id": 143
-  },
-  {
-    "attacker": "berserker",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -19690,15 +19573,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 15,
     "defender_id": 142
-  },
-  {
-    "attacker": "lancador-de-machados",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 15,
-    "defender_id": 143
   },
   {
     "attacker": "lancador-de-machados",
@@ -21115,15 +20989,6 @@
   },
   {
     "attacker": "hird",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 16,
-    "defender_id": 143
-  },
-  {
-    "attacker": "hird",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -22534,15 +22399,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 17,
     "defender_id": 142
-  },
-  {
-    "attacker": "cavalaria-incursora",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "cavalaria-incursora",
-    "mode": "mode_category_battle",
-    "attacker_id": 17,
-    "defender_id": 143
   },
   {
     "attacker": "cavalaria-incursora",
@@ -23959,15 +23815,6 @@
   },
   {
     "attacker": "huscarl",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "huscarl",
-    "mode": "mode_category_battle",
-    "attacker_id": 18,
-    "defender_id": 143
-  },
-  {
-    "attacker": "huscarl",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "huscarl",
@@ -25378,15 +25225,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 19,
     "defender_id": 142
-  },
-  {
-    "attacker": "jarl",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "jarl",
-    "mode": "attributes_fallback",
-    "attacker_id": 19,
-    "defender_id": 143
   },
   {
     "attacker": "jarl",
@@ -26803,15 +26641,6 @@
   },
   {
     "attacker": "murmilo",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 20,
-    "defender_id": 143
-  },
-  {
-    "attacker": "murmilo",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -28225,15 +28054,6 @@
   },
   {
     "attacker": "katapeltes",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 21,
-    "defender_id": 143
-  },
-  {
-    "attacker": "katapeltes",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "katapeltes",
@@ -29644,15 +29464,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 22,
     "defender_id": 142
-  },
-  {
-    "attacker": "turma",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "turma",
-    "mode": "mode_category_battle",
-    "attacker_id": 22,
-    "defender_id": 143
   },
   {
     "attacker": "turma",
@@ -31069,15 +30880,6 @@
   },
   {
     "attacker": "quirobalista",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "quirobalista",
-    "mode": "attributes_fallback",
-    "attacker_id": 23,
-    "defender_id": 143
-  },
-  {
-    "attacker": "quirobalista",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "quirobalista",
@@ -32488,15 +32290,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 24,
     "defender_id": 142
-  },
-  {
-    "attacker": "contarius",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "contarius",
-    "mode": "mode_category_battle",
-    "attacker_id": 24,
-    "defender_id": 143
   },
   {
     "attacker": "contarius",
@@ -33913,15 +33706,6 @@
   },
   {
     "attacker": "arcus",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 25,
-    "defender_id": 143
-  },
-  {
-    "attacker": "arcus",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -35335,15 +35119,6 @@
   },
   {
     "attacker": "espadachim-de-dao",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "espadachim-de-dao",
-    "mode": "attributes_fallback",
-    "attacker_id": 26,
-    "defender_id": 143
-  },
-  {
-    "attacker": "espadachim-de-dao",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "espadachim-de-dao",
@@ -36754,15 +36529,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 27,
     "defender_id": 142
-  },
-  {
-    "attacker": "alabardeiro-ge",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 27,
-    "defender_id": 143
   },
   {
     "attacker": "alabardeiro-ge",
@@ -38179,15 +37945,6 @@
   },
   {
     "attacker": "lanceiro-wuzu",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "lanceiro-wuzu",
-    "mode": "mode_category_battle",
-    "attacker_id": 28,
-    "defender_id": 143
-  },
-  {
-    "attacker": "lanceiro-wuzu",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "lanceiro-wuzu",
@@ -39598,15 +39355,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 29,
     "defender_id": 142
-  },
-  {
-    "attacker": "arqueiro-de-fogo",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 29,
-    "defender_id": 143
   },
   {
     "attacker": "arqueiro-de-fogo",
@@ -41023,15 +40771,6 @@
   },
   {
     "attacker": "chu-ko-nu",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "chu-ko-nu",
-    "mode": "attributes_fallback",
-    "attacker_id": 30,
-    "defender_id": 143
-  },
-  {
-    "attacker": "chu-ko-nu",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "chu-ko-nu",
@@ -42442,15 +42181,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 31,
     "defender_id": 142
-  },
-  {
-    "attacker": "cavalaria-de-cavalo-branco",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "cavalaria-de-cavalo-branco",
-    "mode": "mode_category_battle",
-    "attacker_id": 31,
-    "defender_id": 143
   },
   {
     "attacker": "cavalaria-de-cavalo-branco",
@@ -43867,15 +43597,6 @@
   },
   {
     "attacker": "samurai",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "samurai",
-    "mode": "attributes_fallback",
-    "attacker_id": 32,
-    "defender_id": 143
-  },
-  {
-    "attacker": "samurai",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "samurai",
@@ -45289,15 +45010,6 @@
   },
   {
     "attacker": "shinobi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "shinobi",
-    "mode": "mode_category_battle",
-    "attacker_id": 33,
-    "defender_id": 143
-  },
-  {
-    "attacker": "shinobi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "shinobi",
@@ -46708,15 +46420,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 34,
     "defender_id": 142
-  },
-  {
-    "attacker": "mirmidao",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "mirmidao",
-    "mode": "attributes_fallback",
-    "attacker_id": 34,
-    "defender_id": 143
   },
   {
     "attacker": "mirmidao",
@@ -48133,15 +47836,6 @@
   },
   {
     "attacker": "gastrafeta",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "gastrafeta",
-    "mode": "attributes_fallback",
-    "attacker_id": 35,
-    "defender_id": 143
-  },
-  {
-    "attacker": "gastrafeta",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "gastrafeta",
@@ -49552,15 +49246,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 36,
     "defender_id": 142
-  },
-  {
-    "attacker": "hetairos",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "hetairos",
-    "mode": "mode_category_battle",
-    "attacker_id": 36,
-    "defender_id": 143
   },
   {
     "attacker": "hetairos",
@@ -50977,15 +50662,6 @@
   },
   {
     "attacker": "fanatico",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "fanatico",
-    "mode": "attributes_fallback",
-    "attacker_id": 37,
-    "defender_id": 143
-  },
-  {
-    "attacker": "fanatico",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "fanatico",
@@ -52396,15 +52072,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 38,
     "defender_id": 142
-  },
-  {
-    "attacker": "cavalaria-de-tigre",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "cavalaria-de-tigre",
-    "mode": "mode_category_battle",
-    "attacker_id": 38,
-    "defender_id": 143
   },
   {
     "attacker": "cavalaria-de-tigre",
@@ -53821,15 +53488,6 @@
   },
   {
     "attacker": "pegaso",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 39,
-    "defender_id": 143
-  },
-  {
-    "attacker": "pegaso",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -55240,15 +54898,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 40,
     "defender_id": 142
-  },
-  {
-    "attacker": "minotauro",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 40,
-    "defender_id": 143
   },
   {
     "attacker": "minotauro",
@@ -56665,15 +56314,6 @@
   },
   {
     "attacker": "centauro",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "centauro",
-    "mode": "attributes_fallback",
-    "attacker_id": 41,
-    "defender_id": 143
-  },
-  {
-    "attacker": "centauro",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "centauro",
@@ -58084,15 +57724,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 42,
     "defender_id": 142
-  },
-  {
-    "attacker": "ciclope",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 42,
-    "defender_id": 143
   },
   {
     "attacker": "ciclope",
@@ -59509,15 +59140,6 @@
   },
   {
     "attacker": "anubita",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 43,
-    "defender_id": 143
-  },
-  {
-    "attacker": "anubita",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "anubita",
@@ -60928,15 +60550,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 44,
     "defender_id": 142
-  },
-  {
-    "attacker": "wadjet",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "wadjet",
-    "mode": "attributes_fallback",
-    "attacker_id": 44,
-    "defender_id": 143
   },
   {
     "attacker": "wadjet",
@@ -62353,15 +61966,6 @@
   },
   {
     "attacker": "esfinge",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 45,
-    "defender_id": 143
-  },
-  {
-    "attacker": "esfinge",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "esfinge",
@@ -63772,15 +63376,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 46,
     "defender_id": 142
-  },
-  {
-    "attacker": "troll",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "troll",
-    "mode": "attributes_fallback",
-    "attacker_id": 46,
-    "defender_id": 143
   },
   {
     "attacker": "troll",
@@ -65197,15 +64792,6 @@
   },
   {
     "attacker": "einheri",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 47,
-    "defender_id": 143
-  },
-  {
-    "attacker": "einheri",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "einheri",
@@ -66616,15 +66202,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 49,
     "defender_id": 142
-  },
-  {
-    "attacker": "valquiria",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 49,
-    "defender_id": 143
   },
   {
     "attacker": "valquiria",
@@ -68041,15 +67618,6 @@
   },
   {
     "attacker": "draugr",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "draugr",
-    "mode": "attributes_fallback",
-    "attacker_id": 50,
-    "defender_id": 143
-  },
-  {
-    "attacker": "draugr",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "draugr",
@@ -69463,15 +69031,6 @@
   },
   {
     "attacker": "prometeano",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 51,
-    "defender_id": 143
-  },
-  {
-    "attacker": "prometeano",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "prometeano",
@@ -70882,15 +70441,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 53,
     "defender_id": 142
-  },
-  {
-    "attacker": "automato",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 53,
-    "defender_id": 143
   },
   {
     "attacker": "automato",
@@ -72307,15 +71857,6 @@
   },
   {
     "attacker": "caladria",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 54,
-    "defender_id": 143
-  },
-  {
-    "attacker": "caladria",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -73729,15 +73270,6 @@
   },
   {
     "attacker": "qilin",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "qilin",
-    "mode": "attributes_fallback",
-    "attacker_id": 55,
-    "defender_id": 143
-  },
-  {
-    "attacker": "qilin",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "qilin",
@@ -75148,15 +74680,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 56,
     "defender_id": 142
-  },
-  {
-    "attacker": "yazi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 56,
-    "defender_id": 143
   },
   {
     "attacker": "yazi",
@@ -76573,15 +76096,6 @@
   },
   {
     "attacker": "qiongqi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 57,
-    "defender_id": 143
-  },
-  {
-    "attacker": "qiongqi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "qiongqi",
@@ -77995,15 +77509,6 @@
   },
   {
     "attacker": "jasao-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "jasao-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 58,
-    "defender_id": 143
-  },
-  {
-    "attacker": "jasao-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "jasao-heroi",
@@ -79417,15 +78922,6 @@
   },
   {
     "attacker": "teseu-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "teseu-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 59,
-    "defender_id": 143
-  },
-  {
-    "attacker": "teseu-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "teseu-heroi",
@@ -80836,15 +80332,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 60,
     "defender_id": 142
-  },
-  {
-    "attacker": "ajax-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "ajax-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 60,
-    "defender_id": 143
   },
   {
     "attacker": "ajax-heroi",
@@ -82258,15 +81745,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 61,
     "defender_id": 142
-  },
-  {
-    "attacker": "farao-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "farao-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 61,
-    "defender_id": 143
   },
   {
     "attacker": "farao-heroi",
@@ -83683,15 +83161,6 @@
   },
   {
     "attacker": "sacerdote-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 62,
-    "defender_id": 143
-  },
-  {
-    "attacker": "sacerdote-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -85105,15 +84574,6 @@
   },
   {
     "attacker": "hersir-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "hersir-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 63,
-    "defender_id": 143
-  },
-  {
-    "attacker": "hersir-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "hersir-heroi",
@@ -86524,15 +85984,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 64,
     "defender_id": 142
-  },
-  {
-    "attacker": "oraculo-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "oraculo-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 64,
-    "defender_id": 143
   },
   {
     "attacker": "oraculo-heroi",
@@ -87949,15 +87400,6 @@
   },
   {
     "attacker": "pioneiro-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 65,
-    "defender_id": 143
-  },
-  {
-    "attacker": "pioneiro-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -89368,15 +88810,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 66,
     "defender_id": 142
-  },
-  {
-    "attacker": "hidra",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 66,
-    "defender_id": 143
   },
   {
     "attacker": "hidra",
@@ -90793,15 +90226,6 @@
   },
   {
     "attacker": "manticora",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "manticora",
-    "mode": "attributes_fallback",
-    "attacker_id": 67,
-    "defender_id": 143
-  },
-  {
-    "attacker": "manticora",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "manticora",
@@ -92212,15 +91636,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 68,
     "defender_id": 142
-  },
-  {
-    "attacker": "leao-de-nemeia",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 68,
-    "defender_id": 143
   },
   {
     "attacker": "leao-de-nemeia",
@@ -93637,15 +93052,6 @@
   },
   {
     "attacker": "petsuchos",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 69,
-    "defender_id": 143
-  },
-  {
-    "attacker": "petsuchos",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -95059,15 +94465,6 @@
   },
   {
     "attacker": "escaravelho",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 70,
-    "defender_id": 143
-  },
-  {
-    "attacker": "escaravelho",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "escaravelho",
@@ -96481,15 +95878,6 @@
   },
   {
     "attacker": "homem-escorpiao",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 71,
-    "defender_id": 143
-  },
-  {
-    "attacker": "homem-escorpiao",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "homem-escorpiao",
@@ -97900,15 +97288,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 72,
     "defender_id": 142
-  },
-  {
-    "attacker": "gigante-de-gelo",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 72,
-    "defender_id": 143
   },
   {
     "attacker": "gigante-de-gelo",
@@ -99325,15 +98704,6 @@
   },
   {
     "attacker": "javali-de-batalha",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 73,
-    "defender_id": 143
-  },
-  {
-    "attacker": "javali-de-batalha",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "javali-de-batalha",
@@ -100744,15 +100114,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 74,
     "defender_id": 142
-  },
-  {
-    "attacker": "gigante-de-montanha",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 74,
-    "defender_id": 143
   },
   {
     "attacker": "gigante-de-montanha",
@@ -102169,15 +101530,6 @@
   },
   {
     "attacker": "gigante-das-rochas",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 75,
-    "defender_id": 143
-  },
-  {
-    "attacker": "gigante-das-rochas",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "gigante-das-rochas",
@@ -103591,15 +102943,6 @@
   },
   {
     "attacker": "beemote",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 76,
-    "defender_id": 143
-  },
-  {
-    "attacker": "beemote",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "beemote",
@@ -105010,15 +104353,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 77,
     "defender_id": 142
-  },
-  {
-    "attacker": "satiro",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "satiro",
-    "mode": "attributes_fallback",
-    "attacker_id": 77,
-    "defender_id": 143
   },
   {
     "attacker": "satiro",
@@ -106435,15 +105769,6 @@
   },
   {
     "attacker": "passaro-de-estinfalo",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 78,
-    "defender_id": 143
-  },
-  {
-    "attacker": "passaro-de-estinfalo",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "passaro-de-estinfalo",
@@ -107857,15 +107182,6 @@
   },
   {
     "attacker": "taowu",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 79,
-    "defender_id": 143
-  },
-  {
-    "attacker": "taowu",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "taowu",
@@ -109276,15 +108592,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 80,
     "defender_id": 142
-  },
-  {
-    "attacker": "taotie",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 80,
-    "defender_id": 143
   },
   {
     "attacker": "taotie",
@@ -110701,15 +110008,6 @@
   },
   {
     "attacker": "baihu",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 81,
-    "defender_id": 143
-  },
-  {
-    "attacker": "baihu",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "baihu",
@@ -112123,15 +111421,6 @@
   },
   {
     "attacker": "hercules-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "hercules-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 82,
-    "defender_id": 143
-  },
-  {
-    "attacker": "hercules-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "hercules-heroi",
@@ -113545,15 +112834,6 @@
   },
   {
     "attacker": "atalanta-heroina",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "atalanta-heroina",
-    "mode": "attributes_fallback",
-    "attacker_id": 83,
-    "defender_id": 143
-  },
-  {
-    "attacker": "atalanta-heroina",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "atalanta-heroina",
@@ -114964,15 +114244,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 84,
     "defender_id": 142
-  },
-  {
-    "attacker": "aquiles-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "aquiles-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 84,
-    "defender_id": 143
   },
   {
     "attacker": "aquiles-heroi",
@@ -116389,15 +115660,6 @@
   },
   {
     "attacker": "godi-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 85,
-    "defender_id": 143
-  },
-  {
-    "attacker": "godi-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "draw",
     "winner_name": null,
@@ -117808,15 +117070,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 86,
     "defender_id": 142
-  },
-  {
-    "attacker": "murmilo-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 86,
-    "defender_id": 143
   },
   {
     "attacker": "murmilo-heroi",
@@ -119233,15 +118486,6 @@
   },
   {
     "attacker": "katapeltes-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "katapeltes-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 87,
-    "defender_id": 143
-  },
-  {
-    "attacker": "katapeltes-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "katapeltes-heroi",
@@ -120652,15 +119896,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 88,
     "defender_id": 142
-  },
-  {
-    "attacker": "turma-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "turma-heroi",
-    "mode": "mode_category_battle",
-    "attacker_id": 88,
-    "defender_id": 143
   },
   {
     "attacker": "turma-heroi",
@@ -122077,15 +121312,6 @@
   },
   {
     "attacker": "quirobalista-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "quirobalista-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 89,
-    "defender_id": 143
-  },
-  {
-    "attacker": "quirobalista-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "quirobalista-heroi",
@@ -123499,15 +122725,6 @@
   },
   {
     "attacker": "contarius-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "contarius-heroi",
-    "mode": "mode_category_battle",
-    "attacker_id": 90,
-    "defender_id": 143
-  },
-  {
-    "attacker": "contarius-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "contarius-heroi",
@@ -124918,15 +124135,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 91,
     "defender_id": 142
-  },
-  {
-    "attacker": "arcus-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 91,
-    "defender_id": 143
   },
   {
     "attacker": "arcus-heroi",
@@ -126343,15 +125551,6 @@
   },
   {
     "attacker": "sabio-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 94,
-    "defender_id": 143
-  },
-  {
-    "attacker": "sabio-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -127765,15 +126964,6 @@
   },
   {
     "attacker": "odisseu-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "odisseu-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 95,
-    "defender_id": 143
-  },
-  {
-    "attacker": "odisseu-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "odisseu-heroi",
@@ -129184,15 +128374,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 96,
     "defender_id": 142
-  },
-  {
-    "attacker": "hipolita-heroina",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "hipolita-heroina",
-    "mode": "attributes_fallback",
-    "attacker_id": 96,
-    "defender_id": 143
   },
   {
     "attacker": "hipolita-heroina",
@@ -130609,15 +129790,6 @@
   },
   {
     "attacker": "quiron-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "quiron-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 97,
-    "defender_id": 143
-  },
-  {
-    "attacker": "quiron-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "quiron-heroi",
@@ -132028,15 +131200,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 98,
     "defender_id": 142
-  },
-  {
-    "attacker": "medusa",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "medusa",
-    "mode": "attributes_fallback",
-    "attacker_id": 98,
-    "defender_id": 143
   },
   {
     "attacker": "medusa",
@@ -133453,15 +132616,6 @@
   },
   {
     "attacker": "colosso",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 99,
-    "defender_id": 143
-  },
-  {
-    "attacker": "colosso",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "colosso",
@@ -134872,15 +134026,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 100,
     "defender_id": 142
-  },
-  {
-    "attacker": "quimera",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 100,
-    "defender_id": 143
   },
   {
     "attacker": "quimera",
@@ -136297,15 +135442,6 @@
   },
   {
     "attacker": "mumia",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "mumia",
-    "mode": "attributes_fallback",
-    "attacker_id": 101,
-    "defender_id": 143
-  },
-  {
-    "attacker": "mumia",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "mumia",
@@ -137716,15 +136852,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 102,
     "defender_id": 142
-  },
-  {
-    "attacker": "vingador",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 102,
-    "defender_id": 143
   },
   {
     "attacker": "vingador",
@@ -139141,15 +138268,6 @@
   },
   {
     "attacker": "fenix",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 103,
-    "defender_id": 143
-  },
-  {
-    "attacker": "fenix",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "fenix",
@@ -140560,15 +139678,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 104,
     "defender_id": 142
-  },
-  {
-    "attacker": "gigante-de-fogo",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "gigante-de-fogo",
-    "mode": "attributes_fallback",
-    "attacker_id": 104,
-    "defender_id": 143
   },
   {
     "attacker": "gigante-de-fogo",
@@ -141985,15 +141094,6 @@
   },
   {
     "attacker": "ninhada-de-lobo-de-fenris",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 105,
-    "defender_id": 143
-  },
-  {
-    "attacker": "ninhada-de-lobo-de-fenris",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "ninhada-de-lobo-de-fenris",
@@ -143404,15 +142504,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 106,
     "defender_id": 142
-  },
-  {
-    "attacker": "fafnir",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 106,
-    "defender_id": 143
   },
   {
     "attacker": "fafnir",
@@ -144829,15 +143920,6 @@
   },
   {
     "attacker": "centimanos",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 107,
-    "defender_id": 143
-  },
-  {
-    "attacker": "centimanos",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "centimanos",
@@ -146248,15 +145330,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 108,
     "defender_id": 142
-  },
-  {
-    "attacker": "argos",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 108,
-    "defender_id": 143
   },
   {
     "attacker": "argos",
@@ -147673,15 +146746,6 @@
   },
   {
     "attacker": "lampade",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "lampade",
-    "mode": "attributes_fallback",
-    "attacker_id": 109,
-    "defender_id": 143
-  },
-  {
-    "attacker": "lampade",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "lampade",
@@ -149092,15 +148156,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 110,
     "defender_id": 142
-  },
-  {
-    "attacker": "hundun",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 110,
-    "defender_id": 143
   },
   {
     "attacker": "hundun",
@@ -150517,15 +149572,6 @@
   },
   {
     "attacker": "qinglong",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 111,
-    "defender_id": 143
-  },
-  {
-    "attacker": "qinglong",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -151936,15 +150982,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 112,
     "defender_id": 142
-  },
-  {
-    "attacker": "zhuque",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 112,
-    "defender_id": 143
   },
   {
     "attacker": "zhuque",
@@ -153361,15 +152398,6 @@
   },
   {
     "attacker": "corvo",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 113,
-    "defender_id": 143
-  },
-  {
-    "attacker": "corvo",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -154783,15 +153811,6 @@
   },
   {
     "attacker": "belerofonte-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "belerofonte-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 114,
-    "defender_id": 143
-  },
-  {
-    "attacker": "belerofonte-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "belerofonte-heroi",
@@ -156205,15 +155224,6 @@
   },
   {
     "attacker": "polifemo-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "polifemo-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 115,
-    "defender_id": 143
-  },
-  {
-    "attacker": "polifemo-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "polifemo-heroi",
@@ -157627,15 +156637,6 @@
   },
   {
     "attacker": "perseus-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "perseus-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 116,
-    "defender_id": 143
-  },
-  {
-    "attacker": "perseus-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "perseus-heroi",
@@ -159046,15 +158047,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 117,
     "defender_id": 142
-  },
-  {
-    "attacker": "nezha-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "nezha-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 117,
-    "defender_id": 143
   },
   {
     "attacker": "nezha-heroi",
@@ -160471,15 +159463,6 @@
   },
   {
     "attacker": "jiang-ziya-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "jiang-ziya-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 118,
-    "defender_id": 143
-  },
-  {
-    "attacker": "jiang-ziya-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "jiang-ziya-heroi",
@@ -161890,15 +160873,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 119,
     "defender_id": 142
-  },
-  {
-    "attacker": "yang-jian-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "yang-jian-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 119,
-    "defender_id": 143
   },
   {
     "attacker": "yang-jian-heroi",
@@ -163315,15 +162289,6 @@
   },
   {
     "attacker": "li-jing-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "li-jing-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 120,
-    "defender_id": 143
-  },
-  {
-    "attacker": "li-jing-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "li-jing-heroi",
@@ -164737,15 +163702,6 @@
   },
   {
     "attacker": "wen-zhong-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "wen-zhong-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 121,
-    "defender_id": 143
-  },
-  {
-    "attacker": "wen-zhong-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "wen-zhong-heroi",
@@ -166156,15 +165112,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 122,
     "defender_id": 142
-  },
-  {
-    "attacker": "fanatico-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "fanatico-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 122,
-    "defender_id": 143
   },
   {
     "attacker": "fanatico-heroi",
@@ -167581,15 +166528,6 @@
   },
   {
     "attacker": "heroi-de-ragnarok",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "heroi-de-ragnarok",
-    "mode": "attributes_fallback",
-    "attacker_id": 123,
-    "defender_id": 143
-  },
-  {
-    "attacker": "heroi-de-ragnarok",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "heroi-de-ragnarok",
@@ -169003,15 +167941,6 @@
   },
   {
     "attacker": "nezha-heroi-2",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "nezha-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 124,
-    "defender_id": 143
-  },
-  {
-    "attacker": "nezha-heroi-2",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "nezha-heroi-2",
@@ -170422,15 +169351,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 125,
     "defender_id": 142
-  },
-  {
-    "attacker": "nezha-heroi-3",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "nezha-heroi-3",
-    "mode": "attributes_fallback",
-    "attacker_id": 125,
-    "defender_id": 143
   },
   {
     "attacker": "nezha-heroi-3",
@@ -171847,15 +170767,6 @@
   },
   {
     "attacker": "kitsune",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 126,
-    "defender_id": 143
-  },
-  {
-    "attacker": "kitsune",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "kitsune",
@@ -173266,15 +172177,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 127,
     "defender_id": 142
-  },
-  {
-    "attacker": "kamaitachi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 127,
-    "defender_id": 143
   },
   {
     "attacker": "kamaitachi",
@@ -174691,15 +173593,6 @@
   },
   {
     "attacker": "wanyudo",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "wanyudo",
-    "mode": "attributes_fallback",
-    "attacker_id": 128,
-    "defender_id": 143
-  },
-  {
-    "attacker": "wanyudo",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "wanyudo",
@@ -176110,15 +175003,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 129,
     "defender_id": 142
-  },
-  {
-    "attacker": "jorogumo",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 129,
-    "defender_id": 143
   },
   {
     "attacker": "jorogumo",
@@ -177535,15 +176419,6 @@
   },
   {
     "attacker": "tengu",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 130,
-    "defender_id": 143
-  },
-  {
-    "attacker": "tengu",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "tengu",
@@ -178957,15 +177832,6 @@
   },
   {
     "attacker": "raiju",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 131,
-    "defender_id": 143
-  },
-  {
-    "attacker": "raiju",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "raiju",
@@ -180376,15 +179242,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 132,
     "defender_id": 142
-  },
-  {
-    "attacker": "oni",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 132,
-    "defender_id": 143
   },
   {
     "attacker": "oni",
@@ -181801,15 +180658,6 @@
   },
   {
     "attacker": "shinigami",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 134,
-    "defender_id": 143
-  },
-  {
-    "attacker": "shinigami",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -183223,15 +182071,6 @@
   },
   {
     "attacker": "onmoraki",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 135,
-    "defender_id": 143
-  },
-  {
-    "attacker": "onmoraki",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "onmoraki",
@@ -184642,15 +183481,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 136,
     "defender_id": 142
-  },
-  {
-    "attacker": "asura",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 136,
-    "defender_id": 143
   },
   {
     "attacker": "asura",
@@ -186067,15 +184897,6 @@
   },
   {
     "attacker": "sombra-de-hades",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 138,
-    "defender_id": 143
-  },
-  {
-    "attacker": "sombra-de-hades",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "sombra-de-hades",
@@ -187489,15 +186310,6 @@
   },
   {
     "attacker": "miko-heroina",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "miko-heroina",
-    "mode": "attributes_fallback",
-    "attacker_id": 139,
-    "defender_id": 143
-  },
-  {
-    "attacker": "miko-heroina",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "miko-heroina",
@@ -188908,15 +187720,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 140,
     "defender_id": 142
-  },
-  {
-    "attacker": "bushi-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "draw",
-    "winner_name": null,
-    "mode": "attributes_fallback",
-    "attacker_id": 140,
-    "defender_id": 143
   },
   {
     "attacker": "bushi-heroi",
@@ -190333,15 +189136,6 @@
   },
   {
     "attacker": "lanceiro-yari",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 141,
-    "defender_id": 143
-  },
-  {
-    "attacker": "lanceiro-yari",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -191755,15 +190549,6 @@
   },
   {
     "attacker": "arqueiro-yumi",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 142,
-    "defender_id": 143
-  },
-  {
-    "attacker": "arqueiro-yumi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -191967,1428 +190752,6 @@
     "winner_name": "quinametzin",
     "mode": "attributes_fallback",
     "attacker_id": 142,
-    "defender_id": 171
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hoplita",
-    "winner": "defender",
-    "winner_name": "hoplita",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 1
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hippeis",
-    "winner": "defender",
-    "winner_name": "hippeis",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 2
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "toxotes",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 3
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hipaspista",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 4
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "prodromos",
-    "winner": "defender",
-    "winner_name": "prodromos",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 5
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "peltasta",
-    "winner": "defender",
-    "winner_name": "peltasta",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 6
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "machadeiro",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 7
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "lanceiro",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 8
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "fundeiro",
-    "winner": "defender",
-    "winner_name": "fundeiro",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 9
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "cameleiro",
-    "winner": "defender",
-    "winner_name": "cameleiro",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 10
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "arqueiro-em-biga",
-    "winner": "defender",
-    "winner_name": "arqueiro-em-biga",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 12
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "elefante-de-guerra",
-    "winner": "defender",
-    "winner_name": "elefante-de-guerra",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 13
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "berserker",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 14
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "lancador-de-machados",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 15
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hird",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 16
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "cavalaria-incursora",
-    "winner": "defender",
-    "winner_name": "cavalaria-incursora",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 17
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "huscarl",
-    "winner": "defender",
-    "winner_name": "huscarl",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 18
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "jarl",
-    "winner": "defender",
-    "winner_name": "jarl",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 19
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "murmilo",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 20
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "katapeltes",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 21
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "turma",
-    "winner": "defender",
-    "winner_name": "turma",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 22
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "quirobalista",
-    "winner": "defender",
-    "winner_name": "quirobalista",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 23
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "contarius",
-    "winner": "defender",
-    "winner_name": "contarius",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 24
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "arcus",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 25
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "espadachim-de-dao",
-    "winner": "defender",
-    "winner_name": "espadachim-de-dao",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 26
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "alabardeiro-ge",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 27
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "lanceiro-wuzu",
-    "winner": "defender",
-    "winner_name": "lanceiro-wuzu",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 28
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "arqueiro-de-fogo",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 29
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "chu-ko-nu",
-    "winner": "defender",
-    "winner_name": "chu-ko-nu",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 30
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "cavalaria-de-cavalo-branco",
-    "winner": "defender",
-    "winner_name": "cavalaria-de-cavalo-branco",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 31
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "samurai",
-    "winner": "defender",
-    "winner_name": "samurai",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 32
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "shinobi",
-    "winner": "defender",
-    "winner_name": "shinobi",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 33
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "mirmidao",
-    "winner": "defender",
-    "winner_name": "mirmidao",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 34
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "gastrafeta",
-    "winner": "defender",
-    "winner_name": "gastrafeta",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 35
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hetairos",
-    "winner": "defender",
-    "winner_name": "hetairos",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 36
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "fanatico",
-    "winner": "defender",
-    "winner_name": "fanatico",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 37
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "cavalaria-de-tigre",
-    "winner": "defender",
-    "winner_name": "cavalaria-de-tigre",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 38
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "pegaso",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 39
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "minotauro",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 40
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "centauro",
-    "winner": "defender",
-    "winner_name": "centauro",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 41
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "ciclope",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 42
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "anubita",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 43
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "wadjet",
-    "winner": "defender",
-    "winner_name": "wadjet",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 44
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "esfinge",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 45
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "troll",
-    "winner": "defender",
-    "winner_name": "troll",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 46
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "einheri",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 47
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "valquiria",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 49
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "draugr",
-    "winner": "defender",
-    "winner_name": "draugr",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 50
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "prometeano",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 51
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "automato",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 53
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "caladria",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 54
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "qilin",
-    "winner": "defender",
-    "winner_name": "qilin",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 55
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "yazi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 56
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "qiongqi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 57
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "jasao-heroi",
-    "winner": "defender",
-    "winner_name": "jasao-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 58
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "teseu-heroi",
-    "winner": "defender",
-    "winner_name": "teseu-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 59
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "ajax-heroi",
-    "winner": "defender",
-    "winner_name": "ajax-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 60
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "farao-heroi",
-    "winner": "defender",
-    "winner_name": "farao-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 61
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "sacerdote-heroi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 62
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hersir-heroi",
-    "winner": "defender",
-    "winner_name": "hersir-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 63
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "oraculo-heroi",
-    "winner": "defender",
-    "winner_name": "oraculo-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 64
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "pioneiro-heroi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 65
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hidra",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 66
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "manticora",
-    "winner": "defender",
-    "winner_name": "manticora",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 67
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "leao-de-nemeia",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 68
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "petsuchos",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 69
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "escaravelho",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 70
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "homem-escorpiao",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 71
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "gigante-de-gelo",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 72
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "javali-de-batalha",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 73
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "gigante-de-montanha",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 74
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "gigante-das-rochas",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 75
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "beemote",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 76
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "satiro",
-    "winner": "defender",
-    "winner_name": "satiro",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 77
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "passaro-de-estinfalo",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 78
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "taowu",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 79
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "taotie",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 80
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "baihu",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 81
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hercules-heroi",
-    "winner": "defender",
-    "winner_name": "hercules-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 82
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "atalanta-heroina",
-    "winner": "defender",
-    "winner_name": "atalanta-heroina",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 83
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "aquiles-heroi",
-    "winner": "defender",
-    "winner_name": "aquiles-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 84
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "godi-heroi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 85
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "murmilo-heroi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 86
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "katapeltes-heroi",
-    "winner": "defender",
-    "winner_name": "katapeltes-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 87
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "turma-heroi",
-    "winner": "defender",
-    "winner_name": "turma-heroi",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 88
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "quirobalista-heroi",
-    "winner": "defender",
-    "winner_name": "quirobalista-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 89
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "contarius-heroi",
-    "winner": "defender",
-    "winner_name": "contarius-heroi",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 90
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "arcus-heroi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 91
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "sabio-heroi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 94
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "odisseu-heroi",
-    "winner": "defender",
-    "winner_name": "odisseu-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 95
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hipolita-heroina",
-    "winner": "defender",
-    "winner_name": "hipolita-heroina",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 96
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "quiron-heroi",
-    "winner": "defender",
-    "winner_name": "quiron-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 97
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "medusa",
-    "winner": "defender",
-    "winner_name": "medusa",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 98
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "colosso",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 99
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "quimera",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 100
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "mumia",
-    "winner": "defender",
-    "winner_name": "mumia",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 101
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "vingador",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 102
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "fenix",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 103
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "gigante-de-fogo",
-    "winner": "defender",
-    "winner_name": "gigante-de-fogo",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 104
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "ninhada-de-lobo-de-fenris",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 105
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "fafnir",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 106
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "centimanos",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 107
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "argos",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 108
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "lampade",
-    "winner": "defender",
-    "winner_name": "lampade",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 109
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hundun",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 110
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "qinglong",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 111
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "zhuque",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 112
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "corvo",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 113
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "belerofonte-heroi",
-    "winner": "defender",
-    "winner_name": "belerofonte-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 114
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "polifemo-heroi",
-    "winner": "defender",
-    "winner_name": "polifemo-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 115
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "perseus-heroi",
-    "winner": "defender",
-    "winner_name": "perseus-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 116
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "nezha-heroi",
-    "winner": "defender",
-    "winner_name": "nezha-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 117
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "jiang-ziya-heroi",
-    "winner": "defender",
-    "winner_name": "jiang-ziya-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 118
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "yang-jian-heroi",
-    "winner": "defender",
-    "winner_name": "yang-jian-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 119
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "li-jing-heroi",
-    "winner": "defender",
-    "winner_name": "li-jing-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 120
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "wen-zhong-heroi",
-    "winner": "defender",
-    "winner_name": "wen-zhong-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 121
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "fanatico-heroi",
-    "winner": "defender",
-    "winner_name": "fanatico-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 122
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "heroi-de-ragnarok",
-    "winner": "defender",
-    "winner_name": "heroi-de-ragnarok",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 123
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "nezha-heroi-2",
-    "winner": "defender",
-    "winner_name": "nezha-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 124
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "nezha-heroi-3",
-    "winner": "defender",
-    "winner_name": "nezha-heroi-3",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 125
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "kitsune",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 126
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "kamaitachi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 127
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "wanyudo",
-    "winner": "defender",
-    "winner_name": "wanyudo",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 128
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "jorogumo",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 129
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "tengu",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 130
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "raiju",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 131
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "oni",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 132
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "shinigami",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 134
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "onmoraki",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 135
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "asura",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 136
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "sombra-de-hades",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 138
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "miko-heroina",
-    "winner": "defender",
-    "winner_name": "miko-heroina",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 139
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "bushi-heroi",
-    "winner": "draw",
-    "winner_name": null,
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 140
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "lanceiro-yari",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 141
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "arqueiro-yumi",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 142
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "cavalaria-de-arqueiro-yumi",
-    "winner": "draw",
-    "winner_name": null,
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 144
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "cavaleiro-naginata",
-    "winner": "defender",
-    "winner_name": "cavaleiro-naginata",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 145
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "onmyoji-heroi",
-    "winner": "defender",
-    "winner_name": "onmyoji-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 146
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "daimyo-heroi",
-    "winner": "defender",
-    "winner_name": "daimyo-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 147
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "harpia",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 151
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "licaao",
-    "winner": "defender",
-    "winner_name": "licaao",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 152
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "hamadriade",
-    "winner": "defender",
-    "winner_name": "hamadriade",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 153
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "sirenico",
-    "winner": "defender",
-    "winner_name": "sirenico",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 154
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "icaro-heroi",
-    "winner": "defender",
-    "winner_name": "icaro-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 155
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "orfeu-heroi",
-    "winner": "defender",
-    "winner_name": "orfeu-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 157
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "iolau-heroi",
-    "winner": "defender",
-    "winner_name": "iolau-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 158
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "rei-midas-heroi",
-    "winner": "defender",
-    "winner_name": "rei-midas-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 159
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "espiao-quimichin",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 160
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "sacerdote-de-guerra-heroi",
-    "winner": "defender",
-    "winner_name": "sacerdote-de-guerra-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 161
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "lanceiro-tlamanih",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 162
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "arqueiro-tequihua",
-    "winner": "attacker",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 163
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "guerreiro-coiote",
-    "winner": "defender",
-    "winner_name": "guerreiro-coiote",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 164
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "guerreiro-jaguatirica",
-    "winner": "defender",
-    "winner_name": "guerreiro-jaguatirica",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 165
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "guerreiro-aguia",
-    "winner": "defender",
-    "winner_name": "guerreiro-aguia",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 167
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "esmagador-otontin",
-    "winner": "defender",
-    "winner_name": "esmagador-otontin",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 168
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "tosquiado",
-    "winner": "defender",
-    "winner_name": "tosquiado",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
-    "defender_id": 169
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "cavaleiro-jaguar",
-    "winner": "defender",
-    "winner_name": "cavaleiro-jaguar",
-    "mode": "mode_category_battle",
-    "attacker_id": 143,
-    "defender_id": 170
-  },
-  {
-    "attacker": "bushi-heroi-2",
-    "defender": "quinametzin",
-    "winner": "defender",
-    "winner_name": "quinametzin",
-    "mode": "attributes_fallback",
-    "attacker_id": 143,
     "defender_id": 171
   },
   {
@@ -194605,15 +191968,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 144,
     "defender_id": 142
-  },
-  {
-    "attacker": "cavalaria-de-arqueiro-yumi",
-    "defender": "bushi-heroi-2",
-    "winner": "draw",
-    "winner_name": null,
-    "mode": "attributes_fallback",
-    "attacker_id": 144,
-    "defender_id": 143
   },
   {
     "attacker": "cavalaria-de-arqueiro-yumi",
@@ -196027,15 +193381,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 145,
     "defender_id": 142
-  },
-  {
-    "attacker": "cavaleiro-naginata",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "cavaleiro-naginata",
-    "mode": "mode_category_battle",
-    "attacker_id": 145,
-    "defender_id": 143
   },
   {
     "attacker": "cavaleiro-naginata",
@@ -197452,15 +194797,6 @@
   },
   {
     "attacker": "onmyoji-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "onmyoji-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 146,
-    "defender_id": 143
-  },
-  {
-    "attacker": "onmyoji-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "onmyoji-heroi",
@@ -198871,15 +196207,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 147,
     "defender_id": 142
-  },
-  {
-    "attacker": "daimyo-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "daimyo-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 147,
-    "defender_id": 143
   },
   {
     "attacker": "daimyo-heroi",
@@ -200296,15 +197623,6 @@
   },
   {
     "attacker": "harpia",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "mode_category_battle",
-    "attacker_id": 151,
-    "defender_id": 143
-  },
-  {
-    "attacker": "harpia",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "harpia",
@@ -201715,15 +199033,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 152,
     "defender_id": 142
-  },
-  {
-    "attacker": "licaao",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "licaao",
-    "mode": "attributes_fallback",
-    "attacker_id": 152,
-    "defender_id": 143
   },
   {
     "attacker": "licaao",
@@ -203140,15 +200449,6 @@
   },
   {
     "attacker": "hamadriade",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "hamadriade",
-    "mode": "attributes_fallback",
-    "attacker_id": 153,
-    "defender_id": 143
-  },
-  {
-    "attacker": "hamadriade",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "hamadriade",
@@ -204562,15 +201862,6 @@
   },
   {
     "attacker": "sirenico",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "sirenico",
-    "mode": "attributes_fallback",
-    "attacker_id": 154,
-    "defender_id": 143
-  },
-  {
-    "attacker": "sirenico",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "sirenico",
@@ -205981,15 +203272,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 155,
     "defender_id": 142
-  },
-  {
-    "attacker": "icaro-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "icaro-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 155,
-    "defender_id": 143
   },
   {
     "attacker": "icaro-heroi",
@@ -207406,15 +204688,6 @@
   },
   {
     "attacker": "orfeu-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "orfeu-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 157,
-    "defender_id": 143
-  },
-  {
-    "attacker": "orfeu-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "orfeu-heroi",
@@ -208828,15 +206101,6 @@
   },
   {
     "attacker": "iolau-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "iolau-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 158,
-    "defender_id": 143
-  },
-  {
-    "attacker": "iolau-heroi",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "iolau-heroi",
@@ -210247,15 +207511,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 159,
     "defender_id": 142
-  },
-  {
-    "attacker": "rei-midas-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "rei-midas-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 159,
-    "defender_id": 143
   },
   {
     "attacker": "rei-midas-heroi",
@@ -211672,15 +208927,6 @@
   },
   {
     "attacker": "espiao-quimichin",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 160,
-    "defender_id": 143
-  },
-  {
-    "attacker": "espiao-quimichin",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -213091,15 +210337,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 161,
     "defender_id": 142
-  },
-  {
-    "attacker": "sacerdote-de-guerra-heroi",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "sacerdote-de-guerra-heroi",
-    "mode": "attributes_fallback",
-    "attacker_id": 161,
-    "defender_id": 143
   },
   {
     "attacker": "sacerdote-de-guerra-heroi",
@@ -214516,15 +211753,6 @@
   },
   {
     "attacker": "lanceiro-tlamanih",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 162,
-    "defender_id": 143
-  },
-  {
-    "attacker": "lanceiro-tlamanih",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "defender",
     "winner_name": "cavalaria-de-arqueiro-yumi",
@@ -215935,15 +213163,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 163,
     "defender_id": 142
-  },
-  {
-    "attacker": "arqueiro-tequihua",
-    "defender": "bushi-heroi-2",
-    "winner": "defender",
-    "winner_name": "bushi-heroi-2",
-    "mode": "attributes_fallback",
-    "attacker_id": 163,
-    "defender_id": 143
   },
   {
     "attacker": "arqueiro-tequihua",
@@ -217360,15 +214579,6 @@
   },
   {
     "attacker": "guerreiro-coiote",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "guerreiro-coiote",
-    "mode": "mode_category_battle",
-    "attacker_id": 164,
-    "defender_id": 143
-  },
-  {
-    "attacker": "guerreiro-coiote",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "guerreiro-coiote",
@@ -218779,15 +215989,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 165,
     "defender_id": 142
-  },
-  {
-    "attacker": "guerreiro-jaguatirica",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "guerreiro-jaguatirica",
-    "mode": "attributes_fallback",
-    "attacker_id": 165,
-    "defender_id": 143
   },
   {
     "attacker": "guerreiro-jaguatirica",
@@ -220204,15 +217405,6 @@
   },
   {
     "attacker": "guerreiro-aguia",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "guerreiro-aguia",
-    "mode": "mode_category_battle",
-    "attacker_id": 167,
-    "defender_id": 143
-  },
-  {
-    "attacker": "guerreiro-aguia",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "guerreiro-aguia",
@@ -221623,15 +218815,6 @@
     "mode": "mode_category_battle",
     "attacker_id": 168,
     "defender_id": 142
-  },
-  {
-    "attacker": "esmagador-otontin",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "esmagador-otontin",
-    "mode": "attributes_fallback",
-    "attacker_id": 168,
-    "defender_id": 143
   },
   {
     "attacker": "esmagador-otontin",
@@ -223048,15 +220231,6 @@
   },
   {
     "attacker": "tosquiado",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "tosquiado",
-    "mode": "attributes_fallback",
-    "attacker_id": 169,
-    "defender_id": 143
-  },
-  {
-    "attacker": "tosquiado",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "tosquiado",
@@ -224470,15 +221644,6 @@
   },
   {
     "attacker": "cavaleiro-jaguar",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "cavaleiro-jaguar",
-    "mode": "mode_category_battle",
-    "attacker_id": 170,
-    "defender_id": 143
-  },
-  {
-    "attacker": "cavaleiro-jaguar",
     "defender": "cavalaria-de-arqueiro-yumi",
     "winner": "attacker",
     "winner_name": "cavaleiro-jaguar",
@@ -225889,15 +223054,6 @@
     "mode": "attributes_fallback",
     "attacker_id": 171,
     "defender_id": 142
-  },
-  {
-    "attacker": "quinametzin",
-    "defender": "bushi-heroi-2",
-    "winner": "attacker",
-    "winner_name": "quinametzin",
-    "mode": "attributes_fallback",
-    "attacker_id": 171,
-    "defender_id": 143
   },
   {
     "attacker": "quinametzin",

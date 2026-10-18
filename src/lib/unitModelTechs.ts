@@ -12,21 +12,26 @@ export type TechGroup = {
   options: TechOption[];
 };
 
+export type WeaponStance = "hack" | "pierce";
+
 export type TechPiece = {
   requires: string[];
   url: string;
+  /** Espada fica na pose parada; arco ou dardo só no ataque à distância. */
+  stance?: WeaponStance;
 };
 
 export type UnitTechVisual = {
   groups: TechGroup[];
   pieces: Record<string, TechPiece[]>;
+  stance?: boolean;
 };
 
 const visuals = unitModelTechsJson as Record<string, UnitTechVisual>;
 
 export function unitTechVisual(id: number): UnitTechVisual | undefined {
   const entry = visuals[String(id)];
-  if (!entry?.groups?.length) return undefined;
+  if (!entry?.groups?.length && !entry?.stance) return undefined;
   return entry;
 }
 
@@ -45,12 +50,19 @@ export function effectiveTechTags(groups: TechGroup[], selected: readonly string
   return active;
 }
 
-export function projectionUrls(visual: UnitTechVisual | undefined, selected: readonly string[], fallback?: string): string[] {
+export function projectionUrls(
+  visual: UnitTechVisual | undefined,
+  selected: readonly string[],
+  fallback?: string,
+  stance: WeaponStance = "hack",
+): string[] {
   if (!visual) return fallback ? [fallback] : [];
   const active = effectiveTechTags(visual.groups, selected);
   const urls: string[] = [];
   for (const entries of Object.values(visual.pieces)) {
-    const matches = entries.filter((entry) => entry.requires.every((tag) => active.has(tag)));
+    const matches = entries.filter(
+      (entry) => (!entry.stance || entry.stance === stance) && entry.requires.every((tag) => active.has(tag)),
+    );
     if (!matches.length) continue;
     matches.sort((a, b) => b.requires.length - a.requires.length);
     urls.push(matches[0].url);

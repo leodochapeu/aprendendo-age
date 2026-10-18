@@ -8710,65 +8710,6 @@
     "custo_total": 90
   },
   {
-    "id": 143,
-    "nome": "Bushi (Herói)",
-    "ingles": "Bushi (Hero)",
-    "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
-        "type": "Herói",
-        "icon": "aomr_type_hero_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 2,
-        "nome": "Clássica :aomr_classical_age_icon:"
-      }
-    ],
-    "counter_de": "Criatura Mítica :aomr_type_myth_unit_icon:",
-    "multiplicador": [
-      {
-        "type": "Unidade mítica",
-        "icon": "aomr_type_myth_unit_icon",
-        "value": "8"
-      }
-    ],
-    "pontos_de_vida": 80,
-    "velocidade_de_ataque_atk_s": 1.5,
-    "dps": 10.5,
-    "armadura_anticorte": 15,
-    "armadura_antiperfurante": 25,
-    "construcao": [
-      {
-        "nome": "Dojo",
-        "id": 63
-      }
-    ],
-    "comida": 0,
-    "ouro": 50,
-    "favor": 2,
-    "populacao": 3,
-    "tempo_treinamento": 20,
-    "velocidade_movimento": 4.2,
-    "forca_atributos": 139.966666666667,
-    "forte_contra": "Criatura Mítica :aomr_type_myth_unit_icon:",
-    "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
-    "icon": "aomr_bushi_icon",
-    "madeira": 60,
-    "custo_total": 112,
-    "dano_perfurante": 7
-  },
-  {
     "id": 144,
     "nome": "Cavalaria de Arqueiro Yumi",
     "ingles": "Yumi Horse Archer",

@@ -70,7 +70,7 @@ _LINE_PREFIX = (
     ("champion", 6),
     ("medium", 2),
     ("heavy", 4),
-    ("elite", 5),
+    ("elite", 7),
     ("levy", 1),
 )
 ICON_MAP_PATH = ROOT / "src" / "data" / "token_asset_map.json"
@@ -229,26 +229,70 @@ def _load_attachment(bars: BarIndex, source: str | Any) -> Any | None:
     return source
 
 
-def _parts(bars: BarIndex, root: Any) -> list[tuple[tuple[str, ...], Any]]:
+def _anim_attaches(root: Any, label: str) -> set[str]:
+    found: set[str] = set()
+    for elem in root.iter():
+        if _tag(elem) != "anim":
+            continue
+        name = (elem.text or elem.get("name") or "").strip().lower()
+        if name != label:
+            continue
+        for child in elem:
+            if _tag(child) != "attach":
+                continue
+            attach = (child.get("name") or child.text or "").strip().lower()
+            if attach:
+                found.add(attach)
+    return found
+
+
+def _stance_split(root: Any) -> tuple[set[str], set[str]] | None:
+    """Armas da pose parada contra as do ataque à distância, quando não convivem."""
+    idle = _anim_attaches(root, "idle")
+    ranged = _anim_attaches(root, "rangedattack")
+    melee_only = idle - ranged
+    ranged_only = ranged - idle
+    pierce = ranged_only & {"bow", "javelin", "rangedweapon"}
+    if "weapon" in melee_only and pierce:
+        return melee_only, ranged_only
+    return None
+
+
+def _attachment_stance(owner: Any, name: str) -> str | None:
+    split = _stance_split(owner)
+    if split is None:
+        return None
+    low = name.lower()
+    if low in split[0]:
+        return "hack"
+    if low in split[1]:
+        return "pierce"
+    return None
+
+
+def _parts(bars: BarIndex, root: Any) -> list[tuple[tuple[str, ...], Any, str | None]]:
     """Corpo e cada anexo, inclusive a arma que está dentro do cavaleiro."""
 
-    def walk(node: Any, prefix: tuple[str, ...], depth: int) -> list[tuple[tuple[str, ...], Any]]:
+    def walk(node: Any, prefix: tuple[str, ...], depth: int) -> list[tuple[tuple[str, ...], Any, str | None]]:
         if depth > 3:
             return []
-        found: list[tuple[tuple[str, ...], Any]] = []
+        found: list[tuple[tuple[str, ...], Any, str | None]] = []
         if not prefix:
-            found.append((("body",), node))
+            found.append((("body",), node, None))
         sources = _attachment_sources(node)
         has_weapon = any(name.lower() == "weapon" for name, _source in sources)
         for name, source in sources:
             low = name.lower()
-            if low in PROJECTILE_ATTACHMENTS or (has_weapon and low in TOOL_ATTACHMENTS):
+            stance = _attachment_stance(node, name)
+            if low in PROJECTILE_ATTACHMENTS and not (low == "javelin" and stance == "pierce"):
+                continue
+            if has_weapon and low in TOOL_ATTACHMENTS:
                 continue
             included = _load_attachment(bars, source)
             if included is None:
                 continue
             path = prefix + (name,)
-            found.append((path, included))
+            found.append((path, included, stance))
             found.extend(walk(included, path, depth + 1))
         return found
 
@@ -292,17 +336,18 @@ def bake_unit_techs(
     known = _known_tags()
     tags = _gather(bars, root)
     useful = {tag for tag in tags if _classify(tag, known)}
-    if not useful:
+    parts = _parts(bars, root)
+    has_stance = any(stance for _path, _node, stance in parts)
+    if not useful and not has_stance:
         return None
 
-    parts = _parts(bars, root)
-    nested = {path for path, _node in parts}
+    nested = {path for path, _node, _stance in parts}
     myth = set(_myth_table())
     baked: dict[tuple[str, str, int], str] = {}
     piece_entries: dict[str, list[dict[str, Any]]] = {}
     changed: set[str] = set()
 
-    for part, part_root in parts:
+    for part, part_root, part_stance in parts:
         component = _model_component(bars, part_root)
         subs = submodel_map(part_root)
         local_tags = _tech_tags(component) & useful
@@ -363,9 +408,12 @@ def bake_unit_techs(
             if not url:
                 continue
             requires = sorted(combo)
-            if any(item["requires"] == requires and item["url"] == url for item in entries):
+            if any(item["requires"] == requires and item.get("stance") == part_stance and item["url"] == url for item in entries):
                 continue
-            entries.append({"requires": requires, "url": url})
+            entry: dict[str, Any] = {"requires": requires, "url": url}
+            if part_stance:
+                entry["stance"] = part_stance
+            entries.append(entry)
         if entries:
             piece_entries[part_key] = entries
 
@@ -377,7 +425,7 @@ def bake_unit_techs(
         if info[1] == "myth" and not _piece_changes(tag, piece_entries):
             continue
         option_tags.append(tag)
-    if not option_tags or not piece_entries:
+    if not piece_entries or (not option_tags and not has_stance):
         return None
 
     grouped: dict[str, dict[str, Any]] = {}
@@ -399,7 +447,10 @@ def bake_unit_techs(
     )
     for group in groups:
         group["options"].sort(key=lambda option: option["rank"])
-    return {"groups": groups, "pieces": piece_entries}
+    result: dict[str, Any] = {"groups": groups, "pieces": piece_entries}
+    if has_stance:
+        result["stance"] = True
+    return result
 
 
 def _piece_changes(tag: str, pieces: dict[str, list[dict[str, Any]]]) -> bool:
