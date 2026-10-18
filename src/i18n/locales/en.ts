@@ -68,6 +68,8 @@ export const enMessages: TranslationTree = {
     specificGod: "Specific god",
     fieldEffect: "Field / effect",
     advancedDescription: "Advanced description",
+    abilities: "Abilities",
+    history: "History",
     percentBonus: "Percent bonuses (based on the Greek Villager)",
     garrison: "Garrison",
     projectiles: "Projectiles",

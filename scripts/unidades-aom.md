@@ -89,7 +89,28 @@ npm: `npm run data:merge-unidades -- --ids 1-50 --dry-run`
 
 ---
 
-## 2b. Importar MUs astecas ausentes
+## 2b. Descrições e habilidades (SR/LR)
+
+Arquivo: `fill-unidades-descricoes.py`
+
+Preenche só `descricao_resumida` (short rollover), `descricao_avancada` (long rollover, se diferente) e `habilidades` — **sem** alterar stats/nomes/tipos.
+
+```bash
+python scripts/fill-unidades-descricoes.py --dry-run
+python scripts/fill-unidades-descricoes.py --write
+```
+
+Ícones de habilidade (quando o jogo expõe path em `proto_unit_commands.xml`):
+
+```bash
+python scripts/import-unit-ability-icons.py --write
+```
+
+Na página de detalhe: descrição curta em **Visão geral**; detalhe + habilidades na seção **Habilidades**.
+
+---
+
+## 2c. Importar MUs astecas ausentes
 
 Arquivo: `import-aztec-myth-units.py`
 

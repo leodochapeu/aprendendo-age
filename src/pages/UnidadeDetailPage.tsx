@@ -1,7 +1,13 @@
 import { lazy, Suspense } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
-import { UnidadeCombateBody, UnidadeCustoBody, UnidadeVisaoGeralBody } from "@/components/unidade/UnidadeSectionBodies";
+import {
+  UnidadeCombateBody,
+  UnidadeCustoBody,
+  UnidadeHabilidadesBody,
+  UnidadeHistoriaDetails,
+  UnidadeVisaoGeralBody,
+} from "@/components/unidade/UnidadeSectionBodies";
 import { BackLink } from "@/components/ui/BackLink";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
 import { hasTipoContent } from "@/lib/unidadeTipo";
@@ -44,6 +50,11 @@ export function UnidadeDetailPage() {
   const aldeaoId = aldeaoIdMatchingUnit(u, aldeoes);
   const aldeaoSlug = aldeaoId != null ? aldeaoSlugById.get(aldeaoId) : undefined;
   const villagerPath = aldeaoSlug ? localeSectionPath(locale, "aldeoes", aldeaoSlug) : undefined;
+  const hasHabilidades = Array.isArray(u.habilidades) && u.habilidades.length > 0;
+  const descAvancada = (u.descricao_avancada ?? "").trim();
+  const descResumida = (u.descricao_resumida ?? "").trim();
+  const showAbilitiesSection =
+    hasHabilidades || Boolean(descAvancada && descAvancada !== descResumida);
 
   return (
     <div>
@@ -91,6 +102,14 @@ export function UnidadeDetailPage() {
           <UnidadeCustoBody u={u} />
         </Section>
       </div>
+
+      {showAbilitiesSection ? (
+        <Section title={t("common.abilities")} className="mt-6">
+          <UnidadeHabilidadesBody u={u} />
+        </Section>
+      ) : null}
+
+      {(u.historia ?? "").trim() ? <UnidadeHistoriaDetails historia={u.historia!} /> : null}
     </div>
   );
 }

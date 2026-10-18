@@ -19,6 +19,11 @@ from aom_proto_maps import (
 )
 from aom_string_table import parse_string_table
 from aom_game_paths import BAR_ENTRIES
+from aom_unit_abilities import (
+    extract_unit_texts_and_abilities,
+    index_ability_name_ids,
+    parse_protounit_commands,
+)
 
 MILITARY_UNIT_TYPES = {
     "MilitaryUnit",
@@ -387,6 +392,8 @@ def extract_unit_record(
     trainers: dict[str, list[str]],
     age_enables: dict[str, list[str]],
     building_names_pt: dict[str, str],
+    ability_name_ids: set[str] | None = None,
+    commands_by_name: dict[str, dict[str, str]] | None = None,
 ) -> dict[str, Any]:
     unit_types = {node.text.strip() for node in unit.findall("unittype") if node.text}
     pantheon = detect_pantheon(unit)
@@ -448,9 +455,19 @@ def extract_unit_record(
         "unit_types": sorted(unit_types),
         "attack_action": attack.get("action", ""),
         "max_range": attack.get("maxrange", 0.0),
-        "descricao_curta_pt": strings_pt.get(_text(unit, "shortrollovertextid"), ""),
-        "descricao_curta_en": strings_en.get(_text(unit, "shortrollovertextid"), ""),
     }
+    texts = extract_unit_texts_and_abilities(
+        name,
+        unit,
+        strings_pt=strings_pt,
+        strings_en=strings_en,
+        ability_name_ids=ability_name_ids or set(),
+        commands_by_name=commands_by_name or {},
+    )
+    record.update(texts)
+    # aliases legados
+    record["descricao_curta_pt"] = texts.get("descricao_resumida_pt", "")
+    record["descricao_curta_en"] = texts.get("descricao_resumida_en", "")
     if primary_damage_field:
         record[primary_damage_field] = primary_damage
     record.update(armor)
@@ -518,6 +535,8 @@ def extract_units(
     trainers = parse_trainers(proto_units)
     age_enables = parse_age_enables(techtree_path)
     building_names = load_building_name_map(construcoes_path or Path())
+    ability_name_ids = index_ability_name_ids(strings_en)
+    commands_by_name = parse_protounit_commands(cache_dir / "gameplay" / "proto_unit_commands.xml")
 
     records: list[dict[str, Any]] = []
     for name, unit in sorted(proto_units.items()):
@@ -533,6 +552,8 @@ def extract_units(
                     trainers=trainers,
                     age_enables=age_enables,
                     building_names_pt=building_names,
+                    ability_name_ids=ability_name_ids,
+                    commands_by_name=commands_by_name,
                 )
             )
     return records

@@ -1159,5 +1159,7 @@
   "aomr_xuanwu_icon": "/assets/unit_humans/unit_chinese/AoMR_Xuanwu_icon.webp",
   "aomr_yinglong_icon": "/assets/unit_humans/unit_chinese/AoMR_Yinglong_icon.webp",
   "aomr_lykaon_wolf_icon": "/assets/unit_myths/AoMR_Lykaon_Wolf_icon.webp",
-  "aomr_titan_age_icon": "/assets/ages/AoMR_Titan_Age_icon.webp"
+  "aomr_titan_age_icon": "/assets/ages/AoMR_Titan_Age_icon.webp",
+  "aomr_lykaon_feral_repose_ability_icon": "/assets/others/AoMR_Lykaon_Feral_Repose_Ability_Icon.webp",
+  "aomr_lykaon_feral_surge_ability_icon": "/assets/others/AoMR_Lykaon_Feral_Surge_Ability_Icon.webp"
 }

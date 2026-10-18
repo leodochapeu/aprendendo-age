@@ -76,8 +76,15 @@ export function UnidadeVisaoGeralBody({ u }: { u: U }) {
         })
       : [];
 
+  const descricaoResumida = (u.descricao_resumida ?? "").trim();
+
   return (
     <div className="space-y-0">
+      {descricaoResumida ? (
+        <InfoRow label={t("common.description")}>
+          <NotionText text={descricaoResumida} />
+        </InfoRow>
+      ) : null}
       {hasTipoContent(u.tipo) ? (
         <InfoRow label={t("common.type")}>
           <UnidadeTipoLine tipo={u.tipo} colored />
@@ -218,5 +225,82 @@ export function UnidadeCustoBody({ u }: { u: U }) {
         {u.forca_atributos ?? "—"}
       </InfoRow>
     </div>
+  );
+}
+
+export function UnidadeHabilidadesBody({ u }: { u: U }) {
+  const { t } = useTranslation();
+  const habilidades = Array.isArray(u.habilidades) ? u.habilidades : [];
+  const avancada = (u.descricao_avancada ?? "").trim();
+  const resumida = (u.descricao_resumida ?? "").trim();
+  const showAvancada = Boolean(avancada && avancada !== resumida);
+
+  if (!habilidades.length && !showAvancada) {
+    return <p className="text-sm text-zinc-500">{t("common.noResults")}</p>;
+  }
+
+  return (
+    <div className="space-y-4">
+      {showAvancada ? (
+        <div className="space-y-1">
+          <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
+            {t("common.advancedDescription")}
+          </p>
+          <NotionText text={avancada} className="text-sm leading-relaxed text-zinc-300" />
+        </div>
+      ) : null}
+
+      {habilidades.length ? (
+        <ul className="space-y-3">
+          {habilidades.map((h, i) => {
+            const iconToken = (h.icon ?? "").replace(/^:+|:+$/g, "");
+            const title = iconToken ? `:${iconToken}: ${h.nome}` : h.nome;
+            return (
+              <li
+                key={`${h.nome}-${i}`}
+                className="rounded-lg border border-zinc-800/80 bg-zinc-950/40 px-3 py-2.5"
+              >
+                <NotionText text={title} className="text-sm font-medium text-zinc-100" />
+                {h.descricao ? (
+                  <NotionText
+                    text={h.descricao}
+                    className="mt-1 block text-sm leading-relaxed text-zinc-400"
+                  />
+                ) : null}
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
+    </div>
+  );
+}
+
+/** Seção de história do jogo — colapsada por padrão (`<details>`). */
+export function UnidadeHistoriaDetails({ historia }: { historia: string }) {
+  const { t } = useTranslation();
+  const text = historia.trim();
+  if (!text) return null;
+
+  return (
+    <details className="group mt-6 overflow-hidden rounded-2xl border border-aom-border bg-aom-card/60 shadow-sm shadow-black/20 open:shadow-md">
+      <summary className="cursor-pointer list-none px-5 py-4 font-[family-name:var(--font-display)] text-lg font-semibold text-amber-100/95 marker:content-none [&::-webkit-details-marker]:hidden">
+        <span className="flex items-center justify-between gap-3">
+          <span>{t("common.history")}</span>
+          <span
+            aria-hidden
+            className="text-sm font-normal text-zinc-500 transition group-open:rotate-180"
+          >
+            ▾
+          </span>
+        </span>
+      </summary>
+      <div className="border-t border-aom-border/60 px-5 pb-5 pt-3">
+        <NotionText
+          text={text.replace(/\n\n+/g, "\n\n")}
+          className="block whitespace-pre-line text-sm leading-relaxed text-zinc-400"
+        />
+      </div>
+    </details>
   );
 }

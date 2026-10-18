@@ -180,6 +180,14 @@ export type Tecnologia = {
 
 export const tecnologias = tecnologiasJson as Tecnologia[];
 
+/** Habilidade especial de unidade (extraída do jogo). */
+export type UnidadeHabilidade = {
+  nome: string;
+  descricao?: string;
+  /** Token em `token_asset_map.json` (sem `:`). */
+  icon?: string;
+};
+
 /** Entrada em `unidades_aom.json` — campos de combate/recursos opcionais conforme o tipo de unidade. */
 export type Unidade = {
   id: number;
@@ -196,6 +204,14 @@ export type Unidade = {
   fraco_contra?: string;
   construcao?: EntityNumRef[];
   god_dono?: EntityNumRef[];
+  /** Rollover curto do jogo (SR). */
+  descricao_resumida?: string;
+  /** Rollover longo do jogo (LR), quando difere do curto. */
+  descricao_avancada?: string;
+  /** Habilidades especiais (Gore, Volley, transformações, etc.). */
+  habilidades?: UnidadeHabilidade[];
+  /** Texto de enciclopédia do jogo (`STR_HISTORY_UNITS_*`). */
+  historia?: string;
   pontos_de_vida?: number;
   dano_cortante?: number;
   dano_perfurante?: number;

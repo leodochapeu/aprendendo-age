@@ -13,6 +13,8 @@
     "data:extract-unidades": "python scripts/extract-unidades-aom.py",
     "data:extract-unit-models": "python scripts/extract-unit-models-aom.py",
     "data:merge-unidades": "python scripts/merge-unidades-aom.py",
+    "data:fill-unidades-descricoes": "python scripts/fill-unidades-descricoes.py",
+    "data:import-unit-ability-icons": "python scripts/import-unit-ability-icons.py",
     "data:extract-tecnologias": "python scripts/extract-tecnologias-aom.py",
     "data:merge-tecnologias": "python scripts/merge-tecnologias-aom.py",
     "data:extract-godpowers": "python scripts/extract-godpowers-aom.py",

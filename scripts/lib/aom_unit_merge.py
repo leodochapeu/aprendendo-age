@@ -156,6 +156,11 @@ CATALOG_PROTO_ALIASES = {
     "Otontin Smasher": "Otontin",
     "Wanyūdō": "Wanyudo",
     "Settler": "VillagerAztec",
+    "Villager": "VillagerGreek",
+    "Laborer": "VillagerEgyptian",
+    "Gatherer": "VillagerNorse",
+    "Peasant": "VillagerChinese",
+    "Commoner": "VillagerJapanese",
     "Fishing Ship (Aztec)": "FishingShipAztec",
     "Transport Ship (Aztec)": "TransportShipAztec",
     "Teixiptla (Huitzilopochtli)": "TeixiptlaHuitz",
@@ -163,6 +168,9 @@ CATALOG_PROTO_ALIASES = {
     "Teixiptla (Quetzalcoatl)": "TeixiptlaQuetz",
     "Anaconda": "AnacondaCoatlicue",
     "Pochtecatl Caravan": "CaravanAztec",
+    "Hatamoto Samurai": "SamuraiHatamoto",
+    "Qing Rider": "QingQi",
+    "Bow Cavalry": "GongQi",
     "Titan (Cerberus)": "TitanCerberus",
     "Titan (Egyptian)": "TitanBird",
     "Titan (Ymir)": "TitanYmir",
@@ -507,6 +515,32 @@ def build_merged_row(
             if isinstance(merged[field], list):
                 continue
             merged[field] = _normalize_number(merged[field])
+
+    # Descrições e habilidades (locale-específicas)
+    if locale_key == "en":
+        resumida = (extracted.get("descricao_resumida_en") or "").strip()
+        avancada = (extracted.get("descricao_avancada_en") or "").strip()
+        habilidades = extracted.get("habilidades_en") or []
+    else:
+        resumida = (extracted.get("descricao_resumida_pt") or "").strip()
+        avancada = (extracted.get("descricao_avancada_pt") or "").strip()
+        habilidades = extracted.get("habilidades_pt") or []
+
+    if resumida:
+        merged["descricao_resumida"] = resumida
+    elif "descricao_resumida" in merged:
+        del merged["descricao_resumida"]
+
+    # Evita duplicar o texto curto na seção avançada
+    if avancada and avancada != resumida:
+        merged["descricao_avancada"] = avancada
+    elif "descricao_avancada" in merged:
+        del merged["descricao_avancada"]
+
+    if habilidades:
+        merged["habilidades"] = deepcopy(habilidades)
+    elif "habilidades" in merged:
+        del merged["habilidades"]
 
     return merged
 
