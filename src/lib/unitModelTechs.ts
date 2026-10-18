@@ -8,7 +8,7 @@ export type TechOption = {
 
 export type TechGroup = {
   id: string;
-  kind: "line" | "armory";
+  kind: "line" | "armory" | "myth";
   options: TechOption[];
 };
 

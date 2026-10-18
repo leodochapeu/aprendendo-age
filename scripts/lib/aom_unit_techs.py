@@ -1,9 +1,10 @@
-"""Peças 3D por tecnologia: linha (uma por evolução) e armaria (acumulam)."""
+"""Peças 3D por tecnologia: linha, armaria e upgrades de unidade mítica."""
 
 from __future__ import annotations
 
 import json
 import re
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
@@ -16,12 +17,18 @@ from aom_unit_model import (
     _attachment_sources,
     _body_component,
     _select_model,
+    _tag,
     _tech_tags,
+    direct_tech_component,
     load_anim_xml,
     resolve_visual_root,
+    selected_material_variant,
+    submodel_map,
     visual_primitives,
     write_static_glb,
 )
+
+TECHTREE_PATH = ROOT / "tools" / "aom-extracted" / "gameplay" / "techtree.xml"
 
 TECH_MANIFEST_PATH = ROOT / "src" / "data" / "unit_model_techs.json"
 CATALOG_PATH = ROOT / "src" / "data" / "locale" / "pt" / "tecnologias.json"
@@ -112,28 +119,88 @@ def _line_info(tag: str) -> tuple[str, int] | None:
     return None
 
 
-def _classify(tag: str, known: set[str]) -> tuple[str, str, int] | None:
-    """(id do grupo, line|armory, rank) se a tecnologia tem ícone no catálogo."""
+def _myth_table() -> dict[str, tuple[str, int]]:
+    """tag -> (grupo da cadeia, nível). Ombro de Talos fica no mesmo grupo que Mão de Talos."""
+    cached = getattr(_myth_table, "value", None)
+    if cached is not None:
+        return cached
+    if not TECHTREE_PATH.exists():
+        _myth_table.value = {}  # type: ignore[attr-defined]
+        return {}
+    root = ET.parse(TECHTREE_PATH).getroot()
+    prereqs: dict[str, list[str]] = {}
+    for tech in root.findall("tech"):
+        kinds = [(child.text or "").strip() for child in tech if _tag(child) == "techtype"]
+        if "MythUnitUpgrade" not in kinds:
+            continue
+        tag = re.sub(r"[^a-z0-9]", "", (tech.get("name") or "").lower())
+        if not tag:
+            continue
+        required: list[str] = []
+        for block in tech.findall("prereqs"):
+            for child in block:
+                if _tag(child) == "techstatus" and child.text:
+                    required.append(re.sub(r"[^a-z0-9]", "", child.text.lower()))
+        prereqs[tag] = required
+
+    def chain_root(tag: str, seen: set[str]) -> str:
+        if tag in seen:
+            return tag
+        seen.add(tag)
+        for item in prereqs.get(tag, []):
+            if item in prereqs:
+                return chain_root(item, seen)
+        return tag
+
+    def chain_rank(tag: str, seen: set[str]) -> int:
+        if tag in seen:
+            return 1
+        seen.add(tag)
+        for item in prereqs.get(tag, []):
+            if item in prereqs:
+                return chain_rank(item, set()) + 1
+        return 1
+
+    table = {tag: (f"myth:{chain_root(tag, set())}", chain_rank(tag, set())) for tag in prereqs}
+    _myth_table.value = table  # type: ignore[attr-defined]
+    return table
+
+
+def _classify(tag: str, known: set[str], myth: dict[str, tuple[str, int]] | None = None) -> tuple[str, str, int] | None:
+    """(id do grupo, line|armory|myth, rank) se a tecnologia tem ícone no catálogo."""
     catalog = _catalog_key(tag)
     if catalog not in known and tag not in known:
         return None
     if tag in ARMORY:
         group, rank = ARMORY[tag]
         return group, "armory", rank
+    table = _myth_table() if myth is None else myth
+    if tag in table:
+        group, rank = table[tag]
+        return group, "myth", rank
     info = _line_info(tag)
     if info is None:
         return None
-    if catalog not in known and tag not in known:
-        return None
     return f"line:{info[0]}", "line", info[1]
+
+
+def _model_component(bars: BarIndex, node: Any) -> Any:
+    """O seletor de submodel fica no anim original; o corpo comum, depois do include."""
+    selector = direct_tech_component(node)
+    if selector is not None:
+        return selector
+    return _body_component(resolve_visual_root(bars, node))
 
 
 def _gather(bars: BarIndex, root: Any, depth: int = 0) -> set[str]:
     if depth > 3:
         return set()
+    selector = direct_tech_component(root) if depth == 0 else None
     if depth == 0:
         root = resolve_visual_root(bars, root)
     found = _tech_tags(_body_component(root))
+    if selector is not None:
+        found |= _tech_tags(selector)
     sources = _attachment_sources(root)
     has_weapon = any(name.lower() == "weapon" for name, _source in sources)
     for name, source in sources:
@@ -185,7 +252,8 @@ def _parts(bars: BarIndex, root: Any) -> list[tuple[tuple[str, ...], Any]]:
             found.extend(walk(included, path, depth + 1))
         return found
 
-    return walk(resolve_visual_root(bars, root), (), 0)
+    start = root if direct_tech_component(root) is not None else resolve_visual_root(bars, root)
+    return walk(start, (), 0)
 
 
 def _combos(tags: set[str], known: set[str]) -> list[tuple[str, ...]]:
@@ -229,35 +297,46 @@ def bake_unit_techs(
 
     parts = _parts(bars, root)
     nested = {path for path, _node in parts}
-    baked: dict[tuple[str, str], str] = {}
+    myth = set(_myth_table())
+    baked: dict[tuple[str, str, int], str] = {}
     piece_entries: dict[str, list[dict[str, Any]]] = {}
     changed: set[str] = set()
 
     for part, part_root in parts:
-        local_tags = _tech_tags(_body_component(resolve_visual_root(bars, part_root))) & useful
+        component = _model_component(bars, part_root)
+        subs = submodel_map(part_root)
+        local_tags = _tech_tags(component) & useful
         combos = _combos(local_tags, known)
-        resolved: list[tuple[tuple[str, ...], str | None]] = []
-        for combo in combos:
-            path = _select_model(_body_component(resolve_visual_root(bars, part_root)), set(combo))
-            resolved.append((combo, path))
-        by_combo = {combo: path for combo, path in resolved}
-        for combo, path in resolved:
+
+        def appearance(combo: tuple[str, ...]) -> tuple[str | None, int]:
+            active = set(combo)
+            path = _select_model(component, active, bars, subs)
+            variant = selected_material_variant(component, active, myth) if path and active & myth else 0
+            return path, variant
+
+        resolved = [(combo, appearance(combo)) for combo in combos]
+        by_combo = {combo: sig for combo, sig in resolved}
+        for combo, sig in resolved:
             for index, tag in enumerate(combo):
                 without = combo[:index] + combo[index + 1 :]
-                if by_combo.get(without) != path:
+                previous = by_combo.get(without)
+                if previous == sig:
+                    continue
+                if previous is None or previous[0] != sig[0] or tag in myth:
                     changed.add(tag)
 
         part_key = "-".join(part).lower()
         has_child = any(len(other) > len(part) and other[: len(part)] == part for other in nested)
         only: str | tuple[str, ...] = "body" if part == ("body",) else part + ("body",)
         entries: list[dict[str, Any]] = []
-        for combo, path in resolved:
+        for combo, (path, variant) in resolved:
             if not path:
                 continue
-            key = (part_key, path.lower())
+            key = (part_key, path.lower(), variant)
             if key not in baked:
                 slice_mark = "-slice" if has_child or len(part) > 1 else ""
-                filename = f"{_safe(part_key)}{slice_mark}-{_safe('+'.join(combo) or 'base')}.glb"
+                variant_mark = f"-v{variant}" if variant else ""
+                filename = f"{_safe(part_key)}{slice_mark}-{_safe('+'.join(combo) or 'base')}{variant_mark}.glb"
                 dest = PUBLIC_MODELS / "tech" / str(unit_id) / filename
                 url = f"/assets/unit-models/tech/{unit_id}/{filename}"
                 prims: list[dict[str, Any]] = []
@@ -268,6 +347,7 @@ def bake_unit_techs(
                             root,
                             techs=set(combo),
                             only=only,
+                            texture_variant=variant,
                         )
                     except (RuntimeError, FileNotFoundError, OSError, ValueError):
                         prims = []
@@ -289,7 +369,14 @@ def bake_unit_techs(
         if entries:
             piece_entries[part_key] = entries
 
-    option_tags = [tag for tag in sorted(changed) if _classify(tag, known)]
+    option_tags: list[str] = []
+    for tag in sorted(changed):
+        info = _classify(tag, known)
+        if info is None:
+            continue
+        if info[1] == "myth" and not _piece_changes(tag, piece_entries):
+            continue
+        option_tags.append(tag)
     if not option_tags or not piece_entries:
         return None
 
@@ -301,10 +388,31 @@ def bake_unit_techs(
         group, kind, rank = info
         bucket = grouped.setdefault(group, {"id": group, "kind": kind, "options": []})
         bucket["options"].append({"tag": tag, "catalog": _catalog_key(tag), "rank": rank})
-    groups = sorted(grouped.values(), key=lambda group: (0 if group["kind"] == "line" else 1, ARMORY_ORDER.index(group["id"]) if group["id"] in ARMORY_ORDER else 9, group["id"]))
+    kind_order = {"line": 0, "armory": 1, "myth": 2}
+    groups = sorted(
+        grouped.values(),
+        key=lambda group: (
+            kind_order.get(group["kind"], 3),
+            ARMORY_ORDER.index(group["id"]) if group["id"] in ARMORY_ORDER else 9,
+            group["id"],
+        ),
+    )
     for group in groups:
         group["options"].sort(key=lambda option: option["rank"])
     return {"groups": groups, "pieces": piece_entries}
+
+
+def _piece_changes(tag: str, pieces: dict[str, list[dict[str, Any]]]) -> bool:
+    """O botão só aparece se alguma peça gravada troca de arquivo ao marcar a tag."""
+    for entries in pieces.values():
+        for item in entries:
+            if tag not in item["requires"]:
+                continue
+            without = [req for req in item["requires"] if req != tag]
+            base = next((other for other in entries if other["requires"] == without), None)
+            if base is None or base["url"] != item["url"]:
+                return True
+    return False
 
 
 def merge_tech_manifest(updates: dict[str, dict[str, Any] | None], replace_ids: set[str]) -> None:

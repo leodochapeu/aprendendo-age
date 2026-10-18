@@ -282,14 +282,40 @@ def _body_component(root: ET.Element) -> ET.Element:
     return components[0] if components else scope
 
 
-def _select_model(elem: ET.Element, techs: set[str]) -> str | None:
+def submodel_map(root: ET.Element) -> dict[str, ET.Element]:
+    found: dict[str, ET.Element] = {}
+    for child in root:
+        if _tag(child) != "submodel":
+            continue
+        name = (child.text or "").strip().lower()
+        if name:
+            found[name] = child
+    return found
+
+
+def direct_tech_component(root: ET.Element) -> ET.Element | None:
+    """Componente irmão dos submodels que escolhe o corpo pela tecnologia."""
+    for child in root:
+        if _tag(child) != "component" or _is_death_component(child):
+            continue
+        if _tech_tags(child):
+            return child
+    return None
+
+
+def _select_model(
+    elem: ET.Element,
+    techs: set[str],
+    bars: BarIndex | None = None,
+    submodels: dict[str, ET.Element] | None = None,
+) -> str | None:
     """Malha do ramo de tecnologia ativo. `none` é a unidade sem essa pesquisa."""
     tag = _tag(elem)
     kind = (elem.get("type") or "").lower()
     if tag == "logic" and kind == "cinematic":
         for child in elem:
             if _tag(child) == "normal":
-                return _select_model(child, techs)
+                return _select_model(child, techs, bars, submodels)
         return None
     if tag == "logic" and kind == "tech":
         chosen = None
@@ -302,7 +328,25 @@ def _select_model(elem: ET.Element, techs: set[str]) -> str | None:
                 chosen = child
         if chosen is None:
             return None
-        return _select_model(chosen, techs)
+        return _select_model(chosen, techs, bars, submodels)
+    if tag == "submodelref":
+        ref = (elem.get("ref") or "").strip().lower()
+        sub = (submodels or {}).get(ref)
+        if sub is None:
+            return None
+        include = ""
+        for child in sub:
+            if _tag(child) == "include" and child.text:
+                include = child.text.replace("\\", "/").strip()
+        if include and bars is not None:
+            try:
+                nested = load_anim_xml(bars, include)
+            except (RuntimeError, FileNotFoundError, ET.ParseError, OSError):
+                return None
+            if nested is None:
+                return None
+            return _select_model(nested, techs, bars, submodel_map(nested))
+        return _select_model(sub, techs, bars, submodels)
     if tag == "nullvisual":
         return None
     if tag == "assetreference" and kind == "tmmodel":
@@ -319,11 +363,123 @@ def _select_model(elem: ET.Element, techs: set[str]) -> str | None:
         child_tag = _tag(child)
         if child_tag in ("anim", "attachment", "attach"):
             continue
-        selected = _select_model(child, techs)
+        selected = _select_model(child, techs, bars, submodels)
         if child_tag == "logic":
             return selected
         if selected:
             return selected
+    return None
+
+
+def selected_material_variant(elem: ET.Element, techs: set[str], relevant: set[str]) -> int:
+    """Índice de `materialvariant` quando o ramo ativo é uma tecnologia de `relevant`."""
+    found = _variant_in(elem, techs, False, relevant)
+    return 0 if found is None else found
+
+
+def _variant_in(elem: ET.Element, techs: set[str], armed: bool, relevant: set[str]) -> int | None:
+    tag = _tag(elem)
+    kind = (elem.get("type") or "").lower()
+    if tag == "logic" and kind == "cinematic":
+        for child in elem:
+            if _tag(child) == "normal":
+                return _variant_in(child, techs, armed, relevant)
+        return None
+    if tag == "logic" and kind == "tech":
+        chosen = None
+        chosen_name = ""
+        for child in elem:
+            name = _tag(child)
+            if name == "none" and chosen is None:
+                chosen, chosen_name = child, name
+            elif name in techs:
+                chosen, chosen_name = child, name
+        if chosen is None:
+            return None
+        return _variant_in(chosen, techs, armed or chosen_name in relevant, relevant)
+    if tag == "assetreference" and kind == "tmmodel":
+        if not armed:
+            return 0
+        for child in elem:
+            if _tag(child) != "materialvariant":
+                continue
+            try:
+                return int(child.get("index") or "0")
+            except ValueError:
+                return 0
+        return 0
+    if tag in ("anim", "attachment", "attach", "nullvisual", "submodelref"):
+        return None
+    for child in elem:
+        child_tag = _tag(child)
+        if child_tag in ("anim", "attachment", "attach"):
+            continue
+        found = _variant_in(child, techs, armed, relevant)
+        if child_tag == "logic":
+            return found
+        if found is not None:
+            return found
+    return None
+
+
+def activated_submodel(bars: BarIndex, root: ET.Element, techs: set[str]) -> ET.Element | None:
+    """Submodel escolhido pela tecnologia, quando a malha não está no próprio componente."""
+    component = direct_tech_component(root)
+    subs = submodel_map(root)
+    if component is None or not subs:
+        return None
+    return _submodel_node(component, techs, subs, bars)
+
+
+def _submodel_node(
+    elem: ET.Element,
+    techs: set[str],
+    subs: dict[str, ET.Element],
+    bars: BarIndex,
+) -> ET.Element | None:
+    tag = _tag(elem)
+    kind = (elem.get("type") or "").lower()
+    if tag == "logic" and kind == "cinematic":
+        for child in elem:
+            if _tag(child) == "normal":
+                return _submodel_node(child, techs, subs, bars)
+        return None
+    if tag == "logic" and kind == "tech":
+        chosen = None
+        for child in elem:
+            name = _tag(child)
+            if name == "none" and chosen is None:
+                chosen = child
+            elif name in techs:
+                chosen = child
+        if chosen is None:
+            return None
+        return _submodel_node(chosen, techs, subs, bars)
+    if tag == "submodelref":
+        sub = subs.get((elem.get("ref") or "").strip().lower())
+        if sub is None:
+            return None
+        include = ""
+        for child in sub:
+            if _tag(child) == "include" and child.text:
+                include = child.text.replace("\\", "/").strip()
+        if not include:
+            return sub
+        try:
+            return load_anim_xml(bars, include)
+        except (RuntimeError, FileNotFoundError, ET.ParseError, OSError):
+            return None
+    if tag in ("assetreference", "nullvisual", "anim", "attachment", "attach"):
+        return None
+    for child in elem:
+        child_tag = _tag(child)
+        if child_tag in ("anim", "attachment", "attach"):
+            continue
+        found = _submodel_node(child, techs, subs, bars)
+        if child_tag == "logic":
+            return found
+        if found is not None:
+            return found
     return None
 
 
@@ -505,8 +661,42 @@ def _wheel_fallback_texture() -> bytes:
     return _solid_texture((212, 118, 42))
 
 
-def ensure_texture(bars: BarIndex, model_path: str, material_name: str) -> bytes | None:
-    hit = _find_basecolor(bars, model_path, material_name)
+def _find_upgrade_basecolor(
+    bars: BarIndex,
+    model_path: str,
+    material_name: str,
+    variant: int,
+) -> tuple[str, str] | None:
+    """Textura `{modelo}_upgrade` do materialvariant. O índice 1 é `_upgrade`, os seguintes `_upgrade2`."""
+    if variant <= 0:
+        return None
+    base = model_path.replace("\\", "/").strip().lstrip("/")
+    if base.lower().endswith(".tmm"):
+        base = base[:-4]
+    folder = base.rsplit("/", 1)[0].lower() + "/" if "/" in base else ""
+    stem = base.rsplit("/", 1)[-1].lower()
+    marker = f"{stem}_upgrade" if variant == 1 else f"{stem}_upgrade{variant}"
+    material = re.sub(r"[^a-z0-9]", "", material_name.lower())
+    best: tuple[int, tuple[str, str]] | None = None
+    for key, hit in bars.basecolors.items():
+        if folder and not key.startswith(folder):
+            continue
+        filename = key.rsplit("/", 1)[-1]
+        if not filename.startswith(marker) or "basecolor" not in filename:
+            continue
+        nxt = filename[len(marker) : len(marker) + 1]
+        if variant == 1 and nxt.isdigit():
+            continue
+        score = 2 if material and material in filename else 1
+        if best is None or score > best[0]:
+            best = (score, hit)
+    return None if best is None else best[1]
+
+
+def ensure_texture(bars: BarIndex, model_path: str, material_name: str, variant: int = 0) -> bytes | None:
+    hit = _find_upgrade_basecolor(bars, model_path, material_name, variant) or _find_basecolor(
+        bars, model_path, material_name
+    )
     if hit is None:
         low = model_path.replace("\\", "/").lower()
         if "wheel" in low.rsplit("/", 1)[-1]:
@@ -1323,6 +1513,7 @@ def visual_primitives(
     depth: int = 0,
     techs: set[str] | None = None,
     only: str | tuple[str, ...] | None = None,
+    texture_variant: int = 0,
 ) -> tuple[list[dict[str, Any]], list[str]]:
     """Malha no espaço do anim: corpo e peças já encaixadas nos soquetes.
 
@@ -1332,11 +1523,18 @@ def visual_primitives(
     """
     if depth > 3:
         return [], []
+    if techs is not None:
+        only_head = only[0] if isinstance(only, tuple) else only
+        if only_head in (None, "body"):
+            switched = activated_submodel(bars, root, techs)
+            if switched is not None and switched is not root:
+                return visual_primitives(bars, switched, depth + 1, techs, only, texture_variant)
     root = resolve_visual_root(bars, root)
     if techs is None:
         model_paths = models_in_anim(root)
     else:
-        chosen = _select_model(_body_component(root), techs)
+        component = direct_tech_component(root) or _body_component(root)
+        chosen = _select_model(component, techs, bars, submodel_map(root))
         model_paths = [chosen] if chosen else []
     if not model_paths:
         return [], []
@@ -1357,7 +1555,7 @@ def visual_primitives(
         if not prims:
             prims = _mesh_primitives(body_gltf, body_blob, _identity())
     for prim in prims:
-        prim["image"] = ensure_texture(bars, body_path, prim["material"])
+        prim["image"] = ensure_texture(bars, body_path, prim["material"], texture_variant)
     for extra in model_paths[1:]:
         if _is_dummy_model(extra):
             continue
@@ -1395,7 +1593,7 @@ def visual_primitives(
         child_only: str | tuple[str, ...] | None = None
         if isinstance(only, tuple) and len(only) > 1:
             child_only = only[1] if len(only) == 2 else only[1:]
-        child_prims, _child_names = visual_primitives(bars, included, depth + 1, techs, child_only)
+        child_prims, _child_names = visual_primitives(bars, included, depth + 1, techs, child_only, texture_variant)
         if not child_prims:
             continue
         if low == "weapon":

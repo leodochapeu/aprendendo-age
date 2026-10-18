@@ -549,18 +549,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/2/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/2/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumcavalry"
           ],
@@ -568,38 +556,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/2/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/2/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavycavalry"
           ],
           "url": "/assets/unit-models/tech/2/rider-shield-slice-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/2/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavycavalry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/2/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -610,10 +570,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/2/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/2/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/2/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championcavalry"
           ],
           "url": "/assets/unit-models/tech/2/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/2/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/2/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavycavalry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/2/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -850,18 +850,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/3/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/3/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumarchers"
           ],
@@ -869,38 +857,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/3/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/3/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavyarchers"
           ],
           "url": "/assets/unit-models/tech/3/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/3/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/3/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -911,10 +871,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/3/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/3/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/3/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championarchers"
           ],
           "url": "/assets/unit-models/tech/3/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/3/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/3/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/3/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -1476,18 +1476,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/5/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/5/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumcavalry"
           ],
@@ -1495,38 +1483,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/5/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/5/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavycavalry"
           ],
           "url": "/assets/unit-models/tech/5/rider-shield-slice-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/5/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavycavalry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/5/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -1537,10 +1497,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/5/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/5/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/5/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championcavalry"
           ],
           "url": "/assets/unit-models/tech/5/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/5/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/5/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavycavalry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/5/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -1777,18 +1777,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/6/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/6/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumarchers"
           ],
@@ -1796,38 +1784,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/6/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/6/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavyarchers"
           ],
           "url": "/assets/unit-models/tech/6/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/6/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/6/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -1838,10 +1798,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/6/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/6/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/6/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championarchers"
           ],
           "url": "/assets/unit-models/tech/6/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/6/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/6/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/6/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -1971,6 +1971,45 @@
         },
         {
           "requires": [
+            "mediumaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavyaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "championaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championaxemen",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/7/weapon-copperweapons.glb"
@@ -1983,29 +2022,30 @@
         },
         {
           "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
             "bronzeweapons",
             "mediumaxemen"
           ],
           "url": "/assets/unit-models/tech/7/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/7/weapon-ironweapons.glb"
         },
         {
           "requires": [
@@ -2016,50 +2056,10 @@
         },
         {
           "requires": [
-            "heavyaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
             "heavyaxemen",
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/7/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championaxemen",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/weapon-bronzeweapons.glb"
         },
         {
           "requires": [
@@ -2078,18 +2078,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/7/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/7/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumaxemen"
           ],
@@ -2097,38 +2085,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavyaxemen"
           ],
           "url": "/assets/unit-models/tech/7/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyaxemen"
-          ],
-          "url": "/assets/unit-models/tech/7/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavyaxemen",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/7/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -2139,10 +2099,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/7/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championaxemen"
           ],
           "url": "/assets/unit-models/tech/7/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/7/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumaxemen"
+          ],
+          "url": "/assets/unit-models/tech/7/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyaxemen",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/7/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -2385,18 +2385,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/8/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/8/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumspearmen"
           ],
@@ -2404,38 +2392,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumspearmen"
-          ],
-          "url": "/assets/unit-models/tech/8/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumspearmen"
-          ],
-          "url": "/assets/unit-models/tech/8/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavyspearmen"
           ],
           "url": "/assets/unit-models/tech/8/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyspearmen"
-          ],
-          "url": "/assets/unit-models/tech/8/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavyspearmen",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/8/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -2446,10 +2406,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/8/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumspearmen"
+          ],
+          "url": "/assets/unit-models/tech/8/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyspearmen"
+          ],
+          "url": "/assets/unit-models/tech/8/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championspearmen"
           ],
           "url": "/assets/unit-models/tech/8/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/8/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumspearmen"
+          ],
+          "url": "/assets/unit-models/tech/8/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyspearmen",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/8/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -3019,6 +3019,32 @@
         },
         {
           "requires": [
+            "heavychariotarchers"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "championchariotarchers"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavychariotarchers"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championchariotarchers",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/12/rider-weapon-slice-copperweapons.glb"
@@ -3031,29 +3057,23 @@
         },
         {
           "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavychariotarchers"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavychariotarchers"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
             "bronzeweapons",
             "heavychariotarchers"
           ],
           "url": "/assets/unit-models/tech/12/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championchariotarchers"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-weapon-slice-ironweapons.glb"
         },
         {
           "requires": [
@@ -3061,26 +3081,6 @@
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/12/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championchariotarchers"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "championchariotarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championchariotarchers"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-weapon-slice-bronzeweapons.glb"
         },
         {
           "requires": [
@@ -3099,36 +3099,10 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavychariotarchers"
           ],
           "url": "/assets/unit-models/tech/12/rider-shield-slice-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavychariotarchers"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavychariotarchers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/12/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -3139,10 +3113,36 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavychariotarchers"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championchariotarchers"
           ],
           "url": "/assets/unit-models/tech/12/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavychariotarchers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/12/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -4505,18 +4505,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/17/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/17/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumcavalry"
           ],
@@ -4524,38 +4512,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/17/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/17/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavycavalry"
           ],
           "url": "/assets/unit-models/tech/17/rider-shield-slice-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/17/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavycavalry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/17/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -4566,10 +4526,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/17/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/17/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/17/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championcavalry"
           ],
           "url": "/assets/unit-models/tech/17/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/17/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/17/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavycavalry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/17/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -5131,18 +5131,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/19/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/19/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumcavalry"
           ],
@@ -5150,38 +5138,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/19/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/19/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavycavalry"
           ],
           "url": "/assets/unit-models/tech/19/rider-shield-slice-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/19/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavycavalry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/19/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -5192,10 +5152,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/19/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/19/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/19/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championcavalry"
           ],
           "url": "/assets/unit-models/tech/19/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/19/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/19/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavycavalry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/19/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -6460,18 +6460,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/24/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/24/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumcavalry"
           ],
@@ -6479,38 +6467,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/24/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/24/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavycavalry"
           ],
           "url": "/assets/unit-models/tech/24/rider-shield-slice-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/24/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavycavalry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/24/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -6521,10 +6481,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/24/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/24/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/24/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championcavalry"
           ],
           "url": "/assets/unit-models/tech/24/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/24/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/24/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavycavalry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/24/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -6654,6 +6654,45 @@
         },
         {
           "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-base.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-heavyarchers.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-championarchers.glb"
+        },
+        {
+          "requires": [
+            "coppershields"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
             "coppershields"
           ],
           "url": "/assets/unit-models/tech/25/shield-coppershields.glb"
@@ -6666,29 +6705,30 @@
         },
         {
           "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-base.glb"
-        },
-        {
-          "requires": [
-            "coppershields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-coppershields.glb"
-        },
-        {
-          "requires": [
             "bronzeshields",
             "mediumarchers"
           ],
           "url": "/assets/unit-models/tech/25/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/25/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -6699,50 +6739,10 @@
         },
         {
           "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-heavyarchers.glb"
-        },
-        {
-          "requires": [
-            "coppershields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
             "heavyarchers",
             "ironshields"
           ],
           "url": "/assets/unit-models/tech/25/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-championarchers.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "coppershields"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/25/shield-bronzeshields.glb"
         },
         {
           "requires": [
@@ -7696,18 +7696,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/28/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/28/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumarchers"
           ],
@@ -7715,38 +7703,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/28/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/28/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavyarchers"
           ],
           "url": "/assets/unit-models/tech/28/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/28/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/28/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -7757,10 +7717,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/28/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/28/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/28/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championarchers"
           ],
           "url": "/assets/unit-models/tech/28/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/28/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/28/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/28/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -8018,30 +8018,30 @@
         },
         {
           "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-base.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-base.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-base.glb"
+        },
+        {
+          "requires": [
             "coppershields"
           ],
           "url": "/assets/unit-models/tech/29/shield-base.glb"
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-base.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumarchers"
           ],
@@ -8049,48 +8049,8 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-base.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-base.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/29/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
           ],
           "url": "/assets/unit-models/tech/29/shield-base.glb"
         },
@@ -8103,10 +8063,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championarchers"
           ],
           "url": "/assets/unit-models/tech/29/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/29/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -8399,6 +8399,45 @@
         },
         {
           "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-base.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-base.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-base.glb"
+        },
+        {
+          "requires": [
+            "coppershields"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
             "coppershields"
           ],
           "url": "/assets/unit-models/tech/30/shield-coppershields.glb"
@@ -8411,29 +8450,30 @@
         },
         {
           "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-base.glb"
-        },
-        {
-          "requires": [
-            "coppershields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-coppershields.glb"
-        },
-        {
-          "requires": [
             "bronzeshields",
             "mediumarchers"
           ],
           "url": "/assets/unit-models/tech/30/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/30/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -8444,50 +8484,10 @@
         },
         {
           "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-base.glb"
-        },
-        {
-          "requires": [
-            "coppershields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
             "heavyarchers",
             "ironshields"
           ],
           "url": "/assets/unit-models/tech/30/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "coppershields"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/30/shield-bronzeshields.glb"
         },
         {
           "requires": [
@@ -8857,18 +8857,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/31/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/31/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumcavalry"
           ],
@@ -8876,38 +8864,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/31/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/31/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavycavalry"
           ],
           "url": "/assets/unit-models/tech/31/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/31/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavycavalry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/31/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -8918,10 +8878,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/31/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/31/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/31/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championcavalry"
           ],
           "url": "/assets/unit-models/tech/31/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/31/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/31/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavycavalry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/31/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -9643,18 +9643,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/35/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/35/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumarchers"
           ],
@@ -9662,38 +9650,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/35/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/35/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavyarchers"
           ],
           "url": "/assets/unit-models/tech/35/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/35/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/35/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -9704,10 +9664,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/35/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/35/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/35/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championarchers"
           ],
           "url": "/assets/unit-models/tech/35/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/35/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/35/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/35/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -9968,18 +9968,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/36/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/36/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumcavalry"
           ],
@@ -9987,38 +9975,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/36/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/36/rider-shield-slice-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavycavalry"
           ],
           "url": "/assets/unit-models/tech/36/rider-shield-slice-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/36/rider-shield-slice-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavycavalry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/36/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -10029,10 +9989,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/36/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/36/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/36/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championcavalry"
           ],
           "url": "/assets/unit-models/tech/36/rider-shield-slice-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/36/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/36/rider-shield-slice-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavycavalry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/36/rider-shield-slice-ironshields.glb"
         },
         {
           "requires": [
@@ -10594,7 +10594,49 @@
         },
         {
           "requires": [
+            "coppershields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/38/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/38/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "championcavalry",
+            "coppershields"
+          ],
+          "url": "/assets/unit-models/tech/38/shield-coppershields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/38/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumcavalry"
+          ],
+          "url": "/assets/unit-models/tech/38/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavycavalry"
+          ],
+          "url": "/assets/unit-models/tech/38/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "championcavalry"
           ],
           "url": "/assets/unit-models/tech/38/shield-bronzeshields.glb"
         },
@@ -10606,38 +10648,10 @@
         },
         {
           "requires": [
-            "coppershields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/38/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "mediumcavalry"
-          ],
-          "url": "/assets/unit-models/tech/38/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
             "ironshields",
             "mediumcavalry"
           ],
           "url": "/assets/unit-models/tech/38/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "coppershields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/38/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavycavalry"
-          ],
-          "url": "/assets/unit-models/tech/38/shield-bronzeshields.glb"
         },
         {
           "requires": [
@@ -10649,23 +10663,79 @@
         {
           "requires": [
             "championcavalry",
-            "coppershields"
-          ],
-          "url": "/assets/unit-models/tech/38/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "championcavalry"
-          ],
-          "url": "/assets/unit-models/tech/38/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "championcavalry",
             "ironshields"
           ],
           "url": "/assets/unit-models/tech/38/shield-ironshields.glb"
+        }
+      ]
+    }
+  },
+  "39": {
+    "groups": [
+      {
+        "id": "myth:wingedmessenger",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "wingedmessenger",
+            "catalog": "wingedmessenger",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/39/body-base.glb"
+        },
+        {
+          "requires": [
+            "wingedmessenger"
+          ],
+          "url": "/assets/unit-models/tech/39/body-wingedmessenger.glb"
+        }
+      ]
+    }
+  },
+  "40": {
+    "groups": [
+      {
+        "id": "myth:labyrinthofminos",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "labyrinthofminos",
+            "catalog": "labyrinthofminos",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/40/body-base.glb"
+        },
+        {
+          "requires": [
+            "labyrinthofminos"
+          ],
+          "url": "/assets/unit-models/tech/40/body-labyrinthofminos.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/40/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "labyrinthofminos"
+          ],
+          "url": "/assets/unit-models/tech/40/weapon-labyrinthofminos.glb"
         }
       ]
     }
@@ -10692,6 +10762,17 @@
             "rank": 3
           }
         ]
+      },
+      {
+        "id": "myth:sylvanlore",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "sylvanlore",
+            "catalog": "sylvanlore",
+            "rank": 1
+          }
+        ]
       }
     ],
     "pieces": {
@@ -10699,6 +10780,20 @@
         {
           "requires": [],
           "url": "/assets/unit-models/tech/41/body-base.glb"
+        },
+        {
+          "requires": [
+            "sylvanlore"
+          ],
+          "url": "/assets/unit-models/tech/41/body-sylvanlore.glb"
+        }
+      ],
+      "helmet": [
+        {
+          "requires": [
+            "sylvanlore"
+          ],
+          "url": "/assets/unit-models/tech/41/helmet-sylvanlore.glb"
         }
       ],
       "weapon": [
@@ -10804,6 +10899,422 @@
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/41/weapon-ironweapons.glb"
+        }
+      ]
+    }
+  },
+  "42": {
+    "groups": [
+      {
+        "id": "myth:willofkronos",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "willofkronos",
+            "catalog": "willofkronos",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/42/body-base.glb"
+        },
+        {
+          "requires": [
+            "willofkronos"
+          ],
+          "url": "/assets/unit-models/tech/42/body-willofkronos.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/42/weapon-base.glb"
+        }
+      ]
+    }
+  },
+  "43": {
+    "groups": [
+      {
+        "id": "myth:feetofthejackal",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "feetofthejackal",
+            "catalog": "feetofthejackal",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/43/body-base.glb"
+        },
+        {
+          "requires": [
+            "feetofthejackal"
+          ],
+          "url": "/assets/unit-models/tech/43/body-feetofthejackal.glb"
+        }
+      ]
+    }
+  },
+  "45": {
+    "groups": [
+      {
+        "id": "myth:criosphinx",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "criosphinx",
+            "catalog": "criosphinx",
+            "rank": 1
+          },
+          {
+            "tag": "hieracosphinx",
+            "catalog": "hieracosphinx",
+            "rank": 2
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/45/body-base.glb"
+        },
+        {
+          "requires": [
+            "criosphinx"
+          ],
+          "url": "/assets/unit-models/tech/45/body-criosphinx.glb"
+        },
+        {
+          "requires": [
+            "hieracosphinx"
+          ],
+          "url": "/assets/unit-models/tech/45/body-hieracosphinx.glb"
+        }
+      ]
+    }
+  },
+  "46": {
+    "groups": [
+      {
+        "id": "myth:cavetroll",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "cavetroll",
+            "catalog": "cavetroll",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/46/body-base.glb"
+        },
+        {
+          "requires": [
+            "cavetroll"
+          ],
+          "url": "/assets/unit-models/tech/46/body-cavetroll.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/46/weapon-base.glb"
+        }
+      ]
+    }
+  },
+  "47": {
+    "groups": [
+      {
+        "id": "myth:gjallarhorn",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "gjallarhorn",
+            "catalog": "gjallarhorn",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/47/body-base.glb"
+        },
+        {
+          "requires": [
+            "gjallarhorn"
+          ],
+          "url": "/assets/unit-models/tech/47/body-gjallarhorn.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/47/weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "gjallarhorn"
+          ],
+          "url": "/assets/unit-models/tech/47/weapon-slice-gjallarhorn.glb"
+        }
+      ]
+    }
+  },
+  "49": {
+    "groups": [
+      {
+        "id": "myth:disablot",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "disablot",
+            "catalog": "disablot",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/49/body-base.glb"
+        },
+        {
+          "requires": [
+            "disablot"
+          ],
+          "url": "/assets/unit-models/tech/49/body-disablot.glb"
+        }
+      ],
+      "rider": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/49/rider-slice-base.glb"
+        },
+        {
+          "requires": [
+            "disablot"
+          ],
+          "url": "/assets/unit-models/tech/49/rider-slice-disablot.glb"
+        }
+      ],
+      "rider-weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/49/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "disablot"
+          ],
+          "url": "/assets/unit-models/tech/49/rider-weapon-slice-disablot-v3.glb"
+        }
+      ],
+      "rider-shield": [
+        {
+          "requires": [
+            "disablot"
+          ],
+          "url": "/assets/unit-models/tech/49/rider-shield-slice-disablot.glb"
+        }
+      ]
+    }
+  },
+  "50": {
+    "groups": [
+      {
+        "id": "myth:valgaldr",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "valgaldr",
+            "catalog": "valgaldr",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/50/body-base.glb"
+        },
+        {
+          "requires": [
+            "valgaldr"
+          ],
+          "url": "/assets/unit-models/tech/50/body-valgaldr.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/50/weapon-base.glb"
+        }
+      ]
+    }
+  },
+  "51": {
+    "groups": [
+      {
+        "id": "myth:alluvialclay",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "alluvialclay",
+            "catalog": "alluvialclay",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/51/body-base.glb"
+        },
+        {
+          "requires": [
+            "alluvialclay"
+          ],
+          "url": "/assets/unit-models/tech/51/body-alluvialclay.glb"
+        }
+      ]
+    }
+  },
+  "53": {
+    "groups": [
+      {
+        "id": "myth:hephaestusrevenge",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "hephaestusrevenge",
+            "catalog": "hephaestusrevenge",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/53/body-base.glb"
+        },
+        {
+          "requires": [
+            "hephaestusrevenge"
+          ],
+          "url": "/assets/unit-models/tech/53/body-hephaestusrevenge.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/53/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "hephaestusrevenge"
+          ],
+          "url": "/assets/unit-models/tech/53/weapon-hephaestusrevenge.glb"
+        }
+      ],
+      "shield": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/53/shield-base.glb"
+        },
+        {
+          "requires": [
+            "hephaestusrevenge"
+          ],
+          "url": "/assets/unit-models/tech/53/shield-hephaestusrevenge.glb"
+        }
+      ]
+    }
+  },
+  "55": {
+    "groups": [
+      {
+        "id": "myth:qilinsblessing",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "qilinsblessing",
+            "catalog": "qilinsblessing",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/55/body-base.glb"
+        },
+        {
+          "requires": [
+            "qilinsblessing"
+          ],
+          "url": "/assets/unit-models/tech/55/body-qilinsblessing.glb"
+        }
+      ]
+    }
+  },
+  "57": {
+    "groups": [
+      {
+        "id": "myth:sinisterdefiance",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "sinisterdefiance",
+            "catalog": "sinisterdefiance",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/57/body-base.glb"
+        },
+        {
+          "requires": [
+            "sinisterdefiance"
+          ],
+          "url": "/assets/unit-models/tech/57/body-sinisterdefiance.glb"
         }
       ]
     }
@@ -11302,6 +11813,233 @@
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/59/bow-ironweapons.glb"
+        }
+      ]
+    }
+  },
+  "68": {
+    "groups": [
+      {
+        "id": "myth:roaroforthus",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "roaroforthus",
+            "catalog": "roaroforthus",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/68/body-base.glb"
+        },
+        {
+          "requires": [
+            "roaroforthus"
+          ],
+          "url": "/assets/unit-models/tech/68/body-roaroforthus-v1.glb"
+        }
+      ]
+    }
+  },
+  "69": {
+    "groups": [
+      {
+        "id": "myth:crocodilopolis",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "crocodilopolis",
+            "catalog": "crocodilopolis",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/69/body-base.glb"
+        },
+        {
+          "requires": [
+            "crocodilopolis"
+          ],
+          "url": "/assets/unit-models/tech/69/body-crocodilopolis.glb"
+        }
+      ]
+    }
+  },
+  "72": {
+    "groups": [
+      {
+        "id": "myth:rime",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "rime",
+            "catalog": "rime",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/72/body-base.glb"
+        },
+        {
+          "requires": [
+            "rime"
+          ],
+          "url": "/assets/unit-models/tech/72/body-rime.glb"
+        }
+      ]
+    }
+  },
+  "75": {
+    "groups": [
+      {
+        "id": "myth:granitemaw",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "granitemaw",
+            "catalog": "granitemaw",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/75/body-base.glb"
+        },
+        {
+          "requires": [
+            "granitemaw"
+          ],
+          "url": "/assets/unit-models/tech/75/body-granitemaw.glb"
+        }
+      ],
+      "shield": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/75/shield-base.glb"
+        },
+        {
+          "requires": [
+            "granitemaw"
+          ],
+          "url": "/assets/unit-models/tech/75/shield-granitemaw.glb"
+        }
+      ]
+    }
+  },
+  "77": {
+    "groups": [
+      {
+        "id": "myth:gemini",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "gemini",
+            "catalog": "gemini",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/77/body-base.glb"
+        },
+        {
+          "requires": [
+            "gemini"
+          ],
+          "url": "/assets/unit-models/tech/77/body-gemini.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/77/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "gemini"
+          ],
+          "url": "/assets/unit-models/tech/77/weapon-gemini.glb"
+        }
+      ]
+    }
+  },
+  "79": {
+    "groups": [
+      {
+        "id": "myth:frenzieddash",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "frenzieddash",
+            "catalog": "frenzieddash",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/79/body-base.glb"
+        },
+        {
+          "requires": [
+            "frenzieddash"
+          ],
+          "url": "/assets/unit-models/tech/79/body-frenzieddash.glb"
+        }
+      ]
+    }
+  },
+  "80": {
+    "groups": [
+      {
+        "id": "myth:bottomlessstomach",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "bottomlessstomach",
+            "catalog": "bottomlessstomach",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/80/body-base.glb"
+        },
+        {
+          "requires": [
+            "bottomlessstomach"
+          ],
+          "url": "/assets/unit-models/tech/80/body-bottomlessstomach.glb"
         }
       ]
     }
@@ -11882,6 +12620,599 @@
       ]
     }
   },
+  "98": {
+    "groups": [
+      {
+        "id": "myth:faceofthegorgon",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "faceofthegorgon",
+            "catalog": "faceofthegorgon",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/98/body-base.glb"
+        },
+        {
+          "requires": [
+            "faceofthegorgon"
+          ],
+          "url": "/assets/unit-models/tech/98/body-faceofthegorgon.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/98/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "faceofthegorgon"
+          ],
+          "url": "/assets/unit-models/tech/98/weapon-faceofthegorgon.glb"
+        }
+      ]
+    }
+  },
+  "99": {
+    "groups": [
+      {
+        "id": "myth:handoftalos",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "handoftalos",
+            "catalog": "handoftalos",
+            "rank": 1
+          },
+          {
+            "tag": "shoulderoftalos",
+            "catalog": "shoulderoftalos",
+            "rank": 2
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/99/body-base.glb"
+        },
+        {
+          "requires": [
+            "handoftalos"
+          ],
+          "url": "/assets/unit-models/tech/99/body-handoftalos.glb"
+        },
+        {
+          "requires": [
+            "shoulderoftalos"
+          ],
+          "url": "/assets/unit-models/tech/99/body-shoulderoftalos.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/99/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "handoftalos"
+          ],
+          "url": "/assets/unit-models/tech/99/weapon-handoftalos.glb"
+        },
+        {
+          "requires": [
+            "shoulderoftalos"
+          ],
+          "url": "/assets/unit-models/tech/99/weapon-shoulderoftalos.glb"
+        }
+      ]
+    }
+  },
+  "100": {
+    "groups": [
+      {
+        "id": "myth:flamesoftyphon",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "flamesoftyphon",
+            "catalog": "flamesoftyphon",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/100/body-base.glb"
+        },
+        {
+          "requires": [
+            "flamesoftyphon"
+          ],
+          "url": "/assets/unit-models/tech/100/body-flamesoftyphon.glb"
+        }
+      ]
+    }
+  },
+  "101": {
+    "groups": [
+      {
+        "id": "myth:atefcrown",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "atefcrown",
+            "catalog": "atefcrown",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/101/body-base.glb"
+        },
+        {
+          "requires": [
+            "atefcrown"
+          ],
+          "url": "/assets/unit-models/tech/101/body-atefcrown.glb"
+        }
+      ]
+    }
+  },
+  "104": {
+    "groups": [
+      {
+        "id": "myth:graniteblood",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "graniteblood",
+            "catalog": "graniteblood",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/104/body-base.glb"
+        },
+        {
+          "requires": [
+            "graniteblood"
+          ],
+          "url": "/assets/unit-models/tech/104/body-graniteblood.glb"
+        }
+      ]
+    }
+  },
+  "107": {
+    "groups": [
+      {
+        "id": "myth:titanomachy",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "titanomachy",
+            "catalog": "titanomachy",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/107/body-base.glb"
+        },
+        {
+          "requires": [
+            "titanomachy"
+          ],
+          "url": "/assets/unit-models/tech/107/body-titanomachy.glb"
+        }
+      ]
+    }
+  },
+  "108": {
+    "groups": [
+      {
+        "id": "myth:guardianofio",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "guardianofio",
+            "catalog": "guardianofio",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/108/body-base.glb"
+        },
+        {
+          "requires": [
+            "guardianofio"
+          ],
+          "url": "/assets/unit-models/tech/108/body-guardianofio.glb"
+        }
+      ]
+    }
+  },
+  "109": {
+    "groups": [
+      {
+        "id": "myth:asperblood",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "asperblood",
+            "catalog": "asperblood",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/109/body-base.glb"
+        },
+        {
+          "requires": [
+            "asperblood"
+          ],
+          "url": "/assets/unit-models/tech/109/body-asperblood.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/109/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "asperblood"
+          ],
+          "url": "/assets/unit-models/tech/109/weapon-asperblood.glb"
+        }
+      ]
+    }
+  },
+  "110": {
+    "groups": [
+      {
+        "id": "myth:powerofchaos",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "powerofchaos",
+            "catalog": "powerofchaos",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/110/body-base.glb"
+        },
+        {
+          "requires": [
+            "powerofchaos"
+          ],
+          "url": "/assets/unit-models/tech/110/body-powerofchaos.glb"
+        }
+      ]
+    }
+  },
+  "111": {
+    "groups": [
+      {
+        "id": "myth:risingtide",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "risingtide",
+            "catalog": "risingtide",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/111/body-base.glb"
+        },
+        {
+          "requires": [
+            "risingtide"
+          ],
+          "url": "/assets/unit-models/tech/111/body-risingtide.glb"
+        }
+      ]
+    }
+  },
+  "112": {
+    "groups": [
+      {
+        "id": "myth:songofmidsummer",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "songofmidsummer",
+            "catalog": "songofmidsummer",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/112/body-base.glb"
+        },
+        {
+          "requires": [
+            "songofmidsummer"
+          ],
+          "url": "/assets/unit-models/tech/112/body-songofmidsummer.glb"
+        }
+      ]
+    }
+  },
+  "126": {
+    "groups": [
+      {
+        "id": "myth:wisdomofnine",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "wisdomofnine",
+            "catalog": "wisdomofnine",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/126/body-base.glb"
+        },
+        {
+          "requires": [
+            "wisdomofnine"
+          ],
+          "url": "/assets/unit-models/tech/126/body-wisdomofnine.glb"
+        }
+      ]
+    }
+  },
+  "127": {
+    "groups": [
+      {
+        "id": "myth:windsickles",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "windsickles",
+            "catalog": "windsickles",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/127/body-base.glb"
+        },
+        {
+          "requires": [
+            "windsickles"
+          ],
+          "url": "/assets/unit-models/tech/127/body-windsickles.glb"
+        }
+      ]
+    }
+  },
+  "128": {
+    "groups": [
+      {
+        "id": "myth:condemnedsoul",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "condemnedsoul",
+            "catalog": "condemnedsoul",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/128/body-base.glb"
+        },
+        {
+          "requires": [
+            "condemnedsoul"
+          ],
+          "url": "/assets/unit-models/tech/128/body-condemnedsoul.glb"
+        }
+      ]
+    }
+  },
+  "130": {
+    "groups": [
+      {
+        "id": "myth:asceticpractices",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "asceticpractices",
+            "catalog": "asceticpractices",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/130/body-base.glb"
+        },
+        {
+          "requires": [
+            "asceticpractices"
+          ],
+          "url": "/assets/unit-models/tech/130/body-asceticpractices.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/130/weapon-base.glb"
+        }
+      ]
+    }
+  },
+  "132": {
+    "groups": [
+      {
+        "id": "myth:deadlyrage",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "deadlyrage",
+            "catalog": "deadlyrage",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/132/body-base.glb"
+        },
+        {
+          "requires": [
+            "deadlyrage"
+          ],
+          "url": "/assets/unit-models/tech/132/body-deadlyrage.glb"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/132/weapon-base.glb"
+        }
+      ]
+    }
+  },
+  "135": {
+    "groups": [
+      {
+        "id": "myth:restlessarmy",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "restlessarmy",
+            "catalog": "restlessarmy",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/135/body-base.glb"
+        },
+        {
+          "requires": [
+            "restlessarmy"
+          ],
+          "url": "/assets/unit-models/tech/135/body-restlessarmy.glb"
+        }
+      ]
+    }
+  },
+  "136": {
+    "groups": [
+      {
+        "id": "myth:burningmalevolence",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "burningmalevolence",
+            "catalog": "burningmalevolence",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/136/body-base.glb"
+        },
+        {
+          "requires": [
+            "burningmalevolence"
+          ],
+          "url": "/assets/unit-models/tech/136/body-burningmalevolence.glb"
+        }
+      ],
+      "sword": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/136/sword-base.glb"
+        }
+      ]
+    }
+  },
   "141": {
     "groups": [
       {
@@ -12004,45 +13335,6 @@
         },
         {
           "requires": [
-            "mediumguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championguardhousesoldiers",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/141/weapon-copperweapons.glb"
@@ -12055,30 +13347,29 @@
         },
         {
           "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "mediumguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
             "bronzeweapons",
             "mediumguardhousesoldiers"
           ],
           "url": "/assets/unit-models/tech/141/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/141/weapon-ironweapons.glb"
         },
         {
           "requires": [
@@ -12089,10 +13380,50 @@
         },
         {
           "requires": [
+            "heavyguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
             "heavyguardhousesoldiers",
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/141/weapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "championguardhousesoldiers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/weapon-bronzeweapons.glb"
         },
         {
           "requires": [
@@ -12111,18 +13442,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/141/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/141/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumstablesoldiers"
           ],
@@ -12130,38 +13449,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavystablesoldiers"
           ],
           "url": "/assets/unit-models/tech/141/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/141/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavystablesoldiers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/141/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -12172,10 +13463,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/141/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championstablesoldiers"
           ],
           "url": "/assets/unit-models/tech/141/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/141/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/141/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavystablesoldiers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/141/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -12309,45 +13640,6 @@
         },
         {
           "requires": [
-            "mediumguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championguardhousesoldiers",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/142/rangedweapon-copperweapons.glb"
@@ -12360,30 +13652,29 @@
         },
         {
           "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "mediumguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
             "bronzeweapons",
             "mediumguardhousesoldiers"
           ],
           "url": "/assets/unit-models/tech/142/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championguardhousesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/142/rangedweapon-ironweapons.glb"
         },
         {
           "requires": [
@@ -12394,10 +13685,50 @@
         },
         {
           "requires": [
+            "heavyguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
             "heavyguardhousesoldiers",
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/142/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "championguardhousesoldiers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championguardhousesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/142/rangedweapon-bronzeweapons.glb"
         },
         {
           "requires": [
@@ -12658,6 +13989,45 @@
         },
         {
           "requires": [
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/144/rider-weapon-slice-copperweapons.glb"
@@ -12670,29 +14040,30 @@
         },
         {
           "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
             "bronzeweapons",
             "mediumstablesoldiers"
           ],
           "url": "/assets/unit-models/tech/144/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/144/rider-weapon-slice-ironweapons.glb"
         },
         {
           "requires": [
@@ -12703,50 +14074,10 @@
         },
         {
           "requires": [
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-bronzeweapons.glb"
-        },
-        {
-          "requires": [
             "heavystablesoldiers",
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/144/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/144/rider-weapon-slice-bronzeweapons.glb"
         },
         {
           "requires": [
@@ -12945,6 +14276,45 @@
         },
         {
           "requires": [
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/145/rider-weapon-slice-copperweapons.glb"
@@ -12957,29 +14327,30 @@
         },
         {
           "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
             "bronzeweapons",
             "mediumstablesoldiers"
           ],
           "url": "/assets/unit-models/tech/145/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/145/rider-weapon-slice-ironweapons.glb"
         },
         {
           "requires": [
@@ -12990,50 +14361,10 @@
         },
         {
           "requires": [
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-bronzeweapons.glb"
-        },
-        {
-          "requires": [
             "heavystablesoldiers",
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/145/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/rider-weapon-slice-bronzeweapons.glb"
         },
         {
           "requires": [
@@ -13052,18 +14383,6 @@
         },
         {
           "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/145/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/145/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "mediumstablesoldiers"
           ],
@@ -13071,38 +14390,10 @@
         },
         {
           "requires": [
-            "bronzeshields",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/shield-ironshields.glb"
-        },
-        {
-          "requires": [
             "coppershields",
             "heavystablesoldiers"
           ],
           "url": "/assets/unit-models/tech/145/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/145/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "heavystablesoldiers",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/145/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -13113,10 +14404,50 @@
         },
         {
           "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/145/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
             "bronzeshields",
             "championstablesoldiers"
           ],
           "url": "/assets/unit-models/tech/145/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/145/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/145/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavystablesoldiers",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/145/shield-ironshields.glb"
         },
         {
           "requires": [
@@ -13178,6 +14509,45 @@
         },
         {
           "requires": [
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/147/rider-weapon-slice-copperweapons.glb"
@@ -13190,29 +14560,30 @@
         },
         {
           "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
             "bronzeweapons",
             "mediumstablesoldiers"
           ],
           "url": "/assets/unit-models/tech/147/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/147/rider-weapon-slice-ironweapons.glb"
         },
         {
           "requires": [
@@ -13223,50 +14594,10 @@
         },
         {
           "requires": [
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-bronzeweapons.glb"
-        },
-        {
-          "requires": [
             "heavystablesoldiers",
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/147/rider-weapon-slice-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-base.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/147/rider-weapon-slice-bronzeweapons.glb"
         },
         {
           "requires": [
@@ -13484,6 +14815,72 @@
         {
           "requires": [],
           "url": "/assets/unit-models/tech/152/resourcenode-base.glb"
+        }
+      ]
+    }
+  },
+  "153": {
+    "groups": [
+      {
+        "id": "myth:hallowedwoodlands",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "hallowedwoodlands",
+            "catalog": "hallowedwoodlands",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/153/body-base.glb"
+        },
+        {
+          "requires": [
+            "hallowedwoodlands"
+          ],
+          "url": "/assets/unit-models/tech/153/body-hallowedwoodlands.glb"
+        }
+      ]
+    }
+  },
+  "154": {
+    "groups": [
+      {
+        "id": "myth:enchantedhymn",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "enchantedhymn",
+            "catalog": "enchantedhymn",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/154/body-base.glb"
+        },
+        {
+          "requires": [
+            "enchantedhymn"
+          ],
+          "url": "/assets/unit-models/tech/154/body-enchantedhymn.glb"
+        }
+      ],
+      "helmet": [
+        {
+          "requires": [
+            "enchantedhymn"
+          ],
+          "url": "/assets/unit-models/tech/154/helmet-enchantedhymn-v1.glb"
         }
       ]
     }
@@ -14276,6 +15673,45 @@
         },
         {
           "requires": [
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "flintweapons"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
             "flintweapons"
           ],
           "url": "/assets/unit-models/tech/164/weapon-flintweapons.glb"
@@ -14285,25 +15721,6 @@
             "jadeweapons"
           ],
           "url": "/assets/unit-models/tech/164/weapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
-            "obsidianweapons"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-flintweapons.glb"
         },
         {
           "requires": [
@@ -14314,6 +15731,26 @@
         },
         {
           "requires": [
+            "heavynobleshutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "obsidianweapons"
+          ],
+          "url": "/assets/unit-models/tech/164/weapon-obsidianweapons.glb"
+        },
+        {
+          "requires": [
             "mediumnobleshutsoldiers",
             "obsidianweapons"
           ],
@@ -14321,50 +15758,10 @@
         },
         {
           "requires": [
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "heavynobleshutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
             "heavynobleshutsoldiers",
             "obsidianweapons"
           ],
           "url": "/assets/unit-models/tech/164/weapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "flintweapons"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/164/weapon-jadeweapons.glb"
         },
         {
           "requires": [
@@ -14557,6 +15954,45 @@
         },
         {
           "requires": [
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "flintweapons"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
             "flintweapons"
           ],
           "url": "/assets/unit-models/tech/165/weapon-flintweapons.glb"
@@ -14566,25 +16002,6 @@
             "jadeweapons"
           ],
           "url": "/assets/unit-models/tech/165/weapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
-            "obsidianweapons"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-flintweapons.glb"
         },
         {
           "requires": [
@@ -14595,6 +16012,26 @@
         },
         {
           "requires": [
+            "heavynobleshutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "obsidianweapons"
+          ],
+          "url": "/assets/unit-models/tech/165/weapon-obsidianweapons.glb"
+        },
+        {
+          "requires": [
             "mediumnobleshutsoldiers",
             "obsidianweapons"
           ],
@@ -14602,50 +16039,10 @@
         },
         {
           "requires": [
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "heavynobleshutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
             "heavynobleshutsoldiers",
             "obsidianweapons"
           ],
           "url": "/assets/unit-models/tech/165/weapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "flintweapons"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/165/weapon-jadeweapons.glb"
         },
         {
           "requires": [
@@ -14838,6 +16235,45 @@
         },
         {
           "requires": [
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "flintweapons"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
             "flintweapons"
           ],
           "url": "/assets/unit-models/tech/167/weapon-flintweapons.glb"
@@ -14847,25 +16283,6 @@
             "jadeweapons"
           ],
           "url": "/assets/unit-models/tech/167/weapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
-            "obsidianweapons"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-flintweapons.glb"
         },
         {
           "requires": [
@@ -14876,6 +16293,26 @@
         },
         {
           "requires": [
+            "heavynobleshutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "obsidianweapons"
+          ],
+          "url": "/assets/unit-models/tech/167/weapon-obsidianweapons.glb"
+        },
+        {
+          "requires": [
             "mediumnobleshutsoldiers",
             "obsidianweapons"
           ],
@@ -14883,50 +16320,10 @@
         },
         {
           "requires": [
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "heavynobleshutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
             "heavynobleshutsoldiers",
             "obsidianweapons"
           ],
           "url": "/assets/unit-models/tech/167/weapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "flintweapons"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/167/weapon-jadeweapons.glb"
         },
         {
           "requires": [
@@ -15884,6 +17281,122 @@
             "ironshields"
           ],
           "url": "/assets/unit-models/tech/170/rider-shield-slice-ironshields.glb"
+        }
+      ]
+    }
+  },
+  "171": {
+    "groups": [
+      {
+        "id": "myth:stoneskinquinametzin",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "stoneskinquinametzin",
+            "catalog": "stoneskinquinametzin",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/171/body-base.glb"
+        },
+        {
+          "requires": [
+            "stoneskinquinametzin"
+          ],
+          "url": "/assets/unit-models/tech/171/body-stoneskinquinametzin.glb"
+        }
+      ]
+    }
+  },
+  "172": {
+    "groups": [
+      {
+        "id": "myth:oldcoyotesspirit",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "oldcoyotesspirit",
+            "catalog": "oldcoyotesspirit",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/172/body-base.glb"
+        },
+        {
+          "requires": [
+            "oldcoyotesspirit"
+          ],
+          "url": "/assets/unit-models/tech/172/body-oldcoyotesspirit.glb"
+        }
+      ]
+    }
+  },
+  "177": {
+    "groups": [
+      {
+        "id": "myth:centzonhuitznahua",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "centzonhuitznahua",
+            "catalog": "centzonhuitznahua",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/177/body-base.glb"
+        },
+        {
+          "requires": [
+            "centzonhuitznahua"
+          ],
+          "url": "/assets/unit-models/tech/177/body-centzonhuitznahua-v1.glb"
+        }
+      ]
+    }
+  },
+  "180": {
+    "groups": [
+      {
+        "id": "myth:torchofmisfortune",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "torchofmisfortune",
+            "catalog": "torchofmisfortune",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/180/body-base.glb"
+        },
+        {
+          "requires": [
+            "torchofmisfortune"
+          ],
+          "url": "/assets/unit-models/tech/180/body-torchofmisfortune.glb"
         }
       ]
     }
@@ -17598,6 +19111,35 @@
       ]
     }
   },
+  "244": {
+    "groups": [
+      {
+        "id": "myth:alluvialclay",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "alluvialclay",
+            "catalog": "alluvialclay",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/244/body-base.glb"
+        },
+        {
+          "requires": [
+            "alluvialclay"
+          ],
+          "url": "/assets/unit-models/tech/244/body-alluvialclay.glb"
+        }
+      ]
+    }
+  },
   "247": {
     "groups": [
       {
@@ -18081,6 +19623,45 @@
         },
         {
           "requires": [
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championstablesoldiers",
             "copperweapons"
           ],
           "url": "/assets/unit-models/tech/270/weapon-copperweapons.glb"
@@ -18093,29 +19674,30 @@
         },
         {
           "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
             "bronzeweapons",
             "mediumstablesoldiers"
           ],
           "url": "/assets/unit-models/tech/270/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavystablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championstablesoldiers"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/270/weapon-ironweapons.glb"
         },
         {
           "requires": [
@@ -18126,50 +19708,10 @@
         },
         {
           "requires": [
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavystablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
             "heavystablesoldiers",
             "ironweapons"
           ],
           "url": "/assets/unit-models/tech/270/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championstablesoldiers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championstablesoldiers"
-          ],
-          "url": "/assets/unit-models/tech/270/weapon-bronzeweapons.glb"
         },
         {
           "requires": [
