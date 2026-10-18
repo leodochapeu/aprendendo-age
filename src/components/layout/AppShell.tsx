@@ -2,6 +2,7 @@ import { useLayoutEffect, useEffect, useMemo, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 import { SettingsMenu } from "@/components/ui/SettingsMenu";
+import { MusicProvider } from "@/context/MusicContext";
 import { cn } from "@/lib/cn";
 import { useTranslation } from "@/hooks/useTranslation";
 import { localeSectionPath, sectionFromPathSegment, type LocaleSection } from "@/lib/localeRoutes";
@@ -326,6 +327,7 @@ export function AppShell() {
   const appByline = useMemo(() => t("common.appByline"), [t]);
 
   return (
+    <MusicProvider>
     <div className="flex min-h-screen flex-col md:flex-row">
       <SettingsMenu />
 
@@ -409,5 +411,6 @@ export function AppShell() {
         <Outlet />
       </main>
     </div>
+    </MusicProvider>
   );
 }

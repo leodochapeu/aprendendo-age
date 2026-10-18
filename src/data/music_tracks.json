@@ -1,0 +1,212 @@
+[
+  {
+    "id": "eat-your-potatoes",
+    "title": "Eat Your Potatoes",
+    "src": "/assets/music/eat-your-potatoes.ogg",
+    "durationSec": 194.4
+  },
+  {
+    "id": "chocolate-outline",
+    "title": "Chocolate Outline",
+    "src": "/assets/music/chocolate-outline.ogg",
+    "durationSec": 207.0
+  },
+  {
+    "id": "never-mind-the-slacks-and-bashers",
+    "title": "Never Mind the Slacks and Bashers",
+    "src": "/assets/music/never-mind-the-slacks-and-bashers.ogg",
+    "durationSec": 203.7
+  },
+  {
+    "id": "suture-self",
+    "title": "Suture Self",
+    "src": "/assets/music/suture-self.ogg",
+    "durationSec": 191.7
+  },
+  {
+    "id": "flavor-cats-in-the-comfort-zone",
+    "title": "Flavor Cats (In the Comfort Zone)",
+    "src": "/assets/music/flavor-cats-in-the-comfort-zone.ogg",
+    "durationSec": 180.0
+  },
+  {
+    "id": "fine-layers-of-slaysenflite",
+    "title": "(Fine Layers of) Slaysenflite",
+    "src": "/assets/music/fine-layers-of-slaysenflite.ogg",
+    "durationSec": 182.8
+  },
+  {
+    "id": "hoping-for-real-betterness",
+    "title": "Hoping for Real Betterness",
+    "src": "/assets/music/hoping-for-real-betterness.ogg",
+    "durationSec": 187.5
+  },
+  {
+    "id": "adult-swim",
+    "title": "Adult Swim",
+    "src": "/assets/music/adult-swim.ogg",
+    "durationSec": 176.8
+  },
+  {
+    "id": "the-ballad-of-ace-lebaron",
+    "title": "The Ballad of Ace LeBaron",
+    "src": "/assets/music/the-ballad-of-ace-lebaron.ogg",
+    "durationSec": 179.4
+  },
+  {
+    "id": "in-a-pile-of-its-own-good",
+    "title": "In a Pile of Its Own Good",
+    "src": "/assets/music/in-a-pile-of-its-own-good.ogg",
+    "durationSec": 200.8
+  },
+  {
+    "id": "behold-the-great-science-fi",
+    "title": "Behold the Great Science Fi",
+    "src": "/assets/music/behold-the-great-science-fi.ogg",
+    "durationSec": 149.2
+  },
+  {
+    "id": "om-theme",
+    "title": "OM Theme",
+    "src": "/assets/music/om-theme.ogg",
+    "durationSec": 63.2
+  },
+  {
+    "id": "a-mimi-named-mochi",
+    "title": "A Mimi Named Mochi",
+    "src": "/assets/music/a-mimi-named-mochi.ogg",
+    "durationSec": 53.2
+  },
+  {
+    "id": "main-menu-chinese",
+    "title": "Main Menu Chinese",
+    "src": "/assets/music/main-menu-chinese.ogg",
+    "durationSec": 63.2
+  },
+  {
+    "id": "a-cat-named-mittens",
+    "title": "A Cat Named Mittens",
+    "src": "/assets/music/a-cat-named-mittens.ogg",
+    "durationSec": 51.5
+  },
+  {
+    "id": "a-matt-named-kittens",
+    "title": "A Matt Named Kittens",
+    "src": "/assets/music/a-matt-named-kittens.ogg",
+    "durationSec": 60.0
+  },
+  {
+    "id": "if-you-can-use-a-doorknob",
+    "title": "If You Can Use a Doorknob",
+    "src": "/assets/music/if-you-can-use-a-doorknob.ogg",
+    "durationSec": 64.6
+  },
+  {
+    "id": "gank-sneakin",
+    "title": "Gank Sneakin'",
+    "src": "/assets/music/gank-sneakin.ogg",
+    "durationSec": 91.8
+  },
+  {
+    "id": "ma-am-some-other-sunset",
+    "title": "Ma'am, Some Other Sunset",
+    "src": "/assets/music/ma-am-some-other-sunset.ogg",
+    "durationSec": 76.9
+  },
+  {
+    "id": "the-fire-brigade",
+    "title": "The Fire Brigade",
+    "src": "/assets/music/the-fire-brigade.ogg",
+    "durationSec": 64.9
+  },
+  {
+    "id": "lil-drips",
+    "title": "Lil' Drips",
+    "src": "/assets/music/lil-drips.ogg",
+    "durationSec": 77.6
+  },
+  {
+    "id": "meatier-shower",
+    "title": "Meatier Shower",
+    "src": "/assets/music/meatier-shower.ogg",
+    "durationSec": 84.5
+  },
+  {
+    "id": "oi-that-pops",
+    "title": "Oi, That Pops!!!",
+    "src": "/assets/music/oi-that-pops.ogg",
+    "durationSec": 63.8
+  },
+  {
+    "id": "rot-loaf",
+    "title": "Rot Loaf",
+    "src": "/assets/music/rot-loaf.ogg",
+    "durationSec": 56.8
+  },
+  {
+    "id": "i-wish-i-could-throw-shapes",
+    "title": "I Wish I Could Throw Shapes",
+    "src": "/assets/music/i-wish-i-could-throw-shapes.ogg",
+    "durationSec": 65.1
+  },
+  {
+    "id": "battle-track-japanese",
+    "title": "Battle Track Japanese",
+    "src": "/assets/music/battle-track-japanese.ogg",
+    "durationSec": 82.0
+  },
+  {
+    "id": "greek-to-me",
+    "title": "Greek to Me",
+    "src": "/assets/music/greek-to-me.ogg",
+    "durationSec": 61.3
+  },
+  {
+    "id": "n-d-nile",
+    "title": "N.D. Nile",
+    "src": "/assets/music/n-d-nile.ogg",
+    "durationSec": 62.7
+  },
+  {
+    "id": "of-norse-not",
+    "title": "Of Norse Not!",
+    "src": "/assets/music/of-norse-not.ogg",
+    "durationSec": 63.1
+  },
+  {
+    "id": "hotlantis",
+    "title": "Hotlantis",
+    "src": "/assets/music/hotlantis.ogg",
+    "durationSec": 58.7
+  },
+  {
+    "id": "kuafu-panda",
+    "title": "Kuafu Panda",
+    "src": "/assets/music/kuafu-panda.ogg",
+    "durationSec": 192.0
+  },
+  {
+    "id": "nori-grets",
+    "title": "Nori Grets",
+    "src": "/assets/music/nori-grets.ogg",
+    "durationSec": 181.5
+  },
+  {
+    "id": "om-jingle",
+    "title": "OM Jingle",
+    "src": "/assets/music/om-jingle.ogg",
+    "durationSec": 151.7
+  },
+  {
+    "id": "aotg-theme-full-short",
+    "title": "Arena of the Gods",
+    "src": "/assets/music/aotg-theme-full-short.ogg",
+    "durationSec": 84.5
+  },
+  {
+    "id": "gauntlet-music-loop",
+    "title": "Gauntlet",
+    "src": "/assets/music/gauntlet-music-loop.ogg",
+    "durationSec": 32.0
+  }
+]

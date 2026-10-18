@@ -27,3 +27,7 @@ dist-ssr
 
 # Cache local da extração de modelos 3D (BAR do jogo)
 tools/.unit-model-cache/
+
+# Cache da extração de música (DLLs do libvorbis e XML temporário)
+tools/.xiph-cache/
+tools/.music-probe/

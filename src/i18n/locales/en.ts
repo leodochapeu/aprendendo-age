@@ -1044,6 +1044,12 @@ export const enMessages: TranslationTree = {
     register: "Sign up",
     profile: "My Profile",
     changeLanguage: "Change language",
+    music: "Music",
+    musicEnable: "Turn music on",
+    musicDisable: "Turn music off",
+    musicVolume: "Music volume",
+    nowPlaying: "Now playing",
+    musicNext: "Next",
   },
   auth: {
     unconfigured: "Authentication is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.",

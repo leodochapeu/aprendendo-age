@@ -1045,6 +1045,12 @@ export const ptMessages: TranslationTree = {
     register: "Registra-se",
     profile: "Meu Perfil",
     changeLanguage: "Mudar idioma",
+    music: "Música",
+    musicEnable: "Ligar música",
+    musicDisable: "Desligar música",
+    musicVolume: "Volume da música",
+    nowPlaying: "Tocando agora",
+    musicNext: "Próxima",
   },
   auth: {
     unconfigured: "Autenticação não configurada. Defina VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY.",

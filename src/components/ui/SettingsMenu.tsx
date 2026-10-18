@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { useAuth } from "@/context/AuthContext";
+import { useMusic } from "@/context/MusicContext";
 import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
@@ -37,6 +38,7 @@ function menuItemClassName() {
 export function SettingsMenu({ className }: { className?: string }) {
   const { t, locale } = useTranslation();
   const { status } = useAuth();
+  const { ligada, volume, faixa, setLigada, setVolume, avancar } = useMusic();
   const { targetFlag, switchLocale, switchLanguageLabel } = useLocaleSwitch();
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
@@ -104,7 +106,7 @@ export function SettingsMenu({ className }: { className?: string }) {
           role="menu"
           aria-label={t("settings.title")}
           className={cn(
-            "absolute right-0 mt-2 min-w-[11rem] rounded-xl border border-aom-border",
+            "absolute right-0 mt-2 w-[17.5rem] rounded-xl border border-aom-border",
             "bg-zinc-950/95 p-1.5 shadow-xl shadow-black/40 backdrop-blur-sm",
           )}
         >
@@ -137,6 +139,73 @@ export function SettingsMenu({ className }: { className?: string }) {
               {t("settings.profile")}
             </Link>
           )}
+
+          <div className="my-1 border-t border-aom-border/80" role="separator" />
+
+          <div className="px-3 py-2" role="group" aria-label={t("settings.music")}>
+            <button
+              type="button"
+              data-musica="interruptor"
+              role="menuitemcheckbox"
+              aria-checked={ligada}
+              aria-pressed={ligada}
+              aria-label={ligada ? t("settings.musicDisable") : t("settings.musicEnable")}
+              className="flex w-full items-center justify-between gap-3 text-left text-sm text-zinc-200"
+              onClick={() => setLigada(!ligada)}
+            >
+              <span>{t("settings.music")}</span>
+              <span
+                aria-hidden
+                className={cn(
+                  "relative h-5 w-9 shrink-0 rounded-full transition-colors",
+                  ligada ? "bg-amber-500/80" : "bg-zinc-700",
+                )}
+              >
+                <span
+                  className={cn(
+                    "absolute top-0.5 h-4 w-4 rounded-full bg-zinc-950 transition-transform",
+                    ligada ? "translate-x-4" : "translate-x-0.5",
+                  )}
+                />
+              </span>
+            </button>
+
+            <label className="mt-3 block">
+              <span className="flex items-center justify-between gap-3 text-xs text-zinc-400">
+                <span>{t("settings.musicVolume")}</span>
+                <output className="tabular-nums text-amber-200/90">{volume}%</output>
+              </span>
+              <input
+                type="range"
+                min={0}
+                max={100}
+                step={1}
+                value={volume}
+                aria-label={t("settings.musicVolume")}
+                className="mt-1.5 h-1.5 w-full cursor-pointer accent-amber-400"
+                onChange={(event) => setVolume(Number(event.target.value))}
+              />
+            </label>
+
+            {faixa ? (
+              <div className="mt-2">
+                <p className="truncate text-xs text-amber-200/75" title={faixa.title}>
+                  <span className="text-zinc-500">{t("settings.nowPlaying")}: </span>
+                  {faixa.title}
+                </p>
+                <button
+                  type="button"
+                  onClick={avancar}
+                  className="mt-1 inline-flex items-center gap-1 text-[11px] text-zinc-500 transition-colors hover:text-amber-200/80"
+                >
+                  <span aria-hidden className="text-[10px] leading-none">
+                    ▶▶
+                  </span>
+                  {t("settings.musicNext")}
+                </button>
+              </div>
+            ) : null}
+          </div>
 
           <div className="my-1 border-t border-aom-border/80" role="separator" />
 
