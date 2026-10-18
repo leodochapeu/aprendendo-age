@@ -12142,35 +12142,6 @@
       ]
     }
   },
-  "111": {
-    "groups": [
-      {
-        "id": "myth:risingtide",
-        "kind": "myth",
-        "options": [
-          {
-            "tag": "risingtide",
-            "catalog": "risingtide",
-            "rank": 1
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/111/body-base.glb"
-        },
-        {
-          "requires": [
-            "risingtide"
-          ],
-          "url": "/assets/unit-models/tech/111/body-risingtide.glb"
-        }
-      ]
-    }
-  },
   "112": {
     "groups": [
       {
@@ -13841,192 +13812,6 @@
       ]
     }
   },
-  "152": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/body-base.glb"
-        }
-      ],
-      "rangedweapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        }
-      ],
-      "axe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/axe-base.glb"
-        }
-      ],
-      "pickaxe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/pickaxe-base.glb"
-        }
-      ],
-      "knife": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/knife-base.glb"
-        }
-      ],
-      "hammer": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/hammer-base.glb"
-        }
-      ],
-      "hoe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/hoe-base.glb"
-        }
-      ],
-      "shovel": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/shovel-base.glb"
-        }
-      ],
-      "resourcebasket": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/resourcebasket-base.glb"
-        }
-      ],
-      "resourcenode": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/resourcenode-base.glb"
-        }
-      ]
-    }
-  },
   "153": {
     "groups": [
       {
@@ -14492,293 +14277,6 @@
             "sacredshields"
           ],
           "url": "/assets/unit-models/tech/162/shield-sacredshields.glb"
-        }
-      ]
-    }
-  },
-  "163": {
-    "groups": [
-      {
-        "id": "line:warhutsoldiers",
-        "kind": "line",
-        "options": [
-          {
-            "tag": "mediumwarhutsoldiers",
-            "catalog": "mediumwarhutsoldiers",
-            "rank": 2
-          },
-          {
-            "tag": "heavywarhutsoldiers",
-            "catalog": "heavywarhutsoldiers",
-            "rank": 4
-          },
-          {
-            "tag": "championwarhutsoldiers",
-            "catalog": "championwarhutsoldiers",
-            "rank": 6
-          }
-        ]
-      },
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "flintweapons",
-            "catalog": "flintweapons",
-            "rank": 1
-          },
-          {
-            "tag": "jadeweapons",
-            "catalog": "jadeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "obsidianweapons",
-            "catalog": "obsidianweapons",
-            "rank": 3
-          }
-        ]
-      },
-      {
-        "id": "shields",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "featheredshields",
-            "catalog": "featheredshields",
-            "rank": 1
-          },
-          {
-            "tag": "ceremonialshields",
-            "catalog": "ceremonialshields",
-            "rank": 2
-          },
-          {
-            "tag": "sacredshields",
-            "catalog": "sacredshields",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/163/body-base.glb"
-        },
-        {
-          "requires": [
-            "mediumwarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/body-mediumwarhutsoldiers.glb"
-        },
-        {
-          "requires": [
-            "heavywarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/body-heavywarhutsoldiers.glb"
-        },
-        {
-          "requires": [
-            "championwarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/body-championwarhutsoldiers.glb"
-        }
-      ],
-      "rangedweapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
-            "obsidianweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumwarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "mediumwarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "jadeweapons",
-            "mediumwarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumwarhutsoldiers",
-            "obsidianweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "heavywarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "flintweapons",
-            "heavywarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "heavywarhutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavywarhutsoldiers",
-            "obsidianweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
-        },
-        {
-          "requires": [
-            "championwarhutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championwarhutsoldiers",
-            "flintweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
-        },
-        {
-          "requires": [
-            "championwarhutsoldiers",
-            "jadeweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
-        },
-        {
-          "requires": [
-            "championwarhutsoldiers",
-            "obsidianweapons"
-          ],
-          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
-        }
-      ],
-      "shield": [
-        {
-          "requires": [
-            "featheredshields"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
-        },
-        {
-          "requires": [
-            "ceremonialshields"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
-        },
-        {
-          "requires": [
-            "sacredshields"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
-        },
-        {
-          "requires": [
-            "featheredshields",
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
-        },
-        {
-          "requires": [
-            "ceremonialshields",
-            "mediumnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
-        },
-        {
-          "requires": [
-            "mediumnobleshutsoldiers",
-            "sacredshields"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
-        },
-        {
-          "requires": [
-            "featheredshields",
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
-        },
-        {
-          "requires": [
-            "ceremonialshields",
-            "heavynobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
-        },
-        {
-          "requires": [
-            "heavynobleshutsoldiers",
-            "sacredshields"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "featheredshields"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
-        },
-        {
-          "requires": [
-            "ceremonialshields",
-            "championnobleshutsoldiers"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
-        },
-        {
-          "requires": [
-            "championnobleshutsoldiers",
-            "sacredshields"
-          ],
-          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
-        }
-      ],
-      "hammer": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/163/hammer-base.glb"
         }
       ]
     }
@@ -16609,186 +16107,6 @@
       ]
     }
   },
-  "183": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/body-base.glb"
-        }
-      ],
-      "rangedweapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
-        }
-      ],
-      "axe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/axe-base.glb"
-        }
-      ],
-      "pickaxe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/pickaxe-base.glb"
-        }
-      ],
-      "knife": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/knife-base.glb"
-        }
-      ],
-      "hammer": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/hammer-base.glb"
-        }
-      ],
-      "hoe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/hoe-base.glb"
-        }
-      ],
-      "resourcebasket": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/resourcebasket-base.glb"
-        }
-      ],
-      "resourcenode": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/183/resourcenode-base.glb"
-        }
-      ]
-    }
-  },
   "185": {
     "groups": [
       {
@@ -17545,186 +16863,6 @@
       ]
     }
   },
-  "227": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/body-base.glb"
-        }
-      ],
-      "rangedweapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        }
-      ],
-      "axe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/axe-base.glb"
-        }
-      ],
-      "pickaxe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/pickaxe-base.glb"
-        }
-      ],
-      "knife": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/knife-base.glb"
-        }
-      ],
-      "hammer": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/hammer-base.glb"
-        }
-      ],
-      "hoe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/hoe-base.glb"
-        }
-      ],
-      "resourcebasket": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/resourcebasket-base.glb"
-        }
-      ],
-      "resource": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/resource-base.glb"
-        }
-      ]
-    }
-  },
   "236": {
     "groups": [
       {
@@ -17782,216 +16920,6 @@
         {
           "requires": [],
           "url": "/assets/unit-models/tech/236/cabin-base.glb"
-        }
-      ]
-    }
-  },
-  "238": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/body-base.glb"
-        }
-      ],
-      "donkey": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/donkey-slice-base.glb"
-        }
-      ],
-      "donkey-veg": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/donkey-veg-slice-base.glb"
-        }
-      ],
-      "donkey-closed": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/donkey-closed-slice-base.glb"
-        }
-      ],
-      "donkey-resourcewood": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/donkey-resourcewood-slice-base.glb"
-        }
-      ],
-      "donkey-resourcegold": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/donkey-resourcegold-slice-base.glb"
-        }
-      ],
-      "donkey-resourcemeat": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/donkey-resourcemeat-slice-base.glb"
-        }
-      ],
-      "rangedweapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
-        }
-      ],
-      "axe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/axe-base.glb"
-        }
-      ],
-      "pickaxe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/pickaxe-base.glb"
-        }
-      ],
-      "knife": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/knife-base.glb"
-        }
-      ],
-      "hammer": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/hammer-base.glb"
-        }
-      ],
-      "hoe": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/hoe-base.glb"
-        }
-      ],
-      "resourcebasket": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/238/resourcebasket-base.glb"
         }
       ]
     }
@@ -20520,5 +19448,903 @@
       ]
     },
     "stance": true
+  },
+  "111": {
+    "groups": [
+      {
+        "id": "myth:risingtide",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "risingtide",
+            "catalog": "risingtide",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/111/body-base.glb"
+        },
+        {
+          "requires": [
+            "risingtide"
+          ],
+          "url": "/assets/unit-models/tech/111/body-risingtide.glb"
+        }
+      ]
+    }
+  },
+  "152": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/152/body-base.glb"
+        }
+      ],
+      "rangedweapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        }
+      ]
+    }
+  },
+  "163": {
+    "groups": [
+      {
+        "id": "line:warhutsoldiers",
+        "kind": "line",
+        "options": [
+          {
+            "tag": "mediumwarhutsoldiers",
+            "catalog": "mediumwarhutsoldiers",
+            "rank": 2
+          },
+          {
+            "tag": "heavywarhutsoldiers",
+            "catalog": "heavywarhutsoldiers",
+            "rank": 4
+          },
+          {
+            "tag": "championwarhutsoldiers",
+            "catalog": "championwarhutsoldiers",
+            "rank": 6
+          }
+        ]
+      },
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "flintweapons",
+            "catalog": "flintweapons",
+            "rank": 1
+          },
+          {
+            "tag": "jadeweapons",
+            "catalog": "jadeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "obsidianweapons",
+            "catalog": "obsidianweapons",
+            "rank": 3
+          }
+        ]
+      },
+      {
+        "id": "shields",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "featheredshields",
+            "catalog": "featheredshields",
+            "rank": 1
+          },
+          {
+            "tag": "ceremonialshields",
+            "catalog": "ceremonialshields",
+            "rank": 2
+          },
+          {
+            "tag": "sacredshields",
+            "catalog": "sacredshields",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/163/body-base.glb"
+        },
+        {
+          "requires": [
+            "mediumwarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/body-mediumwarhutsoldiers.glb"
+        },
+        {
+          "requires": [
+            "heavywarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/body-heavywarhutsoldiers.glb"
+        },
+        {
+          "requires": [
+            "championwarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/body-championwarhutsoldiers.glb"
+        }
+      ],
+      "rangedweapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "mediumwarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavywarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "championwarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "flintweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "mediumwarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "flintweapons",
+            "heavywarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "championwarhutsoldiers",
+            "flintweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-flintweapons.glb"
+        },
+        {
+          "requires": [
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "jadeweapons",
+            "mediumwarhutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "heavywarhutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "championwarhutsoldiers",
+            "jadeweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-jadeweapons.glb"
+        },
+        {
+          "requires": [
+            "obsidianweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
+        },
+        {
+          "requires": [
+            "mediumwarhutsoldiers",
+            "obsidianweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
+        },
+        {
+          "requires": [
+            "heavywarhutsoldiers",
+            "obsidianweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
+        },
+        {
+          "requires": [
+            "championwarhutsoldiers",
+            "obsidianweapons"
+          ],
+          "url": "/assets/unit-models/tech/163/rangedweapon-obsidianweapons.glb"
+        }
+      ],
+      "shield": [
+        {
+          "requires": [
+            "featheredshields"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
+        },
+        {
+          "requires": [
+            "ceremonialshields"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
+        },
+        {
+          "requires": [
+            "sacredshields"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
+        },
+        {
+          "requires": [
+            "featheredshields",
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
+        },
+        {
+          "requires": [
+            "ceremonialshields",
+            "mediumnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
+        },
+        {
+          "requires": [
+            "mediumnobleshutsoldiers",
+            "sacredshields"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
+        },
+        {
+          "requires": [
+            "featheredshields",
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
+        },
+        {
+          "requires": [
+            "ceremonialshields",
+            "heavynobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
+        },
+        {
+          "requires": [
+            "heavynobleshutsoldiers",
+            "sacredshields"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
+            "featheredshields"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-featheredshields.glb"
+        },
+        {
+          "requires": [
+            "ceremonialshields",
+            "championnobleshutsoldiers"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-ceremonialshields.glb"
+        },
+        {
+          "requires": [
+            "championnobleshutsoldiers",
+            "sacredshields"
+          ],
+          "url": "/assets/unit-models/tech/163/shield-sacredshields.glb"
+        }
+      ]
+    }
+  },
+  "183": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/183/body-base.glb"
+        }
+      ],
+      "rangedweapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
+        }
+      ]
+    }
+  },
+  "227": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/227/body-base.glb"
+        }
+      ],
+      "rangedweapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
+        }
+      ]
+    }
+  },
+  "238": {
+    "groups": [
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/body-base.glb"
+        }
+      ],
+      "donkey": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-slice-base.glb"
+        }
+      ],
+      "donkey-veg": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-veg-slice-base.glb"
+        }
+      ],
+      "donkey-closed": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-closed-slice-base.glb"
+        }
+      ],
+      "donkey-resourcewood": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-resourcewood-slice-base.glb"
+        }
+      ],
+      "donkey-resourcegold": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-resourcegold-slice-base.glb"
+        }
+      ],
+      "donkey-resourcemeat": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-resourcemeat-slice-base.glb"
+        }
+      ],
+      "rangedweapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
+        }
+      ]
+    }
   }
 }

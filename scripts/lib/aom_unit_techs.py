@@ -9,10 +9,10 @@ from pathlib import Path
 from typing import Any
 
 from aom_unit_model import (
+    GATHER_ATTACHMENTS,
     PROJECTILE_ATTACHMENTS,
     PUBLIC_MODELS,
     ROOT,
-    TOOL_ATTACHMENTS,
     BarIndex,
     _attachment_sources,
     _body_component,
@@ -202,10 +202,9 @@ def _gather(bars: BarIndex, root: Any, depth: int = 0) -> set[str]:
     if selector is not None:
         found |= _tech_tags(selector)
     sources = _attachment_sources(root)
-    has_weapon = any(name.lower() == "weapon" for name, _source in sources)
     for name, source in sources:
         low = name.lower()
-        if low in PROJECTILE_ATTACHMENTS or (has_weapon and low in TOOL_ATTACHMENTS):
+        if low in PROJECTILE_ATTACHMENTS or low in GATHER_ATTACHMENTS:
             continue
         if isinstance(source, str):
             try:
@@ -280,13 +279,12 @@ def _parts(bars: BarIndex, root: Any) -> list[tuple[tuple[str, ...], Any, str | 
         if not prefix:
             found.append((("body",), node, None))
         sources = _attachment_sources(node)
-        has_weapon = any(name.lower() == "weapon" for name, _source in sources)
         for name, source in sources:
             low = name.lower()
             stance = _attachment_stance(node, name)
-            if low in PROJECTILE_ATTACHMENTS and not (low == "javelin" and stance == "pierce"):
+            if low in GATHER_ATTACHMENTS:
                 continue
-            if has_weapon and low in TOOL_ATTACHMENTS:
+            if low in PROJECTILE_ATTACHMENTS and not (low == "javelin" and stance == "pierce"):
                 continue
             included = _load_attachment(bars, source)
             if included is None:

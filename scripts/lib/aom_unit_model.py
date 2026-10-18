@@ -55,8 +55,22 @@ PROJECTILE_ATTACHMENTS = {
     "footprint_left",
     "footprint_right",
 }
-# Ferramenta de construção. Só entra se a unidade não tiver arma de combate.
-TOOL_ATTACHMENTS = {"hammer", "pickaxe", "tool", "mallet"}
+# Coleta e construção. A pose da página não carrega essas ferramentas.
+GATHER_ATTACHMENTS = {
+    "hammer",
+    "pickaxe",
+    "tool",
+    "mallet",
+    "hoe",
+    "shovel",
+    "axe",
+    "knife",
+    "resource",
+    "resourcebasket",
+    "sowseeds",
+    "bag",
+    "resourcenode",
+}
 
 
 def _tag(elem: ET.Element) -> str:
@@ -693,10 +707,28 @@ def _find_upgrade_basecolor(
     return None if best is None else best[1]
 
 
+def _parent_texture_path(model_path: str) -> str | None:
+    """`qing_long_upgrade` não tem textura própria; usa a do `qing_long`."""
+    base = model_path.replace("\\", "/").strip().lstrip("/")
+    if base.lower().endswith(".tmm"):
+        base = base[:-4]
+    folder, _, stem = base.rpartition("/")
+    low = stem.lower()
+    for suffix in ("_upgrade4", "_upgrade3", "_upgrade2", "_upgrade"):
+        if low.endswith(suffix) and len(low) > len(suffix):
+            parent = stem[: -len(suffix)]
+            return f"{folder}/{parent}" if folder else parent
+    return None
+
+
 def ensure_texture(bars: BarIndex, model_path: str, material_name: str, variant: int = 0) -> bytes | None:
-    hit = _find_upgrade_basecolor(bars, model_path, material_name, variant) or _find_basecolor(
-        bars, model_path, material_name
-    )
+    hit = _find_upgrade_basecolor(bars, model_path, material_name, variant) if variant else None
+    if hit is None:
+        hit = _find_basecolor(bars, model_path, material_name)
+    if hit is None:
+        parent = _parent_texture_path(model_path)
+        if parent:
+            hit = _find_basecolor(bars, parent, material_name)
     if hit is None:
         low = model_path.replace("\\", "/").lower()
         if "wheel" in low.rsplit("/", 1)[-1]:
@@ -1568,13 +1600,12 @@ def visual_primitives(
     if only_head == "body":
         return prims, []
 
-    has_weapon = any(name.lower() == "weapon" for name, _source in attachments)
     attached: list[str] = []
     for name, source in attachments:
         low = name.lower()
         if low in PROJECTILE_ATTACHMENTS and low != (only_head or "").lower():
             continue
-        if has_weapon and low in TOOL_ATTACHMENTS:
+        if low in GATHER_ATTACHMENTS and low != (only_head or "").lower():
             continue
         if only_head and low != only_head.lower():
             continue
