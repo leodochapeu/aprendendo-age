@@ -40,6 +40,7 @@ from aom_unit_model import (  # noqa: E402
     bake_unit_glb,
     render_preview,
 )
+from aom_unit_techs import bake_unit_techs, merge_tech_manifest  # noqa: E402
 
 
 def _slug(proto: str) -> str:
@@ -118,6 +119,7 @@ def main() -> int:
 
     ok = 0
     preview_done = False
+    tech_updates: dict[str, dict] = {}
     for index, (row, proto, anim) in enumerate(selected, start=1):
         unit_id = str(row["id"])
         filename = f"{unit_id}-{_slug(proto)}.glb"
@@ -126,23 +128,37 @@ def main() -> int:
         if dest.exists() and not args.force:
             manifest[unit_id] = f"/assets/unit-models/{filename}"
             ok += 1
-            continue
+        else:
+            try:
+                info = bake_unit_glb(bars, anim, dest)
+            except Exception as exc:  # noqa: BLE001 — uma unidade ruim não para o lote
+                print(f"  falhou: {exc}")
+                continue
+            manifest[unit_id] = f"/assets/unit-models/{filename}"
+            ok += 1
+            print(f"  {info['model']} anexos={', '.join(info['attachments']) or '-'} ({info['bytes']} bytes)")
+            MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            if args.preview and not preview_done:
+                preview = dest.with_suffix(".preview.png")
+                render_preview(dest, preview)
+                print(f"  preview: {preview}")
+                preview_done = True
         try:
-            info = bake_unit_glb(bars, anim, dest)
+            tech_entry = bake_unit_techs(bars, anim, int(unit_id), force=args.force)
         except Exception as exc:  # noqa: BLE001 — uma unidade ruim não para o lote
-            print(f"  falhou: {exc}")
-            continue
-        manifest[unit_id] = f"/assets/unit-models/{filename}"
-        ok += 1
-        print(f"  {info['model']} anexos={', '.join(info['attachments']) or '-'} ({info['bytes']} bytes)")
-        MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        if args.preview and not preview_done:
-            preview = dest.with_suffix(".preview.png")
-            render_preview(dest, preview)
-            print(f"  preview: {preview}")
-            preview_done = True
+            print(f"  tecnologias falhou: {exc}")
+            tech_entry = None
+        tech_updates[unit_id] = tech_entry
+        if tech_entry:
+            labels = [
+                option["tag"]
+                for group in tech_entry["groups"]
+                for option in group["options"]
+            ]
+            print(f"  tecnologias: {', '.join(labels)}")
 
     MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    merge_tech_manifest(tech_updates, {unit_id for unit_id in tech_updates})
     print(f"\n{ok}/{len(selected)} modelos em {PUBLIC_MODELS}")
     print(f"manifesto: {MANIFEST_PATH}")
     return 0 if ok else 1

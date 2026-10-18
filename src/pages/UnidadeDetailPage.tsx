@@ -14,8 +14,8 @@ import { localeSectionPath } from "@/lib/localeRoutes";
 import { listIndexReturnTo, listOrDetailBackLinkLabel } from "@/lib/listIndexReturnState";
 import { unitModelUrl } from "@/lib/unitModelUrl";
 
-const UnidadeModelViewer = lazy(() =>
-  import("@/components/unidade/UnidadeModelViewer").then((mod) => ({ default: mod.UnidadeModelViewer })),
+const UnidadeProjection = lazy(() =>
+  import("@/components/unidade/UnidadeProjection").then((mod) => ({ default: mod.UnidadeProjection })),
 );
 
 export function UnidadeDetailPage() {
@@ -60,7 +60,7 @@ export function UnidadeDetailPage() {
         {modelUrl ? (
           <Section title={t("common.projection3d")}>
             <Suspense fallback={<p className="text-zinc-500">{t("common.loading")}</p>}>
-              <UnidadeModelViewer url={modelUrl} />
+              <UnidadeProjection unitId={u.id} fallbackUrl={modelUrl} />
             </Suspense>
           </Section>
         ) : null}

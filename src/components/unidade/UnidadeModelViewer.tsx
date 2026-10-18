@@ -7,7 +7,14 @@ import { useTranslation } from "@/hooks/useTranslation";
 const YAW_STEP = 0.38;
 
 type UnidadeModelViewerProps = {
-  url: string;
+  urls: string[];
+};
+
+type Stage = {
+  pivot: THREE.Group;
+  target: THREE.Vector3;
+  distance: { current: number };
+  camera: THREE.PerspectiveCamera;
 };
 
 function disposeScene(root: THREE.Object3D) {
@@ -24,12 +31,21 @@ function disposeScene(root: THREE.Object3D) {
   });
 }
 
-export function UnidadeModelViewer({ url }: UnidadeModelViewerProps) {
+function clearPivot(pivot: THREE.Group) {
+  for (const child of [...pivot.children]) {
+    pivot.remove(child);
+    disposeScene(child);
+  }
+}
+
+export function UnidadeModelViewer({ urls }: UnidadeModelViewerProps) {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const yawRef = useRef(0.45);
   const dragRef = useRef({ x: 0, active: false });
+  const stageRef = useRef<Stage | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const sourcesKey = urls.join("|");
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -54,9 +70,9 @@ export function UnidadeModelViewer({ url }: UnidadeModelViewerProps) {
 
     const pivot = new THREE.Group();
     scene.add(pivot);
-
     const target = new THREE.Vector3();
-    let distance = 4;
+    const distance = { current: 4 };
+    stageRef.current = { pivot, target, distance, camera };
 
     const fit = () => {
       const width = canvas.clientWidth || 1;
@@ -69,47 +85,12 @@ export function UnidadeModelViewer({ url }: UnidadeModelViewerProps) {
     const placeCamera = () => {
       const yaw = yawRef.current;
       camera.position.set(
-        target.x + Math.sin(yaw) * distance,
-        target.y + distance * 0.06,
-        target.z + Math.cos(yaw) * distance,
+        target.x + Math.sin(yaw) * distance.current,
+        target.y + distance.current * 0.06,
+        target.z + Math.cos(yaw) * distance.current,
       );
       camera.lookAt(target);
     };
-
-    const loader = new GLTFLoader();
-    loader.load(
-      url,
-      (gltf) => {
-        if (disposed) {
-          disposeScene(gltf.scene);
-          return;
-        }
-        pivot.add(gltf.scene);
-        const box = new THREE.Box3().setFromObject(gltf.scene);
-        const size = box.getSize(new THREE.Vector3());
-        const center = box.getCenter(new THREE.Vector3());
-        target.copy(center);
-        const radius = Math.max(size.x, size.y, size.z) * 0.5 || 1;
-        distance = (radius / Math.tan((camera.fov * Math.PI) / 360)) * 1.18;
-        const shadow = new THREE.Mesh(
-          new THREE.CircleGeometry(Math.max(size.x, size.z) * 0.38, 40),
-          new THREE.MeshBasicMaterial({
-            color: 0x000000,
-            transparent: true,
-            opacity: 0.32,
-            depthWrite: false,
-          }),
-        );
-        shadow.rotation.x = -Math.PI / 2;
-        shadow.position.set(center.x, box.min.y + 0.015, center.z);
-        pivot.add(shadow);
-        setStatus("ready");
-      },
-      undefined,
-      () => {
-        if (!disposed) setStatus("error");
-      },
-    );
 
     const resize = new ResizeObserver(() => fit());
     resize.observe(canvas);
@@ -125,12 +106,66 @@ export function UnidadeModelViewer({ url }: UnidadeModelViewerProps) {
 
     return () => {
       disposed = true;
+      stageRef.current = null;
       cancelAnimationFrame(frame);
       resize.disconnect();
       disposeScene(scene);
       renderer.dispose();
     };
-  }, [url]);
+  }, []);
+
+  useEffect(() => {
+    const stage = stageRef.current;
+    const sources = sourcesKey ? sourcesKey.split("|") : [];
+    if (!stage) return;
+    if (!sources.length) {
+      clearPivot(stage.pivot);
+      setStatus("error");
+      return;
+    }
+
+    let cancelled = false;
+    setStatus("loading");
+    const loader = new GLTFLoader();
+    Promise.all(sources.map((item) => loader.loadAsync(item).catch(() => null))).then((loaded) => {
+      if (cancelled || stageRef.current !== stage) {
+        for (const gltf of loaded) {
+          if (gltf) disposeScene(gltf.scene);
+        }
+        return;
+      }
+      clearPivot(stage.pivot);
+      const models = loaded.filter((gltf): gltf is NonNullable<typeof gltf> => gltf !== null);
+      if (!models.length) {
+        setStatus("error");
+        return;
+      }
+      for (const gltf of models) stage.pivot.add(gltf.scene);
+      const box = new THREE.Box3().setFromObject(stage.pivot);
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+      stage.target.copy(center);
+      const radius = Math.max(size.x, size.y, size.z) * 0.5 || 1;
+      stage.distance.current = (radius / Math.tan((stage.camera.fov * Math.PI) / 360)) * 1.18;
+      const shadow = new THREE.Mesh(
+        new THREE.CircleGeometry(Math.max(size.x, size.z) * 0.38, 40),
+        new THREE.MeshBasicMaterial({
+          color: 0x000000,
+          transparent: true,
+          opacity: 0.32,
+          depthWrite: false,
+        }),
+      );
+      shadow.rotation.x = -Math.PI / 2;
+      shadow.position.set(center.x, box.min.y + 0.015, center.z);
+      stage.pivot.add(shadow);
+      setStatus("ready");
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [sourcesKey]);
 
   const turn = (delta: number) => {
     yawRef.current += delta;

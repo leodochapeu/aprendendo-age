@@ -256,6 +256,84 @@ def _visual_scope(root: ET.Element) -> ET.Element:
     return root
 
 
+def _body_component(root: ET.Element) -> ET.Element:
+    scope = _visual_scope(root)
+    for child in scope:
+        if _tag(child) == "component":
+            return child
+    return scope
+
+
+def _select_model(elem: ET.Element, techs: set[str]) -> str | None:
+    """Malha do ramo de tecnologia ativo. `none` é a unidade sem essa pesquisa."""
+    tag = _tag(elem)
+    kind = (elem.get("type") or "").lower()
+    if tag == "logic" and kind == "cinematic":
+        for child in elem:
+            if _tag(child) == "normal":
+                return _select_model(child, techs)
+        return None
+    if tag == "logic" and kind == "tech":
+        chosen = None
+        for child in elem:
+            name = _tag(child)
+            if name == "none":
+                if chosen is None:
+                    chosen = child
+            elif name in techs:
+                chosen = child
+        if chosen is None:
+            return None
+        return _select_model(chosen, techs)
+    if tag == "nullvisual":
+        return None
+    if tag == "assetreference" and kind == "tmmodel":
+        for child in elem:
+            if _tag(child) == "file" and child.text:
+                path = child.text.replace("\\", "/").strip()
+                if "_igc" in path.lower() or "/igc/" in path.lower():
+                    return None
+                return path
+        return None
+    if tag in ("anim", "attachment", "attach"):
+        return None
+    for child in elem:
+        child_tag = _tag(child)
+        if child_tag in ("anim", "attachment", "attach"):
+            continue
+        selected = _select_model(child, techs)
+        if child_tag == "logic":
+            return selected
+        if selected:
+            return selected
+    return None
+
+
+def _tech_tags(elem: ET.Element) -> set[str]:
+    """Nomes de tecnologia que escolhem uma malha, fora do ramo de cinema."""
+    tag = _tag(elem)
+    kind = (elem.get("type") or "").lower()
+    if tag == "logic" and kind == "cinematic":
+        found: set[str] = set()
+        for child in elem:
+            if _tag(child) == "normal":
+                found |= _tech_tags(child)
+        return found
+    if tag in ("anim", "attachment"):
+        return set()
+    found = set()
+    if tag == "logic" and kind == "tech":
+        for child in elem:
+            name = _tag(child)
+            if name != "none":
+                found.add(name)
+    for child in elem:
+        if _tag(child) in ("anim", "attachment"):
+            continue
+        found |= _tech_tags(child)
+    return found
+
+
 def models_in_anim(root: ET.Element) -> list[str]:
     found: list[str] = []
     scope_root = _visual_scope(root)
@@ -1205,12 +1283,26 @@ def _textured_mesh(bars: BarIndex, model_path: str, transform: list[list[float]]
     return prims
 
 
-def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple[list[dict[str, Any]], list[str]]:
-    """Malha no espaço do anim: corpo e peças já encaixadas nos soquetes."""
+def visual_primitives(
+    bars: BarIndex,
+    root: ET.Element,
+    depth: int = 0,
+    techs: set[str] | None = None,
+    only: str | None = None,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """Malha no espaço do anim: corpo e peças já encaixadas nos soquetes.
+
+    `techs` escolhe o ramo de cada tecnologia (vazio = sem pesquisa).
+    `only` limita a peça: `body` ou o nome do acessório.
+    """
     if depth > 3:
         return [], []
     root = resolve_visual_root(bars, root)
-    model_paths = models_in_anim(root)
+    if techs is None:
+        model_paths = models_in_anim(root)
+    else:
+        chosen = _select_model(_body_component(root), techs)
+        model_paths = [chosen] if chosen else []
     if not model_paths:
         return [], []
 
@@ -1231,6 +1323,9 @@ def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple
         prims.extend(_textured_mesh(bars, extra, _identity()))
     if not prims:
         return [], []
+    body_count = len(prims)
+    if only == "body":
+        return prims, []
 
     attachments = _attachment_sources(root)
     has_weapon = any(name.lower() == "weapon" for name, _source in attachments)
@@ -1240,6 +1335,8 @@ def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple
         if low in PROJECTILE_ATTACHMENTS:
             continue
         if has_weapon and low in TOOL_ATTACHMENTS:
+            continue
+        if only and low != only.lower():
             continue
         if isinstance(source, str):
             try:
@@ -1253,7 +1350,7 @@ def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple
         matrix = socket_matrix(body_gltf, body_blob, _socket_name(body_gltf, root, name), bone_worlds)
         if matrix is None:
             continue
-        child_prims, _child_names = visual_primitives(bars, included, depth + 1)
+        child_prims, _child_names = visual_primitives(bars, included, depth + 1, techs)
         if not child_prims:
             continue
         if low == "weapon":
@@ -1277,6 +1374,8 @@ def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple
                         matrix[row][3] += shift[row]
         prims.extend(apply_matrix(child_prims, matrix))
         attached.append(name)
+    if only:
+        return prims[body_count:], attached
     return prims, attached
 
 
