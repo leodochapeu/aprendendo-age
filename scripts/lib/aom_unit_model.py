@@ -274,7 +274,7 @@ def load_material_xml(bars: BarIndex, model_path: str) -> ET.Element | None:
     return ET.parse(xml_path).getroot()
 
 
-def _material_look(root: ET.Element, material_name: str) -> tuple[str | None, str | None]:
+def _material_look(root: ET.Element, material_name: str, variant: int = 0) -> tuple[str | None, str | None]:
     """(shader, caminho da cor) do submaterial. Sem barra no caminho, não é um DDT."""
     want = re.sub(r"[^a-z0-9]", "", material_name.lower())
     for child in root:
@@ -283,16 +283,54 @@ def _material_look(root: ET.Element, material_name: str) -> tuple[str | None, st
         if re.sub(r"[^a-z0-9]", "", (child.get("name") or "").lower()) != want:
             continue
         kind = None
-        basecolor = None
-        for node in child.iter():
+        chosen = None
+        fallback = None
+        for node in child:
             if _tag(node) == "materialdef" and kind is None:
                 kind = (node.get("name") or "").lower()
-            if _tag(node) == "texture" and (node.get("name") or "").lower() == "basecolor":
-                override = (node.get("override") or "").replace("\\", "/").strip()
+            if _tag(node) != "parameters":
+                continue
+            raw = node.get("variant")
+            try:
+                slot = int(raw) if raw else 0
+            except ValueError:
+                slot = 0
+            color = None
+            for tex in node:
+                if _tag(tex) != "texture" or (tex.get("name") or "").lower() != "basecolor":
+                    continue
+                override = (tex.get("override") or "").replace("\\", "/").strip()
                 if "/" in override:
-                    basecolor = override
-        return kind, basecolor
+                    color = override
+            if slot == 0 and fallback is None:
+                fallback = color
+            if slot == variant:
+                chosen = color
+        return kind, chosen if chosen is not None else fallback
     return None, None
+
+
+def _bare_variant(elem: ET.Element) -> int:
+    """Índice de materialvariant fora de um ramo de tecnologia."""
+    tag = _tag(elem)
+    if tag == "logic" and (elem.get("type") or "").lower() == "tech":
+        return 0
+    if tag == "assetreference" and (elem.get("type") or "").lower() == "tmmodel":
+        for child in elem:
+            if _tag(child) != "materialvariant":
+                continue
+            try:
+                return int(child.get("index") or "0")
+            except ValueError:
+                return 0
+        return 0
+    for child in elem:
+        if _tag(child) in {"anim", "attachment", "attach"}:
+            continue
+        found = _bare_variant(child)
+        if found:
+            return found
+    return 0
 
 
 def _iter_model_files(elem: ET.Element):
@@ -810,7 +848,7 @@ def ensure_texture(bars: BarIndex, model_path: str, material_name: str, variant:
     if hit is None:
         material = load_material_xml(bars, model_path)
         if material is not None:
-            kind, override = _material_look(material, material_name)
+            kind, override = _material_look(material, material_name, variant)
             if override:
                 rel = override if override.lower().endswith(".ddt") else f"{override}.ddt"
                 hit = bars.find(bars.ddt_index(), rel)
@@ -1675,7 +1713,8 @@ def visual_primitives(
         if not prims:
             prims = _mesh_primitives(body_gltf, body_blob, _identity())
     for prim in prims:
-        prim["image"] = ensure_texture(bars, body_path, prim["material"], texture_variant)
+        body_variant = texture_variant or _bare_variant(_body_component(root))
+        prim["image"] = ensure_texture(bars, body_path, prim["material"], body_variant)
     for extra in model_paths[1:]:
         if _is_dummy_model(extra):
             continue

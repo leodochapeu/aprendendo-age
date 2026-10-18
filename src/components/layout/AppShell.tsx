@@ -20,10 +20,11 @@ const LIST_INDEX_SECTIONS = new Set<LocaleSection>([
   "unidades",
 ]);
 
+/** Só o índice (`/unidades`), não o detalhe (`/unidades/hoplita`) nem a comparação. */
 function isCatalogListIndex(pathname: string): boolean {
-  const segment = pathname.split("/").filter(Boolean)[0];
-  if (!segment) return false;
-  const section = sectionFromPathSegment(segment);
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts.length !== 1) return false;
+  const section = sectionFromPathSegment(parts[0]!);
   return section != null && LIST_INDEX_SECTIONS.has(section);
 }
 

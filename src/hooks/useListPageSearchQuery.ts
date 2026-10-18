@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo } from "react";
+import { useCallback, useLayoutEffect, useMemo } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 
 const SEARCH_PARAM = "search";
@@ -24,26 +24,24 @@ export function useListPageSearchQuery() {
   const scrollKey = useMemo(() => scrollStorageKey(pathname, search), [pathname, search]);
 
   useLayoutEffect(() => {
-    try {
-      const raw = sessionStorage.getItem(scrollKey);
-      if (raw == null) return;
-      const y = Number(raw);
-      if (!Number.isFinite(y) || y < 0) return;
-      window.scrollTo(0, y);
-    } catch {
-      /* sessionStorage indisponível */
-    }
-  }, [scrollKey]);
-
-  useEffect(() => {
-    let raf = 0;
     const persist = () => {
       try {
         sessionStorage.setItem(scrollKey, String(window.scrollY));
       } catch {
-        /* ignore */
+        /* sessionStorage indisponível */
       }
     };
+    try {
+      const raw = sessionStorage.getItem(scrollKey);
+      if (raw != null) {
+        const y = Number(raw);
+        if (Number.isFinite(y) && y >= 0) window.scrollTo(0, y);
+      }
+    } catch {
+      /* sessionStorage indisponível */
+    }
+
+    let raf = 0;
     const onScroll = () => {
       if (raf) return;
       raf = requestAnimationFrame(() => {
@@ -55,6 +53,7 @@ export function useListPageSearchQuery() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (raf) cancelAnimationFrame(raf);
+      // Roda antes do AppShell levar o detalhe ao topo, senão gravaria scroll 0.
       persist();
     };
   }, [scrollKey]);
