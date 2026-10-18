@@ -16247,5 +16247,51 @@
       }
     ],
     "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Sacerdote de Guerra</highlight-yellow> (:favoraom:)"
+  },
+  {
+    "nome": "Ydalir",
+    "beneficia": ":aomr_portable_ram_icon: <highlight-brown>Aríete Portátil</highlight-brown>|:aomr_hill_fort_icon: <highlight-brown>Forte da Colina</highlight-brown>",
+    "construcao_origem": [
+      {
+        "nome": "Forte da Colina",
+        "id": 59
+      },
+      {
+        "nome": "AsgardianHillFort"
+      }
+    ],
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 16,
+        "nome": "Frey"
+      },
+      {
+        "id": 65,
+        "nome": "Ullr"
+      }
+    ],
+    "ingles": "Ydalir",
+    "panteoes": [
+      {
+        "id": 3,
+        "nome": "Nórdico"
+      }
+    ],
+    "tipo": "Utilidade 🔧",
+    "icon": "aomr_ydalir_icon",
+    "campo": [
+      ":aomr_portable_ram_icon: Aríete Portátil: Pode ser treinado uma era antes",
+      ":aomr_hill_fort_icon: Forte da Colina: Taxa de trabalho +20%"
+    ],
+    "comida": 150,
+    "madeira": 100,
+    "favor": 20,
+    "tempo_s": 15
   }
 ]

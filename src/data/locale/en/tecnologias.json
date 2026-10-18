@@ -16247,5 +16247,51 @@
       }
     ],
     "beneficia": ":aomr_warrior_priest_hero_icon: <highlight-yellow>Warrior Priest</highlight-yellow> (:favoraom:)"
+  },
+  {
+    "nome": "Ydalir",
+    "beneficia": ":aomr_portable_ram_icon: <highlight-brown>Portable Ram</highlight-brown>|:aomr_hill_fort_icon: <highlight-brown>Hill Fort</highlight-brown>",
+    "construcao_origem": [
+      {
+        "nome": "Hill Fort",
+        "id": 59
+      },
+      {
+        "nome": "AsgardianHillFort"
+      }
+    ],
+    "eras": [
+      {
+        "id": 3,
+        "nome": "Heroic :aomr_heroic_age_icon:"
+      }
+    ],
+    "god_especifico": [
+      {
+        "id": 16,
+        "nome": "Frey"
+      },
+      {
+        "id": 65,
+        "nome": "Ullr"
+      }
+    ],
+    "ingles": "Ydalir",
+    "panteoes": [
+      {
+        "id": 3,
+        "nome": "Nordic"
+      }
+    ],
+    "tipo": "Utilidade 🔧",
+    "icon": "aomr_ydalir_icon",
+    "campo": [
+      ":aomr_portable_ram_icon: Portable Ram: Can be trained an age earlier",
+      ":aomr_hill_fort_icon: Hill Fort: Work rate +20%"
+    ],
+    "comida": 150,
+    "madeira": 100,
+    "favor": 20,
+    "tempo_s": 15
   }
 ]

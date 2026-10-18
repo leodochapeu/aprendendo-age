@@ -13,6 +13,10 @@ from aom_unit_model import (
     PROJECTILE_ATTACHMENTS,
     PUBLIC_MODELS,
     ROOT,
+    _bare_hands,
+    _sex_choice,
+    bare_hands_anim,
+    has_female_variant,
     BarIndex,
     _attachment_sources,
     _body_component,
@@ -206,6 +210,8 @@ def _gather(bars: BarIndex, root: Any, depth: int = 0) -> set[str]:
         low = name.lower()
         if low in PROJECTILE_ATTACHMENTS or low in GATHER_ATTACHMENTS:
             continue
+        if _bare_hands.get() and low == "rangedweapon":
+            continue
         if isinstance(source, str):
             try:
                 included = load_anim_xml(bars, source)
@@ -284,6 +290,8 @@ def _parts(bars: BarIndex, root: Any) -> list[tuple[tuple[str, ...], Any, str | 
             stance = _attachment_stance(node, name)
             if low in GATHER_ATTACHMENTS:
                 continue
+            if _bare_hands.get() and low == "rangedweapon":
+                continue
             if low in PROJECTILE_ATTACHMENTS and not (low == "javelin" and stance == "pierce"):
                 continue
             included = _load_attachment(bars, source)
@@ -331,20 +339,99 @@ def bake_unit_techs(
     root = load_anim_xml(bars, anim_relative)
     if root is None:
         return None
+    bare = _bare_hands.set(bare_hands_anim(anim_relative))
+    try:
+        return _bake_unit_techs(bars, root, unit_id, force)
+    finally:
+        _bare_hands.reset(bare)
+
+
+def _bake_unit_techs(
+    bars: BarIndex,
+    root: Any,
+    unit_id: int,
+    force: bool,
+) -> dict[str, Any] | None:
     known = _known_tags()
     tags = _gather(bars, root)
     useful = {tag for tag in tags if _classify(tag, known)}
+    has_female = has_female_variant(root)
+    sexes: tuple[str | None, ...] = (None, "female") if has_female else (None,)
     parts = _parts(bars, root)
     has_stance = any(stance for _path, _node, stance in parts)
-    if not useful and not has_stance:
+    if not useful and not has_stance and not has_female:
         return None
 
-    nested = {path for path, _node, _stance in parts}
     myth = set(_myth_table())
-    baked: dict[tuple[str, str, int], str] = {}
+    baked: dict[tuple[str, str, int, str], str] = {}
     piece_entries: dict[str, list[dict[str, Any]]] = {}
     changed: set[str] = set()
 
+    for sex in sexes:
+        token = _sex_choice.set(sex) if sex else None
+        try:
+            parts = _parts(bars, root)
+            nested = {path for path, _node, _stance in parts}
+            _bake_sex_parts(
+                bars, root, unit_id, force, sex, parts, nested, useful, known, myth, baked, piece_entries, changed
+            )
+        finally:
+            if token is not None:
+                _sex_choice.reset(token)
+
+    option_tags: list[str] = []
+    for tag in sorted(changed):
+        info = _classify(tag, known)
+        if info is None:
+            continue
+        if info[1] == "myth" and not _piece_changes(tag, piece_entries):
+            continue
+        option_tags.append(tag)
+    if not piece_entries or (not option_tags and not has_stance and not any(item.get("sex") for entries in piece_entries.values() for item in entries)):
+        return None
+
+    grouped: dict[str, dict[str, Any]] = {}
+    for tag in option_tags:
+        info = _classify(tag, known)
+        if info is None:
+            continue
+        group, kind, rank = info
+        bucket = grouped.setdefault(group, {"id": group, "kind": kind, "options": []})
+        bucket["options"].append({"tag": tag, "catalog": _catalog_key(tag), "rank": rank})
+    kind_order = {"line": 0, "armory": 1, "myth": 2}
+    groups = sorted(
+        grouped.values(),
+        key=lambda group: (
+            kind_order.get(group["kind"], 3),
+            ARMORY_ORDER.index(group["id"]) if group["id"] in ARMORY_ORDER else 9,
+            group["id"],
+        ),
+    )
+    for group in groups:
+        group["options"].sort(key=lambda option: option["rank"])
+    result: dict[str, Any] = {"groups": groups, "pieces": piece_entries}
+    if has_stance:
+        result["stance"] = True
+    if any(item.get("sex") for entries in piece_entries.values() for item in entries):
+        result["sex"] = True
+    return result
+
+
+def _bake_sex_parts(
+    bars: BarIndex,
+    root: Any,
+    unit_id: int,
+    force: bool,
+    sex: str | None,
+    parts: list[tuple[tuple[str, ...], Any, str | None]],
+    nested: set[tuple[str, ...]],
+    useful: set[str],
+    known: set[str],
+    myth: set[str],
+    baked: dict[tuple[str, str, int, str], str],
+    piece_entries: dict[str, list[dict[str, Any]]],
+    changed: set[str],
+) -> None:
     for part, part_root, part_stance in parts:
         component = _model_component(bars, part_root)
         subs = submodel_map(part_root)
@@ -375,11 +462,12 @@ def bake_unit_techs(
         for combo, (path, variant) in resolved:
             if not path:
                 continue
-            key = (part_key, path.lower(), variant)
+            key = (part_key, path.lower(), variant, sex or "")
             if key not in baked:
                 slice_mark = "-slice" if has_child or len(part) > 1 else ""
+                sex_mark = "-female" if sex == "female" else ""
                 variant_mark = f"-v{variant}" if variant else ""
-                filename = f"{_safe(part_key)}{slice_mark}-{_safe('+'.join(combo) or 'base')}{variant_mark}.glb"
+                filename = f"{_safe(part_key)}{slice_mark}{sex_mark}-{_safe('+'.join(combo) or 'base')}{variant_mark}.glb"
                 dest = PUBLIC_MODELS / "tech" / str(unit_id) / filename
                 url = f"/assets/unit-models/tech/{unit_id}/{filename}"
                 prims: list[dict[str, Any]] = []
@@ -406,49 +494,22 @@ def bake_unit_techs(
             if not url:
                 continue
             requires = sorted(combo)
-            if any(item["requires"] == requires and item.get("stance") == part_stance and item["url"] == url for item in entries):
+            stored = piece_entries.get(part_key, [])
+            if sex == "female" and any(
+                item["requires"] == requires and item.get("stance") == part_stance and not item.get("sex") and item["url"] == url
+                for item in stored
+            ):
+                continue
+            if any(item["requires"] == requires and item.get("stance") == part_stance and item.get("sex") == sex and item["url"] == url for item in entries):
                 continue
             entry: dict[str, Any] = {"requires": requires, "url": url}
             if part_stance:
                 entry["stance"] = part_stance
+            if sex == "female":
+                entry["sex"] = "female"
             entries.append(entry)
         if entries:
-            piece_entries[part_key] = entries
-
-    option_tags: list[str] = []
-    for tag in sorted(changed):
-        info = _classify(tag, known)
-        if info is None:
-            continue
-        if info[1] == "myth" and not _piece_changes(tag, piece_entries):
-            continue
-        option_tags.append(tag)
-    if not piece_entries or (not option_tags and not has_stance):
-        return None
-
-    grouped: dict[str, dict[str, Any]] = {}
-    for tag in option_tags:
-        info = _classify(tag, known)
-        if info is None:
-            continue
-        group, kind, rank = info
-        bucket = grouped.setdefault(group, {"id": group, "kind": kind, "options": []})
-        bucket["options"].append({"tag": tag, "catalog": _catalog_key(tag), "rank": rank})
-    kind_order = {"line": 0, "armory": 1, "myth": 2}
-    groups = sorted(
-        grouped.values(),
-        key=lambda group: (
-            kind_order.get(group["kind"], 3),
-            ARMORY_ORDER.index(group["id"]) if group["id"] in ARMORY_ORDER else 9,
-            group["id"],
-        ),
-    )
-    for group in groups:
-        group["options"].sort(key=lambda option: option["rank"])
-    result: dict[str, Any] = {"groups": groups, "pieces": piece_entries}
-    if has_stance:
-        result["stance"] = True
-    return result
+            piece_entries.setdefault(part_key, []).extend(entries)
 
 
 def _piece_changes(tag: str, pieces: dict[str, list[dict[str, Any]]]) -> bool:

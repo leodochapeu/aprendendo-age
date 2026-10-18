@@ -9009,12 +9009,16 @@
   },
   {
     "id": 152,
-    "nome": "Licaão",
-    "ingles": "Lykaon",
+    "nome": "Licaão (Aldeão)",
+    "ingles": "Lykaon (Villager)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -9033,16 +9037,6 @@
       {
         "nome": "Templo (Grego)",
         "id": 21
-      },
-      {
-        "nome": "VillageCenter"
-      },
-      {
-        "nome": "CitadelCenter"
-      },
-      {
-        "nome": "Templo (Grego)",
-        "id": 12
       }
     ],
     "madeira": 0,
@@ -16166,5 +16160,72 @@
     "dano_cortante": 15,
     "alcance": 0.5,
     "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 284,
+    "nome": "Licaão (Lobo)",
+    "ingles": "Lykaon (Wolf)",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "counter_de": "Soldados humanos :aomr_type_human_soldier_icon:",
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      },
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 350,
+    "dano_cortante": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 20,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 35,
+    "armadura_anticontusao": 99,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 165,
+    "favor": 15,
+    "custo_total": 180,
+    "populacao": 2,
+    "tempo_treinamento": 20,
+    "velocidade_movimento": 4.8,
+    "alcance": 0.5,
+    "forte_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "god_dono": [
+      {
+        "id": 79,
+        "nome": "Pan"
+      }
+    ],
+    "icon": "aomr_lykaon_wolf_icon"
   }
 ]

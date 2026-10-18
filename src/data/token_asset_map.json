@@ -1157,5 +1157,7 @@
   "aomr_wasen_icon": "/assets/unit_humans/unit_japanese/AoMR_Wasen_icon.webp",
   "aomr_water_carnivora_icon": "/assets/unit_humans/unit_atlantean/AoMR_Water_Carnivora_icon.webp",
   "aomr_xuanwu_icon": "/assets/unit_humans/unit_chinese/AoMR_Xuanwu_icon.webp",
-  "aomr_yinglong_icon": "/assets/unit_humans/unit_chinese/AoMR_Yinglong_icon.webp"
+  "aomr_yinglong_icon": "/assets/unit_humans/unit_chinese/AoMR_Yinglong_icon.webp",
+  "aomr_lykaon_wolf_icon": "/assets/unit_myths/AoMR_Lykaon_Wolf_icon.webp",
+  "aomr_titan_age_icon": "/assets/ages/AoMR_Titan_Age_icon.webp"
 }

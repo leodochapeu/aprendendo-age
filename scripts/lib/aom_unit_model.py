@@ -14,6 +14,7 @@ import re
 import struct
 import subprocess
 import xml.etree.ElementTree as ET
+from contextvars import ContextVar
 from pathlib import Path
 from typing import Any
 
@@ -279,8 +280,31 @@ def _is_death_component(elem: ET.Element) -> bool:
     return _component_label(elem).startswith("death")
 
 
+# Corpo feminino, quando o animfile tem os dois. None usa o primeiro submodel (masculino).
+_sex_choice: ContextVar[str | None] = ContextVar("aom_unit_sex", default=None)
+# Aldeão não fica com o arco na pose da página.
+_bare_hands: ContextVar[bool] = ContextVar("aom_bare_hands", default=False)
+
+
+def bare_hands_anim(anim_relative: str) -> bool:
+    return "villager" in anim_relative.replace("\\", "/").lower()
+
+
+def has_female_variant(root: ET.Element) -> bool:
+    names = [(child.text or "").strip().lower() for child in root if _tag(child) == "submodel"]
+    return any(name.endswith("_male") for name in names) and any(name.endswith("_female") for name in names)
+
+
 def _visual_scope(root: ET.Element) -> ET.Element:
-    """Unidades com corpo masculino/feminino guardam a malha no primeiro submodel."""
+    """Unidades com corpo masculino/feminino guardam a malha no submodel pedido."""
+    sex = _sex_choice.get()
+    if sex:
+        for child in root:
+            if _tag(child) != "submodel":
+                continue
+            name = (child.text or "").strip().lower()
+            if name.endswith("_" + sex):
+                return child
     for child in root:
         if _tag(child) == "submodel":
             return child
@@ -1607,6 +1631,8 @@ def visual_primitives(
             continue
         if low in GATHER_ATTACHMENTS and low != (only_head or "").lower():
             continue
+        if _bare_hands.get() and low == "rangedweapon":
+            continue
         if only_head and low != only_head.lower():
             continue
         if isinstance(source, str):
@@ -1661,7 +1687,11 @@ def bake_unit_glb(
     root = load_anim_xml(bars, anim_relative)
     if root is None:
         raise FileNotFoundError(f"animfile não encontrado: {anim_relative}")
-    prims, attached = visual_primitives(bars, root)
+    bare = _bare_hands.set(bare_hands_anim(anim_relative))
+    try:
+        prims, attached = visual_primitives(bars, root)
+    finally:
+        _bare_hands.reset(bare)
     if not prims:
         raise FileNotFoundError(f"sem TMModel em {anim_relative}")
     write_static_glb(prims, dest)

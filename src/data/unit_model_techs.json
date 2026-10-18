@@ -3349,311 +3349,6 @@
       ]
     }
   },
-  "14": {
-    "groups": [
-      {
-        "id": "line:infantry",
-        "kind": "line",
-        "options": [
-          {
-            "tag": "mediuminfantry",
-            "catalog": "mediuminfantry",
-            "rank": 2
-          },
-          {
-            "tag": "heavyinfantry",
-            "catalog": "heavyinfantry",
-            "rank": 4
-          },
-          {
-            "tag": "championinfantry",
-            "catalog": "championinfantry",
-            "rank": 6
-          }
-        ]
-      },
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      },
-      {
-        "id": "shields",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "coppershields",
-            "catalog": "coppershields",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeshields",
-            "catalog": "bronzeshields",
-            "rank": 2
-          },
-          {
-            "tag": "ironshields",
-            "catalog": "ironshields",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/14/body-base.glb"
-        },
-        {
-          "requires": [
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/body-mediuminfantry.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/body-heavyinfantry.glb"
-        },
-        {
-          "requires": [
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/body-championinfantry.glb"
-        }
-      ],
-      "helmet": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/14/helmet-base.glb"
-        },
-        {
-          "requires": [
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/helmet-mediuminfantry.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/helmet-heavyinfantry.glb"
-        },
-        {
-          "requires": [
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/helmet-championinfantry.glb"
-        }
-      ],
-      "weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/14/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
-        }
-      ],
-      "shield": [
-        {
-          "requires": [
-            "coppershields"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "coppershields",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "coppershields",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "coppershields"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "bronzeshields",
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "ironshields",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "heavyinfantry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "ironshields"
-          ],
-          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
-        }
-      ]
-    }
-  },
   "15": {
     "groups": [
       {
@@ -19478,144 +19173,6 @@
       ]
     }
   },
-  "152": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/body-base.glb"
-        }
-      ],
-      "rangedweapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
-        }
-      ]
-    }
-  },
   "163": {
     "groups": [
       {
@@ -19897,7 +19454,605 @@
       ]
     }
   },
-  "183": {
+  "14": {
+    "groups": [
+      {
+        "id": "line:infantry",
+        "kind": "line",
+        "options": [
+          {
+            "tag": "mediuminfantry",
+            "catalog": "mediuminfantry",
+            "rank": 2
+          },
+          {
+            "tag": "heavyinfantry",
+            "catalog": "heavyinfantry",
+            "rank": 4
+          },
+          {
+            "tag": "championinfantry",
+            "catalog": "championinfantry",
+            "rank": 6
+          }
+        ]
+      },
+      {
+        "id": "weapons",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "copperweapons",
+            "catalog": "copperweapons",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeweapons",
+            "catalog": "bronzeweapons",
+            "rank": 2
+          },
+          {
+            "tag": "ironweapons",
+            "catalog": "ironweapons",
+            "rank": 3
+          }
+        ]
+      },
+      {
+        "id": "shields",
+        "kind": "armory",
+        "options": [
+          {
+            "tag": "coppershields",
+            "catalog": "coppershields",
+            "rank": 1
+          },
+          {
+            "tag": "bronzeshields",
+            "catalog": "bronzeshields",
+            "rank": 2
+          },
+          {
+            "tag": "ironshields",
+            "catalog": "ironshields",
+            "rank": 3
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/14/body-base.glb"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/body-mediuminfantry.glb"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/body-heavyinfantry.glb"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/body-championinfantry.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/14/body-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/body-female-mediuminfantry.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/body-female-heavyinfantry.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/body-female-championinfantry.glb",
+          "sex": "female"
+        }
+      ],
+      "helmet": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/14/helmet-base.glb"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/helmet-mediuminfantry.glb"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/helmet-heavyinfantry.glb"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/helmet-championinfantry.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/14/helmet-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/helmet-female-mediuminfantry.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/helmet-female-heavyinfantry.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/helmet-female-championinfantry.glb",
+          "sex": "female"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/14/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-ironweapons.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/14/weapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-ironweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-ironweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-ironweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/14/weapon-female-ironweapons.glb",
+          "sex": "female"
+        }
+      ],
+      "shield": [
+        {
+          "requires": [
+            "coppershields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "coppershields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-coppershields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-bronzeshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-ironshields.glb"
+        },
+        {
+          "requires": [
+            "coppershields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-coppershields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-coppershields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "coppershields",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-coppershields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "coppershields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-coppershields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-bronzeshields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-bronzeshields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-bronzeshields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeshields",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-bronzeshields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-ironshields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "ironshields",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-ironshields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-ironshields.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironshields"
+          ],
+          "url": "/assets/unit-models/tech/14/shield-female-ironshields.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
+  },
+  "123": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/123/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/123/body-female-base.glb",
+          "sex": "female"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/123/weapon-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/123/weapon-female-base.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
+  },
+  "152": {
     "groups": [
       {
         "id": "weapons",
@@ -19921,430 +20076,343 @@
         ]
       }
     ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/152/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/152/body-female-base.glb",
+          "sex": "female"
+        }
+      ],
+      "rangedweapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-base.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-copperweapons.glb"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-bronzeweapons.glb"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-ironweapons.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-ironweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediumarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-ironweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "heavyarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-ironweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-base.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-copperweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championarchers"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-bronzeweapons.glb",
+          "sex": "female"
+        },
+        {
+          "requires": [
+            "championarchers",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/152/rangedweapon-female-ironweapons.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
+  },
+  "183": {
+    "groups": [],
     "pieces": {
       "body": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/183/body-base.glb"
-        }
-      ],
-      "rangedweapon": [
+        },
         {
           "requires": [],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/183/rangedweapon-ironweapons.glb"
+          "url": "/assets/unit-models/tech/183/body-female-base.glb",
+          "sex": "female"
         }
       ]
-    }
-  },
-  "227": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/body-base.glb"
-        }
-      ],
-      "rangedweapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/227/rangedweapon-ironweapons.glb"
-        }
-      ]
-    }
+    },
+    "sex": true
   },
   "238": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
+    "groups": [],
     "pieces": {
       "body": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/238/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/body-female-base.glb",
+          "sex": "female"
         }
       ],
       "donkey": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/238/donkey-slice-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-slice-female-base.glb",
+          "sex": "female"
         }
       ],
       "donkey-veg": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/238/donkey-veg-slice-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-veg-slice-female-base.glb",
+          "sex": "female"
         }
       ],
       "donkey-closed": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/238/donkey-closed-slice-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-closed-slice-female-base.glb",
+          "sex": "female"
         }
       ],
       "donkey-resourcewood": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/238/donkey-resourcewood-slice-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-resourcewood-slice-female-base.glb",
+          "sex": "female"
         }
       ],
       "donkey-resourcegold": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/238/donkey-resourcegold-slice-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/238/donkey-resourcegold-slice-female-base.glb",
+          "sex": "female"
         }
       ],
       "donkey-resourcemeat": [
         {
           "requires": [],
           "url": "/assets/unit-models/tech/238/donkey-resourcemeat-slice-base.glb"
-        }
-      ],
-      "rangedweapon": [
+        },
         {
           "requires": [],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-base.glb"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-copperweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-bronzeweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediumarchers"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "heavyarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
-        },
-        {
-          "requires": [
-            "championarchers",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/238/rangedweapon-ironweapons.glb"
+          "url": "/assets/unit-models/tech/238/donkey-resourcemeat-slice-female-base.glb",
+          "sex": "female"
         }
       ]
-    }
+    },
+    "sex": true
   }
 }

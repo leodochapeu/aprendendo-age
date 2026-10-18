@@ -5,7 +5,7 @@ import tokenAssetMap from "@/data/token_asset_map.json";
 import { useCatalog } from "@/hooks/useCatalog";
 import { resolveTokenIconSrc } from "@/lib/tokenIconUrl";
 import { useTranslation } from "@/hooks/useTranslation";
-import { projectionUrls, toggleTechTag, unitTechVisual, type TechGroup, type WeaponStance } from "@/lib/unitModelTechs";
+import { projectionUrls, toggleTechTag, unitTechVisual, type BodySex, type TechGroup, type WeaponStance } from "@/lib/unitModelTechs";
 
 type UnidadeProjectionProps = {
   unitId: number;
@@ -48,11 +48,13 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
   const visual = unitTechVisual(unitId);
   const [selected, setSelected] = useState<string[]>([]);
   const [stance, setStance] = useState<WeaponStance>("hack");
+  const [sex, setSex] = useState<BodySex>("male");
   useEffect(() => {
     setSelected([]);
     setStance("hack");
+    setSex("male");
   }, [unitId]);
-  const urls = projectionUrls(visual, selected, fallbackUrl, stance);
+  const urls = projectionUrls(visual, selected, fallbackUrl, stance, sex);
   const hackIcon = resolveTokenIconSrc("hackdamage");
   const pierceIcon = resolveTokenIconSrc("piercedamage");
 
@@ -80,7 +82,8 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
   return (
     <div>
       {visual ? (
-        <div className="mb-3 flex flex-wrap items-center gap-3">
+        <div className="mb-3 flex items-start gap-3">
+          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3">
           {visual.groups.map((group) => (
             <div key={group.id} className="flex flex-wrap gap-1.5">
               {[...group.options].sort((a, b) => a.rank - b.rank || a.tag.localeCompare(b.tag)).map((option) => {
@@ -113,30 +116,57 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
               })}
             </div>
           ))}
-          {visual.stance ? (
-            <div className="ml-auto flex gap-1.5">
-              {(
-                [
-                  ["hack", hackIcon, t("spreadsheet.unidades.hackDamage")],
-                  ["pierce", pierceIcon, t("spreadsheet.unidades.pierceDamage")],
-                ] as const
-              ).map(([mode, icon, label]) => (
-                <button
-                  key={mode}
-                  type="button"
-                  title={label}
-                  aria-label={label}
-                  aria-pressed={stance === mode}
-                  onClick={() => setStance(mode)}
-                  className={`${STANCE_BUTTON} ${
-                    stance === mode
-                      ? "border-amber-400/70 bg-amber-500/15 ring-1 ring-amber-400/60"
-                      : "border-aom-border bg-black/25 hover:border-amber-400/40 hover:bg-amber-500/10"
-                  }`}
-                >
-                  {icon ? <img src={icon} alt="" className="h-7 w-7 object-contain" /> : null}
-                </button>
-              ))}
+          </div>
+          {visual.stance || visual.sex ? (
+            <div className="ml-auto flex shrink-0 gap-1.5">
+              {visual.stance
+                ? (
+                    [
+                      ["hack", hackIcon, t("spreadsheet.unidades.hackDamage")],
+                      ["pierce", pierceIcon, t("spreadsheet.unidades.pierceDamage")],
+                    ] as const
+                  ).map(([mode, icon, label]) => (
+                    <button
+                      key={mode}
+                      type="button"
+                      title={label}
+                      aria-label={label}
+                      aria-pressed={stance === mode}
+                      onClick={() => setStance(mode)}
+                      className={`${STANCE_BUTTON} ${
+                        stance === mode
+                          ? "border-amber-400/70 bg-amber-500/15 ring-1 ring-amber-400/60"
+                          : "border-aom-border bg-black/25 hover:border-amber-400/40 hover:bg-amber-500/10"
+                      }`}
+                    >
+                      {icon ? <img src={icon} alt="" className="h-7 w-7 object-contain" /> : null}
+                    </button>
+                  ))
+                : null}
+              {visual.sex
+                ? (
+                    [
+                      ["male", "♂", t("common.male")],
+                      ["female", "♀", t("common.female")],
+                    ] as const
+                  ).map(([mode, mark, label]) => (
+                    <button
+                      key={mode}
+                      type="button"
+                      title={label}
+                      aria-label={label}
+                      aria-pressed={sex === mode}
+                      onClick={() => setSex(mode)}
+                      className={`${STANCE_BUTTON} text-lg leading-none ${
+                        sex === mode
+                          ? "border-amber-400/70 bg-amber-500/15 text-amber-100 ring-1 ring-amber-400/60"
+                          : "border-aom-border bg-black/25 text-zinc-200 hover:border-amber-400/40 hover:bg-amber-500/10"
+                      }`}
+                    >
+                      {mark}
+                    </button>
+                  ))
+                : null}
             </div>
           ) : null}
         </div>

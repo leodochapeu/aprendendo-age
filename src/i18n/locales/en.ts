@@ -76,6 +76,8 @@ export const enMessages: TranslationTree = {
     rotateLeft: "Rotate left",
     rotateRight: "Rotate right",
     dragToRotate: "Drag sideways to rotate",
+    male: "Male",
+    female: "Female",
     modelUnavailable: "Couldn't open the model.",
     advanceCosts: "Advance costs",
     villager: "Villager",

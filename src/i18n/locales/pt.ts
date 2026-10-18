@@ -76,6 +76,8 @@ export const ptMessages: TranslationTree = {
     rotateLeft: "Girar para a esquerda",
     rotateRight: "Girar para a direita",
     dragToRotate: "Arraste para os lados para girar",
+    male: "Masculino",
+    female: "Feminino",
     modelUnavailable: "Não foi possível abrir o modelo.",
     advanceCosts: "Custos (avanço)",
     villager: "Aldeão",
