@@ -85,21 +85,88 @@ function arcTexture(): THREE.CanvasTexture {
   return texture;
 }
 
-function createHeroAura(scene: THREE.Object3D, box: THREE.Box3): HeroAura {
+type GroundAnchor = {
+  x: number;
+  z: number;
+  radius: number;
+};
+
+function groundAnchor(root: THREE.Object3D, box: THREE.Box3): GroundAnchor {
+  const size = box.getSize(new THREE.Vector3());
+  const height = Math.max(size.y, 0.6);
+  const center = box.getCenter(new THREE.Vector3());
+  const fallback: GroundAnchor = {
+    x: center.x,
+    z: center.z,
+    radius: THREE.MathUtils.clamp(height * 0.34, 0.28, height * 0.55),
+  };
+  const positions: number[] = [];
+  const point = new THREE.Vector3();
+  root.updateMatrixWorld(true);
+  root.traverse((obj) => {
+    const mesh = obj as THREE.Mesh;
+    if (!mesh.isMesh) return;
+    const attr = mesh.geometry?.getAttribute("position");
+    if (!attr) return;
+    const step = attr.count > 8000 ? Math.ceil(attr.count / 8000) : 1;
+    for (let index = 0; index < attr.count; index += step) {
+      point.fromBufferAttribute(attr as THREE.BufferAttribute, index);
+      point.applyMatrix4(mesh.matrixWorld);
+      positions.push(point.x, point.y, point.z);
+    }
+  });
+  const count = positions.length / 3;
+  if (count < 12) return fallback;
+
+  let minY = Infinity;
+  for (let index = 0; index < count; index += 1) minY = Math.min(minY, positions[index * 3 + 1]);
+  const band = Math.max(0.04, height * 0.018);
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minZ = Infinity;
+  let maxZ = -Infinity;
+  let used = 0;
+  for (let index = 0; index < count; index += 1) {
+    if (positions[index * 3 + 1] > minY + band) continue;
+    const x = positions[index * 3];
+    const z = positions[index * 3 + 2];
+    minX = Math.min(minX, x);
+    maxX = Math.max(maxX, x);
+    minZ = Math.min(minZ, z);
+    maxZ = Math.max(maxZ, z);
+    used += 1;
+  }
+  if (used < 8) return fallback;
+
+  const spanX = maxX - minX;
+  const spanZ = maxZ - minZ;
+  const stance = Math.max(spanX, spanZ);
+  const across = Math.min(spanX, spanZ);
+  const reach = Math.hypot(spanX * 0.5, spanZ * 0.5);
+  const longStance = stance > across * 1.7 && stance > height * 0.45;
+  const radius = longStance
+    ? Math.max(reach * 1.5, stance * 0.68)
+    : Math.max(reach * 1.35, height * 0.3, stance * 0.85);
+  return { x: (minX + maxX) * 0.5, z: (minZ + maxZ) * 0.5, radius };
+}
+
+function createHeroAura(scene: THREE.Object3D, box: THREE.Box3, anchor: GroundAnchor): HeroAura {
   const group = new THREE.Group();
   scene.add(group);
   const size = box.getSize(new THREE.Vector3());
   const center = box.getCenter(new THREE.Vector3());
   const height = Math.max(size.y, 0.6);
-  const ringRadius = THREE.MathUtils.clamp(height * 0.34, 0.28, height * 0.55);
+  const ringRadius = anchor.radius;
   const feetY = box.min.y + 0.02;
+  const footX = anchor.x;
+  const footZ = anchor.z;
 
   const smokeMap = glowTexture("rgba(255, 214, 120, 0.55)", "rgba(255, 170, 40, 0.2)");
   const smoke = new THREE.Sprite(
     new THREE.SpriteMaterial({ map: smokeMap, transparent: true, depthWrite: false, opacity: 0.9 }),
   );
   smoke.scale.set(height * 0.95, height * 1.25, 1);
-  smoke.position.set(center.x, center.y, center.z);
+  smoke.position.set(footX, center.y, footZ);
   smoke.renderOrder = -1;
   group.add(smoke);
 
@@ -109,7 +176,7 @@ function createHeroAura(scene: THREE.Object3D, box: THREE.Box3): HeroAura {
     new THREE.MeshBasicMaterial({ map: poolMap, transparent: true, depthWrite: false, opacity: 0.8, side: THREE.DoubleSide }),
   );
   pool.rotation.x = -Math.PI / 2;
-  pool.position.set(center.x, feetY + 0.012, center.z);
+  pool.position.set(footX, feetY + 0.012, footZ);
   group.add(pool);
 
   const columnMap = glowTexture("rgba(255, 220, 140, 0.45)", "rgba(255, 176, 40, 0.08)");
@@ -117,13 +184,13 @@ function createHeroAura(scene: THREE.Object3D, box: THREE.Box3): HeroAura {
     new THREE.SpriteMaterial({ map: columnMap, transparent: true, depthWrite: false, opacity: 0.55 }),
   );
   column.scale.set(ringRadius * 1.7, height * 0.42, 1);
-  column.position.set(center.x, feetY + height * 0.16, center.z);
+  column.position.set(footX, feetY + height * 0.16, footZ);
   column.renderOrder = 2;
   group.add(column);
 
   const arcMap = arcTexture();
   const arcPivot = new THREE.Group();
-  arcPivot.position.set(center.x, feetY, center.z);
+  arcPivot.position.set(footX, feetY, footZ);
   const arc = new THREE.Mesh(
     new THREE.PlaneGeometry(ringRadius * 2.15, ringRadius * 2.15),
     new THREE.MeshBasicMaterial({ map: arcMap, transparent: true, depthWrite: false, side: THREE.DoubleSide }),
@@ -170,11 +237,11 @@ function createHeroAura(scene: THREE.Object3D, box: THREE.Box3): HeroAura {
       const columnMaterial = column.material as THREE.SpriteMaterial;
       columnMaterial.opacity = 0.28 + Math.sin(time * 2.4) * 0.12;
 
-      away.copy(center).sub(camera.position);
+      away.set(footX, center.y, footZ).sub(camera.position);
       away.y = 0;
       if (away.lengthSq() < 1e-6) away.set(0, 0, 1);
       away.normalize().multiplyScalar(Math.max(size.x, size.z) * 0.42 + height * 0.08);
-      smoke.position.set(center.x + away.x, center.y, center.z + away.z);
+      smoke.position.set(footX + away.x, center.y, footZ + away.z);
 
       for (const mote of motes) {
         const life = (mote.phase + time * mote.speed) % 1;
@@ -182,9 +249,9 @@ function createHeroAura(scene: THREE.Object3D, box: THREE.Box3): HeroAura {
         const spin = mote.angle + time * 0.45;
         const spread = mote.radius * (0.45 + life * 0.7);
         mote.mesh.position.set(
-          center.x + Math.cos(spin) * spread,
+          footX + Math.cos(spin) * spread,
           feetY + life * mote.lift,
-          center.z + Math.sin(spin) * spread,
+          footZ + Math.sin(spin) * spread,
         );
         mote.material.opacity = 0.2 + fade * 0.8;
         const base = mote.mesh.userData.baseScale as number;
@@ -327,11 +394,12 @@ export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeMode
       const box = new THREE.Box3().setFromObject(stage.pivot);
       const size = box.getSize(new THREE.Vector3());
       const center = box.getCenter(new THREE.Vector3());
+      const feet = groundAnchor(stage.pivot, box);
       stage.target.copy(center);
       const radius = Math.max(size.x, size.y, size.z) * 0.5 || 1;
       stage.distance.current = (radius / Math.tan((stage.camera.fov * Math.PI) / 360)) * 1.18;
       const shadow = new THREE.Mesh(
-        new THREE.CircleGeometry(Math.max(size.x, size.z) * 0.38, 40),
+        new THREE.CircleGeometry(Math.max(feet.radius * 1.05, Math.max(size.x, size.z) * 0.22), 40),
         new THREE.MeshBasicMaterial({
           color: 0x000000,
           transparent: true,
@@ -340,10 +408,10 @@ export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeMode
         }),
       );
       shadow.rotation.x = -Math.PI / 2;
-      shadow.position.set(center.x, box.min.y + 0.015, center.z);
+      shadow.position.set(feet.x, box.min.y + 0.015, feet.z);
       stage.pivot.add(shadow);
       auraRef.current?.dispose();
-      auraRef.current = heroRef.current ? createHeroAura(stage.pivot.parent ?? stage.pivot, box) : null;
+      auraRef.current = heroRef.current ? createHeroAura(stage.pivot.parent ?? stage.pivot, box, feet) : null;
       setStatus("ready");
     });
 
