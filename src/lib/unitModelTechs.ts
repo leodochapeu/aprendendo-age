@@ -30,7 +30,7 @@ export function unitTechVisual(id: number): UnitTechVisual | undefined {
   return entry;
 }
 
-/** Em cada evolução fica o nível mais alto ligado. Armas, armadura e escudo seguem separados. */
+/** Cada grupo fica com um único nível. Armas, armadura e escudo continuam grupos separados. */
 export function effectiveTechTags(groups: TechGroup[], selected: readonly string[]): Set<string> {
   const active = new Set(selected);
   for (const group of groups) {
@@ -62,13 +62,18 @@ export function toggleTechTag(groups: TechGroup[], selected: readonly string[], 
   const group = groups.find((item) => item.id === groupId);
   if (!group) return [...selected];
   const next = new Set(selected);
-  if (group.kind === "line") {
-    const wasOn = next.has(tag);
-    for (const option of group.options) next.delete(option.tag);
-    if (!wasOn) next.add(tag);
-    return [...next];
-  }
-  if (next.has(tag)) next.delete(tag);
-  else next.add(tag);
+  const wasOn = next.has(tag);
+  for (const option of group.options) next.delete(option.tag);
+  if (!wasOn) next.add(tag);
   return [...next];
+}
+
+const HERO_MARK = /\((?:heroina|heroine|heroi|hero)\)/i;
+
+export function isUnitHero(nome: string | undefined, ingles?: string): boolean {
+  return [nome, ingles].some((value) => {
+    if (!value) return false;
+    const plain = value.normalize("NFD").replace(/\p{M}/gu, "");
+    return HERO_MARK.test(plain);
+  });
 }

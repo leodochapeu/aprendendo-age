@@ -12,6 +12,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { listIndexReturnTo, listOrDetailBackLinkLabel } from "@/lib/listIndexReturnState";
+import { isUnitHero } from "@/lib/unitModelTechs";
 import { unitModelUrl } from "@/lib/unitModelUrl";
 
 const UnidadeProjection = lazy(() =>
@@ -60,7 +61,7 @@ export function UnidadeDetailPage() {
         {modelUrl ? (
           <Section title={t("common.projection3d")}>
             <Suspense fallback={<p className="text-zinc-500">{t("common.loading")}</p>}>
-              <UnidadeProjection unitId={u.id} fallbackUrl={modelUrl} />
+              <UnidadeProjection unitId={u.id} fallbackUrl={modelUrl} hero={isUnitHero(u.nome, u.ingles)} />
             </Suspense>
           </Section>
         ) : null}

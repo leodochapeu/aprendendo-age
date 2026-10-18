@@ -9,6 +9,7 @@ import { projectionUrls, toggleTechTag, unitTechVisual, type TechGroup } from "@
 type UnidadeProjectionProps = {
   unitId: number;
   fallbackUrl?: string;
+  hero?: boolean;
 };
 
 function catalogKey(ingles: string | undefined): string {
@@ -37,7 +38,7 @@ for (const [token, src] of Object.entries(tokenAssetMap)) {
   iconByTag.set(tag, { src, label });
 }
 
-export function UnidadeProjection({ unitId, fallbackUrl }: UnidadeProjectionProps) {
+export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: UnidadeProjectionProps) {
   const { tecnologias } = useCatalog();
   const visual = unitTechVisual(unitId);
   const [selected, setSelected] = useState<string[]>([]);
@@ -102,7 +103,7 @@ export function UnidadeProjection({ unitId, fallbackUrl }: UnidadeProjectionProp
           ))}
         </div>
       ) : null}
-      <UnidadeModelViewer urls={urls} />
+      <UnidadeModelViewer urls={urls} hero={hero} />
     </div>
   );
 }
