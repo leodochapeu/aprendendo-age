@@ -1064,5 +1064,19 @@
   "aomr_twisted_limbs_icon": "/assets/techs/techs_aztec/AoMR_Twisted_Limbs_icon.webp",
   "aomr_tzompantli_watch_tower_icon": "/assets/techs/techs_aztec/AoMR_Tzompantli_Watch_Tower_icon.webp",
   "aomr_wings_of_itzpapalotl_icon": "/assets/techs/techs_aztec/AoMR_Wings_Of_Itzpapalotl_icon.webp",
-  "aomr_wings_of_the_south_icon": "/assets/techs/techs_aztec/AoMR_Wings_Of_The_South_icon.webp"
+  "aomr_wings_of_the_south_icon": "/assets/techs/techs_aztec/AoMR_Wings_Of_The_South_icon.webp",
+  "aomr_anaconda_icon": "/assets/unit_humans/unit_aztec/anaconda_icon.webp",
+  "aomr_arrow_canoe_icon": "/assets/unit_humans/unit_aztec/arrow_canoe_icon.webp",
+  "aomr_atlatl_siege_canoe_icon": "/assets/unit_humans/unit_aztec/atlatl_siege_canoe_icon.webp",
+  "aomr_axolotl_icon": "/assets/unit_humans/unit_aztec/axolotl_icon.webp",
+  "aomr_axolotl_mutant_icon": "/assets/unit_humans/unit_aztec/axolotl_mutant_icon.webp",
+  "aomr_centzon_icon": "/assets/unit_humans/unit_aztec/centzon_icon.webp",
+  "aomr_chaneque_icon": "/assets/unit_humans/unit_aztec/chaneque_icon.webp",
+  "aomr_maquizcoatl_icon": "/assets/unit_humans/unit_aztec/maquizcoatl_icon.webp",
+  "aomr_obsidian_butterfly_icon": "/assets/unit_humans/unit_aztec/obsidian_butterfly_icon.webp",
+  "aomr_smoke_trap_icon": "/assets/buildings/smoke_trap_icon.webp",
+  "aomr_soul_guide_icon": "/assets/unit_humans/unit_aztec/soul_guide_icon.webp",
+  "aomr_spike_trap_icon": "/assets/buildings/spike_trap_icon.webp",
+  "aomr_tzitzimitl_icon": "/assets/unit_humans/unit_aztec/tzitzimitl_icon.webp",
+  "aomr_villager_aztec_icon": "/assets/und_villagers/AoMR_Villager_Aztec_icon.webp"
 }
