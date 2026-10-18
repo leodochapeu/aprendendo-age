@@ -11,6 +11,7 @@ const YAW_STEP = 0.38;
 type UnidadeModelViewerProps = {
   urls: string[];
   hero?: boolean;
+  hover?: boolean;
   vfx?: IdleVfxAnchor[];
 };
 
@@ -106,11 +107,11 @@ function groundAnchor(root: THREE.Object3D, box: THREE.Box3): GroundAnchor {
   root.traverse((obj) => {
     const mesh = obj as THREE.Mesh;
     if (!mesh.isMesh) return;
-    const attr = mesh.geometry?.getAttribute("position");
-    if (!attr) return;
+    const attr = mesh.geometry.getAttribute("position");
+    if (!(attr instanceof THREE.BufferAttribute)) return;
     const step = attr.count > 8000 ? Math.ceil(attr.count / 8000) : 1;
     for (let index = 0; index < attr.count; index += step) {
-      point.fromBufferAttribute(attr as THREE.BufferAttribute, index);
+      point.fromBufferAttribute(attr, index);
       point.applyMatrix4(mesh.matrixWorld);
       positions.push(point.x, point.y, point.z);
     }
@@ -272,7 +273,7 @@ function clearPivot(pivot: THREE.Group) {
   }
 }
 
-export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeModelViewerProps) {
+export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = [] }: UnidadeModelViewerProps) {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const yawRef = useRef(0.45);
@@ -282,6 +283,8 @@ export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeMode
   const idleRef = useRef<IdleVfx | null>(null);
   const heroRef = useRef(hero);
   heroRef.current = hero;
+  const hoverRef = useRef(hover);
+  hoverRef.current = hover;
   const vfxRef = useRef(vfx);
   vfxRef.current = vfx;
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
@@ -390,13 +393,21 @@ export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeMode
           setStatus("error");
           return;
         }
-      for (const gltf of models) stage.pivot.add(gltf.scene);
-      const box = new THREE.Box3().setFromObject(stage.pivot);
+      const modelRoot = new THREE.Group();
+      modelRoot.name = "unit";
+      stage.pivot.add(modelRoot);
+      for (const gltf of models) modelRoot.add(gltf.scene);
+      const box = new THREE.Box3().setFromObject(modelRoot);
       const size = box.getSize(new THREE.Vector3());
-      const center = box.getCenter(new THREE.Vector3());
-      const feet = groundAnchor(stage.pivot, box);
+      const feet = groundAnchor(modelRoot, box);
+      const gap = hoverRef.current ? Math.max(size.y * 0.2, 0.12) : 0;
+      if (gap) modelRoot.position.y = gap;
+      const framed = box.clone();
+      framed.max.y += gap;
+      const center = framed.getCenter(new THREE.Vector3());
+      const framedSize = framed.getSize(new THREE.Vector3());
       stage.target.copy(center);
-      const radius = Math.max(size.x, size.y, size.z) * 0.5 || 1;
+      const radius = Math.max(framedSize.x, framedSize.y, framedSize.z) * 0.5 || 1;
       stage.distance.current = (radius / Math.tan((stage.camera.fov * Math.PI) / 360)) * 1.18;
       const shadow = new THREE.Mesh(
         new THREE.CircleGeometry(Math.max(feet.radius * 1.05, Math.max(size.x, size.z) * 0.22), 40),
@@ -425,7 +436,8 @@ export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeMode
     const stage = stageRef.current;
     if (!stage || status !== "ready") return;
     idleRef.current?.dispose();
-    idleRef.current = createIdleVfx(stage.pivot, vfxRef.current);
+    const host = stage.pivot.getObjectByName("unit") ?? stage.pivot;
+    idleRef.current = createIdleVfx(host, vfxRef.current);
   }, [vfxKey, status]);
 
   const turn = (delta: number) => {

@@ -14,6 +14,19 @@ _Q64_SCALE = _INV_SQRT2 / 524287.0
 _Q32_SCALE = _INV_SQRT2 / 511.0
 
 
+def frame_count(data: bytes) -> int:
+    """Quantos quadros a trilha tem."""
+    if data[:4] != b"BTMA":
+        return 1
+    offset = 8
+    if data[offset : offset + 2] == b"DP":
+        offset += 2
+        block = struct.unpack_from("<i", data, offset)[0]
+        offset += 4 + block
+    _tracks, frames, _duration = struct.unpack_from("<IIf", data, offset)
+    return max(int(frames), 1)
+
+
 def pose_worlds(data: bytes, frame: int = 0) -> dict[str, list[list[float]]]:
     """Nome do osso (minúsculo) -> matriz mundo 4x4, já no espaço do GLB."""
     try:

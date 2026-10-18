@@ -41,9 +41,12 @@ const smokeMap = radialMap("rgba(190, 196, 206, 0.7)", "rgba(120, 126, 136, 0.22
 function disposeRoot(root: THREE.Object3D) {
   const geometries = new Set<THREE.BufferGeometry>();
   root.traverse((obj) => {
-    const mesh = obj as THREE.Mesh;
-    if (mesh.geometry) geometries.add(mesh.geometry);
-    const material = (mesh as THREE.Sprite).material;
+    const drawable = obj as THREE.Object3D & {
+      geometry?: THREE.BufferGeometry;
+      material?: THREE.Material | THREE.Material[];
+    };
+    if (drawable.geometry) geometries.add(drawable.geometry);
+    const material = drawable.material;
     if (!material) return;
     const list = Array.isArray(material) ? material : [material];
     for (const item of list) item.dispose();

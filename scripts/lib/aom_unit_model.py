@@ -21,7 +21,7 @@ from typing import Any
 from PIL import Image
 
 from aom_game_paths import DEFAULT_CACHE_DIR, DEFAULT_CRYBAR, resolve_game_dir
-from aom_tma import _flip_x, pose_worlds as tma_pose_worlds
+from aom_tma import _flip_x, frame_count as tma_frame_count, pose_worlds as tma_pose_worlds
 
 ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_MODELS = ROOT / "public" / "assets" / "unit-models"
@@ -71,6 +71,10 @@ GATHER_ATTACHMENTS = {
     "sowseeds",
     "bag",
     "resourcenode",
+}
+# Pose que não é a Idle. Quadro -1 é o último: a Roca pousada sobre a caixa.
+POSE_CLIP: dict[str, tuple[str, int]] = {
+    "egyptian/units/myth/roc/roc": ("egyptian/units/myth/roc/anim/roc_landing_a", -1),
 }
 
 
@@ -1481,20 +1485,38 @@ def _ensure_tma(bars: BarIndex, relative: str) -> Path | None:
     return tma_path if tma_path.exists() else None
 
 
+def _pose_clip(root: ET.Element) -> tuple[str, int] | None:
+    for path in models_in_anim(root):
+        key = path.replace("\\", "/").strip().lower()
+        if key.endswith(".tmm"):
+            key = key[:-4]
+        chosen = POSE_CLIP.get(key)
+        if chosen:
+            return chosen
+    clip = _idle_clip(root)
+    if not clip:
+        return None
+    return clip, 0
+
+
 def _posed_bone_worlds(
     bars: BarIndex,
     root: ET.Element,
     gltf: dict[str, Any],
     blob: bytes,
 ) -> dict[int, list[list[float]]] | None:
-    """Mundo de cada junta no primeiro quadro da Idle. None mantém a pose de bind."""
-    clip = _idle_clip(root)
-    if not clip:
+    """Mundo de cada junta no quadro da pose da página. None mantém a pose de bind."""
+    request = _pose_clip(root)
+    if not request:
         return None
+    clip, frame = request
     tma_path = _ensure_tma(bars, clip)
     if tma_path is None:
         return None
-    named = tma_pose_worlds(tma_path.read_bytes())
+    data = tma_path.read_bytes()
+    if frame < 0:
+        frame = tma_frame_count(data) - 1
+    named = tma_pose_worlds(data, frame)
     if not named:
         return None
     bind = _bind_worlds(gltf, blob)

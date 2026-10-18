@@ -19,7 +19,7 @@ export type IdleVfxAnchor = {
   tint: string;
 };
 
-const table = idleVfxJson as Record<string, IdleVfxAnchor[]>;
+const table = idleVfxJson as unknown as Record<string, IdleVfxAnchor[]>;
 
 export function unitIdleVfx(unitId: number): IdleVfxAnchor[] {
   return table[String(unitId)] ?? [];
