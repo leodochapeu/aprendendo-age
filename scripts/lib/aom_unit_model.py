@@ -20,7 +20,7 @@ from typing import Any
 from PIL import Image
 
 from aom_game_paths import DEFAULT_CACHE_DIR, DEFAULT_CRYBAR, resolve_game_dir
-from aom_tma import pose_worlds as tma_pose_worlds
+from aom_tma import _flip_x, pose_worlds as tma_pose_worlds
 
 ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_MODELS = ROOT / "public" / "assets" / "unit-models"
@@ -336,30 +336,64 @@ def ensure_model_glb(bars: BarIndex, model_path: str) -> Path | None:
     return glb_path
 
 
-def _find_basecolor(bars: BarIndex, model_path: str, material_name: str) -> tuple[str, str] | None:
-    stem = model_path.replace("\\", "/").split("/")[-1].lower()
-    if stem.endswith(".tmm"):
-        stem = stem[:-4]
-    material = re.sub(r"[^a-z0-9]", "", material_name.lower()) or "mata"
-    scored: list[tuple[int, tuple[str, str]]] = []
-    for key, hit in bars.basecolors.items():
-        if stem not in key:
-            continue
-        score = 1
-        compact = key.replace("_", "").replace("-", "")
-        if "basecolor" in key:
-            score += 20
-        if "metalmask" in key:
-            score += 1
-        if material and material in compact:
-            score += 5
-        if f"/{stem}_" in f"/{key}":
-            score += 2
-        scored.append((score, hit))
-    if not scored:
+_VARIANT_WORDS = {"igc", "upgrade", "pirate", "arrow", "older", "spc", "icon"}
+
+
+def _score_albedo(filename: str, stem: str, material: str) -> int | None:
+    """Quanto o arquivo combina com o modelo. Variantes (igc, upgrade, flecha) perdem."""
+    if not filename.startswith(stem):
         return None
-    scored.sort(key=lambda item: item[0], reverse=True)
-    return scored[0][1]
+    rest = filename[len(stem) :]
+    if rest and rest[0] not in "_.":
+        return None
+    rest = rest.lstrip("_")
+    if rest.endswith(".ddt"):
+        rest = rest[:-4]
+    if rest.endswith("basecolor"):
+        score = 100
+        core = rest[: -len("basecolor")].rstrip("_")
+    elif rest.endswith("metalmask"):
+        score = 10
+        core = rest[: -len("metalmask")].rstrip("_")
+    else:
+        return None
+    tokens = [token for token in core.split("_") if token]
+    if not tokens:
+        return score + 40
+    if tokens == [material]:
+        return score + 50
+    if material in tokens:
+        score += 20
+        extras = [token for token in tokens if token != material]
+        if any(token in _VARIANT_WORDS for token in extras):
+            score -= 30
+        return score
+    return score - 25
+
+
+def _find_basecolor(bars: BarIndex, model_path: str, material_name: str) -> tuple[str, str] | None:
+    base = model_path.replace("\\", "/").strip().lstrip("/")
+    if base.lower().endswith(".tmm"):
+        base = base[:-4]
+    folder = base.rsplit("/", 1)[0].lower() + "/" if "/" in base else ""
+    stem = base.rsplit("/", 1)[-1].lower()
+    material = re.sub(r"[^a-z0-9]", "", material_name.lower()) or "mata"
+    best: tuple[int, tuple[str, str]] | None = None
+    fallback: tuple[int, tuple[str, str]] | None = None
+    hint = stem.split("_")[-1]
+    for key, hit in bars.basecolors.items():
+        if folder and not key.startswith(folder):
+            continue
+        filename = key.rsplit("/", 1)[-1]
+        score = _score_albedo(filename, stem, material)
+        if score is not None and (best is None or score > best[0]):
+            best = (score, hit)
+        if score is None and hint and len(hint) >= 4 and hint in filename and "basecolor" in filename:
+            if fallback is None or len(filename) < fallback[0]:
+                fallback = (len(filename), hit)
+    if best is not None:
+        return best[1]
+    return None if fallback is None else fallback[1]
 
 
 def ensure_texture(bars: BarIndex, model_path: str, material_name: str) -> bytes | None:
@@ -576,7 +610,8 @@ def socket_matrix(
         root_extras = ((nodes[0].get("extras") or {}).get("crybar") or {}).get("tmm") or {}
         attachments = root_extras.get("attachments") or []
         if isinstance(index, int) and 0 <= index < len(attachments):
-            local = _mat_from_3x4(attachments[index].get("local_matrix") or [])
+            # A matriz do jogo é canhota. O mesmo espelho em X dos ossos deixa a peça em pé.
+            local = _flip_x(_mat_from_3x4(attachments[index].get("local_matrix") or []))
     parent = _parent_index(gltf, target)
     worlds = bone_worlds if bone_worlds is not None else _bind_worlds(gltf, blob)
     if parent is not None:
@@ -1014,17 +1049,8 @@ def _posed_bone_worlds(
     if len(matched) < 3:
         return None
     _carry_unposed(nodes, bind, posed, matched)
-    _pull_weapons_to_hands(nodes, posed)
+    _seat_weapon_shaft(nodes, posed)
     return posed
-
-
-SNAP_TO_HAND = {
-    "weaponright": "mixamorig:righthand",
-    "weaponleft": "mixamorig:lefthand",
-    "shield": "mixamorig:lefthand",
-    "prop_r": "mixamorig:righthand",
-    "prop_l": "mixamorig:lefthand",
-}
 
 
 def _carry_unposed(
@@ -1055,31 +1081,42 @@ def _carry_unposed(
         pending = stuck
 
 
-def _pull_weapons_to_hands(nodes: list[dict[str, Any]], posed: dict[int, list[list[float]]]) -> None:
-    """O osso da arma às vezes para longe da mão. A rotação fica; a origem vai para a mão."""
-    by_name: dict[str, int] = {}
-    for index, node in enumerate(nodes):
-        if index in posed:
-            by_name[(node.get("name") or "").lower()] = index
+def _seat_weapon_shaft(nodes: list[dict[str, Any]], posed: dict[int, list[list[float]]]) -> None:
+    """Encosta o cabo na mão quando a lâmina é que está no osso.
+
+    A Idle às vezes deixa a origem da arma (a lâmina) bem acima da mão, com o
+    cabo passando ao lado. Trazer a origem até a mão enfia o cabo no chão.
+    Aqui o osso só anda de lado, e só nesse caso, para o cabo cruzar a mão.
+    """
+    hands = {"weaponright": "mixamorig:righthand", "weaponleft": "mixamorig:lefthand"}
+    by_name = {
+        (node.get("name") or "").lower(): index
+        for index, node in enumerate(nodes)
+        if index in posed
+    }
     for index, node in enumerate(nodes):
         if index not in posed:
             continue
         short = (node.get("name") or "").lower().split(":")[-1]
-        hand_name = SNAP_TO_HAND.get(short)
-        hand = by_name.get(hand_name or "")
-        if hand is None:
+        hand_index = by_name.get(hands.get(short) or "")
+        if hand_index is None:
             continue
         weapon = posed[index]
-        hand_m = posed[hand]
-        dx = weapon[0][3] - hand_m[0][3]
-        dy = weapon[1][3] - hand_m[1][3]
-        dz = weapon[2][3] - hand_m[2][3]
-        if dx * dx + dy * dy + dz * dz < 0.4 * 0.4:
+        hand = posed[hand_index]
+        axis = (weapon[0][1], weapon[1][1], weapon[2][1])
+        length = (axis[0] ** 2 + axis[1] ** 2 + axis[2] ** 2) ** 0.5 or 1.0
+        axis = (axis[0] / length, axis[1] / length, axis[2] / length)
+        delta = tuple(hand[row][3] - weapon[row][3] for row in range(3))
+        along = delta[0] * axis[0] + delta[1] * axis[1] + delta[2] * axis[2]
+        if abs(along) < 0.45:
+            continue
+        side = tuple(delta[i] - along * axis[i] for i in range(3))
+        side_len = (side[0] ** 2 + side[1] ** 2 + side[2] ** 2) ** 0.5
+        if side_len < 0.08 or side_len > 0.3:
             continue
         moved = [row[:] for row in weapon]
-        moved[0][3] = hand_m[0][3]
-        moved[1][3] = hand_m[1][3]
-        moved[2][3] = hand_m[2][3]
+        for row in range(3):
+            moved[row][3] += side[row]
         posed[index] = moved
 
 
