@@ -47,6 +47,14 @@ UNIT_TYPE_ICON = {
     "Aldeão": "aomr_type_villager_icon",
     "Batedor": "aomr_type_scout_icon",
     "Scout": "aomr_type_scout_icon",
+    "Navio": "aomr_type_ship_icon",
+    "Ship": "aomr_type_ship_icon",
+    "Flecheiro": "aomr_type_archer_ship_icon",
+    "Archer Ship": "aomr_type_archer_ship_icon",
+    "Combate curto-alcance": "aomr_type_close_combat_ship_icon",
+    "Close Combat Ship": "aomr_type_close_combat_ship_icon",
+    "Navio-cerco": "aomr_type_siege_ship_icon",
+    "Siege Ship": "aomr_type_siege_ship_icon",
 }
 
 # Templos de campanha/cenário — ignorados; usa-se apenas o proto `Temple`.

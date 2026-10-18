@@ -10629,8 +10629,8 @@
         "icon": "aomr_type_ship_icon"
       },
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Archer Ship",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -10677,6 +10677,10 @@
       {
         "type": "Ship",
         "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Close Combat Ship",
+        "icon": "aomr_type_close_combat_ship_icon"
       }
     ],
     "panteao": [
@@ -10725,8 +10729,8 @@
         "icon": "aomr_type_ship_icon"
       },
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Siege Ship",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -12058,8 +12062,12 @@
     "ingles": "Trireme",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Archer Ship",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -12106,7 +12114,16 @@
     "id": 211,
     "nome": "Pentekonter",
     "ingles": "Pentekonter",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Close Combat Ship",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 1,
@@ -12153,8 +12170,12 @@
     "ingles": "Juggernaut",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Siege Ship",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -12690,8 +12711,12 @@
     "ingles": "Kebenit",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Archer Ship",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -12738,7 +12763,16 @@
     "id": 223,
     "nome": "Ramming Galley",
     "ingles": "Ramming Galley",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Close Combat Ship",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 2,
@@ -12785,8 +12819,12 @@
     "ingles": "War Barge",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Siege Ship",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -13331,8 +13369,12 @@
     "ingles": "Longboat",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Archer Ship",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -13379,7 +13421,16 @@
     "id": 235,
     "nome": "Dreki",
     "ingles": "Dreki",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Close Combat Ship",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 3,
@@ -13426,8 +13477,12 @@
     "ingles": "Dragon Ship",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Siege Ship",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -14195,8 +14250,12 @@
     "ingles": "Bireme",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Archer Ship",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -14245,8 +14304,12 @@
     "ingles": "Fire Ship",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Close Combat Ship",
+        "icon": "aomr_type_close_combat_ship_icon"
       }
     ],
     "panteao": [
@@ -14295,8 +14358,12 @@
     "ingles": "Siege Bireme",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Siege Ship",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -14990,8 +15057,12 @@
     "ingles": "Doujian",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Archer Ship",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -15035,7 +15106,16 @@
     "id": 266,
     "nome": "Mengchong",
     "ingles": "Mengchong",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Close Combat Ship",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 5,
@@ -15079,8 +15159,12 @@
     "ingles": "Louchuan",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Siege Ship",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -15606,8 +15690,12 @@
     "ingles": "Wasen",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Archer Ship",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -15651,7 +15739,16 @@
     "id": 278,
     "nome": "Ramming Wasen",
     "ingles": "Ramming Wasen",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Close Combat Ship",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 6,
@@ -15695,8 +15792,12 @@
     "ingles": "Junkozosen",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Ship",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Siege Ship",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [

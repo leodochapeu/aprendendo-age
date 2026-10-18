@@ -38,11 +38,15 @@ MILITARY_UNIT_TYPES = {
 PRIMARY_ROLE_TYPES = [
     ("AbstractInfantry", "Infantaria"),
     ("LogicalTypeMeleeInfantry", "Infantaria"),
+    # Navais antes de Ranged/Artilharia — barcos flecheiros carregam Ranged no proto.
+    ("AbstractArcherShip", "Flecheiro"),
+    ("AbstractCloseCombatShip", "Combate curto-alcance"),
+    ("AbstractSiegeShip", "Navio-cerco"),
+    ("AbstractShip", "Navio"),
     ("AbstractArcher", "Artilharia"),
     ("Ranged", "Artilharia"),
     ("AbstractCavalry", "Cavalaria"),
     ("AbstractSiegeWeapon", "Cerco"),
-    ("AbstractShip", "Navio"),
     ("AbstractMythUnit", "Unidade mítica"),
     ("MythUnit", "Unidade mítica"),
     ("Hero", "Herói"),
@@ -105,16 +109,26 @@ def detect_primary_role(unit_types: set[str]) -> str | None:
     return None
 
 
+SHIP_SUBTYPE_ROLES = frozenset(
+    {"Flecheiro", "Combate curto-alcance", "Navio-cerco"}
+)
+
+
 def detect_roles(unit_types: set[str]) -> list[str]:
     """Papel de combate principal + classificações mítica/herói quando aplicável.
 
     Unidades míticas de ataque à distância (ex.: Centauro, Qilin, Troll, Draugr,
     Wadjet) e heróis com papel humano (ex.: Hersir, Godi, Murmilo (Herói))
     mantêm o papel de combate e ganham também a classificação secundária.
+
+    Navios militares: Navio + subtipo (Flecheiro / Combate curto-alcance / Navio-cerco).
     """
     roles: list[str] = []
     primary = detect_primary_role(unit_types)
-    if primary:
+    if primary in SHIP_SUBTYPE_ROLES:
+        roles.append("Navio")
+        roles.append(primary)
+    elif primary:
         roles.append(primary)
 
     is_myth = any(token in unit_types for token in MYTH_UNIT_TOKENS)

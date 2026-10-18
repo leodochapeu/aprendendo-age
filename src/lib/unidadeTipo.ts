@@ -48,9 +48,14 @@ function tipoTypeToneTextClass(typeLabel: string): string {
 
   if (t.startsWith("Infantaria")) return "text-red-300";
   if (t.startsWith("Cavalaria")) return "text-emerald-300";
-  if (t.startsWith("Artilharia")) return "text-sky-300";
+  if (t.startsWith("Artilharia") || t.startsWith("Flecheiro") || t.startsWith("Archer Ship")) {
+    return "text-sky-300";
+  }
   if (t.startsWith("Herói") || t.startsWith("Hero")) return "text-yellow-300";
   if (t.startsWith("Batedor") || t.startsWith("Scout")) return "text-zinc-300";
+  if (t.startsWith("Combate curto") || t.startsWith("Close Combat")) return "text-orange-300";
+  if (t.startsWith("Navio-cerco") || t.startsWith("Siege Ship")) return "text-amber-300";
+  if (t.startsWith("Navio") || t === "Ship") return "text-cyan-300";
   if (
     t.startsWith("Mítica") ||
     t.startsWith("Mythic") ||
@@ -85,7 +90,7 @@ export function tipoTypeTagShellClass(typeLabel: string): string {
   if (t.startsWith("Cavalaria")) {
     return `border-emerald-500/50 bg-emerald-950/45 ${text}`;
   }
-  if (t.startsWith("Artilharia")) {
+  if (t.startsWith("Artilharia") || t.startsWith("Flecheiro") || t.startsWith("Archer Ship")) {
     return `border-sky-500/50 bg-sky-950/45 ${text}`;
   }
   if (t.startsWith("Herói") || t.startsWith("Hero")) {
@@ -93,6 +98,15 @@ export function tipoTypeTagShellClass(typeLabel: string): string {
   }
   if (t.startsWith("Batedor") || t.startsWith("Scout")) {
     return `border-zinc-600 bg-zinc-900/90 ${text}`;
+  }
+  if (t.startsWith("Combate curto") || t.startsWith("Close Combat")) {
+    return `border-orange-500/50 bg-orange-950/45 ${text}`;
+  }
+  if (t.startsWith("Navio-cerco") || t.startsWith("Siege Ship")) {
+    return `border-amber-700/55 bg-amber-950/50 ${text}`;
+  }
+  if (t.startsWith("Navio") || t === "Ship") {
+    return `border-cyan-500/50 bg-cyan-950/45 ${text}`;
   }
   if (
     t.startsWith("Mítica") ||

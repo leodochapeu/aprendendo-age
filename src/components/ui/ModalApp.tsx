@@ -55,11 +55,11 @@ export function ModalApp({ open, onClose, title, description, children, classNam
           aria-labelledby={titleId}
           aria-describedby={describedBy}
           className={cn(
-            "relative w-full max-w-3xl overflow-hidden rounded-2xl border border-aom-border bg-zinc-950 shadow-xl shadow-black/40",
+            "relative flex max-h-[min(90vh,48rem)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-aom-border bg-zinc-950 shadow-xl shadow-black/40",
             className,
           )}
         >
-          <div className="flex items-start justify-between gap-6 border-b border-aom-border bg-zinc-950/80 px-5 py-4">
+          <div className="flex shrink-0 items-start justify-between gap-6 border-b border-aom-border bg-zinc-950/80 px-5 py-4">
             <div className="min-w-0 pr-2">
               <h2
                 id={titleId}
@@ -78,7 +78,7 @@ export function ModalApp({ open, onClose, title, description, children, classNam
           </div>
 
           {hasDescription || children ? (
-            <div className="space-y-4 px-5 py-5">
+            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-5 py-5">
               {hasDescription ? (
                 <div id={descriptionId} className="text-sm text-zinc-300">
                   {description}

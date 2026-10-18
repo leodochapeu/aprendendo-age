@@ -59,6 +59,10 @@ TIPO_LABEL_EN = {
     "Herói": "Hero",
     "Batedor": "Scout",
     "Aldeão": "Villager",
+    "Navio": "Ship",
+    "Flecheiro": "Archer Ship",
+    "Combate curto-alcance": "Close Combat Ship",
+    "Navio-cerco": "Siege Ship",
 }
 
 # Classes geridas pelo extrator. Qualquer outro rótulo em `tipo` é editorial
@@ -71,6 +75,13 @@ EXTRACTED_TIPO_LABELS = frozenset(
         "Arma de cerco",
         "Cerco",
         "Navio",
+        "Ship",
+        "Flecheiro",
+        "Archer Ship",
+        "Combate curto-alcance",
+        "Close Combat Ship",
+        "Navio-cerco",
+        "Siege Ship",
         "Unidade mítica",
         "Mythic",
         "Herói",
@@ -87,6 +98,13 @@ COMBAT_TIPO_LABELS = frozenset(
         "Arma de cerco",
         "Cerco",
         "Navio",
+        "Ship",
+        "Flecheiro",
+        "Archer Ship",
+        "Combate curto-alcance",
+        "Close Combat Ship",
+        "Navio-cerco",
+        "Siege Ship",
     }
 )
 

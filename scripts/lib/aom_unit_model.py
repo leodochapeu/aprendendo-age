@@ -122,7 +122,8 @@ class BarIndex:
             if "Texture" not in path.name and "Model" not in path.name
         ]
         self.art = self._load("art", art_bars)
-        texture_bars = sorted(art.glob("Art*Textures.bar"))
+        self.texture_bars = sorted(art.glob("Art*Textures.bar"))
+        self._ddt: dict[str, tuple[str, str]] | None = None
         anim_bars = sorted(modelcache.glob("ArtModelCacheAnimation*.bar"))
         self.anims = self._load(
             "anim",
@@ -131,10 +132,20 @@ class BarIndex:
         )
         self.basecolors = self._load(
             "albedo",
-            texture_bars,
+            self.texture_bars,
             keep=lambda path: path.lower().endswith(".ddt")
             and ("basecolor" in path.lower() or "metalmask" in path.lower()),
         )
+
+    def ddt_index(self) -> dict[str, tuple[str, str]]:
+        """Todos os DDT. Só é montado quando a cor não se chama basecolor."""
+        if self._ddt is None:
+            self._ddt = self._load(
+                "ddt",
+                self.texture_bars,
+                keep=lambda path: path.lower().endswith(".ddt"),
+            )
+        return self._ddt
 
     def _load(
         self,
@@ -239,6 +250,49 @@ def load_anim_xml(bars: BarIndex, relative: str) -> ET.Element | None:
         else:
             xml_path.write_bytes(exported.read_bytes())
     return ET.parse(xml_path).getroot()
+
+
+def load_material_xml(bars: BarIndex, model_path: str) -> ET.Element | None:
+    """O `.material` diz qual DDT é a cor quando o arquivo não se chama basecolor."""
+    base = model_path.replace("\\", "/").strip().lstrip("/")
+    if base.lower().endswith(".tmm"):
+        base = base[:-4]
+    relative = f"{base}.material"
+    hit = bars.find(bars.art, relative)
+    if hit is None:
+        return None
+    dest = WORK_ROOT / "xml" / _safe_key(relative)
+    xml_path = dest / "material.xml"
+    if not xml_path.exists():
+        exported = _export(bars.crybar, hit[0], hit[1], dest, convert=True)
+        if exported.suffix.lower() == ".xmb":
+            proc = _run(bars.crybar, ["convert", "xmb-to-xml", str(exported), "-o", str(xml_path), "-q"])
+            if proc.returncode != 0:
+                raise RuntimeError(proc.stderr.strip() or "xmb-to-xml falhou")
+        elif exported != xml_path:
+            xml_path.write_bytes(exported.read_bytes())
+    return ET.parse(xml_path).getroot()
+
+
+def _material_look(root: ET.Element, material_name: str) -> tuple[str | None, str | None]:
+    """(shader, caminho da cor) do submaterial. Sem barra no caminho, não é um DDT."""
+    want = re.sub(r"[^a-z0-9]", "", material_name.lower())
+    for child in root:
+        if _tag(child) != "submaterial":
+            continue
+        if re.sub(r"[^a-z0-9]", "", (child.get("name") or "").lower()) != want:
+            continue
+        kind = None
+        basecolor = None
+        for node in child.iter():
+            if _tag(node) == "materialdef" and kind is None:
+                kind = (node.get("name") or "").lower()
+            if _tag(node) == "texture" and (node.get("name") or "").lower() == "basecolor":
+                override = (node.get("override") or "").replace("\\", "/").strip()
+                if "/" in override:
+                    basecolor = override
+        return kind, basecolor
+    return None, None
 
 
 def _iter_model_files(elem: ET.Element):
@@ -753,6 +807,16 @@ def ensure_texture(bars: BarIndex, model_path: str, material_name: str, variant:
         parent = _parent_texture_path(model_path)
         if parent:
             hit = _find_basecolor(bars, parent, material_name)
+    if hit is None:
+        material = load_material_xml(bars, model_path)
+        if material is not None:
+            kind, override = _material_look(material, material_name)
+            if override:
+                rel = override if override.lower().endswith(".ddt") else f"{override}.ddt"
+                hit = bars.find(bars.ddt_index(), rel)
+            elif kind == "edge_emission":
+                # Corpo sem albedo: no jogo é um vulto escuro com brilho na borda.
+                return _solid_texture((32, 34, 38))
     if hit is None:
         low = model_path.replace("\\", "/").lower()
         if "wheel" in low.rsplit("/", 1)[-1]:

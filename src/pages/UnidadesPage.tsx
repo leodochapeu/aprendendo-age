@@ -5,6 +5,7 @@ import { ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
 import { ListViewModeToggle } from "@/components/list/ListViewModeToggle";
 import { SpreadsheetHoverPreview } from "@/components/spreadsheet/SpreadsheetHoverPreview";
 import { SpreadsheetPageWidth } from "@/components/spreadsheet/SpreadsheetPageWidth";
+import { UnidadeFiltersModal } from "@/components/unidade/UnidadeFiltersModal";
 import { UnidadeMultiplierDamagePreview } from "@/components/unidade/UnidadeMultiplierDamagePreview";
 import { UnidadesSpreadsheet } from "@/components/unidade/UnidadesSpreadsheet";
 import { EntityCard } from "@/components/ui/EntityCard";
@@ -24,7 +25,14 @@ import { formatArmorPercent } from "@/lib/armorDisplay";
 import { firstNumId, joinRefNomes } from "@/lib/entityRefs";
 import type { ResolvedEntityLink } from "@/lib/entityResolve";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
+import { cn } from "@/lib/cn";
 import { pantheonCardTint } from "@/lib/pantheonCardTint";
+import {
+  countActiveUnitFilters,
+  emptyUnitListFilters,
+  unidadeMatchesFilters,
+  type UnitListFilters,
+} from "@/lib/unidadeFilters";
 import {
   hasTipoContent,
   tipoItemsToSearchBlob,
@@ -118,9 +126,47 @@ function unitBenchmarksFor(u: LocaleCatalog["unidades"][number]) {
 const toolbarBtn =
   "rounded-xl border border-aom-border bg-zinc-900/50 px-3.5 py-2 text-sm font-medium text-amber-100/95 transition-colors hover:border-amber-500/40 hover:bg-zinc-900/80 focus:outline-none focus:ring-2 focus:ring-amber-500/25 disabled:cursor-not-allowed disabled:opacity-45";
 
+function HeaderCollapseButton({
+  open,
+  filtersActive,
+  onClick,
+}: {
+  open: boolean;
+  filtersActive: boolean;
+  onClick: () => void;
+}) {
+  const { t } = useTranslation();
+  const label = open ? t("pages.unidades.collapseHeader") : t("pages.unidades.expandHeader");
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-expanded={open}
+      aria-controls="unidades-header-tools"
+      title={label}
+      aria-label={label}
+      className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-aom-border bg-zinc-900/50 text-amber-100/90 transition hover:border-amber-500/40 hover:bg-zinc-900/80 focus:outline-none focus:ring-2 focus:ring-amber-500/25"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden
+        className={cn("transition-transform", open && "rotate-180")}
+      >
+        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {filtersActive && !open ? (
+        <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-amber-400" aria-hidden />
+      ) : null}
+    </button>
+  );
+}
+
 export function UnidadesPage() {
   const { t } = useTranslation();
-  const { panteaoById, unidadeSlugById, unidades } = useCatalog();
+  const { panteaoById, unidadeSlugById, unidades, panteoes, eras } = useCatalog();
   const navigate = useNavigate();
   const { pathname, search: locSearch } = useLocation();
   const listIndexState = useMemo(
@@ -133,8 +179,15 @@ export function UnidadesPage() {
   const [compareMode, setCompareMode] = useState(false);
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [beneficiosOpen, setBeneficiosOpen] = useState(false);
+  const [headerOpen, setHeaderOpen] = useState(true);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [unitFilters, setUnitFilters] = useState<UnitListFilters>(emptyUnitListFilters);
 
-  const filtered = useMemo(() => unidades.filter((u) => matches(u, q)), [unidades, q]);
+  const filtered = useMemo(
+    () => unidades.filter((u) => matches(u, q) && unidadeMatchesFilters(u, unitFilters)),
+    [unidades, q, unitFilters],
+  );
+  const activeFilterCount = countActiveUnitFilters(unitFilters);
 
   function toggleSelect(unitSlug: string) {
     setSelectedSlugs((prev) => {
@@ -158,57 +211,87 @@ export function UnidadesPage() {
   const showSpreadsheetPreview = viewMode === "planilha" && !compareMode;
   const beneficiosImgSrc = "/trilha-de-aprendizado/tipos-unidades-multiplicadores/Militares_Beneficios.png";
 
-  const beneficiosAction = (
-    <>
-      <button
-        type="button"
-        onClick={() => setBeneficiosOpen(true)}
-        title={t("pages.unidades.troopBenefits")}
-        aria-label={t("pages.unidades.troopBenefitsAria")}
-        className="group shrink-0 cursor-pointer rounded-xl border border-aom-border bg-zinc-900/60 shadow-sm shadow-black/30 transition hover:border-amber-400/50 hover:ring-1 hover:ring-amber-400/30"
-      >
-        <img
-          src={beneficiosImgSrc}
-          alt=""
-          aria-hidden
-          className="h-16 w-16 rounded-xl object-cover sm:h-20 sm:w-20"
-        />
-      </button>
-      <ModalApp
-        open={beneficiosOpen}
-        onClose={() => setBeneficiosOpen(false)}
-        title={t("pages.unidades.troopBenefits")}
-        description={
-          <img
-            src={beneficiosImgSrc}
-            alt={t("pages.unidades.troopBenefits")}
-            className="mt-1 w-full rounded-xl border border-aom-border bg-zinc-950/40 object-contain"
-          />
-        }
+  const beneficiosButton = (
+    <button
+      type="button"
+      onClick={() => setBeneficiosOpen(true)}
+      title={t("pages.unidades.troopBenefits")}
+      aria-label={t("pages.unidades.troopBenefitsAria")}
+      className="group shrink-0 cursor-pointer rounded-xl border border-aom-border bg-zinc-900/60 shadow-sm shadow-black/30 transition hover:border-amber-400/50 hover:ring-1 hover:ring-amber-400/30"
+    >
+      <img
+        src={beneficiosImgSrc}
+        alt=""
+        aria-hidden
+        className="h-16 w-16 rounded-xl object-cover sm:h-20 sm:w-20"
       />
-    </>
+    </button>
   );
 
   return (
     <div className="w-full min-w-0">
       <ListPageStickyHeader>
         <PageHeader
-          title={t("pages.unidades.title")}
-          description={t("pages.unidades.description")}
-          className="!mb-0 w-full"
+          title={
+            <span className="inline-flex items-center gap-3">
+              <span>{t("pages.unidades.title")}</span>
+              <HeaderCollapseButton
+                open={headerOpen}
+                filtersActive={activeFilterCount > 0}
+                onClick={() => setHeaderOpen((open) => !open)}
+              />
+            </span>
+          }
+          description={headerOpen ? t("pages.unidades.description") : undefined}
+          className="!mb-0 w-full !flex-row items-start"
           actions={
-            <div className="flex flex-wrap items-start justify-end gap-3">
-              {showSpreadsheetPreview ? (
-                <SpreadsheetHoverPreview preview={spreadsheetPreview} className="sm:pt-1" />
-              ) : null}
-              {beneficiosAction}
-            </div>
+            headerOpen ? (
+              <div className="flex flex-wrap items-start justify-end gap-3">
+                {showSpreadsheetPreview ? (
+                  <SpreadsheetHoverPreview preview={spreadsheetPreview} className="sm:pt-1" />
+                ) : null}
+                {beneficiosButton}
+              </div>
+            ) : null
           }
         />
 
-        <div className="flex flex-col items-start gap-3">
+        <div id="unidades-header-tools" className={cn("flex flex-col items-start gap-3", !headerOpen && "hidden")}>
           <div className="flex w-full flex-wrap items-center justify-between gap-3">
-            <SearchField value={q} onChange={setQ} placeholder={t("common.filter")} id="unidades-search" />
+            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
+              <SearchField
+                value={q}
+                onChange={setQ}
+                placeholder={t("common.filter")}
+                id="unidades-search"
+                className="relative min-w-[14rem] flex-1"
+              />
+              <button
+                type="button"
+                onClick={() => setFiltersOpen(true)}
+                aria-label={t("pages.unidades.filters.buttonAria")}
+                className={cn(
+                  toolbarBtn,
+                  "inline-flex items-center gap-2",
+                  activeFilterCount > 0 && "border-amber-500/50 bg-amber-500/10 text-amber-100",
+                )}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path
+                    d="M4 5h16l-6 7.2V19l-4 2v-8.8L4 5z"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                {t("pages.unidades.filters.button")}
+                {activeFilterCount > 0 ? (
+                  <span className="inline-flex min-w-5 items-center justify-center rounded-full bg-amber-500/25 px-1.5 text-xs">
+                    {activeFilterCount}
+                  </span>
+                ) : null}
+              </button>
+            </div>
             <div className="flex flex-wrap items-center justify-end gap-2">
               {!compareMode ? (
                 <button type="button" className={toolbarBtn} onClick={enterCompareMode}>
@@ -238,6 +321,28 @@ export function UnidadesPage() {
             <ListViewModeToggle mode={viewMode} onChange={setViewMode} id="unidades-view-mode" />
           ) : null}
         </div>
+        <ModalApp
+          open={beneficiosOpen}
+          onClose={() => setBeneficiosOpen(false)}
+          title={t("pages.unidades.troopBenefits")}
+          description={
+            <img
+              src={beneficiosImgSrc}
+              alt={t("pages.unidades.troopBenefits")}
+              className="mt-1 w-full rounded-xl border border-aom-border bg-zinc-950/40 object-contain"
+            />
+          }
+        />
+        <UnidadeFiltersModal
+          open={filtersOpen}
+          onClose={() => setFiltersOpen(false)}
+          filters={unitFilters}
+          onChange={setUnitFilters}
+          pantheons={panteoes}
+          eras={eras}
+          units={unidades}
+          resultCount={filtered.length}
+        />
       </ListPageStickyHeader>
 
       {viewMode === "planilha" ? (
