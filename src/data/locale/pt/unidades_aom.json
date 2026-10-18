@@ -11557,5 +11557,4662 @@
       }
     ],
     "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 196,
+    "nome": "Titã (Cérbero)",
+    "ingles": "Titan (Cerberus)",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 5,
+        "nome": "Titã :aomr_titan_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "6"
+      },
+      {
+        "type": "AbstractTitan",
+        "icon": "",
+        "value": "20"
+      },
+      {
+        "type": "Soldado humano",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 30000,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 280,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 10,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_titan_greek_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 80,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 197,
+    "nome": "Titã (Egípcio)",
+    "ingles": "Titan (Egyptian)",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 5,
+        "nome": "Titã :aomr_titan_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "6"
+      },
+      {
+        "type": "AbstractTitan",
+        "icon": "",
+        "value": "20"
+      },
+      {
+        "type": "Soldado humano",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 30000,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 280,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 10,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_titan_egyptian_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 80,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 198,
+    "nome": "Titã (Ymir)",
+    "ingles": "Titan (Ymir)",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 5,
+        "nome": "Titã :aomr_titan_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "6"
+      },
+      {
+        "type": "AbstractTitan",
+        "icon": "",
+        "value": "20"
+      },
+      {
+        "type": "Soldado humano",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 30000,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 280,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 10,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_titan_norse_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 80,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 199,
+    "nome": "Titã (Atlante)",
+    "ingles": "Titan (Atlantean)",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 5,
+        "nome": "Titã :aomr_titan_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "6"
+      },
+      {
+        "type": "AbstractTitan",
+        "icon": "",
+        "value": "20"
+      },
+      {
+        "type": "Soldado humano",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 30000,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 280,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 10,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_titan_atlantean_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 80,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 200,
+    "nome": "Titã (Xing Tian)",
+    "ingles": "Titan (Xing Tian)",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 5,
+        "nome": "Titã :aomr_titan_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "6"
+      },
+      {
+        "type": "AbstractTitan",
+        "icon": "",
+        "value": "20"
+      },
+      {
+        "type": "Soldado humano",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 30000,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 280,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 10,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_titan_chinese_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 80,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 201,
+    "nome": "Titã (Yamata no Orochi)",
+    "ingles": "Titan (Yamata no Orochi)",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 5,
+        "nome": "Titã :aomr_titan_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "6"
+      },
+      {
+        "type": "AbstractTitan",
+        "icon": "",
+        "value": "20"
+      },
+      {
+        "type": "Soldado humano",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 30000,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 280,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 10,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_titan_japanese_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 80,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 202,
+    "nome": "Aldeão",
+    "ingles": "Villager",
+    "tipo": [
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 55,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 24,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 50,
+    "populacao": 1,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_greek_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 12,
+    "alcance": 12
+  },
+  {
+    "id": 203,
+    "nome": "Kataskopos",
+    "ingles": "Kataskopos",
+    "tipo": [
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 70,
+    "velocidade_de_ataque_atk_s": 1.1,
+    "dps": 1.1,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 70,
+    "construcao": [],
+    "comida": 75,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 75,
+    "populacao": 1,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_kataskopos_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 1,
+    "alcance": 0.75
+  },
+  {
+    "id": 204,
+    "nome": "Milícia",
+    "ingles": "Militia",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 100,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 5,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 20,
+    "construcao": [],
+    "comida": 70,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 70,
+    "populacao": 1,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_militia_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 5,
+    "alcance": 0.75
+  },
+  {
+    "id": 205,
+    "nome": "Petrobolos",
+    "ingles": "Petrobolos",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Ship",
+        "icon": "",
+        "value": "2.5"
+      }
+    ],
+    "pontos_de_vida": 110,
+    "velocidade_de_ataque_atk_s": 4,
+    "dps": 180,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Fortaleza",
+        "id": 57
+      }
+    ],
+    "comida": 0,
+    "madeira": 125,
+    "ouro": 150,
+    "favor": 0,
+    "custo_total": 275,
+    "populacao": 3,
+    "tempo_treinamento": 15,
+    "velocidade_movimento": 2.4,
+    "icon": "aomr_petrobolos_icon",
+    "armadura_anticontusao": 85,
+    "dano_contusao": 45,
+    "alcance": 28
+  },
+  {
+    "id": 206,
+    "nome": "Helepolis",
+    "ingles": "Helepolis",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 650,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 80,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Fortaleza",
+        "id": 57
+      }
+    ],
+    "comida": 0,
+    "madeira": 300,
+    "ouro": 200,
+    "favor": 0,
+    "custo_total": 500,
+    "populacao": 5,
+    "tempo_treinamento": 24,
+    "velocidade_movimento": 2.9,
+    "icon": "aomr_helepolis_icon",
+    "armadura_anticontusao": 85,
+    "dano_contusao": 40,
+    "alcance": 10
+  },
+  {
+    "id": 207,
+    "nome": "Hipocampo",
+    "ingles": "Hippocampus",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 70,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 70,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 6.6,
+    "icon": "aomr_hippocampus_icon",
+    "armadura_anticontusao": 80,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 208,
+    "nome": "Cila",
+    "ingles": "Scylla",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "1.5"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 800,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 45,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 65,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 200,
+    "favor": 20,
+    "custo_total": 220,
+    "populacao": 4,
+    "tempo_treinamento": 15,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_scylla_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 30,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 209,
+    "nome": "Carcinos",
+    "ingles": "Carcinos",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 900,
+    "velocidade_de_ataque_atk_s": 1.2,
+    "dps": 42,
+    "armadura_anticorte": 70,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 200,
+    "ouro": 0,
+    "favor": 15,
+    "custo_total": 215,
+    "populacao": 3,
+    "tempo_treinamento": 9,
+    "velocidade_movimento": 5,
+    "icon": "aomr_carcinos_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 35,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 210,
+    "nome": "Trirreme",
+    "ingles": "Trireme",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 305,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 12,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_trireme_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 8,
+    "alcance": 15
+  },
+  {
+    "id": 211,
+    "nome": "Penteconter",
+    "ingles": "Pentekonter",
+    "tipo": [],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 335,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 37.5,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 10,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 7,
+    "icon": "aomr_pentekonter_icon",
+    "armadura_anticontusao": 50,
+    "dano_cortante": 25,
+    "alcance": 2
+  },
+  {
+    "id": 212,
+    "nome": "Juggernaut",
+    "ingles": "Juggernaut",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 1,
+        "nome": "Grego :aomr_pantheon_greeks_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractArcherShip",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 265,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 4,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_juggernaut_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 2,
+    "alcance": 20
+  },
+  {
+    "id": 213,
+    "nome": "Trabalhador",
+    "ingles": "Laborer",
+    "tipo": [
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 55,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 24,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 50,
+    "populacao": 1,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_egyptian_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 12,
+    "alcance": 12
+  },
+  {
+    "id": 214,
+    "nome": "Mercenário",
+    "ingles": "Mercenary",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 90,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 7,
+    "armadura_anticorte": 35,
+    "armadura_antiperfurante": 15,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "CitadelCenter"
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 90,
+    "favor": 0,
+    "custo_total": 90,
+    "populacao": 0,
+    "tempo_treinamento": 1,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_mercenary_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 7,
+    "alcance": 0.75
+  },
+  {
+    "id": 215,
+    "nome": "Cavalaria Mercenária",
+    "ingles": "Mercenary Cavalry",
+    "tipo": [
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 160,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 8,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "CitadelCenter"
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 120,
+    "favor": 0,
+    "custo_total": 120,
+    "populacao": 0,
+    "tempo_treinamento": 2,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_mercenary_cavalry_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 8,
+    "alcance": 0.75
+  },
+  {
+    "id": 216,
+    "nome": "Torre de Cerco",
+    "ingles": "Siege Tower",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 400,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 630,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Oficina de Cerco",
+        "id": 62
+      }
+    ],
+    "comida": 0,
+    "madeira": 200,
+    "ouro": 100,
+    "favor": 0,
+    "custo_total": 300,
+    "populacao": 3,
+    "tempo_treinamento": 15,
+    "velocidade_movimento": 2.9,
+    "icon": "aomr_siege_tower_icon",
+    "armadura_anticontusao": 85,
+    "dano_contusao": 180,
+    "alcance": 3
+  },
+  {
+    "id": 217,
+    "nome": "Catapulta",
+    "ingles": "Catapult",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Ship",
+        "icon": "",
+        "value": "2.5"
+      }
+    ],
+    "pontos_de_vida": 115,
+    "velocidade_de_ataque_atk_s": 4,
+    "dps": 160,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Oficina de Cerco",
+        "id": 62
+      }
+    ],
+    "comida": 0,
+    "madeira": 200,
+    "ouro": 200,
+    "favor": 0,
+    "custo_total": 400,
+    "populacao": 5,
+    "tempo_treinamento": 26.5,
+    "velocidade_movimento": 2.4,
+    "icon": "aomr_catapult_icon",
+    "armadura_anticontusao": 85,
+    "dano_perfurante": 40,
+    "alcance": 28
+  },
+  {
+    "id": 218,
+    "nome": "Roc",
+    "ingles": "Roc",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 700,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 0,
+    "armadura_antiperfurante": 25,
+    "construcao": [
+      {
+        "nome": "Templo (Egípcio)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 100,
+    "favor": 5,
+    "custo_total": 105,
+    "populacao": 3,
+    "tempo_treinamento": 14,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_roc_icon",
+    "armadura_anticontusao": 80,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 219,
+    "nome": "Leviatã",
+    "ingles": "Leviathan",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 1020,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 57,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 200,
+    "favor": 15,
+    "custo_total": 215,
+    "populacao": 3,
+    "tempo_treinamento": 10,
+    "velocidade_movimento": 4.2,
+    "icon": "aomr_leviathan_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 38,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 220,
+    "nome": "Tartaruga de Guerra",
+    "ingles": "War Turtle",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 1320,
+    "velocidade_de_ataque_atk_s": 1.7,
+    "dps": 102,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 70,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 225,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 15,
+    "custo_total": 240,
+    "populacao": 4,
+    "tempo_treinamento": 9,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_war_turtle_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 60,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 221,
+    "nome": "Ovo de Fênix",
+    "ingles": "Phoenix Egg",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 400,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 0,
+    "icon": "aomr_phoenix_egg_icon",
+    "armadura_anticontusao": 5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 222,
+    "nome": "Kebenit",
+    "ingles": "Kebenit",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 290,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 12,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 90,
+    "ouro": 45,
+    "favor": 0,
+    "custo_total": 135,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_kebenit_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 8,
+    "alcance": 15
+  },
+  {
+    "id": 223,
+    "nome": "Galé com Aríete",
+    "ingles": "Ramming Galley",
+    "tipo": [],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 320,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 37.5,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 10,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 90,
+    "ouro": 45,
+    "favor": 0,
+    "custo_total": 135,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 7,
+    "icon": "aomr_ramming_galley_icon",
+    "armadura_anticontusao": 50,
+    "dano_cortante": 25,
+    "alcance": 2
+  },
+  {
+    "id": 224,
+    "nome": "Barcaça de Guerra",
+    "ingles": "War Barge",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractArcherShip",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 250,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 4,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 90,
+    "ouro": 45,
+    "favor": 0,
+    "custo_total": 135,
+    "populacao": 3,
+    "tempo_treinamento": 12.5,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_war_barge_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 2,
+    "alcance": 20
+  },
+  {
+    "id": 225,
+    "nome": "Lacaio",
+    "ingles": "Minion",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 2,
+        "nome": "Egípcio :aomr_pantheon_egyptians_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.25"
+      },
+      {
+        "type": "AbstractVillager",
+        "icon": "",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 140,
+    "velocidade_de_ataque_atk_s": 0.9,
+    "dps": 9,
+    "armadura_anticorte": 35,
+    "armadura_antiperfurante": 40,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 50,
+    "favor": 5,
+    "custo_total": 55,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.75,
+    "icon": "aomr_minion_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 10,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 226,
+    "nome": "Coletor",
+    "ingles": "Gatherer",
+    "tipo": [
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 55,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 24,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 50,
+    "populacao": 1,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_norse_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 12,
+    "alcance": 12
+  },
+  {
+    "id": 227,
+    "nome": "Anão",
+    "ingles": "Dwarf",
+    "tipo": [
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 55,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 24,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 60,
+    "favor": 0,
+    "custo_total": 60,
+    "populacao": 1,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_dwarf_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 12,
+    "alcance": 12
+  },
+  {
+    "id": 228,
+    "nome": "Aríete Portátil",
+    "ingles": "Portable Ram",
+    "tipo": [
+      {
+        "type": "Arma de cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 275,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 5,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Forte da Colina",
+        "id": 59
+      },
+      {
+        "nome": "AsgardianHillFort"
+      }
+    ],
+    "comida": 0,
+    "madeira": 125,
+    "ouro": 125,
+    "favor": 0,
+    "custo_total": 250,
+    "populacao": 3,
+    "tempo_treinamento": 13,
+    "velocidade_movimento": 3.5,
+    "icon": "aomr_portable_ram_icon",
+    "armadura_anticontusao": 85,
+    "dano_cortante": 5,
+    "alcance": 2
+  },
+  {
+    "id": 229,
+    "nome": "Balista",
+    "ingles": "Ballista",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Ship",
+        "icon": "",
+        "value": "3"
+      }
+    ],
+    "pontos_de_vida": 85,
+    "velocidade_de_ataque_atk_s": 2.5,
+    "dps": 40,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Forte da Colina",
+        "id": 59
+      },
+      {
+        "nome": "AsgardianHillFort"
+      }
+    ],
+    "comida": 0,
+    "madeira": 150,
+    "ouro": 150,
+    "favor": 0,
+    "custo_total": 300,
+    "populacao": 3,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 2.4,
+    "icon": "aomr_ballista_icon",
+    "armadura_anticontusao": 85,
+    "dano_contusao": 16,
+    "alcance": 30
+  },
+  {
+    "id": 230,
+    "nome": "Kraken",
+    "ingles": "Kraken",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "3"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 800,
+    "velocidade_de_ataque_atk_s": 3.6,
+    "dps": 194.4,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 70,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 300,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 20,
+    "custo_total": 320,
+    "populacao": 4,
+    "tempo_treinamento": 10,
+    "velocidade_movimento": 6,
+    "icon": "aomr_kraken_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 54,
+    "alcance": 1,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 231,
+    "nome": "Nidhogg",
+    "ingles": "Nidhogg",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.1"
+      }
+    ],
+    "pontos_de_vida": 3200,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 80,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 50,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_nidhogg_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 40,
+    "alcance": 4,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 232,
+    "nome": "Jormun Elver",
+    "ingles": "Jormun Elver",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 1200,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 90,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 200,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 15,
+    "custo_total": 215,
+    "populacao": 4,
+    "tempo_treinamento": 10,
+    "velocidade_movimento": 6,
+    "icon": "aomr_jormun_elver_icon",
+    "armadura_anticontusao": 80,
+    "dano_perfurante": 60,
+    "alcance": 16,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 233,
+    "nome": "Lobo de Fimbulwinter",
+    "ingles": "Fimbulwinter Wolf",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 180,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 31.5,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 40,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 6,
+    "icon": "aomr_fimbulwinter_wolf_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 21,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 234,
+    "nome": "Dracar",
+    "ingles": "Longboat",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 290,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 13.5,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_longboat_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 9,
+    "alcance": 15
+  },
+  {
+    "id": 235,
+    "nome": "Dreki",
+    "ingles": "Dreki",
+    "tipo": [],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 320,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 41.25,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 10,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 7,
+    "icon": "aomr_dreki_icon",
+    "armadura_anticontusao": 50,
+    "dano_cortante": 27.5,
+    "alcance": 2
+  },
+  {
+    "id": 236,
+    "nome": "Barco Dragão",
+    "ingles": "Dragon Ship",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractArcherShip",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 250,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 5,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_dragon_ship_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 2.5,
+    "alcance": 20
+  },
+  {
+    "id": 237,
+    "nome": "Gullinbursti",
+    "ingles": "Gullinbursti",
+    "tipo": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 3,
+        "nome": "Nórdico :aomr_pantheon_norse_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 400,
+    "velocidade_de_ataque_atk_s": 0.9,
+    "dps": 27,
+    "armadura_anticorte": 35,
+    "armadura_antiperfurante": 50,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 150,
+    "favor": 20,
+    "custo_total": 170,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 6.5,
+    "icon": "aomr_gullinbursti_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 30,
+    "alcance": 1
+  },
+  {
+    "id": 238,
+    "nome": "Cidadão",
+    "ingles": "Citizen",
+    "tipo": [
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 100,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 40,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 85,
+    "madeira": 15,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 100,
+    "populacao": 2,
+    "tempo_treinamento": 28,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_atlantean_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 20,
+    "alcance": 14
+  },
+  {
+    "id": 239,
+    "nome": "Destruidor",
+    "ingles": "Destroyer",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "9"
+      }
+    ],
+    "pontos_de_vida": 150,
+    "velocidade_de_ataque_atk_s": 1.2,
+    "dps": 7.2,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 70,
+    "construcao": [
+      {
+        "nome": "Palácio",
+        "id": 60
+      }
+    ],
+    "comida": 70,
+    "madeira": 0,
+    "ouro": 60,
+    "favor": 0,
+    "custo_total": 130,
+    "populacao": 3,
+    "tempo_treinamento": 7,
+    "velocidade_movimento": 3.6,
+    "icon": "aomr_destroyer_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 6,
+    "alcance": 1.5
+  },
+  {
+    "id": 240,
+    "nome": "Destruidor (Herói)",
+    "ingles": "Destroyer (Hero)",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "9"
+      },
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "11"
+      }
+    ],
+    "pontos_de_vida": 165,
+    "velocidade_de_ataque_atk_s": 1.2,
+    "dps": 8.4,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 70,
+    "construcao": [],
+    "comida": 125,
+    "madeira": 0,
+    "ouro": 105,
+    "favor": 3,
+    "custo_total": 233,
+    "populacao": 3,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.9,
+    "icon": "aomr_destroyer_hero_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 7,
+    "alcance": 1.5
+  },
+  {
+    "id": 241,
+    "nome": "Sifão de Fogo",
+    "ingles": "Fire Siphon",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 400,
+    "velocidade_de_ataque_atk_s": 1.7,
+    "dps": 34,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Palácio",
+        "id": 60
+      }
+    ],
+    "comida": 0,
+    "madeira": 275,
+    "ouro": 180,
+    "favor": 0,
+    "custo_total": 455,
+    "populacao": 5,
+    "tempo_treinamento": 19,
+    "velocidade_movimento": 2.9,
+    "icon": "aomr_fire_siphon_icon",
+    "armadura_anticontusao": 85,
+    "dano_perfurante": 20,
+    "alcance": 18
+  },
+  {
+    "id": 242,
+    "nome": "Carnívora",
+    "ingles": "Carnivora",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractVillager",
+        "icon": "",
+        "value": "0.25"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 600,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 20,
+    "armadura_anticorte": 35,
+    "armadura_antiperfurante": 20,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 25,
+    "custo_total": 25,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 0,
+    "icon": "aomr_carnivora_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 20,
+    "alcance": 3,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 243,
+    "nome": "Carnívora Aquática",
+    "ingles": "Water Carnivora",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractVillager",
+        "icon": "",
+        "value": "0.25"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.25"
+      }
+    ],
+    "pontos_de_vida": 550,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 30,
+    "armadura_anticorte": 35,
+    "armadura_antiperfurante": 30,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 25,
+    "custo_total": 25,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 0,
+    "icon": "aomr_water_carnivora_icon",
+    "armadura_anticontusao": 30,
+    "dano_cortante": 30,
+    "alcance": 3,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 244,
+    "nome": "Prole de Prometeano",
+    "ingles": "Promethean Offspring",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "1.5"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 80,
+    "velocidade_de_ataque_atk_s": 1.1,
+    "dps": 6.6,
+    "armadura_anticorte": 15,
+    "armadura_antiperfurante": 35,
+    "construcao": [],
+    "comida": 45,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 4,
+    "custo_total": 49,
+    "populacao": 1,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_promethean_offspring_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 6,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 245,
+    "nome": "Servo",
+    "ingles": "Servant",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "3"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 300,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 8,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 125,
+    "favor": 12,
+    "custo_total": 137,
+    "populacao": 2,
+    "tempo_treinamento": 15,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_servant_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 8,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 246,
+    "nome": "Dríade",
+    "ingles": "Dryad",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 275,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 33,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "HesperidesTree"
+      },
+      {
+        "nome": "SummoningTree"
+      }
+    ],
+    "comida": 0,
+    "madeira": 175,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 175,
+    "populacao": 0,
+    "tempo_treinamento": 13,
+    "velocidade_movimento": 4.5,
+    "icon": "aomr_dryad_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 22,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 247,
+    "nome": "Nereida",
+    "ingles": "Nereid",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 600,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 25,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 200,
+    "favor": 15,
+    "custo_total": 215,
+    "populacao": 2,
+    "tempo_treinamento": 12,
+    "velocidade_movimento": 5,
+    "icon": "aomr_nereid_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 25,
+    "alcance": 1,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 248,
+    "nome": "Criatura do Tártaro",
+    "ingles": "Tartarian Spawn",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      },
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 350,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 20,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 40,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 20,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_tartarian_spawn_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 20,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 249,
+    "nome": "Caravela",
+    "ingles": "Man O' War",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 900,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 70,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 250,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 15,
+    "custo_total": 265,
+    "populacao": 4,
+    "tempo_treinamento": 10,
+    "velocidade_movimento": 6,
+    "icon": "aomr_man_o_war_icon",
+    "armadura_anticontusao": 80,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 250,
+    "nome": "Birreme",
+    "ingles": "Bireme",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 290,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 12,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_bireme_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 8,
+    "alcance": 16
+  },
+  {
+    "id": 251,
+    "nome": "Navio de Fogo",
+    "ingles": "Fire Ship",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 320,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 37.5,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 10,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 7,
+    "icon": "aomr_fire_ship_icon",
+    "armadura_anticontusao": 50,
+    "dano_cortante": 25,
+    "alcance": 6
+  },
+  {
+    "id": 252,
+    "nome": "Birreme de Cerco",
+    "ingles": "Siege Bireme",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlante :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractArcherShip",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 250,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 4,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      },
+      {
+        "nome": "NavalShipyard"
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_siege_bireme_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 2,
+    "alcance": 21
+  },
+  {
+    "id": 253,
+    "nome": "Camponês",
+    "ingles": "Peasant",
+    "tipo": [
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 50,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 24,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 40,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 40,
+    "populacao": 1,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_chinese_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 12,
+    "alcance": 12
+  },
+  {
+    "id": 254,
+    "nome": "Kuafu",
+    "ingles": "Kuafu",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Torre",
+        "icon": "",
+        "value": "4"
+      }
+    ],
+    "pontos_de_vida": 175,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 44,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 40,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 100,
+    "favor": 8,
+    "custo_total": 158,
+    "populacao": 3,
+    "tempo_treinamento": 42.5,
+    "velocidade_movimento": 3.6,
+    "icon": "aomr_kuafu_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 22,
+    "alcance": 6
+  },
+  {
+    "id": 255,
+    "nome": "Cavaleiro de Terracota",
+    "ingles": "Terracotta Rider",
+    "tipo": [
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Arma de cerco",
+        "icon": "aomr_type_siege_weapon_icon",
+        "value": "2"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 100,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 9,
+    "armadura_anticorte": 15,
+    "armadura_antiperfurante": 35,
+    "construcao": [],
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 100,
+    "populacao": 0,
+    "tempo_treinamento": 2,
+    "velocidade_movimento": 6.5,
+    "icon": "aomr_terracotta_rider_png_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 9,
+    "alcance": 0.75
+  },
+  {
+    "id": 256,
+    "nome": "Cavaleiro Qing",
+    "ingles": "Qing Rider",
+    "tipo": [
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon",
+        "value": "2"
+      },
+      {
+        "type": "Arma de cerco",
+        "icon": "aomr_type_siege_weapon_icon",
+        "value": "3"
+      }
+    ],
+    "pontos_de_vida": 95,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 6,
+    "armadura_anticorte": 15,
+    "armadura_antiperfurante": 35,
+    "construcao": [],
+    "comida": 65,
+    "madeira": 45,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 110,
+    "populacao": 2,
+    "tempo_treinamento": 18,
+    "velocidade_movimento": 5.85,
+    "icon": "aomr_qingqi_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 6,
+    "alcance": 0.75
+  },
+  {
+    "id": 257,
+    "nome": "Cavalaria de Arco",
+    "ingles": "Bow Cavalry",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon",
+        "value": "1.5"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 85,
+    "velocidade_de_ataque_atk_s": 1.3,
+    "dps": 8.45,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 25,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 60,
+    "ouro": 35,
+    "favor": 0,
+    "custo_total": 95,
+    "populacao": 2,
+    "tempo_treinamento": 16,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_gongqi_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 6.5,
+    "alcance": 16
+  },
+  {
+    "id": 258,
+    "nome": "Besta de Cerco",
+    "ingles": "Siege Crossbow",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Ship",
+        "icon": "",
+        "value": "2.5"
+      }
+    ],
+    "pontos_de_vida": 95,
+    "velocidade_de_ataque_atk_s": 3,
+    "dps": 270,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Oficina de Máquina",
+        "id": 45
+      },
+      {
+        "nome": "MachineWorkshopTower"
+      }
+    ],
+    "comida": 0,
+    "madeira": 150,
+    "ouro": 150,
+    "favor": 0,
+    "custo_total": 300,
+    "populacao": 3,
+    "tempo_treinamento": 33,
+    "velocidade_movimento": 2.4,
+    "icon": "aomr_siege_crossbow_icon",
+    "armadura_anticontusao": 85,
+    "dano_contusao": 90,
+    "alcance": 26
+  },
+  {
+    "id": 259,
+    "nome": "Carroça de Machado",
+    "ingles": "Axe Cart",
+    "tipo": [
+      {
+        "type": "Arma de cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 500,
+    "velocidade_de_ataque_atk_s": 2.1,
+    "dps": 157.5,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Oficina de Máquina",
+        "id": 45
+      },
+      {
+        "nome": "MachineWorkshopTower"
+      }
+    ],
+    "comida": 0,
+    "madeira": 200,
+    "ouro": 200,
+    "favor": 0,
+    "custo_total": 400,
+    "populacao": 4,
+    "tempo_treinamento": 22,
+    "velocidade_movimento": 2.6,
+    "icon": "aomr_axe_cart_icon",
+    "armadura_anticontusao": 85,
+    "dano_contusao": 75,
+    "alcance": 1.3
+  },
+  {
+    "id": 260,
+    "nome": "Pixiu",
+    "ingles": "Pixiu",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 180,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 45,
+    "construcao": [
+      {
+        "nome": "Mercado (Grego)",
+        "id": 80
+      }
+    ],
+    "comida": 150,
+    "madeira": 50,
+    "ouro": 0,
+    "favor": 5,
+    "custo_total": 205,
+    "populacao": 1,
+    "tempo_treinamento": 20,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_pixiu_icon",
+    "armadura_anticontusao": 80,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 261,
+    "nome": "Chiwen",
+    "ingles": "Chiwen",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 300,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 52.5,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 150,
+    "ouro": 150,
+    "favor": 20,
+    "custo_total": 320,
+    "populacao": 3,
+    "tempo_treinamento": 15,
+    "velocidade_movimento": 5.2,
+    "icon": "aomr_chiwen_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 35,
+    "alcance": 1,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 262,
+    "nome": "Xuanwu",
+    "ingles": "Xuanwu",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "1.5"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 1200,
+    "velocidade_de_ataque_atk_s": 1.7,
+    "dps": 51,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 70,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 170,
+    "madeira": 170,
+    "ouro": 0,
+    "favor": 15,
+    "custo_total": 355,
+    "populacao": 4,
+    "tempo_treinamento": 11,
+    "velocidade_movimento": 6,
+    "icon": "aomr_xuanwu_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 30,
+    "alcance": 2,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 263,
+    "nome": "Fei",
+    "ingles": "Fei",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      },
+      {
+        "type": "AbstractVillager",
+        "icon": "",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 75,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 9,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 25,
+    "construcao": [],
+    "comida": 60,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 8,
+    "custo_total": 68,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 5,
+    "icon": "aomr_fei_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 9,
+    "alcance": 0.75,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 264,
+    "nome": "Yinglong",
+    "ingles": "Yinglong",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 2700,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 55,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.5,
+    "icon": "aomr_yinglong_icon",
+    "armadura_anticontusao": 80,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 265,
+    "nome": "Doujian",
+    "ingles": "Doujian",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 290,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 12,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 2,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_doujian_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 8,
+    "alcance": 15
+  },
+  {
+    "id": 266,
+    "nome": "Mengchong",
+    "ingles": "Mengchong",
+    "tipo": [],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 320,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 37.5,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 10,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 2,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 7,
+    "icon": "aomr_mengchong_icon",
+    "armadura_anticontusao": 50,
+    "dano_cortante": 25,
+    "alcance": 2
+  },
+  {
+    "id": 267,
+    "nome": "Louchuan",
+    "ingles": "Louchuan",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 5,
+        "nome": "Chinês :aomr_pantheon_chinese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractArcherShip",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 250,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 4,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 2,
+    "tempo_treinamento": 12.5,
+    "velocidade_movimento": 4.8,
+    "icon": "aomr_louchuan_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 2,
+    "alcance": 20
+  },
+  {
+    "id": 268,
+    "nome": "Plebeu",
+    "ingles": "Commoner",
+    "tipo": [
+      {
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 1,
+        "nome": "Arcaica :aomr_archaic_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 55,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 24,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 35,
+    "construcao": [
+      {
+        "nome": "Centro Urbano (Grego)",
+        "id": 9
+      },
+      {
+        "nome": "VillageCenter"
+      }
+    ],
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 50,
+    "populacao": 1,
+    "tempo_treinamento": 17,
+    "velocidade_movimento": 3.8,
+    "icon": "aomr_villager_japanese_icon",
+    "armadura_anticontusao": 99,
+    "dano_perfurante": 12,
+    "alcance": 12
+  },
+  {
+    "id": 269,
+    "nome": "Samurai Hatamoto",
+    "ingles": "Hatamoto Samurai",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 190,
+    "velocidade_de_ataque_atk_s": 1.2,
+    "dps": 19.2,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 15,
+    "construcao": [],
+    "comida": 105,
+    "madeira": 0,
+    "ouro": 75,
+    "favor": 0,
+    "custo_total": 180,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.2,
+    "icon": "aomr_samurai_icon",
+    "armadura_anticontusao": 99,
+    "dano_divino": 16,
+    "alcance": 0.5
+  },
+  {
+    "id": 270,
+    "nome": "Sakimori",
+    "ingles": "Sakimori",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon",
+        "value": "4.5"
+      }
+    ],
+    "pontos_de_vida": 90,
+    "velocidade_de_ataque_atk_s": 1.3,
+    "dps": 7.8,
+    "armadura_anticorte": 35,
+    "armadura_antiperfurante": 5,
+    "construcao": [],
+    "comida": 30,
+    "madeira": 0,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 80,
+    "populacao": 2,
+    "tempo_treinamento": 9,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_sakimori_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 6,
+    "alcance": 0.5
+  },
+  {
+    "id": 271,
+    "nome": "Bushi Yari",
+    "ingles": "Bushi Yari",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon",
+        "value": "1.5"
+      }
+    ],
+    "pontos_de_vida": 145,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 10,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 10,
+    "construcao": [],
+    "comida": 75,
+    "madeira": 0,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 125,
+    "populacao": 3,
+    "tempo_treinamento": 14,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_bushi_yari_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 10,
+    "alcance": 0.75
+  },
+  {
+    "id": 272,
+    "nome": "Oyumi",
+    "ingles": "Oyumi",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Ship",
+        "icon": "",
+        "value": "2.5"
+      }
+    ],
+    "pontos_de_vida": 105,
+    "velocidade_de_ataque_atk_s": 3,
+    "dps": 300,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 90,
+    "construcao": [
+      {
+        "nome": "Castelo",
+        "id": 68
+      }
+    ],
+    "comida": 0,
+    "madeira": 200,
+    "ouro": 75,
+    "favor": 0,
+    "custo_total": 275,
+    "populacao": 3,
+    "tempo_treinamento": 15,
+    "velocidade_movimento": 2.4,
+    "icon": "aomr_oyumi_icon",
+    "armadura_anticontusao": 85,
+    "dano_contusao": 100,
+    "alcance": 24
+  },
+  {
+    "id": 273,
+    "nome": "Onna-musha (Herói)",
+    "ingles": "Onna-musha (Hero)",
+    "tipo": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "6"
+      }
+    ],
+    "pontos_de_vida": 200,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 21,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 15,
+    "construcao": [
+      {
+        "nome": "Dojo",
+        "id": 63
+      }
+    ],
+    "comida": 130,
+    "madeira": 0,
+    "ouro": 90,
+    "favor": 4,
+    "custo_total": 224,
+    "populacao": 4,
+    "tempo_treinamento": 25.5,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_onna_musha_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 14,
+    "alcance": 0.75
+  },
+  {
+    "id": 274,
+    "nome": "Shogun (Herói)",
+    "ingles": "Shogun (Hero)",
+    "tipo": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "4"
+      }
+    ],
+    "pontos_de_vida": 450,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 33,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 60,
+    "construcao": [],
+    "comida": 250,
+    "madeira": 0,
+    "ouro": 250,
+    "favor": 10,
+    "custo_total": 510,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 5.5,
+    "icon": "aomr_shogun_icon",
+    "armadura_anticontusao": 99,
+    "dano_cortante": 22,
+    "alcance": 1
+  },
+  {
+    "id": 275,
+    "nome": "Honengyo",
+    "ingles": "Honengyo",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 1000,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 60,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 220,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 16,
+    "custo_total": 236,
+    "populacao": 3,
+    "tempo_treinamento": 14,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_honengyo_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 40,
+    "alcance": 3,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 276,
+    "nome": "Umibōzu",
+    "ingles": "Umibōzu",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mítica :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.25"
+      }
+    ],
+    "pontos_de_vida": 1200,
+    "velocidade_de_ataque_atk_s": 3,
+    "dps": 240,
+    "armadura_anticorte": 65,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 225,
+    "ouro": 0,
+    "favor": 15,
+    "custo_total": 240,
+    "populacao": 4,
+    "tempo_treinamento": 25,
+    "velocidade_movimento": 2.8,
+    "icon": "aomr_umibozu_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 80,
+    "alcance": 1,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 277,
+    "nome": "Wasen",
+    "ingles": "Wasen",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 290,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 12,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 30,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.9,
+    "icon": "aomr_wasen_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 8,
+    "alcance": 15
+  },
+  {
+    "id": 278,
+    "nome": "Wasen Aríete",
+    "ingles": "Ramming Wasen",
+    "tipo": [],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 320,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 37.5,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 10,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 7.4,
+    "icon": "aomr_ramming_wasen_icon",
+    "armadura_anticontusao": 50,
+    "dano_cortante": 25,
+    "alcance": 2
+  },
+  {
+    "id": 279,
+    "nome": "Junkozosen",
+    "ingles": "Junkozosen",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "AbstractArcherShip",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 250,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 4,
+    "armadura_anticorte": 10,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Doca (Grego)",
+        "id": 79
+      }
+    ],
+    "comida": 0,
+    "madeira": 100,
+    "ouro": 50,
+    "favor": 0,
+    "custo_total": 150,
+    "populacao": 3,
+    "tempo_treinamento": 16.5,
+    "velocidade_movimento": 5.2,
+    "icon": "aomr_junkozosen_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 2,
+    "alcance": 20
+  },
+  {
+    "id": 280,
+    "nome": "Espada Ronin",
+    "ingles": "Masterless Sword",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 15,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 75,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 30,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4,
+    "icon": "aomr_masterless_sword_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 50,
+    "alcance": 1,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 281,
+    "nome": "Miserável",
+    "ingles": "Wretch",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heróica :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.25"
+      }
+    ],
+    "pontos_de_vida": 80,
+    "velocidade_de_ataque_atk_s": 0.9,
+    "dps": 3.6,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 30,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 25,
+    "favor": 5,
+    "custo_total": 30,
+    "populacao": 0,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4,
+    "icon": "aomr_wretch_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 4,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 282,
+    "nome": "Tanuki",
+    "ingles": "Tanuki",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 125,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 25,
+    "armadura_antiperfurante": 40,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 120,
+    "favor": 10,
+    "custo_total": 130,
+    "populacao": 3,
+    "tempo_treinamento": 16,
+    "velocidade_movimento": 4.5,
+    "icon": "aomr_tanuki_icon",
+    "armadura_anticontusao": 80,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
+  },
+  {
+    "id": 283,
+    "nome": "Kappa",
+    "ingles": "Kappa",
+    "tipo": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 6,
+        "nome": "Japonês :aomr_pantheon_japanese_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Clássica :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 150,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 15,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 50,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 50,
+    "favor": 6,
+    "custo_total": 56,
+    "populacao": 2,
+    "tempo_treinamento": 10,
+    "velocidade_movimento": 5,
+    "icon": "aomr_kappa_icon",
+    "armadura_anticontusao": 80,
+    "dano_cortante": 15,
+    "alcance": 0.5,
+    "fraco_contra": "Herói :aomr_type_hero_icon:"
   }
 ]
