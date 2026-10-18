@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 import { UnidadeCombateBody, UnidadeCustoBody, UnidadeVisaoGeralBody } from "@/components/unidade/UnidadeSectionBodies";
@@ -11,6 +12,11 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { listIndexReturnTo, listOrDetailBackLinkLabel } from "@/lib/listIndexReturnState";
+import { unitModelUrl } from "@/lib/unitModelUrl";
+
+const UnidadeModelViewer = lazy(() =>
+  import("@/components/unidade/UnidadeModelViewer").then((mod) => ({ default: mod.UnidadeModelViewer })),
+);
 
 export function UnidadeDetailPage() {
   const { t, locale } = useTranslation();
@@ -32,6 +38,7 @@ export function UnidadeDetailPage() {
   }
 
   const unidadeIcon = getUnidadeAssetUrl(u);
+  const modelUrl = unitModelUrl(u.id);
 
   return (
     <div>
@@ -45,17 +52,24 @@ export function UnidadeDetailPage() {
         headerIconSrc={unidadeIcon}
       />
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className={modelUrl ? "grid items-start gap-6 lg:grid-cols-2" : "grid gap-6"}>
         <Section title={t("common.overview")}>
           <UnidadeVisaoGeralBody u={u} />
         </Section>
 
+        {modelUrl ? (
+          <Section title={t("common.projection3d")}>
+            <Suspense fallback={<p className="text-zinc-500">{t("common.loading")}</p>}>
+              <UnidadeModelViewer url={modelUrl} />
+            </Suspense>
+          </Section>
+        ) : null}
+      </div>
+
+      <div className="mt-6 grid items-start gap-6 lg:grid-cols-2">
         <Section title={t("common.combat")}>
           <UnidadeCombateBody u={u} />
         </Section>
-      </div>
-
-      <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <Section title={t("common.costAndTraining")}>
           <UnidadeCustoBody u={u} />
         </Section>

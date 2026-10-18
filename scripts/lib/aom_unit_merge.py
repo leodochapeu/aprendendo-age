@@ -127,6 +127,23 @@ CATALOG_PROTO_ALIASES = {
     "Quimchim Spy": "QuimichinSpy",
     "Otontin Smasher": "Otontin",
     "Wanyūdō": "Wanyudo",
+    "Settler": "VillagerAztec",
+    "Fishing Ship (Aztec)": "FishingShipAztec",
+    "Transport Ship (Aztec)": "TransportShipAztec",
+    "Teixiptla (Huitzilopochtli)": "TeixiptlaHuitz",
+    "Teixiptla (Tezcatlipoca)": "TeixiptlaTezca",
+    "Teixiptla (Quetzalcoatl)": "TeixiptlaQuetz",
+    "Anaconda": "AnacondaCoatlicue",
+    "Pochtecatl Caravan": "CaravanAztec",
+    "Titan (Cerberus)": "TitanCerberus",
+    "Titan (Egyptian)": "TitanBird",
+    "Titan (Ymir)": "TitanYmir",
+    "Titan (Atlantean)": "TitanAtlantean",
+    "Titan (Xing Tian)": "TitanXingTian",
+    "Titan (Yamata no Orochi)": "TitanYamataNoOrochi",
+    "Gullinbursti": "GullinburstiClassical",
+    "Dwarf": "VillagerDwarf",
+    "Citizen": "VillagerAtlantean",
 }
 
 

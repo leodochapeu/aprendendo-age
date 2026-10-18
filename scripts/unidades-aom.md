@@ -168,6 +168,23 @@ Documentação oficial: `BANG_Documentation/Data documentation/AoMRT Comprehensi
 
 ---
 
+## 3. Modelo 3D da página da unidade
+
+Arquivo: `extract-unit-models-aom.py`
+
+Lê o `animfile` do proto, converte o TMModel (e acessórios como arma, escudo e elmo) com o CryBar e grava um GLB estático em `public/assets/unit-models/`. O manifesto fica em `src/data/unit_models.json`. A página de detalhes mostra esse modelo ao lado de Visão geral, com giro para a esquerda e para a direita.
+
+```bash
+python scripts/extract-unit-models-aom.py --unit Hoplite
+python scripts/extract-unit-models-aom.py --all
+```
+
+npm: `npm run data:extract-unit-models -- --all`
+
+O cache intermediário (índice dos .bar, TMM, texturas) fica em `tools/.unit-model-cache/` e não entra no Git.
+
+---
+
 ## Fluxo recomendado
 
 1. `extract-unidades-aom.py --compare <Unidade>` — conferir uma unidade.

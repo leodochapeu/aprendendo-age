@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+
+# Cache local da extração de modelos 3D (BAR do jogo)
+tools/.unit-model-cache/
