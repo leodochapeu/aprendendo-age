@@ -172,7 +172,7 @@ Documentação oficial: `BANG_Documentation/Data documentation/AoMRT Comprehensi
 
 Arquivo: `extract-unit-models-aom.py`
 
-Lê o `animfile` do proto, converte o TMModel (e acessórios como arma, escudo e elmo) com o CryBar e grava um GLB estático em `public/assets/unit-models/`. O manifesto fica em `src/data/unit_models.json`. A página de detalhes mostra esse modelo ao lado de Visão geral, com giro para a esquerda e para a direita.
+Lê o `animfile` do proto, converte o TMModel (e acessórios como arma, escudo e elmo) com o CryBar e grava um GLB estático em `public/assets/unit-models/`. A malha usa o primeiro quadro da animação Idle, então o cavaleiro fica montado e as armas saem na mão. O manifesto fica em `src/data/unit_models.json`. A página de detalhes mostra esse modelo ao lado de Visão geral, com giro para a esquerda e para a direita.
 
 ```bash
 python scripts/extract-unit-models-aom.py --unit Hoplite

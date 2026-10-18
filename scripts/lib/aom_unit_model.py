@@ -2,8 +2,8 @@
 
 O proto aponta um animfile. Esse XML referencia o TMModel (malha .tmm) e os
 acessórios (lança, escudo, elmo). O CryBar converte TMM para GLB sem textura;
-aqui a cor base (DDT) entra no GLB e os acessórios são encaixados na pose
-de bind do esqueleto, para o site só girar o modelo.
+aqui a cor base (DDT) entra no GLB e o esqueleto vai para o primeiro quadro
+da animação Idle, para o site só girar o modelo.
 """
 
 from __future__ import annotations
@@ -20,6 +20,7 @@ from typing import Any
 from PIL import Image
 
 from aom_game_paths import DEFAULT_CACHE_DIR, DEFAULT_CRYBAR, resolve_game_dir
+from aom_tma import pose_worlds as tma_pose_worlds
 
 ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_MODELS = ROOT / "public" / "assets" / "unit-models"
@@ -39,9 +40,23 @@ SKIP_TAGS = {"cinematic", "attachment"}
 HAND_RETARGET = {
     "weaponright": "mixamorig:RightHand",
     "weaponleft": "mixamorig:LeftHand",
+    "shield": "mixamorig:LeftHand",
     "prop_r": "mixamorig:RightHand",
     "prop_l": "mixamorig:LeftHand",
 }
+# Projéteis e marcas de passo não ficam na mão na pose parada.
+PROJECTILE_ATTACHMENTS = {
+    "arrow",
+    "arrows",
+    "javelin",
+    "boulder",
+    "flaming",
+    "footprint",
+    "footprint_left",
+    "footprint_right",
+}
+# Ferramenta de construção. Só entra se a unidade não tiver arma de combate.
+TOOL_ATTACHMENTS = {"hammer", "pickaxe", "tool", "mallet"}
 
 
 def _tag(elem: ET.Element) -> str:
@@ -93,6 +108,12 @@ class BarIndex:
         ]
         self.art = self._load("art", art_bars)
         texture_bars = sorted(art.glob("Art*Textures.bar"))
+        anim_bars = sorted(modelcache.glob("ArtModelCacheAnimation*.bar"))
+        self.anims = self._load(
+            "anim",
+            anim_bars,
+            keep=lambda path: path.lower().endswith(".tma"),
+        )
         self.basecolors = self._load(
             "albedo",
             texture_bars,
@@ -477,6 +498,27 @@ def _node_by_name(gltf: dict[str, Any], name: str) -> int | None:
     return None
 
 
+def _attachment_node_index(gltf: dict[str, Any], name: str) -> int | None:
+    """O osso e o soquete às vezes têm o mesmo nome. O soquete é quem carrega a peça."""
+    target = name.lower()
+    fallback = None
+    for index, node in enumerate(gltf.get("nodes") or []):
+        if (node.get("name") or "").lower() != target:
+            continue
+        kind = ((node.get("extras") or {}).get("crybar") or {}).get("node_type")
+        if kind == "attachment":
+            return index
+        if fallback is None:
+            fallback = index
+    return fallback
+
+
+def _placeholder_bone(world: list[list[float]]) -> bool:
+    """WeaponRight/Shield nascem num ponto provisório (y=1.5, z=1), longe da mão."""
+    x, y, z = world[0][3], world[1][3], world[2][3]
+    return abs(x) < 0.4 and abs(y - 1.5) < 0.3 and abs(z - 1.0) < 0.4
+
+
 def _parent_index(gltf: dict[str, Any], node_index: int) -> int | None:
     for index, node in enumerate(gltf.get("nodes") or []):
         if node_index in (node.get("children") or []):
@@ -484,9 +526,14 @@ def _parent_index(gltf: dict[str, Any], node_index: int) -> int | None:
     return None
 
 
-def socket_matrix(gltf: dict[str, Any], blob: bytes, attachment_name: str) -> list[list[float]] | None:
+def socket_matrix(
+    gltf: dict[str, Any],
+    blob: bytes,
+    attachment_name: str,
+    bone_worlds: dict[int, list[list[float]]] | None = None,
+) -> list[list[float]] | None:
     nodes = gltf.get("nodes") or []
-    target = _node_by_name(gltf, attachment_name)
+    target = _attachment_node_index(gltf, attachment_name)
     if target is None:
         return None
     node = nodes[target]
@@ -500,18 +547,40 @@ def socket_matrix(gltf: dict[str, Any], blob: bytes, attachment_name: str) -> li
         if isinstance(index, int) and 0 <= index < len(attachments):
             local = _mat_from_3x4(attachments[index].get("local_matrix") or [])
     parent = _parent_index(gltf, target)
-    worlds = _bind_worlds(gltf, blob)
+    worlds = bone_worlds if bone_worlds is not None else _bind_worlds(gltf, blob)
     if parent is not None:
         parent_name = (nodes[parent].get("name") or "").lower()
         short = parent_name.split(":")[-1]
         retarget = HAND_RETARGET.get(short)
-        if retarget:
+        if retarget and parent in worlds and _placeholder_bone(worlds[parent]):
             hand = _node_by_name(gltf, retarget)
             if hand is not None and hand in worlds:
                 parent = hand
         if parent in worlds:
             return _mat_mul(worlds[parent], local)
     return local
+
+
+def apply_matrix(prims: list[dict[str, Any]], matrix: list[list[float]]) -> list[dict[str, Any]]:
+    inv = _invert4(matrix)
+    flip = _det3(matrix) < 0
+    moved: list[dict[str, Any]] = []
+    for prim in prims:
+        indices = list(prim["indices"])
+        if flip and indices:
+            swapped: list[int] = []
+            for index in range(0, len(indices) - 2, 3):
+                swapped.extend((indices[index + 1], indices[index], indices[index + 2]))
+            indices = swapped
+        moved.append(
+            {
+                **prim,
+                "positions": [_transform_point(matrix, *point) for point in prim["positions"]],
+                "normals": [_transform_normal(inv, *normal) for normal in prim["normals"]],
+                "indices": indices,
+            }
+        )
+    return moved
 
 
 def _mesh_primitives(
@@ -577,6 +646,85 @@ def _mesh_primitives(
 
     for root in roots:
         walk(root, transform)
+    return found
+
+
+def _skinned_primitives(
+    gltf: dict[str, Any],
+    blob: bytes,
+    bone_worlds: dict[int, list[list[float]]],
+) -> list[dict[str, Any]]:
+    """Aplica a pose nos vértices. A malha crua já está na pose de bind."""
+    skins = gltf.get("skins") or []
+    if not skins:
+        return []
+    skin = skins[0]
+    inverse_binds = [_mat_from_gltf(matrix) for matrix in read_accessor(gltf, blob, skin["inverseBindMatrices"])]
+    joints = skin.get("joints") or []
+    identity = _identity()
+    skin_mats: list[list[list[float]]] = []
+    for joint, inverse in zip(joints, inverse_binds):
+        pose = bone_worlds.get(joint, identity)
+        skin_mats.append(_mat_mul(pose, inverse))
+    inverse_skins = [_invert4(matrix) for matrix in skin_mats]
+    found: list[dict[str, Any]] = []
+    for node in gltf.get("nodes") or []:
+        mesh_index = node.get("mesh")
+        if mesh_index is None:
+            continue
+        mesh = gltf["meshes"][mesh_index]
+        for prim in mesh.get("primitives") or []:
+            attrs = prim.get("attributes") or {}
+            if "POSITION" not in attrs or "JOINTS_0" not in attrs or "WEIGHTS_0" not in attrs or "indices" not in prim:
+                continue
+            positions = read_accessor(gltf, blob, attrs["POSITION"])
+            normals = read_accessor(gltf, blob, attrs["NORMAL"]) if "NORMAL" in attrs else []
+            uvs = read_accessor(gltf, blob, attrs["TEXCOORD_0"]) if "TEXCOORD_0" in attrs else []
+            joint_ids = read_accessor(gltf, blob, attrs["JOINTS_0"])
+            weights = read_accessor(gltf, blob, attrs["WEIGHTS_0"])
+            indices = [int(value) for value in read_accessor(gltf, blob, prim["indices"])]
+            moved: list[tuple[float, float, float]] = []
+            moved_normals: list[tuple[float, float, float]] = []
+            for index, point in enumerate(positions):
+                ids = joint_ids[index]
+                weight_row = weights[index]
+                x = y = z = 0.0
+                nx = ny = nz = 0.0
+                normal = normals[index][:3] if normals else (0.0, 1.0, 0.0)
+                for slot in range(4):
+                    weight = float(weight_row[slot])
+                    if weight <= 0:
+                        continue
+                    joint = int(ids[slot])
+                    if joint < 0 or joint >= len(skin_mats):
+                        continue
+                    px, py, pz = _transform_point(skin_mats[joint], *point[:3])
+                    x += weight * px
+                    y += weight * py
+                    z += weight * pz
+                    nnx, nny, nnz = _transform_normal(inverse_skins[joint], *normal)
+                    nx += weight * nnx
+                    ny += weight * nny
+                    nz += weight * nnz
+                moved.append((x, y, z))
+                moved_normals.append((nx, ny, nz))
+            moved_uvs = [((uv[0], uv[1]) if uv else (0.0, 0.0)) for uv in (uvs or [])]
+            if len(moved_uvs) != len(moved):
+                moved_uvs = [(0.0, 0.0)] * len(moved)
+            material_index = prim.get("material")
+            material_name = "matA"
+            if material_index is not None:
+                material_name = (gltf.get("materials") or [{}])[material_index].get("name") or "matA"
+            found.append(
+                {
+                    "positions": moved,
+                    "normals": moved_normals,
+                    "uvs": moved_uvs,
+                    "indices": indices,
+                    "material": material_name,
+                    "material_index": material_index if material_index is not None else 0,
+                }
+            )
     return found
 
 
@@ -762,6 +910,140 @@ def resolve_visual_root(bars: BarIndex, root: ET.Element, depth: int = 0) -> ET.
     return root
 
 
+def _idle_clip(root: ET.Element) -> str | None:
+    """A Idle às vezes está no submodel (corpo masculino/feminino), não na raiz."""
+    scopes = [_visual_scope(root)]
+    if scopes[0] is not root:
+        scopes.append(root)
+    for scope in scopes:
+        for child in scope.iter():
+            if _tag(child) != "anim":
+                continue
+            label = (child.text or child.get("name") or "").strip().lower()
+            if label != "idle":
+                continue
+            for sub in child.iter():
+                if _tag(sub) != "file" or not sub.text:
+                    continue
+                path = sub.text.replace("\\", "/").strip()
+                low = path.lower()
+                if "_igc" in low or "/igc/" in low:
+                    continue
+                return path
+    return None
+
+
+def _ensure_tma(bars: BarIndex, relative: str) -> Path | None:
+    base = relative.replace("\\", "/").strip().lstrip("/")
+    if not base.lower().endswith(".tma"):
+        base = f"{base}.tma"
+    hit = bars.find(bars.anims, base)
+    if hit is None:
+        return None
+    dest = WORK_ROOT / "tma" / _safe_key(base)
+    tma_path = dest / Path(base).name
+    if tma_path.exists():
+        return tma_path
+    dest.mkdir(parents=True, exist_ok=True)
+    exported = _export(bars.crybar, hit[0], hit[1], dest)
+    if exported != tma_path and exported.exists():
+        tma_path.write_bytes(exported.read_bytes())
+    return tma_path if tma_path.exists() else None
+
+
+def _posed_bone_worlds(
+    bars: BarIndex,
+    root: ET.Element,
+    gltf: dict[str, Any],
+    blob: bytes,
+) -> dict[int, list[list[float]]] | None:
+    """Mundo de cada junta no primeiro quadro da Idle. None mantém a pose de bind."""
+    clip = _idle_clip(root)
+    if not clip:
+        return None
+    tma_path = _ensure_tma(bars, clip)
+    if tma_path is None:
+        return None
+    named = tma_pose_worlds(tma_path.read_bytes())
+    if not named:
+        return None
+    bind = _bind_worlds(gltf, blob)
+    posed = dict(bind)
+    matched = 0
+    for index, node in enumerate(gltf.get("nodes") or []):
+        name = (node.get("name") or "").lower()
+        if index in bind and name in named:
+            posed[index] = named[name]
+            matched += 1
+    if matched < 3:
+        return None
+    return posed
+
+
+def _textured_mesh(bars: BarIndex, model_path: str, transform: list[list[float]]) -> list[dict[str, Any]]:
+    glb_path = ensure_model_glb(bars, model_path)
+    if glb_path is None:
+        return []
+    gltf, blob = read_glb(glb_path)
+    prims = _mesh_primitives(gltf, blob, transform)
+    for prim in prims:
+        prim["image"] = ensure_texture(bars, model_path, prim["material"])
+    return prims
+
+
+def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple[list[dict[str, Any]], list[str]]:
+    """Malha no espaço do anim: corpo e peças já encaixadas nos soquetes."""
+    if depth > 3:
+        return [], []
+    root = resolve_visual_root(bars, root)
+    model_paths = models_in_anim(root)
+    if not model_paths:
+        return [], []
+
+    body_glb = ensure_model_glb(bars, model_paths[0])
+    if body_glb is None:
+        return [], []
+    body_gltf, body_blob = read_glb(body_glb)
+    bone_worlds = _posed_bone_worlds(bars, root, body_gltf, body_blob)
+    if bone_worlds is None:
+        prims = _mesh_primitives(body_gltf, body_blob, _identity())
+    else:
+        prims = _skinned_primitives(body_gltf, body_blob, bone_worlds)
+        if not prims:
+            prims = _mesh_primitives(body_gltf, body_blob, _identity())
+    for prim in prims:
+        prim["image"] = ensure_texture(bars, model_paths[0], prim["material"])
+    for extra in model_paths[1:]:
+        prims.extend(_textured_mesh(bars, extra, _identity()))
+    if not prims:
+        return [], []
+
+    attachments = attachments_in_anim(root)
+    has_weapon = any(name.lower() == "weapon" for name, _include in attachments)
+    attached: list[str] = []
+    for name, include in attachments:
+        low = name.lower()
+        if low in PROJECTILE_ATTACHMENTS:
+            continue
+        if has_weapon and low in TOOL_ATTACHMENTS:
+            continue
+        try:
+            included = load_anim_xml(bars, include)
+        except (RuntimeError, FileNotFoundError, ET.ParseError, OSError):
+            continue
+        if included is None:
+            continue
+        matrix = socket_matrix(body_gltf, body_blob, name, bone_worlds)
+        if matrix is None:
+            continue
+        child_prims, _child_names = visual_primitives(bars, included, depth + 1)
+        if not child_prims:
+            continue
+        prims.extend(apply_matrix(child_prims, matrix))
+        attached.append(name)
+    return prims, attached
+
+
 def bake_unit_glb(
     bars: BarIndex,
     anim_relative: str,
@@ -770,55 +1052,15 @@ def bake_unit_glb(
     root = load_anim_xml(bars, anim_relative)
     if root is None:
         raise FileNotFoundError(f"animfile não encontrado: {anim_relative}")
-    root = resolve_visual_root(bars, root)
-    model_paths = models_in_anim(root)
-    if not model_paths:
+    prims, attached = visual_primitives(bars, root)
+    if not prims:
         raise FileNotFoundError(f"sem TMModel em {anim_relative}")
-
-    body_path = model_paths[0]
-    body_glb = ensure_model_glb(bars, body_path)
-    if body_glb is None:
-        raise FileNotFoundError(f"TMM não encontrado: {body_path}")
-    body_gltf, body_blob = read_glb(body_glb)
-    prims = _mesh_primitives(body_gltf, body_blob, _identity())
-    for prim in prims:
-        prim["image"] = ensure_texture(bars, body_path, prim["material"])
-
-    for extra in model_paths[1:]:
-        extra_glb = ensure_model_glb(bars, extra)
-        if extra_glb is None:
-            continue
-        extra_gltf, extra_blob = read_glb(extra_glb)
-        for prim in _mesh_primitives(extra_gltf, extra_blob, _identity()):
-            prim["image"] = ensure_texture(bars, extra, prim["material"])
-            prims.append(prim)
-
-    attached: list[str] = []
-    for name, include in attachments_in_anim(root):
-        try:
-            included = load_anim_xml(bars, include)
-        except (RuntimeError, FileNotFoundError, ET.ParseError):
-            continue
-        if included is None:
-            continue
-        part_models = models_in_anim(included)
-        if not part_models:
-            continue
-        part_path = part_models[0]
-        part_glb = ensure_model_glb(bars, part_path)
-        if part_glb is None:
-            continue
-        matrix = socket_matrix(body_gltf, body_blob, name)
-        if matrix is None:
-            continue
-        part_gltf, part_blob = read_glb(part_glb)
-        for prim in _mesh_primitives(part_gltf, part_blob, matrix):
-            prim["image"] = ensure_texture(bars, part_path, prim["material"])
-            prims.append(prim)
-        attached.append(name)
-
     write_static_glb(prims, dest)
-    return {"model": body_path, "attachments": attached, "bytes": dest.stat().st_size}
+    return {
+        "model": models_in_anim(resolve_visual_root(bars, root))[0],
+        "attachments": attached,
+        "bytes": dest.stat().st_size,
+    }
 
 
 def _material_images(gltf: dict[str, Any], blob: bytes) -> dict[int, Image.Image]:
