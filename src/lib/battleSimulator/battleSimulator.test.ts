@@ -16,12 +16,6 @@ import {
 const pt = unidadesPt as Unidade[];
 const en = unidadesEn as Unidade[];
 
-function byId(list: Unidade[], id: number): Unidade {
-  const u = list.find((x) => x.id === id);
-  if (!u) throw new Error(`unidade id=${id} não encontrada`);
-  return u;
-}
-
 function byIngles(list: Unidade[], ingles: string): Unidade {
   const u = list.find((x) => x.ingles === ingles);
   if (!u) throw new Error(`unidade ingles=${ingles} não encontrada`);
