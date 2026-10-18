@@ -153,26 +153,39 @@ def _gather(bars: BarIndex, root: Any, depth: int = 0) -> set[str]:
     return found
 
 
-def _parts(bars: BarIndex, root: Any) -> list[tuple[str, Any]]:
-    root = resolve_visual_root(bars, root)
-    parts: list[tuple[str, Any]] = [("body", root)]
-    sources = _attachment_sources(root)
-    has_weapon = any(name.lower() == "weapon" for name, _source in sources)
-    for name, source in sources:
-        low = name.lower()
-        if low in PROJECTILE_ATTACHMENTS or (has_weapon and low in TOOL_ATTACHMENTS):
-            continue
-        if isinstance(source, str):
-            try:
-                included = load_anim_xml(bars, source)
-            except (RuntimeError, FileNotFoundError, OSError):
+def _load_attachment(bars: BarIndex, source: str | Any) -> Any | None:
+    if isinstance(source, str):
+        try:
+            return load_anim_xml(bars, source)
+        except (RuntimeError, FileNotFoundError, OSError):
+            return None
+    return source
+
+
+def _parts(bars: BarIndex, root: Any) -> list[tuple[tuple[str, ...], Any]]:
+    """Corpo e cada anexo, inclusive a arma que está dentro do cavaleiro."""
+
+    def walk(node: Any, prefix: tuple[str, ...], depth: int) -> list[tuple[tuple[str, ...], Any]]:
+        if depth > 3:
+            return []
+        found: list[tuple[tuple[str, ...], Any]] = []
+        if not prefix:
+            found.append((("body",), node))
+        sources = _attachment_sources(node)
+        has_weapon = any(name.lower() == "weapon" for name, _source in sources)
+        for name, source in sources:
+            low = name.lower()
+            if low in PROJECTILE_ATTACHMENTS or (has_weapon and low in TOOL_ATTACHMENTS):
                 continue
-        else:
-            included = source
-        if included is None:
-            continue
-        parts.append((name, included))
-    return parts
+            included = _load_attachment(bars, source)
+            if included is None:
+                continue
+            path = prefix + (name,)
+            found.append((path, included))
+            found.extend(walk(included, path, depth + 1))
+        return found
+
+    return walk(resolve_visual_root(bars, root), (), 0)
 
 
 def _combos(tags: set[str], known: set[str]) -> list[tuple[str, ...]]:
@@ -215,6 +228,7 @@ def bake_unit_techs(
         return None
 
     parts = _parts(bars, root)
+    nested = {path for path, _node in parts}
     baked: dict[tuple[str, str], str] = {}
     piece_entries: dict[str, list[dict[str, Any]]] = {}
     changed: set[str] = set()
@@ -233,13 +247,17 @@ def bake_unit_techs(
                 if by_combo.get(without) != path:
                     changed.add(tag)
 
+        part_key = "-".join(part).lower()
+        has_child = any(len(other) > len(part) and other[: len(part)] == part for other in nested)
+        only: str | tuple[str, ...] = "body" if part == ("body",) else part + ("body",)
         entries: list[dict[str, Any]] = []
         for combo, path in resolved:
             if not path:
                 continue
-            key = (part.lower(), path.lower())
+            key = (part_key, path.lower())
             if key not in baked:
-                filename = f"{_safe(part)}-{_safe('+'.join(combo) or 'base')}.glb"
+                slice_mark = "-slice" if has_child or len(part) > 1 else ""
+                filename = f"{_safe(part_key)}{slice_mark}-{_safe('+'.join(combo) or 'base')}.glb"
                 dest = PUBLIC_MODELS / "tech" / str(unit_id) / filename
                 url = f"/assets/unit-models/tech/{unit_id}/{filename}"
                 prims: list[dict[str, Any]] = []
@@ -249,7 +267,7 @@ def bake_unit_techs(
                             bars,
                             root,
                             techs=set(combo),
-                            only="body" if part == "body" else part,
+                            only=only,
                         )
                     except (RuntimeError, FileNotFoundError, OSError, ValueError):
                         prims = []
@@ -269,7 +287,7 @@ def bake_unit_techs(
                 continue
             entries.append({"requires": requires, "url": url})
         if entries:
-            piece_entries[part.lower()] = entries
+            piece_entries[part_key] = entries
 
     option_tags = [tag for tag in sorted(changed) if _classify(tag, known)]
     if not option_tags or not piece_entries:

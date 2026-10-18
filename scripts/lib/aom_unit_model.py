@@ -1288,12 +1288,13 @@ def visual_primitives(
     root: ET.Element,
     depth: int = 0,
     techs: set[str] | None = None,
-    only: str | None = None,
+    only: str | tuple[str, ...] | None = None,
 ) -> tuple[list[dict[str, Any]], list[str]]:
     """Malha no espaço do anim: corpo e peças já encaixadas nos soquetes.
 
     `techs` escolhe o ramo de cada tecnologia (vazio = sem pesquisa).
-    `only` limita a peça: `body` ou o nome do acessório.
+    `only` limita a peça: `body`, o nome do acessório, ou o caminho
+    (`Rider`, `Weapon`, `body`) quando a arma está dentro de outro anexo.
     """
     if depth > 3:
         return [], []
@@ -1324,7 +1325,8 @@ def visual_primitives(
     if not prims:
         return [], []
     body_count = len(prims)
-    if only == "body":
+    only_head = only[0] if isinstance(only, tuple) else only
+    if only_head == "body":
         return prims, []
 
     attachments = _attachment_sources(root)
@@ -1336,7 +1338,7 @@ def visual_primitives(
             continue
         if has_weapon and low in TOOL_ATTACHMENTS:
             continue
-        if only and low != only.lower():
+        if only_head and low != only_head.lower():
             continue
         if isinstance(source, str):
             try:
@@ -1350,7 +1352,10 @@ def visual_primitives(
         matrix = socket_matrix(body_gltf, body_blob, _socket_name(body_gltf, root, name), bone_worlds)
         if matrix is None:
             continue
-        child_prims, _child_names = visual_primitives(bars, included, depth + 1, techs)
+        child_only: str | tuple[str, ...] | None = None
+        if isinstance(only, tuple) and len(only) > 1:
+            child_only = only[1] if len(only) == 2 else only[1:]
+        child_prims, _child_names = visual_primitives(bars, included, depth + 1, techs, child_only)
         if not child_prims:
             continue
         if low == "weapon":
