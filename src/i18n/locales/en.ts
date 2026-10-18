@@ -23,6 +23,8 @@ export const enMessages: TranslationTree = {
     appTitle: "Aprendendo Age",
     appByline: "by Scooby Maníaco",
     viewMode: "View mode",
+    collapseHeader: "Collapse header",
+    expandHeader: "Expand header",
     grade: "Grid",
     spreadsheet: "Spreadsheet",
     pantheon: "Pantheon",
@@ -283,8 +285,6 @@ export const enMessages: TranslationTree = {
       description: "Military, myth, and heroes — filter by name or role.",
       troopBenefits: "Troop Benefits",
       troopBenefitsAria: "Open modal: Troop Benefits",
-      collapseHeader: "Collapse header",
-      expandHeader: "Expand header",
       filters: {
         button: "Filters",
         buttonAria: "Open unit filters",
@@ -300,6 +300,7 @@ export const enMessages: TranslationTree = {
         removeCondition: "Remove condition",
         compareAria: "How to compare the value",
         clear: "Clear",
+        apply: "Apply",
         showing: "{{count}} units",
         showingOne: "1 unit",
         ops: {

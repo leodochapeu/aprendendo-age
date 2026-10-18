@@ -1,10 +1,20 @@
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { Children, useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
+import { ListHeaderCollapseContext, useListHeaderCollapse } from "@/components/layout/listHeaderCollapse";
 import {
   LIST_PAGE_STICKY_BOTTOM_VAR,
   SPREADSHEET_VIEWPORT_HEIGHT_VAR,
 } from "@/lib/listPageStickyOffset";
+
+/** Avisa a barra fixa que há filtro aplicado, para o ponto no botão recolhido. */
+export function ListHeaderCollapseMark({ active }: { active: boolean }) {
+  const setMarked = useListHeaderCollapse()?.setMarked;
+  useEffect(() => {
+    setMarked?.(active);
+  }, [active, setMarked]);
+  return null;
+}
 
 type ListPageStickyHeaderProps = {
   children: ReactNode;
@@ -16,7 +26,17 @@ type ListPageStickyHeaderProps = {
  */
 export function ListPageStickyHeader({ children }: ListPageStickyHeaderProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(true);
+  const [marked, setMarked] = useState(false);
+  const controlsId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
+  const toggle = useCallback(() => setOpen((current) => !current), []);
+  const collapse = useMemo(
+    () => ({ open, toggle, controlsId, marked, setMarked }),
+    [open, toggle, controlsId, marked],
+  );
+  const items = Children.toArray(children);
+  const [first, ...rest] = items;
 
   useEffect(() => {
     const threshold = 10;
@@ -55,6 +75,7 @@ export function ListPageStickyHeader({ children }: ListPageStickyHeaderProps) {
   }, []);
 
   return (
+    <ListHeaderCollapseContext.Provider value={collapse}>
     <div
       ref={rootRef}
       className={cn(
@@ -69,8 +90,16 @@ export function ListPageStickyHeader({ children }: ListPageStickyHeaderProps) {
           scrolled ? "shadow-[0_12px_40px_-8px_rgba(0,0,0,0.88)] ring-1 ring-zinc-800/80" : "ring-1 ring-aom-border/60",
         )}
       >
-        <div className="flex w-full max-w-full flex-col items-start gap-8">{children}</div>
+        <div className="flex w-full max-w-full flex-col items-start gap-8">
+          {first}
+          {rest.length > 0 ? (
+            <div id={controlsId} className={open ? "contents" : "hidden"}>
+              {rest}
+            </div>
+          ) : null}
+        </div>
       </div>
     </div>
+    </ListHeaderCollapseContext.Provider>
   );
 }

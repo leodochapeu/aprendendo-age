@@ -22,6 +22,12 @@ function byId(list: Unidade[], id: number): Unidade {
   return u;
 }
 
+function byIngles(list: Unidade[], ingles: string): Unidade {
+  const u = list.find((x) => x.ingles === ingles);
+  if (!u) throw new Error(`unidade ingles=${ingles} não encontrada`);
+  return u;
+}
+
 function unit(partial: Partial<Unidade> & Pick<Unidade, "id" | "nome" | "tipo" | "icon">): Unidade {
   return {
     panteao: [],
@@ -40,7 +46,7 @@ describe("classification", () => {
   });
 
   it("deriva soldado_humano para Inf/Cav/Art", () => {
-    const hoplita = byId(pt, 1);
+    const hoplita = byIngles(pt, "Hoplite");
     const types = getDefenderTypeIds(hoplita);
     expect(types.has("infantaria")).toBe(true);
     expect(types.has("soldado_humano")).toBe(true);
@@ -92,15 +98,15 @@ describe("classification", () => {
     attacker.multiplicador = [
       { type: "Cavalaria", icon: "aomr_type_cavalry_icon", value: "especial" },
     ];
-    const defender = byId(pt, 2); // Hippeis / Cavalaria
+    const defender = byIngles(pt, "Hippeus"); // Hippeis / Cavalaria
     const match = resolveBestMultiplier(attacker, defender);
     expect(match.factor).toBe(1);
     expect(match.matchedType).toBeNull();
   });
 
   it("funciona com unidades EN pelo mesmo id", () => {
-    const toxotesEn = byId(en, 3);
-    const hoplitaEn = byId(en, 1);
+    const toxotesEn = byIngles(en, "Toxotes");
+    const hoplitaEn = byIngles(en, "Hoplite");
     const match = resolveBestMultiplier(toxotesEn, hoplitaEn);
     expect(match.factor).toBe(1.25);
   });
@@ -117,8 +123,8 @@ describe("damage", () => {
   });
 
   it("calcula DPS efetivo Toxotes → Hoplita com multiplicador e anti-perfuração", () => {
-    const toxotes = byId(pt, 3);
-    const hoplita = byId(pt, 1);
+    const toxotes = byIngles(pt, "Toxotes");
+    const hoplita = byIngles(pt, "Hoplite");
     const d = computeDirectionalDamage(toxotes, hoplita);
     // 6 * 1.25 * 1 * (1 - 0.10) = 6.75
     expect(d.multiplier.factor).toBe(1.25);
@@ -126,8 +132,8 @@ describe("damage", () => {
   });
 
   it("Hoplita → Toxotes sem multiplicador, com anti-corte do Toxotes", () => {
-    const hoplita = byId(pt, 1);
-    const toxotes = byId(pt, 3);
+    const hoplita = byIngles(pt, "Hoplite");
+    const toxotes = byIngles(pt, "Toxotes");
     const d = computeDirectionalDamage(hoplita, toxotes);
     // 8 * 1 * 1 * (1 - 0.15) = 6.8
     expect(d.multiplier.factor).toBe(1);
@@ -138,8 +144,8 @@ describe("damage", () => {
 describe("simulateBattle combat", () => {
   it("Hoplita 1×1 vence Toxotes no combate real (stats > categoria)", () => {
     const result = simulateBattle(
-      { unidade: byId(pt, 1) },
-      { unidade: byId(pt, 3) },
+      { unidade: byIngles(pt, "Hoplite") },
+      { unidade: byIngles(pt, "Toxotes") },
     );
     expect(result.mode).toBe("combat");
     if (result.mode !== "combat") return;
@@ -148,7 +154,7 @@ describe("simulateBattle combat", () => {
   });
 
   it("triângulo: Hippeis tem vantagem de multiplicador vs Toxotes", () => {
-    const match = resolveBestMultiplier(byId(pt, 2), byId(pt, 3));
+    const match = resolveBestMultiplier(byIngles(pt, "Hippeus"), byIngles(pt, "Toxotes"));
     expect(match.factor).toBe(1.5);
     expect(match.matchedType).toBe("artilharia");
   });
@@ -156,16 +162,16 @@ describe("simulateBattle combat", () => {
   it("grupos: mais unidades alteram o vencedor", () => {
     // 1 Hoplita vs 1 Toxotes → Hoplita
     const one = simulateBattle(
-      { unidade: byId(pt, 1), quantity: 1 },
-      { unidade: byId(pt, 3), quantity: 1 },
+      { unidade: byIngles(pt, "Hoplite"), quantity: 1 },
+      { unidade: byIngles(pt, "Toxotes"), quantity: 1 },
     );
     expect(one.mode).toBe("combat");
     if (one.mode === "combat") expect(one.winner).toBe("a");
 
     // muitos Toxotes vs 1 Hoplita → Toxotes
     const many = simulateBattle(
-      { unidade: byId(pt, 1), quantity: 1 },
-      { unidade: byId(pt, 3), quantity: 20 },
+      { unidade: byIngles(pt, "Hoplite"), quantity: 1 },
+      { unidade: byIngles(pt, "Toxotes"), quantity: 20 },
     );
     expect(many.mode).toBe("combat");
     if (many.mode === "combat") expect(many.winner).toBe("b");
@@ -219,8 +225,8 @@ describe("simulateBattle combat", () => {
   });
 
   it("Jasão tem multiplicador alto vs Minotauro", () => {
-    const jason = byId(pt, 58);
-    const minotaur = byId(pt, 40);
+    const jason = byIngles(pt, "Jason (Hero)");
+    const minotaur = byIngles(pt, "Minotaur");
     const match = resolveBestMultiplier(jason, minotaur);
     expect(match.factor).toBe(12);
     expect(match.matchedType).toBe("unidade_mitica");
@@ -230,16 +236,16 @@ describe("simulateBattle combat", () => {
 describe("simulateBattle mode_category_battle", () => {
   it("padrão é false (modo combate)", () => {
     const result = simulateBattle(
-      { unidade: byId(pt, 1) },
-      { unidade: byId(pt, 3) },
+      { unidade: byIngles(pt, "Hoplite") },
+      { unidade: byIngles(pt, "Toxotes") },
     );
     expect(result.mode).toBe("combat");
   });
 
   it("Toxotes vence Hoplita só pela categoria, apesar dos stats", () => {
     const combat = simulateBattle(
-      { unidade: byId(pt, 3) },
-      { unidade: byId(pt, 1) },
+      { unidade: byIngles(pt, "Toxotes") },
+      { unidade: byIngles(pt, "Hoplite") },
     );
     expect(combat.mode).toBe("combat");
     if (combat.mode === "combat") {
@@ -248,8 +254,8 @@ describe("simulateBattle mode_category_battle", () => {
     }
 
     const category = simulateBattle(
-      { unidade: byId(pt, 3) },
-      { unidade: byId(pt, 1) },
+      { unidade: byIngles(pt, "Toxotes") },
+      { unidade: byIngles(pt, "Hoplite") },
       { mode_category_battle: true },
     );
     expect(category.mode).toBe("category");
@@ -261,8 +267,8 @@ describe("simulateBattle mode_category_battle", () => {
 
   it("quantidade e stats não alteram o modo categoria", () => {
     const result = simulateBattle(
-      { unidade: byId(pt, 3), quantity: 1 },
-      { unidade: byId(pt, 1), quantity: 50 },
+      { unidade: byIngles(pt, "Toxotes"), quantity: 1 },
+      { unidade: byIngles(pt, "Hoplite"), quantity: 50 },
       { mode_category_battle: true },
     );
     expect(result.mode).toBe("category");
@@ -302,9 +308,9 @@ describe("simulateBattle mode_category_battle", () => {
   });
 
   it("triângulo didático: Inf < Art, Art < Cav, Cav < Inf", () => {
-    const hoplita = byId(pt, 1);
-    const hippeis = byId(pt, 2);
-    const toxotes = byId(pt, 3);
+    const hoplita = byIngles(pt, "Hoplite");
+    const hippeis = byIngles(pt, "Hippeus");
+    const toxotes = byIngles(pt, "Toxotes");
 
     const artVsInf = simulateBattle(
       { unidade: toxotes },
@@ -333,7 +339,7 @@ describe("precomputed battle results", () => {
   const slug = (u: Unidade) => u.nome.toLowerCase().replace(/\s+/g, "-");
 
   it("salva vitória de categoria no formato de consulta", () => {
-    const result = precomputeBattleResult(byId(pt, 3), byId(pt, 1), slug);
+    const result = precomputeBattleResult(byIngles(pt, "Toxotes"), byIngles(pt, "Hoplite"), slug);
 
     expect(result).toEqual({
       attacker: "toxotes",
@@ -341,8 +347,8 @@ describe("precomputed battle results", () => {
       winner: "attacker",
       winner_name: "toxotes",
       mode: "mode_category_battle",
-      attacker_id: 3,
-      defender_id: 1,
+      attacker_id: byIngles(pt, "Toxotes").id,
+      defender_id: byIngles(pt, "Hoplite").id,
     });
   });
 
@@ -377,7 +383,7 @@ describe("precomputed battle results", () => {
   });
 
   it("gera confrontos ordenados e omite confronto próprio", () => {
-    const units = [byId(pt, 1), byId(pt, 2), byId(pt, 3)];
+    const units = [byIngles(pt, "Hoplite"), byIngles(pt, "Hippeus"), byIngles(pt, "Toxotes")];
     const results = precomputeAllBattleResults(units, slug);
 
     expect(results).toHaveLength(6);

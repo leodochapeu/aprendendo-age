@@ -23,6 +23,8 @@ export const ptMessages: TranslationTree = {
     appTitle: "Aprendendo Age",
     appByline: "por Scooby Maníaco",
     viewMode: "Modo de visualização",
+    collapseHeader: "Recolher cabeçalho",
+    expandHeader: "Expandir cabeçalho",
     grade: "Grade",
     spreadsheet: "Planilha",
     pantheon: "Panteão",
@@ -283,8 +285,6 @@ export const ptMessages: TranslationTree = {
       description: "Militares, mitológicas e heróis — filtros por nome ou papel.",
       troopBenefits: "Benefícios de Tropa",
       troopBenefitsAria: "Abrir modal: Benefícios de Tropa",
-      collapseHeader: "Recolher cabeçalho",
-      expandHeader: "Expandir cabeçalho",
       filters: {
         button: "Filtros",
         buttonAria: "Abrir filtros de unidades",
@@ -300,6 +300,7 @@ export const ptMessages: TranslationTree = {
         removeCondition: "Remover condição",
         compareAria: "Como comparar o valor",
         clear: "Limpar",
+        apply: "Aplicar",
         showing: "{{count}} unidades",
         showingOne: "1 unidade",
         ops: {

@@ -1,0 +1,272 @@
+  1	Villager	Aldeão	pant=1	era=1	tipo=Aldeão
+  2	Militia	Milícia	pant=1	era=1	tipo=Infantaria
+  3	Kataskopos	Kataskopos	pant=1	era=1	tipo=Cavalaria,Batedor
+  4	Ajax (Hero)	Ájax (Herói)	pant=1	era=1	tipo=Herói
+  5	Jason (Hero)	Jasão (Herói)	pant=1	era=1	tipo=Herói
+  6	Orpheus (Hero)	Orfeu (Herói)	pant=1	era=1	tipo=Herói
+  7	Theseus (Hero)	Teseu (Herói)	pant=1	era=1	tipo=Herói
+  8	Pegasus	Pégaso	pant=1	era=1	tipo=Unidade mítica,Batedor
+  9	Shade of Hades	Sombra de Hades	pant=1	era=1	tipo=Unidade mítica
+ 10	Hoplite	Hoplita	pant=1	era=2	tipo=Infantaria
+ 11	Hippeus	Hippeis	pant=1	era=2	tipo=Cavalaria
+ 12	Toxotes	Toxotes	pant=1	era=2	tipo=Artilharia
+ 13	Achilles (Hero)	Aquiles (Herói)	pant=1	era=2	tipo=Herói
+ 14	Atalanta (Hero)	Atalanta (Heroína)	pant=1	era=2	tipo=Herói
+ 15	Heracles (Hero)	Hércules (Herói)	pant=1	era=2	tipo=Herói
+ 16	Iolaus (Hero)	Iolau (Herói)	pant=1	era=2	tipo=Herói
+ 17	Centaur	Centauro	pant=1	era=2	tipo=Artilharia,Unidade mítica
+ 18	Cyclops	Ciclope	pant=1	era=2	tipo=Unidade mítica
+ 19	Hippocampus	Hipocampo	pant=1	era=2	tipo=Unidade mítica,Batedor
+ 20	Lykaon (Villager)	Licaão (Aldeão)	pant=1	era=2	tipo=Unidade mítica,Aldeão
+ 21	Lykaon (Wolf)	Licaão (Lobo)	pant=1	era=2	tipo=Unidade mítica
+ 22	Minotaur	Minotauro	pant=1	era=2	tipo=Unidade mítica
+ 23	Hypaspist	Hipaspista	pant=1	era=3	tipo=Infantaria
+ 24	Prodromos	Prodromos	pant=1	era=3	tipo=Cavalaria
+ 25	Peltast	Peltasta	pant=1	era=3	tipo=Artilharia
+ 26	Chiron (Hero)	Quíron (Herói)	pant=1	era=3	tipo=Artilharia,Herói
+ 27	Hippolyta (Hero)	Hipólita (Heroína)	pant=1	era=3	tipo=Artilharia,Herói
+ 28	Icarus (Hero)	Ícaro (Herói)	pant=1	era=3	tipo=Artilharia,Herói
+ 29	Odysseus (Hero)	Odisseu (Herói)	pant=1	era=3	tipo=Artilharia,Herói
+ 30	Hamadryad	Hamadríade	pant=1	era=3	tipo=Artilharia,Unidade mítica
+ 31	Hydra	Hidra	pant=1	era=3	tipo=Unidade mítica
+ 32	Manticore	Mantícora	pant=1	era=3	tipo=Artilharia,Unidade mítica
+ 33	Nemean Lion	Leão de Nemeia	pant=1	era=3	tipo=Unidade mítica
+ 34	Scylla	Cila	pant=1	era=3	tipo=Unidade mítica
+ 35	Myrmidon	Mirmidão	pant=1	era=4	tipo=Infantaria
+ 36	Hetairos	Hetairos	pant=1	era=4	tipo=Cavalaria
+ 37	Gastraphetoros	Gastrafeta	pant=1	era=4	tipo=Artilharia
+ 38	Bellerophon (Hero)	Belerofonte (Herói)	pant=1	era=4	tipo=Herói
+ 39	King Midas (Hero)	Rei Midas (Herói)	pant=1	era=4	tipo=Herói
+ 40	Perseus (Hero)	Perseus (Herói)	pant=1	era=4	tipo=Herói
+ 41	Polyphemus (Hero)	Polifemo (Herói)	pant=1	era=4	tipo=Herói
+ 42	Carcinos	Carcinos	pant=1	era=4	tipo=Artilharia,Unidade mítica
+ 43	Chimera	Quimera	pant=1	era=4	tipo=Unidade mítica
+ 44	Colossus	Colosso	pant=1	era=4	tipo=Unidade mítica
+ 45	Harpy	Harpia	pant=1	era=4	tipo=Unidade mítica
+ 46	Medusa	Medusa	pant=1	era=4	tipo=Artilharia,Unidade mítica
+ 47	Siren	Sirênico	pant=1	era=4	tipo=Artilharia,Unidade mítica
+ 48	Titan (Cerberus)	Titã (Cérbero)	pant=1	era=5	tipo=Unidade mítica
+ 49	Laborer	Trabalhador	pant=2	era=1	tipo=Aldeão
+ 50	Pharaoh (Hero)	Faraó (Herói)	pant=2	era=1	tipo=Artilharia,Herói
+ 51	Priest (Hero)	Sacerdote (Herói)	pant=2	era=1	tipo=Artilharia,Herói,Batedor
+ 52	Axeman	Machadeiro	pant=2	era=2	tipo=Infantaria
+ 53	Mercenary	Mercenário	pant=2	era=2	tipo=Infantaria
+ 54	Spearman	Lanceiro	pant=2	era=2	tipo=Infantaria
+ 55	Slinger	Fundeiro	pant=2	era=2	tipo=Artilharia
+ 56	Anubite	Anubita	pant=2	era=2	tipo=Unidade mítica
+ 57	Sphinx	Esfinge	pant=2	era=2	tipo=Unidade mítica
+ 58	Wadjet	Wadjet	pant=2	era=2	tipo=Artilharia,Unidade mítica
+ 59	Camel Rider	Cameleiro	pant=2	era=3	tipo=Cavalaria
+ 60	Mercenary Cavalry	Cavalaria Mercenária	pant=2	era=3	tipo=Cavalaria
+ 61	War Elephant	Elefante de Guerra	pant=2	era=3	tipo=Cavalaria
+ 62	Chariot Archer	Arqueiro em Biga	pant=2	era=3	tipo=Artilharia
+ 63	Leviathan	Leviatã	pant=2	era=3	tipo=Unidade mítica
+ 64	Petsuchos	Petsuchos	pant=2	era=3	tipo=Artilharia,Unidade mítica
+ 65	Scarab	Escaravelho	pant=2	era=3	tipo=Unidade mítica
+ 66	Scorpion Man	Homem Escorpião	pant=2	era=3	tipo=Unidade mítica
+ 67	Avenger	Vingador	pant=2	era=4	tipo=Unidade mítica
+ 68	Minion	Lacaio	pant=2	era=4	tipo=Unidade mítica
+ 69	Mummy	Múmia	pant=2	era=4	tipo=Artilharia,Unidade mítica
+ 70	Phoenix	Fênix	pant=2	era=4	tipo=Unidade mítica
+ 71	Phoenix Egg	Ovo de Fênix	pant=2	era=4	tipo=Unidade mítica
+ 72	Roc	Roc	pant=2	era=4	tipo=Unidade mítica
+ 73	War Turtle	Tartaruga de Guerra	pant=2	era=4	tipo=Unidade mítica
+ 74	Titan (Egyptian)	Titã (Egípcio)	pant=2	era=5	tipo=Unidade mítica
+ 75	Dwarf	Anão	pant=3	era=1	tipo=Aldeão
+ 76	Gatherer	Coletor	pant=3	era=1	tipo=Aldeão
+ 77	Berserk	Berserker	pant=3	era=1	tipo=Infantaria,Batedor
+ 78	Raven	Corvo	pant=3	era=1	tipo=Unidade mítica
+ 79	Hirdman	Hird	pant=3	era=2	tipo=Infantaria
+ 80	Throwing Axeman	Lançador de Machados	pant=3	era=2	tipo=Infantaria
+ 81	Raiding Cavalry	Cavalaria Incursora	pant=3	era=2	tipo=Cavalaria
+ 82	Gullinbursti	Gullinbursti	pant=3	era=2	tipo=Herói
+ 83	Hersir (Hero)	Hersir (Herói)	pant=3	era=2	tipo=Infantaria,Herói
+ 84	Draugr	Draugr	pant=3	era=2	tipo=Artilharia,Unidade mítica
+ 85	Einheri	Einheri	pant=3	era=2	tipo=Unidade mítica
+ 86	Troll	Troll	pant=3	era=2	tipo=Artilharia,Unidade mítica
+ 87	Valkyrie	Valquíria	pant=3	era=2	tipo=Unidade mítica
+ 88	Huskarl	Huscarl	pant=3	era=3	tipo=Infantaria
+ 89	Jarl	Jarl	pant=3	era=3	tipo=Cavalaria
+ 90	Godi (Hero)	Godi (Herói)	pant=3	era=3	tipo=Artilharia,Herói
+ 91	Battle Boar	Javali de Batalha	pant=3	era=3	tipo=Unidade mítica
+ 92	Frost Giant	Gigante de Gelo	pant=3	era=3	tipo=Unidade mítica
+ 93	Jormun Elver	Jormun Elver	pant=3	era=3	tipo=Artilharia,Unidade mítica
+ 94	Kraken	Kraken	pant=3	era=3	tipo=Unidade mítica
+ 95	Mountain Giant	Gigante de Montanha	pant=3	era=3	tipo=Unidade mítica
+ 96	Rock Giant	Gigante das Rochas	pant=3	era=3	tipo=Unidade mítica
+ 97	Hero of Ragnarok	Herói de Ragnarok	pant=3	era=4	tipo=Infantaria,Herói
+ 98	Fafnir	Fafnir	pant=3	era=4	tipo=Unidade mítica
+ 99	Fenris Wolf Brood	Ninhada de Lobo de Fenris	pant=3	era=4	tipo=Unidade mítica
+100	Fimbulwinter Wolf	Lobo de Fimbulwinter	pant=3	era=4	tipo=Unidade mítica
+101	Fire Giant	Gigante de Fogo	pant=3	era=4	tipo=Artilharia,Unidade mítica
+102	Nidhogg	Nidhogg	pant=3	era=4	tipo=Unidade mítica
+103	Titan (Ymir)	Titã (Ymir)	pant=3	era=5	tipo=Unidade mítica
+104	Citizen	Cidadão	pant=4	era=1	tipo=Aldeão
+105	Oracle	Oráculo	pant=4	era=1	tipo=Batedor
+106	Oracle (Hero)	Oráculo (Herói)	pant=4	era=1	tipo=Herói,Batedor
+107	Katapeltes	Katapeltes	pant=4	era=2	tipo=Infantaria
+108	Murmillo	Murmilo	pant=4	era=2	tipo=Infantaria
+109	Turma	Turma	pant=4	era=2	tipo=Artilharia
+110	Katapeltes (Hero)	Katapeltes (Herói)	pant=4	era=2	tipo=Infantaria,Herói
+111	Murmillo (Hero)	Murmilo (Herói)	pant=4	era=2	tipo=Infantaria,Herói
+112	Turma (Hero)	Turma (Herói)	pant=4	era=2	tipo=Artilharia,Herói
+113	Automaton	Autômato	pant=4	era=2	tipo=Unidade mítica
+114	Caladria	Caladria	pant=4	era=2	tipo=Unidade mítica
+115	Carnivora	Carnívora	pant=4	era=2	tipo=Unidade mítica
+116	Promethean	Prometeano	pant=4	era=2	tipo=Unidade mítica
+117	Promethean Offspring	Prole de Prometeano	pant=4	era=2	tipo=Unidade mítica
+118	Servant	Servo	pant=4	era=2	tipo=Unidade mítica
+119	Water Carnivora	Carnívora Aquática	pant=4	era=2	tipo=Unidade mítica
+120	Destroyer	Destruidor	pant=4	era=3	tipo=Infantaria
+121	Contarius	Contarius	pant=4	era=3	tipo=Cavalaria
+122	Arcus	Arcus	pant=4	era=3	tipo=Artilharia
+123	Arcus (Hero)	Arcus (Herói)	pant=4	era=3	tipo=Artilharia,Herói
+124	Contarius (Hero)	Contarius (Herói)	pant=4	era=3	tipo=Cavalaria,Herói
+125	Destroyer (Hero)	Destruidor (Herói)	pant=4	era=3	tipo=Infantaria,Herói
+126	Behemoth	Beemote	pant=4	era=3	tipo=Unidade mítica
+127	Dryad	Dríade	pant=4	era=3	tipo=Unidade mítica
+128	Nereid	Nereida	pant=4	era=3	tipo=Unidade mítica
+129	Satyr	Sátiro	pant=4	era=3	tipo=Artilharia,Unidade mítica
+130	Stymphalian Bird	Pássaro de Estínfalo	pant=4	era=3	tipo=Unidade mítica
+131	Fanatic	Fanático	pant=4	era=4	tipo=Infantaria
+132	Fanatic (Hero)	Fanático (Herói)	pant=4	era=4	tipo=Infantaria,Herói
+133	Argus	Argos	pant=4	era=4	tipo=Unidade mítica
+134	Centimanus	Centimanos	pant=4	era=4	tipo=Unidade mítica
+135	Lampades	Lâmpade	pant=4	era=4	tipo=Artilharia,Unidade mítica
+136	Man O' War	Caravela	pant=4	era=4	tipo=Artilharia,Unidade mítica
+137	Tartarian Spawn	Criatura do Tártaro	pant=4	era=4	tipo=Unidade mítica
+138	Titan (Atlantean)	Titã (Atlante)	pant=4	era=5	tipo=Unidade mítica
+139	Peasant	Camponês	pant=5	era=1	tipo=Aldeão
+140	Kuafu	Kuafu	pant=5	era=1	tipo=Artilharia
+141	Pioneer (Hero)	Pioneiro (Herói)	pant=5	era=1	tipo=Artilharia,Herói,Batedor
+142	Dao Swordsman	Espadachim de Dao	pant=5	era=2	tipo=Infantaria
+143	Ge Halberdier	Alabardeiro Ge	pant=5	era=2	tipo=Infantaria
+144	Fire Archer	Arqueiro de Fogo	pant=5	era=2	tipo=Artilharia
+145	Wuzu Javelineer	Lanceiro Wuzu	pant=5	era=2	tipo=Artilharia
+146	Nezha (Child)	Nezha (Criança)	pant=5	era=2	tipo=Herói
+147	Pixiu	Pixiu	pant=5	era=2	tipo=Unidade mítica
+148	Qilin	Qilin	pant=5	era=2	tipo=Artilharia,Unidade mítica
+149	Qiongqi	Qiongqi	pant=5	era=2	tipo=Unidade mítica
+150	Yazi	Yazi	pant=5	era=2	tipo=Unidade mítica
+151	Qing Rider	Cavaleiro Qing	pant=5	era=3	tipo=Cavalaria
+152	Terracotta Rider	Cavaleiro de Terracota	pant=5	era=3	tipo=Cavalaria
+153	White Horse Cavalry	Cavalaria de Cavalo Branco	pant=5	era=3	tipo=Cavalaria
+154	Bow Cavalry	Cavalaria de Arco	pant=5	era=3	tipo=Artilharia
+155	Chu Ko Nu	Chu Ko Nu	pant=5	era=3	tipo=Artilharia
+156	Jiang Ziya (Hero)	Jiang Ziya (Herói)	pant=5	era=3	tipo=Artilharia,Herói
+157	Nezha (Youth)	Nezha (Jovem)	pant=5	era=3	tipo=Artilharia,Herói
+158	Sage (Hero)	Sábio (Herói)	pant=5	era=3	tipo=Herói
+159	Baihu	Baihu	pant=5	era=3	tipo=Unidade mítica
+160	Chiwen	Chiwen	pant=5	era=3	tipo=Unidade mítica
+161	Fei	Fei	pant=5	era=3	tipo=Unidade mítica
+162	Taotie	Taotie	pant=5	era=3	tipo=Unidade mítica
+163	Taowu	Táowù	pant=5	era=3	tipo=Unidade mítica
+164	Tiger Cavalry	Cavalaria de Tigre	pant=5	era=4	tipo=Cavalaria
+165	Li Jing (Hero)	Li Jing (Herói)	pant=5	era=4	tipo=Artilharia,Herói
+166	Nezha (Hero)	Nezha (Herói)	pant=5	era=4	tipo=Herói
+167	Wen Zhong (Hero)	Wen Zhong (Herói)	pant=5	era=4	tipo=Herói
+168	Yang Jian (Hero)	Yang Jian (Herói)	pant=5	era=4	tipo=Herói
+169	Hundun	Hundun	pant=5	era=4	tipo=Unidade mítica
+170	Qinglong	Qinglong	pant=5	era=4	tipo=Unidade mítica
+171	Xuanwu	Xuanwu	pant=5	era=4	tipo=Unidade mítica
+172	Yinglong	Yinglong	pant=5	era=4	tipo=Unidade mítica
+173	Zhuque	Zhuque	pant=5	era=4	tipo=Unidade mítica
+174	Titan (Xing Tian)	Titã (Xing Tian)	pant=5	era=5	tipo=Unidade mítica
+175	Commoner	Plebeu	pant=6	era=1	tipo=Aldeão
+176	Miko (Hero)	Miko (Heroína)	pant=6	era=1	tipo=Herói
+177	Kitsune	Kitsune	pant=6	era=1	tipo=Unidade mítica,Batedor
+178	Bushi Yari	Bushi Yari	pant=6	era=2	tipo=Infantaria
+179	Sakimori	Sakimori	pant=6	era=2	tipo=Infantaria
+180	Samurai	Samurai	pant=6	era=2	tipo=Infantaria
+181	Yari Spearman	Lanceiro Yari	pant=6	era=2	tipo=Infantaria
+182	Naginata Rider	Cavaleiro Naginata	pant=6	era=2	tipo=Cavalaria
+183	Yumi Archer	Arqueiro Yumi	pant=6	era=2	tipo=Artilharia
+184	Bushi (Hero)	Bushi (Herói)	pant=6	era=2	tipo=Artilharia,Herói
+185	Honengyo	Honengyo	pant=6	era=2	tipo=Unidade mítica
+186	Jorogumo	Jorogumo	pant=6	era=2	tipo=Unidade mítica
+187	Kamaitachi	Kamaitachi	pant=6	era=2	tipo=Unidade mítica
+188	Kappa	Kappa	pant=6	era=2	tipo=Unidade mítica
+189	Tanuki	Tanuki	pant=6	era=2	tipo=Unidade mítica
+190	Wanyūdō	Wanyūdō	pant=6	era=2	tipo=Artilharia,Unidade mítica
+191	Shinobi	Shinobi	pant=6	era=3	tipo=Infantaria
+192	Yumi Horse Archer	Cavalaria de Arqueiro Yumi	pant=6	era=3	tipo=Artilharia
+193	Daimyo (Hero)	Daimyo (Herói)	pant=6	era=3	tipo=Cavalaria,Herói
+194	Onna-musha (Hero)	Onna-musha (Herói)	pant=6	era=3	tipo=Infantaria,Herói
+195	Masterless Sword	Espada Ronin	pant=6	era=3	tipo=Unidade mítica
+196	Oni	Oni	pant=6	era=3	tipo=Unidade mítica
+197	Raiju	Raiju	pant=6	era=3	tipo=Unidade mítica
+198	Tengu	Tengu	pant=6	era=3	tipo=Unidade mítica
+199	Wretch	Miserável	pant=6	era=3	tipo=Unidade mítica
+200	Hatamoto Samurai	Samurai Hatamoto	pant=6	era=4	tipo=Infantaria
+201	Onmyōji (Hero)	Onmyōji (Herói)	pant=6	era=4	tipo=Artilharia,Herói
+202	Shogun (Hero)	Shogun (Herói)	pant=6	era=4	tipo=Herói
+203	Asura	Asura	pant=6	era=4	tipo=Unidade mítica
+204	Onmoraki	Onmoraki	pant=6	era=4	tipo=Unidade mítica
+205	Shinigami	Shinigami	pant=6	era=4	tipo=Artilharia,Unidade mítica
+206	Umibōzu	Umibōzu	pant=6	era=4	tipo=Unidade mítica
+207	Titan (Yamata no Orochi)	Titã (Yamata no Orochi)	pant=6	era=5	tipo=Unidade mítica
+208	Settler	Plebeu	pant=7	era=1	tipo=Aldeão
+209	Quimichin Spy	Espião Quimichin	pant=7	era=1	tipo=Artilharia,Batedor
+210	Warrior Priest (Hero)	Sacerdote de Guerra (Herói)	pant=7	era=1	tipo=Herói
+211	Coyote Warrior	Guerreiro Coiote	pant=7	era=2	tipo=Infantaria
+212	Ocelotl Warrior	Guerreiro Jaguatirica	pant=7	era=2	tipo=Infantaria
+213	Tlamanih Spearman	Lanceiro Tlamanih	pant=7	era=2	tipo=Infantaria
+214	Eagle Warrior	Guerreiro Águia	pant=7	era=2	tipo=Artilharia
+215	Tequihua Archer	Arqueiro Tequihua	pant=7	era=2	tipo=Artilharia
+216	Teixiptla (Huitzilopochtli)	Ixiptla (Huitzilopochtli)	pant=7	era=2	tipo=Herói
+217	Teixiptla (Quetzalcoatl)	Ixiptla (Quetzalcoatl)	pant=7	era=2	tipo=Herói
+218	Teixiptla (Tezcatlipoca)	Ixiptla (Tezcatlipoca)	pant=7	era=2	tipo=Herói
+219	Centzon Totochtin	Centzon Totochtin	pant=7	era=2	tipo=Unidade mítica
+220	Chaneque	Chaneque	pant=7	era=2	tipo=Unidade mítica
+221	Large Scorpion	Escorpião-imperador	pant=7	era=2	tipo=Unidade mítica
+222	Maquizcoatl	Maquizcoatl	pant=7	era=2	tipo=Artilharia,Unidade mítica
+223	Pochtecatl Caravan	Caravana Pochtecatl	pant=7	era=3	tipo=Aldeão
+224	Otontin Smasher	Esmagador Otontin	pant=7	era=3	tipo=Infantaria
+225	Shorn One	Tosquiado	pant=7	era=3	tipo=Infantaria
+226	Anaconda	Anaconda	pant=7	era=3	tipo=Unidade mítica
+227	Axolotl	Axolote	pant=7	era=3	tipo=Unidade mítica
+228	Ayotochtli	Ayotochtli	pant=7	era=3	tipo=Unidade mítica
+229	Obsidian Butterfly	Borboleta de Obsidiana	pant=7	era=3	tipo=Unidade mítica
+230	Tzitzimitl	Tzitzimitl	pant=7	era=3	tipo=Unidade mítica
+231	Jaguar Rider	Cavaleiro Jaguar	pant=7	era=4	tipo=Cavalaria
+232	Ahuizotl	Ahuizotl	pant=7	era=4	tipo=Unidade mítica
+233	Quinametzin	Quinametzin	pant=7	era=4	tipo=Artilharia,Unidade mítica
+234	Soul Guide	Guia das Almas	pant=7	era=4	tipo=Unidade mítica
+235	Tlacanexquimilli	Tlacanexquimilli	pant=7	era=4	tipo=Unidade mítica
+236	Tunkuluchu	Tunkuluchu	pant=7	era=4	tipo=Unidade mítica
+237	Titan (Cipactli)	Titã (Cipactli)	pant=7	era=5	tipo=Unidade mítica
+238	Petrobolos	Petrobolos	pant=1	era=3	tipo=Artilharia,Cerco
+239	Helepolis	Helepolis	pant=1	era=4	tipo=Artilharia,Cerco
+240	Siege Tower	Torre de Cerco	pant=2	era=3	tipo=Artilharia,Cerco
+241	Catapult	Catapulta	pant=2	era=4	tipo=Artilharia,Cerco
+242	Portable Ram	Aríete Portátil	pant=3	era=3	tipo=Cerco
+243	Ballista	Balista	pant=3	era=4	tipo=Artilharia,Cerco
+244	Cheiroballista	Quirobalista	pant=4	era=2	tipo=Artilharia,Cerco
+245	Cheiroballista (Hero)	Quirobalista (Herói)	pant=4	era=2	tipo=Artilharia,Herói,Cerco
+246	Fire Siphon	Sifão de Fogo	pant=4	era=4	tipo=Artilharia,Cerco
+247	Axe Cart	Carroça de Machado	pant=5	era=4	tipo=Cerco
+248	Siege Crossbow	Besta de Cerco	pant=5	era=4	tipo=Artilharia,Cerco
+249	Oyumi	Oyumi	pant=6	era=4	tipo=Artilharia,Cerco
+250	Trireme	Trirreme	pant=1	era=2	tipo=Navio,Flecheiro
+251	Pentekonter	Penteconter	pant=1	era=2	tipo=Navio,Combate curto-alcance
+252	Juggernaut	Juggernaut	pant=1	era=3	tipo=Navio,Navio-cerco
+253	Kebenit	Kebenit	pant=2	era=2	tipo=Navio,Flecheiro
+254	Ramming Galley	Galé com Aríete	pant=2	era=2	tipo=Navio,Combate curto-alcance
+255	War Barge	Barcaça de Guerra	pant=2	era=3	tipo=Navio,Navio-cerco
+256	Longboat	Dracar	pant=3	era=2	tipo=Navio,Flecheiro
+257	Dreki	Dreki	pant=3	era=3	tipo=Navio,Combate curto-alcance
+258	Dragon Ship	Barco Dragão	pant=3	era=4	tipo=Navio,Navio-cerco
+259	Bireme	Birreme	pant=4	era=2	tipo=Navio,Flecheiro
+260	Fire Ship	Navio de Fogo	pant=4	era=3	tipo=Navio,Combate curto-alcance
+261	Siege Bireme	Birreme de Cerco	pant=4	era=3	tipo=Navio,Navio-cerco
+262	Doujian	Doujian	pant=5	era=2	tipo=Navio,Flecheiro
+263	Mengchong	Mengchong	pant=5	era=3	tipo=Navio,Combate curto-alcance
+264	Louchuan	Louchuan	pant=5	era=4	tipo=Navio,Navio-cerco
+265	Wasen	Wasen	pant=6	era=2	tipo=Navio,Flecheiro
+266	Ramming Wasen	Wasen Aríete	pant=6	era=2	tipo=Navio,Combate curto-alcance
+267	Junkozosen	Junkozosen	pant=6	era=3	tipo=Navio,Navio-cerco
+268	Fishing Ship (Aztec)	Navio Pesqueiro	pant=7	era=1	tipo=Navio
+269	Arrow Canoe	Canoa de Flecha	pant=7	era=2	tipo=Navio,Flecheiro
+270	Tepoztli Canoe	Canoa Tepoztli	pant=7	era=2	tipo=Navio,Combate curto-alcance
+271	Atlatl Siege Canoe	Canoa de Cerco Estólica	pant=7	era=2	tipo=Navio,Navio-cerco
+272	Transport Ship (Aztec)	Navio de Transporte	pant=7	era=2	tipo=Navio

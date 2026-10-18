@@ -14,6 +14,7 @@ import {
   countActiveUnitFilters,
   createAdvancedRule,
   emptyUnitListFilters,
+  unidadeMatchesFilters,
   type CompareOp,
   type UnitAdvancedRule,
   type UnitListFilters,
@@ -25,12 +26,15 @@ type NamedIcon = { id: number; nome: string; icon?: string | null };
 type UnidadeFiltersModalProps = {
   open: boolean;
   onClose: () => void;
+  /** Filtros já aplicados na lista. O modal edita uma cópia até "Aplicar". */
   filters: UnitListFilters;
-  onChange: (next: UnitListFilters) => void;
+  onApply: (next: UnitListFilters) => void;
   pantheons: readonly NamedIcon[];
   eras: readonly NamedIcon[];
+  /** Catálogo completo, para montar as opções. */
   units: readonly Unidade[];
-  resultCount: number;
+  /** Unidades que já passaram da busca por texto. A contagem usa o rascunho em cima desta lista. */
+  countable: readonly Unidade[];
 };
 
 const OP_SYMBOL: Record<CompareOp, string> = {
@@ -152,15 +156,25 @@ export function UnidadeFiltersModal({
   open,
   onClose,
   filters,
-  onChange,
+  onApply,
   pantheons,
   eras,
   units,
-  resultCount,
+  countable,
 }: UnidadeFiltersModalProps) {
   const { t } = useTranslation();
   const [advancedOpen, setAdvancedOpen] = useState(false);
-  const activeCount = countActiveUnitFilters(filters);
+  const [draft, setDraft] = useState(filters);
+  const [sessionOpen, setSessionOpen] = useState(open);
+  if (open !== sessionOpen) {
+    setSessionOpen(open);
+    if (open) setDraft(filters);
+  }
+  const activeCount = countActiveUnitFilters(draft);
+  const resultCount = useMemo(
+    () => countable.filter((unit) => unidadeMatchesFilters(unit, draft)).length,
+    [countable, draft],
+  );
 
   const usedPantheonIds = useMemo(() => {
     const ids = new Set<number>();
@@ -213,10 +227,10 @@ export function UnidadeFiltersModal({
   );
 
   function updateRule(next: UnitAdvancedRule) {
-    onChange(patch(filters, { advanced: filters.advanced.map((rule) => (rule.id === next.id ? next : rule)) }));
+    setDraft((current) => patch(current, { advanced: current.advanced.map((rule) => (rule.id === next.id ? next : rule)) }));
   }
 
-  const advancedCount = filters.advanced.filter((rule) => rule.field || rule.value.trim()).length;
+  const advancedCount = draft.advanced.filter((rule) => rule.field || rule.value.trim()).length;
 
   return (
     <ModalApp
@@ -230,26 +244,28 @@ export function UnidadeFiltersModal({
           label={t("common.pantheon")}
           placeholder={t("pages.unidades.filters.pantheonPlaceholder")}
           options={pantheonOptions}
-          value={filters.pantheonIds.map(String)}
+          value={draft.pantheonIds.map(String)}
           onChange={(next) =>
-            onChange(patch(filters, { pantheonIds: next.map(Number).filter((id) => Number.isFinite(id)) }))
+            setDraft((current) =>
+              patch(current, { pantheonIds: next.map(Number).filter((id) => Number.isFinite(id)) }),
+            )
           }
         />
         <MultiSelect
           label={t("common.era")}
           placeholder={t("pages.unidades.filters.eraPlaceholder")}
           options={eraOptions}
-          value={filters.eraIds.map(String)}
+          value={draft.eraIds.map(String)}
           onChange={(next) =>
-            onChange(patch(filters, { eraIds: next.map(Number).filter((id) => Number.isFinite(id)) }))
+            setDraft((current) => patch(current, { eraIds: next.map(Number).filter((id) => Number.isFinite(id)) }))
           }
         />
         <MultiSelect
           label={t("common.category")}
           placeholder={t("pages.unidades.filters.categoryPlaceholder")}
           options={tipoOptions}
-          value={filters.tipoKeys}
-          onChange={(tipoKeys) => onChange(patch(filters, { tipoKeys }))}
+          value={draft.tipoKeys}
+          onChange={(tipoKeys) => setDraft((current) => patch(current, { tipoKeys }))}
         />
 
         <div className="space-y-3">
@@ -282,19 +298,23 @@ export function UnidadeFiltersModal({
           {advancedOpen ? (
             <div className="space-y-2">
               <p className="text-xs text-zinc-500">{t("pages.unidades.filters.advancedHint")}</p>
-              {filters.advanced.map((rule) => (
+              {draft.advanced.map((rule) => (
                 <AdvancedRuleRow
                   key={rule.id}
                   rule={rule}
                   onChange={updateRule}
                   onRemove={() =>
-                    onChange(patch(filters, { advanced: filters.advanced.filter((item) => item.id !== rule.id) }))
+                    setDraft((current) =>
+                      patch(current, { advanced: current.advanced.filter((item) => item.id !== rule.id) }),
+                    )
                   }
                 />
               ))}
               <button
                 type="button"
-                onClick={() => onChange(patch(filters, { advanced: [...filters.advanced, createAdvancedRule()] }))}
+                onClick={() =>
+                  setDraft((current) => patch(current, { advanced: [...current.advanced, createAdvancedRule()] }))
+                }
                 className="rounded-xl border border-dashed border-aom-border px-3 py-2 text-sm text-zinc-300 transition hover:border-amber-500/40 hover:text-amber-100"
               >
                 {t("pages.unidades.filters.addCondition")}
@@ -308,16 +328,28 @@ export function UnidadeFiltersModal({
         <button
           type="button"
           disabled={activeCount === 0}
-          onClick={() => onChange(emptyUnitListFilters())}
+          onClick={() => setDraft(emptyUnitListFilters())}
           className="rounded-xl border border-aom-border px-3 py-2 text-sm text-zinc-300 transition hover:border-zinc-500 hover:text-zinc-100 disabled:cursor-not-allowed disabled:opacity-40"
         >
           {t("pages.unidades.filters.clear")}
         </button>
-        <p className="text-sm text-zinc-400">
-          {resultCount === 1
-            ? t("pages.unidades.filters.showingOne")
-            : t("pages.unidades.filters.showing", { count: resultCount })}
-        </p>
+        <div className="flex items-center gap-3">
+          <p className="text-sm text-zinc-400">
+            {resultCount === 1
+              ? t("pages.unidades.filters.showingOne")
+              : t("pages.unidades.filters.showing", { count: resultCount })}
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              onApply(draft);
+              onClose();
+            }}
+            className="rounded-xl border border-amber-500/40 bg-amber-500/15 px-3.5 py-2 text-sm font-medium text-amber-100 transition hover:bg-amber-500/25 focus:outline-none focus:ring-2 focus:ring-amber-500/25"
+          >
+            {t("pages.unidades.filters.apply")}
+          </button>
+        </div>
       </div>
     </ModalApp>
   );

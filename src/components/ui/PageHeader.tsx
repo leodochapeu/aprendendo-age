@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
+import { useListHeaderCollapse } from "@/components/layout/listHeaderCollapse";
 import { AppTag, type AppTagVariant } from "@/components/ui/AppTag";
+import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
 
 type PageHeaderBlockProps = {
@@ -17,6 +19,8 @@ type PageHeaderBlockProps = {
   className?: string;
   /** Classes extra no `<h1>` (ex.: tamanho responsivo em páginas de comparação). */
   titleClassName?: string;
+  /** Botão ao lado do título, usado pela barra fixa das listas. */
+  titleAccessory?: ReactNode;
 };
 
 export function PageHeaderBlock({
@@ -28,6 +32,7 @@ export function PageHeaderBlock({
   align = "start",
   className,
   titleClassName,
+  titleAccessory,
 }: PageHeaderBlockProps) {
   const icon =
     headerIconSrc ? (
@@ -72,10 +77,12 @@ export function PageHeaderBlock({
         <h1
           className={cn(
             "font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-100",
+            titleAccessory ? "inline-flex max-w-full items-center gap-3" : false,
             titleClassName ?? "text-3xl",
           )}
         >
-          {title}
+          {titleAccessory ? <span className="min-w-0">{title}</span> : title}
+          {titleAccessory}
         </h1>
         {descriptionBody}
       </div>
@@ -101,6 +108,38 @@ type PageHeaderProps = {
   className?: string;
 };
 
+function ListHeaderCollapseButton() {
+  const { t } = useTranslation();
+  const collapse = useListHeaderCollapse();
+  if (!collapse) return null;
+  const label = collapse.open ? t("common.collapseHeader") : t("common.expandHeader");
+  return (
+    <button
+      type="button"
+      onClick={collapse.toggle}
+      aria-expanded={collapse.open}
+      aria-controls={collapse.controlsId}
+      title={label}
+      aria-label={label}
+      className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-aom-border bg-zinc-900/50 text-amber-100/90 transition hover:border-amber-500/40 hover:bg-zinc-900/80 focus:outline-none focus:ring-2 focus:ring-amber-500/25"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden
+        className={cn("transition-transform", collapse.open && "rotate-180")}
+      >
+        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {collapse.marked && !collapse.open ? (
+        <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-amber-400" aria-hidden />
+      ) : null}
+    </button>
+  );
+}
+
 export function PageHeader({
   title,
   description,
@@ -110,6 +149,8 @@ export function PageHeader({
   actions,
   className,
 }: PageHeaderProps) {
+  const collapse = useListHeaderCollapse();
+  const expanded = collapse?.open ?? true;
   return (
     <header
       className={cn(
@@ -119,12 +160,13 @@ export function PageHeader({
     >
       <PageHeaderBlock
         title={title}
-        description={description}
+        description={expanded ? description : undefined}
         headerIconSrc={headerIconSrc}
         descriptionTag={descriptionTag}
         descriptionTagVariant={descriptionTagVariant}
+        titleAccessory={collapse ? <ListHeaderCollapseButton /> : undefined}
       />
-      {actions ? <div className="shrink-0 sm:ml-auto">{actions}</div> : null}
+      {expanded && actions ? <div className="shrink-0 sm:ml-auto">{actions}</div> : null}
     </header>
   );
 }

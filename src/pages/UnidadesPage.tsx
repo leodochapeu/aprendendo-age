@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
+import { ListHeaderCollapseMark, ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
 import { ListViewModeToggle } from "@/components/list/ListViewModeToggle";
 import { SpreadsheetHoverPreview } from "@/components/spreadsheet/SpreadsheetHoverPreview";
 import { SpreadsheetPageWidth } from "@/components/spreadsheet/SpreadsheetPageWidth";
@@ -126,44 +126,6 @@ function unitBenchmarksFor(u: LocaleCatalog["unidades"][number]) {
 const toolbarBtn =
   "rounded-xl border border-aom-border bg-zinc-900/50 px-3.5 py-2 text-sm font-medium text-amber-100/95 transition-colors hover:border-amber-500/40 hover:bg-zinc-900/80 focus:outline-none focus:ring-2 focus:ring-amber-500/25 disabled:cursor-not-allowed disabled:opacity-45";
 
-function HeaderCollapseButton({
-  open,
-  filtersActive,
-  onClick,
-}: {
-  open: boolean;
-  filtersActive: boolean;
-  onClick: () => void;
-}) {
-  const { t } = useTranslation();
-  const label = open ? t("pages.unidades.collapseHeader") : t("pages.unidades.expandHeader");
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-expanded={open}
-      aria-controls="unidades-header-tools"
-      title={label}
-      aria-label={label}
-      className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-aom-border bg-zinc-900/50 text-amber-100/90 transition hover:border-amber-500/40 hover:bg-zinc-900/80 focus:outline-none focus:ring-2 focus:ring-amber-500/25"
-    >
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        aria-hidden
-        className={cn("transition-transform", open && "rotate-180")}
-      >
-        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      {filtersActive && !open ? (
-        <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-amber-400" aria-hidden />
-      ) : null}
-    </button>
-  );
-}
-
 export function UnidadesPage() {
   const { t } = useTranslation();
   const { panteaoById, unidadeSlugById, unidades, panteoes, eras } = useCatalog();
@@ -179,13 +141,13 @@ export function UnidadesPage() {
   const [compareMode, setCompareMode] = useState(false);
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [beneficiosOpen, setBeneficiosOpen] = useState(false);
-  const [headerOpen, setHeaderOpen] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [unitFilters, setUnitFilters] = useState<UnitListFilters>(emptyUnitListFilters);
 
+  const searched = useMemo(() => unidades.filter((u) => matches(u, q)), [unidades, q]);
   const filtered = useMemo(
-    () => unidades.filter((u) => matches(u, q) && unidadeMatchesFilters(u, unitFilters)),
-    [unidades, q, unitFilters],
+    () => searched.filter((u) => unidadeMatchesFilters(u, unitFilters)),
+    [searched, unitFilters],
   );
   const activeFilterCount = countActiveUnitFilters(unitFilters);
 
@@ -232,31 +194,20 @@ export function UnidadesPage() {
     <div className="w-full min-w-0">
       <ListPageStickyHeader>
         <PageHeader
-          title={
-            <span className="inline-flex items-center gap-3">
-              <span>{t("pages.unidades.title")}</span>
-              <HeaderCollapseButton
-                open={headerOpen}
-                filtersActive={activeFilterCount > 0}
-                onClick={() => setHeaderOpen((open) => !open)}
-              />
-            </span>
-          }
-          description={headerOpen ? t("pages.unidades.description") : undefined}
-          className="!mb-0 w-full !flex-row items-start"
+          title={t("pages.unidades.title")}
+          description={t("pages.unidades.description")}
+          className="!mb-0 w-full"
           actions={
-            headerOpen ? (
-              <div className="flex flex-wrap items-start justify-end gap-3">
-                {showSpreadsheetPreview ? (
-                  <SpreadsheetHoverPreview preview={spreadsheetPreview} className="sm:pt-1" />
-                ) : null}
-                {beneficiosButton}
-              </div>
-            ) : null
+            <div className="flex flex-wrap items-start justify-end gap-3">
+              {showSpreadsheetPreview ? (
+                <SpreadsheetHoverPreview preview={spreadsheetPreview} className="sm:pt-1" />
+              ) : null}
+              {beneficiosButton}
+            </div>
           }
         />
 
-        <div id="unidades-header-tools" className={cn("flex flex-col items-start gap-3", !headerOpen && "hidden")}>
+        <div id="unidades-header-tools" className="flex flex-col items-start gap-3">
           <div className="flex w-full flex-wrap items-center justify-between gap-3">
             <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
               <SearchField
@@ -333,15 +284,16 @@ export function UnidadesPage() {
             />
           }
         />
+        <ListHeaderCollapseMark active={activeFilterCount > 0} />
         <UnidadeFiltersModal
           open={filtersOpen}
           onClose={() => setFiltersOpen(false)}
           filters={unitFilters}
-          onChange={setUnitFilters}
+          onApply={setUnitFilters}
           pantheons={panteoes}
           eras={eras}
           units={unidades}
-          resultCount={filtered.length}
+          countable={searched}
         />
       </ListPageStickyHeader>
 

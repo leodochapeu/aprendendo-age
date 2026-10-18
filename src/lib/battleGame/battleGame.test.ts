@@ -35,6 +35,15 @@ function byId(id: number): Unidade {
   return u;
 }
 
+function idByIngles(ingles: string): number {
+  const u = units.find((x) => x.ingles === ingles);
+  if (!u) throw new Error(`missing ingles=${ingles}`);
+  return u.id;
+}
+
+const HOPLITE = idByIngles("Hoplite");
+const TOXOTES = idByIngles("Toxotes");
+
 describe("battleGame plan", () => {
   it("gera cronograma 4/4/2 começando na Clássica", () => {
     const plan = buildRoundPlan();
@@ -106,22 +115,22 @@ describe("battleGame filters", () => {
 describe("battleGame lookup", () => {
   const index = buildBattleResultIndex(battleResults);
 
-  it("Toxotes (3) vence Hoplita (1) no lookup pré-calculado", () => {
-    const result = lookupBattleResult(index, 3, 1);
+  it("Toxotes vence Hoplita no lookup pré-calculado", () => {
+    const result = lookupBattleResult(index, TOXOTES, HOPLITE);
     expect(result?.winner).toBe("attacker");
     expect(result?.mode).toBe("mode_category_battle");
   });
 
   it("resolve escolha do jogador como win/loss/draw", () => {
-    const win = resolvePlayerChoice(index, 3, 1);
+    const win = resolvePlayerChoice(index, TOXOTES, HOPLITE);
     expect(win?.outcome).toBe("win");
 
-    const loss = resolvePlayerChoice(index, 1, 3);
+    const loss = resolvePlayerChoice(index, HOPLITE, TOXOTES);
     expect(loss?.outcome).toBe("loss");
   });
 
   it("empata quando atacante e defensor são a mesma unidade", () => {
-    const same = resolvePlayerChoice(index, 1, 1);
+    const same = resolvePlayerChoice(index, HOPLITE, HOPLITE);
     expect(same?.outcome).toBe("draw");
   });
 });
