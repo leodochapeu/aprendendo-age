@@ -248,6 +248,23 @@ def _pick_model(files: list[str]) -> str | None:
     return files[0] if files else None
 
 
+def _is_dummy_model(path: str) -> bool:
+    """Malha técnica (cubo/esqueleto) usada só para soquete ou animação de morte."""
+    low = path.replace("\\", "/").lower().strip()
+    if low.endswith(".tmm"):
+        low = low[:-4]
+    stem = low.rsplit("/", 1)[-1]
+    return "/dummy/" in f"/{low}" or stem.endswith("_dummy") or stem.startswith("dummy_") or stem == "dummy"
+
+
+def _component_label(elem: ET.Element) -> str:
+    return (elem.text or "").strip().lower()
+
+
+def _is_death_component(elem: ET.Element) -> bool:
+    return _component_label(elem).startswith("death")
+
+
 def _visual_scope(root: ET.Element) -> ET.Element:
     """Unidades com corpo masculino/feminino guardam a malha no primeiro submodel."""
     for child in root:
@@ -258,10 +275,11 @@ def _visual_scope(root: ET.Element) -> ET.Element:
 
 def _body_component(root: ET.Element) -> ET.Element:
     scope = _visual_scope(root)
-    for child in scope:
-        if _tag(child) == "component":
+    components = [child for child in scope if _tag(child) == "component"]
+    for child in components:
+        if not _is_death_component(child):
             return child
-    return scope
+    return components[0] if components else scope
 
 
 def _select_model(elem: ET.Element, techs: set[str]) -> str | None:
@@ -338,7 +356,8 @@ def models_in_anim(root: ET.Element) -> list[str]:
     found: list[str] = []
     scope_root = _visual_scope(root)
     components = [child for child in scope_root if _tag(child) == "component"]
-    scopes = components or [scope_root]
+    # DeathComp só anima a morte; não entra na pose Idle do site.
+    scopes = [c for c in components if not _is_death_component(c)] or components or [scope_root]
     for scope in scopes:
         picked = _pick_model(list(_iter_model_files(scope)))
         if picked and picked not in found:
@@ -474,9 +493,24 @@ def _find_basecolor(bars: BarIndex, model_path: str, material_name: str) -> tupl
     return None if fallback is None else fallback[1]
 
 
+def _solid_texture(rgb: tuple[int, int, int], size: int = 8) -> bytes:
+    image = Image.new("RGBA", (size, size), (*rgb, 255))
+    buf = io.BytesIO()
+    image.save(buf, format="PNG")
+    return buf.getvalue()
+
+
+def _wheel_fallback_texture() -> bytes:
+    """Rodas de fogo do Nezha não têm DDT no bar; dourado quente no lugar do bege técnico."""
+    return _solid_texture((212, 118, 42))
+
+
 def ensure_texture(bars: BarIndex, model_path: str, material_name: str) -> bytes | None:
     hit = _find_basecolor(bars, model_path, material_name)
     if hit is None:
+        low = model_path.replace("\\", "/").lower()
+        if "wheel" in low.rsplit("/", 1)[-1]:
+            return _wheel_fallback_texture()
         return None
     dest = WORK_ROOT / "tex" / _safe_key(hit[1])
     png_path = dest / "color.png"
@@ -1307,29 +1341,35 @@ def visual_primitives(
     if not model_paths:
         return [], []
 
-    body_glb = ensure_model_glb(bars, model_paths[0])
+    body_path = model_paths[0]
+    body_glb = ensure_model_glb(bars, body_path)
     if body_glb is None:
         return [], []
     body_gltf, body_blob = read_glb(body_glb)
     bone_worlds = _posed_bone_worlds(bars, root, body_gltf, body_blob)
-    if bone_worlds is None:
+    # Dummy (ex.: ne_zha_youth_dummy) só carrega o esqueleto/soquetes; a malha vem do Rider.
+    if _is_dummy_model(body_path):
+        prims: list[dict[str, Any]] = []
+    elif bone_worlds is None:
         prims = _mesh_primitives(body_gltf, body_blob, _identity())
     else:
         prims = _skinned_primitives(body_gltf, body_blob, bone_worlds)
         if not prims:
             prims = _mesh_primitives(body_gltf, body_blob, _identity())
     for prim in prims:
-        prim["image"] = ensure_texture(bars, model_paths[0], prim["material"])
+        prim["image"] = ensure_texture(bars, body_path, prim["material"])
     for extra in model_paths[1:]:
+        if _is_dummy_model(extra):
+            continue
         prims.extend(_textured_mesh(bars, extra, _identity()))
-    if not prims:
+    attachments = _attachment_sources(root)
+    if not prims and not attachments:
         return [], []
     body_count = len(prims)
     only_head = only[0] if isinstance(only, tuple) else only
     if only_head == "body":
         return prims, []
 
-    attachments = _attachment_sources(root)
     has_weapon = any(name.lower() == "weapon" for name, _source in attachments)
     attached: list[str] = []
     for name, source in attachments:

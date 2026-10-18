@@ -61,7 +61,7 @@ export function UnidadeDetailPage() {
         {modelUrl ? (
           <Section title={t("common.projection3d")}>
             <Suspense fallback={<p className="text-zinc-500">{t("common.loading")}</p>}>
-              <UnidadeProjection unitId={u.id} fallbackUrl={modelUrl} hero={isUnitHero(u.nome, u.ingles)} />
+              <UnidadeProjection unitId={u.id} fallbackUrl={modelUrl} hero={isUnitHero(u.nome, u.ingles, u.tipo)} />
             </Suspense>
           </Section>
         ) : null}

@@ -144,6 +144,9 @@ CATALOG_PROTO_ALIASES = {
     "Gullinbursti": "GullinburstiClassical",
     "Dwarf": "VillagerDwarf",
     "Citizen": "VillagerAtlantean",
+    "Nezha (Child)": "NezhaChild",
+    "Nezha (Youth)": "NezhaYouth",
+    "Nezha (Hero)": "Nezha",
 }
 
 

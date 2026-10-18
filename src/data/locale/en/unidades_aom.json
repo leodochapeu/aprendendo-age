@@ -7007,8 +7007,8 @@
   },
   {
     "id": 117,
-    "nome": "Nezha (Hero)",
-    "ingles": "Nezha (Hero)",
+    "nome": "Nezha (Child)",
+    "ingles": "Nezha (Child)",
     "tipo": [
       {
         "type": "Hero",
@@ -7030,35 +7030,37 @@
     "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:",
     "multiplicador": [
       {
-        "type": "Unidade myth",
+        "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon",
         "value": "6.5"
       }
     ],
-    "pontos_de_vida": 400,
-    "dano_cortante": 15,
+    "pontos_de_vida": 225,
+    "dano_cortante": 9,
     "velocidade_de_ataque_atk_s": 1.2,
-    "dps": 18,
+    "dps": 10.8,
     "armadura_anticorte": 30,
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "id": 44,
-        "nome": "Academia Imperial"
+        "nome": "Academia Imperial",
+        "id": 44
       }
     ],
     "comida": 0,
     "madeira": 0,
-    "ouro": 450,
+    "ouro": 150,
     "favor": 5,
-    "custo_total": 455,
+    "custo_total": 155,
     "populacao": 3,
-    "tempo_treinamento": 15,
+    "tempo_treinamento": 10,
     "velocidade_movimento": 5,
     "forca_atributos": 209.5,
     "forte_contra": "Mythical Creature :aomr_type_myth_unit_icon:",
     "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
-    "icon": "aomr_nezha_icon"
+    "icon": "aomr_nezha_child_icon",
+    "armadura_anticontusao": 99,
+    "alcance": 0.75
   },
   {
     "id": 118,
@@ -7433,9 +7435,13 @@
   },
   {
     "id": 124,
-    "nome": "Nezha (Hero)",
-    "ingles": "Nezha (Hero)",
+    "nome": "Nezha (Youth)",
+    "ingles": "Nezha (Youth)",
     "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
       {
         "type": "Hero",
         "icon": "aomr_type_hero_icon"
@@ -7456,35 +7462,38 @@
     "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:",
     "multiplicador": [
       {
-        "type": "Unidade myth",
+        "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon",
         "value": "6.5"
       }
     ],
-    "pontos_de_vida": 400,
-    "dano_cortante": 15,
+    "pontos_de_vida": 300,
+    "dano_cortante": 12,
     "velocidade_de_ataque_atk_s": 1.2,
-    "dps": 18,
+    "dps": 14.4,
     "armadura_anticorte": 30,
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "id": 44,
-        "nome": "Academia Imperial"
+        "nome": "Academia Imperial",
+        "id": 44
       }
     ],
     "comida": 0,
     "madeira": 0,
-    "ouro": 450,
+    "ouro": 300,
     "favor": 5,
-    "custo_total": 455,
+    "custo_total": 305,
     "populacao": 3,
-    "tempo_treinamento": 15,
+    "tempo_treinamento": 10,
     "velocidade_movimento": 5,
     "forca_atributos": 212,
     "forte_contra": "Mythical Creature :aomr_type_myth_unit_icon:",
     "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
-    "icon": "aomr_nezha_icon"
+    "icon": "aomr_nezha_youth_icon",
+    "dano_perfurante": 9,
+    "armadura_anticontusao": 99,
+    "alcance": 16
   },
   {
     "id": 125,
@@ -7511,7 +7520,7 @@
     "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:",
     "multiplicador": [
       {
-        "type": "Unidade myth",
+        "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon",
         "value": "6.5"
       }
@@ -7524,8 +7533,8 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "id": 44,
-        "nome": "Academia Imperial"
+        "nome": "Academia Imperial",
+        "id": 44
       }
     ],
     "comida": 0,
@@ -7539,7 +7548,9 @@
     "forca_atributos": 233.666666666667,
     "forte_contra": "Mythical Creature :aomr_type_myth_unit_icon:",
     "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
-    "icon": "aomr_nezha_icon"
+    "icon": "aomr_nezha_icon",
+    "armadura_anticontusao": 99,
+    "alcance": 1
   },
   {
     "id": 126,

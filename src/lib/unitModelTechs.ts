@@ -69,11 +69,23 @@ export function toggleTechTag(groups: TechGroup[], selected: readonly string[], 
 }
 
 const HERO_MARK = /\((?:heroina|heroine|heroi|hero)\)/i;
+const HERO_TYPE = /^(?:her[oó]i|hero|heroine|heroina)\b/i;
 
-export function isUnitHero(nome: string | undefined, ingles?: string): boolean {
+function stripDiacritics(value: string): string {
+  return value.normalize("NFD").replace(/\p{M}/gu, "");
+}
+
+/** Partículas de herói: sufixo no nome ou `tipo` Herói (ex.: Nezha Child/Youth). */
+export function isUnitHero(
+  nome: string | undefined,
+  ingles?: string,
+  tipo?: ReadonlyArray<{ type?: string }> | null,
+): boolean {
+  if (tipo?.some((item) => HERO_TYPE.test(stripDiacritics((item.type ?? "").trim())))) {
+    return true;
+  }
   return [nome, ingles].some((value) => {
     if (!value) return false;
-    const plain = value.normalize("NFD").replace(/\p{M}/gu, "");
-    return HERO_MARK.test(plain);
+    return HERO_MARK.test(stripDiacritics(value));
   });
 }
