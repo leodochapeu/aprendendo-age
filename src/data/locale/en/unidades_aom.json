@@ -9914,5 +9914,693 @@
     "fraco_contra": "Infantry :aomr_type_infantry_icon: | Hero :aomr_type_hero_icon:",
     "icon": "aomr_quinametzin_icon",
     "tempo_treinamento": 20
+  },
+  {
+    "id": 172,
+    "nome": "Chaneque",
+    "ingles": "Chaneque",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [],
+    "pontos_de_vida": 300,
+    "velocidade_de_ataque_atk_s": 0,
+    "dps": 0,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 40,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 145,
+    "favor": 11,
+    "custo_total": 156,
+    "populacao": 2,
+    "tempo_treinamento": 14,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_chaneque_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "god_dono": [
+      {
+        "id": 86,
+        "nome": "Huehuecóyotl"
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "nome": "Centzon Totochtin",
+    "ingles": "Centzon Totochtin",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "3"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 260,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 12,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 100,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 14,
+    "custo_total": 114,
+    "populacao": 2,
+    "tempo_treinamento": 9,
+    "velocidade_movimento": 5,
+    "icon": "aomr_centzon_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 12,
+    "alcance": 1,
+    "god_dono": [
+      {
+        "id": 87,
+        "nome": "Patecatl"
+      }
+    ]
+  },
+  {
+    "id": 174,
+    "nome": "Maquizcoatl",
+    "ingles": "Maquizcoatl",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "3"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 350,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 27,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 160,
+    "ouro": 0,
+    "favor": 12,
+    "custo_total": 172,
+    "populacao": 3,
+    "tempo_treinamento": 12,
+    "velocidade_movimento": 4.5,
+    "icon": "aomr_maquizcoatl_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 18,
+    "alcance": 1,
+    "god_dono": [
+      {
+        "id": 85,
+        "nome": "Malinalxochitl"
+      }
+    ]
+  },
+  {
+    "id": 175,
+    "nome": "Obsidian Butterfly",
+    "ingles": "Obsidian Butterfly",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heroic :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "3"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.25"
+      }
+    ],
+    "pontos_de_vida": 560,
+    "velocidade_de_ataque_atk_s": 1.2,
+    "dps": 36,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 65,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 225,
+    "ouro": 0,
+    "favor": 20,
+    "custo_total": 245,
+    "populacao": 3,
+    "tempo_treinamento": 16,
+    "velocidade_movimento": 5,
+    "icon": "aomr_obsidian_butterfly_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 30,
+    "alcance": 0.5,
+    "god_dono": [
+      {
+        "id": 88,
+        "nome": "Itzpapalotl"
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "nome": "Ayotochtli",
+    "ingles": "Ayotochtli",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heroic :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 960,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 50,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 80,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 300,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 20,
+    "custo_total": 320,
+    "populacao": 4,
+    "tempo_treinamento": 20,
+    "velocidade_movimento": 3,
+    "icon": "aomr_ayotochtli_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 25,
+    "alcance": 2,
+    "god_dono": [
+      {
+        "id": 89,
+        "nome": "Coatlicue"
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "nome": "Tzitzimitl",
+    "ingles": "Tzitzimitl",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heroic :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "3"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.25"
+      }
+    ],
+    "pontos_de_vida": 520,
+    "velocidade_de_ataque_atk_s": 0.7,
+    "dps": 12.6,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 220,
+    "favor": 18,
+    "custo_total": 238,
+    "populacao": 3,
+    "tempo_treinamento": 15,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_tzitzimitl_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 18,
+    "alcance": 1,
+    "god_dono": [
+      {
+        "id": 90,
+        "nome": "Coyolxauhqui"
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "nome": "Axolotl",
+    "ingles": "Axolotl",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 3,
+        "nome": "Heroic :aomr_heroic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 700,
+    "velocidade_de_ataque_atk_s": 1.5,
+    "dps": 60,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 55,
+    "construcao": [
+      {
+        "nome": "Dock (Aztec)",
+        "id": 79
+      }
+    ],
+    "comida": 250,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 15,
+    "custo_total": 265,
+    "populacao": 3,
+    "tempo_treinamento": 16,
+    "velocidade_movimento": 6,
+    "icon": "aomr_axolotl_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 40,
+    "alcance": 1
+  },
+  {
+    "id": 179,
+    "nome": "Ahuizotl",
+    "ingles": "Ahuizotl",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mythic :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "3"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 900,
+    "velocidade_de_ataque_atk_s": 1,
+    "dps": 40,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 65,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 320,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 28,
+    "custo_total": 348,
+    "populacao": 3,
+    "tempo_treinamento": 18,
+    "velocidade_movimento": 5.3,
+    "icon": "aomr_ahuizotl_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 40,
+    "alcance": 1,
+    "god_dono": [
+      {
+        "id": 91,
+        "nome": "Tlaloc"
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "nome": "Soul Guide",
+    "ingles": "Soul Guide",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mythic :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 780,
+    "velocidade_de_ataque_atk_s": 1.7,
+    "dps": 68,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 300,
+    "ouro": 50,
+    "favor": 25,
+    "custo_total": 375,
+    "populacao": 4,
+    "tempo_treinamento": 21,
+    "velocidade_movimento": 4.3,
+    "icon": "aomr_soul_guide_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 40,
+    "alcance": 1,
+    "god_dono": [
+      {
+        "id": 92,
+        "nome": "Xolotl"
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "nome": "Tunkuluchu",
+    "ingles": "Tunkuluchu",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 4,
+        "nome": "Mythic :aomr_mythic_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon",
+        "value": "0.5"
+      }
+    ],
+    "pontos_de_vida": 850,
+    "velocidade_de_ataque_atk_s": 1.8,
+    "dps": 108,
+    "armadura_anticorte": 65,
+    "armadura_antiperfurante": 60,
+    "construcao": [
+      {
+        "nome": "Temple (Aztec)",
+        "id": 12
+      }
+    ],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 250,
+    "favor": 20,
+    "custo_total": 270,
+    "populacao": 3,
+    "tempo_treinamento": 18,
+    "velocidade_movimento": 4.5,
+    "icon": "aomr_tunkuluchu_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 60,
+    "alcance": 1,
+    "god_dono": [
+      {
+        "id": 93,
+        "nome": "Mictlantecuhtli"
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "nome": "Titan (Cipactli)",
+    "ingles": "Titan (Cipactli)",
+    "tipo": [
+      {
+        "type": "Mythic",
+        "icon": "aomr_type_myth_unit_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 7,
+        "nome": "Asteca :aomr_pantheon_azteca_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 5,
+        "nome": "Titan :aomr_titan_age_icon:"
+      }
+    ],
+    "multiplicador": [
+      {
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "2"
+      },
+      {
+        "type": "Construção",
+        "icon": "",
+        "value": "6"
+      },
+      {
+        "type": "AbstractTitan",
+        "icon": "",
+        "value": "20"
+      },
+      {
+        "type": "Soldado humano",
+        "icon": "",
+        "value": "2"
+      }
+    ],
+    "pontos_de_vida": 30000,
+    "velocidade_de_ataque_atk_s": 3.5,
+    "dps": 280,
+    "armadura_anticorte": 60,
+    "armadura_antiperfurante": 80,
+    "construcao": [],
+    "comida": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "favor": 0,
+    "custo_total": 0,
+    "populacao": 10,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 3.75,
+    "icon": "aomr_titan_cipactli_icon",
+    "fraco_contra": "Herói :aomr_type_hero_icon:",
+    "dano_cortante": 80,
+    "alcance": 2
   }
 ]

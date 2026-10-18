@@ -89,6 +89,21 @@ npm: `npm run data:merge-unidades -- --ids 1-50 --dry-run`
 
 ---
 
+## 2b. Importar MUs astecas ausentes
+
+Arquivo: `import-aztec-myth-units.py`
+
+Adiciona unidades míticas treináveis do panteão Asteca (com era, `god_dono`, construção e ícones).
+
+```bash
+python scripts/import-aztec-myth-units.py --dry-run
+python scripts/import-aztec-myth-units.py --write
+```
+
+Ignora variantes (Idol, Mutant, SPC/CG, cheats). `Quinametzin` já existente é pulada.
+
+---
+
 ## O que é atualizado vs. preservado
 
 ### Atualizado do jogo

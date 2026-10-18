@@ -1078,5 +1078,9 @@
   "aomr_soul_guide_icon": "/assets/unit_humans/unit_aztec/soul_guide_icon.webp",
   "aomr_spike_trap_icon": "/assets/buildings/spike_trap_icon.webp",
   "aomr_tzitzimitl_icon": "/assets/unit_humans/unit_aztec/tzitzimitl_icon.webp",
-  "aomr_villager_aztec_icon": "/assets/und_villagers/AoMR_Villager_Aztec_icon.webp"
+  "aomr_villager_aztec_icon": "/assets/und_villagers/AoMR_Villager_Aztec_icon.webp",
+  "aomr_ahuizotl_icon": "/assets/unit_humans/unit_aztec/ahuizotl_icon.webp",
+  "aomr_ayotochtli_icon": "/assets/unit_humans/unit_aztec/ayotochtli_icon.webp",
+  "aomr_titan_cipactli_icon": "/assets/unit_humans/unit_aztec/titan_cipactli_icon.webp",
+  "aomr_tunkuluchu_icon": "/assets/unit_humans/unit_aztec/tunkuluchu_icon.webp"
 }

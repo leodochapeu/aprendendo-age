@@ -7584,7 +7584,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 174,
+        "nome": "Maquizcoatl"
+      }
+    ]
   },
   {
     "id": 86,
@@ -7621,7 +7626,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 172,
+        "nome": "Chaneque"
+      }
+    ]
   },
   {
     "id": 87,
@@ -7658,7 +7668,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 173,
+        "nome": "Centzon Totochtin"
+      }
+    ]
   },
   {
     "id": 88,
@@ -7695,7 +7710,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 175,
+        "nome": "Obsidian Butterfly"
+      }
+    ]
   },
   {
     "id": 89,
@@ -7732,7 +7752,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 176,
+        "nome": "Ayotochtli"
+      }
+    ]
   },
   {
     "id": 90,
@@ -7769,7 +7794,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 177,
+        "nome": "Tzitzimitl"
+      }
+    ]
   },
   {
     "id": 91,
@@ -7806,7 +7836,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 179,
+        "nome": "Ahuizotl"
+      }
+    ]
   },
   {
     "id": 92,
@@ -7843,7 +7878,12 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 180,
+        "nome": "Soul Guide"
+      }
+    ]
   },
   {
     "id": 93,
@@ -7880,6 +7920,11 @@
       }
     ],
     "tecnologias": [],
-    "unidades_exclusivas": []
+    "unidades_exclusivas": [
+      {
+        "id": 181,
+        "nome": "Tunkuluchu"
+      }
+    ]
   }
 ]
