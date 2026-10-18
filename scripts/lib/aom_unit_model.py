@@ -268,19 +268,50 @@ def models_in_anim(root: ET.Element) -> list[str]:
     return found
 
 
-def attachments_in_anim(root: ET.Element) -> list[tuple[str, str]]:
-    found: list[tuple[str, str]] = []
+def _attachment_sources(root: ET.Element) -> list[tuple[str, str | ET.Element]]:
+    """Include externo ou o próprio bloco, quando a malha está escrita nele."""
+    found: list[tuple[str, str | ET.Element]] = []
     for child in _visual_scope(root):
         if _tag(child) != "attachment":
             continue
         name = (child.text or "").strip()
+        if not name:
+            continue
         include = ""
         for sub in child:
             if _tag(sub) == "include" and sub.text:
                 include = sub.text.replace("\\", "/").strip()
-        if name and include:
+        if include:
             found.append((name, include))
+        elif any(_tag(sub) == "component" for sub in child):
+            found.append((name, child))
     return found
+
+
+def _socket_name(gltf: dict[str, Any], root: ET.Element, attachment_name: str) -> str:
+    """O soquete no esqueleto pode ter outro nome (BattleAxe) que o do acessório (Weapon)."""
+    target = attachment_name.lower()
+    point = ""
+    for elem in root.iter():
+        if _tag(elem) != "attach" or (elem.get("name") or "").lower() != target:
+            continue
+        point = (elem.get("attachpoint") or "").strip()
+        if point:
+            break
+    if point and _has_attachment_node(gltf, point):
+        return point
+    return attachment_name
+
+
+def _has_attachment_node(gltf: dict[str, Any], name: str) -> bool:
+    target = name.lower()
+    for node in gltf.get("nodes") or []:
+        if (node.get("name") or "").lower() != target:
+            continue
+        kind = ((node.get("extras") or {}).get("crybar") or {}).get("node_type")
+        if kind == "attachment":
+            return True
+    return False
 
 
 def ensure_model_glb(bars: BarIndex, model_path: str) -> Path | None:
@@ -922,14 +953,18 @@ def _idle_clip(root: ET.Element) -> str | None:
             label = (child.text or child.get("name") or "").strip().lower()
             if label != "idle":
                 continue
+            fallback = ""
             for sub in child.iter():
                 if _tag(sub) != "file" or not sub.text:
                     continue
                 path = sub.text.replace("\\", "/").strip()
                 low = path.lower()
-                if "_igc" in low or "/igc/" in low:
-                    continue
-                return path
+                if "_igc" not in low and "/igc/" not in low:
+                    return path
+                if not fallback:
+                    fallback = path
+            if fallback:
+                return fallback
     return None
 
 
@@ -969,15 +1004,83 @@ def _posed_bone_worlds(
         return None
     bind = _bind_worlds(gltf, blob)
     posed = dict(bind)
-    matched = 0
-    for index, node in enumerate(gltf.get("nodes") or []):
+    matched: set[int] = set()
+    nodes = gltf.get("nodes") or []
+    for index, node in enumerate(nodes):
         name = (node.get("name") or "").lower()
         if index in bind and name in named:
             posed[index] = named[name]
-            matched += 1
-    if matched < 3:
+            matched.add(index)
+    if len(matched) < 3:
         return None
+    _carry_unposed(nodes, bind, posed, matched)
+    _pull_weapons_to_hands(nodes, posed)
     return posed
+
+
+SNAP_TO_HAND = {
+    "weaponright": "mixamorig:righthand",
+    "weaponleft": "mixamorig:lefthand",
+    "shield": "mixamorig:lefthand",
+    "prop_r": "mixamorig:righthand",
+    "prop_l": "mixamorig:lefthand",
+}
+
+
+def _carry_unposed(
+    nodes: list[dict[str, Any]],
+    bind: dict[int, list[list[float]]],
+    posed: dict[int, list[list[float]]],
+    matched: set[int],
+) -> None:
+    """Juntas sem trilha (dedos, twist) seguem o pai, em vez de ficar na pose aberta."""
+    parents: dict[int, int] = {}
+    for index, node in enumerate(nodes):
+        for child in node.get("children") or []:
+            parents[child] = index
+    pending = [index for index in bind if index not in matched]
+    for _ in range(8):
+        if not pending:
+            return
+        stuck: list[int] = []
+        for index in pending:
+            parent = parents.get(index)
+            if parent is None or parent not in posed or parent in stuck or parent in pending:
+                stuck.append(index)
+                continue
+            local = _mat_mul(_invert4(bind[parent]), bind[index])
+            posed[index] = _mat_mul(posed[parent], local)
+        if len(stuck) == len(pending):
+            return
+        pending = stuck
+
+
+def _pull_weapons_to_hands(nodes: list[dict[str, Any]], posed: dict[int, list[list[float]]]) -> None:
+    """O osso da arma às vezes para longe da mão. A rotação fica; a origem vai para a mão."""
+    by_name: dict[str, int] = {}
+    for index, node in enumerate(nodes):
+        if index in posed:
+            by_name[(node.get("name") or "").lower()] = index
+    for index, node in enumerate(nodes):
+        if index not in posed:
+            continue
+        short = (node.get("name") or "").lower().split(":")[-1]
+        hand_name = SNAP_TO_HAND.get(short)
+        hand = by_name.get(hand_name or "")
+        if hand is None:
+            continue
+        weapon = posed[index]
+        hand_m = posed[hand]
+        dx = weapon[0][3] - hand_m[0][3]
+        dy = weapon[1][3] - hand_m[1][3]
+        dz = weapon[2][3] - hand_m[2][3]
+        if dx * dx + dy * dy + dz * dz < 0.4 * 0.4:
+            continue
+        moved = [row[:] for row in weapon]
+        moved[0][3] = hand_m[0][3]
+        moved[1][3] = hand_m[1][3]
+        moved[2][3] = hand_m[2][3]
+        posed[index] = moved
 
 
 def _textured_mesh(bars: BarIndex, model_path: str, transform: list[list[float]]) -> list[dict[str, Any]]:
@@ -1018,22 +1121,25 @@ def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple
     if not prims:
         return [], []
 
-    attachments = attachments_in_anim(root)
-    has_weapon = any(name.lower() == "weapon" for name, _include in attachments)
+    attachments = _attachment_sources(root)
+    has_weapon = any(name.lower() == "weapon" for name, _source in attachments)
     attached: list[str] = []
-    for name, include in attachments:
+    for name, source in attachments:
         low = name.lower()
         if low in PROJECTILE_ATTACHMENTS:
             continue
         if has_weapon and low in TOOL_ATTACHMENTS:
             continue
-        try:
-            included = load_anim_xml(bars, include)
-        except (RuntimeError, FileNotFoundError, ET.ParseError, OSError):
-            continue
+        if isinstance(source, str):
+            try:
+                included = load_anim_xml(bars, source)
+            except (RuntimeError, FileNotFoundError, ET.ParseError, OSError):
+                continue
+        else:
+            included = source
         if included is None:
             continue
-        matrix = socket_matrix(body_gltf, body_blob, name, bone_worlds)
+        matrix = socket_matrix(body_gltf, body_blob, _socket_name(body_gltf, root, name), bone_worlds)
         if matrix is None:
             continue
         child_prims, _child_names = visual_primitives(bars, included, depth + 1)
