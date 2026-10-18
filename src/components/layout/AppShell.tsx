@@ -6,6 +6,7 @@ import { MusicProvider } from "@/context/MusicContext";
 import { cn } from "@/lib/cn";
 import { useTranslation } from "@/hooks/useTranslation";
 import { localeSectionPath, sectionFromPathSegment, type LocaleSection } from "@/lib/localeRoutes";
+import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 import { startNovoTagClassNav } from "@/pages/StartsPage";
 
 const LIST_INDEX_SECTIONS = new Set<LocaleSection>([
@@ -27,8 +28,8 @@ function isCatalogListIndex(pathname: string): boolean {
 }
 
 type NavLinkItem =
-  | { to: string; labelKey: string; end?: boolean; navNovo?: boolean }
-  | { to: string; labelKey: string; match: (pathname: string) => boolean; navNovo?: boolean };
+  | { to: string; labelKey: string; end?: boolean; navNovo?: boolean; icon?: string }
+  | { to: string; labelKey: string; match: (pathname: string) => boolean; navNovo?: boolean; icon?: string };
 
 type NavModule = {
   id: string;
@@ -59,17 +60,17 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
       id: "conhecimento-age",
       labelKey: "nav.modules.conhecimentoAge",
       items: [
-        { to: localeSectionPath(locale, "panteoes"), labelKey: "nav.pantheons" },
-        { to: "/astecas", labelKey: "nav.astecas" },
-        { to: localeSectionPath(locale, "deuses"), labelKey: "nav.gods" },
-        { to: localeSectionPath(locale, "eras"), labelKey: "nav.eras" },
-        { to: localeSectionPath(locale, "poderes"), labelKey: "nav.godpowers" },
-        { to: localeSectionPath(locale, "construcoes"), labelKey: "nav.buildings" },
-        { to: localeSectionPath(locale, "unidades"), labelKey: "nav.units" },
-        { to: localeSectionPath(locale, "aldeoes"), labelKey: "nav.villagers" },
-        { to: localeSectionPath(locale, "mapas"), labelKey: "nav.maps" },
-        { to: localeSectionPath(locale, "reliquias"), labelKey: "nav.reliquias" },
-        { to: localeSectionPath(locale, "tecnologias"), labelKey: "nav.technologies" },
+        { to: localeSectionPath(locale, "panteoes"), labelKey: "nav.pantheons", icon: "aomr_pantheon_greeks_icon" },
+        { to: "/astecas", labelKey: "nav.astecas", icon: "aomr_pantheon_aztecs_icon" },
+        { to: localeSectionPath(locale, "deuses"), labelKey: "nav.gods", icon: "aomr_amaterasu_icon" },
+        { to: localeSectionPath(locale, "eras"), labelKey: "nav.eras", icon: "aomr_wonder_age_icon" },
+        { to: localeSectionPath(locale, "poderes"), labelKey: "nav.godpowers", icon: "aomr_lightning_storm_icon" },
+        { to: localeSectionPath(locale, "construcoes"), labelKey: "nav.buildings", icon: "aomr_town_center_greek_icon" },
+        { to: localeSectionPath(locale, "unidades"), labelKey: "nav.units", icon: "aomr_type_myth_unit_icon" },
+        { to: localeSectionPath(locale, "aldeoes"), labelKey: "nav.villagers", icon: "aomr_type_villager_icon" },
+        { to: localeSectionPath(locale, "mapas"), labelKey: "nav.maps", icon: "aomr_acropolis_icon" },
+        { to: localeSectionPath(locale, "reliquias"), labelKey: "nav.reliquias", icon: "aomr_relic_crown_icon" },
+        { to: localeSectionPath(locale, "tecnologias"), labelKey: "nav.technologies", icon: "aomr_pickaxe_icon" },
       ],
     },
     {
@@ -132,6 +133,7 @@ function NavLinkRow({
   nested?: boolean;
 }) {
   const active = isNavItemActive(item, pathname);
+  const iconSrc = item.icon ? getTokenAssetUrl(item.icon) : undefined;
   return (
     <NavLink
       to={item.to}
@@ -139,7 +141,16 @@ function NavLinkRow({
       onClick={onItemClick}
       className={cn(navClass(active), nested && "ml-2 border-l border-zinc-800 pl-2.5")}
     >
-      <span className="min-w-0 flex-1 truncate">{t(item.labelKey)}</span>
+      <span className="flex min-w-0 flex-1 items-center gap-1.5">
+        {iconSrc ? (
+          <img
+            src={iconSrc}
+            alt=""
+            className={cn("size-3.5 shrink-0 object-contain", active ? "opacity-90" : "opacity-55")}
+          />
+        ) : null}
+        <span className="min-w-0 truncate">{t(item.labelKey)}</span>
+      </span>
       {item.navNovo ? (
         <span className={startNovoTagClassNav} title={t("common.newTooltip")}>
           {t("common.new")}
