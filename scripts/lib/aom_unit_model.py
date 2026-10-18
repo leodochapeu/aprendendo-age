@@ -1120,6 +1120,80 @@ def _seat_weapon_shaft(nodes: list[dict[str, Any]], posed: dict[int, list[list[f
         posed[index] = moved
 
 
+def _bone_translation(gltf: dict[str, Any], worlds: dict[int, list[list[float]]] | None, name: str) -> tuple[float, float, float] | None:
+    if not worlds:
+        return None
+    target = name.lower()
+    for index, node in enumerate(gltf.get("nodes") or []):
+        if (node.get("name") or "").lower() == target and index in worlds:
+            matrix = worlds[index]
+            return (matrix[0][3], matrix[1][3], matrix[2][3])
+    return None
+
+
+def _palm_center(prims: list[dict[str, Any]], wrist: tuple[float, float, float]) -> tuple[float, float, float]:
+    """O centro da mão, não o osso do punho. O punho fica uns centímetros atrás da palma."""
+    near: list[tuple[float, float, float]] = []
+    for prim in prims:
+        for point in prim["positions"]:
+            dx = point[0] - wrist[0]
+            dy = point[1] - wrist[1]
+            dz = point[2] - wrist[2]
+            if dx * dx + dy * dy + dz * dz < 0.12 * 0.12:
+                near.append(point)
+    if len(near) < 8:
+        return wrist
+    count = len(near)
+    return (
+        sum(point[0] for point in near) / count,
+        sum(point[1] for point in near) / count,
+        sum(point[2] for point in near) / count,
+    )
+
+
+def _shaft_into_palm(points: list[tuple[float, float, float]], palm: tuple[float, float, float]) -> tuple[float, float, float] | None:
+    """Desloca uma arma de cabo longo até o cabo cruzar a palma.
+
+    A Idle do berserk deixa a lâmina no osso e o cabo a ~20 cm da mão, em
+    todos os quadros. Nenhuma outra animação fecha essa folga. O deslocamento
+    é só o necessário para o cabo encostar; a lâmina não desce até o punho.
+    """
+    count = len(points)
+    if count < 16:
+        return None
+    mean = [sum(point[axis] for point in points) / count for axis in range(3)]
+    axis = [0.1, 1.0, 0.1]
+    for _ in range(8):
+        acc = [0.0, 0.0, 0.0]
+        for point in points:
+            delta = [point[i] - mean[i] for i in range(3)]
+            proj = delta[0] * axis[0] + delta[1] * axis[1] + delta[2] * axis[2]
+            for i in range(3):
+                acc[i] += proj * delta[i]
+        length = (acc[0] ** 2 + acc[1] ** 2 + acc[2] ** 2) ** 0.5 or 1.0
+        axis = [value / length for value in acc]
+    shaft: list[tuple[float, float, float]] = []
+    projections: list[float] = []
+    for point in points:
+        delta = [point[i] - mean[i] for i in range(3)]
+        along = delta[0] * axis[0] + delta[1] * axis[1] + delta[2] * axis[2]
+        side = (
+            (delta[0] - along * axis[0]) ** 2
+            + (delta[1] - along * axis[1]) ** 2
+            + (delta[2] - along * axis[2]) ** 2
+        ) ** 0.5
+        if side < 0.08:
+            shaft.append(point)
+            projections.append(along)
+    if len(shaft) < 8 or max(projections) - min(projections) < 0.5:
+        return None
+    closest = min(shaft, key=lambda point: sum((point[i] - palm[i]) ** 2 for i in range(3)))
+    gap = sum((closest[i] - palm[i]) ** 2 for i in range(3)) ** 0.5
+    if gap < 0.12 or gap > 0.4:
+        return None
+    return (palm[0] - closest[0], palm[1] - closest[1], palm[2] - closest[2])
+
+
 def _textured_mesh(bars: BarIndex, model_path: str, transform: list[list[float]]) -> list[dict[str, Any]]:
     glb_path = ensure_model_glb(bars, model_path)
     if glb_path is None:
@@ -1182,6 +1256,25 @@ def visual_primitives(bars: BarIndex, root: ET.Element, depth: int = 0) -> tuple
         child_prims, _child_names = visual_primitives(bars, included, depth + 1)
         if not child_prims:
             continue
+        if low == "weapon":
+            wrist = _bone_translation(body_gltf, bone_worlds, "mixamorig:righthand")
+            origin = (matrix[0][3], matrix[1][3], matrix[2][3])
+            if wrist is not None and sum((origin[i] - wrist[i]) ** 2 for i in range(3)) > 0.4 * 0.4:
+                palm = _palm_center(prims, wrist)
+                placed = [
+                    _transform_point(matrix, point[0], point[1], point[2])
+                    for prim in child_prims
+                    for point in prim["positions"]
+                ]
+                shift = _shaft_into_palm(placed, palm)
+                if shift is not None and shift[1] < 0.0:
+                    lowest = min(point[1] for point in placed)
+                    if lowest + shift[1] < 0.0:
+                        scale = lowest / -shift[1]
+                        shift = (shift[0] * scale, shift[1] * scale, shift[2] * scale)
+                    matrix = [row[:] for row in matrix]
+                    for row in range(3):
+                        matrix[row][3] += shift[row]
         prims.extend(apply_matrix(child_prims, matrix))
         attached.append(name)
     return prims, attached
