@@ -1,7 +1,7 @@
 """Pontos de efeito da pose parada, no mesmo espaço do GLB.
 
-Só entra o que o jogo liga no Idle e que faz parte do visual de descanso:
-fogo, brilho, fumaça, olhos. Ataque, bênção, cura e tecnologia ficam de fora.
+Entra o que o jogo liga no Idle: fogo, brilho, fumaça e olhos.
+Ataque, bênção, cura, nascimento, espuma, esteira e armas com tecnologia ficam de fora.
 """
 
 from __future__ import annotations
@@ -45,7 +45,6 @@ ALLOW: dict[str, str] = {
     "fire/phoenix/flame_phoenix_egg": "fire",
     "fire/fire_giant/flame_fire_giant_limb": "fire",
     "fire/fire_giant/flame_fire_giant_flameout": "fire",
-    "atlantean/units/myth/servant/servant_vfx": "water",
     "fire/zhu_que/flame_zhu_que_tail_player_color": "fire",
     "fire/zhu_que/flame_zhu_que_wing_player_color": "fire",
     "fire/zhu_que/zhu_que_fire_head": "fire",
@@ -106,7 +105,6 @@ SIZE_OF = {
     "aura": 0.32,
     "lightning": 0.1,
     "flies": 0.14,
-    "water": 0.16,
 }
 
 TINT_OF = {
@@ -120,7 +118,12 @@ TINT_OF = {
     "aura": "#e7d3a1",
     "lightning": "#d6ecff",
     "flies": "#2a2e28",
-    "water": "#7ec8e3",
+}
+
+CAP = {
+    "fire": 0.4,
+    "lightning": 0.35,
+    "aura": 1.1,
 }
 
 FILE_TINT = {
@@ -163,35 +166,51 @@ def _file_of(elem: ET.Element) -> str | None:
     return None
 
 
-def _visuals(elem: ET.Element, tech: str | None, out: list[tuple[str | None, str]]) -> None:
+def _visuals(elem: ET.Element, techs: tuple[str, ...], out: list[tuple[tuple[str, ...], str]]) -> None:
     tag = _tag(elem)
     logic = (elem.get("type") or "").lower()
     if tag == "logic" and logic == "tech":
         for child in elem:
             name = _tag(child)
-            _visuals(child, tech if name == "none" else name, out)
+            _visuals(child, techs if name == "none" else techs + (name,), out)
         return
     if tag == "logic" and logic == "cinematic":
         for child in elem:
             if _tag(child) == "normal":
-                _visuals(child, tech, out)
+                _visuals(child, techs, out)
         return
     if tag == "nullvisual":
         return
     found = _file_of(elem)
     if found:
-        out.append((tech, found))
+        out.append((techs, found))
     if tag in {"anim", "attachment"}:
         return
     for child in elem:
         if _tag(child) in {"anim", "attachment"}:
             continue
-        _visuals(child, tech, out)
+        _visuals(child, techs, out)
 
 
-def _wanted(root: ET.Element, source: str) -> list[tuple[str, str, str]]:
-    """(rótulo do anexo, tipo, caminho) dos efeitos ligados no Idle, sem tecnologia."""
-    found: list[tuple[str, str, str]] = []
+def _blocked(path: str) -> bool:
+    return any(word in path for word in ("death", "attack", "birth", "cinematic", "igc", "props"))
+
+
+def _classify(path: str, label: str) -> str | None:
+    """Tipo da partícula. Chama e relâmpago de arma ficam de fora."""
+    if "titan" in path or "flaming_weapons" in path or "lightning_weapons" in path:
+        return None
+    if _blocked(path):
+        return None
+    kind = ALLOW.get(path)
+    if kind:
+        return kind
+    return None
+
+
+def _wanted(root: ET.Element, source: str) -> list[tuple[str, str, str, tuple[str, ...]]]:
+    """(rótulo, tipo, caminho, tecnologias) dos efeitos ligados no Idle."""
+    found: list[tuple[str, str, str, tuple[str, ...]]] = []
     for child in root:
         if _tag(child) != "attachment":
             continue
@@ -199,21 +218,20 @@ def _wanted(root: ET.Element, source: str) -> list[tuple[str, str, str]]:
         if not any(_is_rest(name) for name in anims):
             continue
         label = " ".join((child.text or "").split()) or "anexo"
-        visuals: list[tuple[str | None, str]] = []
+        visuals: list[tuple[tuple[str, ...], str]] = []
         for node in child:
             if _tag(node) == "component":
-                _visuals(node, None, visuals)
-        for tech, path in visuals:
-            if tech:
-                continue
+                _visuals(node, (), visuals)
+        for techs, path in visuals:
             key = _key(path)
-            kind = ALLOW.get(key)
-            if not kind:
+            classified = _classify(key, label)
+            if classified is None or techs:
                 continue
+            kind = classified
             needs = SOURCE_NEEDS.get(key)
             if needs and not any(part in source.lower() for part in needs):
                 continue
-            found.append((label, kind, key))
+            found.append((label, kind, key, techs))
     return found
 
 
@@ -323,7 +341,6 @@ def _hint_points(
         "fire": ("flame", "fire", "head", "mouth", "tail", "wing"),
         "glow": ("eye", "staff", "lantern", "horn", "tail"),
         "ring": ("ring",),
-        "water": ("swirl", "vfx"),
     }.get(kind, ())
     if not hints or not worlds:
         return []
@@ -354,8 +371,6 @@ def _fallback(kind: str, worlds: dict[int, list[list[float]]] | None) -> list[tu
         y = lo + span * 0.9
         gap = max(span * 0.025, 0.04)
         return [(cx - gap, y, cz), (cx + gap, y, cz)]
-    if kind == "water":
-        return [(cx, lo + span * 0.2, cz)]
     if kind in {"fire", "glow", "ring", "lightning"}:
         return [(cx, lo + span * 0.72, cz)]
     return [(cx, lo + span * 0.55, cz)]
@@ -393,7 +408,7 @@ def idle_vfx_anchors(bars: BarIndex, anim_relative: str, glb_path: Path | None =
     if root is None:
         return []
     trees = [root, *_includes(bars, root)]
-    wanted: list[tuple[str, str, str]] = []
+    wanted: list[tuple[str, str, str, tuple[str, ...]]] = []
     attaches: dict[str, list[str]] = {}
     for tree in trees:
         wanted.extend(_wanted(tree, anim_relative))
@@ -424,33 +439,34 @@ def idle_vfx_anchors(bars: BarIndex, anim_relative: str, glb_path: Path | None =
     cache: dict[int, list[list[float]]] = {}
 
     anchors: list[dict[str, Any]] = []
-    seen: set[tuple[str, int, int, int]] = set()
-    for label, kind, key in wanted:
+    seen: set[tuple[Any, ...]] = set()
+    for label, kind, key, techs in wanted:
         points: list[tuple[float, float, float]] = []
         if gltf is not None:
             for point_name in attaches.get(label.lower(), []):
                 found = _bone_point(gltf, worlds, point_name, parents, cache)
                 if found is not None:
                     points.append(found)
-            if not points:
+            if not points and not techs:
                 points = _hint_points(gltf, worlds, kind)
         if not points:
             points = _fallback(kind, worlds)
-        size = round(max(height * SIZE_OF.get(kind, 0.1), 0.05), 3)
+        size = round(min(max(height * SIZE_OF.get(kind, 0.1), 0.05), CAP.get(kind, 1.4)), 3)
         tint = FILE_TINT.get(key, TINT_OF.get(kind, "#ffffff"))
         for point in points:
-            marker = (kind, round(point[0] * 40), round(point[1] * 40), round(point[2] * 40))
+            marker = (kind, techs, round(point[0] * 40), round(point[1] * 40), round(point[2] * 40))
             if marker in seen:
                 continue
             seen.add(marker)
-            anchors.append(
-                {
-                    "kind": kind,
-                    "at": [round(point[0], 3), round(point[1], 3), round(point[2], 3)],
-                    "size": size,
-                    "tint": tint,
-                }
-            )
+            anchor: dict[str, Any] = {
+                "kind": kind,
+                "at": [round(point[0], 3), round(point[1], 3), round(point[2], 3)],
+                "size": size,
+                "tint": tint,
+            }
+            if techs:
+                anchor["techs"] = list(techs)
+            anchors.append(anchor)
     return anchors
 
 

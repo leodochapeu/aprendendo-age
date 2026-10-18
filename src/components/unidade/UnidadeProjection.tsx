@@ -58,6 +58,7 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
   const urls = projectionUrls(visual, selected, fallbackUrl, stance, sex);
   const hackIcon = resolveTokenIconSrc("hackdamage");
   const pierceIcon = resolveTokenIconSrc("piercedamage");
+  const vfx = useMemo(() => unitIdleVfx(unitId), [unitId]);
 
   const byCatalog = useMemo(() => {
     const map = new Map<string, { nome: string; icon?: string }>();
@@ -172,7 +173,7 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
           ) : null}
         </div>
       ) : null}
-      <UnidadeModelViewer urls={urls} hero={hero} vfx={unitIdleVfx(unitId)} />
+      <UnidadeModelViewer urls={urls} hero={hero} vfx={vfx} />
     </div>
   );
 }

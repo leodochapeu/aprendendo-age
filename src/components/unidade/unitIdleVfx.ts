@@ -87,7 +87,7 @@ function spawn(parent: THREE.Object3D, kind: IdleVfxKind, tint: string, size: nu
     parent.add(sprite);
     return [{ sprite, phase: 0, speed: 2.2, angle: 0, radius: 0, rise: 0 }];
   }
-  const count = kind === "ring" ? 12 : kind === "water" ? 8 : kind === "flies" ? 6 : kind === "lightning" ? 4 : 6;
+  const count = kind === "ring" ? 12 : kind === "flies" ? 6 : kind === "lightning" ? 4 : 6;
   return Array.from({ length: count }, (_, index) => {
     const sprite = makeSprite(map, tint, kind === "flies" ? 0.85 : 0.7, additive);
     const scale = kind === "ring" ? size * 0.95 : kind === "flies" ? size * 0.12 : kind === "lightning" ? size * 0.35 : size * 0.55;
@@ -96,9 +96,9 @@ function spawn(parent: THREE.Object3D, kind: IdleVfxKind, tint: string, size: nu
     return {
       sprite,
       phase: index / count,
-      speed: kind === "smoke" || kind === "mist" || kind === "gas" ? 0.28 : kind === "water" ? 0.55 : 0.7,
+      speed: kind === "smoke" || kind === "mist" || kind === "gas" ? 0.28 : 0.7,
       angle: (index / count) * Math.PI * 2,
-      radius: size * (kind === "ring" || kind === "water" ? 0.85 : 0.35),
+      radius: size * (kind === "ring" ? 0.85 : 0.35),
       rise: size * (kind === "fire" ? 1.5 : 1.1),
     };
   });
@@ -132,7 +132,7 @@ export function createIdleVfx(parent: THREE.Object3D, anchors: IdleVfxAnchor[]):
             mote.sprite.position.set(Math.cos(spin) * mote.radius, (mote.phase - 0.5) * mote.rise, Math.sin(spin) * mote.radius);
             continue;
           }
-          if (place.kind === "ring" || place.kind === "water" || place.kind === "flies") {
+          if (place.kind === "ring" || place.kind === "flies") {
             const spin = mote.angle + time * (place.kind === "flies" ? 1.4 : 0.8);
             const lift = place.kind === "flies" ? Math.sin(time * 3 + mote.phase * 8) * place.size * 0.35 : Math.sin(time * 2 + mote.phase) * place.size * 0.08;
             mote.sprite.position.set(Math.cos(spin) * mote.radius, lift, Math.sin(spin) * mote.radius);

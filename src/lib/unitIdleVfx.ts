@@ -10,8 +10,7 @@ export type IdleVfxKind =
   | "gas"
   | "aura"
   | "lightning"
-  | "flies"
-  | "water";
+  | "flies";
 
 export type IdleVfxAnchor = {
   kind: IdleVfxKind;

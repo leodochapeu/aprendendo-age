@@ -344,8 +344,6 @@ export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeMode
       stage.pivot.add(shadow);
       auraRef.current?.dispose();
       auraRef.current = heroRef.current ? createHeroAura(stage.pivot.parent ?? stage.pivot, box) : null;
-      idleRef.current?.dispose();
-      idleRef.current = createIdleVfx(stage.pivot, vfxRef.current);
       setStatus("ready");
     });
 
@@ -353,6 +351,14 @@ export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeMode
       cancelled = true;
     };
   }, [sourcesKey]);
+
+  const vfxKey = vfx.map((anchor) => `${anchor.kind}:${anchor.at.join(",")}`).join("|");
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage || status !== "ready") return;
+    idleRef.current?.dispose();
+    idleRef.current = createIdleVfx(stage.pivot, vfxRef.current);
+  }, [vfxKey, status]);
 
   const turn = (delta: number) => {
     yawRef.current += delta;
