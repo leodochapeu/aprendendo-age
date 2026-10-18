@@ -1269,6 +1269,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -5489,6 +5493,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -12068,6 +12076,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -12121,6 +12133,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -12654,6 +12670,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -12701,6 +12721,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13268,7 +13292,7 @@
     "ingles": "Portable Ram",
     "tipo": [
       {
-        "type": "Arma de cerco",
+        "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
       }
     ],
@@ -13320,6 +13344,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13966,6 +13994,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -14883,6 +14915,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -14937,7 +14973,7 @@
     "ingles": "Axe Cart",
     "tipo": [
       {
-        "type": "Arma de cerco",
+        "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
       }
     ],
@@ -15589,6 +15625,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [

@@ -41,7 +41,7 @@ PRIMARY_ROLE_TYPES = [
     ("AbstractArcher", "Artilharia"),
     ("Ranged", "Artilharia"),
     ("AbstractCavalry", "Cavalaria"),
-    ("AbstractSiegeWeapon", "Arma de cerco"),
+    ("AbstractSiegeWeapon", "Cerco"),
     ("AbstractShip", "Navio"),
     ("AbstractMythUnit", "Unidade mítica"),
     ("MythUnit", "Unidade mítica"),

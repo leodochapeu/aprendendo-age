@@ -11779,6 +11779,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -11832,6 +11836,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -12365,6 +12373,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -12412,6 +12424,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13031,6 +13047,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13677,6 +13697,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -14594,6 +14618,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -15300,6 +15328,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [

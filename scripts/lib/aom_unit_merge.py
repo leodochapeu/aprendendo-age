@@ -55,6 +55,7 @@ LOCALIZED_FIELDS = (
 TIPO_LABEL_EN = {
     "Unidade mítica": "Mythic",
     "Arma de cerco": "Cerco",
+    "Cerco": "Cerco",
     "Herói": "Hero",
     "Batedor": "Scout",
     "Aldeão": "Villager",

@@ -43,6 +43,7 @@ UNIT_TYPE_ICON = {
     "Unidade mítica": "aomr_type_myth_unit_icon",
     "Herói": "aomr_type_hero_icon",
     "Arma de cerco": "aomr_type_siege_weapon_icon",
+    "Cerco": "aomr_type_siege_weapon_icon",
     "Aldeão": "aomr_type_villager_icon",
     "Batedor": "aomr_type_scout_icon",
     "Scout": "aomr_type_scout_icon",
