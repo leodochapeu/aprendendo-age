@@ -285,6 +285,8 @@ export const ptMessages: TranslationTree = {
       description: "Militares, mitológicas e heróis — filtros por nome ou papel.",
       troopBenefits: "Benefícios de Tropa",
       troopBenefitsAria: "Abrir modal: Benefícios de Tropa",
+      openVillager: "Ver ficha de aldeão",
+      openVillagerAria: "Abrir a ficha de coleta em Aldeões",
       filters: {
         button: "Filtros",
         buttonAria: "Abrir filtros de unidades",

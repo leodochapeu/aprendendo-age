@@ -41,6 +41,7 @@ from aom_unit_model import (  # noqa: E402
     render_preview,
 )
 from aom_unit_techs import bake_unit_techs, merge_tech_manifest  # noqa: E402
+from aom_unit_vfx import idle_vfx_anchors, merge_idle_vfx  # noqa: E402
 
 
 def _slug(proto: str) -> str:
@@ -156,6 +157,10 @@ def main() -> int:
                 for option in group["options"]
             ]
             print(f"  tecnologias: {', '.join(labels)}")
+        try:
+            merge_idle_vfx(int(unit_id), idle_vfx_anchors(bars, anim, dest))
+        except Exception as exc:  # noqa: BLE001 — uma unidade ruim não para o lote
+            print(f"  vfx falhou: {exc}")
 
     MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     merge_tech_manifest(tech_updates, {unit_id for unit_id in tech_updates})

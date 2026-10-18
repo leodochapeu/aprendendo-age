@@ -285,6 +285,8 @@ export const enMessages: TranslationTree = {
       description: "Military, myth, and heroes — filter by name or role.",
       troopBenefits: "Troop Benefits",
       troopBenefitsAria: "Open modal: Troop Benefits",
+      openVillager: "View villager sheet",
+      openVillagerAria: "Open the gather sheet in Villagers",
       filters: {
         button: "Filters",
         buttonAria: "Open unit filters",

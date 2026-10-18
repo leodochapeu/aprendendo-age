@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
+import { createIdleVfx, type IdleVfx } from "@/components/unidade/unitIdleVfx";
+import type { IdleVfxAnchor } from "@/lib/unitIdleVfx";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const YAW_STEP = 0.38;
@@ -9,6 +11,7 @@ const YAW_STEP = 0.38;
 type UnidadeModelViewerProps = {
   urls: string[];
   hero?: boolean;
+  vfx?: IdleVfxAnchor[];
 };
 
 type Stage = {
@@ -202,15 +205,18 @@ function clearPivot(pivot: THREE.Group) {
   }
 }
 
-export function UnidadeModelViewer({ urls, hero = false }: UnidadeModelViewerProps) {
+export function UnidadeModelViewer({ urls, hero = false, vfx = [] }: UnidadeModelViewerProps) {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const yawRef = useRef(0.45);
   const dragRef = useRef({ x: 0, active: false });
   const stageRef = useRef<Stage | null>(null);
   const auraRef = useRef<HeroAura | null>(null);
+  const idleRef = useRef<IdleVfx | null>(null);
   const heroRef = useRef(hero);
   heroRef.current = hero;
+  const vfxRef = useRef(vfx);
+  vfxRef.current = vfx;
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const sourcesKey = urls.join("|");
 
@@ -267,6 +273,7 @@ export function UnidadeModelViewer({ urls, hero = false }: UnidadeModelViewerPro
       if (disposed) return;
       placeCamera();
       auraRef.current?.update(performance.now() / 1000, camera);
+      idleRef.current?.update(performance.now() / 1000);
       renderer.render(scene, camera);
       frame = requestAnimationFrame(tick);
     };
@@ -277,6 +284,8 @@ export function UnidadeModelViewer({ urls, hero = false }: UnidadeModelViewerPro
       stageRef.current = null;
       auraRef.current?.dispose();
       auraRef.current = null;
+      idleRef.current?.dispose();
+      idleRef.current = null;
       cancelAnimationFrame(frame);
       resize.disconnect();
       disposeScene(scene);
@@ -309,6 +318,8 @@ export function UnidadeModelViewer({ urls, hero = false }: UnidadeModelViewerPro
         if (!models.length) {
           auraRef.current?.dispose();
           auraRef.current = null;
+          idleRef.current?.dispose();
+          idleRef.current = null;
           setStatus("error");
           return;
         }
@@ -333,6 +344,8 @@ export function UnidadeModelViewer({ urls, hero = false }: UnidadeModelViewerPro
       stage.pivot.add(shadow);
       auraRef.current?.dispose();
       auraRef.current = heroRef.current ? createHeroAura(stage.pivot.parent ?? stage.pivot, box) : null;
+      idleRef.current?.dispose();
+      idleRef.current = createIdleVfx(stage.pivot, vfxRef.current);
       setStatus("ready");
     });
 

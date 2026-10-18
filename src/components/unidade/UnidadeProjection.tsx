@@ -5,6 +5,7 @@ import tokenAssetMap from "@/data/token_asset_map.json";
 import { useCatalog } from "@/hooks/useCatalog";
 import { resolveTokenIconSrc } from "@/lib/tokenIconUrl";
 import { useTranslation } from "@/hooks/useTranslation";
+import { unitIdleVfx } from "@/lib/unitIdleVfx";
 import { projectionUrls, toggleTechTag, unitTechVisual, type BodySex, type TechGroup, type WeaponStance } from "@/lib/unitModelTechs";
 
 type UnidadeProjectionProps = {
@@ -171,7 +172,7 @@ export function UnidadeProjection({ unitId, fallbackUrl, hero = false }: Unidade
           ) : null}
         </div>
       ) : null}
-      <UnidadeModelViewer urls={urls} hero={hero} />
+      <UnidadeModelViewer urls={urls} hero={hero} vfx={unitIdleVfx(unitId)} />
     </div>
   );
 }
