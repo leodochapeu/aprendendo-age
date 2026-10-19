@@ -33,6 +33,8 @@ export type CommunityVideoSubmitPayload = {
   channelAvatarUrl?: string;
   channelName?: string;
   tagIds?: string[];
+  /** Data de publicação no YouTube. A lista pública ordena por ela. */
+  publishedAt?: string;
 };
 
 export type CommunityVideoDuplicateCheck = {
@@ -149,7 +151,7 @@ export async function fetchCommunityVideoTags(): Promise<CommunityVideoTag[]> {
   return (data ?? []).map((row) => mapTag(row as TagRow));
 }
 
-/** Lista vídeos aprovados para a página pública. */
+/** Lista vídeos aprovados, do publicado mais recente no YouTube para o mais antigo. */
 export async function fetchApprovedCommunityVideos(): Promise<CommunityVideo[]> {
   if (!isSupabaseConfigured()) return [];
 
@@ -160,6 +162,7 @@ export async function fetchApprovedCommunityVideos(): Promise<CommunityVideo[]> 
     .from("community_videos")
     .select(VIDEO_SELECT)
     .eq("status", "approved")
+    // created_at guarda a data de publicação no YouTube.
     .order("created_at", { ascending: false });
 
   if (error) throw new Error(error.message);
@@ -257,6 +260,9 @@ export async function submitCommunityVideo(
   const youtubeVideoId = extractYouTubeVideoId(payload.videoUrl);
   if (!youtubeVideoId) return { ok: false, message: "SUBMIT_ERROR" };
 
+  const publishedAtMs = payload.publishedAt ? Date.parse(payload.publishedAt) : Number.NaN;
+  const publishedAt = Number.isNaN(publishedAtMs) ? null : new Date(publishedAtMs).toISOString();
+
   const duplicate = await checkCommunityVideoDuplicate(payload.videoUrl, payload.title);
   if ("ok" in duplicate) {
     return { ok: false, message: duplicate.message };
@@ -276,6 +282,7 @@ export async function submitCommunityVideo(
       channel_name: payload.channelName?.trim() || null,
       status: "pending",
       submitted_by: user.id,
+      ...(publishedAt ? { created_at: publishedAt } : {}),
     })
     .select("id")
     .single();

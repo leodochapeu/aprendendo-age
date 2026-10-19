@@ -38,6 +38,7 @@ export function CommunityVideoSubmitModal({ open, onClose, onSuccess, availableT
   const [thumbnailUrl, setThumbnailUrl] = useState("");
   const [channelAvatarUrl, setChannelAvatarUrl] = useState("");
   const [channelName, setChannelName] = useState("");
+  const [publishedAt, setPublishedAt] = useState("");
   const [selectedTagIds, setSelectedTagIds] = useState<string[]>([]);
   const [tags, setTags] = useState<CommunityVideoTag[]>(availableTags ?? []);
   const [syncing, setSyncing] = useState(false);
@@ -62,6 +63,7 @@ export function CommunityVideoSubmitModal({ open, onClose, onSuccess, availableT
     setThumbnailUrl("");
     setChannelAvatarUrl("");
     setChannelName("");
+    setPublishedAt("");
     setSelectedTagIds([]);
     setError(null);
   }
@@ -86,6 +88,7 @@ export function CommunityVideoSubmitModal({ open, onClose, onSuccess, availableT
       setThumbnailUrl(meta.thumbnailUrl);
       setChannelAvatarUrl(meta.channelAvatarUrl);
       setChannelName(meta.channelName);
+      setPublishedAt(meta.publishedAt);
     } catch (e) {
       if (e instanceof YouTubeApiNotConfiguredError) {
         setError(t(`${prefix}.youtubeNotConfigured`));
@@ -112,6 +115,16 @@ export function CommunityVideoSubmitModal({ open, onClose, onSuccess, availableT
       return;
     }
 
+    let publishedAtValue = publishedAt;
+    if (!publishedAtValue) {
+      try {
+        const meta = await fetchYouTubeVideoMetadata(videoUrl);
+        publishedAtValue = meta.publishedAt;
+      } catch {
+        publishedAtValue = "";
+      }
+    }
+
     setSaving(true);
     const res = await submitCommunityVideo({
       videoUrl,
@@ -121,6 +134,7 @@ export function CommunityVideoSubmitModal({ open, onClose, onSuccess, availableT
       channelAvatarUrl,
       channelName,
       tagIds: selectedTagIds,
+      publishedAt: publishedAtValue || undefined,
     });
     setSaving(false);
 
@@ -169,7 +183,10 @@ export function CommunityVideoSubmitModal({ open, onClose, onSuccess, availableT
             type="url"
             required
             value={videoUrl}
-            onChange={(e) => setVideoUrl(e.target.value)}
+            onChange={(e) => {
+              setVideoUrl(e.target.value);
+              setPublishedAt("");
+            }}
             className={inputClass}
             placeholder="https://www.youtube.com/watch?v=…"
           />

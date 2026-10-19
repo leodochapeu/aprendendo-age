@@ -6,6 +6,8 @@ export type YouTubeVideoMetadata = {
   thumbnailUrl: string;
   channelAvatarUrl: string;
   channelName: string;
+  /** ISO 8601, data em que o vídeo foi publicado no YouTube. */
+  publishedAt: string;
 };
 
 export type YouTubeChannelMetadata = {
@@ -130,6 +132,7 @@ export async function fetchYouTubeVideoMetadata(videoUrl: string): Promise<YouTu
       snippet?: {
         title?: string;
         description?: string;
+        publishedAt?: string;
         channelId?: string;
         channelTitle?: string;
         thumbnails?: ThumbnailSet;
@@ -166,5 +169,6 @@ export async function fetchYouTubeVideoMetadata(videoUrl: string): Promise<YouTu
     thumbnailUrl: pickThumbnail(snippet.thumbnails),
     channelAvatarUrl,
     channelName,
+    publishedAt: snippet.publishedAt?.trim() ?? "",
   };
 }
