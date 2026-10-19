@@ -2,6 +2,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 
 import { DeusPortraitHeaderActions } from "@/components/deus/DeusPortraitHeaderActions";
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { NotionText } from "@/components/ui/NotionText";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -113,15 +114,21 @@ export function PanteaoDetailPage() {
             <p className="font-[family-name:var(--font-display)] text-xs font-medium uppercase tracking-[0.18em] text-amber-400/90">
               {t("common.pantheon")}
             </p>
-            <h1
-              id="panteao-detail-heading"
-              className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-amber-50 sm:text-4xl md:text-5xl"
-            >
-              {p.nome}
-            </h1>
+            <div className="flex items-start justify-between gap-3">
+              <h1
+                id="panteao-detail-heading"
+                className="min-w-0 font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-amber-50 sm:text-4xl md:text-5xl"
+              >
+                {p.nome}
+              </h1>
+              <CatalogRecordNav section="panteoes" currentId={p.id} className="mt-1 shrink-0 md:mt-2" />
+            </div>
           </header>
         ) : (
-          <PageHeader title={p.nome} />
+          <PageHeader
+            title={p.nome}
+            siblingNav={<CatalogRecordNav section="panteoes" currentId={p.id} />}
+          />
         )}
 
         {p.description ? (

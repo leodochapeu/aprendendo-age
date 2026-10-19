@@ -1,10 +1,14 @@
 """Extrai descrições (SR/LR) e habilidades de unidades a partir de strings + proto."""
 from __future__ import annotations
 
+import json
 import re
+import subprocess
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
+
+from aom_game_paths import DEFAULT_CRYBAR, DEFAULT_GAME_DIR, UI_TEXTURE_CACHE_BAR, resolve_game_dir
 
 # Protoactions genéricos de combate — não são habilidades de unidade.
 SKIP_PROTOACTION_NAMES = frozenset(
@@ -25,6 +29,9 @@ SKIP_PROTOACTION_NAMES = frozenset(
         "AutoGather",
     }
 )
+
+SACRED_HANDS_ID = "STR_ABILITY_SACRED_HANDS"
+SACRED_HANDS_LR = "STR_ABILITY_SACRED_HANDS_LR"
 
 SKIP_ABILITY_KEY_PARTS = (
     "NOTIFICATION",
@@ -126,6 +133,109 @@ def icon_token_from_path(icon_path: str) -> str:
     return stem
 
 
+def _compact_ability_key(value: str) -> str:
+    cleaned = value.lower().replace("ability", "").replace("icon", "")
+    return re.sub(r"[^a-z0-9]", "", cleaned)
+
+
+def load_ability_icon_index(
+    *,
+    cache_dir: Path | None = None,
+    game_dir: Path | str | None = None,
+    crybar_exe: Path | None = None,
+    refresh: bool = False,
+) -> dict[str, str]:
+    """stem → caminho .png no UITextureCache (ex.: einheri_ability_icon → resources/.../einheri_ability_icon.png)."""
+    cache_file = (cache_dir / "ability_icon_paths.json") if cache_dir else None
+    if cache_file and cache_file.exists() and not refresh:
+        try:
+            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            if isinstance(data, dict) and data:
+                return {str(k): str(v) for k, v in data.items()}
+        except (OSError, json.JSONDecodeError):
+            pass
+
+    game = resolve_game_dir(str(game_dir) if game_dir else str(DEFAULT_GAME_DIR))
+    crybar = Path(crybar_exe) if crybar_exe else DEFAULT_CRYBAR
+    bar = game / UI_TEXTURE_CACHE_BAR
+    if not crybar.exists() or not bar.exists():
+        return {}
+
+    result = subprocess.run(
+        [str(crybar), "bar", "list", str(bar), "--json", "--filter", "**/abilities/**"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    if result.returncode != 0:
+        return {}
+
+    try:
+        entries = json.loads(result.stdout or "[]")
+    except json.JSONDecodeError:
+        return {}
+
+    index: dict[str, str] = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        path = str(entry.get("Path") or "").replace("\\", "/")
+        if not path:
+            continue
+        stem = Path(path).stem.lower()
+        if path.lower().endswith(".dds"):
+            path = path[:-4] + ".png"
+        index[stem] = path
+
+    if cache_file and index:
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(
+            json.dumps(index, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    return index
+
+
+def resolve_ability_icon_path(
+    sid: str,
+    proto_name: str,
+    icon_index: dict[str, str],
+) -> str:
+    """Resolve caminho de ícone para um STR_ABILITY_* a partir do índice do texture bar."""
+    if not icon_index or not sid:
+        return ""
+    key = sid.removeprefix("STR_ABILITY_").lower()
+    proto_key = camel_to_snake_upper(proto_name).lower() if proto_name else ""
+    candidates: list[str] = [f"{key}_ability_icon", f"{key}_ability", key]
+    parts = key.split("_")
+    if len(parts) >= 2:
+        candidates.append("_".join(parts[:-1]) + "_ability_" + parts[-1] + "_icon")
+        candidates.append("_".join(parts[:-1]) + "_ability_" + parts[-1])
+    if proto_key and key.startswith(proto_key + "_"):
+        rest = key[len(proto_key) + 1 :]
+        candidates.append(f"{proto_key}_ability_{rest}_icon")
+    if proto_key:
+        candidates.append(f"{proto_key}_ability_icon")
+
+    for cand in candidates:
+        if cand in icon_index:
+            return icon_index[cand]
+
+    by_compact: dict[str, str] = {}
+    for stem, path in icon_index.items():
+        by_compact.setdefault(_compact_ability_key(stem), path)
+    for probe in (key, proto_key):
+        if probe and _compact_ability_key(probe) in by_compact:
+            return by_compact[_compact_ability_key(probe)]
+    return ""
+
+
+def unit_is_hero(unit: ET.Element) -> bool:
+    types = {node.text.strip() for node in unit.findall("unittype") if node.text}
+    return "Hero" in types
+
+
 def parse_protounit_commands(path: Path) -> dict[str, dict[str, str]]:
     """name → {icon, displaynameid, rollovertextid, shortrollovertextid}"""
     if not path.exists():
@@ -195,11 +305,21 @@ def build_habilidades(
     strings_en: dict[str, str],
     ability_name_ids: set[str],
     commands_by_name: dict[str, dict[str, str]],
+    ability_icon_index: dict[str, str] | None = None,
 ) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
     """Retorna (habilidades_pt, habilidades_en)."""
     pt_list: list[dict[str, str]] = []
     en_list: list[dict[str, str]] = []
     seen_names: set[str] = set()
+    icon_index = ability_icon_index or {}
+
+    def icon_for_sid(sid: str, fallback_path: str = "") -> str:
+        if fallback_path:
+            token = icon_token_from_path(fallback_path)
+            if token:
+                return token
+        path = resolve_ability_icon_path(sid, proto_name, icon_index)
+        return icon_token_from_path(path) if path else ""
 
     def push(nome_pt: str, nome_en: str, desc_pt: str, desc_en: str, icon: str) -> None:
         nome_pt = clean_game_string(nome_pt)
@@ -229,7 +349,7 @@ def build_habilidades(
         lr = meta.get("rollovertextid") or ""
         if not dn.startswith("STR_ABILITY_"):
             continue
-        icon = icon_token_from_path(meta.get("icon", ""))
+        icon = icon_for_sid(dn, meta.get("icon", ""))
         push(
             strings_pt.get(dn, strings_en.get(dn, "")),
             strings_en.get(dn, ""),
@@ -245,7 +365,17 @@ def build_habilidades(
             strings_en.get(sid, ""),
             strings_pt.get(lr, strings_en.get(lr, "")),
             strings_en.get(lr, ""),
-            "",  # ícone via comando quando existir
+            icon_for_sid(sid),
+        )
+
+    # Heróis: Mãos Sagradas (pegar relíquias)
+    if unit_is_hero(unit) and SACRED_HANDS_ID in ability_name_ids:
+        push(
+            strings_pt.get(SACRED_HANDS_ID, strings_en.get(SACRED_HANDS_ID, "")),
+            strings_en.get(SACRED_HANDS_ID, ""),
+            strings_pt.get(SACRED_HANDS_LR, strings_en.get(SACRED_HANDS_LR, "")),
+            strings_en.get(SACRED_HANDS_LR, ""),
+            icon_for_sid(SACRED_HANDS_ID),
         )
 
     return pt_list, en_list
@@ -316,6 +446,7 @@ def extract_unit_texts_and_abilities(
     strings_en: dict[str, str],
     ability_name_ids: set[str],
     commands_by_name: dict[str, dict[str, str]],
+    ability_icon_index: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     sr_id = _child_text(unit, "shortrollovertextid")
     lr_id = _child_text(unit, "rollovertextid")
@@ -331,6 +462,7 @@ def extract_unit_texts_and_abilities(
         strings_en=strings_en,
         ability_name_ids=ability_name_ids,
         commands_by_name=commands_by_name,
+        ability_icon_index=ability_icon_index,
     )
     hist_pt, hist_en = resolve_history_text(proto_name, strings_pt, strings_en)
 

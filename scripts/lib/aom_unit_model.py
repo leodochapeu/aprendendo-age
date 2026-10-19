@@ -350,6 +350,35 @@ def _iter_model_files(elem: ET.Element):
         yield from _iter_model_files(child)
 
 
+def _first_composite(elem: ET.Element) -> str | None:
+    """Malha composta quando não há TMModel. O ramo sem pesquisa vem primeiro."""
+
+    def walk(node: ET.Element, nested: bool) -> str | None:
+        tag = _tag(node)
+        if nested and tag in {"anim", "attachment", "attach"}:
+            return None
+        if tag == "component" and (_component_label(node).startswith("vfx") or _is_death_component(node)):
+            return None
+        if tag == "logic":
+            children = [child for child in node if _tag(child) not in {"anim", "attachment", "attach"}]
+            for child in children:
+                if _tag(child) == "none":
+                    return walk(child, True)
+            return walk(children[0], True) if children else None
+        if tag == "assetreference" and (node.get("type") or "").lower() == "tmcomposite":
+            for child in node:
+                if _tag(child) == "file" and child.text and child.text.strip():
+                    return child.text.replace("\\", "/").strip()
+            return None
+        for child in node:
+            found = walk(child, True)
+            if found:
+                return found
+        return None
+
+    return walk(elem, False)
+
+
 def _pick_model(files: list[str]) -> str | None:
     for path in files:
         low = path.lower()
@@ -1717,7 +1746,13 @@ def visual_primitives(
         chosen = _select_model(component, techs, bars, submodel_map(root))
         model_paths = [chosen] if chosen else []
     if not model_paths:
-        return [], []
+        composite = _first_composite(root)
+        if not composite:
+            return [], []
+        from aom_building_model import visual_primitives as composite_meshes
+
+        prims = composite_meshes(bars, composite)
+        return (prims, []) if prims else ([], [])
 
     body_path = model_paths[0]
     body_glb = ensure_model_glb(bars, body_path)

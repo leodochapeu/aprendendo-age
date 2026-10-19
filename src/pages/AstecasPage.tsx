@@ -11,7 +11,17 @@ import { InfoRow } from "@/components/ui/InfoRow";
 import { PantheonMetaIcon } from "@/components/ui/PantheonMetaIcon";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
-import { familyMemberForPantheon, isHiddenFamilyMember } from "@/lib/buildingFamilies";
+import { familyMemberForPantheon } from "@/lib/buildingFamilies";
+import {
+  AZTEC_PANTEON_ID,
+  MAPAS_OBSIDIAN_ORIGEM,
+  isAztecAldeao,
+  isAztecConstrucao,
+  isAztecDeus,
+  isAztecGodpower,
+  isAztecUnidade,
+  isObsidianMap,
+} from "@/lib/astecasCatalog";
 import { getAldeaoAssetUrl, getConstrucaoAssetUrl, getMapaAssetUrl, getMapaPreviewUrl, getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { formatGodNameForMetaNotion, getDeusAssetUrl } from "@/lib/deusAssetUrl";
 import { getGodPowerAssetUrl } from "@/lib/godPowerAssetUrl";
@@ -24,9 +34,6 @@ import { resolveTokenIconSrc } from "@/lib/tokenIconUrl";
 import { hasTipoContent } from "@/lib/unidadeTipo";
 import { StartGodPortraits } from "@/components/start/StartGodPortraits";
 import { startNovoTagClass } from "@/pages/StartsPage";
-
-const AZTEC_PANTEON_ID = 7;
-const MAPAS_OBSIDIAN_ORIGEM = "AoM: Obsidian Mirror (2026)";
 
 const sectionTitleClass =
   "mb-4 font-[family-name:var(--font-display)] text-xl font-semibold text-amber-100/95";
@@ -66,7 +73,7 @@ export function AstecasPage() {
   const deusesAztecas = useMemo(
     () =>
       [...deuses]
-        .filter((d) => firstNumId(d.panteao) === AZTEC_PANTEON_ID)
+        .filter(isAztecDeus)
         .sort((a, b) => {
           const aM = a.hierarquia?.toLowerCase() === "maior" ? 0 : 1;
           const bM = b.hierarquia?.toLowerCase() === "maior" ? 0 : 1;
@@ -79,20 +86,20 @@ export function AstecasPage() {
   const godpowersAztecas = useMemo(
     () =>
       [...godpowers]
-        .filter((g) => firstNumId(g.panteao) === AZTEC_PANTEON_ID)
+        .filter(isAztecGodpower)
         .sort((a, b) => a.id - b.id),
     [godpowers],
   );
 
   const aldeoesAztecas = useMemo(
-    () => aldeoes.filter((a) => firstNumId(a.panteao) === AZTEC_PANTEON_ID),
+    () => aldeoes.filter(isAztecAldeao),
     [aldeoes],
   );
 
   const unidadesAztecas = useMemo(
     () =>
       [...unidades]
-        .filter((u) => firstNumId(u.panteao) === AZTEC_PANTEON_ID)
+        .filter(isAztecUnidade)
         .sort((a, b) => a.id - b.id),
     [unidades],
   );
@@ -100,11 +107,7 @@ export function AstecasPage() {
   const construcoesAztecas = useMemo(
     () =>
       [...construcoes]
-        .filter(
-          (c) =>
-            !isHiddenFamilyMember(c.id) &&
-            (c.panteao_id === AZTEC_PANTEON_ID || familyMemberForPantheon(c.id, AZTEC_PANTEON_ID) != null),
-        )
+        .filter(isAztecConstrucao)
         .sort((a, b) => a.id - b.id),
     [construcoes],
   );
@@ -113,7 +116,7 @@ export function AstecasPage() {
     () =>
       mapas
         .map((m, i) => ({ m, i }))
-        .filter(({ m }) => m.origem.includes(MAPAS_OBSIDIAN_ORIGEM)),
+        .filter(({ m }) => isObsidianMap(m)),
     [mapas],
   );
 

@@ -22,6 +22,7 @@ from aom_game_paths import BAR_ENTRIES
 from aom_unit_abilities import (
     extract_unit_texts_and_abilities,
     index_ability_name_ids,
+    load_ability_icon_index,
     parse_protounit_commands,
 )
 
@@ -394,6 +395,7 @@ def extract_unit_record(
     building_names_pt: dict[str, str],
     ability_name_ids: set[str] | None = None,
     commands_by_name: dict[str, dict[str, str]] | None = None,
+    ability_icon_index: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     unit_types = {node.text.strip() for node in unit.findall("unittype") if node.text}
     pantheon = detect_pantheon(unit)
@@ -463,6 +465,7 @@ def extract_unit_record(
         strings_en=strings_en,
         ability_name_ids=ability_name_ids or set(),
         commands_by_name=commands_by_name or {},
+        ability_icon_index=ability_icon_index,
     )
     record.update(texts)
     # aliases legados
@@ -537,6 +540,7 @@ def extract_units(
     building_names = load_building_name_map(construcoes_path or Path())
     ability_name_ids = index_ability_name_ids(strings_en)
     commands_by_name = parse_protounit_commands(cache_dir / "gameplay" / "proto_unit_commands.xml")
+    ability_icon_index = load_ability_icon_index(cache_dir=cache_dir)
 
     records: list[dict[str, Any]] = []
     for name, unit in sorted(proto_units.items()):
@@ -554,6 +558,7 @@ def extract_units(
                     building_names_pt=building_names,
                     ability_name_ids=ability_name_ids,
                     commands_by_name=commands_by_name,
+                    ability_icon_index=ability_icon_index,
                 )
             )
     return records

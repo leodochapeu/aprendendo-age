@@ -2,6 +2,7 @@ import { useLocation, useParams } from "react-router-dom";
 
 import { DeusPortraitHeaderActions } from "@/components/deus/DeusPortraitHeaderActions";
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitOrText } from "@/components/ui/InfoRowPortraitCluster";
 import { NotionText } from "@/components/ui/NotionText";
@@ -102,6 +103,7 @@ export function GodpowerDetailPage() {
         title={g.nome}
         description={entityDisplayDescription(g, locale, t)}
         headerIconSrc={powerIcon}
+        siblingNav={<CatalogRecordNav section="poderes" currentId={g.id} />}
       />
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">

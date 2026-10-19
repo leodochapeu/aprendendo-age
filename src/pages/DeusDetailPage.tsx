@@ -4,6 +4,7 @@ import { DeusBuildAvaliacaoCards } from "@/components/deus/DeusBuildAvaliacaoCar
 import { DeusExplicacaoMaiorSection } from "@/components/deus/DeusExplicacaoMaiorSection";
 import { GodMajorDecisionTree } from "@/components/deus/GodMajorDecisionTree";
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitCluster, InfoRowPortraitOrText } from "@/components/ui/InfoRowPortraitCluster";
 import { MetaNotionLine } from "@/components/ui/MetaNotionLine";
@@ -133,6 +134,7 @@ export function DeusDetailPage() {
           ) : undefined
         }
         headerIconSrc={deusIcon}
+        siblingNav={<CatalogRecordNav section="deuses" currentId={d.id} />}
       />
 
       <div className={d.hierarquia === "Maior" ? "grid gap-6 lg:grid-cols-2" : "grid gap-6"}>

@@ -228,7 +228,13 @@
     "habilidades": [
       {
         "nome": "Pancada",
-        "descricao": "Com o escudo, espanca uma unidade, jogando-a para cima e causando muito dano."
+        "descricao": "Com o escudo, espanca uma unidade, jogando-a para cima e causando muito dano.",
+        "icon": "aomr_ajax_spc_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade - 34\nPátria - Salamina\nOcupação - príncipe, guerreiro\n\nFilho do Rei de Salamina, Ajax foi o segundo maior campeão grego em Troia, atrás apenas de Aquiles. Homer descreveu Ájax como uma parede e disse que ele era muito mais alto que os outros homens. Quando Aquiles se retirou da luta, foi Ájax quem enfrentou Heitor em combate individual. Os dois heróis lutaram o dia todo, apenas Heitor sofreu um ferimento leve. Após a morte de Aquiles, Ájax competiu com Odisseu pela armadura do herói caído. Odisseu provou ser mais eloquente como orador e recebeu o prêmio."
@@ -307,7 +313,14 @@
     "icon": "aomr_jason_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói. Bom contra unidades mitológicas. Muda para um ataque de longo alcance para combater unidades voadoras. Coleta relíquias.",
-    "historia": "Idade – 22\nTerra natal – Iolcos, mais tarde Corinto\nOcupação – líder dos Argonautas\n\nCom medo de uma profecia de que Jasão algum dia o mataria, o rei Pélias de Iolcos enviou o herói na impossível missão de obter o Velo de Ouro do distante país de Cólquida. Jasão ordenou a construção do grande navio Argo e reuniu uma série de heróis, posteriormente conhecidos como Argonautas, para acompanhá-lo. Depois de uma série de aventuras, incluindo a primeira passagem do Symplegades (o Bósforo), os Argonautas chegaram a Cólquida, que se acredita estar em algum lugar à beira do Mar Negro. O rei Eetes da Cólquida exigiu que Jasão cumprisse uma série de tarefas para obter o velo, incluindo arar um campo com bois cuspidores de fogo, semear dentes de dragão em um campo e lutar contra o exército que se levantou deles e, finalmente, derrotar o dragão que guardava o próprio velo. Com o velo nas mãos, Jasão fugiu com Medeia, filha de Eetes, e teve muitas aventuras na viagem de volta. Medeia planejou a morte do rei Pélias, cumprindo a antiga profecia. Quando o casamento deles fracassou, Medeia se vingou terrivelmente, matando seus filhos e também a nova noiva de Jasão, Creusa. Jasão foi morto muitos anos depois por uma madeira que caiu do Argo."
+    "historia": "Idade – 22\nTerra natal – Iolcos, mais tarde Corinto\nOcupação – líder dos Argonautas\n\nCom medo de uma profecia de que Jasão algum dia o mataria, o rei Pélias de Iolcos enviou o herói na impossível missão de obter o Velo de Ouro do distante país de Cólquida. Jasão ordenou a construção do grande navio Argo e reuniu uma série de heróis, posteriormente conhecidos como Argonautas, para acompanhá-lo. Depois de uma série de aventuras, incluindo a primeira passagem do Symplegades (o Bósforo), os Argonautas chegaram a Cólquida, que se acredita estar em algum lugar à beira do Mar Negro. O rei Eetes da Cólquida exigiu que Jasão cumprisse uma série de tarefas para obter o velo, incluindo arar um campo com bois cuspidores de fogo, semear dentes de dragão em um campo e lutar contra o exército que se levantou deles e, finalmente, derrotar o dragão que guardava o próprio velo. Com o velo nas mãos, Jasão fugiu com Medeia, filha de Eetes, e teve muitas aventuras na viagem de volta. Medeia planejou a morte do rei Pélias, cumprindo a antiga profecia. Quando o casamento deles fracassou, Medeia se vingou terrivelmente, matando seus filhos e também a nova noiva de Jasão, Creusa. Jasão foi morto muitos anos depois por uma madeira que caiu do Argo.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 6,
@@ -385,7 +398,13 @@
     "habilidades": [
       {
         "nome": "Bardo dos Heróis (Passiva)",
-        "descricao": "Unidades humanas próximas recebem um multiplicador de dano contra unidades Mitológicas."
+        "descricao": "Unidades humanas próximas recebem um multiplicador de dano contra unidades Mitológicas.",
+        "icon": "aomr_orpheus_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade – 28 anos\nTerra natal – Trácia\nOcupação – herói e semideus\n\nHerdando os dons artísticos da mãe, a musa Calíope, Orfeu criou canções tão encantadoras que todos os seres vivos paravam para ouvir, e até as pedras eram enfeitiçadas por sua música. Ele acompanhou Jasão e os Argonautas, salvando o navio das Sereias ao tocar sua lira de forma mais bela do que os monstros, superando seu canto hipnótico. Sua aventura mais famosa, porém, é a jornada ao mundo inferior em busca de sua amada perdida, Eurídice. Usando sua música para acalmar Cérbero e conseguir entrada no mundo inferior, tocou sua lira diante de Hades e Perséfone. Eles ficaram tão comovidos que permitiram que Eurídice retornasse ao mundo dos vivos, com a condição de que Orfeu caminhasse à frente dela e não olhasse para trás. Quando estavam quase na saída, Orfeu, tomado pela emoção, olhou para trás para ver Eurídice, fazendo com que ela desaparecesse para sempre no mundo inferior."
@@ -464,7 +483,14 @@
     "icon": "aomr_theseus_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói. Bom contra unidades mitológicas. Muda para um ataque de longo alcance para combater unidades voadoras. Coleta relíquias.",
-    "historia": "Idade - 32\nTerra natal - Trezena, mais tarde Atenas\nOcupação - rei\n\nA ascendência de Teseu é confusa. Ele era considerado filho ilegítimo de Egeu, rei de Atenas, ou filho de Poseidon. Criado por sua mãe, ele enfrentou muitos adversários e missões ao tentar retornar a Atenas para se reunir com seu pai. Ele foi então selecionado para fazer parte de um grupo de rapazes e moças a serem sacrificados ao Minotauro em Creta, como parte da compensação por uma longa guerra com seu rei, Minos. Em Creta, a filha de Minos, Ariadne, se apaixonou por Teseu e o ajudou a derrotar o Minotauro dentro do labirinto. Teseu retornou a Atenas, mas não conseguiu sinalizar adequadamente seu sucesso ao pai. Egeu se afogou em desespero, dando seu nome ao Mar Egeu. Teseu tornou-se rei e fez várias outras aventuras, mas perdeu popularidade tarde na vida e foi morto."
+    "historia": "Idade - 32\nTerra natal - Trezena, mais tarde Atenas\nOcupação - rei\n\nA ascendência de Teseu é confusa. Ele era considerado filho ilegítimo de Egeu, rei de Atenas, ou filho de Poseidon. Criado por sua mãe, ele enfrentou muitos adversários e missões ao tentar retornar a Atenas para se reunir com seu pai. Ele foi então selecionado para fazer parte de um grupo de rapazes e moças a serem sacrificados ao Minotauro em Creta, como parte da compensação por uma longa guerra com seu rei, Minos. Em Creta, a filha de Minos, Ariadne, se apaixonou por Teseu e o ajudou a derrotar o Minotauro dentro do labirinto. Teseu retornou a Atenas, mas não conseguiu sinalizar adequadamente seu sucesso ao pai. Egeu se afogou em desespero, dando seu nome ao Mar Egeu. Teseu tornou-se rei e fez várias outras aventuras, mas perdeu popularidade tarde na vida e foi morto.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 8,
@@ -848,7 +874,14 @@
     "icon": "aomr_achilles_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói em Montaria. Bom contra unidades mitológicas. Muda para ataque de longo alcance ao combater unidades voadoras. Coleta Relíquias.",
-    "historia": "Idade - 35\nPátria - Ftia\nOcupação - herói da Guerra de Tróia\n\nGrande guerreiro e campeão grego na Guerra de Tróia, ele era quase invulnerável, tendo sido mergulhado no rio Estige quando criança por sua mãe, Tétis. Durante a imersão, porém, ele foi segurado pelo tendão de um dos calcanhares (o tendão de Aquiles). Após uma discussão com Agamêmnon, líder dos gregos fora de Tróia, Aquiles recusou-se a lutar e a guerra começou a favorecer Tróia. O amigo de Aquiles, Pátroclo, vestiu a armadura de Aquiles na esperança de inspirar novamente os gregos, mas foi morto pelo campeão troiano, Heitor. Enfurecido, Aquiles voltou à luta, matou Heitor e arrastou seu corpo pela cidade. Guiado pelos deuses, Páris de Tróia atingiu Aquiles no calcanhar com uma flecha envenenada, e o grande guerreiro morreu."
+    "historia": "Idade - 35\nPátria - Ftia\nOcupação - herói da Guerra de Tróia\n\nGrande guerreiro e campeão grego na Guerra de Tróia, ele era quase invulnerável, tendo sido mergulhado no rio Estige quando criança por sua mãe, Tétis. Durante a imersão, porém, ele foi segurado pelo tendão de um dos calcanhares (o tendão de Aquiles). Após uma discussão com Agamêmnon, líder dos gregos fora de Tróia, Aquiles recusou-se a lutar e a guerra começou a favorecer Tróia. O amigo de Aquiles, Pátroclo, vestiu a armadura de Aquiles na esperança de inspirar novamente os gregos, mas foi morto pelo campeão troiano, Heitor. Enfurecido, Aquiles voltou à luta, matou Heitor e arrastou seu corpo pela cidade. Guiado pelos deuses, Páris de Tróia atingiu Aquiles no calcanhar com uma flecha envenenada, e o grande guerreiro morreu.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 14,
@@ -924,7 +957,14 @@
     "icon": "aomr_atalanta_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói Rápido. Bom contra unidades mitológicas. Muda para ataque de longo alcance ao combater unidades voadoras. Coleta Relíquias.",
-    "historia": "Idade - 28\nPátria - Arcádia (possivelmente Beócia)\nOcupação - caçadora e atleta\n\nQuando bebê, esta heroína foi abandonada em uma encosta por seu pai, que queria desesperadamente um filho. Amamentada por um urso e depois criada por caçadores que a encontraram, ela se tornou uma caçadora destemida e a corredora mais rápida conhecida. Ao que tudo indica, ela era uma personagem bonita, atlética e formidável com um lado mortal - em uma ocasião, ela matou dois centauros que tentaram atacá-la. Atalanta também se juntou à tripulação do Argo em sua busca para recuperar o Velo de Ouro da Cólquida e participou da caça ao javali da Calidônia. Usando suas excelentes habilidades de caça e corrida, ela arrancou o primeiro sangue da fera e recebeu a pele de javali como recompensa.\n\nApesar do aviso do Oráculo de que o casamento aceleraria sua destruição, Atalanta finalmente concordou em se casar com qualquer homem que pudesse vencê-la em uma corrida, acreditando que tal homem não existia. Infelizmente, um pretendente, Hipómenes, distraiu-a atirando maçãs douradas no seu caminho e conseguiu vencer a corrida. Após o casamento, o casal deixou suas paixões correrem soltas dentro de um templo de Zeus (ou Cibele, segundo alguns), irritando a grande divindade, que transformou os dois em leões."
+    "historia": "Idade - 28\nPátria - Arcádia (possivelmente Beócia)\nOcupação - caçadora e atleta\n\nQuando bebê, esta heroína foi abandonada em uma encosta por seu pai, que queria desesperadamente um filho. Amamentada por um urso e depois criada por caçadores que a encontraram, ela se tornou uma caçadora destemida e a corredora mais rápida conhecida. Ao que tudo indica, ela era uma personagem bonita, atlética e formidável com um lado mortal - em uma ocasião, ela matou dois centauros que tentaram atacá-la. Atalanta também se juntou à tripulação do Argo em sua busca para recuperar o Velo de Ouro da Cólquida e participou da caça ao javali da Calidônia. Usando suas excelentes habilidades de caça e corrida, ela arrancou o primeiro sangue da fera e recebeu a pele de javali como recompensa.\n\nApesar do aviso do Oráculo de que o casamento aceleraria sua destruição, Atalanta finalmente concordou em se casar com qualquer homem que pudesse vencê-la em uma corrida, acreditando que tal homem não existia. Infelizmente, um pretendente, Hipómenes, distraiu-a atirando maçãs douradas no seu caminho e conseguiu vencer a corrida. Após o casamento, o casal deixou suas paixões correrem soltas dentro de um templo de Zeus (ou Cibele, segundo alguns), irritando a grande divindade, que transformou os dois em leões.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 15,
@@ -1000,7 +1040,14 @@
     "icon": "aomr_heracles_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói. Bom contra unidades mitológicas. Muda para um ataque de longo alcance para combater unidades voadoras. Coleta relíquias.",
-    "historia": "Idade: 40\nTerra natal: Tirinto\nOcupação: herói e semideus\n\nFilho de Zeus e uma mulher mortal, Hércules (Héracles, no grego), foi dotado de uma força incrível. Ele estrangulou serpentes em seu berço quando era bebê e acidentalmente matou seu tutor com uma lira quando jovem. Infelizmente ele tinha uma inimiga terrível em Hera, a esposa ciumenta de Zeus, no Olimpo. Ela enlouqueceu Hércules a ponto de ele matar sua própria esposa e filhos. Depois de recuperar a sanidade, ele procurou o conselho do Oráculo de Delfos para pagar penitência e retomar uma vida normal. Ela o instruiu a realizar seus famosos doze trabalhos. Estes incluíam matar feras como o Leão de Nemeia (que ele estrangulou) e a Hidra, capturar outras feras e uma variedade de outras missões. Após uma variedade de outras aventuras, ele foi autorizado a retornar a Tirinto e se casar novamente. Hércules morreu muito mais tarde, após ser traiçoeiramente envenenado pelas maquinações de um centauro que tentou sequestrar sua esposa. Ele foi então convidado para o Olimpo e dotado de imortalidade."
+    "historia": "Idade: 40\nTerra natal: Tirinto\nOcupação: herói e semideus\n\nFilho de Zeus e uma mulher mortal, Hércules (Héracles, no grego), foi dotado de uma força incrível. Ele estrangulou serpentes em seu berço quando era bebê e acidentalmente matou seu tutor com uma lira quando jovem. Infelizmente ele tinha uma inimiga terrível em Hera, a esposa ciumenta de Zeus, no Olimpo. Ela enlouqueceu Hércules a ponto de ele matar sua própria esposa e filhos. Depois de recuperar a sanidade, ele procurou o conselho do Oráculo de Delfos para pagar penitência e retomar uma vida normal. Ela o instruiu a realizar seus famosos doze trabalhos. Estes incluíam matar feras como o Leão de Nemeia (que ele estrangulou) e a Hidra, capturar outras feras e uma variedade de outras missões. Após uma variedade de outras aventuras, ele foi autorizado a retornar a Tirinto e se casar novamente. Hércules morreu muito mais tarde, após ser traiçoeiramente envenenado pelas maquinações de um centauro que tentou sequestrar sua esposa. Ele foi então convidado para o Olimpo e dotado de imortalidade.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 16,
@@ -1075,7 +1122,14 @@
     ],
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói. Bom contra unidades Mitológicas. Muda para ataque de longo alcance ao combater unidades voadoras. Coleta Relíquias.",
-    "historia": "Idade – 23 anos\nTerra natal – Tebas\nOcupação – condutor de biga e escudeiro\n\nPrimo de Héracles, Iolau foi seu companheiro inabalável durante os doze trabalhos. Ele conduzia a biga de Héracles, carregava suas armas e lutava corajosamente ao seu lado. Durante o segundo trabalho, Iolau mostrou-se indispensável na batalha contra a temível Hidra de Lerna. À medida que o monstro regenerava duas cabeças para cada uma que Héracles cortava, o herói rapidamente se viu sobrecarregado. Com raciocínio rápido e coragem, Iolau entrou em ação, cauterizando os pescoços imediatamente após Héracles decapitá-los. Após uma luta intensa e exaustiva, restou apenas a cabeça final. Juntos, desferiram o golpe decisivo e derrotaram a monstruosa Hidra."
+    "historia": "Idade – 23 anos\nTerra natal – Tebas\nOcupação – condutor de biga e escudeiro\n\nPrimo de Héracles, Iolau foi seu companheiro inabalável durante os doze trabalhos. Ele conduzia a biga de Héracles, carregava suas armas e lutava corajosamente ao seu lado. Durante o segundo trabalho, Iolau mostrou-se indispensável na batalha contra a temível Hidra de Lerna. À medida que o monstro regenerava duas cabeças para cada uma que Héracles cortava, o herói rapidamente se viu sobrecarregado. Com raciocínio rápido e coragem, Iolau entrou em ação, cauterizando os pescoços imediatamente após Héracles decapitá-los. Após uma luta intensa e exaustiva, restou apenas a cabeça final. Juntos, desferiram o golpe decisivo e derrotaram a monstruosa Hidra.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 17,
@@ -1152,7 +1206,8 @@
     "habilidades": [
       {
         "nome": "Saraivada",
-        "descricao": "Dispara uma saraivada de flechas, danificando unidades inimigas na área-alvo."
+        "descricao": "Dispara uma saraivada de flechas, danificando unidades inimigas na área-alvo.",
+        "icon": "aomr_centaur_ability_icon"
       }
     ],
     "historia": "Nome científico – Homo equus\nTamanho – Mais de 2 metros de altura, 725 kg\nDieta – onívora, gosta de vinho\n\nMeio homens, meio cavalos, os centauros geralmente são vistos com torso e cabeça humanos e corpo equino, mas existem descrições diferentes. Eles eram famosos por aparecerem em comemorações ao ar livre sem serem convidados (apesar do tamanho, eles parecem ter dificuldade para segurar a bebida) e por sequestrar mulheres, especialmente jovens donzelas. A embriaguez e a tendência para a violência fizeram com que fossem expulsos para as montanhas da Tessália. Quíron, o centauro que educou Aquiles, foi uma exceção. Centauros são frequentemente retratados carregando um arco."
@@ -1228,7 +1283,8 @@
     "habilidades": [
       {
         "nome": "Arremessar",
-        "descricao": "Lança soldados humanos em unidades ou construções inimigas, causando dano na área."
+        "descricao": "Lança soldados humanos em unidades ou construções inimigas, causando dano na área.",
+        "icon": "aomr_cyclops_ability_icon"
       }
     ],
     "historia": "Nome científico -- Ciclope magno\nTamanho -- 12' de altura\nDieta -- onívoro, gosta de carneiro\n\nGigantes com um olho central, os ciclopes eram deuses da tempestade no início da mitologia grega. Em alguns contos, eles se tornaram ferreiros e forjaram os raios de Zeus. Em outros contos, eles construíram as muralhas das cidades-estado micênicas. Na Grécia clássica, os \"ciclopes menores\" eram filhos bestiais e violentos de Poseidon que eram evitados e temidos. Havia também três sábios e poderosos \"ciclopes anciãos\" que eram filhos de Gaia e Oranos."
@@ -1494,7 +1550,8 @@
     "habilidades": [
       {
         "nome": "Chifrar",
-        "descricao": "Derruba as unidades inimigas para o lado, causando grandes ferimentos."
+        "descricao": "Derruba as unidades inimigas para o lado, causando grandes ferimentos.",
+        "icon": "aomr_minotaur_ability_icon"
       }
     ],
     "historia": "Nome científico - Homo taurus\nTamanho - cerca de 2,7 m de altura\nDieta - humanos, especialmente donzelas\n\nO rei Minos orou a Poseidon para lhe enviar um touro branco como a neve como um sinal de que ele estava apto para governar Creta. Ele prometeu sacrificar o animal mas, quando ele apareceu, o rei ficou com ele. Em retribuição, Poseidon fez com que a esposa de Minos se apaixonasse pelo touro. Seu descendente foi o Minotauro, uma fera com cabeça de touro e corpo de homem. Minos mandou construir um enorme labirinto perto de seu palácio em Cnossos, onde o Minotauro poderia ser aprisionado. Todos os anos, sete meninos e sete meninas eram enviados ao labirinto para serem comidos pela fera. Eventualmente, o herói ateniense Teseu matou o Minotauro e escapou do labirinto seguindo um novelo de barbante que ele havia desenrolado enquanto o explorava.\n\nA lenda do Minotauro pode ter se originado devido à importância do touro no ritual minoico. Os edifícios minoicos eram adornados com chifres de touro e os escudos de ampulheta minoicos eram cobertos com pele de touro. Os primeiros afrescos mostram jovens minoicos saltando sobre chifres de touros como forma de esporte."
@@ -1770,7 +1827,13 @@
     "habilidades": [
       {
         "nome": "Disparo Triplo",
-        "descricao": "Dispara três flechas ao mesmo tempo, causando muito dano à unidade alvo."
+        "descricao": "Dispara três flechas ao mesmo tempo, causando muito dano à unidade alvo.",
+        "icon": "aomr_chiron_spc_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade – 82\nPátria – Tessália\nOcupação – estudioso e professor\n\nQuíron era originalmente um deus da cura na mitologia tessaliana, mas mais tarde tornou-se um centauro imortal na mitologia grega, mais amplamente aceita. Embora os centauros fossem geralmente selvagens e indisciplinados, Quíron era exceção. Conhecido pela sabedoria e pelo conhecimento de cura lendários, ele foi tutor de muitos heróis notáveis, inclusive Jasão e Aquiles."
@@ -1853,7 +1916,14 @@
     "icon": "aomr_hippolyta_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói. Possui um ataque à distância que é bom contra unidades mitológicas.",
-    "historia": "Idade – 41\nTerra natal – terra das Amazonas\nOcupação – rainha\n\nRainha das Amazonas, uma tribo de mulheres guerreiras descendentes de Ares, Hipólita foi sequestrada por Teseu, desencadeando uma guerra com Atenas. Embora Hipólita tenha tido um filho com Teseu, ele perdeu o interesse por ela e ela acabou retornando às terras das Amazonas. Ela então encontrou Hércules, enviado para recuperar o cinturão de Ares dela como uma de suas doze missões. Ela deu o cinto para ele voluntariamente, mas isso irritou a deusa Hera. Disfarçada de amazona, ela incitou as mulheres a atacarem Hércules, que matou Hipólita, na pressa de sair daquela perigosa terra."
+    "historia": "Idade – 41\nTerra natal – terra das Amazonas\nOcupação – rainha\n\nRainha das Amazonas, uma tribo de mulheres guerreiras descendentes de Ares, Hipólita foi sequestrada por Teseu, desencadeando uma guerra com Atenas. Embora Hipólita tenha tido um filho com Teseu, ele perdeu o interesse por ela e ela acabou retornando às terras das Amazonas. Ela então encontrou Hércules, enviado para recuperar o cinturão de Ares dela como uma de suas doze missões. Ela deu o cinto para ele voluntariamente, mas isso irritou a deusa Hera. Disfarçada de amazona, ela incitou as mulheres a atacarem Hércules, que matou Hipólita, na pressa de sair daquela perigosa terra.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 28,
@@ -1933,7 +2003,14 @@
     "favor": 4,
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói Voador. Bom contra unidades mitológicas. Tem um ataque à distância que é bom contra unidades mitológicas. Coleta Relíquias.",
-    "historia": "Idade – 19 anos\nTerra natal – Atenas\nOcupação – Desempregado, filho de um inventor famoso\n\nFilho do gênio artesão Dédalo, Ícaro personificava a ousadia e curiosidade juvenil, até o ponto da autoconfiança excessiva e imprudência. Quando Teseu escapou do labirinto projetado por Dédalo, o rei Minos de Creta ficou tão enfurecido que prendeu Dédalo e Ícaro dentro do próprio labirinto. Usando penas caídas de aves que sobrevoavam o local, Dédalo criou um par de asas para sua fuga. Antes da tentativa ousada, ele advertiu o filho para não voar nem muito perto do mar, para evitar que a água encharcasse as penas, nem muito perto do sol, pois a cera de abelha que unia as penas derreteria. Eles fugiram, mas, tomado pela euforia do voo, Ícaro subiu cada vez mais alto. Logo, a cera começou a derreter, as asas se desfizeram e Ícaro despencou no oceano, onde se afogou."
+    "historia": "Idade – 19 anos\nTerra natal – Atenas\nOcupação – Desempregado, filho de um inventor famoso\n\nFilho do gênio artesão Dédalo, Ícaro personificava a ousadia e curiosidade juvenil, até o ponto da autoconfiança excessiva e imprudência. Quando Teseu escapou do labirinto projetado por Dédalo, o rei Minos de Creta ficou tão enfurecido que prendeu Dédalo e Ícaro dentro do próprio labirinto. Usando penas caídas de aves que sobrevoavam o local, Dédalo criou um par de asas para sua fuga. Antes da tentativa ousada, ele advertiu o filho para não voar nem muito perto do mar, para evitar que a água encharcasse as penas, nem muito perto do sol, pois a cera de abelha que unia as penas derreteria. Eles fugiram, mas, tomado pela euforia do voo, Ícaro subiu cada vez mais alto. Logo, a cera começou a derreter, as asas se desfizeram e Ícaro despencou no oceano, onde se afogou.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 29,
@@ -2016,7 +2093,13 @@
     "habilidades": [
       {
         "nome": "Disparo Penetrante",
-        "descricao": "Dispara uma flecha muito poderosa que penetra tudo em seu caminho."
+        "descricao": "Dispara uma flecha muito poderosa que penetra tudo em seu caminho.",
+        "icon": "aomr_odysseus_spc_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade – 44\nPátria – Ítaca\nOcupação – rei e general\n\nGovernante da ilha de Ítaca, Odisseu foi um dos mais proeminentes campeões gregos na Guerra de Troia. O estratagema do Cavalo de Troia foi ideia dele. Após a vitória em Troia, ele partiu em sua jornada de dez anos para casa, narrada para sempre por Homero no poema épico Odisseia. Ao longo do caminho, Odisseu e sua tripulação viveram muitas aventuras e infortúnios, alguns que eles mesmos criaram, outros graças à intervenção dos deuses. Ao cegar o ciclope Polifemo, incorreram na ira de Poseidon, que os perturbou por anos. Graças à ajuda de Zeus, Atena e outros deuses, Odisseu chegou sozinho em casa e encontrou sua esposa Penélope acossada por pretendentes. Disfarçado de mendigo, ele primeiro determinou que Penélope tinha sido fiel, depois matou os homens que a perseguiam e limpou seu palácio. Isso desencadeou uma batalha final contra as famílias dos homens mortos, mas Atena restaurou a paz."
@@ -2095,11 +2178,13 @@
     "habilidades": [
       {
         "nome": "Manto da Floresta",
-        "descricao": "Após 10 segundos de inatividade (6 segundos quando aprimorada), as Hamadríades se disfarçam de árvores para se esconder dos oponentes. O tempo de recarga é reiniciado quando a Hamadríade se move ou ataca."
+        "descricao": "Após 10 segundos de inatividade (6 segundos quando aprimorada), as Hamadríades se disfarçam de árvores para se esconder dos oponentes. O tempo de recarga é reiniciado quando a Hamadríade se move ou ataca.",
+        "icon": "aomr_hamadryad_ability_icon"
       },
       {
         "nome": "Armadilha Perfurante (Passiva)",
-        "descricao": "Quando uma unidade inimiga se aproxima de uma Hamadríade disfarçada, ela libera raízes da terra ao seu redor, perfurando o solo, causando dano e atordoando alvos. Isso derrubará o disfarce dela."
+        "descricao": "Quando uma unidade inimiga se aproxima de uma Hamadríade disfarçada, ela libera raízes da terra ao seu redor, perfurando o solo, causando dano e atordoando alvos. Isso derrubará o disfarce dela.",
+        "icon": "aomr_hamadryad_ability_icon"
       }
     ],
     "historia": "Nome científico – Nymphaea arborea.\nTamanho – Tamanho humano (Ninfa) / 12 a 24 metros de altura (Árvore).\nDieta – Água, Luz solar.\n\nDiferente de outras ninfas, as Hamadríades estão intrinsecamente ligadas a uma árvore específica. Elas nascem conectadas a essa árvore, e se o vegetal morrer, as Hamadríades têm o mesmo destino. Uma não pode existir sem a outra. Geralmente gentis, tímidas e cuidadoras, são ferozmente protetoras de sua árvore e da floresta onde vivem."
@@ -2175,7 +2260,8 @@
     "habilidades": [
       {
         "nome": "Policefalia (Passivo)",
-        "descricao": "Cresce cabeças adicionais em lutas contra unidades inimigas. Todas as cabeças podem atacar."
+        "descricao": "Cresce cabeças adicionais em lutas contra unidades inimigas. Todas as cabeças podem atacar.",
+        "icon": "aomr_hydra_ability_icon"
       }
     ],
     "historia": "Nome científico – Hydra lernae\nTamanho – mais de 9 toneladas.\nDieta – carnívora, especialmente gado e humanos\n\nOutra descendência feroz de Equidna e Tifão, a Hidra era uma grande serpente com múltiplas cabeças e hálito venenoso. Matar a Hidra perto da cidade de Lerna, na Argólida, foi o segundo dos doze trabalhos de Hércules. Cada vez que ele cortava uma das cabeças da Hidra, porém, mais duas cresciam. O sobrinho de Hércules, Iolau, o auxiliou cauterizando cada ferimento enquanto uma cabeça era decepada. A última cabeça era imortal, então Hércules a enterrou sob uma grande rocha. Assim que o corpo da fera morreu, Hércules mergulhou as pontas das flechas no sangue, dando-lhes potência extra."
@@ -2255,7 +2341,8 @@
     "habilidades": [
       {
         "nome": "Saraivada de Espinhos",
-        "descricao": "Lança uma saraivada de espinhos que é altamente eficaz contra grupos de soldados."
+        "descricao": "Lança uma saraivada de espinhos que é altamente eficaz contra grupos de soldados.",
+        "icon": "aomr_manticore_ability_icon"
       }
     ],
     "historia": "Nome científico – Androphagus occisor\nTamanho – 725 kg.\nDieta – carnívoro, em grande parte humanos\n\nA Mantícora provavelmente entrou na mitologia grega vinda da Pérsia e se originou em contos sobre a distante e exótica Índia. A besta tinha o corpo de um leão vermelho, um rosto humano (com olhos azuis e orelhas humanas), três fileiras de dentes, uma cauda venenosa e espinhos venenosos que podiam ser atirados como flechas em qualquer direção. Sua voz era como uma mistura de flautas e trombetas. Rápida e capaz de grandes saltos. Quando aldeões desapareciam sem deixar vestígios, o consenso era que haviam sido devorados por uma manticora."
@@ -2331,7 +2418,8 @@
     "habilidades": [
       {
         "nome": "Rugido",
-        "descricao": "Ruge, causando dano, atordoamento e desaceleração de unidades inimigas próximas."
+        "descricao": "Ruge, causando dano, atordoamento e desaceleração de unidades inimigas próximas.",
+        "icon": "aomr_nemean_lion_ability_icon"
       }
     ],
     "historia": "Nome científico – Leo nemeae\nTamanho – 2.700 kg.\nDieta – carnívora\n\nEste leão imenso e feroz vivia nas planícies de Nemeia, aterrorizando a região. Homens normais não podiam matá-lo e fugiam aterrorizados por seu poderoso rugido. Hércules foi mandado atrás dele no primeiro de seus doze trabalhos. Quando percebeu que flechas e outras armas não podiam penetrar o couro do Leão de Nemeia, o herói se aproximou e usou sua força incrível para estrangulá-lo. Depois, esfolou a fera com as próprias garras e retornou usando o couro dela como o manto impenetrável com que geralmente é retratado."
@@ -2399,7 +2487,8 @@
     "habilidades": [
       {
         "nome": "Policefalia (Passivo)",
-        "descricao": "Cresce cabeças adicionais em lutas contra unidades inimigas. Todas as cabeças podem atacar."
+        "descricao": "Cresce cabeças adicionais em lutas contra unidades inimigas. Todas as cabeças podem atacar.",
+        "icon": "aomr_scylla_ability_icon"
       }
     ],
     "historia": "Nome científico – Hydra thalassa\nPeso – mais de 13.000 kg\nDieta – peixes grandes, baleias, marinheiros\n\nUm terrível monstro marinho com seis cabeças de serpente e um anel de cães latindo ao redor da cintura, Cila guardava um lado do estreito de Messina, entre a Sicília e a Itália. Os cães a alertavam quando um navio estava passando, para que ela pudesse capturar os marinheiros. Cila era originalmente uma bela ninfa que foi transformada pela ciumenta feiticeira Circe (ou, de acordo com outro mito, pela esposa de Poseidon, Anfitrite)."
@@ -2676,7 +2765,13 @@
     "habilidades": [
       {
         "nome": "Investida de Pégaso",
-        "descricao": "Salta valorosamente para a batalha, ferindo gravemente a unidade-alvo."
+        "descricao": "Salta valorosamente para a batalha, ferindo gravemente a unidade-alvo.",
+        "icon": "aomr_bellerophon_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade – 18\nPátria – Corinto\nOcupação – príncipe e cavaleiro\n\nFilho de um rei de Corinto, uma cidade conhecida pelos cavalos, Belerofonte foi treinado desde a juventude para ser o grande cavaleiro de sua época. Aos dezesseis anos, ele partiu para a aventura, mas um rival ciumento o enganou para que empreendesse a perigosa missão de matar a Quimera. Esta fera cuspidora de fogo aterrorizava o interior da Lícia, raptando pessoas e gado. Um vidente local instruiu Belerofonte a orar a Atenas e dormir em seu templo. Em um sonho, a deusa contou a Belerofonte sobre uma rédea dourada que poderia ser usada para capturar o Pégaso. Ao acordar estava com a rédea, com a qual pegou o Pégaso bebendo no poço dos Pirene. Ele foi capaz de controlar a fera graças ao freio e à sua habilidade equestre. Juntos, eles voaram para o covil da Quimera, onde ele usou uma lança para alojar um pedaço de chumbo em sua garganta. O sopro ardente da Quimera derreteu o chumbo, que sufocou a fera até a morte.\n\nDepois de várias outras aventuras, Belerofonte casou-se com uma princesa da Lícia e acabou se tornando rei. Sua sede de aventura voltou, porém, e então ele arrogantemente tentou chegar ao Olimpo em Pégaso. Um Zeus furioso enviou uma mosca para picar Pégaso e Belerofonte foi jogado fora. Embora Atena o tenha poupado ao fazê-lo cair em solo macio, ele vagou sozinho pelo resto da vida, em busca de Pégaso, e morreu como um mendigo coxo."
@@ -2757,7 +2852,13 @@
     "habilidades": [
       {
         "nome": "Toque de Midas",
-        "descricao": "Transforme um inimigo em ouro maciço. Qualquer jogador pode derrotar a unidade dourada para ganhar uma recompensa de ouro de ${DEMETER_MIDAS_TOUCH_REWARD_AMOUNT}."
+        "descricao": "Transforme um inimigo em ouro maciço. Qualquer jogador pode derrotar a unidade dourada para ganhar uma recompensa de ouro de ${DEMETER_MIDAS_TOUCH_REWARD_AMOUNT}.",
+        "icon": "aomr_midas_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade – 51 anos\nTerra natal – Frígia\nOcupação -- Rei\n\nRei lendário da Frígia, Midas era conhecido por sua imensa riqueza e ambição. Um dia, enquanto caminhava por seu jardim de rosas, encontrou um sátiro bêbado dormindo. Reconhecendo-o como Sileno, o pai adotivo do deus Dionísio, Midas o tratou com hospitalidade e, após onze dias, o devolveu a Dionísio. Grato, Dionísio ofereceu a Midas qualquer desejo como recompensa. Movido pela ganância, Midas pediu o poder de transformar em ouro tudo o que tocasse. A princípio, ele se encantou com sua nova habilidade, transformando grande parte de sua casa, incluindo todas as rosas do jardim, em ouro. Ele ordenou uma festa para celebrar, mas ao dar a primeira mordida, descobriu que comida e água também se transformavam em ouro ao tocarem seus lábios. Desesperado, Midas pediu a Dionísio que retirasse o que havia se tornado uma maldição. O deus atendeu seu pedido e o instruiu a se lavar no rio Pactolo, que removeu seu poder e transformou as areias do rio em ouro."
@@ -2839,6 +2940,11 @@
       {
         "nome": "Petrificação",
         "descricao": "Transforma uma unidade mítica inimiga em pedra, destruindo instantaneamente a maioria das unidades mitológicas. Os sobreviventes se libertam após um curto período."
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade – 36\nPátria – originalmente Argos, mais tarde Serifos e Micenas\nOcupação – príncipe e herói\n\nFilho de Zeus e Dânae, a filha mortal do rei de Argos, Perseu e sua mãe foram banidos por seu avô, que temia uma profecia de que o neto o mataria. Perseu tornou-se um formidável guerreiro e protetor de sua mãe. Um pretendente de sua mãe enviou Perseu em uma missão desesperada para matar Medusa, que ele cumpriu com a ajuda de Atena e Hermes. Voltando para casa, ele matou um monstro marinho devastador e libertou a bela Andrômeda, que ele tomou como sua esposa. Perseu acabou matando seu avô como profetizado, em um acidente com um disco, mas se recusou a se tornar governante de Argos. Em vez disso, ele governou sobre Tirinto e Micenas, estabelecendo uma família cujos descendentes incluíam Héracles."
@@ -2919,7 +3025,13 @@
     "habilidades": [
       {
         "nome": "Esmagamento Sísmico",
-        "descricao": "Bate forte no chão, espalhando e danificando unidades inimigas próximas."
+        "descricao": "Bate forte no chão, espalhando e danificando unidades inimigas próximas.",
+        "icon": "aomr_polyphemus_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade -- 205\nPátria -- Sicília\nOcupação -- pastor\n\nEste filho de Poseidon era um Ciclope que vivia uma existência solitária em uma caverna perto da Sicília pastoreando ovelhas. Sua vida foi interrompida quando Odisseu e seus homens desembarcaram nas proximidades em busca de comida durante sua viagem de volta de Tróia. Odisseu queria ver um Ciclope, então ele e sua tripulação se esconderam na caverna de Polifemo. Espantados ao ver o gigante de um olho só, eles revelaram sua presença e o Ciclope agarrou dois dos homens e os comeu. Ele bloqueou a entrada da caverna com uma grande pedra e continuou comendo os dois homens a cada refeição. Desesperado, Odisseu e seus homens moldaram um grande poste em uma lança e esfaquearam Polifemo no olho depois de deixá-lo bêbado. Os homens então se penduraram nas barrigas das ovelhas quando o ciclope as soltou no dia seguinte. Não contente em simplesmente escapar, Odisseu provocou Polifemo de seu navio e revelou seu nome. O ciclope chamou seu pai Poseidon para amaldiçoar os gregos e o deus obedeceu, incomodando Odisseu pelo resto de sua jornada."
@@ -2991,7 +3103,8 @@
     "habilidades": [
       {
         "nome": "Carcinogenicidade (Passivo)",
-        "descricao": "Explode ao morrer em uma nuvem nociva, causando dano de área."
+        "descricao": "Explode ao morrer em uma nuvem nociva, causando dano de área.",
+        "icon": "aomr_carcinos_ability_icon"
       }
     ],
     "historia": "Nome científico – Callinectes colossus\nTamanho – mais de 3.600 kg.\nDieta – moluscos gigantes\n\nEnquanto Hércules lutava contra a Hidra, Hera evocou um caranguejo para atacá-lo. Embora Hércules tenha derrotado a Hidra e o caranguejo, Hera recompensou o crustáceo tornando-o uma constelação no céu noturno. ''Caranguejo'', em latim, é ''Cancer''; em grego, ''Karkinos'', termo de onde deriva a palavra ''carcinógeno''."
@@ -3065,7 +3178,8 @@
     "habilidades": [
       {
         "nome": "Incendiar",
-        "descricao": "Cospe um jato de fogo, incendiando uma pequena área."
+        "descricao": "Cospe um jato de fogo, incendiando uma pequena área.",
+        "icon": "aomr_chimera_ability_icon"
       }
     ],
     "historia": "Nome científico – Draco chimera\nTamanho – Mais de 5 toneladas.\nDieta – carnívora, especialmente humanos\n\nA Quimera é uma das muitas crias de Equidna (uma criatura com o torso de uma bela mulher e uma serpente horrível abaixo da cintura) e Tifão (um gigante que cuspia fogo com 100 cabeças de serpente). A Quimera é uma fera que cospe fogo, geralmente representada com o corpo de uma cabra, a cabeça de um leão e a cauda de uma serpente. O herói coríntio Belerofonte derrotou a Quimera perto da Lícia (Ásia Menor) voando para a batalha no cavalo alado Pégaso."
@@ -3139,7 +3253,8 @@
     "habilidades": [
       {
         "nome": "Fome Colossal",
-        "descricao": "Consome árvores ou minas para regenerar pontos de vida."
+        "descricao": "Consome árvores ou minas para regenerar pontos de vida.",
+        "icon": "aomr_colossus_ability_icon"
       }
     ],
     "historia": "Nome científico – Nenhum (construto artificial)\nTamanho – mais de 15 metros de altura\nDieta – árvores e ouro\n\nO Grande Colosso de Rodes era uma das Sete Maravilhas do Mundo Antigo. Ele tinha mais de 45 metros de altura em uma base de mármore branco de 15 metros. Era principalmente oco, com uma pele de bronze soldada a uma estrutura de esqueleto de pedra e metal. Embora tenha sido destruído por um terremoto depois de permanecer por apenas cerca de cinquenta anos, seu tamanho era tal que as pessoas vinham a Rodes apenas para ver suas ruínas, assim como as pessoas hoje visitam as ruínas de outros monumentos, construções e templos gregos."
@@ -3289,7 +3404,8 @@
     "habilidades": [
       {
         "nome": "Petrificação",
-        "descricao": "Transforma o alvo em pedra, destruindo instantaneamente a maioria das unidades. Os sobreviventes se libertam após pouco tempo."
+        "descricao": "Transforma o alvo em pedra, destruindo instantaneamente a maioria das unidades. Os sobreviventes se libertam após pouco tempo.",
+        "icon": "aomr_medusa_ability_icon"
       }
     ],
     "historia": "Nome científico - Gorgo medusa\nTamanho - 2,1 metros de altura\nDieta - carnívoro, em grande parte humanos\n\nMedusa era uma das três irmãs conhecidas como Górgonas, filhas de deuses do mar que possuem cobras marinhas vivas no cabelo, pescoço escamoso, presas de javali, mãos douradas e asas de bronze. Uma história conta que Medusa já foi uma bela donzela que fugiu com Poseidon para um templo de Atena. Enfurecida, a deusa transformou Medusa em um monstro tão feio que aqueles que a contemplavam se transformavam em pedra. Com a ajuda de Atena e Hermes, o herói Perseu decepou a cabeça de Medusa, e então o cavalo alado Pégaso e o gigante Crisaor saltaram de seu pescoço. Sua cabeça foi usada como arma para matar o monstro marinho Cetus e depois foi montada no escudo de Atena."
@@ -3368,7 +3484,8 @@
     "habilidades": [
       {
         "nome": "Ária Atraente",
-        "descricao": "Atrai inimigos para a Sereia. Inimigos atraídos não podem atacar nem ser controlados pelo oponente."
+        "descricao": "Atrai inimigos para a Sereia. Inimigos atraídos não podem atacar nem ser controlados pelo oponente.",
+        "icon": "aomr_siren_ability_icon"
       }
     ],
     "historia": "Nome científico – Nymphaea Sirenica.\nTamanho – 2,50 metros.\nDieta – Peixes, marinheiros.\n\nEmbora estejam relacionadas às aves marinhas, essas ninfas do mar possuem aparência humanoide e uma voz encantadora usada para hipnotizar suas presas. As sereias foram, em tempos antigos, companheiras de Perséfone, até que Deméter, furiosa com o sequestro da filha, as transformou em monstros devoradores de homens. Inteligentes, elegantes e sedutoras, costumam esconder seus traços monstruosos até o momento oportuno para atacar."
@@ -3552,7 +3669,14 @@
     "icon": "aomr_pharaoh_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói que fortalece construções, cura unidades, coleta Relíquias e tem um ataque de longo alcance que é forte contra unidades mitológicas. Um sucessor o substituirá se ele morrer.",
-    "historia": "Um Faraó potencializando uma fundação ou construção faz com que os Trabalhadores que trabalham lá construam e coletem mais rápido. Um Faraó também pode conseguir mais Favor dos deuses ao potencializar um Monumento. O Faraó é um lutador razoável, mas é capaz de curar unidades, além de contar com alto dano contra unidades mitológicas, o que o torna uma boa adição a um exército de ataque. Quando um faraó morre, ele renasce entre seu povo em um Centro Urbano. Os faraós de Set podem invocar animais.\n\nA riqueza material e o relativo isolamento do Vale do Nilo permitiram que um governo monárquico surgisse no Egito muito cedo. Havia pouca necessidade de um homem forte para dominar o poder para a defesa do reino e o controle da produção de alimentos. Em vez disso, o faraó passou a ser aceito como o deus vivo do mundo, responsável pela passagem diária do sol e pela inundação anual do rio, os dois eventos dos quais a produção de alimentos dependia. O maior dos faraós também comandou seus exércitos e construiu os maiores monumentos do Egito.\n\nO Egito é separado em Baixo Egito e Alto Egito. Em alguns momentos durante a história do Egito, como antes do rei Menes e durante a invasão dos hicsos, a nação unificada tinha mais de um governante."
+    "historia": "Um Faraó potencializando uma fundação ou construção faz com que os Trabalhadores que trabalham lá construam e coletem mais rápido. Um Faraó também pode conseguir mais Favor dos deuses ao potencializar um Monumento. O Faraó é um lutador razoável, mas é capaz de curar unidades, além de contar com alto dano contra unidades mitológicas, o que o torna uma boa adição a um exército de ataque. Quando um faraó morre, ele renasce entre seu povo em um Centro Urbano. Os faraós de Set podem invocar animais.\n\nA riqueza material e o relativo isolamento do Vale do Nilo permitiram que um governo monárquico surgisse no Egito muito cedo. Havia pouca necessidade de um homem forte para dominar o poder para a defesa do reino e o controle da produção de alimentos. Em vez disso, o faraó passou a ser aceito como o deus vivo do mundo, responsável pela passagem diária do sol e pela inundação anual do rio, os dois eventos dos quais a produção de alimentos dependia. O maior dos faraós também comandou seus exércitos e construiu os maiores monumentos do Egito.\n\nO Egito é separado em Baixo Egito e Alto Egito. Em alguns momentos durante a história do Egito, como antes do rei Menes e durante a invasão dos hicsos, a nação unificada tinha mais de um governante.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 51,
@@ -3626,7 +3750,14 @@
     "icon": "aomr_priest_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói. Possui ataque de longo alcance que é forte contra unidades mitológicas, cura unidades aliadas e constrói Obeliscos. A habilidade de combate dos sacerdotes aumenta em eras posteriores.",
-    "historia": "Os Sacerdotes são heróis egípcios com a rara capacidade de curar. Eles têm um ataque de curto alcance que melhora em eras posteriores e é devastador contra unidades mitológicas inimigas. Certifique-se de que os Sacerdotes sejam acompanhados por unidades que possam protegê-los de soldados humanos. O ataque de longo alcance dos Sacerdotes permite que ataquem unidades mitológicas em movimento lento, mas eles podem cair em batalha contra unidades mitológicas que consigam alcançá-los.\n\nOs Sacerdotes de cada Deus Maior têm habilidades diferentes. Os Sacerdotes de Rá podem capacitar construções. Os Sacerdotes de Set podem converter animais selvagens. Os Sacerdotes de Ísis podem construir rapidamente Obeliscos baratos."
+    "historia": "Os Sacerdotes são heróis egípcios com a rara capacidade de curar. Eles têm um ataque de curto alcance que melhora em eras posteriores e é devastador contra unidades mitológicas inimigas. Certifique-se de que os Sacerdotes sejam acompanhados por unidades que possam protegê-los de soldados humanos. O ataque de longo alcance dos Sacerdotes permite que ataquem unidades mitológicas em movimento lento, mas eles podem cair em batalha contra unidades mitológicas que consigam alcançá-los.\n\nOs Sacerdotes de cada Deus Maior têm habilidades diferentes. Os Sacerdotes de Rá podem capacitar construções. Os Sacerdotes de Set podem converter animais selvagens. Os Sacerdotes de Ísis podem construir rapidamente Obeliscos baratos.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 52,
@@ -3948,7 +4079,8 @@
     "habilidades": [
       {
         "nome": "Salto",
-        "descricao": "Salta em direção a uma unidade inimiga, contornando qualquer obstrução. Causa dano na área ao tocar o chão."
+        "descricao": "Salta em direção a uma unidade inimiga, contornando qualquer obstrução. Causa dano na área ao tocar o chão.",
+        "icon": "aomr_anubite_ability_icon"
       }
     ],
     "historia": "Nome científico – Phylax cynopolis\nTamanho – cerca de 2,7 metros de altura\nDieta – não come, mas pode ganhar energia de emoções como o medo\n\nOs sacerdotes de Anúbis, os ''stm'', usavam máscaras de chacal durante os rituais de mumificação. Anúbis estava entre as divindades mais antigas da mitologia egípcia e seu papel mudou à medida que os mitos amadureceram, passando de deus principal do submundo a juiz dos mortos quando Osíris assumiu o papel anterior. A associação de Anúbis com chacais foi provavelmente o resultado de chacais rondando os cemitérios. Ele era de cor preta porque os cadáveres embalsamados são de cor preta como breu. Embora Anúbis fosse frequentemente identificado como ''sab'', um chacal, em vez de ''iwiw'', um cachorro, ainda havia muita confusão sobre qual animal Anúbis realmente era. Alguns egiptólogos referem-se à espécie desconhecida que ele deveria representar como o ''animal Anúbis''. As cidades dedicadas a Anúbis eram conhecidas por seu grande número de múmias de cães e cemitérios inteiros.\n\n''Nós, conhecidos como os Chacais, os Sacerdotes de Anúbis, somos guardiões de seus túmulos gloriosos ou de seus humildes túmulos. Nós somos os guardiões dos mortos. Somos os servos de Anúbis. Somos Cinópolis.'' - Capítulo dos Mortos, Livro de Ma'at"
@@ -4024,7 +4156,8 @@
     "habilidades": [
       {
         "nome": "Turbilhão",
-        "descricao": "Transforma-se em um vórtice de areia, causando dano às unidades inimigas próximas."
+        "descricao": "Transforma-se em um vórtice de areia, causando dano às unidades inimigas próximas.",
+        "icon": "aomr_sphinx_ability_icon"
       }
     ],
     "historia": "Nome científico -- Androsphinx\nTamanho -- cerca de 600 lbs.\nDieta -- pedras preciosas, fumos de incenso, flores de lótus. Alguns comem humanos como um ato de terror, mas eles derivam pouca nutrição de proteínas ou lipídios.\n\nEsfinge foi originalmente derivada de uma palavra grega que significa \"estrangular\" que foi aplicada às estátuas de leão com cabeça de faraó que os gregos viram no Egito, que Heródoto chamou de \"androesfinge\". A esfinge grega era uma ninhada monstruosa de Tifão e Equidna, geralmente representada como um leão alado com uma cabeça feminina. Sentou-se numa rocha perto de Tebas e fez aos transeuntes a agora famosa pergunta: \"Que animal é aquele que de manhã vai a quatro pés, ao meio-dia a dois, e à noite a três?\" Os que não souberam responder foram comidos. Édipo sabia a resposta correta (humanos), o que causou tanta consternação à esfinge que ela se jogou de sua rocha e morreu.\n\nNo entanto, a esfinge como monstro provavelmente é anterior à mitologia grega. Os mitos assírios têm criaturas semelhantes que guardam as entradas dos templos. Criaturas semelhantes a esfinges também aparecem na arte fenícia e persa.\n\nOs egípcios chamavam suas esfinges de 'hu'. Além da androesfinge com cabeça de homem, eles também retratavam esfinges de carneiro que Heródoto chamou de criosfinxes e esfinges com cabeça de falcão chamadas hieracosfinxes."
@@ -4508,7 +4641,8 @@
     "habilidades": [
       {
         "nome": "Iluminar (Passivo)",
-        "descricao": "Os ataques revelam unidades inimigas por pouco tempo."
+        "descricao": "Os ataques revelam unidades inimigas por pouco tempo.",
+        "icon": "aomr_petsuchos_ability_icon"
       }
     ],
     "historia": "Nome científico – Crocodylus tyrannosuchus\nTamanho – 181 kg, 60 cm de comprimento\nDieta – luz solar\n\nO Petsuchos é um crocodilo mágico que pode concentrar feixes de luz solar em raios mortais. Como muitas unidades de longo alcance, o Petsuchos é fraco quando luta a curta distância, mas seus feixes disparam com precisão perfeita à distância.\n\nPetsuchos é a tradução grega de uma palavra egípcia que significa \"aquele que pertence a Suchos\", o deus crocodilo também conhecido como Sobek. O Petsuchos era o crocodilo sagrado de Suchos mantido em um lago privado na cidade de Crocodopolis. Ele era uma besta velha e mimada que usava anéis dourados nas orelhas e pulseiras rebitadas nas patas dianteiras."
@@ -4584,7 +4718,8 @@
     "habilidades": [
       {
         "nome": "Causticidade (Passivo)",
-        "descricao": "Escorre sangue corrosivo quando morre, danificando gravemente as unidades inimigas próximas."
+        "descricao": "Escorre sangue corrosivo quando morre, danificando gravemente as unidades inimigas próximas.",
+        "icon": "aomr_scarab_ability_icon"
       }
     ],
     "historia": "Nome científico – Classe: Insecta, Ordem: Coleoptera, Família: Scarabaeidae\nTamanho – a maioria tem cerca de 5 cm de comprimento, mas os escaravelhos de Sekhmet têm mais de 3 metros de comprimento\nDieta – a maioria come esterco. Os escaravelhos de Sekhmet comem construções.\n\nOs besouros escaravelhos são um grupo diversificado de insetos que vivem na América do Sul e no Egito. Os egípcios adotaram o escaravelho como sagrado, e o usaram para representar Rá, que rolava o sol pelo céu todos os dias. Os besouros escaravelhos mais famosos rolam esterco em uma bola e, em seguida, passam a rolar seu tesouro de volta para seus túneis.\n\nOs egípcios retrataram escaravelhos em uma variedade de obras de arte, incluindo amuletos e ''escaravelhos do coração'', que eram grandes peças penduradas no pescoço ou como peitoral.\n\n''Você é minha alma que está em meu corpo,  o deus Quenúbis que faz meus membros soarem. Quando você for para o Além, meu nome não federá aos cortesãos que criam pessoas em nome dele. Não conte mentiras sobre mim na presença do Grande Deus!''\n\n– Inscrição encontrada em um escaravelho do coração no Templo de Amon"
@@ -4659,7 +4794,8 @@
     "habilidades": [
       {
         "nome": "Picar",
-        "descricao": "Envenena unidades próximas com seu ferrão, infligindo dano adicional ao longo do tempo."
+        "descricao": "Envenena unidades próximas com seu ferrão, infligindo dano adicional ao longo do tempo.",
+        "icon": "aomr_scorpion_man_ability_icon"
       }
     ],
     "historia": "Nome científico -- Scoloscorpio anthropomorphi\nTamanho -- 400 lbs.\nDieta -- cobras, grandes mamíferos de pastoreio\n\nOs escorpiões compreensivelmente tiveram uma grande influência na mitologia egípcia. A filha de Ra, Selket, foi associada ao escorpião, que enfeitava sua coroa. Para tornar seu filho Hórus forte, Ísis o expôs a picadas de escorpião no deserto. Os escorpiões também eram associados a Set, juntamente com outros animais \"perversos\" do deserto.\n\nHavia de fato até mesmo um Rei Escorpião, um governante pré-dinástico conhecido apenas por alguns artefatos sobreviventes, como a \"maça de escorpião\". Não está claro se o nome ou título do governante era \"escorpião\", mas a figura real na maça é rotulada como SQRT, juntamente com hieróglifos de um sinal de escorpião claramente desenhado."
@@ -4733,7 +4869,8 @@
     "habilidades": [
       {
         "nome": "Girar",
-        "descricao": "Rodopia rapidamente com sua espada, danificando gravemente as unidades inimigas ao redor."
+        "descricao": "Rodopia rapidamente com sua espada, danificando gravemente as unidades inimigas ao redor.",
+        "icon": "aomr_avenger_ability_icon"
       }
     ],
     "historia": "Nome científico – Archifalco pharoanicus\nTamanho – cerca de 2,5 metros de altura\nDieta – escaravelhos e mel\n\nComo o Vingador é tão mortal lutando corpo a corpo, é melhor combatê-lo com unidades de longo alcance. Em combate, o Vingador ataca periodicamente como um redemoinho, causando danos a todas as unidades inimigas ao seu redor.\n\nHórus era filho de Osíris e Ísis que, ao atingir a idade adulta, ficou conhecido como Her-nedj-tef-ef, ''Hórus, Vingador de seu Pai'', cujo papel era buscar vingança e expelir os males de Set.\n\n\"Eis que o fogo sobe em Abidos e vem; eu faço com que ele venha, o Olho de Hórus. Ele está colocado em ordem na tua testa, O'Osiris Khenti-Amenti; ele está colocado no santuário e surge em tua testa.\" - Os Textos da Pirâmide"
@@ -4868,7 +5005,8 @@
     "habilidades": [
       {
         "nome": "Reencarnação",
-        "descricao": "Amaldiçoa uma unidade inimiga, causando dano ao longo do tempo e fazendo com que ela se levante como Lacaio sob seu controle se cair enquanto estiver amaldiçoada."
+        "descricao": "Amaldiçoa uma unidade inimiga, causando dano ao longo do tempo e fazendo com que ela se levante como Lacaio sob seu controle se cair enquanto estiver amaldiçoada.",
+        "icon": "aomr_mummy_ability_icon"
       }
     ],
     "historia": "Nome científico - Homo sapiens\nTamanho - mais de 2 metros de altura\nDieta - alimenta-se de emoções, especialmente terror\n\nElites preparadas para a vida após a morte foram transformadas em múmias por embalsamamento e ritos especiais. Entre seus deveres na próxima vida poderia estar a defesa de locais sagrados caso ladrões ou outros malfeitores perturbassem seu descanso. Então as múmias levantariam e destruiriam seus inimigos."
@@ -4946,7 +5084,8 @@
     "habilidades": [
       {
         "nome": "Renascimento (Passivo)",
-        "descricao": "Deixa um ovo após a morte. Se o ovo sobreviver, uma nova Fênix pode eclodir dele."
+        "descricao": "Deixa um ovo após a morte. Se o ovo sobreviver, uma nova Fênix pode eclodir dele.",
+        "icon": "aomr_phoenix_ability_icon"
       }
     ],
     "historia": "Nome científico – Aquila ignita\nTamanho – 360 kg.\nDieta – Autoabastecimento\n\nAve, parecida com uma águia, com penas de ouro e vermelho, a fênix era associada ao sol e ao fogo. Possuía longa duração e tinha a capacidade de se reproduzir ou reencarnar após a morte. Em algumas tradições, construiu seu próprio ninho funerário antes de morrer e, em seguida, uma jovem fênix sairia do cadáver. Depois que o cristianismo começou a se espalhar, a história da fênix mudou para que o pássaro transformasse seu ninho funerário em uma pira para se autoimolar. Depois de um tempo, geralmente três dias, uma nova fênix ressurgiu das cinzas. A fênix tornou-se um símbolo tanto para a imortalidade quanto para a vida após a morte.\n\n''E no final de quinhentos anos, os sacerdotes arrumam seu altar honestamente, e colocam sobre ele especiarias e enxofre e outras coisas que queimarão levemente; e então a fênix do pássaro vem e se queima em cinzas. E no primeiro dia seguinte, os homens encontram nas cinzas um verme; e no segundo dia seguinte, os homens encontram um pássaro perfeito; e no terceiro dia seguinte, ele voa em seu caminho.'' -- As Viagens de Sir John Mandeville"
@@ -5054,11 +5193,13 @@
     "habilidades": [
       {
         "nome": "Terra",
-        "descricao": "Pode pousar para carregar ou descarregar unidades. Quando pousado, a Roca também pode ser atacada por unidades corpo a corpo."
+        "descricao": "Pode pousar para carregar ou descarregar unidades. Quando pousado, o Roc também pode ser atacado por unidades corpo a corpo.",
+        "icon": "aomr_roc_ability_icon"
       },
       {
         "nome": "Voar",
-        "descricao": "Pode decolar e voar para transportar unidades. Se a Roca for abatida, as unidades guarnecidas sofrerão dano com a queda."
+        "descricao": "Pode decolar e voar para transportar unidades. Se o Roc for abatido, as unidades guarnecidas sofrerão dano com a queda.",
+        "icon": "aomr_roc_ability_icon"
       }
     ],
     "historia": "Nome científico – Aepyornis maximus\nTamanho – 30 m de envergadura\nDieta – carnívora, supostamente elefantes\n\nRelatos do roc, um pássaro gigante, vêm a nós das Mil e Uma Noites e dos relatos de Marco Polo. Sinbad descreve o roc como enorme, com asas de 14 metros de comprimento e um corpo volumoso. Em um conto, um roc carrega Sinbad para a segurança após um naufrágio; em outro, rocs destroem navios lançando enormes pedras sobre eles. Marco Polo fala de rocs de Madagascar e como um enviado de lá presenteou a corte chinesa com uma enorme pena de roc. Uma ave imensa incapaz de voar pode realmente ter sobrevivido na ilha até o século XVI, antes de ser extinta."
@@ -5126,7 +5267,8 @@
     "habilidades": [
       {
         "nome": "Pinote",
-        "descricao": "Golpeia ao redor, lançando os navios inimigos próximos pelo ar."
+        "descricao": "Golpeia ao redor, lançando os navios inimigos próximos pelo ar.",
+        "icon": "aomr_war_turtle_ability_icon"
       }
     ],
     "historia": "Nome científico -- Sternotherus megas\nTamanho -- +30'\nDieta -- onívoro, prefere algas verdes e peixes lentos\n\nOs egípcios consideravam a tartaruga uma criatura da noite e de águas escuras, e assim se tornou associada a Set e apelidada de inimiga do deus sol, Rá. As tartarugas não deveriam ser comidas ou usadas na medicina.\n\n\\''Que Ra viva e a tartaruga morra.\\'' -- Oração egípcia antiga"
@@ -5665,7 +5807,14 @@
     "alcance": 1,
     "descricao_resumida": "Herói javali divino. Bom contra tudo.",
     "descricao_avancada": "Herói divino. Um javali radiante empunhando o poder de Frey, enviado de Alfheim para defender um Centro Urbano temporariamente. Seu poder e velocidade diminuem à medida que ele se afasta do ponto de invocação.",
-    "historia": "Nome científico -- Nenhum (construto artificial)\nTamanho -- variável\nDieta -- alimentado por turfa e magia\n\nFrey, irmão de Freia, tinha uma carruagem puxada por um javali que não era um animal vivo, mas foi forjado pelos anões Brokk e Eitri. Gullinbursti (''juba dourada'') tinha cerdas brilhantes que iluminavam a escuridão. Ele podia correr mais rápido do que qualquer cavalo, sobre o céu e a água. Os anões fabricaram o javali de batalha como resultado de uma aposta com Loki sobre qual família de anões poderia dar o melhor presente para os deuses nórdicos. Eitri colocou uma pele de porco na forja, enquanto Brokk trabalhava no fole. Loki assumiu a forma de uma mosca para morder Brokk e distraí-lo de fazer seu trabalho. Freia também montou um javali chamado Hildisvini."
+    "historia": "Nome científico -- Nenhum (construto artificial)\nTamanho -- variável\nDieta -- alimentado por turfa e magia\n\nFrey, irmão de Freia, tinha uma carruagem puxada por um javali que não era um animal vivo, mas foi forjado pelos anões Brokk e Eitri. Gullinbursti (''juba dourada'') tinha cerdas brilhantes que iluminavam a escuridão. Ele podia correr mais rápido do que qualquer cavalo, sobre o céu e a água. Os anões fabricaram o javali de batalha como resultado de uma aposta com Loki sobre qual família de anões poderia dar o melhor presente para os deuses nórdicos. Eitri colocou uma pele de porco na forja, enquanto Brokk trabalhava no fole. Loki assumiu a forma de uma mosca para morder Brokk e distraí-lo de fazer seu trabalho. Freia também montou um javali chamado Hildisvini.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 83,
@@ -5731,7 +5880,14 @@
     "icon": "aomr_hersir_icon",
     "descricao_resumida": "Infantaria, Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Infantaria, Herói. Bom contra unidades mitológicas. Gera Favor mais rápido e coleta Relíquias.",
-    "historia": "O nórdico Hersir é um herói que pode ser treinado em grandes quantidades. Hersirs são fortes contra unidades mitológicas, mas não são eficazes contra outros tipos de soldados humanos. Como eles se movem lentamente e usam um ataque manual, os Hersirs são menos eficazes contra unidades mitológicas de longo alcance do que contra unidades mitológicas que lutam corpo a corpo.\n\nOs comandantes dos ataques vikings muitas vezes não eram reis ou jarls, mas sim chefes de tribo nível médio chamados hersirs. Esses proprietários independentes eram comparáveis a cavaleiros medievais em riqueza e influência. Um hersir tinha acesso a equipamentos melhores do que a maioria de seus guerreiros, como armaduras de cota e até mesmo a propriedade de seu próprio dracar e cavalo."
+    "historia": "O nórdico Hersir é um herói que pode ser treinado em grandes quantidades. Hersirs são fortes contra unidades mitológicas, mas não são eficazes contra outros tipos de soldados humanos. Como eles se movem lentamente e usam um ataque manual, os Hersirs são menos eficazes contra unidades mitológicas de longo alcance do que contra unidades mitológicas que lutam corpo a corpo.\n\nOs comandantes dos ataques vikings muitas vezes não eram reis ou jarls, mas sim chefes de tribo nível médio chamados hersirs. Esses proprietários independentes eram comparáveis a cavaleiros medievais em riqueza e influência. Um hersir tinha acesso a equipamentos melhores do que a maioria de seus guerreiros, como armaduras de cota e até mesmo a propriedade de seu próprio dracar e cavalo.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 84,
@@ -5808,7 +5964,8 @@
     "habilidades": [
       {
         "nome": "Tiro Disperso",
-        "descricao": "Dispara vários projéteis em uma saraivada para frente."
+        "descricao": "Dispara vários projéteis em uma saraivada para frente.",
+        "icon": "aomr_draugr_ability_icon"
       }
     ],
     "historia": "Nome científico -- Homo sapiens\nTamanho -- cerca de 2,13 m de altura\nDieta -- alimentado por necromancia\n\nUm draugr (pl. draugar), também conhecido como barrow-wight (ou criatura tumular), era um homem morto-vivo que vivia em um monte funerário. Dedicado a acumular e proteger o tesouro em seus montes, os draugar também saíam de seus montes para atacar ou assediar os vivos, geralmente à noite. De certa forma, o draugr possui incidentalmente muitas características ''vampíricas''. Na lenda nórdica, os heróis geralmente lutavam contra um draugr pelo tesouro; por exemplo, o fora-da-lei islandês do século XI, Grettir Asmundsson, derrota um draugr que outrora foi Karr, o Velho, dentro de seu monte funerário.\n\n''…quando ele estava voltando para dentro do monte, algo o agarrou com força. Ele deixou o tesouro cair e revidou, e os dois lutaram violentamente, derrubando tudo que estava em seu caminho…'' -- Saga de Grettir."
@@ -5884,7 +6041,8 @@
     "habilidades": [
       {
         "nome": "Estouro da Trombeta",
-        "descricao": "Sopra sua trombeta de batalha para inspirar guerreiros próximos a se moverem mais rápido e causar mais dano."
+        "descricao": "Sopra sua trombeta de batalha para inspirar guerreiros próximos a se moverem mais rápido e causar mais dano.",
+        "icon": "aomr_einheri_ability_icon"
       }
     ],
     "historia": "Nome científico – Homo sapiens\nTamanho – cerca de 2,13 metros de altura\nDieta – grandes quantidades de comida humana, especialmente carne de javali\n\nOs Einherjar eram heróis mortos reunidos pelas Valquírias e levados para Asgard, onde viviam com Odin. As Valquírias selecionaram apenas os melhores e mais heroicos guerreiros. Enquanto viviam em Asgard, os Einherjar festejavam a noite toda e lutavam o dia todo, com quaisquer feridas sendo curadas magicamente. Assim, eles se preparavam incessantemente para o momento em que Odin os convocasse para lutar com os deuses no Ragnarok."
@@ -5964,7 +6122,8 @@
     "habilidades": [
       {
         "nome": "Lançamento de Pedregulho",
-        "descricao": "Lança uma grande rocha, danificando e deslocando unidades inimigas em seu caminho."
+        "descricao": "Lança uma grande rocha, danificando e deslocando unidades inimigas em seu caminho.",
+        "icon": "aomr_troll_ability_icon"
       }
     ],
     "historia": "Nome científico - Troll Gigans\nTamanho - cerca de 9 pés de altura\nDieta - pedras, raízes, humanos\n\nTrolls são criaturas estúpidas e comedoras de homens que vivem em cavernas sob colinas e montanhas. Eles são aliados dos gigantes e lutarão contra os deuses durante o Ragnarok. Os trolls são fortes e têm longa vida, mas não são conhecidos por sua beleza. Os trolls transformam-se em pedra se forem expostos à luz do dia. Alguns são conhecidos por roubar mulheres e crianças e podem deixar uma criança trocada em troca de um menino sequestrado. Alguns trolls tinham poderes mágicos, principalmente adivinhação do futuro."
@@ -6217,7 +6376,14 @@
     "icon": "aomr_godi_icon",
     "descricao_resumida": "Soldado de Longo Alcance, Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Soldado de Longo Alcance, Herói. Bom contra unidades mitológicas. Coleta Relíquia.",
-    "historia": "O nórdico Godi é um herói que pode ser treinado em grandes quantidades. Os Godis são fortes contra unidades mitológicas, mas não são eficazes contra outros tipos de soldados humanos. Seu ataque de longo alcance os torna melhores do que os Hersirs contra unidades mitológicas de longo alcance, especialmente as voadoras.\n\nGodi é um título que originalmente designava um magnata escandinavo que também funcionava como sacerdote, o que o tornava um líder político e religioso. Esses homens inicialmente detinham imensa influência, mas foram gradualmente suplantados pelos reis, que combinavam poder político, militar e religioso. Na Islândia, onde nenhum rei governou até sua aquisição pela Noruega no século 13, o posto dos Godis sobreviveu por séculos, embora tenha perdido seu poder religioso com a chegada do cristianismo, por volta de 1000 EC."
+    "historia": "O nórdico Godi é um herói que pode ser treinado em grandes quantidades. Os Godis são fortes contra unidades mitológicas, mas não são eficazes contra outros tipos de soldados humanos. Seu ataque de longo alcance os torna melhores do que os Hersirs contra unidades mitológicas de longo alcance, especialmente as voadoras.\n\nGodi é um título que originalmente designava um magnata escandinavo que também funcionava como sacerdote, o que o tornava um líder político e religioso. Esses homens inicialmente detinham imensa influência, mas foram gradualmente suplantados pelos reis, que combinavam poder político, militar e religioso. Na Islândia, onde nenhum rei governou até sua aquisição pela Noruega no século 13, o posto dos Godis sobreviveu por séculos, embora tenha perdido seu poder religioso com a chegada do cristianismo, por volta de 1000 EC.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 91,
@@ -6290,7 +6456,8 @@
     "habilidades": [
       {
         "nome": "Pinote",
-        "descricao": "Chuta e ataca unidades inimigas, arremessando-as pelo ar."
+        "descricao": "Chuta e ataca unidades inimigas, arremessando-as pelo ar.",
+        "icon": "aomr_battle_boar_ability_icon"
       }
     ],
     "historia": "Nome científico - Nenhum (construto artificial)\nTamanho - 360 kg.\nDieta - alimentada por turfa e magia\n\nFrey, irmão de Freia, tinha uma carruagem puxada por um javali que não era um animal vivo, mas foi forjada pelos anões Brokk e Eitri. Gullinbursti (''juba dourada'') tinha cerdas brilhantes que iluminavam a escuridão. Ele poderia correr mais rápido do que qualquer cavalo, sobre o céu e a água. Os anões fabricaram o javali de batalha como resultado de uma aposta com Loki sobre qual família de anões poderia dar o melhor presente para os deuses nórdicos. Eitri colocou uma pele de porco na forja, enquanto Brokk trabalhava no fole. Loki assumiu a forma de uma mosca para morder Brokk e distraí-lo de fazer seu trabalho. Freia também montou um javali chamado Hildisvini."
@@ -6370,15 +6537,18 @@
     "habilidades": [
       {
         "nome": "Sopro Frígido",
-        "descricao": "Congela as unidades inimigas com sua baforada."
+        "descricao": "Congela as unidades inimigas com sua baforada.",
+        "icon": "aomr_frost_giant_ability_icon"
       },
       {
         "nome": "Congelamento",
-        "descricao": "Congela múltiplas unidades inimigas no local dentro de um alcance de 3 por 15 segundos. Unidades congeladas são imunes a ataques especiais de unidades mitológicas, mas ficam indefesas contra ataques de unidades inimigas. Tempo de recarga: 20 segundos."
+        "descricao": "Congela múltiplas unidades inimigas no local dentro de um alcance de 3 por 15 segundos. Unidades congeladas são imunes a ataques especiais de unidades mitológicas, mas ficam indefesas contra ataques de unidades inimigas. Tempo de recarga: 20 segundos.",
+        "icon": "aomr_frost_giant_ability_icon"
       },
       {
         "nome": "Tempestade",
-        "descricao": "Lança uma violenta tempestade de granizo sobre seus inimigos."
+        "descricao": "Lança uma violenta tempestade de granizo sobre seus inimigos.",
+        "icon": "aomr_frost_giant_ability_icon"
       }
     ],
     "historia": "Nome científico – Gigans hrimthurs\nTamanho – 4,5 metros de altura\nDieta – água congelada (ou mais em festas de casamento. Veja abaixo.)\n\nOs hrimthursar, também chamados de gigantes de gelo ou do congelamento, estavam entre os primeiros gigantes criados quando o mundo começou. Junto com os brutais bergrisar, ou gigantes das montanhas, os gigantes do gelo eram seres antigos, representando elementos da vida selvagem indomada. Eles viviam no reino de Jotunheim, um dos Nove Mundos da mitologia nórdica, e seu líder era o jotun Thrym (''tumulto''). Ele era arqui-inimigo de Thor, e uma vez roubou seu martelo, Mjollnir, exigindo Freia como esposa em troca do martelo.\n\nConforme diz a história, Thor se vestiu de Freia e foi buscar o martelo. Durante a festa, os gigantes ficaram surpresos porque ''Freia'' comeu um boi, vários salmões e bebeu grandes canecas de hidromel. Loki deu a desculpa de que ''Freia'' não comia há dias, por estar muito animada com o casamento. Quando Thrym espiou sob o véu de noiva e viu a barba de Thor, o deus se livrou do disfarce.\n\n''O coração de Thor riu por dentro quando ele viu seu martelo. Primeiro ele derrubou Thrym, o rei dos jotuns, e então matou todos os seus parentes. Ele também matou a pobre irmã de Thrym, que implorara por um presente da noiva. Em vez de xelins, ela recebeu golpes; em vez de anéis, marteladas. Assim, o filho de Odin recuperou seu martelo.'' – A Balada de Thrym, da Edda Poética"
@@ -6450,7 +6620,8 @@
     "habilidades": [
       {
         "nome": "Rastro da Destruição",
-        "descricao": "Golpeia ao redor com sua cauda, criando ondas que danificam e deslocam inimigos próximos."
+        "descricao": "Golpeia ao redor com sua cauda, criando ondas que danificam e deslocam inimigos próximos.",
+        "icon": "aomr_jormun_elver_ability_icon"
       }
     ],
     "historia": "Nome científico – Megaserpens midgardi\nTamanho – cerca de 18 metros de comprimento (mas seu pai tinha cerca de 12.900 quilômetros de comprimento!)\nDieta – baleias, peixes grandes\n\nO Jormungandr original, do qual essas criaturas são apenas filhotinhos, foi uma monstruosa serpente marinha e descendente de Loki e da gigante Angerboda. Odin jogou a serpente nos mares de Midgard quando ela era pequena, mas ela cresceu tanto que poderia cercar a terra mordendo a própria cauda. Durante o Ragnarok, Thor estava destinado a finalmente matar a serpente, mas também sucumbiria ao veneno da serpente."
@@ -6518,11 +6689,13 @@
     "habilidades": [
       {
         "nome": "Emborcar",
-        "descricao": "Envolve um navio inimigo com seus tentáculos, arrastando-o para baixo d'água e destruindo-o imediatamente."
+        "descricao": "Envolve um navio inimigo com seus tentáculos, arrastando-o para baixo d'água e destruindo-o imediatamente.",
+        "icon": "aomr_kraken_ability_capsize_icon"
       },
       {
         "nome": "Arremessar",
-        "descricao": "Lança soldados humanos em unidades ou construções inimigas, causando dano na área."
+        "descricao": "Lança soldados humanos em unidades ou construções inimigas, causando dano na área.",
+        "icon": "aomr_kraken_ability_throw_icon"
       }
     ],
     "historia": "Nome científico – Psychroteuthis pelagii\nTamanho – mais de 27 toneladas.\nDieta – peixes e crustáceos de águas profundas\n\nUma criatura do mar tão grande que na superfície foi confundida com uma cadeia de ilhas, o Kraken é encontrado no folclore escandinavo do início da modernidade. Diz-se que os marinheiros muitas vezes se perdiam quando acampavam no que pensavam ser uma ilha, apenas para se afogarem quando a criatura nadava de volta ao fundo do mar. O Kraken tinha grandes tentáculos e ventosas com os quais podia agarrar grandes navios e arrastá-los para as profundezas. Provavelmente foi inspirado nos raros encontros de marinheiros com lulas gigantes."
@@ -6602,7 +6775,8 @@
     "habilidades": [
       {
         "nome": "Porrete",
-        "descricao": "Esmaga construções inimigas com seu porrete."
+        "descricao": "Esmaga construções inimigas com seu porrete.",
+        "icon": "aomr_mountain_giant_ability_bludgeon_icon"
       },
       {
         "nome": "Mjolnir",
@@ -6610,15 +6784,18 @@
       },
       {
         "nome": "Bote dos Anões",
-        "descricao": "Manda anões a unidades ou construções inimigas, causando dano de área."
+        "descricao": "Manda anões a unidades ou construções inimigas, causando dano de área.",
+        "icon": "aomr_mountain_giant_ability_dwarven_punt_icon"
       },
       {
         "nome": "Golpe",
-        "descricao": "Dá um chute poderoso que faz bolas voarem.\n\nImagine um time de gigantes das montanhas, com músculos que ondulam como pedras e barbas que poderiam rivalizar com uma floresta, entrando pesadamente em um campo de futebol..."
+        "descricao": "Dá um chute poderoso que faz bolas voarem.\n\nImagine um time de gigantes das montanhas, com músculos que ondulam como pedras e barbas que poderiam rivalizar com uma floresta, entrando pesadamente em um campo de futebol...",
+        "icon": "aomr_mountain_giant_ability_footy_icon"
       },
       {
         "nome": "Bote",
-        "descricao": "Chuta soldados humanos contra unidades ou construções inimigas, causando dano na área."
+        "descricao": "Chuta soldados humanos contra unidades ou construções inimigas, causando dano na área.",
+        "icon": "aomr_mountain_giant_ability_punt_icon"
       }
     ],
     "historia": "Nome científico - Gigans bergrisi\nTamanho - 5 metros de altura\nDieta - pedras, árvores, ovelhas, humanos\n\nOs gigantes da montanha, também conhecidos como bergrisar, eram conhecidos por sua grande força e estupidez. Eles eram antagônicos e destrutivos e, como outros jotuns, representavam forças indomadas da natureza. Notavelmente, várias gigantas (que talvez não fossem tão bestiais quanto os machos de sua espécie) tiveram encontros com alguns dos deuses nórdicos.\n\nAlguns dos gigantes mais notáveis incluíam o inimigo de Thor, Hrungnir, cuja cabeça e coração eram feitos de pedra - e que caiu sobre Thor quando morto; Gerdr, uma giganta que se casou com Frey (irmão de Freia), o pedreiro sem nome que construiu as muralhas ao redor de Asgard em seis meses em uma aposta (e também foi morto por Thor), e Gunnlod, uma giganta com quem Odin teve que dormir por três noites antes de poder beber o hidromel do pai dela."
@@ -6689,11 +6866,13 @@
     "habilidades": [
       {
         "nome": "Fome Abissal",
-        "descricao": "Recupera pontos de vida ao atacar construções inimigas."
+        "descricao": "Recupera pontos de vida ao atacar construções inimigas.",
+        "icon": "aomr_rock_giant_ability_cavernous_hunger_icon"
       },
       {
         "nome": "Jotunmodr",
-        "descricao": "Provoca os inimigos próximos, reforçando sua armadura e forçando-os a te atacar, protegendo os aliados."
+        "descricao": "Provoca os inimigos próximos, reforçando sua armadura e forçando-os a te atacar, protegendo os aliados.",
+        "icon": "aomr_rock_giant_ability_jotunmodr_icon"
       }
     ],
     "historia": "Nome científico -- Gigans bergrisi\nTamanho -- cerca de 4,88 metros\nDieta -- rochas, árvores, ovelhas, humanos\n\nA mitologia nórdica está repleta de histórias sobre uma variedade de jotnar ou ''gigantes''. Essas figuras estão tipicamente associadas a diferentes elementos naturais, como gigantes das rochas ou pedras. Um exemplo significativo das Eddas é um gigante das rochas chamado Hrungnir, que tinha um coração ''feito de rocha sólida e [era] espinhoso com três pontas''. Ele era uma figura excepcionalmente poderosa: tanto que Thor se vangloria constantemente de tê-lo derrotado ao longo do corpus mitológico.\n\nThor diz em Hymiskvida que ''É sobre isso que você está falando: que Hrungnir e eu lutamos -- / o gigante de grande espírito cuja cabeça era feita de rochas: / e ainda assim eu o derrubei e o fiz cair diante de mim''. Thor até se referiu a seu martelo como ''o matador de Hrungnir'' em Lokasenna, mais uma vez enfatizando a força de seu oponente."
@@ -6753,7 +6932,14 @@
     "favor": 0,
     "descricao_resumida": "Infantaria, Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Infantaria, Herói. Convocado para participar da batalha final dos deuses. Coleta Relíquias.",
-    "historia": "Os heróis do Ragnarok são fortes contra unidades mitológicas. Eles só podem ser invocados pelo Poder de Deus de Balder, Ragnarok.\n\nApós o Fimbulwinter – um inverno muito gelado com três anos de duração – os galos Fjalar, Gullinkambi, bem como o galo vermelho-fuligem de Hel, cantarão, anunciando o Ragnarok, a batalha final entre os deuses e seus inimigos. Todos os nove mundos serão devastados pelos combates, mas um novo mundo de paz nascerá das cinzas do antigo. É por este mundo que os deuses e heróis agora lutam."
+    "historia": "Os heróis do Ragnarok são fortes contra unidades mitológicas. Eles só podem ser invocados pelo Poder de Deus de Balder, Ragnarok.\n\nApós o Fimbulwinter – um inverno muito gelado com três anos de duração – os galos Fjalar, Gullinkambi, bem como o galo vermelho-fuligem de Hel, cantarão, anunciando o Ragnarok, a batalha final entre os deuses e seus inimigos. Todos os nove mundos serão devastados pelos combates, mas um novo mundo de paz nascerá das cinzas do antigo. É por este mundo que os deuses e heróis agora lutam.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 98,
@@ -6824,11 +7010,13 @@
     "habilidades": [
       {
         "nome": "Maldição de Andvari",
-        "descricao": "Concede Ouro a quem matou."
+        "descricao": "Concede Ouro a quem matou.",
+        "icon": "aomr_fafnir_ability_andvaris_curse_icon"
       },
       {
         "nome": "Fumaça Espessa",
-        "descricao": "A poluição tóxica causa dano a todas as unidades inimigas próximas."
+        "descricao": "A poluição tóxica causa dano a todas as unidades inimigas próximas.",
+        "icon": "aomr_fafnir_ability_billowing_smog_icon"
       },
       {
         "nome": "Pilhagem de Dragão",
@@ -6906,7 +7094,8 @@
     "habilidades": [
       {
         "nome": "Pacote (Passivo)",
-        "descricao": "Grupos maiores de lobos de Fenrir tornam-se mais fortes e mais rápidos."
+        "descricao": "Grupos maiores de lobos de Fenrir tornam-se mais fortes e mais rápidos.",
+        "icon": "aomr_fenris_wolf_brood_ability_icon"
       }
     ],
     "historia": "Nome científico – Canis fenris\nTamanho – 249 kg.\nDieta – cervos, gado, deuses\n\nO grande lobo Fenrir (do qual esses monstros são apenas a prole) foi o produto de Loki e da giganta Angrboda. Os deuses criaram o lobo em Asgard, mas apenas Tyr tinha coragem de alimentá-lo. Infelizmente, o lobo continuou crescendo até que nada pudesse acorrentá-lo. Finalmente, os anões fizeram uma corrente das raízes de uma montanha, a barba de uma mulher, o silêncio de um gato em movimento, os tendões de um urso, o cuspe de um pássaro e a respiração de um peixe. Para enganar Fenrir para fosse acorrentado, Tyr ofereceu comida e, em retribuição, o lobo mordeu sua mão. Fenrir então começou a uivar até que os deuses enfiaram uma espada em sua boca como mordaça.\n\nNo Ragnarok, Fenrir está fadado a quebrar suas correntes e matar Odin."
@@ -7040,7 +7229,8 @@
     "habilidades": [
       {
         "nome": "Tempestade de Fogo",
-        "descricao": "Gera um inferno flamejante, danificando grupos de unidades inimigas. Ineficaz contra construções."
+        "descricao": "Gera um inferno flamejante, danificando grupos de unidades inimigas. Ineficaz contra construções.",
+        "icon": "aomr_fire_giant_ability_icon"
       }
     ],
     "historia": "Nome científico -- Gigans muspilli\nTamanho -- 12' de altura\nDieta -- rochas ígneas\n\nOs gigantes do fogo, ou \"lydir muspells\", são participantes ansiosos no Ragnarok e buscam a destruição ardente do cosmos. O mais famoso dos gigantes do fogo era Surtr (\"o escuro\"), um ser que guardava os portões de Muspellheim. Ele tinha cabelo ardente, pele de lava fervente e carregava uma espada flamejante. Muspellheim era um dos \"níveis médios\" dos Nove Mundos, juntamente com Midgard e Jotunheim."
@@ -7101,11 +7291,13 @@
     "habilidades": [
       {
         "nome": "Bombardeio Flamejante",
-        "descricao": "Cospe fogo enquanto desce em linha reta, incendiando a área em seu caminho e causando muito dano a unidades inimigas próximas."
+        "descricao": "Cospe fogo enquanto desce em linha reta, incendiando a área em seu caminho e causando muito dano a unidades inimigas próximas.",
+        "icon": "aomr_nidhogg_blazing_strafe_ability_icon"
       },
       {
         "nome": "Proteção Divina (Passivo)",
-        "descricao": "Não pode ser alvo de Poderes Divinos inimigos."
+        "descricao": "Não pode ser alvo de Poderes Divinos inimigos.",
+        "icon": "aomr_nidhogg_ability_divine_protection_icon"
       }
     ],
     "historia": "Nome científico -- Draco niflheimus\nTamanho -- 20' envergadura\nDieta -- cadáveres, raízes de Yggdrasil\n\nEm Niflheim, o reino nórdico dos mortos, vive um grande dragão ou serpente, Nidhogg, cujo nome significa \"rasgo de cadáveres\". Ele roe as raízes da árvore do mundo, Yggdrasil, esperando por Ragnarok. Yggdrasil também é o lar de uma águia e de um esquilo chamado Ratatosk. Ratatosk ferries insultos para frente e para trás entre Nidhogg nas raízes da árvore e a águia que vive em seus galhos.\n\nOutros dragões que procuram destruir a árvore do mundo são Grabak, Grafvolluth, Goin e Moin."
@@ -7334,7 +7526,14 @@
     "construcao": null,
     "descricao_resumida": "Herói batedor. Bom contra unidades mitológicas. Gera Favor.",
     "descricao_avancada": "Herói batedor cuja linha de visão aumenta quando imóvel. Gera Favor mais rápido que os Oráculos normais.",
-    "historia": "O Oráculo Atlante se tornou um Herói. Assim como um Oráculo regular, ele ainda é lento e relativamente fraco em combate, mas, como Herói, é mais eficaz contra unidades mitológicas. Um Herói Oráculo é um ótimo batedor, pois sua linha de visão máxima é quase dobrada e aumenta mais rapidamente. Todos os Heróis podem pegar Relíquias.\n\nOs antigos atlantes dependiam muito da classe sacerdotal para liderança e orientação. Oráculos eram sacerdotes que usavam uma forma de meditação profunda para ver além do que a visão normal permitiria. Oráculos eram batedores e vigias dos exércitos atlantes. É discutível se sua grande visão foi concedida pelos Titãs, ou foi meramente o produto de uma profunda sintonia com seu ambiente."
+    "historia": "O Oráculo Atlante se tornou um Herói. Assim como um Oráculo regular, ele ainda é lento e relativamente fraco em combate, mas, como Herói, é mais eficaz contra unidades mitológicas. Um Herói Oráculo é um ótimo batedor, pois sua linha de visão máxima é quase dobrada e aumenta mais rapidamente. Todos os Heróis podem pegar Relíquias.\n\nOs antigos atlantes dependiam muito da classe sacerdotal para liderança e orientação. Oráculos eram sacerdotes que usavam uma forma de meditação profunda para ver além do que a visão normal permitiria. Oráculos eram batedores e vigias dos exércitos atlantes. É discutível se sua grande visão foi concedida pelos Titãs, ou foi meramente o produto de uma profunda sintonia com seu ambiente.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 107,
@@ -7579,7 +7778,14 @@
     "construcao": null,
     "descricao_resumida": "Infantaria, Herói. Bom contra cavalaria e unidades mitológicas.",
     "descricao_avancada": "Contracavalaria. Herói de infantaria bom apenas contra cavalaria e unidades mitológicas. Coleta Relíquias.",
-    "historia": "Este Katapeltes se tornou um herói. Como outros Katapeltes, ele é muito eficaz contra a cavalaria e fraco contra todas as outras unidades; mas como herói, ele é mais eficaz contra unidades míticas. Todos os heróis podem pegar Relíquias.\n\nA maça normalmente não é considerada uma arma adequada para combater a cavalaria, mas ataques precisos e poderosos podem destruir armaduras e esmagar as pernas dos cavalos e os joelhos dos cavaleiros. Somente a armadura mais pesada poderia desviar os ataques do katapeltes - o destruidor de escudos."
+    "historia": "Este Katapeltes se tornou um herói. Como outros Katapeltes, ele é muito eficaz contra a cavalaria e fraco contra todas as outras unidades; mas como herói, ele é mais eficaz contra unidades míticas. Todos os heróis podem pegar Relíquias.\n\nA maça normalmente não é considerada uma arma adequada para combater a cavalaria, mas ataques precisos e poderosos podem destruir armaduras e esmagar as pernas dos cavalos e os joelhos dos cavaleiros. Somente a armadura mais pesada poderia desviar os ataques do katapeltes - o destruidor de escudos.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 111,
@@ -7635,7 +7841,14 @@
     "icon": "aomr_murmillo_hero_icon",
     "construcao": null,
     "descricao_resumida": "Infantaria, Herói. Bom contra unidades mitológicas.",
-    "historia": "Este Murmilo tornou-se um herói. Como um Murmilo regular, ele é forte contra cavalaria e fraco contra soldados de longo alcance; mas, como herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem coletar Relíquias.\n\nGuerreiros e soldados atlantes eram conhecidos pela disciplina e pelos exercícios. Um Murmilo começava a treinar antes do amanhecer e terminava após o pôr do sol. Eles eram chamados de murmillones, ou homens-peixe, por causa dos capacetes brilhantes dotados de barbatanas, que faziam com que sua movimentação complexa em combate parecesse um cardume de peixes. Eles nutrem rivalidade e respeito pelos destruidores, que consideram os murmillones inferiores, como os peixes para os pescadores."
+    "historia": "Este Murmilo tornou-se um herói. Como um Murmilo regular, ele é forte contra cavalaria e fraco contra soldados de longo alcance; mas, como herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem coletar Relíquias.\n\nGuerreiros e soldados atlantes eram conhecidos pela disciplina e pelos exercícios. Um Murmilo começava a treinar antes do amanhecer e terminava após o pôr do sol. Eles eram chamados de murmillones, ou homens-peixe, por causa dos capacetes brilhantes dotados de barbatanas, que faziam com que sua movimentação complexa em combate parecesse um cardume de peixes. Eles nutrem rivalidade e respeito pelos destruidores, que consideram os murmillones inferiores, como os peixes para os pescadores.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 112,
@@ -7703,7 +7916,14 @@
     "construcao": null,
     "descricao_resumida": "Soldado de Longo Alcance, Cavalaria, Herói. Bom contra soldados de longo alcance e unidades mitológicas.",
     "descricao_avancada": "Soldado de Longo Alcance, Cavalaria, Herói. Herói lançador de dardos montado, bom apenas contra outros soldados de longo alcance e unidades mitológicas.",
-    "historia": "O Turma Atlante se tornou um herói. Como todos Turma, ele é excepcionalmente bom contra soldados de longo alcance e fraco contra todas as outras unidades; mas como um herói, ele é mais efetivo contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nO treinamento do Turma Atlante era muito focado e perigoso, exigindo anos para ser aperfeiçoado. Tanto o cavalo quanto o cavaleiro tinham que ser atléticos, resistentes e rápidos. Um turma veterano poderia matar um pássaro em vôo com um lançamento de dardo certeiro. Os cavalos, descendentes de raça selvagem atlante, não eram menos excepcionais. Esses cavalos eram tão valorizados que capturar pelo menos um dos atlantes em batalha era considerado uma grande fortuna, mesmo que a batalha em si fosse perdida. Muitas grandes linhagens foram criadas em outras regiões por tais populações atlantes capturadas."
+    "historia": "O Turma Atlante se tornou um herói. Como todos Turma, ele é excepcionalmente bom contra soldados de longo alcance e fraco contra todas as outras unidades; mas como um herói, ele é mais efetivo contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nO treinamento do Turma Atlante era muito focado e perigoso, exigindo anos para ser aperfeiçoado. Tanto o cavalo quanto o cavaleiro tinham que ser atléticos, resistentes e rápidos. Um turma veterano poderia matar um pássaro em vôo com um lançamento de dardo certeiro. Os cavalos, descendentes de raça selvagem atlante, não eram menos excepcionais. Esses cavalos eram tão valorizados que capturar pelo menos um dos atlantes em batalha era considerado uma grande fortuna, mesmo que a batalha em si fosse perdida. Muitas grandes linhagens foram criadas em outras regiões por tais populações atlantes capturadas.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 113,
@@ -7775,7 +7995,8 @@
     "habilidades": [
       {
         "nome": "Reparo Robótico",
-        "descricao": "Pode reviver e reparar outros Autômatos."
+        "descricao": "Pode reviver e reparar outros Autômatos.",
+        "icon": "aomr_automaton_ability_icon"
       }
     ],
     "historia": "Nome científico – Nenhum (construto artificial)\nTamanho – mais de 2 m de altura\nDieta – não come\n\nHabilidade especial – pode reparar outros autômato\n\nAutômato são resistentes, especialmente em grupos, porque podem reparar uns aos outros. Se você enfrentar Autômatos atlantes, use heróis contra eles e tente destruir todos eles, ou eles retornarão.\n\nOs atlantes valorizavam muito a liberdade pessoal. Como nunca praticaram a escravidão, eles criaram autômatos para realizar tarefas em que muitas outras culturas usavam escravos. À medida que a sofisticação dos autômatos aumentava, alguns na Atlântida queriam que eles se tornassem cidadãos. Outros se opuseram a essa ideia. Uma guerra civil eclodiu e mergulhou o império atlante numa era de trevas que durou milhares de anos. Durante este tempo, muitas colônias atlantes regrediram ou se revoltaram e tornaram-se nações independentes. Os autômatos nunca foram introduzidos na sociedade atlante e a Atlântida, embora muito mais avançada do que outras nações, nunca mais retornou ao patamar da sua Era de Ouro."
@@ -7842,11 +8063,13 @@
     "habilidades": [
       {
         "nome": "Rajada de Cura",
-        "descricao": "Cura rapidamente as unidades amigas próximas."
+        "descricao": "Cura rapidamente as unidades amigas próximas.",
+        "icon": "aomr_caladria_ability_burst_heal_icon"
       },
       {
         "nome": "Pacificar",
-        "descricao": "Enfeitiça uma unidade inimiga para diminuir sua velocidade de movimento e de ataque."
+        "descricao": "Enfeitiça uma unidade inimiga para diminuir sua velocidade de movimento e de ataque.",
+        "icon": "aomr_caladria_ability_pacify_icon"
       }
     ],
     "historia": "Nome científico – Homo asclepii\nTamanho – tamanho humano\nDieta – onívoro, mas principalmente herbívoro\n\nCaladrias são curandeiros voadores. Eles são batedores decentes, mas cairão facilmente nas torres e mísseis inimigos. Múltiplos Caladrias podem curar uns aos outros para que possam continuar curando os exércitos Atlantes. Eles também podem direcionar seus poderes para unidades inimigas para desacelerá-los.\n\n\\''...Caladria morreu e foi sepultada. O teocrata Ósforo construiu um templo de cura sobre seu túmulo. Muitos consideraram sua decisão uma blasfêmia, mas todos os que sofreram e ficaram doentes ficaram fortes e inteiros novamente sob o cuidado dos curandeiros do templo. Abençoados foram os exércitos acompanhados por esses seguidores de Caladria, pois foram curados, inspirados e protegidos.\\''\n\n-- Vozes do Oráculo, a Balada de Ioleta"
@@ -7908,11 +8131,13 @@
     "habilidades": [
       {
         "nome": "Devorar",
-        "descricao": "Puxa uma unidade humana inimiga para dentro de sua bocarra, matando instantaneamente."
+        "descricao": "Puxa uma unidade humana inimiga para dentro de sua bocarra, matando instantaneamente.",
+        "icon": "aomr_carnivora_ability_devour_icon"
       },
       {
         "nome": "Reter (Passivo)",
-        "descricao": "Ataques aproximam as unidades inimigas da Carnívora, para que sejam mais facilmente devoradas."
+        "descricao": "Ataques aproximam as unidades inimigas da Carnívora, para que sejam mais facilmente devoradas.",
+        "icon": "aomr_carnivora_ability_entrap_icon"
       }
     ],
     "historia": "Nome científico – Aldrovanda ampelos subsp. xera\nTamanho – cerca de 2,74 metros de altura\nDieta – roedores, peixes, ocasionalmente humanos\n\nCarnívoras capturam e matam rapidamente, mas devem esperar para digerir antes de capturar mais presas. Heróis e unidades de longo alcance podem evitar as vinhas de uma Carnívora.\n\nO Titã Oceano deu vários de suas carnívoras sagrados para Gaia como presente. As carnívoras em terra eram fáceis de evitar se vistas, mas se camuflavam bem com a vegetação circundante. Presas desavisadas muitas vezes tropeçavam nelas e eram apanhadas para serem digeridas horrivelmente ao longo de uma semana ou mais."
@@ -7988,7 +8213,8 @@
     "habilidades": [
       {
         "nome": "Morte Terrena (Passivo)",
-        "descricao": "Divide-se em várias Proles de Prometeano ao morrer."
+        "descricao": "Divide-se em várias Proles de Prometeano ao morrer.",
+        "icon": "aomr_promethean_ability_icon"
       }
     ],
     "historia": "Nome científico – Homo protos\nTamanho – 2,10 metros de altura\nDieta – fogo, carvão, águias\n\nPrometeanos são lentos, mas têm armaduras decentes e valores de ataque. Quando são destruídos, vários Prometeanos menores se levantam do barro do primeiro.\n\nPrometeu foi um dos poucos Titãs que ficou do lado dos olímpicos na Titanomaquia. Ele e seu irmão Epimeteu foram encarregados da criação da humanidade, e moldaram os primeiros povos a partir do barro. Com pena dos frágeis mortais, ele deu às suas criações o dom do fogo para que se tornassem fortes. Isso irritou Zeus, que prendeu Prometeu em uma montanha, onde uma águia devorava seu fígado todos os dias."
@@ -8168,7 +8394,8 @@
     "habilidades": [
       {
         "nome": "Afundar",
-        "descricao": "Surra um navio inimigo com seus tentáculos, afundando-o instantaneamente."
+        "descricao": "Surra um navio inimigo com seus tentáculos, afundando-o instantaneamente.",
+        "icon": "aomr_water_carnivora_sink_ability_icon"
       }
     ],
     "historia": "Nome científico – Aldrovanda ampelos, subespécie thalassa\nTamanho – cerca de 2,5 metros de altura\nDieta – Carnívoro, peixe, ocasionalmente marinheiros\n\nCarnívoras capturam e matam rapidamente, mas devem esperar para digerir antes de capturar mais presas. Heróis e unidades de longo alcance podem evitar as vinhas de uma Carnívora.\n\nSagradas para Titã Oceano, essas plantas aquáticas carnívoras guardavam seu palácio. Também chamadas de Presas de Caríbdis, foram responsáveis pelo desaparecimento de mais embarcações do que as sereias e Caríbdis juntas. Muitas carnívoras aquáticas foram cultivadas nas baías da Atlântida e ao longo dos canais de navegação para proteger o comércio atlante. Era uma ofensa punível navegar até uma dessas plantas sagradas, embora poucos que se aventuravam perto de uma carnívora sobreviviam para enfrentar a punição."
@@ -8418,7 +8645,14 @@
     "icon": "aomr_arcus_hero_icon",
     "construcao": null,
     "descricao_resumida": "Soldado de Longo Alcance, Herói. Bom contra infantaria e unidades mitológicas.",
-    "historia": "Este Arcus Atlante tornou-se um herói. Como um Arcus normal, ele é forte contra a infantaria e fraco contra unidades rápidas como a cavalaria; mas como um herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nTodos os cidadãos atlantes eram versados no uso de pelo menos uma arma. Aqueles que demonstraram habilidade com armas de longo alcance - fundas, arcos, dardos - foram chamados para as fileiras dos arcus. Os arcus Atlantes foram o primeiro uso militar eficaz de soldados de infantaria de longo alcance. As fundas eventualmente caíram em desuso e os dardos tornaram-se mais fáceis de manejar a cavalo. O arcus focado e mortal que emergiu ao longo do tempo era um mestre do arco e qualquer número de arcus em batalha intimidava sua oposição."
+    "historia": "Este Arcus Atlante tornou-se um herói. Como um Arcus normal, ele é forte contra a infantaria e fraco contra unidades rápidas como a cavalaria; mas como um herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nTodos os cidadãos atlantes eram versados no uso de pelo menos uma arma. Aqueles que demonstraram habilidade com armas de longo alcance - fundas, arcos, dardos - foram chamados para as fileiras dos arcus. Os arcus Atlantes foram o primeiro uso militar eficaz de soldados de infantaria de longo alcance. As fundas eventualmente caíram em desuso e os dardos tornaram-se mais fáceis de manejar a cavalo. O arcus focado e mortal que emergiu ao longo do tempo era um mestre do arco e qualquer número de arcus em batalha intimidava sua oposição.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 124,
@@ -8485,7 +8719,14 @@
     "icon": "aomr_contarius_hero_icon",
     "construcao": null,
     "descricao_resumida": "Cavalaria, Herói. Bom contra soldados de longo alcance e unidades mitológicas.",
-    "historia": "Este Contarius tornou-se um herói. Como um Contarius regular, ele é forte contra unidades de longo alcance e fraco contra infantaria. Mas, como herói, ele é muito mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nOs primeiros soldados atlantes domaram e montaram os cavalos selvagens que vagavam por sua ilha. Esses soldados montados foram muito bem-sucedidos nas primeiras conquistas da Atlântida, mas as terras agrícolas tomaram o lugar da natureza selvagem e as pastagens tornaram-se escassas à medida que a Atlântida crescia. Posteriormente, a cavalaria praticamente desapareceu das táticas atlantes, e apenas uma elite montava cavalos em combate. Generais atlantes derrotados entregam seus preciosos cavalos em submissão ao vencedor."
+    "historia": "Este Contarius tornou-se um herói. Como um Contarius regular, ele é forte contra unidades de longo alcance e fraco contra infantaria. Mas, como herói, ele é muito mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nOs primeiros soldados atlantes domaram e montaram os cavalos selvagens que vagavam por sua ilha. Esses soldados montados foram muito bem-sucedidos nas primeiras conquistas da Atlântida, mas as terras agrícolas tomaram o lugar da natureza selvagem e as pastagens tornaram-se escassas à medida que a Atlântida crescia. Posteriormente, a cavalaria praticamente desapareceu das táticas atlantes, e apenas uma elite montava cavalos em combate. Generais atlantes derrotados entregam seus preciosos cavalos em submissão ao vencedor.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 125,
@@ -8543,7 +8784,14 @@
     "dano_cortante": 7,
     "alcance": 1.5,
     "descricao_resumida": "Infantaria, Herói. Bom contra construções e unidades mitológicas.",
-    "historia": "Este Destruidor se tornou um herói. Como outros Destruidores, ele é muito eficaz contra construções e fraco contra a maioria das unidades; como herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem recolher Relíquias.\n\nOs exércitos que atacaram colônias atlantes perceberam que seus habitantes estavam longe de indefesos, especialmente os pescadores da costa, que empunhavam tridentes. Esses pescadores organizaram milícias defensivas, que depois se tornaram a guarda real de elite. Os Destruidores têm uma rivalidade de longa data com a infantaria padrão atlante, os Murmilos, a respeito de quem teria servido melhor à Atlântida."
+    "historia": "Este Destruidor se tornou um herói. Como outros Destruidores, ele é muito eficaz contra construções e fraco contra a maioria das unidades; como herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem recolher Relíquias.\n\nOs exércitos que atacaram colônias atlantes perceberam que seus habitantes estavam longe de indefesos, especialmente os pescadores da costa, que empunhavam tridentes. Esses pescadores organizaram milícias defensivas, que depois se tornaram a guarda real de elite. Os Destruidores têm uma rivalidade de longa data com a infantaria padrão atlante, os Murmilos, a respeito de quem teria servido melhor à Atlântida.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 126,
@@ -8616,7 +8864,8 @@
     "habilidades": [
       {
         "nome": "Revestimento Direcional (Passivo)",
-        "descricao": "Sofre menos dano com ataques frontais comparado a ataques traseiros ou laterais."
+        "descricao": "Sofre menos dano com ataques frontais comparado a ataques traseiros ou laterais.",
+        "icon": "aomr_behemoth_ability_icon"
       }
     ],
     "historia": "Nome científico – Gylptodon coelodonta\nTamanho – cerca de 5,5 metros de comprimento\nDieta – Pedras e neve\n\nBeemotes são armas de cerco vivas. Eles se regeneram, tornando-os ainda mais difíceis de matar do que os Escaravelhos de Sekhmet. Use-os contra construções, mas mantenha-os longe dos heróis inimigos.\n\n\"Os Titãs definharam no Tártaro. Os Olimpianos que os prenderam lá queriam nos punir, adoradores dos Titãs. Eles nos caçaram, mas nos escondemos na sombra do Beemote, que era tão alto quanto as montanhas e duas vezes mais longo. Ele nos protegeu, gritando quando o raio de Zeus atingiu sua armadura espessa e o curou após cada ataque de raio. Estávamos seguros.\"\n\n-- Juramentos dos Oráculos, A Balada de Ioleta"
@@ -8741,7 +8990,8 @@
     "habilidades": [
       {
         "nome": "Mordida de Tubarão",
-        "descricao": "Rasga o adversário, causando muito dano. Especialmente eficaz contra unidades mitológicas."
+        "descricao": "Rasga o adversário, causando muito dano. Especialmente eficaz contra unidades mitológicas.",
+        "icon": "aomr_nereid_ability_icon"
       }
     ],
     "historia": "Nome científico – Nympha thalassi\nTamanho – tamanho humano\nDieta – peixes, algas marinhas\n\nNereidas são treinadas na Doca. Essas poderosas unidades mitológicas são capazes de ataques devastadores contra navios, mas se destacam contra outras unidades mitológicas.\n\nAs nereidas eram as cinquenta ninfas do mar. Muitas delas tiveram papéis importantes na mitologia e, como a maioria das ninfas, eram criaturas doces e belas. As nereidas eram frequentemente acompanhadas por hostes de criaturas marinhas em suas viagens, mas em batalha, optavam por montar tubarões ferozes que carregavam suas mestras incansavelmente."
@@ -8821,7 +9071,8 @@
     "habilidades": [
       {
         "nome": "Arremesso Perfurante",
-        "descricao": "Arremessa lanças poderosas que penetram tudo em seu caminho."
+        "descricao": "Arremessa lanças poderosas que penetram tudo em seu caminho.",
+        "icon": "aomr_satyr_ability_icon"
       }
     ],
     "historia": "Nome científico – Homo silenus\nTamanho – tamanho humano\nDieta – uvas, queijo, vinho e música\n\nSátiros são uma unidade mitológica de ataque à distância, com velocidade e alcance razoáveis. Eles são fortes contra unidades humanas, mas são fracos contra heróis.\n\nSátiros são criaturas no séquito do deus Dionísio. Com pernas de cabra e chifres, são notoriamente conhecidos por sua paixão pela folia em todas as formas possíveis, com uma fraqueza especial pelas ninfas. Sileno, o sátiro mais velho, foi o instrutor do deus Dionísio. Outro sátiro, Marsias, foi morto por Apolo por ousar desafiá-lo em um concurso de habilidades musicais."
@@ -8901,7 +9152,8 @@
     "habilidades": [
       {
         "nome": "Penas Laminadas (Passivo)",
-        "descricao": "Penas afiadas que causam sangramento contínuo nos alvos."
+        "descricao": "Penas afiadas que causam sangramento contínuo nos alvos.",
+        "icon": "aomr_stymphalian_bird_ability_icon"
       }
     ],
     "historia": "Nome científico -- Threskiornis terribilis\nTamanho -- 5,5 metros de envergadura\nDieta -- carnívoro, prefere gado\n\nO Pássaro de Estínfalo é uma unidade mitológica formidável. Apenas unidades e construções de longo alcance podem atacá-lo - heróis de longo alcance são os mais fortes contra as aves de Estínfalo.\n\nEm seu sexto trabalho, Hércules matou os Pássaros de Estínfalo. Essas aves eram agressivas e caçavam em bandos, como leões ou lobos. Eles devastaram o campo ao redor de suas áreas de nidificação, à beira do lago, matando e carregando gado e, ocasionalmente, crianças. Seus sentidos - especialmente a audição - eram muito aguçados. Hércules usou isso contra eles quando, em vez de se arriscar nos perigosos locais de nidificação, ele ficou no topo de uma montanha e bateu um par de crótalos (objetos barulhentos parecidos com castanholas) de latão feitos por um deus. O barulho era tanto que os pássaros não suportaram ficar por perto, e Hércules atirou neles com seu arco enquanto voavam para longe."
@@ -9052,7 +9304,14 @@
     "tempo_treinamento": 0,
     "construcao": null,
     "descricao_resumida": "Infantaria, Herói. Bom contra infantaria, cavalaria e unidades mitológicas.",
-    "historia": "Este Fanático se tornou um herói. Como um Fanático regular, ele é bom contra a maioria dos outros soldados humanos e vulnerável a unidades anti-infantaria. Mas, como herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nOs cultistas de guerra dedicados a um ou outro Titã representavam uma grande ameaça para a classe sacerdotal dominante da Atlântida primitiva – eles eram poderosos, destrutivos e não obedeciam a nenhuma lei, além de sua própria. Depois que os Titãs foram presos, alguns grupos de cultistas, ainda ávidos por sangue, mas cientes de sua súbita vulnerabilidade, se organizaram sob as bandeiras da Atlântida. Esses fanáticos lutavam com duas espadas, desdenhando da proteção de um escudo."
+    "historia": "Este Fanático se tornou um herói. Como um Fanático regular, ele é bom contra a maioria dos outros soldados humanos e vulnerável a unidades anti-infantaria. Mas, como herói, ele é mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nOs cultistas de guerra dedicados a um ou outro Titã representavam uma grande ameaça para a classe sacerdotal dominante da Atlântida primitiva – eles eram poderosos, destrutivos e não obedeciam a nenhuma lei, além de sua própria. Depois que os Titãs foram presos, alguns grupos de cultistas, ainda ávidos por sangue, mas cientes de sua súbita vulnerabilidade, se organizaram sob as bandeiras da Atlântida. Esses fanáticos lutavam com duas espadas, desdenhando da proteção de um escudo.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 133,
@@ -9123,7 +9382,8 @@
     "habilidades": [
       {
         "nome": "Borrifo Ácido",
-        "descricao": "Lança uma poça mortal de ácido que derrete unidades inimigas ao longo do tempo."
+        "descricao": "Lança uma poça mortal de ácido que derrete unidades inimigas ao longo do tempo.",
+        "icon": "aomr_argus_ability_icon"
       }
     ],
     "historia": "Nome científico - Amoeba maxima\nTamanho - variável\nDieta - vistas panorâmicas, carne mortal dissolvida\n\nArgos é uma criatura amorfa coberta com olhos bulbosos. Quando ameaçado, o Argos excreta com força uma gota pegajosa de ácido de seus muitos canais lacrimais especializados. As criaturas presas neste ácido têm pouca chance de sobrevivência. Argos também usa esse ácido para pré-digerir parcialmente sua comida.\n\nArgos de Hera a serviu fielmente até que o deus Hermes o matou. Zeus ordenou que Hermes enganasse Argos e o matasse para que o deus mulherengo pudesse recapturar uma de suas amantes, Io, de sua esposa ciumenta. Hera honrou o sacrifício de Argos colocando os olhos na cauda de seu pavão sagrado. Io, que suportou tudo isso na forma de uma vaca branca e pura, foi salvo apenas para mergulhar no que hoje é chamado de Mar Jônico."
@@ -9192,7 +9452,8 @@
     "habilidades": [
       {
         "nome": "Onda de Choque Linear",
-        "descricao": "Bate no chão, espalhando e causando dano a unidades inimigas diretamente à frente."
+        "descricao": "Bate no chão, espalhando e causando dano a unidades inimigas diretamente à frente.",
+        "icon": "aomr_centimanus_ability_icon"
       }
     ],
     "historia": "Nome científico – Gigans centimanus\nTamanho – 4,5 metros de altura\nDieta – carnívoro, principalmente humanos\n\nCentimanos são fortes contra soldados humanos, fazendo-os voar com seus ataques de muitas mãos. Eles são fracos contra heróis.\n\nCem braços e cinquenta cabeças cresceram dos ombros dos centimanos - ou hecatônquiros, como eram conhecidos em grego. Eles eram filhos de Urano e Gaia e eram tão imponentes que Urano ordenou que fossem presos no Tártaro. Isto provocou a ira de Gaia, que incitou seu filho Cronos a derrubar seu pai e assumir seu lugar como governante do cosmos."
@@ -9275,11 +9536,13 @@
       },
       {
         "nome": "Realinhamento Caótico",
-        "descricao": "Torna uma unidade inimiga temporariamente hostil a todos os jogadores."
+        "descricao": "Torna uma unidade inimiga temporariamente hostil a todos os jogadores.",
+        "icon": "aomr_lampades_ability_chaotic_realignment_icon"
       },
       {
         "nome": "Transfiguração",
-        "descricao": "Transforma uma unidade humana inimiga em uma galinha."
+        "descricao": "Transforma uma unidade humana inimiga em uma galinha.",
+        "icon": "aomr_lampades_ability_transfiguration_icon"
       }
     ],
     "historia": "Nome científico – Nympha hekates\nTamanho – Tamanho humano\nDieta – Sementes de romã, pétalas de asfódelo\n\nEssas ninfas eram as atendentes de Hécate, uma Titã livre, presentes de Zeus por sua lealdade na Titanomaquia. As Lâmpades serviram sua ama inabalavelmente, carregando tochas para ela pelos lugares escuros da terra e do Submundo. A luz de suas tochas trazia visões aos mortais e muitas vezes as visões traziam loucura. As Lâmpades defenderam Hécate com suas tochas, assim como a própria Titã lutou nas guerras dos deuses."
@@ -9394,7 +9657,8 @@
     "habilidades": [
       {
         "nome": "Salto",
-        "descricao": "Salta em direção a uma unidade inimiga, contornando qualquer obstrução. Causa dano na área ao tocar o chão."
+        "descricao": "Salta em direção a uma unidade inimiga, contornando qualquer obstrução. Causa dano na área ao tocar o chão.",
+        "icon": "aomr_tartarian_spawn_ability_icon"
       }
     ],
     "historia": "Nome científico - Canis terribilis\nTamanho - 3 metros de comprimento\nDieta - carnívoro, prefere os humanos\n\nEssas criaturas assustadoramente destrutivas são descendentes de Nix e Cérbero. Nix era uma antiga deusa da Noite e filha do Caos. Cérbero era o cão de três cabeças, um guardião do submundo. Urano baniu essas criaturas para o Tártaro para se livrar de sua presença horrível, mas também porque não conseguia controlá-las. Eles vieram quando ele chamou, mas não obedeceram a nenhuma ordem depois disso."
@@ -9647,7 +9911,14 @@
     "icon": "aomr_pioneer_icon",
     "descricao_resumida": "Soldado de Longo Alcance, Herói. Decente contra unidades mitológicas.",
     "descricao_avancada": "Soldado de Longo Alcance, Herói. Usa Lanternas de Papel para explorar. Decente contra unidades mitológicas.",
-    "historia": "Sun Tzu, o renomado estrategista chinês antigo, enfatizou o valor de se conhecer o inimigo. Consequentemente, as habilidades excepcionais de reconhecimento dos pioneiros se tornaram um trunfo vital para o exército chinês, permitindo planejamento estratégico e tomada de decisão mais eficazes em batalha. Sua vigilância inabalável permitiu que os exércitos chineses superassem consistentemente seus oponentes."
+    "historia": "Sun Tzu, o renomado estrategista chinês antigo, enfatizou o valor de se conhecer o inimigo. Consequentemente, as habilidades excepcionais de reconhecimento dos pioneiros se tornaram um trunfo vital para o exército chinês, permitindo planejamento estratégico e tomada de decisão mais eficazes em batalha. Sua vigilância inabalável permitiu que os exércitos chineses superassem consistentemente seus oponentes.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 142,
@@ -9954,7 +10225,14 @@
     "alcance": 0.75,
     "descricao_resumida": "Herói. Bom contra tudo. Fica mais forte a cada Era.",
     "descricao_avancada": "Herói. Bom contra tudo, mas especialmente contra unidades mitológicas. Coleta relíquias. A habilidade de combate de Nezha aumenta ao longo das Eras.",
-    "historia": "Idade: 7 anos\nTerra Natal: Passo de Chentang, China Mítica\nOcupação: criança divina e prodígio\n\nNezha é uma famosa divindade de proteção na religião popular chinesa, muitas vezes retratado como um jovem voador de pé sobre Rodas de Fogo, empunhando uma lança com borlas vermelhas e adornado com um lenço celestial conhecido como Faixa Armilar Vermelha.\n\nNo romance chinês do século 16 ''A Investidura dos Deuses'',  Nezha é filho de Li Jing, outra divindade protetora. Depois de um confronto com o Rei Dragão do Mar Oriental, Nezha se sacrifica. Mais tarde, uma divindade o revive usando flores de lótus para criar um novo corpo e lhe concede inúmeras armas divinas.\n\nEmbora Nezha tenha tido muitos conflitos com seu pai, Li Jing, nas lendas folclóricas eles são frequentemente retratados lutando lado a lado para derrotar os inimigos dos céus."
+    "historia": "Idade: 7 anos\nTerra Natal: Passo de Chentang, China Mítica\nOcupação: criança divina e prodígio\n\nNezha é uma famosa divindade de proteção na religião popular chinesa, muitas vezes retratado como um jovem voador de pé sobre Rodas de Fogo, empunhando uma lança com borlas vermelhas e adornado com um lenço celestial conhecido como Faixa Armilar Vermelha.\n\nNo romance chinês do século 16 ''A Investidura dos Deuses'',  Nezha é filho de Li Jing, outra divindade protetora. Depois de um confronto com o Rei Dragão do Mar Oriental, Nezha se sacrifica. Mais tarde, uma divindade o revive usando flores de lótus para criar um novo corpo e lhe concede inúmeras armas divinas.\n\nEmbora Nezha tenha tido muitos conflitos com seu pai, Li Jing, nas lendas folclóricas eles são frequentemente retratados lutando lado a lado para derrotar os inimigos dos céus.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 147,
@@ -10595,7 +10873,14 @@
     "icon": "aomr_jiang_ziya_icon",
     "descricao_resumida": "Herói. Bom contra tudo.",
     "descricao_avancada": "Herói de longo alcance. Bom contra tudo, mas especialmente contra unidades mitológicas. Coleta Relíquias.",
-    "historia": "Idade: 72 anos\nTerra natal: Qi, China antiga\nOcupação: Estrategista, conselheiro e primeiro-ministro da dinastia Zhou\n\nJiang Ziya, também conhecido como Jiang Taigong, ocupa um lugar significativo na história e mitologia chinesas.\n\nHistoricamente, ele foi um general da dinastia Zhou e desempenhou um papel crucial na derrota da dinastia Shang anterior por essa dinastia. Ele se tornaria um dos vassalos mais importantes de Zhou.\n\nNa mitologia, Jiang Ziya era um mágico magistral que, aos 70 anos, foi nomeado primeiro-ministro da dinastia Zhou. Durante o conflito entre as dinastias Zhou e Shang, ambos os lados convocaram inúmeras divindades para ajudar em suas batalhas. Após a guerra, Jiang Ziya assumiu a tarefa de atribuir novos papéis divinos aos mortais e divindades que haviam perecido durante o conflito."
+    "historia": "Idade: 72 anos\nTerra natal: Qi, China antiga\nOcupação: Estrategista, conselheiro e primeiro-ministro da dinastia Zhou\n\nJiang Ziya, também conhecido como Jiang Taigong, ocupa um lugar significativo na história e mitologia chinesas.\n\nHistoricamente, ele foi um general da dinastia Zhou e desempenhou um papel crucial na derrota da dinastia Shang anterior por essa dinastia. Ele se tornaria um dos vassalos mais importantes de Zhou.\n\nNa mitologia, Jiang Ziya era um mágico magistral que, aos 70 anos, foi nomeado primeiro-ministro da dinastia Zhou. Durante o conflito entre as dinastias Zhou e Shang, ambos os lados convocaram inúmeras divindades para ajudar em suas batalhas. Após a guerra, Jiang Ziya assumiu a tarefa de atribuir novos papéis divinos aos mortais e divindades que haviam perecido durante o conflito.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 157,
@@ -10663,6 +10948,11 @@
     "habilidades": [
       {
         "nome": "Trocar de Arma"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade: 16 anos\nTerra Natal: Passo de Chentang, China Mítica\nOcupação: guerreiro e protetor\n\nNezha é uma famosa divindade de proteção na religião popular chinesa, muitas vezes retratado como um jovem voador de pé sobre Rodas de Fogo, empunhando uma lança com borlas vermelhas e adornado com um lenço celestial conhecido como Faixa Armilar Vermelha.\n\nNo romance chinês do século 16 ''A Investidura dos Deuses'',  Nezha é filho de Li Jing, outra divindade protetora. Depois de um confronto com o Rei Dragão do Mar Oriental, Nezha se sacrifica. Mais tarde, uma divindade o revive usando flores de lótus para criar um novo corpo e lhe concede inúmeras armas divinas.\n\nEmbora Nezha tenha tido muitos conflitos com seu pai, Li Jing, nas lendas folclóricas eles são frequentemente retratados lutando lado a lado para derrotar os inimigos dos céus."
@@ -10723,7 +11013,14 @@
     "icon": "aomr_sage_icon",
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói inteligente de longo alcance que alveja especificamente unidades mitológicas. Pode curar unidades aliadas e convocar imagens espelhadas de unidades mitológicas inimigas. Coleta relíquias.",
-    "historia": "Nos sistemas de crenças chineses, o sábio era uma das figuras mais respeitadas: considerado um farol de sabedoria e nobreza e venerado por sua virtude e habilidade acadêmica. Há muitos sábios notáveis ao longo da história chinesa, como os Quatro Sábios da Tradição Confucionista (Yan Hui, Mengzi, Zisi e Mencius) e os Cinco Imperadores Sábios.\n\nCom sua eloquência persuasiva, os sábios podem encantar criaturas inimigas. Além disso, eles geralmente confiam em uma reputação de prestígio para aumentar o moral das tropas e curar os companheiros, tornando-os os indivíduos mais respeitados do acampamento."
+    "historia": "Nos sistemas de crenças chineses, o sábio era uma das figuras mais respeitadas: considerado um farol de sabedoria e nobreza e venerado por sua virtude e habilidade acadêmica. Há muitos sábios notáveis ao longo da história chinesa, como os Quatro Sábios da Tradição Confucionista (Yan Hui, Mengzi, Zisi e Mencius) e os Cinco Imperadores Sábios.\n\nCom sua eloquência persuasiva, os sábios podem encantar criaturas inimigas. Além disso, eles geralmente confiam em uma reputação de prestígio para aumentar o moral das tropas e curar os companheiros, tornando-os os indivíduos mais respeitados do acampamento.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 159,
@@ -10858,7 +11155,8 @@
     "habilidades": [
       {
         "nome": "Reforçar",
-        "descricao": "Aumenta consideravelmente a armadura de uma construção alvo próxima."
+        "descricao": "Aumenta consideravelmente a armadura de uma construção alvo próxima.",
+        "icon": "aomr_chiwen_ability_icon"
       }
     ],
     "historia": "Nome científico – Draco sinensis piscis\nTamanho – 160 kg, 5,4 metros de comprimento\nDieta – algas marinhas e pequenos peixes\n\nChiwen é um dos nove descendentes do dragão. É uma criatura parecida com um peixe com cabeça de dragão que cospe água de sua boca larga. Por causa disso, os chineses costumam esculpir a imagem de Chiwen nos telhados dos edifícios para protegê-los contra incêndios."
@@ -10925,7 +11223,8 @@
     "habilidades": [
       {
         "nome": "Rastro de Veneno (Passivo)",
-        "descricao": "Deixa um rastro de névoa venenosa enquanto se move, espalhando infecção para inimigos e animais próximos."
+        "descricao": "Deixa um rastro de névoa venenosa enquanto se move, espalhando infecção para inimigos e animais próximos.",
+        "icon": "aomr_fei_ability_icon"
       }
     ],
     "historia": "Nome científico – Bestia pestis\nTamanho – 998 kg\nDieta – gado\n\nO Fei é uma besta que causa secas; além disso, onde quer que vá, as plantas murcham e as fontes de água secam. Tem a aparência de um boi com uma cabeça branca, apenas um olho e a cauda de uma cobra. A Besta Fei também prenuncia a peste quando é vista no mundo."
@@ -11234,6 +11533,11 @@
       {
         "nome": "Pagode Dourado",
         "descricao": "Invoca um pagode dourado para imobilizar unidades inimigas na área selecionada."
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade: Imortal\nTerra natal: Montanhas Kunlun, Reino Mítico\nOcupação: divindade de proteção\n\nLi Jing, uma divindade de proteção bem conhecida na China, é famosa por trazer um pagode na mão.\n\nUma história famosa envolvendo Li Jing aparece no romance chinês do século XVI ''A Criação dos Deuses''. Na história, Li Jing teve um filho chamado Nezha. Depois de se sacrificar e, mais tarde, ressuscitar, Nezha buscou vingança contra Li Jing. No entanto, uma divindade concedeu a Li Jing um pagode dentro do qual prender Nezha. Eventualmente, os dois se reconciliaram e uniram forças na guerra contra a dinastia Shang."
@@ -11307,6 +11611,11 @@
       },
       {
         "nome": "Trocar de Arma"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade: 28 anos\nTerra Natal: Passo de Chentang, China Mítica\nOcupação: guerreiro e protetor\n\nNezha é uma famosa divindade de proteção na religião popular chinesa, muitas vezes retratado como um jovem voador em pé sobre Rodas de Fogo, empunhando uma lança com borlas vermelhas e adornado com um lenço celestial conhecido como Faixa Armilar Vermelha.\n\nNo romance chinês do século 16 ''A Investidura dos Deuses'',  Nezha é filho de Li Jing, outra divindade protetora. Depois de um confronto com o Rei Dragão do Mar Oriental, Nezha se sacrifica. Mais tarde, uma divindade o revive usando flores de lótus para criar um novo corpo e lhe concede inúmeras armas divinas.\n\nEmbora Nezha tenha entrado em muitos conflitos com seu pai, Li Jing, em lendas folclóricas eles são frequentemente retratados lutando lado a lado, para derrotar os inimigos dos céus."
@@ -11373,7 +11682,14 @@
     "velocidade_movimento": 5.8,
     "descricao_resumida": "Herói. Bom contra tudo.",
     "descricao_avancada": "Herói de cavalaria que canaliza poderes celestiais para atacar em uma grande área. Bom contra tudo, especialmente contra unidades mitológicas. Altera para ataque à distância para lutar contra unidades voadoras. Coleta Relíquias.",
-    "historia": "Idade – 2300 anos\nPátria – Jizhou, China Mítica\nOcupação – senhor da guerra e estrategista\n\nWen Zhong é um personagem do romance mitológico clássico chinês ''A Investidura dos Deuses''. Ele empunha um chicote de dragão e monta um Qilin preto.\n\nComo Grande Preceptor, ele lutou incansavelmente pela dinastia Shang, ganhando imenso respeito de mortais e deuses. Em batalhas contra a dinastia Zhou, ele derrotou Jiang Ziya várias vezes, mas acabou morrendo. Após a morte de Wen Zhong, Jiang Ziya lhe concedeu o título de Deus do Trovão.\n\nO decreto de Jiang Ziya no romance diz:\n\n''Você, Wen Zhong, adentrou as famosas montanhas e cultivou o Grande Dao. Embora tenha alcançado o fruto de retornar à fonte, você ainda não percebeu a verdade suprema da unidade. Você está destinado a não alcançar o reino mais alto dos imortais, mas ocupou o posto mais alto de ministro, auxiliando duas dinastias com a maior lealdade. Embora seu destino tenha sido selado pelas calamidades da época, sua firmeza e integridade são admiráveis. Agora, eu o nomeio para supervisionar a Divisão do Trovão, para invocar nuvens e trazer chuva, nutrindo todos os seres vivos, punindo os ímpios e recompensando os bons. Eu, por meio deste, confiro a você o título de Respondente dos Nove Céus ao Deus Primordial do Trovão, Transformador Universal e Soberano Supremo. Você deve liderar os 24 Lordes Celestiais da Divisão do Trovão, que auxiliam na convocação de nuvens e na chuva, e fazem cumprir a lei. Cumpra seus deveres com diligência.''"
+    "historia": "Idade – 2300 anos\nPátria – Jizhou, China Mítica\nOcupação – senhor da guerra e estrategista\n\nWen Zhong é um personagem do romance mitológico clássico chinês ''A Investidura dos Deuses''. Ele empunha um chicote de dragão e monta um Qilin preto.\n\nComo Grande Preceptor, ele lutou incansavelmente pela dinastia Shang, ganhando imenso respeito de mortais e deuses. Em batalhas contra a dinastia Zhou, ele derrotou Jiang Ziya várias vezes, mas acabou morrendo. Após a morte de Wen Zhong, Jiang Ziya lhe concedeu o título de Deus do Trovão.\n\nO decreto de Jiang Ziya no romance diz:\n\n''Você, Wen Zhong, adentrou as famosas montanhas e cultivou o Grande Dao. Embora tenha alcançado o fruto de retornar à fonte, você ainda não percebeu a verdade suprema da unidade. Você está destinado a não alcançar o reino mais alto dos imortais, mas ocupou o posto mais alto de ministro, auxiliando duas dinastias com a maior lealdade. Embora seu destino tenha sido selado pelas calamidades da época, sua firmeza e integridade são admiráveis. Agora, eu o nomeio para supervisionar a Divisão do Trovão, para invocar nuvens e trazer chuva, nutrindo todos os seres vivos, punindo os ímpios e recompensando os bons. Eu, por meio deste, confiro a você o título de Respondente dos Nove Céus ao Deus Primordial do Trovão, Transformador Universal e Soberano Supremo. Você deve liderar os 24 Lordes Celestiais da Divisão do Trovão, que auxiliam na convocação de nuvens e na chuva, e fazem cumprir a lei. Cumpra seus deveres com diligência.''",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 168,
@@ -11440,6 +11756,11 @@
       {
         "nome": "Xiaotian Quan",
         "descricao": "Yang Jian Invoca seu cão celestial para causar dano aos inimigos e cura Yang Jian em seu retorno."
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Idade – 1500 anos\nTerra natal – Montanhas Kunlun, Reinos Míticos\nOcupação – general celestial e guardião\n\nYang Jian, também conhecido como Erlang Shen, é uma famosa divindade protetora nas lendas chinesas. Ele é frequentemente retratado como um jovem general com um terceiro olho na testa. Empunha uma lança de três pontas e geralmente é acompanhado por seu leal cão de caça.\n\nYang Jian aparece em muitas lendas chinesas. Conta-se que sua mãe era uma fada, punida e aprisionada sob o Monte Tao por se casar com um mortal. Yang Jian cresceu e eventualmente abriu o Monte Tao para resgatar sua mãe.\n\nNo romance ''A Criação dos Deuses'', Yang Jian, uma divindade poderosa, participou das batalhas para derrubar a dinastia Shang."
@@ -11645,7 +11966,8 @@
     "habilidades": [
       {
         "nome": "Cuspe Venenoso",
-        "descricao": "Ataca os inimigos com uma explosão venenosa a longa distância."
+        "descricao": "Ataca os inimigos com uma explosão venenosa a longa distância.",
+        "icon": "aomr_xuanwu_ability_icon"
       }
     ],
     "historia": "Nome científico – Testudo serpens sinensis\nTamanho – 544 kg, 4,5 metros de comprimento\nDieta – onívoro\n\nNa tradição chinesa, o Xuanwu é um dos Animais das Quatro Direções. O Xuanwu representa a direção Norte e está associado ao inverno e ao elemento água. É retratado como uma tartaruga gigante entrelaçada com uma serpente. Devido à longa vida útil da tartaruga e à troca regular de pele da serpente, o Xuanwu é considerado um símbolo de longevidade."
@@ -11969,7 +12291,13 @@
     "habilidades": [
       {
         "nome": "Kagura",
-        "descricao": "Selecione um santuário para realizar uma dança sagrada que gera Favor. Recursos naturais próximos aumentam a taxa de Favor."
+        "descricao": "Selecione um santuário para realizar uma dança sagrada que gera Favor. Recursos naturais próximos aumentam a taxa de Favor.",
+        "icon": "aomr_miko_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Uma miko é uma xamã na religião xintoísta. Em períodos anteriores, acreditava-se que as mikos serviam como canais através dos quais os kamis podiam se comunicar – o espírito de um kami podia possuir a miko e transmitir oráculos ou profecias através dela. As mikos serviam como xamãs em santuários, conduzindo ritos sagrados, ou viajavam de santuário em santuário, demonstrando seus poderes mágicos e religiosos por meio de adivinhações. Nos tempos modernos, as mikos normalmente trabalham em santuários xintoístas, onde realizam purificações sagradas e uma dança ritual conhecida como kagura."
@@ -12056,7 +12384,8 @@
     "habilidades": [
       {
         "nome": "Acelerar (Passiva)",
-        "descricao": "Aumenta a velocidade de unidades aliadas próximas."
+        "descricao": "Aumenta a velocidade de unidades aliadas próximas.",
+        "icon": "aomr_kitsune_ability_icon"
       }
     ],
     "historia": "Nome científico – Vulpes dolosa\nTamanho – 5 kgs\nDieta – pequenos mamíferos e insetos\n\nA Kitsune, que significa literalmente ''raposa'' em japonês, é um yōkai que serve como uma figura trapaceira na mitologia japonesa. Embora as Kitsune tenham muitos poderes míticos, um dos mais impressionantes é a transfiguração: há lendas de Kitsune se transformando em belas mulheres para seduzir os homens. Essas chamadas ''esposas-raposas'' não eram necessariamente perigosas, mas às vezes os humanos eram vítimas da possessão de raposas, uma condição muito séria. Os indivíduos afetados podem latir como cães, comer do chão e desenvolver um medo intenso de cães. Isso muitas vezes levava ao ostracismo social, demonstrando que as Kitsune podiam ser trapaceiras prejudiciais.\n\nNo entanto, nem todas as Kitsune são travessas. Algumas são consideradas benevolentes e estão associadas ao deus Inari Ōkami, servindo como guardiãs de seus santuários. Elas também atuam como mensageiras de Inari Ōkami, e acredita-se que os avistamentos dessas Kitsune simbolizam boa sorte e uma colheita abundante. Kitsune também estão associadas a uma vida longa, pois diz-se que vivem milhares de anos."
@@ -12480,7 +12809,14 @@
     "comida": 0,
     "custo_total": 112,
     "descricao_resumida": "Herói de longo alcance. Bom contra unidades mitológicas.",
-    "historia": "O termo japonês ''bushi'' se traduz em ''guerreiro'' e é o termo mais apropriado quando se refere a um guerreiro japonês profissional. O termo foi inicialmente usado na Era Nara (710-784 EC) e antecede o conceito culturalmente mais popular do guerreiro japonês, o samurai, em alguns séculos. Os soldados Bushi estão associados ao ''Bushidō'', ou ''O Caminho do Guerreiro'', um código de conduta para guerreiros profissionais no Japão. O Bushidō dita oito virtudes que se esperava que os bushi seguissem: justiça, coragem, misericórdia, cortesia, honestidade, honra, lealdade e caráter."
+    "historia": "O termo japonês ''bushi'' se traduz em ''guerreiro'' e é o termo mais apropriado quando se refere a um guerreiro japonês profissional. O termo foi inicialmente usado na Era Nara (710-784 EC) e antecede o conceito culturalmente mais popular do guerreiro japonês, o samurai, em alguns séculos. Os soldados Bushi estão associados ao ''Bushidō'', ou ''O Caminho do Guerreiro'', um código de conduta para guerreiros profissionais no Japão. O Bushidō dita oito virtudes que se esperava que os bushi seguissem: justiça, coragem, misericórdia, cortesia, honestidade, honra, lealdade e caráter.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 185,
@@ -12545,7 +12881,8 @@
     "habilidades": [
       {
         "nome": "Torpedo",
-        "descricao": "Mergulha e nada rapidamente ao longo do caminho selecionado, causando dano às unidades acima. Lança os inimigos no ar ao ressurgir."
+        "descricao": "Mergulha e nada rapidamente ao longo do caminho selecionado, causando dano às unidades acima. Lança os inimigos no ar ao ressurgir.",
+        "icon": "aomr_honengyo_ability_icon"
       }
     ],
     "historia": "Nome científico – Monstrum fluminis faustum\nTamanho – 74 kg\nDieta – pequenos peixes de rio e algas marinhas\n\nO Honengyo é um yōkai anfíbio que vive na água e vive nos rios do Japão. Embora esta fera tenha uma aparência assustadora – medindo mais de dois metros de comprimento, com escamas escuras, barbatanas dorsais pretas afiadas como navalhas e olhos espelhados – o Honengyo é tipicamente interpretado como um bom presságio para o povo japonês, especialmente para os pescadores. Quando um Honengyo aparece na praia, serve como um presságio para uma temporada de pesca próspera.\n\nUm dos avistamentos mais famosos de Honengyo ocorreu em 1866 EC, quando um deles apareceu na costa do Rio Yodo. As representações artísticas da criatura que foram desenhadas após este avistamento são às vezes rumores de serem a inspiração para o aparecimento do monstro da cultura pop Godzilla."
@@ -12624,7 +12961,8 @@
       },
       {
         "nome": "Perfurar",
-        "descricao": "Agarra um inimigo e o perfura repetidamente com membros afiados."
+        "descricao": "Agarra um inimigo e o perfura repetidamente com membros afiados.",
+        "icon": "aomr_jorogumo_ability_perforate_icon"
       }
     ],
     "historia": "Nome científico – Maga aranea\nTamanho – 50 kg\nDieta – carne humana\n\nA Jorogumo é um yōkai que assume a forma de um híbrido entre aranha e humano: às vezes aparece como uma bela mulher, e outras vezes pode se transformar em uma aranha. As Jorogumo têm o poder de controlar teias e aranhas menores para fazerem sua vontade. Geralmente aparecem na mitologia japonesa como figuras sedutoras: um exemplo é a Jorogumo que habitava as Cataratas Jōren, em Izu. As lendas sobre ela contam a história de uma bela mulher que tentava enredar homens com suas teias nas cataratas, arrastando-os para a perdição."
@@ -12699,7 +13037,8 @@
     "habilidades": [
       {
         "nome": "Redemoinho de Lâminas",
-        "descricao": "Gira rapidamente com ambas as lâminas, causando muito dano às unidades inimigas próximas e ainda mais dano ao longo do tempo."
+        "descricao": "Gira rapidamente com ambas as lâminas, causando muito dano às unidades inimigas próximas e ainda mais dano ao longo do tempo.",
+        "icon": "aomr_kamaitachi_ability_blade_whirl_icon"
       },
       {
         "nome": "Toque Mortífero (Passivo)",
@@ -12768,7 +13107,8 @@
     "habilidades": [
       {
         "nome": "Anfíbio (Passivo)",
-        "descricao": "Pode atravessar terra e água."
+        "descricao": "Pode atravessar terra e água.",
+        "icon": "aomr_kappa_ability_icon"
       }
     ],
     "historia": "Nome científico – Daemon aquarius\nTamanho – 38 kg\nDieta – carne de cavalo e pepinos\n\nO Kappa, um espírito da água, é um yōkai particularmente infame. Com a cabeça de um macaco e um casco de tartaruga nas costas, essa criatura violenta e demoníaca é conhecida por atrair pessoas desavisadas para corpos d'água para afogá-las. Muitas vezes tem como alvo mulheres e crianças, mas também é conhecido por ferir ou matar cavalos. No entanto, nem tudo sobre o Kappa é negativo. É um especialista em consertar ossos, e alguns médicos até procuraram sua ajuda para aprender essas práticas médicas. Apesar de suas tendências violentas, o Kappa é relativamente fácil de enganar. Os humanos podem suborná-lo com um pepino ou enganá-lo para se curvar. No topo da cabeça do Kappa há um recuo cheio de água – se essa água derramar quando o Kappa se curvar, ele se torna impotente e não pode mais atacar."
@@ -12817,7 +13157,8 @@
     "habilidades": [
       {
         "nome": "Cura em Área (Passivo)",
-        "descricao": "Cura unidades aliadas próximas."
+        "descricao": "Cura unidades aliadas próximas.",
+        "icon": "aomr_tanuki_ability_icon"
       }
     ],
     "historia": "Nome científico – Tanuculus mirificus\nTamanho – 6 kg\nDieta – pequenos mamíferos e saquê\n\nO tanuki é uma criatura mitológica proeminente na memória cultural japonesa. Baseado no tanuki da vida real – também conhecido como cão-guaxinim – esses seres míticos estão profundamente associados à natureza e à magia que ela personifica. Geralmente benevolentes com os humanos, eles são conhecidos por oferecer cura ou auxílio àqueles que consideram dignos."
@@ -12898,7 +13239,8 @@
     "habilidades": [
       {
         "nome": "Fogo Infernal (Passiva)",
-        "descricao": "Os ataques incendeiam as unidades inimigas, causando dano ao longo do tempo."
+        "descricao": "Os ataques incendeiam as unidades inimigas, causando dano ao longo do tempo.",
+        "icon": "aomr_wanyudo_ability_icon"
       }
     ],
     "historia": "Nome científico – Ignivolvens daemonium\nTamanho – 270 kg\nDieta – pernas de crianças pequenas\n\nO Wanyūdō é um ser infernal e sobrenatural: parece uma roda gigante e flamejante com a cabeça de um homem no centro, cujos raios perfuram seu crânio. Como um servo do inferno, o Wanyūdō percorre o Japão em busca de almas perversas para arrastá-las de volta ao submundo, onde podem expiar seus pecados.\n\nNormalmente, um Wanyūdō é visto rolando pela cidade ao longo da estrada – os moradores fogem aterrorizados, pois simplesmente ser notado pela criatura pode trazer um destino terrível, independentemente da inocência ou culpa."
@@ -12968,11 +13310,13 @@
     "habilidades": [
       {
         "nome": "Ninjutsu",
-        "descricao": "Aumenta temporariamente sua velocidade de movimento e dano."
+        "descricao": "Aumenta temporariamente sua velocidade de movimento e dano.",
+        "icon": "aomr_shinobi_ability_icon"
       },
       {
         "nome": "Bomba de Fumaça",
-        "descricao": "Temporariamente se torna invisível para os oponentes. Reaparece se for ordenado a atacar."
+        "descricao": "Temporariamente se torna invisível para os oponentes. Reaparece se for ordenado a atacar.",
+        "icon": "aomr_shinobi_ability_smoke_bomb_icon"
       }
     ],
     "historia": "Shinobi no mono, ou ''aqueles que se esgueiram'', eram espiões japoneses que surgiram durante o Período Sengoku. Mais comumente conhecidos como ninjas na cultura popular, os shinobi eram mestres da ocultação e dissimulação. Eles se disfarçavam para coletar informações, assumindo a aparência de qualquer coisa, desde um aldeão comum até um komusō (um monge errante que tocava flauta), ou até mesmo algo tão inesperado quanto uma pilha de lenha.\n\nEmbora a espionagem fosse tipicamente seu papel principal, os shinobi também serviam como assassinos implacáveis. Operando sob o manto da noite e vestidos com roupas escuras, eles foram encarregados de eliminar os inimigos políticos daqueles a quem serviam. Em combate, eles costumavam empunhar uma katana, a icônica espada de um gume e duas mãos, mas também são famosos por armas e projéteis improvisados, como a kusarigama e o shuriken."
@@ -13087,7 +13431,14 @@
     "madeira": 0,
     "custo_total": 162,
     "descricao_resumida": "Herói de cavalaria. Bom contra unidades mitológicas.",
-    "historia": "Daimyōs eram poderosos senhores feudais que lideravam bandos de guerreiros profissionais. Eles estavam um nível acima dos bushi e atingiram seu auge de poder entre 1185 e 1868 EC. Eles não apenas controlavam guerreiros, mas também serviam como poderosos proprietários de terras sobre vastas propriedades.\n\nTrês dos daimyōs históricos mais famosos são Oda Nobunaga (1537-1598 EC), Toyotomi Hideyoshi (1537-1598 EC) e Tokugawa Ieyasu (1543-1616 EC), que a História lembra como os três unificadores do Japão."
+    "historia": "Daimyōs eram poderosos senhores feudais que lideravam bandos de guerreiros profissionais. Eles estavam um nível acima dos bushi e atingiram seu auge de poder entre 1185 e 1868 EC. Eles não apenas controlavam guerreiros, mas também serviam como poderosos proprietários de terras sobre vastas propriedades.\n\nTrês dos daimyōs históricos mais famosos são Oda Nobunaga (1537-1598 EC), Toyotomi Hideyoshi (1537-1598 EC) e Tokugawa Ieyasu (1543-1616 EC), que a História lembra como os três unificadores do Japão.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 194,
@@ -13151,6 +13502,11 @@
       {
         "nome": "Naginatajutsu",
         "descricao": "Causa dano imenso periodicamente."
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "As onna-musha eram uma classe de elite de mulheres guerreiras no Japão feudal. Elas eram habilidosas com arco e flecha, equitação e artes marciais. Uma dos onna-musha mais famosas da história foi Tomoe Gozen, que nasceu em 1157 EC e, de acordo com alguns rumores, viveu até os noventa anos. As histórias falam de seu destemor, capacidade de liderar outras pessoas no campo de batalha e seu papel significativo na Guerra Genpei. Em uma batalha particularmente famosa, quando seu líder Yoshinaka foi mortalmente ferido, Tomoe cavalgou e decapitou Onda no Hachiro Morishige antes de escapar do campo de batalha."
@@ -13280,7 +13636,8 @@
     "habilidades": [
       {
         "nome": "Rompante",
-        "descricao": "Entre em um estado de fúria frenética, aumentando o dano e a velocidade de ataque, mas se tornando mais vulnerável a ataques."
+        "descricao": "Entre em um estado de fúria frenética, aumentando o dano e a velocidade de ataque, mas se tornando mais vulnerável a ataques.",
+        "icon": "aomr_oni_ability_icon"
       }
     ],
     "historia": "Nome científico – Rubrum monstrum\nTamanho – 363 kg\nDieta – carne humana e saquê\n\nOs Oni são criaturas gigantescas, demoníacas, semelhantes a ogros, com pele vermelha e chifres. São geralmente retratados usando tanga com estampa de tigre, simbolizando sua natureza selvagem. Em suas mãos com garras, os Oni costumam empunhar um tetsubō – um pesado porrete com espinhos – que usam para espancar e punir os pecadores enviados ao inferno.\n\nOs Oni não estão confinados apenas ao inferno; acredita-se também que habitam a Terra. No entanto, podem ser banidos do mundo dos vivos no segundo dia do segundo mês, durante o Setsubun, um festival tradicional japonês. Nesse dia, realiza-se o ritual do mamemaki, no qual as pessoas lançam grãos de soja para afastar os Oni e a má sorte."
@@ -13355,7 +13712,8 @@
     "habilidades": [
       {
         "nome": "Rugido da Tempestade",
-        "descricao": "Libera um rugido poderoso que emite um campo de raios em todas as direções, causa dano e atordoa inimigos próximos."
+        "descricao": "Libera um rugido poderoso que emite um campo de raios em todas as direções, causa dano e atordoa inimigos próximos.",
+        "icon": "aomr_raiju_ability_icon"
       }
     ],
     "historia": "Nome científico – Lupus fulminis\nTamanho – 81 kg\nDieta – Relâmpagos\n\nO Raiju é um yōkai associado a tempestades e relâmpagos – seu nome se traduz em ''besta do trovão''. Diz-se que esta criatura parecida com um lobo, com garras longas e mortais, deixa queimaduras de raios nas árvores com as patas. Acredita-se também que os Raijus invocam raios, e alguns mitos até afirmam que eles os montam. Intimamente ligado a Raijin, o deus japonês do trovão, o Raiju aparece em várias lendas. Alguns mitos afirmam que os Raiju gostam de se enrolar dentro do umbigo humano, o que leva algumas pessoas supersticiosas a proteger o umbigo durante as tempestades."
@@ -13430,7 +13788,8 @@
     "habilidades": [
       {
         "nome": "Ataque Marcial",
-        "descricao": "Salta no ar em direção a uma unidade inimiga, contornando todos os obstáculos. Ganha mais ataque e blindagem ao pousar."
+        "descricao": "Salta no ar em direção a uma unidade inimiga, contornando todos os obstáculos. Ganha mais ataque e blindagem ao pousar.",
+        "icon": "aomr_tengu_ability_icon"
       }
     ],
     "historia": "Nome científico – Viravis ruber\nTamanho – 68kg\nDieta – frutas, grãos e saquê\n\nO Tengu é uma criatura humanoide parecida com um pássaro com pele e asas vermelhas. Esses seres habitam as profundezas das montanhas do Japão e há muito tempo são associados a ocorrências peculiares, como queda inesperada de pedras e risadas misteriosas ecoando à distância. Os Tengu às vezes confundem deliberadamente os viajantes, fazendo com que eles se percam.\n\nNo entanto, se um Tengu considera um humano digno, ele pode transmitir habilidades valiosas, sendo a mais notável a esgrima. Os Tengu são espadachins renomados, e muitos mitos contam deles treinando figuras lendárias no folclore japonês. Eles também são proficientes em magia e, ocasionalmente, podem compartilhar seu conhecimento místico com os humanos."
@@ -13597,7 +13956,14 @@
     "custo_total": 255,
     "descricao_resumida": "Herói poderoso. Bom contra construções e unidades mitológicas.",
     "descricao_avancada": "Herói feiticeiro devastador capaz de magias poderosas. Forte contra construções e unidades mitológicas. Pode curar aliados.",
-    "historia": "Um Onmyōji é um praticante de Onmyōdō, uma forma de magia associada à adivinhação e à previsão do futuro. Eles eram empregados pela classe nobre para fornecer conselhos e orientação em assuntos como planos de batalha, perspectivas de casamento, decisões políticas e muito mais. Além de suas habilidades de adivinhação, os Onmyōji eram repositórios de conhecimento em áreas como o folclore japonês, calendários astrológicos, a filosofia do yin e yang e os cinco elementos.\n\nOs Onmyōji eram altamente valorizados nas diversas cortes dos xoguns e exerceram considerável influência durante o período feudal. Talvez o Onmyōji mais famoso tenha sido Abe-no-Seimei (921–1005 EC), que viveu durante o período Heian."
+    "historia": "Um Onmyōji é um praticante de Onmyōdō, uma forma de magia associada à adivinhação e à previsão do futuro. Eles eram empregados pela classe nobre para fornecer conselhos e orientação em assuntos como planos de batalha, perspectivas de casamento, decisões políticas e muito mais. Além de suas habilidades de adivinhação, os Onmyōji eram repositórios de conhecimento em áreas como o folclore japonês, calendários astrológicos, a filosofia do yin e yang e os cinco elementos.\n\nOs Onmyōji eram altamente valorizados nas diversas cortes dos xoguns e exerceram considerável influência durante o período feudal. Talvez o Onmyōji mais famoso tenha sido Abe-no-Seimei (921–1005 EC), que viveu durante o período Heian.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 202,
@@ -13650,7 +14016,13 @@
     "habilidades": [
       {
         "nome": "Bakufu",
-        "descricao": "Invoca Samurai enquanto luta."
+        "descricao": "Invoca Samurai enquanto luta.",
+        "icon": "aomr_shogun_ability_icon"
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Os shogun eram governantes militares de elite no Japão feudal. O termo, que significa ''comandante do exército'', foi aplicado pela primeira vez no final do período Heian. O primeiro xogunato foi formado por Minamoto no Yoritomo em 1192 EC, estabelecendo a posição de shogun como uma ditadura militar hereditária até 1867 EC. Os shogun estavam apenas um passo abaixo do imperador, tornando-os entre os indivíduos mais poderosos do Japão. No entanto, os shogun acabaram ganhando tanto poder que o imperador se tornou apenas uma figura simbólica, enquanto o verdadeiro poder estava com os shogun."
@@ -13727,7 +14099,8 @@
     "habilidades": [
       {
         "nome": "Ciúme Ardente (Passiva)",
-        "descricao": "Ataca automaticamente os inimigos próximos com bolas de fogo."
+        "descricao": "Ataca automaticamente os inimigos próximos com bolas de fogo.",
+        "icon": "aomr_asura_ability_icon"
       }
     ],
     "historia": "Nome científico – Semideus rubrovultus ignijactor\nTamanho – 136 kg\nDieta – carne carbonizada de oferendas ritualísticas\n\nO Asura é um semideus guerreiro de pele vermelha de três faces que se origina das tradições budistas, mas mais tarde foi incorporado ao mundo mitológico japonês por meio do sincretismo religioso. Além de ter três faces, os Asura também possuem seis braços, cada um empunhando seis armas diferentes.\n\nOs Asura são conhecidos por terem emoções caóticas e são tipicamente movidos por seus instintos básicos: orgulho, violência e ganância. Como seres do caos e da guerra, é apropriado que eles estejam associados ao fogo - eles lançam bolas de fogo com vários de seus muitos braços para incinerar seus inimigos quando provocados."
@@ -13806,7 +14179,8 @@
     "habilidades": [
       {
         "nome": "Bombardeio Miserável",
-        "descricao": "Invoca um esquadrão de Miseráveis no solo para combater os inimigos."
+        "descricao": "Invoca um esquadrão de Miseráveis no solo para combater os inimigos.",
+        "icon": "aomr_onmoraki_ability_icon"
       }
     ],
     "historia": "Nome científico – Avis spiritus terribilis\nTamanho – 15kg\nDieta – medo e arrependimento dos humanos\n\nO Onmoraki é uma criatura alada monstruosa e sombria com um rosto humanoide e um bico afiado. Com uma voz estridente e assustadora, o Onmoraki é conhecido por atormentar funcionários religiosos negligentes fora de santuários e templos. Um de seus talentos mais arrepiantes é a capacidade de imitar a voz da pessoa que está atormentando, provocando-a com seus fracassos.\n\nAlgumas lendas japonesas sugerem que os Onmorakis se originam de pessoas recentemente falecidas com espíritos instáveis – se um humano morre sem a prática correta de sepultamento, seu espírito se transforma em um Onmoraki."
@@ -13885,11 +14259,13 @@
     "habilidades": [
       {
         "nome": "Reanimar (Passiva)",
-        "descricao": "Ressurge em um templo aliado após ser abatido em combate."
+        "descricao": "Ressurge em um templo aliado após ser abatido em combate.",
+        "icon": "aomr_shinigami_ability_reanimate_icon"
       },
       {
         "nome": "Grito Aterrorizante",
-        "descricao": "Solta um grito horripilante, fazendo com que alguns inimigos próximos fujam em pânico temporariamente."
+        "descricao": "Solta um grito horripilante, fazendo com que alguns inimigos próximos fujam em pânico temporariamente.",
+        "icon": "aomr_shinigami_ability_terrifying_shout_icon"
       }
     ],
     "historia": "Nome científico – Spiritus mortis pallidus\nTamanho – 72 kg\nDieta – morte e desespero\n\nO Shinigami é um espírito assombroso dos mortos, um fantasma vingativo com cabelos grisalhos e aparência translúcida. Embora pareçam humanos, sua pele afundada e pálida, junto com traços assustadores, deixa claro que essas criaturas são demônios vindos do além. Esses espíritos da morte assombram locais onde pessoas morreram recentemente. Lendas locais em todo o Japão sugerem que atos de violência atraem mais violência – explicando o seu aparecimento. Algumas histórias afirmam que o Shinigami pode possuir pessoas e levá-las a cometer atos violentos."
@@ -14210,7 +14586,14 @@
     "favor": 0,
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói. Bom contra unidades mitológicas. Ataques à distância contra unidades voadoras. Pode criar construções religiosas. Coleta Relíquias.",
-    "historia": "Os Sacerdotes de Guerra são a unidade heroica mais comum dos astecas. Eles coletam tonalli, deixados por unidades derrotadas, para complementar a geração de Favor, e podem criar construções religiosas. Eles lutam em curta distância e são especialmente fortes contra unidades míticas devido ao seu status de Herói, mas também são eficazes contra unidades humanas.\n\nOs Sacerdotes de Guerra são essenciais em qualquer estratégia asteca, pois reduzem a dependência do Ixiptla como a única unidade mitológica para neutralizar o Favor e contribuem para a geração de Favor através da absorção de tonalli."
+    "historia": "Os Sacerdotes de Guerra são a unidade heroica mais comum dos astecas. Eles coletam tonalli, deixados por unidades derrotadas, para complementar a geração de Favor, e podem criar construções religiosas. Eles lutam em curta distância e são especialmente fortes contra unidades míticas devido ao seu status de Herói, mas também são eficazes contra unidades humanas.\n\nOs Sacerdotes de Guerra são essenciais em qualquer estratégia asteca, pois reduzem a dependência do Ixiptla como a única unidade mitológica para neutralizar o Favor e contribuem para a geração de Favor através da absorção de tonalli.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 211,
@@ -14579,6 +14962,11 @@
       {
         "nome": "Cone de Fogo (Passivo)",
         "descricao": "Ataca unidades em um semicírculo à frente do Ixiptla, incendiando-as e causando dano ao longo do tempo."
+      },
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Huitzilopochtli é o deus asteca da guerra, do sol e da conquista. Ele incorpora força marcial e liderança divina, guiando os astecas em batalhas e expansões.\n\nCada Deus Maior pode possuir temporariamente um Sacerdote de Guerra por vez como seu Ixiptla, concedendo-lhes imenso poder. As habilidades e aparência dos Ixiptlas dependem de qual Deus Maior está sendo jogado. O Ixiptla causa dano significativo com ataques especiais, tornando-o uma ferramenta poderosa, mas também um alvo principal para os inimigos. Como Herói, o Ixiptla causa dano extra às unidades mitológicas e ganha atributos bônus a cada Era.\n\nApós pouco tempo, a estrutura mortal do Ixiptla não consegue mais conter o poder do deus que os possui, e a unidade é perdida. Os jogadores terão que escolher quando invocar esse poder de forma decisiva."
@@ -14635,7 +15023,14 @@
     "fraco_contra": null,
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói poderoso com tempo de vida limitado. Criado quando Quetzalcoatl possui um Sacerdote de Guerra. Bom contra unidades mitológicas. Ataques à distância contra unidades voadoras. Coleta Relíquias.",
-    "historia": "Quetzalcoatl é o deus asteca da sabedoria, do vento e da criação. Conhecido como a Serpente Emplumada, ele representa conhecimento, aprendizado e o equilíbrio entre natureza e civilização.\n\nCada Deus Maior pode possuir temporariamente um Sacerdote de Guerra por vez como seu Ixiptla, concedendo-lhes imenso poder. As habilidades e aparência do Ixiptla dependem de qual Deus Maior está sendo jogado. O Ixiptla causa dano significativo com ataques especiais, tornando-o uma ferramenta poderosa, mas também um alvo principal para os inimigos. Como Herói, o Ixiptla causa dano extra às unidades mitológicas e ganha atributos bônus a cada Era.\n\nApós pouco tempo, a estrutura mortal do Ixiptla não consegue mais conter o poder do deus que os possui, e a unidade é perdida. Os jogadores terão que escolher quando invocar esse poder de forma decisiva."
+    "historia": "Quetzalcoatl é o deus asteca da sabedoria, do vento e da criação. Conhecido como a Serpente Emplumada, ele representa conhecimento, aprendizado e o equilíbrio entre natureza e civilização.\n\nCada Deus Maior pode possuir temporariamente um Sacerdote de Guerra por vez como seu Ixiptla, concedendo-lhes imenso poder. As habilidades e aparência do Ixiptla dependem de qual Deus Maior está sendo jogado. O Ixiptla causa dano significativo com ataques especiais, tornando-o uma ferramenta poderosa, mas também um alvo principal para os inimigos. Como Herói, o Ixiptla causa dano extra às unidades mitológicas e ganha atributos bônus a cada Era.\n\nApós pouco tempo, a estrutura mortal do Ixiptla não consegue mais conter o poder do deus que os possui, e a unidade é perdida. Os jogadores terão que escolher quando invocar esse poder de forma decisiva.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 218,
@@ -14697,7 +15092,14 @@
     "fraco_contra": null,
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
     "descricao_avancada": "Herói Poderoso com tempo de vida limitado. Criado quando Tezcatlipoca possui um Sacerdote de Guerra. Bom contra unidades mitológicas. Coleta Relíquias.",
-    "historia": "Tezcatlipoca é o deus asteca da noite, feitiçaria e destino. Misterioso e poderoso, ele incorpora o caos, o conflito e as forças invisíveis que moldam o destino e a ambição.\n\nCada Deus Maior pode possuir temporariamente um Sacerdote de Guerra por vez como seu Ixiptla, concedendo-lhes imenso poder. As habilidades e aparência do Ixiptla dependem de qual Deus Maior está sendo jogado. O Ixiptla causa dano significativo com ataques especiais, tornando-o uma ferramenta poderosa, mas também um alvo principal para os inimigos. Como Herói, o Ixiptla causa dano extra às unidades mitológicas e ganha atributos bônus a cada Era.\n\nApós pouco tempo, a estrutura mortal do Ixiptla não consegue mais conter o poder do deus que os possui, e a unidade é perdida. Os jogadores terão que escolher quando invocar esse poder de forma decisiva."
+    "historia": "Tezcatlipoca é o deus asteca da noite, feitiçaria e destino. Misterioso e poderoso, ele incorpora o caos, o conflito e as forças invisíveis que moldam o destino e a ambição.\n\nCada Deus Maior pode possuir temporariamente um Sacerdote de Guerra por vez como seu Ixiptla, concedendo-lhes imenso poder. As habilidades e aparência do Ixiptla dependem de qual Deus Maior está sendo jogado. O Ixiptla causa dano significativo com ataques especiais, tornando-o uma ferramenta poderosa, mas também um alvo principal para os inimigos. Como Herói, o Ixiptla causa dano extra às unidades mitológicas e ganha atributos bônus a cada Era.\n\nApós pouco tempo, a estrutura mortal do Ixiptla não consegue mais conter o poder do deus que os possui, e a unidade é perdida. Os jogadores terão que escolher quando invocar esse poder de forma decisiva.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 219,
@@ -14843,7 +15245,8 @@
       },
       {
         "nome": "Saída Espinhosa",
-        "descricao": "Tem chance de gerar uma armadilha de espinhos ao ser derrotado."
+        "descricao": "Tem chance de gerar uma armadilha de espinhos ao ser derrotado.",
+        "icon": "aomr_chaneque_spiky_departure_ability_icon"
       }
     ],
     "historia": "Nome científico: Statuae diabolus\nTamanho: Pequeno\nDieta: Herbívoro\n\nOs Chaneque são pequenos seres espirituais arteiros. Frequentemente descritos como espíritos da floresta ou do lar, eles pregam peças nas pessoas, escondem pertences e às vezes desviam viajantes do caminho.\n\nApesar de sua natureza brincalhona, os Chaneque também são considerados protetores da natureza e de lugares sagrados, representando os aspectos misteriosos e lúdicos do mundo natural."
@@ -14985,15 +15388,18 @@
     "habilidades": [
       {
         "nome": "Sopro Venenoso",
-        "descricao": "Mire em uma unidade inimiga para infligir veneno a ela, causando dano ao longo do tempo."
+        "descricao": "Mire em uma unidade inimiga para infligir veneno a ela, causando dano ao longo do tempo.",
+        "icon": "aomr_maquizcoatl_poisonous_breath_ability_icon"
       },
       {
         "nome": "Sopro Escaldante",
-        "descricao": "Mire em uma unidade inimiga para causar dano e derreter temporariamente a armadura inimiga."
+        "descricao": "Mire em uma unidade inimiga para causar dano e derreter temporariamente a armadura inimiga.",
+        "icon": "aomr_maquizcoatl_scorching_breath_ability_icon"
       },
       {
         "nome": "Ruptura Volátil (Passiva)",
-        "descricao": "Ao morrer, a Maquizcoatl explode, jogando uma mistura de fogo e veneno em inimigos próximos, causando dano ao longo do tempo e redução na armadura."
+        "descricao": "Ao morrer, a Maquizcoatl explode, jogando uma mistura de fogo e veneno em inimigos próximos, causando dano ao longo do tempo e redução na armadura.",
+        "icon": "aomr_maquizcoatl_volatile_rupture_ability_icon"
       }
     ],
     "historia": "Nome científico: Serpens duplici\nTamanho: Por volta de 1,80 m\nDieta: Humanos\n\nO Maquizcoatl de duas cabeças está associado ao equilíbrio das forças opostas, mas também a maus presságios, fofocas e morte.\n\nMaquizcoatl, que se traduz como ''serpente de 2 cabeças'' ou ''cobra pulseira'', também é um dos nomes de Huitzilopochtli. Os adornos de Maquizcoatl serviam como insígnias, indicando status de elite, e podem ter tido significado cerimonial, sendo usados pelos líderes e imitadores de Huitzilopochtli."
@@ -15168,7 +15574,8 @@
     "habilidades": [
       {
         "nome": "Apito de Terror",
-        "descricao": "Reduz temporariamente o dano inimigo e os atordoa por uma breve duração."
+        "descricao": "Reduz temporariamente o dano inimigo e os atordoa por uma breve duração.",
+        "icon": "aomr_shorn_one_ability_icon"
       }
     ],
     "historia": "Os Tosquiados são os guerreiros de mais alta patente dos Astecas. São eficazes contra a maioria dos inimigos, mas especialmente fortes contra a infantaria inimiga.\n\nOs Tosquiados se destacam liderando ataques no final do jogo, rompendo as linhas de frente inimigas e protegendo posições defensivas. Seu prestígio como o guerreiro Asteca supremo tem um alto custo em recursos, população e tempo de treinamento. São poucos no campo de batalha, mas representam uma ameaça que o inimigo não pode ignorar."
@@ -15284,7 +15691,8 @@
     "habilidades": [
       {
         "nome": "Bolha de Vida",
-        "descricao": "Ative para invocar um escudo durável, que se drena lentamente enquanto cura unidades aliadas próximas."
+        "descricao": "Ative para invocar um escudo durável, que se drena lentamente enquanto cura unidades aliadas próximas.",
+        "icon": "aomr_axolotl_life_bubble_ability_icon"
       },
       {
         "nome": "Anfíbio (Passivo)",
@@ -15300,11 +15708,13 @@
       },
       {
         "nome": "Mutar",
-        "descricao": "Mutar em um Axolote Mutante, com pontos de vida, ataque e habilidades muito aprimorados. A mutação é irreversível."
+        "descricao": "Mutar em um Axolote Mutante, com pontos de vida, ataque e habilidades muito aprimorados. A mutação é irreversível.",
+        "icon": "aomr_axolotl_mutate_ability_icon"
       },
       {
         "nome": "Mordida Restauradora",
-        "descricao": "Mire em um navio para causar dano esmagador pesado e restaurar pontos de vida."
+        "descricao": "Mire em um navio para causar dano esmagador pesado e restaurar pontos de vida.",
+        "icon": "aomr_axolotl_restorative_chomp_ability_icon"
       }
     ],
     "historia": "Nome científico: Ambystoma mexicanum\nTamanho: Grande\nDieta: Carnívora\n\nO Axolote é uma criatura lendária, frequentemente associada à água, regeneração e transformação. É um tipo de salamandra aquática nativa dos lagos ao redor de Tenochtitlán e está ligada ao deus Xolotl, a divindade do raio, da morte, das mutações e dos gêmeos."
@@ -15670,7 +16080,8 @@
       },
       {
         "nome": "Chicote de Cauda",
-        "descricao": "Mire em qualquer soldado humano ou unidade mitológica para pegá-los e puxá-los com a cauda, causando grande dano e atordoando por um tempo."
+        "descricao": "Mire em qualquer soldado humano ou unidade mitológica para pegá-los e puxá-los com a cauda, causando grande dano e atordoando por um tempo.",
+        "icon": "aomr_ahuizotl_tail_whip_ability_icon"
       }
     ],
     "historia": "Nome científico: Didelphis tenax\nTamanho: 23 a 68 kg\nDieta: Humanos\n\nO Ahuizotl é um monstro aquático feroz com corpo de cachorro e uma mão na ponta da cauda.\n\nTemido por pescadores e viajantes nos arredores de lagos e rios, dizia-se que o Ahuizotl arrastava as pessoas para o fundo do mar, levando-as à morte. Era associado aos deuses da água e da morte, particularmente Tlaloc, e acreditava-se que reivindicava vítimas cujos corpos eram considerados oferendas sagradas aos deuses."
@@ -15960,11 +16371,13 @@
     "habilidades": [
       {
         "nome": "Canção da Morte",
-        "descricao": "Marque soldados humanos inimigos com o Presságio da Morte, que reduz seus pontos de vida."
+        "descricao": "Marque soldados humanos inimigos com o Presságio da Morte, que reduz seus pontos de vida.",
+        "icon": "aomr_tunkuluchu_deathsong_ability_icon"
       },
       {
         "nome": "Presságio Final (Passivo)",
-        "descricao": "Os ataques têm chance de finalizar instantaneamente qualquer soldado humano marcado com o Presságio da Morte, matando-o imediatamente."
+        "descricao": "Os ataques têm chance de finalizar instantaneamente qualquer soldado humano marcado com o Presságio da Morte, matando-o imediatamente.",
+        "icon": "aomr_tunkuluchu_final_omen_ability_icon"
       }
     ],
     "historia": "Nome científico: Asio stygius\nTamanho: Grande\nDieta: Carnívoro\nO Tunkuluchu era temido pelo povo mesoamericano como um arauto da morte. Quando o Tunkuluchu cantava, dizia-se que alguém próximo estava prestes a morrer.\n\nTunkuluchus às vezes são ligados ao som de tambores e outras formas de comunicação."
@@ -16526,7 +16939,14 @@
     "icon": "aomr_cheiroballista_hero_icon",
     "construcao": null,
     "descricao_avancada": "Soldado de Longo Alcance, Arma de Cerco, Herói. Frágil, mas muito poderoso contra infantaria, navios e unidades mitológicas.",
-    "historia": "Esta Quirobalista se tornou um herói. Como uma Quirobalista regular, é forte contra a infantaria e fraca contra a maioria das outras unidades. Mas, como herói, é muito mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nA Quirobalista era a mais avançada balista de lançamento de flechas concebida nos tempos antigos. Seus braços de metal eram curtos e forneciam grande torque, mas também permitiam que a balista fosse montada em um carrinho puxado ou colocada sobre rodas."
+    "historia": "Esta Quirobalista se tornou um herói. Como uma Quirobalista regular, é forte contra a infantaria e fraca contra a maioria das outras unidades. Mas, como herói, é muito mais eficaz contra unidades mitológicas. Todos os heróis podem pegar Relíquias.\n\nA Quirobalista era a mais avançada balista de lançamento de flechas concebida nos tempos antigos. Seus braços de metal eram curtos e forneciam grande torque, mas também permitiam que a balista fosse montada em um carrinho puxado ou colocada sobre rodas.",
+    "habilidades": [
+      {
+        "nome": "Mãos Sagradas (Passivo)",
+        "descricao": "Pode pegar Relíquias e deixá-las em um Templo.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 246,
@@ -16753,7 +17173,8 @@
     "habilidades": [
       {
         "nome": "Transfixação (Passivo)",
-        "descricao": "Projéteis perfuram e causam dano a múltiplas unidades."
+        "descricao": "Projéteis perfuram e causam dano a múltiplas unidades.",
+        "icon": "aomr_oyumi_ability_icon"
       }
     ],
     "historia": "O oyumi é uma grande besta de cerco que começou a ser usada no Japão durante o século VII. Inicialmente fixada a uma plataforma e incapaz de girar, foi aprimorada no século IX para permitir maior mobilidade e a capacidade de disparar várias flechas simultaneamente. Embora mortal, o oyumi era difícil de operar – apenas os soldados mais fortes e habilidosos conseguiam manejar essa arma formidável. Evidências históricas sugerem que essas máquinas de cerco foram usadas até o século XII."

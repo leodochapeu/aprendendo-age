@@ -98,6 +98,9 @@ Preenche só `descricao_resumida` (short rollover), `descricao_avancada` (long r
 ```bash
 python scripts/fill-unidades-descricoes.py --dry-run
 python scripts/fill-unidades-descricoes.py --write
+
+# Ícones de habilidades (UITextureCache abilities/) + token_asset_map
+python scripts/import-unit-ability-icons.py --write
 ```
 
 Ícones de habilidade (quando o jogo expõe path em `proto_unit_commands.xml`):

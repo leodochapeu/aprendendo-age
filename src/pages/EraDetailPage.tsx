@@ -1,6 +1,7 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { NotionText } from "@/components/ui/NotionText";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -53,7 +54,12 @@ export function EraDetailPage() {
   return (
     <div>
       <BackLink to={backToList}>{backLabel}</BackLink>
-      <PageHeader title={e.nome} description={e.hint} headerIconSrc={eraIcon} />
+      <PageHeader
+        title={e.nome}
+        description={e.hint}
+        headerIconSrc={eraIcon}
+        siblingNav={<CatalogRecordNav section="eras" currentId={e.id} />}
+      />
 
       <div className="grid gap-6 lg:grid-cols-2">
         <Section title={t("common.description")}>

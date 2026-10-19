@@ -233,7 +233,13 @@
     "habilidades": [
       {
         "nome": "Bash",
-        "descricao": "Smashes a unit with his shield, sending it flying and damaging it greatly."
+        "descricao": "Smashes a unit with his shield, sending it flying and damaging it greatly.",
+        "icon": "aomr_ajax_spc_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 34\nHomeland -- Salamis\nOccupation -- prince, warrior\n\nThe son of the King of Salamis, Ajax was the second greatest Greek champion at Troy, behind only Achilles. Homer described Ajax as a wall, and said he was much taller than other men. When Achilles withdrew from the fighting, it was Ajax who met Hector in single combat. The two heroes fought all day, with only Hector taking a slight wound. Following the death of Achilles, Ajax competed with Odysseus for the armor of the fallen hero. Odysseus proved more eloquent as a speaker, however, and was awarded the prize."
@@ -317,7 +323,14 @@
     "icon": "aomr_jason_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero. Good against myth units. Switches to a ranged attack to fight flying units. Collects Relics.",
-    "historia": "Age -- 22\nHomeland -- Iolcos, later Corinth\nOccupation -- leader of the Argonauts\n\nIn fear of a prophecy that Jason would someday kill him, King Pelias of Iolcos sent the hero on the impossible quest to obtain the Golden Fleece from the distant country of Colchis. Jason ordered the construction of the great ship Argo and gathered a host of heroes, thereafter known as the Argonauts, to accompany him. After a number of adventures, including the first passage of the Symplegades (the Bosphorus), the Argonauts arrived at Colchis, believed to be somewhere on the edge of the Black Sea. King Aeetes of Colchis demanded that Jason fulfill a number of tasks to obtain the fleece, including plowing a field with fire-breathing oxen, sowing the teeth of a dragon in a field and fighting the army that rose up from them, and finally defeating the dragon that guarded the fleece itself. With the fleece in hand, Jason fled with Aeetes' daughter Medea and had many adventures on the return journey. Medea engineered the death of King Pelias, fulfilling the old prophecy. When their marriage failed, Medea took a terrible revenge, killing their sons as well as Jason's new bride Creusa. Jason was killed many years later by a timber that fell from the Argo."
+    "historia": "Age -- 22\nHomeland -- Iolcos, later Corinth\nOccupation -- leader of the Argonauts\n\nIn fear of a prophecy that Jason would someday kill him, King Pelias of Iolcos sent the hero on the impossible quest to obtain the Golden Fleece from the distant country of Colchis. Jason ordered the construction of the great ship Argo and gathered a host of heroes, thereafter known as the Argonauts, to accompany him. After a number of adventures, including the first passage of the Symplegades (the Bosphorus), the Argonauts arrived at Colchis, believed to be somewhere on the edge of the Black Sea. King Aeetes of Colchis demanded that Jason fulfill a number of tasks to obtain the fleece, including plowing a field with fire-breathing oxen, sowing the teeth of a dragon in a field and fighting the army that rose up from them, and finally defeating the dragon that guarded the fleece itself. With the fleece in hand, Jason fled with Aeetes' daughter Medea and had many adventures on the return journey. Medea engineered the death of King Pelias, fulfilling the old prophecy. When their marriage failed, Medea took a terrible revenge, killing their sons as well as Jason's new bride Creusa. Jason was killed many years later by a timber that fell from the Argo.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 6,
@@ -388,7 +401,13 @@
     "habilidades": [
       {
         "nome": "Bard of Heroes (Passive)",
-        "descricao": "Nearby human units receive a damage multiplier against Myth units."
+        "descricao": "Nearby human units receive a damage multiplier against Myth units.",
+        "icon": "aomr_orpheus_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 28\nHomeland -- Thrace\nOccupation -- hero and demigod\n\nInheriting his artistic gifts from his mother, the muse Calliope, Orpheus created songs so enthralling that all living things stopped to listen, and even stones were charmed by his music. He joined Jason and the Argonauts, saving the ship from the Sirens by playing his lyre more beautifully than the monsters, overpowering their bewitching song. His most famous adventure, however, is his journey to the underworld in search of his lost love, Eurydice. Using his music to calm Cerberus and gain entry to the underworld, he played his lyre before Hades and Persephone. They were so moved that they allowed Eurydice to return to the world of the living, on the condition that Orpheus walked in front of her and did not look back on the way out. As they neared the exit, Orpheus, in his excitement, turned back to see Eurydice, causing her to disappear back into the underworld forever."
@@ -472,7 +491,14 @@
     "icon": "aomr_theseus_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero. Good against myth units. Switches to a ranged attack to fight flying units. Collects Relics.",
-    "historia": "Age -- 32\nHomeland -- Troezen, later Athens\nOccupation -- king\n\nThe parentage of Theseus is confused. He was thought to be either an illegitimate son of Aegeus, a king of Athens, or a son of Poseidon. Raised by his mother, he faced many adversaries and quests while attempting to return to Athens to be reunited with his father. He was then selected to be part of a group of young men and women to be sacrificed to the Minotaur on Crete, as part of the compensation for a long war with its king, Minos. On Crete, Minos' daughter Ariadne fell in love with Theseus and helped him defeat the Minotaur within the labyrinth. Theseus returned to Athens, but failed to properly signal his success to his father. Aegeus drowned himself in despair, giving his name to the Aegean Sea. Theseus became king and undertook several other adventures, but lost popularity late in life and was slain."
+    "historia": "Age -- 32\nHomeland -- Troezen, later Athens\nOccupation -- king\n\nThe parentage of Theseus is confused. He was thought to be either an illegitimate son of Aegeus, a king of Athens, or a son of Poseidon. Raised by his mother, he faced many adversaries and quests while attempting to return to Athens to be reunited with his father. He was then selected to be part of a group of young men and women to be sacrificed to the Minotaur on Crete, as part of the compensation for a long war with its king, Minos. On Crete, Minos' daughter Ariadne fell in love with Theseus and helped him defeat the Minotaur within the labyrinth. Theseus returned to Athens, but failed to properly signal his success to his father. Aegeus drowned himself in despair, giving his name to the Aegean Sea. Theseus became king and undertook several other adventures, but lost popularity late in life and was slain.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 8,
@@ -859,7 +885,14 @@
     "icon": "aomr_achilles_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Mounted Hero. Good against myth units. Switches to a ranged attack to fight flying units. Collects Relics.",
-    "historia": "Age -- 35\nHomeland -- Phthia\nOccupation -- hero of the Trojan War\n\nA great warrior and Greek champion in the Trojan War, he was nearly invulnerable, having been dipped in the River Styx as a child by his mother, Thetis. During the dipping, however, he had been held by the tendon in one of his heels (the Achilles tendon). Following an argument with Agamemnon, leader of the Greeks outside Troy, Achilles refused to fight and the war began to go in Troy's favor. Achilles' friend Patroclus donned Achilles' armor hoping to re-inspire the Greeks, but he was slain by the Trojan champion, Hector. Enraged, Achilles rejoined the fight, slew Hector, and dragged his body around the city. Guided by the gods, Paris of Troy hit Achilles in his heel with a poisoned arrow, and the great warrior died."
+    "historia": "Age -- 35\nHomeland -- Phthia\nOccupation -- hero of the Trojan War\n\nA great warrior and Greek champion in the Trojan War, he was nearly invulnerable, having been dipped in the River Styx as a child by his mother, Thetis. During the dipping, however, he had been held by the tendon in one of his heels (the Achilles tendon). Following an argument with Agamemnon, leader of the Greeks outside Troy, Achilles refused to fight and the war began to go in Troy's favor. Achilles' friend Patroclus donned Achilles' armor hoping to re-inspire the Greeks, but he was slain by the Trojan champion, Hector. Enraged, Achilles rejoined the fight, slew Hector, and dragged his body around the city. Guided by the gods, Paris of Troy hit Achilles in his heel with a poisoned arrow, and the great warrior died.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 14,
@@ -935,7 +968,14 @@
     "icon": "aomr_atalanta_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Fast Hero. Good against myth units. Switches to a ranged attack to fight flying units. Collects Relics.",
-    "historia": "Age -- 28\nHomeland -- Arcadia (possibly Boeotia)\nOccupation -- hunter and athlete\n\nAs a baby, this heroine was abandoned on a hillside by her father, who had desperately wanted a son. Suckled by a bear and then raised by hunters who found her, she grew to become a fearless huntress and the fastest foot-racer known. By all accounts, she was a beautiful, athletic, and formidable character with a deadly side - on one occasion, she slew two centaurs who attempted to waylay her. Atalanta also joined the crew of the Argo in its quest to retrieve the Colchian Golden Fleece, and participated in the Calydonian boar hunt. Using her superb hunting and running skills, she drew first blood from the beast and was given the boar skin as a reward.\n\nDespite the Oracle's warning that marriage would hasten her doom, Atalanta eventually agreed to wed any man that could beat her in a race, believing that no such man existed. Unfortunately, a suitor, Hippomenes, distracted her by throwing golden apples in her path and managed to win the race. After the marriage, the couple let their passions go wild within a temple of Zeus (or Cybele, according to some), angering the great deity, who turned them both into lions."
+    "historia": "Age -- 28\nHomeland -- Arcadia (possibly Boeotia)\nOccupation -- hunter and athlete\n\nAs a baby, this heroine was abandoned on a hillside by her father, who had desperately wanted a son. Suckled by a bear and then raised by hunters who found her, she grew to become a fearless huntress and the fastest foot-racer known. By all accounts, she was a beautiful, athletic, and formidable character with a deadly side - on one occasion, she slew two centaurs who attempted to waylay her. Atalanta also joined the crew of the Argo in its quest to retrieve the Colchian Golden Fleece, and participated in the Calydonian boar hunt. Using her superb hunting and running skills, she drew first blood from the beast and was given the boar skin as a reward.\n\nDespite the Oracle's warning that marriage would hasten her doom, Atalanta eventually agreed to wed any man that could beat her in a race, believing that no such man existed. Unfortunately, a suitor, Hippomenes, distracted her by throwing golden apples in her path and managed to win the race. After the marriage, the couple let their passions go wild within a temple of Zeus (or Cybele, according to some), angering the great deity, who turned them both into lions.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 15,
@@ -1011,7 +1051,14 @@
     "icon": "aomr_heracles_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero. Good against myth units. Switches to a ranged attack to fight flying units. Collects Relics.",
-    "historia": "Age -- 40\nHomeland -- Tiryns\nOccupation -- hero and demigod\n\nThe son of Zeus and a mortal woman, Heracles (called Hercules in Latin) was endowed with incredible strength. He strangled serpents in his crib as a baby and accidentally killed his tutor with a lyre as a youth. Unfortunately he had a terrible enemy in Hera, Zeus' jealous wife on Olympus. She drove Heracles mad to the point that he killed his own wife and children. After recovering his sanity, he sought advice from the Oracle of Delphi for penance to resume a normal life. She instructed him to perform his famous twelve labors. These included killing beasts like the Nemean Lion (which he strangled) and the Hydra, capturing other beasts, and a variety of other quests. With the twelve labors complete, and following a variety of other adventures, he was allowed to return to Tiryns and remarry. Heracles died much later after being treacherously poisoned through the machinations of a Centaur who had tried to abduct his wife. He was then invited to Olympus and endowed with immortality."
+    "historia": "Age -- 40\nHomeland -- Tiryns\nOccupation -- hero and demigod\n\nThe son of Zeus and a mortal woman, Heracles (called Hercules in Latin) was endowed with incredible strength. He strangled serpents in his crib as a baby and accidentally killed his tutor with a lyre as a youth. Unfortunately he had a terrible enemy in Hera, Zeus' jealous wife on Olympus. She drove Heracles mad to the point that he killed his own wife and children. After recovering his sanity, he sought advice from the Oracle of Delphi for penance to resume a normal life. She instructed him to perform his famous twelve labors. These included killing beasts like the Nemean Lion (which he strangled) and the Hydra, capturing other beasts, and a variety of other quests. With the twelve labors complete, and following a variety of other adventures, he was allowed to return to Tiryns and remarry. Heracles died much later after being treacherously poisoned through the machinations of a Centaur who had tried to abduct his wife. He was then invited to Olympus and endowed with immortality.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 16,
@@ -1079,7 +1126,14 @@
     "dano_cortante": 10,
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero. Good against Myth units. Switches to a ranged attack to fight flying units. Collects Relics.",
-    "historia": "Age -- 23\nHomeland -- Thebes\nOccupation -- charioteer & squire\n\nCousin to Heracles, Iolaus was his unwavering companion throughout the twelve labors. He drove Heracles' chariot, carried his weapons, and fought valiantly by his side. During the second labor, Iolaus proved indispensable in the battle against the fearsome Lernaean Hydra. As the monster grew two heads for each one Heracles severed, the hero was quickly overwhelmed. With quick thinking and bravery, Iolaus leapt into action, cauterizing the necks as soon as Heracles beheaded them. After an intense and grueling fight, only the final head remained. Together, they struck the decisive blow, and the monstrous Hydra was defeated."
+    "historia": "Age -- 23\nHomeland -- Thebes\nOccupation -- charioteer & squire\n\nCousin to Heracles, Iolaus was his unwavering companion throughout the twelve labors. He drove Heracles' chariot, carried his weapons, and fought valiantly by his side. During the second labor, Iolaus proved indispensable in the battle against the fearsome Lernaean Hydra. As the monster grew two heads for each one Heracles severed, the hero was quickly overwhelmed. With quick thinking and bravery, Iolaus leapt into action, cauterizing the necks as soon as Heracles beheaded them. After an intense and grueling fight, only the final head remained. Together, they struck the decisive blow, and the monstrous Hydra was defeated.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 17,
@@ -1156,7 +1210,8 @@
     "habilidades": [
       {
         "nome": "Volley",
-        "descricao": "Fires a volley of several arrows, damaging enemy units in the targeted area."
+        "descricao": "Fires a volley of several arrows, damaging enemy units in the targeted area.",
+        "icon": "aomr_centaur_ability_icon"
       }
     ],
     "historia": "Scientific name -- Homo equus\nSize -- 7'+ tall, 1,600 lbs.\nDiet -- omnivore, likes wine\n\nHalf-man and half-horse, Centaurs are usually seen with the torso and head of a man and the body of a horse, but different descriptions exist. They were notorious for showing up uninvited to outdoor celebrations (despite their size, they seemed to have had trouble holding their liquor) and for abducting women, especially young maidens. Their drunkenness and inclination towards violence led them to be driven to the mountains of Thessaly. Chiron, the centaur that educated Achilles, was an exception. Centaurs are often depicted carrying a bow."
@@ -1236,7 +1291,8 @@
     "habilidades": [
       {
         "nome": "Throw",
-        "descricao": "Hurls human soldiers into enemy units or buildings, dealing area damage."
+        "descricao": "Hurls human soldiers into enemy units or buildings, dealing area damage.",
+        "icon": "aomr_cyclops_ability_icon"
       }
     ],
     "historia": "Scientific name -- Cyclops magnus\nSize -- 12' tall\nDiet -- omnivore, likes mutton\n\nGiants with one central eye, the Cyclopes were storm gods in early Greek mythology. In some tales they became smiths and forged Zeus' thunderbolts. In other tales they built the walls of the Mycenaean city-states. In classical Greece, the 'lesser cyclopes' were bestial and violent sons of Poseidon who were avoided and feared. There were also three wise and powerful 'elder Cyclopes' that were the sons of Gaia and Oranos."
@@ -1501,7 +1557,8 @@
     "habilidades": [
       {
         "nome": "Gore",
-        "descricao": "Knocks enemy units aside, injuring them greatly."
+        "descricao": "Knocks enemy units aside, injuring them greatly.",
+        "icon": "aomr_minotaur_ability_icon"
       }
     ],
     "historia": "Scientific name -- Homo taurus\nSize -- about 9' tall\nDiet -- humans, especially maidens\n\nKing Minos prayed to Poseidon to send him a snow-white bull as a sign that he was fit to rule Crete. He promised to sacrifice the animal, but when it appeared, he kept it for his own. In retribution, Poseidon caused Minos' wife to fall in love with the bull. Their offspring was the Minotaur, a beast with the head of a bull and the body of a man. Minos had a huge labyrinth constructed near his palace in Knossos where the Minotaur could be kept. Each year, seven boys and seven girls were sent into the maze to be eaten by the beast. Eventually the Athenian hero Theseus slew the Minotaur and escaped the labyrinth by following a ball of twine that he had unraveled as he explored it.\n\nThe legend of the Minotaur may have originated because of the importance of the bull in Minoan ritual. Minoan buildings were adorned with bull horns, and Minoan hourglass shields were covered with bull hide. Early frescoes show Minoan youths leaping over the horns of bulls as a form of sport."
@@ -1777,7 +1834,13 @@
     "habilidades": [
       {
         "nome": "Triple Shot",
-        "descricao": "Fires three arrows simultaneously, greatly damaging the targeted unit."
+        "descricao": "Fires three arrows simultaneously, greatly damaging the targeted unit.",
+        "icon": "aomr_chiron_spc_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 82\nHomeland -- Thessaly\nOccupation -- scholar and teacher\n\nChiron was originally a god of healing in Thessalian mythology, but later became an immortal Centaur in the more widely accepted Greek mythology. Although Centaurs were usually wild and unruly, Chiron was the exception. He was noted for his wisdom and his knowledge of healing was legendary. He was the tutor of many notable heroes, including Jason and Achilles."
@@ -1860,7 +1923,14 @@
     "icon": "aomr_hippolyta_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero. Has a ranged attack that is good against myth units.",
-    "historia": "Age -- 41\nHomeland -- land of the Amazons\nOccupation -- queen\n\nA queen of the Amazons, a tribe of warrior women descended from Ares, Hippolyta was kidnapped by Theseus, triggering a war with Athens. Although Hippolyta bore a son to Theseus, he lost interest in her and she eventually returned to the lands of the Amazons. She then encountered Heracles, sent to retrieve the belt of Ares from her as one of his twelve quests. She gave the belt to him willingly, but this angered the goddess Hera. Disguised as an Amazon, she incited the women to attack Heracles, who killed Hippolyta in his haste to exit their dangerous land."
+    "historia": "Age -- 41\nHomeland -- land of the Amazons\nOccupation -- queen\n\nA queen of the Amazons, a tribe of warrior women descended from Ares, Hippolyta was kidnapped by Theseus, triggering a war with Athens. Although Hippolyta bore a son to Theseus, he lost interest in her and she eventually returned to the lands of the Amazons. She then encountered Heracles, sent to retrieve the belt of Ares from her as one of his twelve quests. She gave the belt to him willingly, but this angered the goddess Hera. Disguised as an Amazon, she incited the women to attack Heracles, who killed Hippolyta in his haste to exit their dangerous land.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 28,
@@ -1933,7 +2003,14 @@
     "favor": 4,
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Flying Hero. Good against Myth units. Has a ranged attack that is good against Myth units. Collects Relics.",
-    "historia": "Age -- 19\nHomeland -- Athens\nOccupation -- Unemployed, son of famous inventor\n\nThe son of the genius craftsman Daedalus, Icarus embodied youthful daring and curiosity, often to the point of overconfidence and recklessness. When Theseus escaped the labyrinth designed by Daedalus, King Minos of Crete was so enraged that he imprisoned Daedalus and Icarus within the labyrinth. Using feathers that fell from birds flying overhead, Daedalus fashioned a pair of wings for their escape. Before their daring attempt, he warned his son not to fly too close to the sea, to avoid the water soaking the feathers, nor too close to the sun, as the beeswax holding the feathers in place would melt. They launched their escape, but midway through, filled with the exhilaration of flight, Icarus soared higher and higher. Soon, the wax began to melt and the wings fell apart. Icarus plummeted into the ocean and drowned in the waves."
+    "historia": "Age -- 19\nHomeland -- Athens\nOccupation -- Unemployed, son of famous inventor\n\nThe son of the genius craftsman Daedalus, Icarus embodied youthful daring and curiosity, often to the point of overconfidence and recklessness. When Theseus escaped the labyrinth designed by Daedalus, King Minos of Crete was so enraged that he imprisoned Daedalus and Icarus within the labyrinth. Using feathers that fell from birds flying overhead, Daedalus fashioned a pair of wings for their escape. Before their daring attempt, he warned his son not to fly too close to the sea, to avoid the water soaking the feathers, nor too close to the sun, as the beeswax holding the feathers in place would melt. They launched their escape, but midway through, filled with the exhilaration of flight, Icarus soared higher and higher. Soon, the wax began to melt and the wings fell apart. Icarus plummeted into the ocean and drowned in the waves.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 29,
@@ -2016,7 +2093,13 @@
     "habilidades": [
       {
         "nome": "Piercing Shot",
-        "descricao": "Shoots a particularly powerful arrow that penetrates everything in its path."
+        "descricao": "Shoots a particularly powerful arrow that penetrates everything in its path.",
+        "icon": "aomr_odysseus_spc_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 44\nHomeland -- Ithaca\nOccupation -- king and general\n\nThe ruler of the island of Ithaca, Odysseus was one of the most prominent Greek champions in the Trojan War. The stratagem of the Trojan Horse was his idea. Following the victory at Troy, he set out on his ten year journey home, chronicled for all time by Homer in the epic poem, Odyssey. Along the way, Odysseus and his crew experienced many adventures and misfortunes, some of their own making and some thanks to the intervention of the gods. Blinding the Cyclops Polyphemus incurred the wrath of Poseidon, who troubled them for years. Thanks to help from Zeus, Athena, and other gods, Odysseus arrived home alone to find his wife Penelope beset by suitors. Disguised as a beggar, he first determined that Penelope had been faithful, and then slew the men pursuing her and cleansed his palace. This triggered a final battle against the families of the men killed, but Athena restored the peace."
@@ -2083,11 +2166,13 @@
     "habilidades": [
       {
         "nome": "Woodland Cloak",
-        "descricao": "After 10 seconds of idling (6 seconds when upgraded), Hamadryads will disguise themselves as trees to hide from opponents. The cooldown resets when the Hamadryad moves or attacks."
+        "descricao": "After 10 seconds of idling (6 seconds when upgraded), Hamadryads will disguise themselves as trees to hide from opponents. The cooldown resets when the Hamadryad moves or attacks.",
+        "icon": "aomr_hamadryad_ability_icon"
       },
       {
         "nome": "Piercing Rootsnare (Passive)",
-        "descricao": "When an enemy unit approaches a disguised Hamadryad, she will unleash roots from the earth around her, piercing through the ground and inflicting damage and stunning targets. This will drop her disguise."
+        "descricao": "When an enemy unit approaches a disguised Hamadryad, she will unleash roots from the earth around her, piercing through the ground and inflicting damage and stunning targets. This will drop her disguise.",
+        "icon": "aomr_hamadryad_ability_icon"
       }
     ],
     "historia": "Scientific name -- Nymphaea arborea.\nSize -- Human sized (Nymph) / 40-80' tall (Tree).\nDiet -- Water, Sunlight.\n\nUnlike other nymphs Hamadryads are intrinsically linked to a particular tree. They are born bonded to the tree, and if the tree dies, so do they. One cannot exist without the other. Generally gentle, shy and nurturing, they are fiercely protective of their tree and the forest they live in."
@@ -2163,7 +2248,8 @@
     "habilidades": [
       {
         "nome": "Polycephaly (Passive)",
-        "descricao": "Grows additional heads while fighting enemy units. Each head can attack."
+        "descricao": "Grows additional heads while fighting enemy units. Each head can attack.",
+        "icon": "aomr_hydra_ability_icon"
       }
     ],
     "historia": "Scientific name -- Hydra lernae\nSize -- 20,000+ lbs.\nDiet -- carnivore, especially cattle and humans\n\nAnother of the fierce offspring of Echidna and Typhon, the Hydra was a large serpent with multiple heads and poisonous breath. Killing the Hydra near the city of Lerna in Argolis was the second of Heracles' twelve labors. Each time he cut off one of the Hydra's heads, however, two more grew back. Heracles' nephew Iolaus helped him by cauterizing each wound as a head was lopped off. The last head was immortal, so Heracles buried it under a large rock. Once the beast's body was dead, Heracles dipped his arrowheads into its blood, giving them extra potency."
@@ -2243,7 +2329,8 @@
     "habilidades": [
       {
         "nome": "Spine Volley",
-        "descricao": "Launches a volley of spines that is highly effective against groups of soldiers."
+        "descricao": "Launches a volley of spines that is highly effective against groups of soldiers.",
+        "icon": "aomr_manticore_ability_icon"
       }
     ],
     "historia": "Scientific name -- Androphagus occisor\nSize -- 1,600 lbs.\nDiet -- carnivore, largely humans\n\nThe Manticore probably entered Greek mythology from Persia and originated in tales about faraway, exotic India. The beast had the body of a red lion, a human face (with blue eyes and human ears), three rows of teeth, a stinging poisonous tail, and poisonous spines that could be shot like arrows in any direction. Its voice was like a mixture of pipes and trumpets. It was fast and capable of great leaps. When villagers vanished without a trace, it was believed that they were devoured by a manticore."
@@ -2319,7 +2406,8 @@
     "habilidades": [
       {
         "nome": "Roar",
-        "descricao": "Roars, damaging, stunning, and slowing down nearby enemy units."
+        "descricao": "Roars, damaging, stunning, and slowing down nearby enemy units.",
+        "icon": "aomr_nemean_lion_ability_icon"
       }
     ],
     "historia": "Scientific name -- Leo nemeae\nSize -- 6,000 lbs.\nDiet -- carnivore\n\nThis large and ferocious lion lived on the plains of Nemea, terrorizing the region. Normal men could not kill it and ran in fear from its mighty roar, so Heracles was sent against it as the first of his twelve labors. When Heracles discovered that his arrows and other weapons could not penetrate the Nemean Lion's hide, the hero closed with it and used his incredible strength to strangle it. He then skinned the beast with its own claws and returned with its skin as the impenetrable cloak that he is usually depicted as wearing."
@@ -2387,7 +2475,8 @@
     "habilidades": [
       {
         "nome": "Polycephaly (Passive)",
-        "descricao": "Grows additional heads while fighting enemy units. Each head can attack."
+        "descricao": "Grows additional heads while fighting enemy units. Each head can attack.",
+        "icon": "aomr_scylla_ability_icon"
       }
     ],
     "historia": "Scientific name -- Hydra thalassa\nSize -- 30,000+ lbs\nDiet -- large fish, whales, sailors\n\nA terrifying sea monster with six serpent heads and a ring of barking dogs around her waist, Scylla guarded one side of the straits of Messina, between Sicily and Italy. The dogs alerted her when a ship was passing so that she could seize sailors. Scylla was originally a beautiful nymph who was transformed by the jealous sorceress Circe (or, according to another myth, Poseidon's wife Amphitrite)."
@@ -2639,7 +2728,13 @@
     "habilidades": [
       {
         "nome": "Pegasus Charge",
-        "descricao": "Leaps valiantly into battle, injuring the targeted unit greatly."
+        "descricao": "Leaps valiantly into battle, injuring the targeted unit greatly.",
+        "icon": "aomr_bellerophon_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 18\nHomeland -- Corinth\nOccupation -- prince and equestrian\n\nThe son of a king of Corinth, a city noted for horses, Bellerophon was trained from youth to be the great horseman of his age. At the age of sixteen, he set out for adventure, but a jealous rival tricked him into undertaking the dangerous quest of killing the Chimera. This fire-breathing beast was terrorizing the countryside of Lycia, carrying off people and livestock. A local seer instructed Bellerophon to pray to Athena and sleep in her temple. In a dream, the goddess told Bellerophon of a golden bridle that could be used to catch the Pegasus. When he awoke he had the bridle, with which he caught the Pegasus drinking at the Pirene well. He was able to control the beast thanks to the bridle and his equestrian skill. Together they flew to the Chimera's lair, where he used a spear to lodge a lump of lead in its throat. The Chimera's fiery breath melted the lead, which choked the beast to death.\n\nAfter several other adventures, Bellerophon married a princess of Lycia and eventually became king. His thirst for adventure returned, however, and then he arrogantly attempted to reach Olympus on Pegasus. An angry Zeus sent a gadfly to bite Pegasus and Bellerophon was thrown off. Though Athena spared him by having him fall onto soft ground, he wandered alone for the rest of his life, searching for Pegasus, and died a lame beggar.",
@@ -2713,7 +2808,13 @@
     "habilidades": [
       {
         "nome": "Midas' Touch",
-        "descricao": "Turn an enemy to solid gold. Any player can defeat the gold unit to gain a ${DEMETER_MIDAS_TOUCH_REWARD_AMOUNT} gold reward."
+        "descricao": "Turn an enemy to solid gold. Any player can defeat the gold unit to gain a ${DEMETER_MIDAS_TOUCH_REWARD_AMOUNT} gold reward.",
+        "icon": "aomr_midas_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 51\nHomeland -- Phrygia\nOccupation -- King\n\nLegendary King of Phrygia, Midas was known for his immense wealth and ambition. One day, while walking through his rose garden, he found a drunken satyr sleeping. Recognizing him as Silenus, the foster father of the god Dionysus, Midas treated him hospitably and, after eleven days, returned him to Dionysus. Grateful, Dionysus offered Midas any wish as a reward. Driven by greed, Midas asked for the power to turn anything he touched into gold. At first, he delighted in his new ability, transforming much of his household, including every rose in his garden, into gold. He ordered a feast to celebrate, but upon taking the first bite, he discovered that food and water also turned to gold upon touching his lips. Desperate, Midas prayed to Dionysus to lift what had become a curse. The god heard his plea and instructed him to wash in the river Pactolus, which washed away his power and turned the river sands to gold.",
@@ -2788,6 +2889,11 @@
       {
         "nome": "Petrification",
         "descricao": "Turns a targeted enemy myth unit to stone, instantly destroying most myth units. Survivors break free after a short time."
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 36\nHomeland -- originally Argos, later Seriphos and Mycenae\nOccupation -- prince and hero\n\nThe son of Zeus and Danae, the mortal daughter of the king of Argos, Perseus and his mother were banished by his grandfather, who feared a prophecy that the grandson would kill him. Perseus grew to be a formidable warrior and protector of his mother. A suitor of his mother sent Perseus on a hopeless quest to kill Medusa, which he fulfilled with the help of Athena and Hermes. Returning home, he slew a ravaging sea monster and freed the beautiful Andromeda, whom he took as his wife. Perseus eventually killed his grandfather as prophesied, in an accident with a discus, but refused to become ruler of Argos. He ruled instead over Tiryns and Mycenae, establishing a family whose descendants included Heracles.",
@@ -2868,7 +2974,13 @@
     "habilidades": [
       {
         "nome": "Seismic Smash",
-        "descricao": "Slams the ground, scattering and damaging nearby enemy units."
+        "descricao": "Slams the ground, scattering and damaging nearby enemy units.",
+        "icon": "aomr_polyphemus_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age -- 205\nHomeland -- Sicily\nOccupation -- shepherd\n\nThis son of Poseidon was a Cyclops who lived a solitary existence in a cave near Sicily herding sheep. His life was interrupted when Odysseus and his men landed nearby seeking food during their journey home from Troy. Odysseus wanted to see a Cyclops, so he and his crew hid in Polyphemus' cave. Gasping at the sight of the one-eyed giant, they revealed their presence and the Cyclops grabbed two of the men and ate them. He blocked the cave entrance with a large rock and continued eating two men each meal. Desperate, Odysseus and his men fashioned a large pole into a spear and stabbed Polyphemus in the eye after getting him drunk. The men then hung from the bellies of the sheep when the Cyclops let them out the next day. Not content with merely escaping, Odysseus taunted Polyphemus from his ship and revealed his name. The Cyclops called upon his father Poseidon to curse the Greeks and the god complied, harassing Odysseus for the rest of his journey.",
@@ -2958,7 +3070,8 @@
     "habilidades": [
       {
         "nome": "Carcinogenicity (Passive)",
-        "descricao": "Explodes on death in a noxious cloud, dealing area damage."
+        "descricao": "Explodes on death in a noxious cloud, dealing area damage.",
+        "icon": "aomr_carcinos_ability_icon"
       }
     ],
     "historia": "Scientific name -- Callinectes colossus\nSize -- 8,000+ lbs.\nDiet -- giant mollusks\n\nWhile Heracles was fighting the Hydra, Hera summoned a crab to attack him. Although Heracles defeated both Hydra and crab, Hera rewarded the crustacean by placing it as a constellation up in the night sky. Latin for 'crab' is 'cancer', and in Greek it is 'Karkinos' – from which the word 'carcinogen' is derived."
@@ -3020,7 +3133,8 @@
     "habilidades": [
       {
         "nome": "Blaze",
-        "descricao": "Breathes a jet of fire, setting a small area ablaze."
+        "descricao": "Breathes a jet of fire, setting a small area ablaze.",
+        "icon": "aomr_chimera_ability_icon"
       }
     ],
     "historia": "Scientific name -- Draco chimera\nSize -- 12,000+ lbs.\nDiet -- carnivore, especially humans\n\nThe Chimera is one of the many offspring of Echidna (a creature with the torso of a beautiful woman and a horrible serpent below the waist and Typhon (a fire-breathing giant with 100 serpent heads). The Chimera is a fire-breathing beast, usually depicted with the body of a goat, the head of a lion, and the tail of a serpent. The Corinthian hero, Bellerophon, defeated the Chimera near Lycia (Asia Minor) by flying into battle on the winged horse, Pegasus."
@@ -3082,7 +3196,8 @@
     "habilidades": [
       {
         "nome": "Colossal Hunger",
-        "descricao": "Consumes trees or mines to regenerate hitpoints."
+        "descricao": "Consumes trees or mines to regenerate hitpoints.",
+        "icon": "aomr_colossus_ability_icon"
       }
     ],
     "historia": "Scientific name -- None (artificial construct)\nSize -- over 50' high\nDiet -- trees and gold\n\nThe Great Colossus at Rhodes was one of the Seven Wonders of the Ancient World. It stood over 150 ft. high on a 50 ft. white marble base. It was mostly hollow, with a skin of bronze welded to a skeleton frame of stone and metal.  Though it was destroyed by an earthquake after standing for only about fifty years, its size was such that people came to Rhodes just to see its ruins, just as people today visit the ruins of other Greek monuments, buildings, and temples."
@@ -3208,7 +3323,8 @@
     "habilidades": [
       {
         "nome": "Petrification",
-        "descricao": "Turns the target to stone, instantly destroying most units. Survivors break free after a short time."
+        "descricao": "Turns the target to stone, instantly destroying most units. Survivors break free after a short time.",
+        "icon": "aomr_medusa_ability_icon"
       }
     ],
     "historia": "Scientific name -- Gorgo medusa\nSize -- 7' tall\nDiet -- carnivore, largely humans\n\nMedusa was one of three sisters known as the Gorgons, children of sea gods with live sea snakes for hair, scaly necks, boar-like tusks, golden hands, and bronze wings. One tale is that Medusa was once a beautiful maid who eloped with Poseidon in a temple of Athena. Angered, the goddess turned Medusa into a monster so ugly that those who gazed upon her were turned to stone. With the help of Athena and Hermes, the hero Perseus lopped off Medusa's head, whereupon the winged horse Pegasus and the giant Chrysaor sprang from her neck. Her head was used as a weapon to kill the sea monster Cetus and then it was mounted on Athena's shield."
@@ -3275,7 +3391,8 @@
     "habilidades": [
       {
         "nome": "Alluring Aria",
-        "descricao": "Lures enemies towards the Siren. Lured enemies cannot attack nor be controlled by the opponent."
+        "descricao": "Lures enemies towards the Siren. Lured enemies cannot attack nor be controlled by the opponent.",
+        "icon": "aomr_siren_ability_icon"
       }
     ],
     "historia": "Scientific name -- Nymphaea Sirenica.\nSize -- 8'2”.\nDiet -- Fish, sailors.\n\nAlthough closely related to marine birds, these sea nymphs possess a human-like appearance and an enchanting voice used to mesmerize their prey. Sirens were once Persephone's companions, until Demeter, furious at her daughter's abduction, transformed them into man-eating monsters. Clever, distinguished, and alluring, they usually conceal their monstrous features until the opportune moment to strike."
@@ -3468,7 +3585,14 @@
     "icon": "aomr_pharaoh_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero who empowers buildings, heals units, collects Relics, and has a ranged attack that is strong against myth units. A successor will replace him if he dies.",
-    "historia": "A Pharaoh empowering a foundation or building makes the Laborers working there build and gather faster. A Pharaoh may also coax more Favor from the gods by empowering a Monument. The Pharaoh is a decent fighter, but it is his ability to heal units as well as his high damage against myth units that make him a good addition to an attacking army. When a Pharaoh dies, he is reborn amongst his people at a Town Center. Set's Pharaohs can summon animals.\n\nThe material wealth and relative isolation of the Nile Valley allowed a monarchical government to arise in Egypt at a very early date. There was little need for a strong man to hold sway by might for the defense of the realm and the control of food production. Instead, the pharaoh came to be accepted as the living god of the world who was responsible for the daily passage of the sun and the annual flooding of the river, the two events upon which food production depended. The greatest of the pharaohs also commanded their armies and built Egypt's greatest monuments.\n\nEgypt is separated into Lower Egypt and Upper Egypt. At times during Egypt's history - such as before King Menes; and during the Hyksos invasion - the unified nation had more than one ruler."
+    "historia": "A Pharaoh empowering a foundation or building makes the Laborers working there build and gather faster. A Pharaoh may also coax more Favor from the gods by empowering a Monument. The Pharaoh is a decent fighter, but it is his ability to heal units as well as his high damage against myth units that make him a good addition to an attacking army. When a Pharaoh dies, he is reborn amongst his people at a Town Center. Set's Pharaohs can summon animals.\n\nThe material wealth and relative isolation of the Nile Valley allowed a monarchical government to arise in Egypt at a very early date. There was little need for a strong man to hold sway by might for the defense of the realm and the control of food production. Instead, the pharaoh came to be accepted as the living god of the world who was responsible for the daily passage of the sun and the annual flooding of the river, the two events upon which food production depended. The greatest of the pharaohs also commanded their armies and built Egypt's greatest monuments.\n\nEgypt is separated into Lower Egypt and Upper Egypt. At times during Egypt's history - such as before King Menes; and during the Hyksos invasion - the unified nation had more than one ruler.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 51,
@@ -3551,7 +3675,14 @@
     "icon": "aomr_priest_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero. Has a ranged attack that is strong against myth units, heals allied units, and constructs Obelisks. Priests' combat ability increases in later ages.",
-    "historia": "Priests are Egyptian heroes with the rare ability to heal. They have a short ranged attack that improves in later ages and is devastating against enemy myth units. Make sure that Priests are accompanied by units that can protect them from human soldiers. Priests' ranged attack allows them to strike at slow-moving myth units, but they may fall in battle against myth units that manage to reach them.\n\nEach major god's Priests have different abilities. Ra's Priests can empower buildings. Set's Priests can convert wild animals. Isis' Priests can quickly construct inexpensive Obelisks."
+    "historia": "Priests are Egyptian heroes with the rare ability to heal. They have a short ranged attack that improves in later ages and is devastating against enemy myth units. Make sure that Priests are accompanied by units that can protect them from human soldiers. Priests' ranged attack allows them to strike at slow-moving myth units, but they may fall in battle against myth units that manage to reach them.\n\nEach major god's Priests have different abilities. Ra's Priests can empower buildings. Set's Priests can convert wild animals. Isis' Priests can quickly construct inexpensive Obelisks.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 52,
@@ -3873,7 +4004,8 @@
     "habilidades": [
       {
         "nome": "Jump",
-        "descricao": "Leaps into the air towards an enemy unit, bypassing all obstructions. Inflicts area damage upon landing."
+        "descricao": "Leaps into the air towards an enemy unit, bypassing all obstructions. Inflicts area damage upon landing.",
+        "icon": "aomr_anubite_ability_icon"
       }
     ],
     "historia": "Scientific name -- Phylax cynopolis\nSize -- about 9' tall\nDiet -- doesn't eat, but may gain energy from emotions such as fear\n\nAnubis' priests, the 'stm', wore jackal masks during the mummification rituals. Anubis was among the oldest deities of Egyptian mythology and his role changed as the myths matured, passing from the main god of the Underworld to the judge of the dead once Osiris took over the former role. Anubis' association with jackals was probably the result of jackals prowling around graveyards. He was colored black because embalmed corpses are pitch-black in color. Although Anubis was often identified as 'sab', a jackal, rather than 'iwiw', a dog, there was still much confusion over which animal Anubis actually was. Some Egyptologists refer to the unknown species that he was supposed to represent as the 'Anubis animal'. Cities dedicated to Anubis were known for their great number of dog mummies and whole cemeteries.\n\n'We, known as the Jackals, the Priests of Anubis, are guardians of their glorious tombs, or of their humble graves. We are the keepers of the dead. We are the servants of Anubis. We are Cynopolis.' – Chapter of the Dead, Book of Ma'at"
@@ -3949,7 +4081,8 @@
     "habilidades": [
       {
         "nome": "Whirlwind",
-        "descricao": "Turns into a sand vortex, dealing damage to nearby enemy units."
+        "descricao": "Turns into a sand vortex, dealing damage to nearby enemy units.",
+        "icon": "aomr_sphinx_ability_icon"
       }
     ],
     "historia": "Scientific name -- Androsphinx\nSize -- about 600 lbs.\nDiet -- precious stones, incense fumes, lotus flowers. Some eat humans as an act of terror, but they derive little nutrition from proteins or lipids.\n\nSphinx was originally derived from a Greek word meaning 'to strangle' that was applied to the pharaoh-headed lion statues that the Greeks saw in Egypt, which Herodotus named 'androsphinx'. The Greek sphinx was a monstrous brood of Typhon and Echidna, usually depicted as a winged lion with a female head. She sat on a rock near Thebes and asked passersby the now famous question, \"What animal is that which in the morning goes on four feet, at noon on two, and in the evening upon three?\" Those who could not answer were eaten. Oedipus knew the correct answer (humans), which caused the sphinx so much consternation that she cast herself from her rock and died.\n\nHowever, the sphinx as a monster probably predates Greek mythology. Assyrian myths have similar creatures guarding temple entrances. Sphinx-like creatures appear in Phoenician and Persian art as well.\n\nThe Egyptians called their sphinxes 'hu'. In addition to the man-headed androsphinx, they also depicted ram-sphinxes that Herodotus named criosphinxes and falcon-headed sphinxes named hieracosphinxes."
@@ -4438,7 +4571,8 @@
     "habilidades": [
       {
         "nome": "Illuminate (Passive)",
-        "descricao": "Attacks reveal enemy units for a short time."
+        "descricao": "Attacks reveal enemy units for a short time.",
+        "icon": "aomr_petsuchos_ability_icon"
       }
     ],
     "historia": "Scientific name -- Crocodylus tyrannosuchus\nSize -- 400 lbs, 24' long\nDiet -- sunlight\n\nThe Petsuchos is a magic crocodile that can focus beams of sunlight into deadly searing rays. Like many ranged units, the Petsuchos is weak when fighting at close range, but his beams fire with perfect accuracy at a distance.\n\nPetsuchos is the Greek rendering of an Egyptian word meaning 'he who belongs to Suchos', the crocodile god also known as Sobek. The Petsuchos was the sacred crocodile of Suchos kept in a private lake in the city of Crocodopolis. He was an old, pampered beast who wore golden rings in his ears and riveted bracelets on his forelegs."
@@ -4523,7 +4657,8 @@
     "habilidades": [
       {
         "nome": "Causticity (Passive)",
-        "descricao": "Oozes corrosive blood when it dies, greatly damaging nearby enemy units."
+        "descricao": "Oozes corrosive blood when it dies, greatly damaging nearby enemy units.",
+        "icon": "aomr_scarab_ability_icon"
       }
     ],
     "historia": "Scientific name -- Class: Insecta, Order: Coleoptera, Family: Scarabaeidae\nSize -- most about 2\" long, but Sekhmet's scarabs are about 12' long\nDiet -- most eat dung. Sekhmet's scarabs eat buildings.\n\nScarab beetles are a diverse group of insects that live in South America and Egypt. Egyptians adopted the scarab as sacred, and used it to represent Ra, who rolled the sun across the sky each day. The most famous scarab beetles roll dung into a ball, and then proceed to roll their treasure back to their tunnels.\n\nEgyptians depicted scarabs in a variety of artwork, including amulets and 'heart scarabs' which were large pieces hung on the neck or as a pectoral.\n\n\"You are my soul which is in my body, the god Khnum who makes my limbs sound. When you go forth to the Hereafter, my name shall not stink to the courtiers who create people on his behalf. Do not tell lies about me in the presence of the Great God!\"\n\n-- Inscription found on a heart scarab in the Temple of Amun"
@@ -4598,7 +4733,8 @@
     "habilidades": [
       {
         "nome": "Sting",
-        "descricao": "Poisons nearby units with his stinger, inflicting additional damage over time."
+        "descricao": "Poisons nearby units with his stinger, inflicting additional damage over time.",
+        "icon": "aomr_scorpion_man_ability_icon"
       }
     ],
     "historia": "Scientific name -- Scoloscorpio anthropomorphi\nSize -- 400 lbs.\nDiet -- snakes, large grazing mammals\n\nScorpions understandably had a large influence on Egyptian mythology. Ra's daughter, Selket, was associated with the scorpion, which graced her crown. In order to make her son Horus strong, Isis exposed him to scorpion stings in the desert. Scorpions were also associated with Set, along with other 'wicked' animals of the desert.\n\nThere was indeed even a King Scorpion, a predynastic ruler known only from a few surviving artifacts such as the 'scorpion mace'. It is unclear whether the ruler's name or title was 'scorpion', but the kingly figure on the mace is labeled as SQRT, along with hieroglyphics of a clearly drawn scorpion sign."
@@ -4660,7 +4796,8 @@
     "habilidades": [
       {
         "nome": "Spin",
-        "descricao": "Whirls around rapidly with his sword, greatly damaging surrounding enemy units."
+        "descricao": "Whirls around rapidly with his sword, greatly damaging surrounding enemy units.",
+        "icon": "aomr_avenger_ability_icon"
       }
     ],
     "historia": "Scientific name -- Archifalco pharaonicus\nSize -- about 9' tall\nDiet -- scarab beetles and honey\n\nBecause the Avenger is so deadly fighting hand-to-hand, it is best to combat him with ranged units. In combat, the Avenger periodically attacks as a whirlwind, damaging all enemy units around him.\n\nHorus was the child of Osiris and Isis who, upon reaching adulthood, was known as Her-nedj-tef-ef, 'Horus, Avenger of his Father,' whose role it was to seek vengeance and cast out the evils of Set.\n\n'Behold, the fire riseth in Abydos and it cometh; I cause it to come, the Eye of Horus. It is set in order upon thy brow, O' Osiris Khenti-Amenti; it is set in the shrine and riseth on thy brow.' -- The Pyramid Texts"
@@ -4783,7 +4920,8 @@
     "habilidades": [
       {
         "nome": "Reincarnation",
-        "descricao": "Curses an enemy unit, dealing damage over time and causing it to rise as a Minion under your control if it falls while cursed."
+        "descricao": "Curses an enemy unit, dealing damage over time and causing it to rise as a Minion under your control if it falls while cursed.",
+        "icon": "aomr_mummy_ability_icon"
       }
     ],
     "historia": "Scientific name -- Homo sapiens\nSize -- 7'+ tall\nDiet -- feeds on emotions, especially terror\n\nElites prepared for the afterlife were turned into mummies by embalming and special rites. Among their duties in the next life might be the defense of sacred sites if robbers or other evildoers disturbed their rest. Then the mummies would arise and destroy their enemies."
@@ -4849,7 +4987,8 @@
     "habilidades": [
       {
         "nome": "Rebirth (Passive)",
-        "descricao": "Leaves an egg upon death. If the egg survives, a new Phoenix can hatch from it."
+        "descricao": "Leaves an egg upon death. If the egg survives, a new Phoenix can hatch from it.",
+        "icon": "aomr_phoenix_ability_icon"
       }
     ],
     "historia": "Scientific name -- Aquila ignita\nSize -- 800 lbs.\nDiet -- Self-fueling\n\nAn eagle-like bird with feathers of gold and red, the phoenix was associated with the sun and fire. It was long-lived and had the ability to reproduce or reincarnate itself after death. In some traditions, it built its own funeral nest before dying and then a young phoenix would issue from the dead body. After Christianity began to spread, the tale of the phoenix changed so that the bird turned its funeral nest into a pyre and self-immolated. After a period of time, usually three days, a new phoenix rose from the ashes. The phoenix became a symbol for both immortality and life after death.\n\n'And at the five hundred years' end, the priests array their altar honestly, and put thereupon spices and sulphur vif and other things that will burn lightly; and then the bird phoenix cometh and burneth himself to ashes. And the first day next after, men find in the ashes a worm; and the second day next after, men find a bird quick and perfect; and the third day next after, he flieth his way.' -- The Travels of Sir John Mandeville"
@@ -4957,11 +5096,13 @@
     "habilidades": [
       {
         "nome": "Land",
-        "descricao": "Can land to load or unload units. When landed, the Roc can be attacked by melee units as well."
+        "descricao": "Can land to load or unload units. When landed, the Roc can be attacked by melee units as well.",
+        "icon": "aomr_roc_ability_icon"
       },
       {
         "nome": "Fly",
-        "descricao": "Can take off and fly to transport units. If the Roc is shot down, garrisoned units will take damage from the fall."
+        "descricao": "Can take off and fly to transport units. If the Roc is shot down, garrisoned units will take damage from the fall.",
+        "icon": "aomr_roc_ability_icon"
       }
     ],
     "historia": "Scientific name -- Sagittarius maximus\nSize -- 100' wingspan\nDiet -- carnivore, rumored to eat elephants\n\nReports of the roc, a giant bird, come to us from the Arabian Nights and the reports of Marco Polo. Sinbad describes the roc as being enormous, with 16 yard-long wings and a bulky body. In one tale, a roc carries Sinbad to safety after a shipwreck, and in another, rocs destroy ships by dropping huge boulders on them. Marco Polo tells of rocs from Madagascar and how an envoy from there presented a huge roc feather to the Chinese court. A very large flightless bird may actually have survived on the island until the 16th century before going extinct."
@@ -5029,7 +5170,8 @@
     "habilidades": [
       {
         "nome": "Buck",
-        "descricao": "Thrashes around, flinging nearby enemy ships through the air."
+        "descricao": "Thrashes around, flinging nearby enemy ships through the air.",
+        "icon": "aomr_war_turtle_ability_icon"
       }
     ],
     "historia": "Scientific name -- Sternotherus megas\nSize -- 30'+ long\nDiet -- omnivore, prefers green algae and slow fish\n\nThe Egyptians considered the turtle a creature of night and dark water, and it thus became associated with Set and dubbed an enemy of the sun god, Ra. Turtles were not to be eaten or used in medicine.\n\n\"May Ra live and the turtle die.\" -- Ancient Egyptian prayer"
@@ -5580,7 +5722,14 @@
     "alcance": 1,
     "descricao_resumida": "Divine boar hero. Good vs. everything.",
     "descricao_avancada": "Divine hero. A radiant boar wielding Freyr's power, sent from Alfheimr to defend a Town Center for a limited time. His power and speed wanes the further he travels from the summoning point.",
-    "historia": "Scientific name -- None (artificial construct)\nSize -- variable\nDiet -- fueled by peat and magic\n\nFreyr, the brother of Freyja, had a chariot drawn by a boar that was not a living animal, but was forged by the dwarves Brokk and Eitri. Gullinbursti ('golden mane') had glowing bristles that lit up the dark. He could run faster than any horse, over sky and water. The dwarves manufactured the battle boar as a result of a wager with Loki over which family of dwarves could make the best gift for the Norse gods. Eitri placed a pig's hide in the forge, while Brokk worked the bellows. Loki took the form of a fly to bite Brokk and distract him from doing his work. Freyja also rode a battle boar named Hildisvini."
+    "historia": "Scientific name -- None (artificial construct)\nSize -- variable\nDiet -- fueled by peat and magic\n\nFreyr, the brother of Freyja, had a chariot drawn by a boar that was not a living animal, but was forged by the dwarves Brokk and Eitri. Gullinbursti ('golden mane') had glowing bristles that lit up the dark. He could run faster than any horse, over sky and water. The dwarves manufactured the battle boar as a result of a wager with Loki over which family of dwarves could make the best gift for the Norse gods. Eitri placed a pig's hide in the forge, while Brokk worked the bellows. Loki took the form of a fly to bite Brokk and distract him from doing his work. Freyja also rode a battle boar named Hildisvini.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 83,
@@ -5646,7 +5795,14 @@
     "icon": "aomr_hersir_icon",
     "descricao_resumida": "Infantry, Hero. Good vs. myth units.",
     "descricao_avancada": "Infantry, Hero. Good against myth units. Generates Favor faster and collects Relics.",
-    "historia": "The Norse Hersir is a hero that can be trained in large numbers. Hersirs are strong against myth units, but not cost-effective against other types of human soldiers. Because they move slowly and use a hand attack, Hersirs are less effective against ranged myth units than they are against myth units that fight hand-to-hand.\n\nThe commanders of viking raids were often not kings or jarls, but rather chieftains of middle rank called hersirs. These independent landowners were comparable to medieval knights in wealth and influence. A hersir had access to better equipment than most of his warriors, such as mail armor and even ownership of his own longship and horse."
+    "historia": "The Norse Hersir is a hero that can be trained in large numbers. Hersirs are strong against myth units, but not cost-effective against other types of human soldiers. Because they move slowly and use a hand attack, Hersirs are less effective against ranged myth units than they are against myth units that fight hand-to-hand.\n\nThe commanders of viking raids were often not kings or jarls, but rather chieftains of middle rank called hersirs. These independent landowners were comparable to medieval knights in wealth and influence. A hersir had access to better equipment than most of his warriors, such as mail armor and even ownership of his own longship and horse.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 84,
@@ -5728,7 +5884,8 @@
     "habilidades": [
       {
         "nome": "Scatter Shot",
-        "descricao": "Fires multiple projectiles in a volley forward."
+        "descricao": "Fires multiple projectiles in a volley forward.",
+        "icon": "aomr_draugr_ability_icon"
       }
     ],
     "historia": "Scientific name -- Homo sapiens\nSize -- about 7' tall.\nDiet -- fueled by necromancy\n\nA draugr (pl. draugar), also known as a barrow-wight, was an undead man who lived in a grave mound. Dedicated to hoarding and protecting the treasure in their mounds, the draugar also sometimes left their mounds to attack or harass the living, usually at night. In a way, the draugr thus incidentally has many ‘vampiric’ traits. Within Norse legend, heroes typically battled with a draugr over treasure; for example, the Icelandic 11th century outlaw Grettir Asmundsson defeats a draugr that was once Karr the Old inside his grave mound.\n\n“...when he was walking back inside the mound, something grabbed him tight. He dropped the treasure and fought back, and the two of them grappled violently, knocking over everything that was in their way...” -- Grettir’s Saga."
@@ -5804,7 +5961,8 @@
     "habilidades": [
       {
         "nome": "Horn Blast",
-        "descricao": "Blows his battle horn to inspire nearby warriors to move faster and deal more damage."
+        "descricao": "Blows his battle horn to inspire nearby warriors to move faster and deal more damage.",
+        "icon": "aomr_einheri_ability_icon"
       }
     ],
     "historia": "Scientific name -- Homo sapiens\nSize -- about 7' tall\nDiet -- copious amounts of human food, especially boar meat\n\nThe Einherjar were dead heroes gathered by the Valkyries and taken to Asgard, where they lived with Odin. The Valkyries culled only the best and most heroic warriors. While living in Asgard, the Einherjar feasted all night and battled all day, with any wounds being magically healed. Thus they prepared endlessly for the time when Odin called for them to fight with the gods at Ragnarok."
@@ -5884,7 +6042,8 @@
     "habilidades": [
       {
         "nome": "Boulder Toss",
-        "descricao": "Hurls a large rock, damaging and displacing enemy units in its path."
+        "descricao": "Hurls a large rock, damaging and displacing enemy units in its path.",
+        "icon": "aomr_troll_ability_icon"
       }
     ],
     "historia": "Scientific name -- Gigans troll\nSize -- about 9' tall\nDiet -- rocks, roots, humans\n\nTrolls are dim-witted, man-eating creatures that live in caverns beneath hills and mountains. They are allies of the giants, and will fight against the gods during Ragnarok. Trolls are strong and have long lifespans, but are not known for their beauty. Trolls turn to stone if they are exposed to daylight. Some are known to steal women and children, and might leave a changeling in exchange for a kidnapped child. Some trolls had magical powers, particularly divination of the future."
@@ -6141,7 +6300,14 @@
     "icon": "aomr_godi_icon",
     "descricao_resumida": "Ranged Soldier, Hero. Good vs. myth units.",
     "descricao_avancada": "Ranged Soldier, Hero. Good against myth units. Collects Relics.",
-    "historia": "The Norse Godi is a hero that can be trained in large numbers. Godis are strong against myth units, but not cost-effective against other types of human soldiers. Their ranged attack makes them better than Hersirs against ranged myth units, especially flying ones.\n\nGodi is a title that originally designated a Scandinavian magnate who also functioned as a priest, making him a political and religious leader. These men initially held immense influence but were gradually supplanted by kings, who combined political, military, and religious power. In Iceland, where no one king ruled until its acquisition by Norway in the 13th century, the station of Godi lived on for centuries, although it lost its religious power with the coming of Christianity around 1000 CE."
+    "historia": "The Norse Godi is a hero that can be trained in large numbers. Godis are strong against myth units, but not cost-effective against other types of human soldiers. Their ranged attack makes them better than Hersirs against ranged myth units, especially flying ones.\n\nGodi is a title that originally designated a Scandinavian magnate who also functioned as a priest, making him a political and religious leader. These men initially held immense influence but were gradually supplanted by kings, who combined political, military, and religious power. In Iceland, where no one king ruled until its acquisition by Norway in the 13th century, the station of Godi lived on for centuries, although it lost its religious power with the coming of Christianity around 1000 CE.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 91,
@@ -6218,7 +6384,8 @@
     "habilidades": [
       {
         "nome": "Buck",
-        "descricao": "Kicks and bucks enemy units, flinging them through the air."
+        "descricao": "Kicks and bucks enemy units, flinging them through the air.",
+        "icon": "aomr_battle_boar_ability_icon"
       }
     ],
     "historia": "Scientific name -- None (artificial construct)\nSize -- 800 lbs.\nDiet -- fueled by peat and magic\n\nFreyr, the brother of Freyja, had a chariot drawn by a boar that was not a living animal, but was forged by the dwarves Brokk and Eitri. Gullinbursti ('golden mane') had glowing bristles that lit up the dark. He could run faster than any horse, over sky and water. The dwarves manufactured the battle boar as a result of a wager with Loki over which family of dwarves could make the best gift for the Norse gods. Eitri placed a pig's hide in the forge, while Brokk worked the bellows. Loki took the form of a fly to bite Brokk and distract him from doing his work. Freyja also rode a battle boar named Hildisvini."
@@ -6298,15 +6465,18 @@
     "habilidades": [
       {
         "nome": "Frigid Breath",
-        "descricao": "Freezes enemy units with its breath."
+        "descricao": "Freezes enemy units with its breath.",
+        "icon": "aomr_frost_giant_ability_icon"
       },
       {
         "nome": "Frost",
-        "descricao": "Freezes multiple enemy units in place within a range of 3 for 15 seconds. Frozen units are immune to myth unit special attacks, but are helpless to attacks by enemy units. Recharge time: 20 seconds."
+        "descricao": "Freezes multiple enemy units in place within a range of 3 for 15 seconds. Frozen units are immune to myth unit special attacks, but are helpless to attacks by enemy units. Recharge time: 20 seconds.",
+        "icon": "aomr_frost_giant_ability_icon"
       },
       {
         "nome": "Tempest",
-        "descricao": "Hurls a vicious hailstorm upon your enemies."
+        "descricao": "Hurls a vicious hailstorm upon your enemies.",
+        "icon": "aomr_frost_giant_ability_icon"
       }
     ],
     "historia": "Scientific name -- Gigans hrimthurs\nSize -- 15' tall\nDiet -- frozen water (or more on wedding feasts. See below.)\n\nThe hrimthursar, also called frost or rime giants, were among the first of the giants created when the world began. Along with the brutish bergrisar, or mountain giants, the frost giants were ancient beings, representing elements of the untamed wild. They lived in the realm of Jotunheim, one of the Nine Worlds of Norse mythology, and their leader was the jotun Thrym ('uproar'). He was an archenemy of Thor, and once stole his hammer, Mjollnir, demanding Freyja for a wife in exchange for its return.\n\nAs the tale goes, Thor dressed up as Freyja and went to retrieve his hammer. During the feast, the giants were amazed that 'Freyja' ate an ox, several salmon, and drank large tankards of mead. Loki made the excuse that 'Freyja' had not eaten in days because she was so excited to be married. When Thrym peeped under the bridal veil and saw Thor's beard, Thor threw off his disguise.\n\n\"Thor's heart laughed within him when he saw his hammer. First he struck down Thrym, the king of the jotuns, and then he slew all of his kin. He also killed Thrym's poor sister who had begged for a bridal gift. Instead of shillings she received blows and instead of rings, a hammer hit. And thus Odin's son retrieved his hammer.\" -- Thrym's Lay from the Poetic Edda"
@@ -6378,7 +6548,8 @@
     "habilidades": [
       {
         "nome": "Wake of Destruction",
-        "descricao": "Thrashes around with its tail, creating waves that damage and displace nearby enemies."
+        "descricao": "Thrashes around with its tail, creating waves that damage and displace nearby enemies.",
+        "icon": "aomr_jormun_elver_ability_icon"
       }
     ],
     "historia": "Scientific name -- Megaserpens midgardi\nSize -- about 60' long (but their father was about 7,900 miles long!)\nDiet -- whales, large fish\n\nThe original Jormungandr, of which these creatures are just the elvers (another word for baby eels), was a monstrous sea serpent and the offspring of Loki and the giant Angrboda. Odin threw the serpent into the seas of Midgard when it was small, but it grew so large that it could surround the earth by biting its own tail. During Ragnarok, Thor was fated to finally slay the serpent, but he would succumb to the dying serpent's venom."
@@ -6446,11 +6617,13 @@
     "habilidades": [
       {
         "nome": "Capsize",
-        "descricao": "Wraps its tentacles around an enemy ship, dragging it underwater and destroying it immediately."
+        "descricao": "Wraps its tentacles around an enemy ship, dragging it underwater and destroying it immediately.",
+        "icon": "aomr_kraken_ability_capsize_icon"
       },
       {
         "nome": "Throw",
-        "descricao": "Hurls human soldiers into enemy units or buildings, dealing area damage."
+        "descricao": "Hurls human soldiers into enemy units or buildings, dealing area damage.",
+        "icon": "aomr_kraken_ability_throw_icon"
       }
     ],
     "historia": "Scientific name -- Psychroteuthis pelagii\nSize -- 60,000+ lbs.\nDiet -- deep-sea fish and crustaceans\n\nA creature from the sea so large that on the surface it was mistaken for a chain of islands, the Kraken is found in early-modern Scandinavian folklore. It is said that seamen were often lost when they camped on what they thought was an island, only to be drowned when the creature swam back to the bottom of the sea. The Kraken had large tentacles and suckers with which it could seize large ships and drag them down. It was likely inspired by sailors' rare encounters with giant squid."
@@ -6534,7 +6707,8 @@
     "habilidades": [
       {
         "nome": "Bludgeon",
-        "descricao": "Crushes enemy buildings with its club."
+        "descricao": "Crushes enemy buildings with its club.",
+        "icon": "aomr_mountain_giant_ability_bludgeon_icon"
       },
       {
         "nome": "Mjolnir",
@@ -6542,15 +6716,18 @@
       },
       {
         "nome": "Dwarven Punt",
-        "descricao": "Kicks Dwarves into enemy units or buildings, dealing area damage."
+        "descricao": "Kicks Dwarves into enemy units or buildings, dealing area damage.",
+        "icon": "aomr_mountain_giant_ability_dwarven_punt_icon"
       },
       {
         "nome": "Strike",
-        "descricao": "Unleashes a mighty kick that sends footballs flying.\n\nJust imagine a team of towering mountain giants, with muscles that ripple like boulders and beards that could rival a forest, lumbering onto a football field..."
+        "descricao": "Unleashes a mighty kick that sends footballs flying.\n\nJust imagine a team of towering mountain giants, with muscles that ripple like boulders and beards that could rival a forest, lumbering onto a football field...",
+        "icon": "aomr_mountain_giant_ability_footy_icon"
       },
       {
         "nome": "Punt",
-        "descricao": "Kicks human soldiers into enemy units or buildings, dealing area damage."
+        "descricao": "Kicks human soldiers into enemy units or buildings, dealing area damage.",
+        "icon": "aomr_mountain_giant_ability_punt_icon"
       }
     ],
     "historia": "Scientific name -- Gigans bergrisi\nSize -- 16' tall\nDiet -- rocks, trees, sheep, humans\n\nThe mountain giants, also known as bergrisar, were known for their great strength and stupidity. They were antagonistic and destructive, and like other jotuns represented untamed forces of nature. Remarkably, several giantesses (who were perhaps not as bestial as the males of their species) had trysts with some of the Norse gods.\n\nSome of the more notable giants included Thor's enemy Hrungnir, whose head and heart were made of stone - and who fell upon Thor when slain, Gerdr, a giantess who married Freyr (Freyja's brother), the nameless mason who built the walls around Asgard in six months on a bet (and was also killed by Thor), and Gunnlod, a giantess with whom Odin had to sleep for three nights before he could drink her father's mead."
@@ -6625,11 +6802,13 @@
     "habilidades": [
       {
         "nome": "Cavernous Hunger",
-        "descricao": "Regains hitpoints while attacking enemy buildings."
+        "descricao": "Regains hitpoints while attacking enemy buildings.",
+        "icon": "aomr_rock_giant_ability_cavernous_hunger_icon"
       },
       {
         "nome": "Jotunmodr",
-        "descricao": "Taunts nearby enemies, bolstering its armor and forcing them to attack it, protecting allies."
+        "descricao": "Taunts nearby enemies, bolstering its armor and forcing them to attack it, protecting allies.",
+        "icon": "aomr_rock_giant_ability_jotunmodr_icon"
       }
     ],
     "historia": "Scientific name -- Gigans bergrisi\nSize -- 16' tall\nDiet -- rocks, trees, sheep, humans\n\nNorse mythology is full of tales of a variety of jotnar or ‘giants’. The figures are typically associated with different natural elements, like stone or rock giants. One significant example from the Eddas is a rock giant named Hrungnir, who had a heart “made of solid stone and [was] spiky with three points.” He was an exceptionally powerful figure: so much so that Thor constantly brags about defeating him throughout the mythological corpus.\n\nThor says in Hymiskvida that “This is what you’re talking about: that Hrungnir and I fought -- / the great-spirited giant whose head was made of stone: / and yet I brought him down and made him fall before me.” Thor even referred to his hammer as “Hrungnir’s killer” in Lokasenna – again emphasizing the might of his opponent."
@@ -6688,7 +6867,14 @@
     "favor": 0,
     "descricao_resumida": "Infantry, Hero. Good vs. myth units.",
     "descricao_avancada": "Infantry, Hero. Summoned to participate in the final battle of the gods. Collects Relics.",
-    "historia": "Heroes of Ragnarok are strong against myth units. They can only be summoned by Baldr's God Power, Ragnarok.\n\nAfter the Fimbulwinter - a frigid winter the length of three years - the cocks Fjalar, Gullinkambi, and the soot-red rooster of Hel will crow, announcing Ragnarok, the final battle between the gods and their enemies. All of the nine worlds will be ravaged by the fighting, but a new world of peace will be born out of the ashes of the old. It is for this world that the gods and heroes now fight."
+    "historia": "Heroes of Ragnarok are strong against myth units. They can only be summoned by Baldr's God Power, Ragnarok.\n\nAfter the Fimbulwinter - a frigid winter the length of three years - the cocks Fjalar, Gullinkambi, and the soot-red rooster of Hel will crow, announcing Ragnarok, the final battle between the gods and their enemies. All of the nine worlds will be ravaged by the fighting, but a new world of peace will be born out of the ashes of the old. It is for this world that the gods and heroes now fight.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 98,
@@ -6747,11 +6933,13 @@
     "habilidades": [
       {
         "nome": "Andvari's Curse",
-        "descricao": "Grants Gold to its slayer."
+        "descricao": "Grants Gold to its slayer.",
+        "icon": "aomr_fafnir_ability_andvaris_curse_icon"
       },
       {
         "nome": "Billowing Smog",
-        "descricao": "Toxic smog damages all nearby enemy units."
+        "descricao": "Toxic smog damages all nearby enemy units.",
+        "icon": "aomr_fafnir_ability_billowing_smog_icon"
       },
       {
         "nome": "Wyrm's Plunder",
@@ -6817,7 +7005,8 @@
     "habilidades": [
       {
         "nome": "Pack (Passive)",
-        "descricao": "Larger groups of Fenris Wolves become stronger and faster."
+        "descricao": "Larger groups of Fenris Wolves become stronger and faster.",
+        "icon": "aomr_fenris_wolf_brood_ability_icon"
       }
     ],
     "historia": "Scientific name -- Canis fenris\nSize -- 550 lbs.\nDiet -- deer, cattle, gods\n\nThe great wolf Fenrir (of which these monsters are just the offspring) was the product of Loki and the giantess Angrboda. The gods raised the wolf in Asgard, but only Tyr had the courage to feed it. Unfortunately, the wolf kept growing until nothing could chain him down. Finally, the dwarves made a chain out of the roots of a mountain, the beard of a woman, the silence of a moving cat, the sinews of a bear, the spittle of a bird, and the breath of a fish. In order to trick Fenrir into being chained, Tyr offered him food, and in retribution, the wolf bit off his hand. Fenrir then began to howl until the gods stuck a sword in his mouth as a gag.\n\nAt Ragnarok, Fenrir is fated to break his chains and kill Odin."
@@ -6939,7 +7128,8 @@
     "habilidades": [
       {
         "nome": "Fire Storm",
-        "descricao": "Hurls a flaming inferno, damaging groups of enemy units. Ineffective against buildings."
+        "descricao": "Hurls a flaming inferno, damaging groups of enemy units. Ineffective against buildings.",
+        "icon": "aomr_fire_giant_ability_icon"
       }
     ],
     "historia": "Scientific name -- Gigans muspilli\nSize -- 12' tall\nDiet -- igneous rocks\n\nThe fire giants, or 'lydir muspells', are eager participants at Ragnarok and seek the fiery destruction of the cosmos. The most famous of the fire giants was Surtr ('the dark'), a being who guarded the gates to Muspellheim. He had burning hair, skin of boiling lava, and carried a flaming sword. Muspellheim was one of the 'middle levels' of the Nine Worlds, along with Midgard and Jotunheim."
@@ -7000,11 +7190,13 @@
     "habilidades": [
       {
         "nome": "Blazing Strafe",
-        "descricao": "Breathes fire while swooping downwards in a straight line, setting the area in its path aflame and greatly damaging nearby enemy units."
+        "descricao": "Breathes fire while swooping downwards in a straight line, setting the area in its path aflame and greatly damaging nearby enemy units.",
+        "icon": "aomr_nidhogg_blazing_strafe_ability_icon"
       },
       {
         "nome": "Divine Protection (Passive)",
-        "descricao": "Cannot be targeted by enemy God Powers."
+        "descricao": "Cannot be targeted by enemy God Powers.",
+        "icon": "aomr_nidhogg_ability_divine_protection_icon"
       }
     ],
     "historia": "Scientific name -- Draco niflheimus\nSize -- 20' wingspan\nDiet -- corpses, roots of Yggdrasil\n\nIn Niflheim, the Norse realm of the dead, lives a great dragon or serpent, Nidhogg, whose name means 'tearer of corpses'. He gnaws on the roots of the world tree, Yggdrasil, waiting for Ragnarok. Yggdrasil is also home to an eagle and to a squirrel named Ratatosk. Ratatosk ferries insults back and forth between Nidhogg at the tree's roots and the eagle living up in its branches.\n\nOther dragons who seek to destroy the world tree are Grabak, Grafvolluth, Goin and Moin."
@@ -7232,7 +7424,14 @@
     "icon": "aomr_oracle_hero_icon",
     "descricao_resumida": "Scout hero. Good vs. myth units. Generates Favor.",
     "descricao_avancada": "Scout hero whose line of sight grows when immobile. Generates Favor faster than normal Oracles.",
-    "historia": "This Atlantean Oracle has become a hero. Like a regular Oracle, he is still slow and relatively weak in combat; but as a hero, he is more effective against myth units. A hero Oracle is a very good scout because his maximum line of sight is nearly doubled and increases more quickly. All heroes may pick up Relics.\n\nAncient Atlanteans relied heavily on the priestly class for leadership and guidance. Oracles were priests who used a form of deep meditation to see beyond what normal sight would allow. Oracles were scouts and lookouts for Atlantean armies. It is debatable as to whether their great sight was granted by the Titans, or was merely the product of a deep attunement with their environment."
+    "historia": "This Atlantean Oracle has become a hero. Like a regular Oracle, he is still slow and relatively weak in combat; but as a hero, he is more effective against myth units. A hero Oracle is a very good scout because his maximum line of sight is nearly doubled and increases more quickly. All heroes may pick up Relics.\n\nAncient Atlanteans relied heavily on the priestly class for leadership and guidance. Oracles were priests who used a form of deep meditation to see beyond what normal sight would allow. Oracles were scouts and lookouts for Atlantean armies. It is debatable as to whether their great sight was granted by the Titans, or was merely the product of a deep attunement with their environment.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 107,
@@ -7480,7 +7679,14 @@
     "icon": "aomr_katapeltes_hero_icon",
     "descricao_resumida": "Infantry, Hero. Good vs. cavalry and myth units.",
     "descricao_avancada": "Counter cavalry. Infantry hero only good against cavalry and myth units.",
-    "historia": "This Katapeltes has become a hero. Like other Katapeltes, he is very effective against cavalry and weak against all other units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nThe mace is not typically thought of as a weapon suited to fighting cavalry, but precise, powerful strikes can smash through armor to crush the legs of horses and the knees of riders. Only the heaviest armor could turn aside the attacks of the katapeltes - the shield smasher."
+    "historia": "This Katapeltes has become a hero. Like other Katapeltes, he is very effective against cavalry and weak against all other units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nThe mace is not typically thought of as a weapon suited to fighting cavalry, but precise, powerful strikes can smash through armor to crush the legs of horses and the knees of riders. Only the heaviest armor could turn aside the attacks of the katapeltes - the shield smasher.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 111,
@@ -7536,7 +7742,14 @@
     "icon": "aomr_murmillo_hero_icon",
     "descricao_resumida": "Infantry, Hero. Good vs. myth units.",
     "descricao_avancada": "Infantry, Hero. Good against myth units.",
-    "historia": "This Murmillo has become a hero. Like a regular Murmillo, he is strong against cavalry and weak against ranged soldiers; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nAtlantean warriors and soldiers were known for their discipline and drill. A Murmillo began drill before dawn and finished at sunset. They were called murmillones, or fish-men, because their shining, finned helmets made their complex movements in combat look like a school of swimming fish. They have a rivalry with and respect for the destroyers, who consider the murmillones beneath them - as fishermen would fish."
+    "historia": "This Murmillo has become a hero. Like a regular Murmillo, he is strong against cavalry and weak against ranged soldiers; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nAtlantean warriors and soldiers were known for their discipline and drill. A Murmillo began drill before dawn and finished at sunset. They were called murmillones, or fish-men, because their shining, finned helmets made their complex movements in combat look like a school of swimming fish. They have a rivalry with and respect for the destroyers, who consider the murmillones beneath them - as fishermen would fish.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 112,
@@ -7607,7 +7820,14 @@
     "icon": "aomr_turma_hero_icon",
     "descricao_resumida": "Ranged Soldier, Cavalry, Hero. Only good vs. ranged soldiers and myth units.",
     "descricao_avancada": "Ranged Soldier, Cavalry, Hero. Mounted javelineer hero only good against other ranged soldiers and myth units.",
-    "historia": "This Atlantean Turma has become a hero. Like all other Turmae, he is exceptionally good against ranged soldiers and weak against all other units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nThe training of the Atlantean turma was very focused and dangerous, requiring years to perfect. Both horse and rider had to be athletic, tough and fast. A veteran turma could kill a bird in flight with a well-aimed javelin throw. The horses, descended from wild Atlantean stock, were no less exceptional. These horses were so prized that capturing even one from the Atlanteans in battle was considered great fortune - even if the battle itself was lost. Many great bloodlines were bred in other regions by such captured Atlantean stock."
+    "historia": "This Atlantean Turma has become a hero. Like all other Turmae, he is exceptionally good against ranged soldiers and weak against all other units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nThe training of the Atlantean turma was very focused and dangerous, requiring years to perfect. Both horse and rider had to be athletic, tough and fast. A veteran turma could kill a bird in flight with a well-aimed javelin throw. The horses, descended from wild Atlantean stock, were no less exceptional. These horses were so prized that capturing even one from the Atlanteans in battle was considered great fortune - even if the battle itself was lost. Many great bloodlines were bred in other regions by such captured Atlantean stock.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 113,
@@ -7679,7 +7899,8 @@
     "habilidades": [
       {
         "nome": "Robotic Repair",
-        "descricao": "Can revive and repair other Automatons."
+        "descricao": "Can revive and repair other Automatons.",
+        "icon": "aomr_automaton_ability_icon"
       }
     ],
     "historia": "Scientific name -- None (artificial construct)\nSize -- over 7' tall\nDiet -- doesn't eat\n\nSpecial ability -- can repair other Automatons\n\nAutomatons are tough, especially in groups, because they can repair each other. If you face Atlantean Automatons, use heroes against them and try to destroy them all, or they will be back.\n\nThe Atlanteans placed a high value on personal freedom. They never practiced slavery, so they created automatons to perform the tasks for which many other cultures used slaves. As the sophistication of these automatons grew, some in Atlantis wanted them to become citizens. Others opposed that notion. A civil war erupted and plunged the Atlantean Empire into a dark age that lasted thousands of years. During this time, many Atlantean colonies regressed or revolted and became independent nations. Automatons were never inducted into Atlantean society and Atlantis, though vastly more advanced than other nations, never again reached the heights of its Golden Age."
@@ -7750,11 +7971,13 @@
     "habilidades": [
       {
         "nome": "Burst Heal",
-        "descricao": "Rapidly heals nearby friendly units."
+        "descricao": "Rapidly heals nearby friendly units.",
+        "icon": "aomr_caladria_ability_burst_heal_icon"
       },
       {
         "nome": "Pacify",
-        "descricao": "Bewitches an enemy unit to slow its movement and attack speeds."
+        "descricao": "Bewitches an enemy unit to slow its movement and attack speeds.",
+        "icon": "aomr_caladria_ability_pacify_icon"
       }
     ],
     "historia": "Scientific name -- Homo asclepii\nSize -- human-sized\nDiet -- omnivorous, but mostly herbivorous\n\nCaladriae are flying healers. They make decent scouts, but will fall easily to enemy towers and missiles. Multiple Caladriae can heal each other so that they can continue healing Atlantean armies. They can also turn their powers towards enemy units to slow them down.\n\n\"...Caladria died and was entombed. Theocrat Osphoru built a temple of healing over her tomb. Many thought his decision blasphemous, but all who suffered and were sick grew strong and whole again under the care of the temple's healers. Blessed were the armies accompanied by these followers of Caladria, for they were healed, inspired and protected.\"\n\n-- Voices of the Oracle, The Lay of Ioleta"
@@ -7816,11 +8039,13 @@
     "habilidades": [
       {
         "nome": "Devour",
-        "descricao": "Pulls an enemy human unit into its maw, killing it instantly."
+        "descricao": "Pulls an enemy human unit into its maw, killing it instantly.",
+        "icon": "aomr_carnivora_ability_devour_icon"
       },
       {
         "nome": "Entrap (Passive)",
-        "descricao": "Attacks pull enemy units closer to the Carnivora, making them easier to devour."
+        "descricao": "Attacks pull enemy units closer to the Carnivora, making them easier to devour.",
+        "icon": "aomr_carnivora_ability_entrap_icon"
       }
     ],
     "historia": "Scientific name -- Aldrovanda ampelos subsp. xera\nSize -- about 9' tall\nDiet -- rodents, fish, occasionally humans\n\nCarnivorae catch and kill quickly, but must wait to digest before snaring more prey. Heroes and ranged units can avoid a Carnivora's vines.\n\nThe Titan Oceanus gave several of his sacred carnivorae to Gaia as a gift. Carnivorae on land were easy to avoid if seen, but blended in well with surrounding vegetation. Unsuspecting prey often blundered into them and were ensnared to be digested gruesomely over the course of a week or more."
@@ -7896,7 +8121,8 @@
     "habilidades": [
       {
         "nome": "Earthly Death (Passive)",
-        "descricao": "Divides into several Promethean Offspring when killed."
+        "descricao": "Divides into several Promethean Offspring when killed.",
+        "icon": "aomr_promethean_ability_icon"
       }
     ],
     "historia": "Scientific name -- Homo protos\nSize -- 7' tall\nDiet -- fire, coals, eagles\n\nPrometheans are slow but have decent armor and attack values. When they are destroyed, several smaller Prometheans rise from the clay of the first.\n\nPrometheus was one of the few Titans who sided with the Olympians in the Titanomachy. He and his brother Epimetheus were tasked with the creation of humanity, and shaped the first people from clay. Pitying the frail mortals, he gave his creations the gift of fire so that they could become strong. This angered Zeus, who bound Prometheus to the side of a mountain where an eagle devoured his liver every day."
@@ -8076,7 +8302,8 @@
     "habilidades": [
       {
         "nome": "Sink",
-        "descricao": "Drubs an enemy ship with its tentacles, sinking it instantly."
+        "descricao": "Drubs an enemy ship with its tentacles, sinking it instantly.",
+        "icon": "aomr_water_carnivora_sink_ability_icon"
       }
     ],
     "historia": "Scientific name -- Aldrovanda ampelos subsp. thalassa\nSize -- about 9' tall\nDiet -- Carnivore, fish, occasionally sailors\n\nCarnivorae catch and kill quickly, but must wait to digest before snaring more prey. Heroes and ranged units can avoid a Carnivora's vines.\n\nSacred to the Titan Oceanus, these carnivorous aquatic plants guarded his palace. Also called the Fangs of Charybdis, they were responsible for the disappearance of more vessels than the sirens and Charybdis combined. Many aquatic carnivorae were cultivated in the bays of Atlantis and along shipping channels to protect Atlantean trade. It was a punishable offense to sail into one of these sacred plants, although very few who ventured that close to a carnivora survived to face punishment."
@@ -8329,7 +8556,14 @@
     "icon": "aomr_arcus_hero_icon",
     "descricao_resumida": "Ranged Soldier, Hero. Good vs. infantry and myth units.",
     "descricao_avancada": "Ranged Soldier, Hero. Good against infantry and myth units.",
-    "historia": "This Atlantean Arcus has become a hero. Like a regular Arcus, he is strong against infantry and weak against fast units such as cavalry; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nAll Atlantean citizens were versed in the use of at least one weapon. Those who showed skill with ranged weapons - slings, bows, javelins - were called into the ranks of the arci. The Atlantean arci were the first effective military use of ranged foot soldiers. Slings eventually fell into disuse and javelins became more feasibly wielded from horseback. The focused and deadly arcus that emerged over time was a master of the bow and any number of arci fielded in battle intimidated their opposition."
+    "historia": "This Atlantean Arcus has become a hero. Like a regular Arcus, he is strong against infantry and weak against fast units such as cavalry; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nAll Atlantean citizens were versed in the use of at least one weapon. Those who showed skill with ranged weapons - slings, bows, javelins - were called into the ranks of the arci. The Atlantean arci were the first effective military use of ranged foot soldiers. Slings eventually fell into disuse and javelins became more feasibly wielded from horseback. The focused and deadly arcus that emerged over time was a master of the bow and any number of arci fielded in battle intimidated their opposition.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 124,
@@ -8396,7 +8630,14 @@
     "icon": "aomr_contarius_hero_icon",
     "descricao_resumida": "Cavalry, Hero. Good vs. ranged soldiers and myth units.",
     "descricao_avancada": "Cavalry, Hero. Good against ranged soldiers and myth units.",
-    "historia": "This Contarius has become a hero. Like a regular Contarius, he is strong against ranged units and weak against infantry; but as a hero, he is much more effective against myth units. All heroes may pick up Relics.\n\nEarly Atlantean soldiers tamed and rode the wild horses that roamed across their island. These mounted soldiers were very successful in Atlantis' early conquests, but farmland overtook wilderness and grazing pastures became scarce as Atlantis grew. Subsequently, cavalry all but disappeared from Atlantean tactics, and only an elite few rode horses into combat. Defeated Atlantean generals surrender their precious horses in submission to the victor."
+    "historia": "This Contarius has become a hero. Like a regular Contarius, he is strong against ranged units and weak against infantry; but as a hero, he is much more effective against myth units. All heroes may pick up Relics.\n\nEarly Atlantean soldiers tamed and rode the wild horses that roamed across their island. These mounted soldiers were very successful in Atlantis' early conquests, but farmland overtook wilderness and grazing pastures became scarce as Atlantis grew. Subsequently, cavalry all but disappeared from Atlantean tactics, and only an elite few rode horses into combat. Defeated Atlantean generals surrender their precious horses in submission to the victor.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 125,
@@ -8455,7 +8696,14 @@
     "alcance": 1.5,
     "descricao_resumida": "Infantry, Hero. Good vs. buildings and myth units.",
     "descricao_avancada": "Infantry, Hero. Good against buildings and myth units.",
-    "historia": "This Destroyer has become a hero. Like other Destroyers, he is very effective against buildings and weak against most units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nArmies attacking Atlantean colonies found their inhabitants far from defenseless - most notably the trident-wielding shore fishermen. These fishermen organized defensive militias, which eventually became an elite royal guard. The destroyers have a long-standing rivalry with the standard Atlantean infantry - the murmillo - over who has better served Atlantis."
+    "historia": "This Destroyer has become a hero. Like other Destroyers, he is very effective against buildings and weak against most units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nArmies attacking Atlantean colonies found their inhabitants far from defenseless - most notably the trident-wielding shore fishermen. These fishermen organized defensive militias, which eventually became an elite royal guard. The destroyers have a long-standing rivalry with the standard Atlantean infantry - the murmillo - over who has better served Atlantis.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 126,
@@ -8537,7 +8785,8 @@
     "habilidades": [
       {
         "nome": "Directional Plating (Passive)",
-        "descricao": "Takes less damage when attacked from the front than from the back or sides."
+        "descricao": "Takes less damage when attacked from the front than from the back or sides.",
+        "icon": "aomr_behemoth_ability_icon"
       }
     ],
     "historia": "Scientific name -- Glyptodon coelodonta\nSize -- about 18' long\nDiet -- Stones and snow\n\nBehemoths are living siege weapons. They regenerate, making them even tougher to kill than Sekhmet's Scarabs. Use them against buildings, but keep them away from enemy heroes.\n\n\"The Titans languished in Tartarus. The Olympians who trapped them there wished to punish us, worshipers of the Titans. They hunted us, but we hid in the shadow of Behemoth, who was as tall as the mountains and twice as long. He protected us, bellowing as Zeus' lightning struck his thick armor. Caladria blessed Behemoth and healed him after every lightning strike. The Olympians could not break tireless Behemoth and returned to Olympus. We were safe.\"\n\n-- Oaths of the Oracles, The Lay of Ioleta"
@@ -8662,7 +8911,8 @@
     "habilidades": [
       {
         "nome": "Shark Bite",
-        "descricao": "Tears into its opponent, damaging it greatly. Especially effective against myth units."
+        "descricao": "Tears into its opponent, damaging it greatly. Especially effective against myth units.",
+        "icon": "aomr_nereid_ability_icon"
       }
     ],
     "historia": "Scientific name -- Nympha thalassi\nSize -- human-sized\nDiet -- fish, seaweed\n\nNereids are trained at the Dock. These powerful myth units are capable of devastating attacks against ships, but excel against other myth units.\n\nThe nereids were the fifty nymphs of the sea. Many of them had important roles in mythology, and like most nymphs were gentle and beautiful creatures. The nereids were often accompanied by hosts of sea creatures in their roving, but in battle chose to ride fierce sharks who carried their mistresses tirelessly."
@@ -8742,7 +8992,8 @@
     "habilidades": [
       {
         "nome": "Piercing Throw",
-        "descricao": "Throws particularly powerful spears that penetrate everything in their path."
+        "descricao": "Throws particularly powerful spears that penetrate everything in their path.",
+        "icon": "aomr_satyr_ability_icon"
       }
     ],
     "historia": "Scientific name -- Homo silenus\nSize -- human-sized\nDiet -- grapes, cheese, wine, and song\n\nSatyrs are a ranged myth unit with reasonable speed and range. They are strong against human units, but are weak against heroes.\n\nSatyrs were among the many creatures in the entourage of the god Dionysus. Goat-legged and horned, they are notoriously fond of revelry in every possible form with a special weakness for nymphs. Silenus, the oldest satyr, was the instructor of the god Dionysus. Another satyr, Marsyas, was slain by Apollo for daring to challenge the god in a contest of musical skill."
@@ -8822,7 +9073,8 @@
     "habilidades": [
       {
         "nome": "Bladed Feathers (Passive)",
-        "descricao": "Razor-sharp feathers cause targets to continue bleeding out over time."
+        "descricao": "Razor-sharp feathers cause targets to continue bleeding out over time.",
+        "icon": "aomr_stymphalian_bird_ability_icon"
       }
     ],
     "historia": "Scientific name -- Threskiornis terribilis\nSize -- 18' wingspan\nDiet -- carnivore, favors livestock\n\nThe Stymphalian Bird is a formidable myth unit. Only ranged units and buildings can attack it - ranged heroes are the strongest against the birds of Stymphalos.\n\nFor his sixth labor, Heracles slew the Stymphalian Birds. These birds were aggressive and hunted in flocks, much like lions or wolves. They ravaged the countryside around their lakeside nesting grounds, killing and carrying off livestock and occasionally children. Their senses - especially their hearing - were very keen. Heracles used this against them when, instead of venturing into their dangerous nesting grounds, he stood on a mountaintop and clashed a pair of god-crafted brass krotala (castanet-like noise makers). The din was such that the birds could not bear to stay near, and Heracles shot them with his bow as they flew away."
@@ -8973,7 +9225,14 @@
     "tempo_treinamento": 0,
     "descricao_resumida": "Infantry, Hero. Good vs. infantry, cavalry and myth units.",
     "descricao_avancada": "Infantry, Hero. Good against infantry, cavalry and myth units.",
-    "historia": "This Fanatic has become a hero. Like a regular Fanatic, he is good against most other human soldiers and vulnerable to anti-infantry units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nWar cultists devoted to one Titan or another presented a great threat to the ruling priestly class of early Atlantis - they were powerful, destructive, and obeyed no law but their own. After the Titans were imprisoned, some groups of cultists - still eager for blood but aware of their sudden vulnerability - organized under the banners of Atlantis. These fanatics fought with two swords, disdaining the protection of a shield."
+    "historia": "This Fanatic has become a hero. Like a regular Fanatic, he is good against most other human soldiers and vulnerable to anti-infantry units; but as a hero, he is more effective against myth units. All heroes may pick up Relics.\n\nWar cultists devoted to one Titan or another presented a great threat to the ruling priestly class of early Atlantis - they were powerful, destructive, and obeyed no law but their own. After the Titans were imprisoned, some groups of cultists - still eager for blood but aware of their sudden vulnerability - organized under the banners of Atlantis. These fanatics fought with two swords, disdaining the protection of a shield.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 133,
@@ -9032,7 +9291,8 @@
     "habilidades": [
       {
         "nome": "Acidic Spray",
-        "descricao": "Projects a deadly pool of acid that melts enemy units over time."
+        "descricao": "Projects a deadly pool of acid that melts enemy units over time.",
+        "icon": "aomr_argus_ability_icon"
       }
     ],
     "historia": "Scientific name -- Amoeba maxima\nSize -- variable\nDiet -- scenic vistas, dissolved mortal flesh\n\nArgus is an amorphous creature covered with bulbous eyes. When threatened, the Argus forcefully excretes a sticky blob of acid from its many specialized tear ducts. Creatures trapped in this acid have little hope of survival. Argus also uses this acid to partially pre-digest its food.\n\nHera's Argus served her faithfully until the god Hermes slew him. Zeus had commanded Hermes to trick Argus and slay him so that the philandering god could recapture one of his lovers, Io, from his jealous wife. Hera honored Argus' sacrifice by placing his eyes on the tail of her sacred peacock. Io, who had endured all this in the form of a pure white cow, was saved only to plunge into what is now called the Ionian Sea."
@@ -9094,7 +9354,8 @@
     "habilidades": [
       {
         "nome": "Linear Shockwave",
-        "descricao": "Slams the ground, scattering and damaging enemy units directly in front of it."
+        "descricao": "Slams the ground, scattering and damaging enemy units directly in front of it.",
+        "icon": "aomr_centimanus_ability_icon"
       }
     ],
     "historia": "Scientific name -- Gigans centimanus\nSize -- 15' tall\nDiet -- carnivore, mostly humans\n\nCentimani are strong against human soldiers, sending them flying with their many-handed strikes. They are weak against heroes.\n\nOne hundred arms and fifty heads grew out of the shoulders of the centimani - or hekatonkheires, as they were known in Greek. They were the sons of Oranos and Gaia and were so imposing that Oranos ordered them imprisoned in Tartarus. This incurred the wrath of Gaia, who incited her son Kronos to overthrow his father and take his place as ruler of the cosmos."
@@ -9165,11 +9426,13 @@
       },
       {
         "nome": "Chaotic Realignment",
-        "descricao": "Makes an enemy unit temporarily hostile to all players."
+        "descricao": "Makes an enemy unit temporarily hostile to all players.",
+        "icon": "aomr_lampades_ability_chaotic_realignment_icon"
       },
       {
         "nome": "Transfiguration",
-        "descricao": "Transforms an enemy human unit into a chicken."
+        "descricao": "Transforms an enemy human unit into a chicken.",
+        "icon": "aomr_lampades_ability_transfiguration_icon"
       }
     ],
     "historia": "Scientific name -- Nympha hekates\nSize -- Human-sized\nDiet -- Pomegranate seeds, asphodel petals\n\nThese nymphs were the attendants of Hekate, an unbound Titaness, gifts from Zeus for her allegiance in the Titanomachy. The Lampades served their mistress unflinchingly, bearing torches for her through the dark places of the earth and Underworld. The light of their torches brought visions to mortals and often the visions brought madness. The Lampades defended Hekate with their torches just as the Titaness herself fought in the wars of the gods."
@@ -9284,7 +9547,8 @@
     "habilidades": [
       {
         "nome": "Jump",
-        "descricao": "Leaps into the air towards an enemy unit, bypassing all obstructions. Inflicts area damage upon landing."
+        "descricao": "Leaps into the air towards an enemy unit, bypassing all obstructions. Inflicts area damage upon landing.",
+        "icon": "aomr_tartarian_spawn_ability_icon"
       }
     ],
     "historia": "Scientific name -- Canis terribilis\nSize -- 10' long\nDiet -- carnivore, favors humans\n\nThese frighteningly destructive creatures are the offspring of Nyx and Cerberus. Nyx was a very ancient god of Night and the daughter of Chaos. Cerberus was the three-headed dog, a guardian of the Underworld. Oranos banished these creatures to Tartarus to rid himself of their ghastly presence, but also because he could not control them. They came when he called, but obeyed no commands thereafter."
@@ -9537,7 +9801,14 @@
     "icon": "aomr_pioneer_icon",
     "descricao_resumida": "Ranged Soldier, Hero. Decent vs. myth units.",
     "descricao_avancada": "Ranged Soldier, Hero. Uses Sky Lanterns to scout. Decent against myth units.",
-    "historia": "Sun Tzu, the renowned ancient Chinese strategist, stressed the value of knowing one's enemy. Accordingly, the pioneers' exceptional scouting skills became a vital asset to the Chinese military, enabling more effective strategic planning and decision-making in battle. Their unwavering vigilance allowed Chinese armies to consistently outmaneuver their opponents."
+    "historia": "Sun Tzu, the renowned ancient Chinese strategist, stressed the value of knowing one's enemy. Accordingly, the pioneers' exceptional scouting skills became a vital asset to the Chinese military, enabling more effective strategic planning and decision-making in battle. Their unwavering vigilance allowed Chinese armies to consistently outmaneuver their opponents.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 142,
@@ -9844,7 +10115,14 @@
     "alcance": 0.75,
     "descricao_resumida": "Hero. Good vs. everything. Gets stronger each age.",
     "descricao_avancada": "Hero. Good against everything, but especially myth units. Collects Relics. Nezha's combat ability increases through the Ages.",
-    "historia": "Age: 7 years\nHomeland: Chentang Pass, Mythical China\nOccupation: divine child and prodigy\n\nNezha is a famous protection deity in Chinese folk religion, often depicted as a flying youth standing on Wind Fire Wheels, wielding a red-tasseled spear, and adorned with a celestial scarf known as the Red Armillary Sash.\n\nIn the 16th-century Chinese novel “The Investiture of the Gods”, Nezha is the son of Li Jing, another protection deity. After a confrontation with the Eastern Sea Dragon King, Nezha sacrifices himself. Later, a deity revives him using lotus flowers to create a new body and grants him numerous divine weapons.\n\nAlthough Nezha experiences conflicts with his father, Li Jing, in folk legends, they are often portrayed fighting side by side to vanquish the enemies of the heavens."
+    "historia": "Age: 7 years\nHomeland: Chentang Pass, Mythical China\nOccupation: divine child and prodigy\n\nNezha is a famous protection deity in Chinese folk religion, often depicted as a flying youth standing on Wind Fire Wheels, wielding a red-tasseled spear, and adorned with a celestial scarf known as the Red Armillary Sash.\n\nIn the 16th-century Chinese novel “The Investiture of the Gods”, Nezha is the son of Li Jing, another protection deity. After a confrontation with the Eastern Sea Dragon King, Nezha sacrifices himself. Later, a deity revives him using lotus flowers to create a new body and grants him numerous divine weapons.\n\nAlthough Nezha experiences conflicts with his father, Li Jing, in folk legends, they are often portrayed fighting side by side to vanquish the enemies of the heavens.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 147,
@@ -10486,7 +10764,14 @@
     "icon": "aomr_jiang_ziya_icon",
     "descricao_resumida": "Hero. Good vs. everything.",
     "descricao_avancada": "Ranged hero. Good against everything, but especially myth units. Collects Relics.",
-    "historia": "Age: 72 years old\nHomeland: Qi, Ancient China\nOccupation: Strategist, Advisor, and First Prime Minister of the Zhou Dynasty\n\nJiang Ziya, also known as Jiang Taigong, holds a significant place in both Chinese history and mythology.\n\nHistorically, he was a general of the Zhou dynasty and played a crucial role in that dynasty's defeat of the preceding Shang dynasty. He would go on to become of the Zhou's most important vassals.\n\nIn mythology, Jiang Ziya was a masterful magician who, at the age of 70, was appointed prime minister of the Zhou dynasty. During the conflict between the Zhou and Shang dynasties, both sides called upon numerous deities to aid in their battles. After the war, Jiang Ziya took on the task of assigning new divine roles to the mortals and deities who had fallen during the conflict."
+    "historia": "Age: 72 years old\nHomeland: Qi, Ancient China\nOccupation: Strategist, Advisor, and First Prime Minister of the Zhou Dynasty\n\nJiang Ziya, also known as Jiang Taigong, holds a significant place in both Chinese history and mythology.\n\nHistorically, he was a general of the Zhou dynasty and played a crucial role in that dynasty's defeat of the preceding Shang dynasty. He would go on to become of the Zhou's most important vassals.\n\nIn mythology, Jiang Ziya was a masterful magician who, at the age of 70, was appointed prime minister of the Zhou dynasty. During the conflict between the Zhou and Shang dynasties, both sides called upon numerous deities to aid in their battles. After the war, Jiang Ziya took on the task of assigning new divine roles to the mortals and deities who had fallen during the conflict.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 157,
@@ -10554,6 +10839,11 @@
     "habilidades": [
       {
         "nome": "Switch Weapon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age: 16 years\nHomeland: Chentang Pass, Mythical China\nOccupation: warrior and protector\n\nNezha is a famous protection deity in Chinese folk religion, often depicted as a flying youth standing on Wind Fire Wheels, wielding a red-tasseled spear, and adorned with a celestial scarf known as the Red Armillary Sash.\n\nIn the 16th-century Chinese novel “The Investiture of the Gods”, Nezha is the son of Li Jing, another protection deity. After a confrontation with the Eastern Sea Dragon King, Nezha sacrifices himself. Later, a deity revives him using lotus flowers to create a new body and grants him numerous divine weapons.\n\nAlthough Nezha experiences conflicts with his father, Li Jing, in folk legends, they are often portrayed fighting side by side to vanquish the enemies of the heavens."
@@ -10614,7 +10904,14 @@
     "icon": "aomr_sage_icon",
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Intelligent ranged hero who specifically targets myth units by itself. Can heal allied units and summon mirror images of enemy myth units. Collects Relics.",
-    "historia": "In Chinese belief systems, the sage was one of the most respected figures: regarded as a beacon of wisdom and nobility, and venerated for their virtue and scholarly ability. There are many notable sages throughout Chinese history, such as the Four Sages of the Confucian Tradition (Yan Hui, Mengzi, Zisi, and Mencius) and the Five Sage Emperors.\n\nWith their persuasive eloquence, sages can charm enemy creatures. Additionally, they often rely on their esteemed reputation to bolster troop morale and heal comrades, making them the most respected individuals in the camp."
+    "historia": "In Chinese belief systems, the sage was one of the most respected figures: regarded as a beacon of wisdom and nobility, and venerated for their virtue and scholarly ability. There are many notable sages throughout Chinese history, such as the Four Sages of the Confucian Tradition (Yan Hui, Mengzi, Zisi, and Mencius) and the Five Sage Emperors.\n\nWith their persuasive eloquence, sages can charm enemy creatures. Additionally, they often rely on their esteemed reputation to bolster troop morale and heal comrades, making them the most respected individuals in the camp.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 159,
@@ -10749,7 +11046,8 @@
     "habilidades": [
       {
         "nome": "Bolster",
-        "descricao": "Greatly increases the armor of a nearby targeted building."
+        "descricao": "Greatly increases the armor of a nearby targeted building.",
+        "icon": "aomr_chiwen_ability_icon"
       }
     ],
     "historia": "Scientific name – Draco sinensis piscis\nSize – 360 lbs 18' long\nDiet – seaweed and small fish\n\nChiwen is one of the nine offspring of the dragon. It is a dragon-headed, fish-like creature said to spew water from its wide mouth. Because of this, the Chinese often carve Chiwen's likeness on the roofs of buildings to protect them against fires."
@@ -10816,7 +11114,8 @@
     "habilidades": [
       {
         "nome": "Venom Trail (passive)",
-        "descricao": "Leaves a trail of poison mist as it moves, spreading infection to nearby enemies and animals."
+        "descricao": "Leaves a trail of poison mist as it moves, spreading infection to nearby enemies and animals.",
+        "icon": "aomr_fei_ability_icon"
       }
     ],
     "historia": "Scientific name – Bestia pestis\nSize – 2200 lbs\nDiet – livestock\n\nThe Fei is a beast that causes droughts; additionally, wherever it goes, plants wither and water sources dry up. It has the appearance of an ox with a white head, only one eye, and the tail of a snake. The Fei Beast is also a harbinger of plague when it is seen in the world."
@@ -11125,6 +11424,11 @@
       {
         "nome": "Golden Pagoda",
         "descricao": "Summons a golden pagoda to immobilize enemy units in the targeted area."
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age: Immortal\nHomeland: Kunlun Mountains, Mythical Realm\nOccupation: protection deity\n\nLi Jing, a well-known protection deity in China, is famous for holding a pagoda in his hand.\n\nA famous story involving Li Jing appears in the 16th century Chinese novel “The Investiture of the Gods”. In this story, Li Jing had a son named Nezha. After Nezha sacrificed himself and was later resurrected, Nezha sought revenge against Li Jing. However, a deity granted Li Jing a pagoda inside which to trap Nezha. Eventually, the two reconciled and joined forces in the war against the Shang dynasty."
@@ -11198,6 +11502,11 @@
       },
       {
         "nome": "Switch Weapon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age: 28 years\nHomeland: Chentang Pass, Mythical China\nOccupation: heavenly general and guardian\n\nNezha is a famous protection deity in Chinese folk religion, often depicted as a flying youth standing on Wind Fire Wheels, wielding a red-tasseled spear, and adorned with a celestial scarf known as the Red Armillary Sash.\n\nIn the 16th-century Chinese novel “The Investiture of the Gods”, Nezha is the son of Li Jing, another protection deity. After a confrontation with the Eastern Sea Dragon King, Nezha sacrifices himself. Later, a deity revives him using lotus flowers to create a new body and grants him numerous divine weapons.\n\nAlthough Nezha experiences conflicts with his father, Li Jing, in folk legends, they are often portrayed fighting side by side to vanquish the enemies of the heavens."
@@ -11264,7 +11573,14 @@
     "velocidade_movimento": 5.8,
     "descricao_resumida": "Hero. Good vs. everything.",
     "descricao_avancada": "Cavalry Hero that harnesses celestial powers to inflict a large area attack. Good against everything, but especially myth units. Switches to a ranged attack to fight flying units. Collects Relics.",
-    "historia": "Age: 2300 years\nHomeland: Jizhou, Mythical China\nOccupation: warlord and strategist\n\nWen Zhong is a character in the Chinese classical mythological novel 'The Investiture of the Gods.' He wields a dragon whip and rides a black Qilin.\n\nAs the Grand Preceptor, he fought tirelessly for the Shang dynasty, earning immense respect from both mortals and gods. In battles against the Zhou dynasty, he defeated Jiang Ziya several times but ultimately met his demise. After Wen Zhong's death, Jiang Ziya bestowed upon him the title of Thunder God.\n\nHere is the decree from Jiang Ziya in the novel:\n\n“You, Wen Zhong, once entered the famous mountains and cultivated the Great Dao. Although you attained the fruit of returning to the source, you have not yet realized the ultimate truth of oneness. You are destined not to reach the highest realm of immortals but held the highest rank of a minister, assisting two dynasties with utmost loyalty. Though your fate was sealed by the calamities of the era, your steadfastness and integrity are admirable. Now, I appoint you to oversee the Thunder Division, to summon clouds and bring rain, nurturing all living things, punishing the wicked and rewarding the good. I hereby confer upon you the title of Nine Heavens Responder to the Primordial Thunder God, Universal Transformer, and Supreme Sovereign. You shall lead the 24 Thunder Division Heavenly Lords, who assist in cloud summoning and rainmaking, and enforce the law. Fulfill your duties diligently.”"
+    "historia": "Age: 2300 years\nHomeland: Jizhou, Mythical China\nOccupation: warlord and strategist\n\nWen Zhong is a character in the Chinese classical mythological novel 'The Investiture of the Gods.' He wields a dragon whip and rides a black Qilin.\n\nAs the Grand Preceptor, he fought tirelessly for the Shang dynasty, earning immense respect from both mortals and gods. In battles against the Zhou dynasty, he defeated Jiang Ziya several times but ultimately met his demise. After Wen Zhong's death, Jiang Ziya bestowed upon him the title of Thunder God.\n\nHere is the decree from Jiang Ziya in the novel:\n\n“You, Wen Zhong, once entered the famous mountains and cultivated the Great Dao. Although you attained the fruit of returning to the source, you have not yet realized the ultimate truth of oneness. You are destined not to reach the highest realm of immortals but held the highest rank of a minister, assisting two dynasties with utmost loyalty. Though your fate was sealed by the calamities of the era, your steadfastness and integrity are admirable. Now, I appoint you to oversee the Thunder Division, to summon clouds and bring rain, nurturing all living things, punishing the wicked and rewarding the good. I hereby confer upon you the title of Nine Heavens Responder to the Primordial Thunder God, Universal Transformer, and Supreme Sovereign. You shall lead the 24 Thunder Division Heavenly Lords, who assist in cloud summoning and rainmaking, and enforce the law. Fulfill your duties diligently.”",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 168,
@@ -11331,6 +11647,11 @@
       {
         "nome": "Xiaotian Quan",
         "descricao": "Yang Jian Summons his celestial dog to damage enemies and heals Yang Jian on its return."
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Age: 1500 years\nHomeland: Kunlun Mountains, Mythical Realms\nOccupation: heavenly general and guardian\n\nYang Jian, also known as Erlang Shen, is a famous protection deity in Chinese legends. He is often depicted as a young general with a third eye on his forehead. He wields a three-pronged spear, and is usually accompanied by his loyal hunting dog.\n\nYang Jian appears in many Chinese legends. According to one story, his mother was a fairy who was punished and imprisoned under Mount Tao for marrying a mortal. Yang Jian grew up and eventually split open Mount Tao to rescue his mother.\n\nIn the novel 'The Investiture of the Gods,' Yang Jian, as a powerful deity, participated in the battles to overthrow the Shang dynasty."
@@ -11523,7 +11844,8 @@
     "habilidades": [
       {
         "nome": "Venomous Spit",
-        "descricao": "Attacks enemies with a poisonous blast at long range."
+        "descricao": "Attacks enemies with a poisonous blast at long range.",
+        "icon": "aomr_xuanwu_ability_icon"
       }
     ],
     "historia": "Scientific name: Testudo serpens sinensis\nSize: 1200 lbs, 15' long\nDiet: Omnivorous\n\nIn Chinese tradition, the Xuanwu is one of the Animals of the Four Directions. Xuanwu represents the direction North and is associated with winter and the element of water. It is depicted as a giant tortoise entwined with a serpent. Due to the tortoise's long lifespan and the serpent's regular shedding of its skin, Xuanwu is considered a symbol of longevity."
@@ -11839,7 +12161,13 @@
     "habilidades": [
       {
         "nome": "Kagura",
-        "descricao": "Target a shrine to perform a sacred dance which generates Favor. Nearby natural resources increase the Favor rate."
+        "descricao": "Target a shrine to perform a sacred dance which generates Favor. Nearby natural resources increase the Favor rate.",
+        "icon": "aomr_miko_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "A miko is a female shaman in the Shinto religion. In earlier periods, mikos were believed to serve as vessels through which the kami could communicate – the spirit of a kami could possess the miko and deliver oracles or prophecies through her. Miko either served as shamans at shrines, conducting sacred rites, or traveled from shrine to shrine, demonstrating their magical and religious powers through fortune-telling. In modern times, mikos typically work at Shinto shrines, where they perform sacred cleansings and a ritual dance known as kagura."
@@ -11926,7 +12254,8 @@
     "habilidades": [
       {
         "nome": "Quicken (Passive)",
-        "descricao": "Increases the speed of nearby friendly units."
+        "descricao": "Increases the speed of nearby friendly units.",
+        "icon": "aomr_kitsune_ability_icon"
       }
     ],
     "historia": "Scientific name – Vulpes dolosa\nSize – 12 lbs\nDiet – small mammals and insects\n\nThe Kitsune, which literally means “fox” in Japanese, is a yōkai that serves as a trickster figure in Japanese mythology. While Kitsunes have many mythical powers, one of their most impressive is transfiguration: there are legends of Kitsunes transforming into beautiful women to seduce men. These so-called “fox-wives” were not necessarily dangerous, but sometimes humans would fall victim to fox possession, a very serious condition. Affected individuals might bark like dogs, eat off the floor, and develop an intense fear of dogs. This often led to social ostracism, demonstrating that Kitsunes could be harmful tricksters.\n\nHowever, not all Kitsunes are mischievous. Some are considered benevolent and are associated with the god Inari Ōkami, serving as guardians of her shrines. They also act as Inari Ōkami's messengers, and sightings of these Kitsunes are believed to symbolize good luck and a bountiful harvest. Kitsunes are also associated with long life – they are said to live for thousands of years."
@@ -12352,7 +12681,14 @@
     "custo_total": 112,
     "descricao_resumida": "Ranged hero. Good vs. myth units.",
     "descricao_avancada": "Ranged hero. Good against myth units.",
-    "historia": "The Japanese term “bushi” translates to “warrior” and is the most appropriate term when referring to a professional Japanese warrior. The term was initially used in the Nara Era (710-784 CE) and predates the more culturally popular concept of the Japanese warrior, the samurai, by a few centuries. Bushi soldiers are associated with “Bushidō” or “The Way of the Warrior,” a code of conduct for professional warriors in Japan. Bushidō dictates eight virtues that the bushi were expected to follow: justice, courage, mercy, politeness, honesty, honor, loyalty, and character."
+    "historia": "The Japanese term “bushi” translates to “warrior” and is the most appropriate term when referring to a professional Japanese warrior. The term was initially used in the Nara Era (710-784 CE) and predates the more culturally popular concept of the Japanese warrior, the samurai, by a few centuries. Bushi soldiers are associated with “Bushidō” or “The Way of the Warrior,” a code of conduct for professional warriors in Japan. Bushidō dictates eight virtues that the bushi were expected to follow: justice, courage, mercy, politeness, honesty, honor, loyalty, and character.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 185,
@@ -12417,7 +12753,8 @@
     "habilidades": [
       {
         "nome": "Torpedo",
-        "descricao": "Dives, then rapidly swims along the targeted path dealing damage to units above. Launches enemies into the air upon resurfacing."
+        "descricao": "Dives, then rapidly swims along the targeted path dealing damage to units above. Launches enemies into the air upon resurfacing.",
+        "icon": "aomr_honengyo_ability_icon"
       }
     ],
     "historia": "Scientific name – Monstrum fluminis faustum\nSize – 165 lbs\nDiet – small river fish and seaweed\n\nThe Honengyo is an amphibious, water-dwelling yōkai that lives in the rivers of Japan. Although this beast has a fearsome appearance – measuring over two meters in length, with dark scales, razor-sharp black dorsal fins and mirror-like eyes – the Honengyo is typically interpreted as a good sign for the Japanese people, especially for fisherman. When a Honengyo washes up on shore, it serves as an omen for a prosperous fishing season.\n\nOne of the most famous Honengyo sightings occurred in 1866 CE, when one washed up the shore of the Yodo River. The artistic depictions of the creature that were drawn after this sighting are sometimes rumored to be the inspiration for the appearance of the pop culture monster Godzilla."
@@ -12496,7 +12833,8 @@
       },
       {
         "nome": "Perforate",
-        "descricao": "Seizes an enemy, then repeatedly stabs it with piercing limbs."
+        "descricao": "Seizes an enemy, then repeatedly stabs it with piercing limbs.",
+        "icon": "aomr_jorogumo_ability_perforate_icon"
       }
     ],
     "historia": "Scientific name – Maga aranea\nSize – 110 lbs\nDiet –  human flesh\n\nThe Jorogumo is a yōkai that is a spider-human hybrid: sometimes she appears as a beautiful woman, and sometimes she can transform into a spider. Jorogumos can command webs and smaller spiders to do their bidding. They typically appear in Japanese mythology as temptress figures: one such example is the Jorogumo who was mistress of the Jōren Falls of Izu. Legends about her tell of a beautiful woman that would try to ensnare men with webs at Jōren Falls and drag them to their doom."
@@ -12571,7 +12909,8 @@
     "habilidades": [
       {
         "nome": "Blade Whirl",
-        "descricao": "Whirls around rapidly with both blades, greatly damaging nearby enemy units and causing more damage over time."
+        "descricao": "Whirls around rapidly with both blades, greatly damaging nearby enemy units and causing more damage over time.",
+        "icon": "aomr_kamaitachi_ability_blade_whirl_icon"
       },
       {
         "nome": "Deathtouch (Passive)",
@@ -12640,7 +12979,8 @@
     "habilidades": [
       {
         "nome": "Amphibious (Passive)",
-        "descricao": "Can traverse both land and water."
+        "descricao": "Can traverse both land and water.",
+        "icon": "aomr_kappa_ability_icon"
       }
     ],
     "historia": "Scientific name – Daemon aquarius\nSize – 85 lbs\nDiet – horse meat and cucumbers\n\nThe Kappa, a water sprite, is a particularly infamous yōkai. With the head of a monkey and a tortoise shell on its back, this violent and demonic creature is known for luring unsuspecting people into bodies of water to drown them. It often targets women and children but is also known to harm or kill horses. However, not everything about the Kappa is negative. It is an expert in setting bones, and some doctors have even sought its help to learn these medical practices. Despite its violent tendencies, the Kappa is relatively easy to outwit. Humans can bribe it with a cucumber or trick it into bowing. Atop the Kappa's head is an indentation filled with water – if this water spills when the Kappa bows, it becomes powerless and can no longer attack."
@@ -12689,7 +13029,8 @@
     "habilidades": [
       {
         "nome": "Area Heal (Passive)",
-        "descricao": "Heals nearby allied units."
+        "descricao": "Heals nearby allied units.",
+        "icon": "aomr_tanuki_ability_icon"
       }
     ],
     "historia": "Scientific name – Tanuculus mirificus\nSize – 13 lbs\nDiet – small mammals and sake\n\nThe tanuki is a prominent mythological creature in Japanese cultural memory. Based on the real-life tanuki – also known as the raccoon dog – these mythical beings are deeply associated with nature and the magic it embodies. Generally benevolent toward humans, they are known to offer healing or aid to those whom they deem worthy."
@@ -12770,7 +13111,8 @@
     "habilidades": [
       {
         "nome": "Hell Fire (Passive)",
-        "descricao": "Attacks set enemy units ablaze, inflicting damage over time."
+        "descricao": "Attacks set enemy units ablaze, inflicting damage over time.",
+        "icon": "aomr_wanyudo_ability_icon"
       }
     ],
     "historia": "Scientific name – Ignivolvens daemonium\nSize – 600 lbs\nDiet – the legs of small children\n\nThe Wanyūdō is a hellish, unnatural being: it appears as a giant, flaming wheel with a man's head in the center, the spokes of the wheel piercing through his skull. As a servant of hell, the Wanyūdō roams Japan in search of wicked souls to drag back to the underworld, where they can atone for their sins.\n\nTypically, a Wanyūdō is seen rolling through town along the road – villagers flee in terror, as simply being noticed by the creature can bring a terrible fate, regardless of one's innocence or guilt."
@@ -12844,11 +13186,13 @@
     "habilidades": [
       {
         "nome": "Ninjutsu",
-        "descricao": "Temporarily increases your movement speed and damage."
+        "descricao": "Temporarily increases your movement speed and damage.",
+        "icon": "aomr_shinobi_ability_icon"
       },
       {
         "nome": "Smoke Bomb",
-        "descricao": "Temporarily become invisible to opponents. Reappears if ordered to attack."
+        "descricao": "Temporarily become invisible to opponents. Reappears if ordered to attack.",
+        "icon": "aomr_shinobi_ability_smoke_bomb_icon"
       }
     ],
     "historia": "Shinobi no mono, or “those who sneak,” were Japanese spies who emerged during the Sengoku Period. More commonly known as ninja in popular culture, shinobi were masters of concealment and deception. They would disguise themselves to gather intelligence, taking on the appearance of anything from a common villager to a komusō (a wandering flute-playing monk), or even something as unexpected as a pile of firewood.\n\nAlthough espionage was typically their primary role, shinobi also served as ruthless assassins. Operating under the cover of night and clad in dark clothing, they were tasked with eliminating the political enemies of those they served. In combat, they often wielded a katana, the iconic single-edged, two-handed sword, but are also famed for improvised weapons and projectiles such as the kusarigama and shuriken."
@@ -12969,7 +13313,14 @@
     "custo_total": 162,
     "descricao_resumida": "Cavalry hero. Good vs. myth units.",
     "descricao_avancada": "Cavalry hero. Good against myth units.",
-    "historia": "Daimyos were powerful feudal lords who led bands of professional warriors. They were a level above the bushi and were at their most powerful from 1185-1868 CE. They not only controlled warriors but also served as powerful landholders over vast estates.\n\nThree of the most famous historical daimyōs are Oda Nobunaga (1534-1582 CE), Toyotomi Hideyoshi (1537-1598 CE), and Tokugawa Ieyasu (1543-1616 CE), who history remembers as the three unifiers of Japan."
+    "historia": "Daimyos were powerful feudal lords who led bands of professional warriors. They were a level above the bushi and were at their most powerful from 1185-1868 CE. They not only controlled warriors but also served as powerful landholders over vast estates.\n\nThree of the most famous historical daimyōs are Oda Nobunaga (1534-1582 CE), Toyotomi Hideyoshi (1537-1598 CE), and Tokugawa Ieyasu (1543-1616 CE), who history remembers as the three unifiers of Japan.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 194,
@@ -13033,6 +13384,11 @@
       {
         "nome": "Naginatajutsu",
         "descricao": "Periodically deals immense damage."
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "The onna-musha were an elite class of warrior women in feudal Japan. They were skilled in archery, horseback riding, and martial arts. One of the most famous onna-musha in history was Tomoe Gozen, who was born in 1157 CE and, according to some rumors, lived to be ninety years old. Stories tell of her fearlessness, ability to lead others on the battlefield, and her significant role in the Genpei War. In one particularly famous battle, when her leader Yoshinaka was mortally wounded, Tomoe rode out and beheaded Onda no Hachiro Morishige before escaping the battlefield."
@@ -13166,7 +13522,8 @@
     "habilidades": [
       {
         "nome": "Rampage",
-        "descricao": "Enter a state of berserking rage, increasing damage and attack speed, but becoming more vulnerable to attacks."
+        "descricao": "Enter a state of berserking rage, increasing damage and attack speed, but becoming more vulnerable to attacks.",
+        "icon": "aomr_oni_ability_icon"
       }
     ],
     "historia": "Scientific name – Rubrum monstrum\nSize – 800 lbs\nDiet – human flesh and sake\n\nOnis are gigantic, demonic, ogre-like beasts with red skin and horns. They are typically depicted wearing tiger-print loincloths, symbolizing their wild nature. In their clawed hands, Onis often wield a tetsubō – a heavy, spiked club – which they use to batter and punish sinners sent to hell.\n\nOnis are not confined to hell; they are also believed to inhabit the earth. However, they can be banished from earth on the second day of the second month during Setsubun, a traditional Japanese festival. This day features a ritual called mamemaki, in which people throw beans to ward off Onis and bad luck."
@@ -13241,7 +13598,8 @@
     "habilidades": [
       {
         "nome": "Storm Roar",
-        "descricao": "Unleashes a powerful roar, emitting a field of lightning in every direction, damaging and stunning nearby enemies."
+        "descricao": "Unleashes a powerful roar, emitting a field of lightning in every direction, damaging and stunning nearby enemies.",
+        "icon": "aomr_raiju_ability_icon"
       }
     ],
     "historia": "Scientific name – Lupus fulminis\nSize – 180 lbs\nDiet – Lightning bolts\n\nThe Raiju is a yōkai associated with thunderstorms and lightning – its name translates to “thunder beast.” This wolf-like creature, with long and deadly claws, is said to leave lightning burns on trees with its paws. Raijus are also believed to summon lightning, and some myths even claim they ride lightning bolts. Closely linked to Raijin, the Japanese god of thunder, the Raiju features in various legends. Some myths state that Raijus like to curl up inside human navels, which leads some superstitious people to protect their navels during storms."
@@ -13316,7 +13674,8 @@
     "habilidades": [
       {
         "nome": "Martial Strike",
-        "descricao": "Leaps into the air towards an enemy unit, bypassing all obstructions. Gains increased attack and armor upon landing."
+        "descricao": "Leaps into the air towards an enemy unit, bypassing all obstructions. Gains increased attack and armor upon landing.",
+        "icon": "aomr_tengu_ability_icon"
       }
     ],
     "historia": "Scientific name – Viravis ruber\nSize – 150 lbs\nDiet – fruit, grains, and sake\n\nThe Tengu is a bird-like humanoid creature with red skin and wings. These beings dwell deep in the mountains of Japan and have long been associated with peculiar occurrences, such as unexpected falling rocks and mysterious laughter echoing in the distance. Tengus sometimes deliberately confuse travelers, causing them to lose their way.\n\nHowever, if a Tengu deems a human worthy, they may impart valuable skills, the most notable being swordsmanship. Tengu are renowned swordsmen, and many myths tell of them training legendary figures in Japanese folklore. They are also proficient in magic and, on occasion, may share their mystical knowledge with humans."
@@ -13487,7 +13846,14 @@
     "custo_total": 255,
     "descricao_resumida": "Powerful hero. Good vs. buildings and myth units.",
     "descricao_avancada": "Devastating sorcerer hero capable of powerful magic. Strong against buildings and myth units. Can heal allies.",
-    "historia": "An Onmyōji is a practitioner of Onmyōdō, a form of magic associated with fortune-telling and divination. They were employed by the noble class to provide advice and guidance on matters such as battle plans, marriage prospects, political decisions, and more. Beyond their divination skills, Onmyōji were repositories of knowledge in areas such as Japanese folklore, astrological calendars, the philosophy of yin and yang, and the five elements.\n\nOnmyōji were highly valued in the various courts of the shoguns and held considerable influence during the feudal period. Perhaps the most famous Onmyōji was Abe-no-Seimei (921–1005 CE), who lived during the Heian period."
+    "historia": "An Onmyōji is a practitioner of Onmyōdō, a form of magic associated with fortune-telling and divination. They were employed by the noble class to provide advice and guidance on matters such as battle plans, marriage prospects, political decisions, and more. Beyond their divination skills, Onmyōji were repositories of knowledge in areas such as Japanese folklore, astrological calendars, the philosophy of yin and yang, and the five elements.\n\nOnmyōji were highly valued in the various courts of the shoguns and held considerable influence during the feudal period. Perhaps the most famous Onmyōji was Abe-no-Seimei (921–1005 CE), who lived during the Heian period.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 202,
@@ -13540,7 +13906,13 @@
     "habilidades": [
       {
         "nome": "Bakufu",
-        "descricao": "Summons Samurai while fighting."
+        "descricao": "Summons Samurai while fighting.",
+        "icon": "aomr_shogun_ability_icon"
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "The shoguns were elite military rulers in feudal Japan. The term, which means 'commander of the army,' was first applied at the end of the Heian period. The first shogunate was formed by Minamoto no Yoritomo in 1192 CE, establishing the position of shogun as a hereditary military dictatorship until 1867 CE. The shoguns were only one step below the emperor, making them among the most powerful individuals in Japan. However, the shoguns eventually gained so much power that the emperor became merely a symbolic figurehead, while the true power rested with the shoguns."
@@ -13621,7 +13993,8 @@
     "habilidades": [
       {
         "nome": "Blazing Jealousy (Passive)",
-        "descricao": "Automatically attacks nearby enemies with fireballs."
+        "descricao": "Automatically attacks nearby enemies with fireballs.",
+        "icon": "aomr_asura_ability_icon"
       }
     ],
     "historia": "Scientific name – Semideus rubrovultus ignijactor\nSize – 300 lbs\nDiet – charred meat from ritiual offerings\n\nThe Asura is a three-faced, red skinned warrior demigod that originates from Buddhist traditions but was later incorporated into the Japanese mythological world through religious syncretism. Along with having three faces, the Asura also possesses six arms, each wielding six different weapons.\n\nAsuras are known to have chaotic emotions, and they are typically driven by their base instincts: pride, violence, and greed. As beings of chaos and war, it is fitting that they are associated with fire – they hurl fireballs with several of their many arms to incinerate their enemies when provoked."
@@ -13700,7 +14073,8 @@
     "habilidades": [
       {
         "nome": "Wretch Strafe",
-        "descricao": "Summons a squadron of Wretches on the ground to fight enemies."
+        "descricao": "Summons a squadron of Wretches on the ground to fight enemies.",
+        "icon": "aomr_onmoraki_ability_icon"
       }
     ],
     "historia": "Scientific name – Avis spiritus terribilis\nSize – 33 lbs\nDiet – fear and regret from humans\n\nThe Onmoraki is a grim, monstrous winged creature with a humanoid face and a sharp beak. With a haunting, shrill voice, the Onmoraki is known to plague neglectful religious officials outside of shrines and temples. One of its most chilling talents is the ability to imitate the voice of the person that it is harassing, taunting them about their failures.\n\nSome Japanese legends suggest that Onmorakis originate from recently deceased people with unsettled spirits – if a human dies without the correct burial practice, their spirit transforms into an Onmoraki."
@@ -13779,11 +14153,13 @@
     "habilidades": [
       {
         "nome": "Reanimate (Passive)",
-        "descricao": "Rises again at a friendly temple after being slain in combat"
+        "descricao": "Rises again at a friendly temple after being slain in combat",
+        "icon": "aomr_shinigami_ability_reanimate_icon"
       },
       {
         "nome": "Terrifying Shout",
-        "descricao": "Unleashes a horrifying cry, causing some nearby enemies to temporarily flee in panic."
+        "descricao": "Unleashes a horrifying cry, causing some nearby enemies to temporarily flee in panic.",
+        "icon": "aomr_shinigami_ability_terrifying_shout_icon"
       }
     ],
     "historia": "Scientific name – Spiritus mortis pallidus\nSize – 160 lbs\nDiet – death and despair\n\nA haunting spirit of the dead, the Shinigami is a vengeful ghost with gray hair and a translucent appearance. Although Shinigamis appear human-like, their sunken, sallow skin and eerie features make it clear that these beings are demons from the afterlife. These death spirits haunt areas where people have recently died. Local legends across Japan suggest that acts of violence invite more violence – explaining the appearance of the Shinigami. Some stories claim that the Shinigami can possess people and drive them to commit violent acts."
@@ -14104,7 +14480,14 @@
     "favor": 0,
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Hero. Good against myth units. Ranged attacks against flying units. Can build religious buildings. Collects Relics.",
-    "historia": "Warrior Priests are the common Aztec hero unit. They collect tonalli, dropped by defeated units, to supplement favour generation, and can construct religious buildings. They fight at close range and are especially strong against myth units given their Hero status, but they are also effective against human units.\n\nWarrior Priests are necessary in any Aztec strategy, as they reduce reliance on the Teixiptla as the sole myth unit counter and contribute to Favor generation through tonalli absorption."
+    "historia": "Warrior Priests are the common Aztec hero unit. They collect tonalli, dropped by defeated units, to supplement favour generation, and can construct religious buildings. They fight at close range and are especially strong against myth units given their Hero status, but they are also effective against human units.\n\nWarrior Priests are necessary in any Aztec strategy, as they reduce reliance on the Teixiptla as the sole myth unit counter and contribute to Favor generation through tonalli absorption.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 211,
@@ -14474,6 +14857,11 @@
       {
         "nome": "Cone of Fire (Passive)",
         "descricao": "Attacks units in a half-circle infront of the Teixiptla, setting them ablaze dealing damage over time."
+      },
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
       }
     ],
     "historia": "Huitzilopochtli is the Aztec god of war, the sun, and conquest. He embodies martial strength and divine leadership, guiding the Aztecs through battle and expansion.\n\nEach Major God can temporarily possess one Warrior Priest at a time as their Teixiptla, granting them immense power. The Teixiptla’s abilities and appearance depend on which Major God is being played. The Teixiptla deals significant damage with special attacks, making them a potent tool but also a prime target for enemies. As a Hero, the Teixiptla deals bonus damage to myth units and gains bonus stats with each Age.\n\nAfter a short time, the Teixiptla’s mortal frame can no longer contain the power of the god possessing them, and the unit is lost. Players will have to choose when to invoke this power decisively."
@@ -14530,7 +14918,14 @@
     "fraco_contra": null,
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Powerful Hero with limited lifespan. Created when Quetzalcoatl possesses a Warrior Priest. Good against myth units. Ranged attacks against flying units. Collects Relics.",
-    "historia": "Quetzalcoatl is the Aztec god of wisdom, wind, and creation. Known as the Feathered Serpent, he represents knowledge, learning, and the balance between nature and civilization.\n\nEach Major God can temporarily possess one Warrior Priest at a time as their Teixiptla, granting them immense power. The Teixiptla’s abilities and appearance depend on which Major God is being played. The Teixiptla deals significant damage with special attacks, making them a potent tool but also a prime target for enemies. As a Hero, the Teixiptla deals bonus damage to myth units and gains bonus stats with each Age.\n\nAfter a short time, the Teixiptla’s mortal frame can no longer contain the power of the god possessing them, and the unit is lost. Players will have to choose when to invoke this power decisively."
+    "historia": "Quetzalcoatl is the Aztec god of wisdom, wind, and creation. Known as the Feathered Serpent, he represents knowledge, learning, and the balance between nature and civilization.\n\nEach Major God can temporarily possess one Warrior Priest at a time as their Teixiptla, granting them immense power. The Teixiptla’s abilities and appearance depend on which Major God is being played. The Teixiptla deals significant damage with special attacks, making them a potent tool but also a prime target for enemies. As a Hero, the Teixiptla deals bonus damage to myth units and gains bonus stats with each Age.\n\nAfter a short time, the Teixiptla’s mortal frame can no longer contain the power of the god possessing them, and the unit is lost. Players will have to choose when to invoke this power decisively.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 218,
@@ -14592,7 +14987,14 @@
     "fraco_contra": null,
     "descricao_resumida": "Hero. Good vs. myth units.",
     "descricao_avancada": "Powerful Hero with limited lifespan. Created when Tezcatlipoca possesses a Warrior Priest. Good against myth units. Collects Relics.",
-    "historia": "Tezcatlipoca is the Aztec god of night, sorcery, and destiny. Mysterious and powerful, he embodies chaos, conflict, and the unseen forces that shape fate and ambition.\n\nEach Major God can temporarily possess one Warrior Priest at a time as their Teixiptla, granting them immense power. The Teixiptla’s abilities and appearance depend on which Major God is being played. The Teixiptla deals significant damage with special attacks, making them a potent tool but also a prime target for enemies. As a Hero, the Teixiptla deals bonus damage to myth units and gains bonus stats with each Age.\n\nAfter a short time, the Teixiptla’s mortal frame can no longer contain the power of the god possessing them, and the unit is lost. Players will have to choose when to invoke this power decisively."
+    "historia": "Tezcatlipoca is the Aztec god of night, sorcery, and destiny. Mysterious and powerful, he embodies chaos, conflict, and the unseen forces that shape fate and ambition.\n\nEach Major God can temporarily possess one Warrior Priest at a time as their Teixiptla, granting them immense power. The Teixiptla’s abilities and appearance depend on which Major God is being played. The Teixiptla deals significant damage with special attacks, making them a potent tool but also a prime target for enemies. As a Hero, the Teixiptla deals bonus damage to myth units and gains bonus stats with each Age.\n\nAfter a short time, the Teixiptla’s mortal frame can no longer contain the power of the god possessing them, and the unit is lost. Players will have to choose when to invoke this power decisively.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 219,
@@ -14738,7 +15140,8 @@
       },
       {
         "nome": "Spiky Departure",
-        "descricao": "Has a chance to spawn a spike trap when defeated."
+        "descricao": "Has a chance to spawn a spike trap when defeated.",
+        "icon": "aomr_chaneque_spiky_departure_ability_icon"
       }
     ],
     "historia": "Scientific name -- Statuae diabolus\nSize -- Small\nDiet -- Herbivore\n\nChaneque are small, mischievous spirit beings. They are often described as forest or household spirits who play tricks on people, hide belongings, and sometimes lead travelers astray.\n\nDespite their prankster nature, Chaneque are also considered protectors of nature and sacred places, embodying the mysterious and playful aspects of the natural world."
@@ -14880,15 +15283,18 @@
     "habilidades": [
       {
         "nome": "Poisonous Breath",
-        "descricao": "Target an enemy unit to inflict them with poison, dealing damage over time."
+        "descricao": "Target an enemy unit to inflict them with poison, dealing damage over time.",
+        "icon": "aomr_maquizcoatl_poisonous_breath_ability_icon"
       },
       {
         "nome": "Scorching Breath",
-        "descricao": "Target an enemy unit to deal damage and temporarily melt away enemy armor."
+        "descricao": "Target an enemy unit to deal damage and temporarily melt away enemy armor.",
+        "icon": "aomr_maquizcoatl_scorching_breath_ability_icon"
       },
       {
         "nome": "Volatile Rupture (Passive)",
-        "descricao": "Upon death, the Maquizcoatl explodes, dousing nearby enemies in a mix of fire and venom, taking damage over time and suffering reduced armor."
+        "descricao": "Upon death, the Maquizcoatl explodes, dousing nearby enemies in a mix of fire and venom, taking damage over time and suffering reduced armor.",
+        "icon": "aomr_maquizcoatl_volatile_rupture_ability_icon"
       }
     ],
     "historia": "Scientific name -- Serpens duplici\nSize -- Up to 6' feet\nDiet -- Humans\n\nThe double-headed Maquizcoatl is associated with the balance of opposing forces, but also with bad omens, gossip and death.\n\nMaquizcoatl, which translates to ‘2-headed serpent’ or ‘bracelet snake’ is also one of the names of Huitzilopochtli. Maquizcoatl adornments served as insignias, indicating elite status, and may have held ceremonial significance, being worn by Huitzilopochtli’s leaders and impersonators."
@@ -15068,7 +15474,8 @@
     "habilidades": [
       {
         "nome": "Terror Whistle",
-        "descricao": "Temporarily reduces enemy damage and stuns them for a brief duration."
+        "descricao": "Temporarily reduces enemy damage and stuns them for a brief duration.",
+        "icon": "aomr_shorn_one_ability_icon"
       }
     ],
     "historia": "The Shorn Ones are the highest ranking warriors of the Aztecs. They are good against most enemies, but especially strong at taking out enemy infantry.\n\nShorn Ones excel at spearheading late game assaults, tearing through enemy front lines, and holding defensive positions. Their prestige as the ultimate Aztec warrior comes with a high resource cost, population cost, and training time. They are few on the battlefield but pose a threat the enemy cannot afford to ignore."
@@ -15184,7 +15591,8 @@
     "habilidades": [
       {
         "nome": "Life Bubble",
-        "descricao": "Activate to summon a durable shield, which slowly drains while healing nearby allied units."
+        "descricao": "Activate to summon a durable shield, which slowly drains while healing nearby allied units.",
+        "icon": "aomr_axolotl_life_bubble_ability_icon"
       },
       {
         "nome": "Amphibious (Passive)",
@@ -15200,11 +15608,13 @@
       },
       {
         "nome": "Mutate",
-        "descricao": "Mutate into a Mutant Axolotl, with greatly improved hitpoints, attack and abilities. Mutation is irreversible."
+        "descricao": "Mutate into a Mutant Axolotl, with greatly improved hitpoints, attack and abilities. Mutation is irreversible.",
+        "icon": "aomr_axolotl_mutate_ability_icon"
       },
       {
         "nome": "Restorative Chomp",
-        "descricao": "Target a ship to deal heavy crushing damage and restore hitpoints."
+        "descricao": "Target a ship to deal heavy crushing damage and restore hitpoints.",
+        "icon": "aomr_axolotl_restorative_chomp_ability_icon"
       }
     ],
     "historia": "Scientific name -- Ambystoma mexicanum\nSize -- Large\nDiet -- Carnivore\n\nThe Axolotl are legendary creatures, often associated with water, regeneration, and transformation. It is a type of aquatic salamander native to the lakes around Tenochtitlan and is linked to the god Xolotl, the deity of lightning, death, mutation and twins."
@@ -15570,7 +15980,8 @@
       },
       {
         "nome": "Tail Whip",
-        "descricao": "Target any human soldier or myth unit to pick them up and pull them in with its tail, dealing great damage and stunning them for a duration."
+        "descricao": "Target any human soldier or myth unit to pick them up and pull them in with its tail, dealing great damage and stunning them for a duration.",
+        "icon": "aomr_ahuizotl_tail_whip_ability_icon"
       }
     ],
     "historia": "Scientific name -- Didelphis tenax\nSize -- 50 -- 150 lbs\nDiet -- Humans\n\nAhuizotl is a fierce, water-dwelling monster with the body of a dog and a hand on the end of its tail.\n\nFeared by fishermen and travelers near lakes and rivers, the Ahuizotl was said to drag people underwater to their deaths. It was associated with the gods of water and death, particularly Tlaloc, and was believed to claim victims whose bodies were considered sacred offerings to the gods."
@@ -15860,11 +16271,13 @@
     "habilidades": [
       {
         "nome": "Deathsong",
-        "descricao": "Target enemy human soldiers to mark them with the Omen of Death, which reduces their hitpoints."
+        "descricao": "Target enemy human soldiers to mark them with the Omen of Death, which reduces their hitpoints.",
+        "icon": "aomr_tunkuluchu_deathsong_ability_icon"
       },
       {
         "nome": "Final Omen (Passive)",
-        "descricao": "Attacks have a chance to instantly finish off any human soldier marked with the Omen of Death, killing them instantly."
+        "descricao": "Attacks have a chance to instantly finish off any human soldier marked with the Omen of Death, killing them instantly.",
+        "icon": "aomr_tunkuluchu_final_omen_ability_icon"
       }
     ],
     "historia": "Scientific name -- Asio stygius\nSize -- Large\nDiet -- Carnivore\nThe Tunkuluchu was feared by the Mesoamerican people as a herald of death. When the Tunkuluchu sang, it was said that somebody nearby was soon to die.\n\nTunkuluchu are sometimes connected to the sound of drums and other forms of communication."
@@ -16427,7 +16840,14 @@
     ],
     "icon": "aomr_cheiroballista_hero_icon",
     "descricao_avancada": "Ranged Soldier, Siege Weapon, Hero. Fragile, but very powerful against infantry, ships, and myth units.",
-    "historia": "This Cheiroballista has become a hero. Like a regular Cheiroballista, it is strong against infantry and weak against most other units; but as a hero, it is much more effective against myth units. All heroes may pick up Relics.\n\nThe cheiroballista was the most advanced arrow-throwing ballista devised in ancient times. Its metal arms were short and provided great torque, but also allowed the ballista to either be mounted in a drawn cart or put on wheels."
+    "historia": "This Cheiroballista has become a hero. Like a regular Cheiroballista, it is strong against infantry and weak against most other units; but as a hero, it is much more effective against myth units. All heroes may pick up Relics.\n\nThe cheiroballista was the most advanced arrow-throwing ballista devised in ancient times. Its metal arms were short and provided great torque, but also allowed the ballista to either be mounted in a drawn cart or put on wheels.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
   },
   {
     "id": 246,
@@ -16654,7 +17074,8 @@
     "habilidades": [
       {
         "nome": "Transfixion (Passive)",
-        "descricao": "Projectiles pass through and damage multiple units."
+        "descricao": "Projectiles pass through and damage multiple units.",
+        "icon": "aomr_oyumi_ability_icon"
       }
     ],
     "historia": "The oyumi is a large siege crossbow that first came into use in Japan during the 7th century. Initially fixed to a platform and unable to rotate, it was upgraded in the 9th century to allow greater mobility and the ability to fire multiple arrows simultaneously. Though deadly, the oyumi was difficult to operate – only the strongest and most skilled soldiers could handle this formidable weapon. Historical evidence suggests that these siege engines were used well into the 12th century."

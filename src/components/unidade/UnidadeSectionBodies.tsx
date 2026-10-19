@@ -3,9 +3,11 @@ import { useLocation } from "react-router-dom";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitOrText } from "@/components/ui/InfoRowPortraitCluster";
 import { PortraitHeaderActions } from "@/components/ui/PortraitHeaderActions";
+import { Section } from "@/components/ui/Section";
 import { formatArmorPercent } from "@/lib/armorDisplay";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
 import { NotionText } from "@/components/ui/NotionText";
+import { resolveTokenIconSrc } from "@/lib/tokenIconUrl";
 import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -79,6 +81,8 @@ export function UnidadeVisaoGeralBody({ u }: { u: U }) {
       : [];
 
   const descricaoResumida = (u.descricao_resumida ?? "").trim();
+  const descricaoAvancada = (u.descricao_avancada ?? "").trim();
+  const showAvancada = Boolean(descricaoAvancada && descricaoAvancada !== descricaoResumida);
 
   return (
     <div className="space-y-0">
@@ -141,6 +145,14 @@ export function UnidadeVisaoGeralBody({ u }: { u: U }) {
             textFallback={null}
           />
         </InfoRow>
+      ) : null}
+      {showAvancada ? (
+        <div className="border-t border-aom-border/50 pt-3">
+          <NotionText
+            text={descricaoAvancada}
+            className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
+          />
+        </div>
       ) : null}
     </div>
   );
@@ -231,78 +243,55 @@ export function UnidadeCustoBody({ u }: { u: U }) {
 }
 
 export function UnidadeHabilidadesBody({ u }: { u: U }) {
-  const { t } = useTranslation();
   const habilidades = Array.isArray(u.habilidades) ? u.habilidades : [];
-  const avancada = (u.descricao_avancada ?? "").trim();
-  const resumida = (u.descricao_resumida ?? "").trim();
-  const showAvancada = Boolean(avancada && avancada !== resumida);
-
-  if (!habilidades.length && !showAvancada) {
-    return <p className="text-sm text-zinc-500">{t("common.noResults")}</p>;
-  }
+  if (!habilidades.length) return null;
 
   return (
-    <div className="space-y-4">
-      {showAvancada ? (
-        <div className="space-y-1">
-          <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">
-            {t("common.advancedDescription")}
-          </p>
-          <NotionText text={avancada} className="text-sm leading-relaxed text-zinc-300" />
-        </div>
-      ) : null}
-
-      {habilidades.length ? (
-        <ul className="space-y-3">
-          {habilidades.map((h, i) => {
-            const iconToken = (h.icon ?? "").replace(/^:+|:+$/g, "");
-            const title = iconToken ? `:${iconToken}: ${h.nome}` : h.nome;
-            return (
-              <li
-                key={`${h.nome}-${i}`}
-                className="rounded-lg border border-zinc-800/80 bg-zinc-950/40 px-3 py-2.5"
-              >
-                <NotionText text={title} className="text-sm font-medium text-zinc-100" />
-                {h.descricao ? (
-                  <NotionText
-                    text={h.descricao}
-                    className="mt-1 block text-sm leading-relaxed text-zinc-400"
-                  />
-                ) : null}
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
-    </div>
+    <ul className="space-y-3">
+      {habilidades.map((h, i) => {
+        const iconToken = (h.icon ?? "").replace(/^:+|:+$/g, "");
+        const iconSrc = iconToken ? resolveTokenIconSrc(iconToken) : undefined;
+        return (
+          <li
+            key={`${h.nome}-${i}`}
+            className="flex items-start gap-3 rounded-lg border border-zinc-800/80 bg-zinc-950/40 px-3 py-2.5"
+          >
+            {iconSrc ? (
+              <img
+                src={iconSrc}
+                alt=""
+                aria-hidden
+                className="mt-0.5 size-10 shrink-0 rounded-md border border-zinc-700/60 bg-zinc-900/80 object-contain p-0.5"
+              />
+            ) : null}
+            <div className="min-w-0 flex-1">
+              <NotionText text={h.nome} className="text-sm font-medium text-zinc-100" />
+              {h.descricao ? (
+                <NotionText
+                  text={h.descricao}
+                  className="mt-1 block text-sm leading-relaxed text-zinc-400"
+                />
+              ) : null}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
-/** Seção de história do jogo — colapsada por padrão (`<details>`). */
+/** Seção de história do jogo — sempre aberta. */
 export function UnidadeHistoriaDetails({ historia }: { historia: string }) {
   const { t } = useTranslation();
   const text = historia.trim();
   if (!text) return null;
 
   return (
-    <details className="group mt-6 overflow-hidden rounded-2xl border border-aom-border bg-aom-card/60 shadow-sm shadow-black/20 open:shadow-md">
-      <summary className="cursor-pointer list-none px-5 py-4 font-[family-name:var(--font-display)] text-lg font-semibold text-amber-100/95 marker:content-none [&::-webkit-details-marker]:hidden">
-        <span className="flex items-center justify-between gap-3">
-          <span>{t("common.history")}</span>
-          <span
-            aria-hidden
-            className="text-sm font-normal text-zinc-500 transition group-open:rotate-180"
-          >
-            ▾
-          </span>
-        </span>
-      </summary>
-      <div className="border-t border-aom-border/60 px-5 pb-5 pt-3">
-        <NotionText
-          text={text.replace(/\n\n+/g, "\n\n")}
-          className="block whitespace-pre-line text-sm leading-relaxed text-zinc-400"
-        />
-      </div>
-    </details>
+    <Section title={t("common.history")} className="mt-6">
+      <NotionText
+        text={text.replace(/\n\n+/g, "\n\n")}
+        className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
+      />
+    </Section>
   );
 }

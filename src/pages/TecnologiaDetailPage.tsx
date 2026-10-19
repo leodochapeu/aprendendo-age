@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitCluster } from "@/components/ui/InfoRowPortraitCluster";
 import { TecnologiaTipoBadges } from "@/components/tecnologia/TecnologiaTipoBadges";
@@ -132,6 +133,7 @@ export function TecnologiaDetailPage() {
           shortDesc ? <NotionText text={shortDesc} className="block" /> : undefined
         }
         headerIconSrc={getTecnologiaAssetUrl(tech)}
+        siblingNav={tecIndex >= 0 ? <CatalogRecordNav section="tecnologias" currentId={tecIndex} /> : undefined}
       />
 
       <div className="grid gap-6 lg:grid-cols-2">

@@ -2,6 +2,7 @@ import { Navigate, useLocation, useParams, useSearchParams } from "react-router-
 
 import { BuildingProjection, type BuildingVisualChoice } from "@/components/construcao/BuildingProjection";
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitCluster, InfoRowPortraitOrText } from "@/components/ui/InfoRowPortraitCluster";
 import { NotionText } from "@/components/ui/NotionText";
@@ -197,6 +198,7 @@ export function ConstrucaoDetailPage() {
           shortDesc ? <NotionText text={shortDesc} className="block" /> : undefined
         }
         headerIconSrc={construcaoIcon}
+        siblingNav={<CatalogRecordNav section="construcoes" currentId={c.id} />}
       />
 
       <div className="grid items-start gap-6 lg:grid-cols-2">

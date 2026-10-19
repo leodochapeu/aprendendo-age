@@ -2,6 +2,7 @@ import { useLocation, useParams } from "react-router-dom";
 
 import { AldeaoBonusBody, AldeaoColetaBody, AldeaoGeralBody } from "@/components/aldeao/AldeaoSectionBodies";
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { entityDisplayDescription } from "@/data/catalogLocale";
@@ -44,6 +45,7 @@ export function AldeaoDetailPage() {
         title={a.nome}
         description={entityDisplayDescription(a, locale, t)}
         headerIconSrc={aldeaoIcon}
+        siblingNav={<CatalogRecordNav section="aldeoes" currentId={a.id} />}
       />
 
       <div className="grid gap-6 lg:grid-cols-2">

@@ -18,6 +18,8 @@ export type AppPageDetailProps = {
   headerIconSrc?: string;
   descriptionTag?: boolean;
   actions?: ReactNode;
+  /** Setas de anterior/próximo, na extrema direita da linha do título. */
+  siblingNav?: ReactNode;
   /**
    * Imagem de fundo no topo do detalhe (URL em `/public`), com fade para baixo.
    * Compensa o padding do `<main>` para o fundo ir até ao topo da coluna.
@@ -43,6 +45,7 @@ export function AppPageDetail({
   headerIconSrc,
   descriptionTag,
   actions,
+  siblingNav,
   heroBackgroundSrc,
   heroBackgroundFallbackSrc,
   pageHeaderClassName,
@@ -89,6 +92,7 @@ export function AppPageDetail({
             headerIconSrc={headerIconSrc}
             descriptionTag={descriptionTag}
             actions={actions}
+            siblingNav={siblingNav}
             className={cn("mb-0", pageHeaderClassName)}
           />
         </div>

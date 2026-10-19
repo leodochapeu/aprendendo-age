@@ -105,6 +105,8 @@ type PageHeaderProps = {
   descriptionTag?: boolean;
   descriptionTagVariant?: AppTagVariant;
   actions?: ReactNode;
+  /** Setas de anterior/próximo, na extrema direita da linha do título. */
+  siblingNav?: ReactNode;
   className?: string;
 };
 
@@ -147,14 +149,24 @@ export function PageHeader({
   descriptionTag,
   descriptionTagVariant,
   actions,
+  siblingNav,
   className,
 }: PageHeaderProps) {
   const collapse = useListHeaderCollapse();
   const expanded = collapse?.open ?? true;
+  const trailing = (expanded && actions) || siblingNav ? (
+    <div className="flex shrink-0 items-start gap-2">
+      {expanded && actions ? actions : null}
+      {siblingNav}
+    </div>
+  ) : null;
   return (
     <header
       className={cn(
-        "mb-8 flex w-full max-w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between",
+        "mb-8 flex w-full max-w-full gap-3",
+        siblingNav
+          ? "flex-row items-start justify-between"
+          : "flex-col sm:flex-row sm:items-start sm:justify-between",
         className,
       )}
     >
@@ -165,8 +177,9 @@ export function PageHeader({
         descriptionTag={descriptionTag}
         descriptionTagVariant={descriptionTagVariant}
         titleAccessory={collapse ? <ListHeaderCollapseButton /> : undefined}
+        className={siblingNav ? "min-w-0 flex-1" : undefined}
       />
-      {expanded && actions ? <div className="shrink-0 sm:ml-auto">{actions}</div> : null}
+      {trailing}
     </header>
   );
 }

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 import { AppPageDetail } from "@/components/layout/AppPageDetail";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { BackLink } from "@/components/ui/BackLink";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { NotionText } from "@/components/ui/NotionText";
@@ -175,7 +176,7 @@ function MapaPreviewSection({
 
 export function MapaDetailPage() {
   const { t } = useTranslation();
-  const { mapaBySlug } = useCatalog();
+  const { mapaBySlug, mapas } = useCatalog();
   const { state: navState } = useLocation();
   const backToList = listIndexReturnTo("/mapas", navState);
   const backLabel = listIndexBackLinkLabel(backToList, t("nav.maps"));
@@ -196,6 +197,7 @@ export function MapaDetailPage() {
     );
   }
 
+  const mapIndex = mapas.indexOf(m);
   const mapaIcon = getMapaAssetUrl(m);
   const previewUrl = getMapaPreviewUrl(m);
   const map3dUrl = getMapa3dUrl(m);
@@ -214,6 +216,7 @@ export function MapaDetailPage() {
       headerIconSrc={mapaIcon}
       heroBackgroundSrc={previewUrl}
       heroBackgroundFallbackSrc={mapaIcon}
+      siblingNav={mapIndex >= 0 ? <CatalogRecordNav section="mapas" currentId={mapIndex} /> : undefined}
       actions={
         dlcIcons.length ? (
           <div className="flex items-center gap-2">

@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { NotionText } from "@/components/ui/NotionText";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
@@ -42,6 +43,7 @@ export function ReliquiasDetailPage() {
         title={r.nome}
         description={entityDisplayDescription(r, locale, t)}
         headerIconSrc={relicIcon}
+        siblingNav={<CatalogRecordNav section="reliquias" currentId={r.id} />}
       />
 
       {r.descricao_resumida ? (

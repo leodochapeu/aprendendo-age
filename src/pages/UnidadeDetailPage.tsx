@@ -9,6 +9,7 @@ import {
   UnidadeVisaoGeralBody,
 } from "@/components/unidade/UnidadeSectionBodies";
 import { BackLink } from "@/components/ui/BackLink";
+import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
 import { hasTipoContent } from "@/lib/unidadeTipo";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -51,10 +52,6 @@ export function UnidadeDetailPage() {
   const aldeaoSlug = aldeaoId != null ? aldeaoSlugById.get(aldeaoId) : undefined;
   const villagerPath = aldeaoSlug ? localeSectionPath(locale, "aldeoes", aldeaoSlug) : undefined;
   const hasHabilidades = Array.isArray(u.habilidades) && u.habilidades.length > 0;
-  const descAvancada = (u.descricao_avancada ?? "").trim();
-  const descResumida = (u.descricao_resumida ?? "").trim();
-  const showAbilitiesSection =
-    hasHabilidades || Boolean(descAvancada && descAvancada !== descResumida);
 
   return (
     <div>
@@ -66,6 +63,7 @@ export function UnidadeDetailPage() {
         }
         descriptionTag={false}
         headerIconSrc={unidadeIcon}
+        siblingNav={<CatalogRecordNav section="unidades" currentId={u.id} />}
       />
 
       {villagerPath ? (
@@ -103,7 +101,7 @@ export function UnidadeDetailPage() {
         </Section>
       </div>
 
-      {showAbilitiesSection ? (
+      {hasHabilidades ? (
         <Section title={t("common.abilities")} className="mt-6">
           <UnidadeHabilidadesBody u={u} />
         </Section>
