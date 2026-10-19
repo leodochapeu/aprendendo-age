@@ -52,7 +52,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_town_center_greek_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Center of a town.",
+    "descricao_avancada": "Trains Villagers, advances through the Ages, is a drop site for all resources, and supports population. Town Centers are built over Settlements.",
+    "historia": "The Town Center trains Villagers, provides population room, and acts as the hub of your town. You can only build Town Centers on Settlements, and you can only build additional Town Centers starting in the Classical Age. There are enough Settlements on most maps for every player to have three, but claiming more Settlements will leave less for your enemies. If your team claims all of the Settlements on a map, you will win the game under standard victory conditions.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 3,
@@ -98,7 +101,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_town_center_egyptian_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Center of a town.",
+    "descricao_avancada": "Trains Villagers, advances through the Ages, is a drop site for all resources, and supports population. Town Centers are built over Settlements.",
+    "historia": "The Town Center trains Villagers, provides population room, and acts as the hub of your town. You can only build Town Centers on Settlements, and you can only build additional Town Centers starting in the Classical Age. There are enough Settlements on most maps for every player to have three, but claiming more Settlements will leave less for your enemies. If your team claims all of the Settlements on a map, you will win the game under standard victory conditions.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 4,
@@ -137,7 +143,10 @@
     "unidades_id": 14,
     "panteao_id": 3,
     "icon": "aomr_town_center_norse_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Center of a town.",
+    "descricao_avancada": "Trains Villagers, advances through the Ages, is a drop site for all resources, and supports population. Town Centers are built over Settlements.",
+    "historia": "The Town Center trains Villagers, provides population room, and acts as the hub of your town. You can only build Town Centers on Settlements, and you can only build additional Town Centers starting in the Classical Age. There are enough Settlements on most maps for every player to have three, but claiming more Settlements will leave less for your enemies. If your team claims all of the Settlements on a map, you will win the game under standard victory conditions.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 5,
@@ -169,7 +178,10 @@
     "tecnologias_id": "29500f30e21180888b25f958d43e6616",
     "panteao_id": 4,
     "icon": "aomr_town_center_atlantean_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Center of a town.",
+    "descricao_avancada": "Trains Villagers, advances through the Ages, is a drop site for all resources, and supports population. Town Centers are built over Settlements.",
+    "historia": "The Town Center trains Villagers, provides population room, and acts as the hub of your town. You can only build Town Centers on Settlements, and you can only build additional Town Centers starting in the Classical Age. There are enough Settlements on most maps for every player to have three, but claiming more Settlements will leave less for your enemies. If your team claims all of the Settlements on a map, you will win the game under standard victory conditions.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 6,
@@ -205,7 +217,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_town_center_chinese",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Center of a town.",
+    "descricao_avancada": "Trains Villagers, advances through the Ages, is a drop site for all resources, and supports population. Town Centers are built over Settlements.",
+    "historia": "The Town Center trains Villagers, provides population room, and acts as the hub of your town. You can only build Town Centers on Settlements, and you can only build additional Town Centers starting in the Classical Age. There are enough Settlements on most maps for every player to have three, but claiming more Settlements will leave less for your enemies. If your team claims all of the Settlements on a map, you will win the game under standard victory conditions.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 7,
@@ -242,7 +257,10 @@
     "unidades_id": 139,
     "panteao_id": 6,
     "icon": "aomr_town_center_japanese_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Center of a town.",
+    "descricao_avancada": "Trains Villagers, advances through the Ages, is a drop site for all resources, and supports population. Town Centers are built over Settlements.",
+    "historia": "The Town Center trains Villagers, provides population room, and acts as the hub of your town. You can only build Town Centers on Settlements, and you can only build additional Town Centers starting in the Classical Age. There are enough Settlements on most maps for every player to have three, but claiming more Settlements will leave less for your enemies. If your team claims all of the Settlements on a map, you will win the game under standard victory conditions.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 9,
@@ -283,7 +301,10 @@
     ],
     "panteao_id": 7,
     "icon": "aomr_town_center_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Center of a town.",
+    "descricao_avancada": "Trains Villagers, advances through the Ages, is a drop site for all resources, and supports population. Town Centers are built over Settlements.",
+    "historia": "The Town Center trains Villagers, provides population room, and acts as the hub of your town. You can only build Town Centers on Settlements, and you can only build additional Town Centers starting in the Classical Age. There are enough Settlements on most maps for every player to have three, but claiming more Settlements will leave less for your enemies. If your team claims all of the Settlements on a map, you will win the game under standard victory conditions.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 8,
@@ -310,7 +331,10 @@
     "tecnologias_id": "2b200f30e21180d88cbbe6e49f2601e4",
     "panteao_id": 5,
     "icon": "aomr_house_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Supports 10 population.",
+    "descricao_avancada": "Supports 10 population. After you reach the House build limit, you must construct Town Centers to support additional population.",
+    "historia": "You may build a limited number of Houses. Each House supports a fixed number of population units (villagers, soldiers, ships, mythological creatures, and trade units). Once this limit is reached, production of new units will halt.\n\nWhen agriculture made sedentary life possible, humans ceased occupying transitory camp sites near hunting grounds or natural shelters like caves, and began constructing more permanent living quarters near their farms. Sturdy housing improved the quality and longevity of life."
   },
   {
     "id": 11,
@@ -336,7 +360,10 @@
     "panteao_id": 4,
     "icon": "aomr_manor_icon",
     "armadura_anticontusao": 5,
-    "tempo_construir_segundos": 25
+    "tempo_construir_segundos": 25,
+    "descricao_resumida": "Supports 20 population.",
+    "descricao_avancada": "Supports 20 population. After you reach the Manor build limit, you must construct Town Centers to support additional population.",
+    "historia": "You may build a limited number of Manors. Each Manor supports a fixed number of population units (villagers, soldiers, ships, mythological creatures, and trade units). Once this limit is reached, production of new units will halt. Atlantean units may also garrison inside of their Manors for protection.\n\nWhen agriculture made sedentary life possible, humans ceased occupying transitory camp sites near hunting grounds or natural shelters like caves, and began constructing more permanent living quarters near their farms. Sturdy housing improved the quality and longevity of life.\n\nAt its height, Atlantis was home to tens of thousands. Atlanteans built sturdy homes of wood, stone, and plaster. These large family manors allowed several generations of Atlanteans to live together under one roof. Between campaigns, Atlantean soldiers were taken in, fed, clothed, and treated as family."
   },
   {
     "id": 14,
@@ -373,7 +400,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_storehouse_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Wood and Gold drop site.",
+    "descricao_avancada": "A drop site where Villagers deposit Wood and Gold that they have gathered.",
+    "historia": "The Greek Storehouse acts as a drop-off site for both Gold and Wood. Build a Storehouse close to Gold Mines or forests that you wish to gather. You may also research improvements at the Storehouse that improve the efficiency of Gold and Wood gatherers."
   },
   {
     "id": 15,
@@ -409,7 +439,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_granary_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Food drop site.",
+    "descricao_avancada": "A drop site where Villagers deposit Food that they have gathered.",
+    "historia": "In Age of Mythology, the Granary is a drop site for all types of food. You may research improvements at the Granary to increase Food gathering rates.\n\nAgricultural societies stored their grain surpluses in granaries so that food would be available during the winter months. Granaries could be large brick or stone silos, or buildings sheltering smaller jars or barrels of grain. Improper storage would cause grain to spoil, forcing the farmers to resume nomadic hunting and gathering to avoid starvation before the next harvest."
   },
   {
     "id": 16,
@@ -441,7 +474,10 @@
     "tecnologias_id": "29500f30e2118049b752f3de95be8821",
     "panteao_id": 2,
     "icon": "aomr_mining_camp_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gold drop site.",
+    "descricao_avancada": "A drop site where Villagers deposit Gold that they have gathered.",
+    "historia": "The Mining Camp is an Egyptian drop site for Laborers gathering Gold. Place it adjacent to a Gold Mine that you wish to utilize. You may research improvements at the Mining Camp to increase Gold gathering rates. You will gain more Gold if a Pharaoh or Priest empowers the Mining Camp.\n\nThe deserts surrounding ancient Egypt were rich in minerals, especially salt, copper, and gold. To harvest these resources, the Egyptians built mines, mainly open pit mines, which required painstaking labor to operate."
   },
   {
     "id": 17,
@@ -474,7 +510,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_lumber_camp_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Wood drop site.",
+    "descricao_avancada": "A drop site where Villagers deposit Wood that they have gathered.",
+    "historia": "The Lumber Camp is an Egyptian drop site for Laborers gathering Wood. Place it adjacent to a source of Wood that you wish to utilize. You may research improvements at the Lumber Camp to increase Wood gathering rates. You will gain more Wood if a Pharaoh or Priest empowers the Lumber Camp.\n\nWood was a relatively scarce resource for the ancient Egyptians, partly because the only dependable water supply was the Nile River, and partly because few of the native tree species provided lumber that could be worked. The Egyptians often compensated by trading for the famous cedar lumber of Lebanon. Because of the rarity and expense of lumber, most construction in Egypt was of stone or mud-brick."
   },
   {
     "id": 18,
@@ -509,7 +548,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_granary_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Food drop site.",
+    "descricao_avancada": "A drop site where Villagers deposit Food that they have gathered.",
+    "historia": "In Age of Mythology, the Granary is a drop site for all types of food. You may research improvements at the Granary to increase Food gathering rates.\n\nAgricultural societies stored their grain surpluses in granaries so that food would be available during the winter months. Granaries could be large brick or stone silos, or buildings sheltering smaller jars or barrels of grain. Improper storage would cause grain to spoil, forcing the farmers to resume nomadic hunting and gathering to avoid starvation before the next harvest."
   },
   {
     "id": 19,
@@ -544,7 +586,10 @@
     ],
     "panteao_id": 4,
     "icon": "aomr_economic_guild_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Researches economic upgrades.",
+    "descricao_avancada": "Economic Guilds are used to research all Atlantean economic improvements.",
+    "historia": "The Economic Guild is the Atlantean repository for most economic advancements.\n\nHistorically, guilds were associations of similar crafts and services that united together to solve common problems and support one another. Problems with the system arose from the strict dependencies of one part of craft on another. Guilds developed rules that established roles of members and codes of behavior. Some kept members from poaching talented workers from one another; others were mandates to help fellow guild members with money or craft; still others set the prices at which members could sell their crafts or services.\n\nAtlantean guilds elected three overseers who sat on the Council, a body of government led by the Theocrat. The crafts of Atlantis were so valuable and prized that these overseers wielded significant power over Atlantean politics."
   },
   {
     "id": 20,
@@ -579,7 +624,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_silo",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Dropsite for all resources.",
+    "descricao_avancada": "A drop site where Villagers deposit Food, Wood, or Gold they have gathered.",
+    "historia": "The Silo serves as the Chinese dropsite for resources.\n\nGrain was essential for maintaining the emperor’s rule in ancient China. For a long time, farmers paid the government not with currency, but with various types of produce, with grain being the most important. To secure these resources, large silos were built across China, storing enough food to last several years or even over a decade. Many large-scale battles centered around these silos; defenders could endure prolonged sieges with their stored grain, while attackers, upon capturing a silo, often saw surrounding forces surrender for survival. These massive silos symbolized control and dominance over the region."
   },
   {
     "id": 10,
@@ -609,7 +657,10 @@
     "tecnologias_ids": [],
     "panteao_id": 7,
     "icon": "aomr_calpulli_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Dropsite for all resources.",
+    "descricao_avancada": "A drop site where Villagers deposit Food, Wood, or Gold they have gathered.",
+    "historia": "In pre-Columbian Aztec society, the calpulli translated to 'large houses', served as foundational community units within Nahua city-states, or altepetls. Each calpulli was composed of families or kin-based groups who shared land, labor, and responsibility. Together, they organized the cultivation of crops, managed food production, and oversaw the creation of goods and tribute owed to the state. Functioning as both a social and economic hub, the calpulli was the heart of everyday life, where resources such as food, wood, and precious materials were gathered, produced, and distributed for the well-being of the larger community."
   },
   {
     "id": 21,
@@ -692,7 +743,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Provides access to mythical units and technologies.",
+    "descricao_avancada": "Trains powerful myth units and provides mythological improvements granted by the gods.",
+    "historia": "At the Temple, you may train mythological units and research improvements that require the Favor of the gods to access. Greeks may pray at their Temples to gain Favor.\n\nMost early civilizations invested considerable wealth in their religious life, including the construction of temples or similar places where rites and ceremonies were conducted, religious leaders were trained, and beliefs were refined and passed on. Temples were often dedicated to one or more gods and acted as points of communication between humans and deities. Believers might visit a temple to petition the gods for help and offer prayer, tribute or sacrifices to improve the reception of pleas. Temples were often magnificent buildings that overshadowed anything else in a city."
   },
   {
     "id": 22,
@@ -750,7 +804,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Provides access to mythical units and technologies.",
+    "descricao_avancada": "Trains powerful myth units and provides mythological improvements granted by the gods.",
+    "historia": "At the Temple, you may train mythological units and research improvements that require the Favor of the gods to access. Greeks may pray at their Temples to gain Favor.\n\nMost early civilizations invested considerable wealth in their religious life, including the construction of temples or similar places where rites and ceremonies were conducted, religious leaders were trained, and beliefs were refined and passed on. Temples were often dedicated to one or more gods and acted as points of communication between humans and deities. Believers might visit a temple to petition the gods for help and offer prayer, tribute or sacrifices to improve the reception of pleas. Temples were often magnificent buildings that overshadowed anything else in a city."
   },
   {
     "id": 23,
@@ -814,7 +871,10 @@
     ],
     "panteao_id": 3,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Provides access to mythical units and technologies.",
+    "descricao_avancada": "Trains powerful myth units and provides mythological improvements granted by the gods.",
+    "historia": "At the Temple, you may train mythological units and research improvements that require the Favor of the gods to access. Greeks may pray at their Temples to gain Favor.\n\nMost early civilizations invested considerable wealth in their religious life, including the construction of temples or similar places where rites and ceremonies were conducted, religious leaders were trained, and beliefs were refined and passed on. Temples were often dedicated to one or more gods and acted as points of communication between humans and deities. Believers might visit a temple to petition the gods for help and offer prayer, tribute or sacrifices to improve the reception of pleas. Temples were often magnificent buildings that overshadowed anything else in a city."
   },
   {
     "id": 24,
@@ -877,7 +937,10 @@
     ],
     "panteao_id": 4,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Provides access to mythical units and technologies.",
+    "descricao_avancada": "Trains powerful myth units and provides mythological improvements granted by the gods.",
+    "historia": "At the Temple, you may train mythological units and research improvements that require the Favor of the gods to access. Greeks may pray at their Temples to gain Favor.\n\nMost early civilizations invested considerable wealth in their religious life, including the construction of temples or similar places where rites and ceremonies were conducted, religious leaders were trained, and beliefs were refined and passed on. Temples were often dedicated to one or more gods and acted as points of communication between humans and deities. Believers might visit a temple to petition the gods for help and offer prayer, tribute or sacrifices to improve the reception of pleas. Temples were often magnificent buildings that overshadowed anything else in a city."
   },
   {
     "id": 25,
@@ -937,7 +1000,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Provides access to mythical units and technologies.",
+    "descricao_avancada": "Trains powerful myth units and provides mythological improvements granted by the gods.",
+    "historia": "At the Temple, you may train mythological units and research improvements that require the Favor of the gods to access. Greeks may pray at their Temples to gain Favor.\n\nMost early civilizations invested considerable wealth in their religious life, including the construction of temples or similar places where rites and ceremonies were conducted, religious leaders were trained, and beliefs were refined and passed on. Temples were often dedicated to one or more gods and acted as points of communication between humans and deities. Believers might visit a temple to petition the gods for help and offer prayer, tribute or sacrifices to improve the reception of pleas. Temples were often magnificent buildings that overshadowed anything else in a city."
   },
   {
     "id": 26,
@@ -997,7 +1063,10 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Provides access to mythical units and technologies.",
+    "descricao_avancada": "Trains powerful myth units and provides mythological improvements granted by the gods.",
+    "historia": "At the Temple, you may train mythological units and research improvements that require the Favor of the gods to access. Greeks may pray at their Temples to gain Favor.\n\nMost early civilizations invested considerable wealth in their religious life, including the construction of temples or similar places where rites and ceremonies were conducted, religious leaders were trained, and beliefs were refined and passed on. Temples were often dedicated to one or more gods and acted as points of communication between humans and deities. Believers might visit a temple to petition the gods for help and offer prayer, tribute or sacrifices to improve the reception of pleas. Temples were often magnificent buildings that overshadowed anything else in a city."
   },
   {
     "id": 12,
@@ -1033,7 +1102,10 @@
     ],
     "panteao_id": 7,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Provides access to mythical units and technologies.",
+    "descricao_avancada": "Trains powerful myth units and provides mythological improvements granted by the gods.",
+    "historia": "At the Temple, you may train mythological units and research improvements that require the Favor of the gods to access. Greeks may pray at their Temples to gain Favor.\n\nMost early civilizations invested considerable wealth in their religious life, including the construction of temples or similar places where rites and ceremonies were conducted, religious leaders were trained, and beliefs were refined and passed on. Temples were often dedicated to one or more gods and acted as points of communication between humans and deities. Believers might visit a temple to petition the gods for help and offer prayer, tribute or sacrifices to improve the reception of pleas. Temples were often magnificent buildings that overshadowed anything else in a city."
   },
   {
     "id": 27,
@@ -1076,7 +1148,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Upgrades weaponry.",
+    "descricao_avancada": "Allows you to improve the weapons and armor of infantry, ranged soldiers, cavalry, and ships.",
+    "historia": "You may research improvements at the Armory that make your soldiers more effective in combat and provide them with better armor.\n\nThe armory was a specialized forge where bronze, iron, and other materials were manufactured into tools, weapons, shields, and armor. Armory craftsmen also experimented, searching for ways to improve their wares, because armies with superior equipment could have a significant advantage in battle."
   },
   {
     "id": 28,
@@ -1109,7 +1184,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Upgrades weaponry.",
+    "descricao_avancada": "Allows you to improve the weapons and armor of infantry, ranged soldiers, cavalry, and ships.",
+    "historia": "You may research improvements at the Armory that make your soldiers more effective in combat and provide them with better armor.\n\nThe armory was a specialized forge where bronze, iron, and other materials were manufactured into tools, weapons, shields, and armor. Armory craftsmen also experimented, searching for ways to improve their wares, because armies with superior equipment could have a significant advantage in battle."
   },
   {
     "id": 29,
@@ -1136,7 +1214,10 @@
     "tecnologias_id": "2a800f30e21180d48ffbe93f81fd8799",
     "panteao_id": 3,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Upgrades weaponry.",
+    "descricao_avancada": "Allows you to improve the weapons and armor of infantry, ranged soldiers, cavalry, and ships.",
+    "historia": "You may research improvements at the Armory that make your soldiers more effective in combat and provide them with better armor.\n\nThe armory was a specialized forge where bronze, iron, and other materials were manufactured into tools, weapons, shields, and armor. Armory craftsmen also experimented, searching for ways to improve their wares, because armies with superior equipment could have a significant advantage in battle."
   },
   {
     "id": 31,
@@ -1167,7 +1248,10 @@
     ],
     "panteao_id": 4,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Upgrades weaponry.",
+    "descricao_avancada": "Allows you to improve the weapons and armor of infantry, ranged soldiers, cavalry, and ships.",
+    "historia": "You may research improvements at the Armory that make your soldiers more effective in combat and provide them with better armor.\n\nThe armory was a specialized forge where bronze, iron, and other materials were manufactured into tools, weapons, shields, and armor. Armory craftsmen also experimented, searching for ways to improve their wares, because armies with superior equipment could have a significant advantage in battle."
   },
   {
     "id": 32,
@@ -1198,7 +1282,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Upgrades weaponry.",
+    "descricao_avancada": "Allows you to improve the weapons and armor of infantry, ranged soldiers, cavalry, and ships.",
+    "historia": "You may research improvements at the Armory that make your soldiers more effective in combat and provide them with better armor.\n\nThe armory was a specialized forge where bronze, iron, and other materials were manufactured into tools, weapons, shields, and armor. Armory craftsmen also experimented, searching for ways to improve their wares, because armies with superior equipment could have a significant advantage in battle."
   },
   {
     "id": 33,
@@ -1228,7 +1315,10 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Upgrades weaponry.",
+    "descricao_avancada": "Allows you to improve the weapons and armor of infantry, ranged soldiers, cavalry, and ships.",
+    "historia": "You may research improvements at the Armory that make your soldiers more effective in combat and provide them with better armor.\n\nThe armory was a specialized forge where bronze, iron, and other materials were manufactured into tools, weapons, shields, and armor. Armory craftsmen also experimented, searching for ways to improve their wares, because armies with superior equipment could have a significant advantage in battle."
   },
   {
     "id": 34,
@@ -1261,7 +1351,10 @@
     "panteao_id": 3,
     "icon": "aomr_dwarven_armory_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Upgrades weaponry.",
+    "descricao_avancada": "Thor's special Armory improves the weapons and armor of infantry, cavalry, and ships. The Dwarven Armory also spawns a free Dwarf for each upgrade that it researches, and researches faster in later ages.",
+    "historia": "You may research improvements at the Armory that make your soldiers more effective in combat and provide them with better armor.\n\nThe armory was a specialized forge where bronze, iron, and other materials were manufactured into tools, weapons, shields, and armor. Armory craftsmen also experimented, searching for ways to improve their wares, because armies with superior equipment could have a significant advantage in battle.\n\nThor's Dwarven Armory is special, for it enables every improvement in the Archaic Age, although more powerful upgrades still require earlier ones as prerequisites, and the costs may be prohibitive. Thor also has access to additional unique improvements beyond the final tier of standard upgrades.\n\nThe dwarves of Norse mythology were master smiths, and fashioned virtually all of the legendary weapons, including Odin's spear, Gungnir, and Thor's hammer, Mjollnir."
   },
   {
     "id": 35,
@@ -1303,7 +1396,10 @@
     "panteao_id": 1,
     "icon": "aomr_military_academy_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains infantry units.",
+    "descricao_avancada": "Greek Military Academies train and upgrade infantry and counter-infantry units.",
+    "historia": "The Greek civilization uses the Military Academy to produce and upgrade infantry units.\n\nFor most of their classical age, Greek armies were purely infantry. A town's adult male population served in the ranks, fighting with long spear and sword, carrying the round aspis shield, and wearing the crested helmet, a breastplate, and greaves (on the shins). Although hoplite battle was generally simple, and usually brief because of its violence, it required firm discipline and some training. Moving and fighting in dense formations with heavy equipment and weapons required practice. Training and drilling took place regularly at an academy or similar institution."
   },
   {
     "id": 36,
@@ -1346,7 +1442,10 @@
     "panteao_id": 1,
     "icon": "aomr_archery_range_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains ranged soldiers.",
+    "descricao_avancada": "Greek Archery Ranges train and upgrade ranged soldier and counter-ranged soldier units.",
+    "historia": "The Greek civilization uses the Archery Range to produce and upgrade soldiers trained to fight with missile weapons.\n\nBy the time of Philip and Alexander of Macedon, pure Hoplite infantry armies were at a major disadvantage when fighting against mixed armies of infantry, archers, and cavalry. Thereafter, most effective ancient armies combined all arms. Soldiers using missile weapons like the bow and javelin required substantial skill and training to be effective, however."
   },
   {
     "id": 37,
@@ -1388,7 +1487,10 @@
     "panteao_id": 1,
     "icon": "aomr_stable_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains cavalry units.",
+    "descricao_avancada": "Greek Stables train and upgrade cavalry and counter-cavalry units.",
+    "historia": "The Greek civilization uses the Stable to produce and upgrade cavalry units.\n\nMounted warriors brought new dimensions to war and combat. They could move quickly as raiders and on the battlefield. In pursuit they could ride down retreating enemies. Men charging on large animals were terrifying to men on foot. The rise in importance of mounted warriors created a demand for large numbers of horses, which were bred and maintained at the Stable. Mounted warriors trained nearby, learning skills necessary to fight from horseback."
   },
   {
     "id": 38,
@@ -1443,7 +1545,10 @@
     "panteao_id": 2,
     "icon": "aomr_barracks_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains foot soldiers.",
+    "descricao_avancada": "Egyptian Barracks train Spearmen, Axemen and Slingers.",
+    "historia": "Click the Barracks to train a new Egyptian soldier or to research improvements in the quality of soldier available. The capabilities of the soldier that can be produced are also determined partly by improvements in armor and weapons, which can be researched at the Armory.\n\nAll civilizations have had the need to train soldiers for at least defense, if not aggression, against their neighbors. For many this training took place at a barracks, which served as both a living quarters and a training ground. New recruits were assigned to the barracks and after a training period they were ready for service. At the barracks they learned the mechanics of their weapons, the drill of battlefield movements, and the discipline required to obey orders in combat."
   },
   {
     "id": 39,
@@ -1493,7 +1598,10 @@
     "panteao_id": 3,
     "icon": "aomr_longhouse_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains infantry.",
+    "descricao_avancada": "Norse Longhouses train and upgrade basic infantry units.",
+    "historia": "The harsh Scandinavian climate forced the Norse indoor much of the year. Winter combat training and weapons practice accordingly took place in large communal buildings called longhouses. These filled several roles such as meeting places, feasting halls, and craft workshops.\n\nNorse buildings were largely constructed of wood, stone and turf. Fierce winters required the buildings to have thick walls that would trap heat, and steeply sloped roofs that would more easily shed heavy winter snows. An 11th century Norse farm was discovered, excavated, and reconstructed in Newfoundland at L'Anse aux Meadows. The farm consists of three halls where up to 160 people ate, worked, slept, and socialized. Other buildings include two workshops and shelters for livestock."
   },
   {
     "id": 40,
@@ -1542,7 +1650,10 @@
     "panteao_id": 3,
     "icon": "aomr_great_hall_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains heroes and cavalry.",
+    "descricao_avancada": "Norse Great Halls train and upgrade heroes and cavalry.",
+    "historia": "The most powerful chieftains and kings constructed large halls to house their families and belongings. As a further show of status, they held feasts and even occasionally religious festivals or rites in these halls, inviting their most loyal followers and allies. Gift-giving was a crucial component of Norse social relationships, and guests at these events could expect to be rewarded handsomely for their attendance and continued loyalty."
   },
   {
     "id": 41,
@@ -1590,7 +1701,10 @@
     "panteao_id": 4,
     "icon": "aomr_military_barracks_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains mainline units.",
+    "descricao_avancada": "Atlantean Military Barracks train Murmillones, Contarii, and Arci.",
+    "historia": "Click the unit icons in the Military Barracks to train a new Atlantean soldier or to research improvements in the quality of soldier available. The capabilities of the soldier that can be produced are also determined partly by improvements in armor and weapons, which can be researched at the Armory.\n\nAll civilizations have had the need to train soldiers for at least defense, if not aggression, against their neighbors. For many this training took place at a barracks, which served as both a living quarters and a training ground. New recruits were assigned to the barracks and after a training period they were ready for service. At the barracks they learned the mechanics of their weapons, the drill of battlefield movements, and the discipline required to obey orders in combat."
   },
   {
     "id": 42,
@@ -1635,7 +1749,10 @@
     "panteao_id": 4,
     "icon": "aomr_counter-barracks_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains counter units.",
+    "descricao_avancada": "Atlantean Counter Barracks train counter-cavalry, counter-ranged soldier, and counter-infantry units.",
+    "historia": "Click on unit icons in the Counter Barracks to train a new Atlantean soldier or to research improvements in the quality of soldier available. The soldiers available here are very strong against one type of unit only. The capabilities of the soldier that can be produced are also determined partly by improvements in armor and weapons, which can be researched at the Armory.\n\nAll civilizations have had the need to train soldiers for at least defense, if not aggression, against their neighbors. For many this training took place at a barracks, which served as both a living quarters and a training ground. New recruits were assigned to the barracks and after a training period they were ready for service. At the barracks they learned the mechanics of their weapons, the drill of battlefield movements, and the discipline required to obey orders in combat."
   },
   {
     "id": 43,
@@ -1683,7 +1800,10 @@
     "panteao_id": 5,
     "icon": "aomr_military_academy_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains infantry units.",
+    "descricao_avancada": "Greek Military Academies train and upgrade infantry and counter-infantry units.",
+    "historia": "The Greek civilization uses the Military Academy to produce and upgrade infantry units.\n\nFor most of their classical age, Greek armies were purely infantry. A town's adult male population served in the ranks, fighting with long spear and sword, carrying the round aspis shield, and wearing the crested helmet, a breastplate, and greaves (on the shins). Although hoplite battle was generally simple, and usually brief because of its violence, it required firm discipline and some training. Moving and fighting in dense formations with heavy equipment and weapons required practice. Training and drilling took place regularly at an academy or similar institution."
   },
   {
     "id": 44,
@@ -1730,7 +1850,10 @@
     "panteao_id": 5,
     "icon": "aomr_imperial_academy",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Trains Chinese heroes.",
+    "descricao_avancada": "Building of higher learning that produces heroes and researches unique Chinese upgrades.",
+    "historia": "The Taixue, or Imperial Academy, was China’s earliest official institution of higher learning, with origins reportedly dating back over 2,000 years to the Zhou dynasty. At the ancient Taixue, students were expected to study the philosophies of ancient sages and master the 'Six Arts,' which included calligraphy, mathematics, archery, and chariotry.\n\nTaixues persisted in China for over two millennia, producing not only artists, philosophers, and bureaucrats, but also many renowned strategists.\n\n“The emperor enters the Imperial Academy to seek guidance from the masters and learn the way.”"
   },
   {
     "id": 45,
@@ -1771,7 +1894,10 @@
     "panteao_id": 5,
     "icon": "aomr_machine_workshop",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Trains archers and siege weapons. Upgradeable with a Tower or Training Yard.",
+    "descricao_avancada": "Trains advanced Chinese ranged soldiers and siege weapons. Can be upgraded with a Tower for defense or a Training Yard to speed production.",
+    "historia": "The Chinese military heavily relied on siege weaponry and ranged soldiers due to the prevalence of fortified towns and cities across China. Weapons like the siege crossbow, a bed-sized crossbow operated by multiple soldiers, traction trebuchets, and the Egu Che, a hook cart designed to damage walls, were employed to great effect by Chinese armies."
   },
   {
     "id": 74,
@@ -1803,7 +1929,10 @@
     "panteao_id": 7,
     "icon": "aomr_war_hut_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains infantry units.",
+    "descricao_avancada": "Aztec War Huts train and upgrade infantry and counter-infantry units.",
+    "historia": "In Aztec society, membership in the calpulli established each individual's religious and secular schooling, as well as how they would be trained in warfare.\n\nThe War Hut draws inspiration from the historical telpochcalli (“houses of youth”), which played an important role in preparing its students for military life. These schools acted as both training grounds and living spaces, where young men built strength through tough physical exercises and learned how to use different weapons. Their instruction came from veteran warriors, who passed on practical combat skills and discipline gained from real battlefield experience."
   },
   {
     "id": 75,
@@ -1836,7 +1965,10 @@
     "panteao_id": 7,
     "icon": "aomr_noble_hut_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains elite units.",
+    "descricao_avancada": "Aztec Noble Huts train and upgrade powerful elite units.",
+    "historia": "In Aztec society, membership in the calpulli established each individual's religious and secular schooling, as well as how they would be trained in warfare.\n\nThe Nobles' Hut draws inspiration from the historical calmecac, a special school attended by male children of the upper class. In the Noble’s Hut young warriors are groomed for leadership and trained in the elite ways of religion, governance and warfare."
   },
   {
     "id": 46,
@@ -1869,7 +2001,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produces naval units.",
+    "descricao_avancada": "Constructs ships and naval myth units, and serves as a drop site for fish and other food. Must be built near water.",
+    "historia": "The Dock constructs Fishing Ships and serves as a drop site for all food. Additionally, it builds all types of warships and naval myth units. You can also upgrade your ships and research improvements for them at the Dock.\n\nLong before written history began, humans were building boats and venturing out to sea to trade and fish. Boat building became an important skill for civilizations that had access to the sea for commerce and fishing. Boat building was usually done at waterside workshops in sheltered harbors. Fishing boats would also unload their catch there."
   },
   {
     "id": 47,
@@ -1902,7 +2037,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produces naval units.",
+    "descricao_avancada": "Constructs ships and naval myth units, and serves as a drop site for fish and other food. Must be built near water.",
+    "historia": "The Dock constructs Fishing Ships and serves as a drop site for all food. Additionally, it builds all types of warships and naval myth units. You can also upgrade your ships and research improvements for them at the Dock.\n\nLong before written history began, humans were building boats and venturing out to sea to trade and fish. Boat building became an important skill for civilizations that had access to the sea for commerce and fishing. Boat building was usually done at waterside workshops in sheltered harbors. Fishing boats would also unload their catch there."
   },
   {
     "id": 48,
@@ -1935,7 +2073,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produces naval units.",
+    "descricao_avancada": "Constructs ships and naval myth units, and serves as a drop site for fish and other food. Must be built near water.",
+    "historia": "The Dock constructs Fishing Ships and serves as a drop site for all food. Additionally, it builds all types of warships and naval myth units. You can also upgrade your ships and research improvements for them at the Dock.\n\nLong before written history began, humans were building boats and venturing out to sea to trade and fish. Boat building became an important skill for civilizations that had access to the sea for commerce and fishing. Boat building was usually done at waterside workshops in sheltered harbors. Fishing boats would also unload their catch there."
   },
   {
     "id": 49,
@@ -1968,7 +2109,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produces naval units.",
+    "descricao_avancada": "Constructs ships and naval myth units, and serves as a drop site for fish and other food. Must be built near water.",
+    "historia": "The Dock constructs Fishing Ships and serves as a drop site for all food. Additionally, it builds all types of warships and naval myth units. You can also upgrade your ships and research improvements for them at the Dock.\n\nLong before written history began, humans were building boats and venturing out to sea to trade and fish. Boat building became an important skill for civilizations that had access to the sea for commerce and fishing. Boat building was usually done at waterside workshops in sheltered harbors. Fishing boats would also unload their catch there."
   },
   {
     "id": 50,
@@ -2001,7 +2145,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produces naval units.",
+    "descricao_avancada": "Constructs ships and naval myth units, and serves as a drop site for fish and other food. Must be built near water.",
+    "historia": "The Dock constructs Fishing Ships and serves as a drop site for all food. Additionally, it builds all types of warships and naval myth units. You can also upgrade your ships and research improvements for them at the Dock.\n\nLong before written history began, humans were building boats and venturing out to sea to trade and fish. Boat building became an important skill for civilizations that had access to the sea for commerce and fishing. Boat building was usually done at waterside workshops in sheltered harbors. Fishing boats would also unload their catch there."
   },
   {
     "id": 78,
@@ -2034,7 +2181,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produces naval units.",
+    "descricao_avancada": "Constructs ships and naval myth units, and serves as a drop site for fish and other food. Must be built near water.",
+    "historia": "The Dock constructs Fishing Ships and serves as a drop site for all food. Additionally, it builds all types of warships and naval myth units. You can also upgrade your ships and research improvements for them at the Dock.\n\nLong before written history began, humans were building boats and venturing out to sea to trade and fish. Boat building became an important skill for civilizations that had access to the sea for commerce and fishing. Boat building was usually done at waterside workshops in sheltered harbors. Fishing boats would also unload their catch there."
   },
   {
     "id": 79,
@@ -2067,7 +2217,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produces naval units.",
+    "descricao_avancada": "Constructs ships and naval myth units, and serves as a drop site for fish and other food. Must be built near water.",
+    "historia": "The Dock constructs Fishing Ships and serves as a drop site for all food. Additionally, it builds all types of warships and naval myth units. You can also upgrade your ships and research improvements for them at the Dock.\n\nLong before written history began, humans were building boats and venturing out to sea to trade and fish. Boat building became an important skill for civilizations that had access to the sea for commerce and fishing. Boat building was usually done at waterside workshops in sheltered harbors. Fishing boats would also unload their catch there."
   },
   {
     "id": 51,
@@ -2098,7 +2251,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Exchanges resources and  trade units.",
+    "descricao_avancada": "You can train Caravans and trade resources at your Market.",
+    "historia": "At the Market, you may sell Food and Wood for Gold or buy Food and Wood with Gold. You may also research trade improvements and create Caravans to trade with Town Centers.\n\nIn each sizable town, residents created a trading center, or market, where food items and craft goods were exchanged. In larger towns, markets became centers of trade with other towns as well. Markets such as the Greek agora also became places for the exchange of ideas, entertainment (bards, acrobats, musicians), and the spreading of news."
   },
   {
     "id": 52,
@@ -2125,7 +2281,10 @@
     "tecnologias_id": "2a800f30e211802bad29c6756f35589e",
     "panteao_id": 2,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Exchanges resources and  trade units.",
+    "descricao_avancada": "You can train Caravans and trade resources at your Market.",
+    "historia": "At the Market, you may sell Food and Wood for Gold or buy Food and Wood with Gold. You may also research trade improvements and create Caravans to trade with Town Centers.\n\nIn each sizable town, residents created a trading center, or market, where food items and craft goods were exchanged. In larger towns, markets became centers of trade with other towns as well. Markets such as the Greek agora also became places for the exchange of ideas, entertainment (bards, acrobats, musicians), and the spreading of news."
   },
   {
     "id": 53,
@@ -2150,7 +2309,10 @@
     "era_id": 2,
     "panteao_id": 3,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Exchanges resources and  trade units.",
+    "descricao_avancada": "You can train Caravans and trade resources at your Market.",
+    "historia": "At the Market, you may sell Food and Wood for Gold or buy Food and Wood with Gold. You may also research trade improvements and create Caravans to trade with Town Centers.\n\nIn each sizable town, residents created a trading center, or market, where food items and craft goods were exchanged. In larger towns, markets became centers of trade with other towns as well. Markets such as the Greek agora also became places for the exchange of ideas, entertainment (bards, acrobats, musicians), and the spreading of news."
   },
   {
     "id": 54,
@@ -2175,7 +2337,10 @@
     "era_id": 2,
     "panteao_id": 4,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Exchanges resources and  trade units.",
+    "descricao_avancada": "You can train Caravans and trade resources at your Market.",
+    "historia": "At the Market, you may sell Food and Wood for Gold or buy Food and Wood with Gold. You may also research trade improvements and create Caravans to trade with Town Centers.\n\nIn each sizable town, residents created a trading center, or market, where food items and craft goods were exchanged. In larger towns, markets became centers of trade with other towns as well. Markets such as the Greek agora also became places for the exchange of ideas, entertainment (bards, acrobats, musicians), and the spreading of news."
   },
   {
     "id": 55,
@@ -2202,7 +2367,10 @@
     "tecnologias_id": "2b200f30e2118032a6c1e0ccba610132",
     "panteao_id": 5,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Exchanges resources and  trade units.",
+    "descricao_avancada": "You can train Caravans and trade resources at your Market.",
+    "historia": "At the Market, you may sell Food and Wood for Gold or buy Food and Wood with Gold. You may also research trade improvements and create Caravans to trade with Town Centers.\n\nIn each sizable town, residents created a trading center, or market, where food items and craft goods were exchanged. In larger towns, markets became centers of trade with other towns as well. Markets such as the Greek agora also became places for the exchange of ideas, entertainment (bards, acrobats, musicians), and the spreading of news."
   },
   {
     "id": 56,
@@ -2227,7 +2395,10 @@
     "era_id": 2,
     "panteao_id": 6,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Exchanges resources and  trade units.",
+    "descricao_avancada": "You can train Caravans and trade resources at your Market.",
+    "historia": "At the Market, you may sell Food and Wood for Gold or buy Food and Wood with Gold. You may also research trade improvements and create Caravans to trade with Town Centers.\n\nIn each sizable town, residents created a trading center, or market, where food items and craft goods were exchanged. In larger towns, markets became centers of trade with other towns as well. Markets such as the Greek agora also became places for the exchange of ideas, entertainment (bards, acrobats, musicians), and the spreading of news."
   },
   {
     "id": 80,
@@ -2252,7 +2423,10 @@
     "era_id": 2,
     "panteao_id": 7,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Exchanges resources and  trade units.",
+    "descricao_avancada": "You can train Caravans and trade resources at your Market.",
+    "historia": "At the Market, you may sell Food and Wood for Gold or buy Food and Wood with Gold. You may also research trade improvements and create Caravans to trade with Town Centers.\n\nIn each sizable town, residents created a trading center, or market, where food items and craft goods were exchanged. In larger towns, markets became centers of trade with other towns as well. Markets such as the Greek agora also became places for the exchange of ideas, entertainment (bards, acrobats, musicians), and the spreading of news."
   },
   {
     "id": 57,
@@ -2305,7 +2479,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortification. Trains siege, heroes and powerful unique units.",
+    "descricao_avancada": "Greek Fortresses fire arrows and garrison units. They also train siege weapons, heroes, and powerful unique units.",
+    "historia": "The Greek Fortress is a strong defensive building in which certain units can garrison. Garrisoned units add to the firepower of the Fortress. You may also train unique units, heroes, and siege weapons, as well as research military improvements at the Fortress.\n\nThe Mycenaean civilization of Bronze Age Greece was a collection of city-states, each centered on a hilltop fortress. The competition between the city-states for farm and orchard lands combined with the threat of barbarian raids from the north made strong defenses crucial for survival. The typical fortress used cliffs, stone walls, strong gates, and winding, exposed approaches to create a powerful defensive position. In addition, a fortress functioned as a palace, armory, and administrative center in many cities."
   },
   {
     "id": 58,
@@ -2362,7 +2539,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortification. Trains and upgrades mounted units.",
+    "descricao_avancada": "Egyptian Migdol Strongholds fire arrows and garrison units. They also train and upgrade powerful mounted units.",
+    "historia": "The Egyptian Migdol Stronghold is an exceptional defensive building with a strong attack. You may build and upgrade a variety of military units at the Migdol Stronghold, including Chariot Archers, Camel Riders, and War Elephants.\n\nAlthough the ancient Egyptians were largely isolated by expansive deserts, they were still open to attack from the Middle East, the sea, and up the Nile Valley from the south. Where they were vulnerable they built large fortresses. The name Migdol comes from a fortress with attached towers found in northern Egypt near a town thought to have been named Migdol. Other fortresses incorporating similar towers are sometimes characterized as being of the Migdol style."
   },
   {
     "id": 59,
@@ -2411,7 +2591,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Military building. Trains elite units and siege units.",
+    "descricao_avancada": "Norse Hill Forts fire arrows and garrison units. They also train elite units and siege weapons.",
+    "historia": "The local elites of Norse societies built strongholds to serve as bases of operations. These were strong defensible structures where they could store food and treasure. Elites surrounded themselves with skilled warriors, whom they supported with wealth and land.\n\nThe earliest castles found in northern Europe, and especially Britain, were called motte-and-bailey castles. The motte was a hill, sometimes man-made, and the bailey was a courtyard surrounded by a palisade wall. A wooden tower defended the motte, and eventually evolved into the keep - the central building in medieval castles."
   },
   {
     "id": 60,
@@ -2459,7 +2642,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortification. Trains elite units and siege weapons.",
+    "descricao_avancada": "Atlantean Palaces fire arrows and garrison units. They also train and upgrade elite units and siege weapons.",
+    "historia": "The Atlantean Palace is a strong defensive building in which certain units can garrison. Garrisoned units add to the firepower of the Palace. You may also train unique units and siege weapons, as well as research military improvements at the Palace.\n\nAmong the many wonders of Atlantis were its palaces. Originally fortresses, these tall, stone structures defended Atlantean temples and cities. Nine of them sat atop cliffs overlooking the harbors of Atlantis, but no rulers lived in them - they served as gathering places for Atlantean citizens, military training grounds, and safe places for all Atlanteans to shelter during storms and war."
   },
   {
     "id": 61,
@@ -2508,7 +2694,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortification. Trains Chinese elite cavalry.",
+    "descricao_avancada": "Chinese Baoleis fire arrows and garrison units. They also train Chinese elite cavalry with powerful abilities.",
+    "historia": "A Baolei is a name for an imposing fortress of ancient China. These bastions served various purposes: they were used for observing the surrounding area, acted as central hubs for city defenses, and housed soldiers in barracks. As iconic structures, Baoleis were relied upon as centers of power and protection for large swathes of territory."
   },
   {
     "id": 77,
@@ -2556,7 +2745,10 @@
     ],
     "panteao_id": 7,
     "icon": "aomr_great_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fortification. Trains elite units.",
+    "descricao_avancada": "Aztec Great Temples fire arrows and garrison units. They also train and upgrade elite units.",
+    "historia": "Rising like a sacred mountain from the heart of the city, the Great Temple is the divine nexus where gods and mortals meet. Crafted by the hands of master builders and consecrated by ancient priests, this towering pyramid is both a place of worship and a fortress of spiritual power. Its steps echo with the chants of ceremonies honoring the sun, rain, and war gods. It invokes the blessings and protection of the gods, promising victory.\n\nWithin its shadow, warriors find courage, and priests channel the divine will to sway the fate of kingdoms. The Great Temple's walls are adorned with intricate carvings telling tales of creation, sacrifice, and cosmic balance, reminding all who enter of the eternal dance between light and darkness.\n\nIt is said that the Great Temple holds the heartbeat of the Aztec people. A sacred beacon that, while standing tall and unyielding, binds the mortal world with the gods’ eternal watch."
   },
   {
     "id": 62,
@@ -2593,7 +2785,10 @@
     "panteao_id": 2,
     "icon": "aomr_siege_works_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Builds and upgrades siege weapons.",
+    "descricao_avancada": "Egyptian Siege Works construct and upgrade powerful siege weapons.",
+    "historia": "By 700 BCE, Egyptian siege tactics had been heavily influenced by advancements made in the Middle East. Armies attacking a fortress might be equipped with raised platforms so archers could fire into defensive ramparts, and sappers could be protected by shelters. Covered or simple ladders could be used to scale walls. By 400 BCE Mediterranean powers were also incorporating catapults into their armies.\n\n\"Then they fought against Tetehen, great in might. They found it filled with soldiers, with every valiant man of the Northland. Then the battering-ram was employed against it, its wall was overthrown, and a great slaughter was made among them of unknown number; also the son of the chief of Me, Tefnakhte.\" -- The Piankhi stela"
   },
   {
     "id": 63,
@@ -2634,7 +2829,10 @@
     "panteao_id": 6,
     "icon": "aomr_dojo_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains elite Japanese warriors.",
+    "descricao_avancada": "Japanese Dojos train and upgrade elite Japanese warriors.",
+    "historia": "The Japanese dojo is a space of spiritual reflection. Whether used for military training or meditation, it is regarded in Japanese culture as a place to “polish the soul.” In modern-day Japan, dojos are most commonly associated with martial arts and serve as spaces to practice disciplines such as judo and aikido.\n\nDojos are traditionally linked to the kami Takemikazuchi, who is revered as the patron kami of martial arts. Many dojos – especially aikido dojos – feature small shrines dedicated to Takemikazuchi, where students and masters can offer worship."
   },
   {
     "id": 64,
@@ -2673,7 +2871,9 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_shrine_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_avancada": "A small place of worship.",
+    "historia": "Small shrines, not as formal or elaborate as large temples, were found in many places in the ancient world. In homes, alcoves in walls held small statues of gods dedicated to things like prosperity, ancestry, or fertility. Roadsides were popular places for shrines to gods governing travel and commerce."
   },
   {
     "id": 65,
@@ -2715,7 +2915,10 @@
     "panteao_id": 6,
     "icon": "aomr_guardhouse_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains foot soldiers.",
+    "descricao_avancada": "Japanese Guardhouses train and upgrade infantry units and ranged soldiers.",
+    "historia": "Guardhouses were placed outside castles to monitor anyone entering or leaving the grounds. The guardhouse was not a space for highly trained elite samurai to hang about; rather, it was typically manned by non-elite foot soldiers.\n\nOnly three guardhouses from the Edo period remain today. One of them, Doshin Bansho, is located outside the castle of the Tokugawa Shogunate, right next to the Ōte-mon Gate, which was controlled by the soldiers that were stationed in the guardhouse."
   },
   {
     "id": 66,
@@ -2754,7 +2957,10 @@
     "panteao_id": 6,
     "icon": "aomr_stable_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Military building. Trains cavalry units.",
+    "descricao_avancada": "Greek Stables train and upgrade cavalry and counter-cavalry units.",
+    "historia": "The Greek civilization uses the Stable to produce and upgrade cavalry units.\n\nMounted warriors brought new dimensions to war and combat. They could move quickly as raiders and on the battlefield. In pursuit they could ride down retreating enemies. Men charging on large animals were terrifying to men on foot. The rise in importance of mounted warriors created a demand for large numbers of horses, which were bred and maintained at the Stable. Mounted warriors trained nearby, learning skills necessary to fight from horseback."
   },
   {
     "id": 67,
@@ -2790,7 +2996,10 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_watermill_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Food and Wood drop site.",
+    "descricao_avancada": "A drop site where Commoners deposit Food and Wood that they have gathered.",
+    "historia": "The watermill first appeared in Japan in 610 CE. Watermills have long held economic significance in Japan, playing an integral role in industries such as rice and grain milling, as well as papermaking. Water wheels became particularly important during the Edo period. One especially famous example from this time is the Asakura water wheels, which have been operating for over 230 years and still provide water to the surrounding rice fields."
   },
   {
     "id": 68,
@@ -2836,7 +3045,10 @@
     "unidades_id": 146,
     "panteao_id": 6,
     "icon": "aomr_castle_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fortification. Trains siege engines and heroes.",
+    "descricao_avancada": "Japanese Castles fire arrows and garrison units. They also train siege engines and heroes.",
+    "historia": "Castles in Japan were traditionally built for daimyōs, who were feudal lords and part of the warrior class in feudal Japan. Castles were first built in the latter half of the 7th century, and started as rather rudimentary wooden fortresses; however, as the daimyō class gained power and absorbed weaker rivals, the fortifications became more complex, eventually incorporating stone. Then, these fortresses began to incorporate more ‘castle-like’ elements, such as gatehouses, towers, and keeps.\n\nCastles were commonly built in the mountains, relying on the natural defenses provided by the landscape. If there were no suitable mountains available in the region, artificial mounds would be created to build the castle on top of; this explains why many surviving Japanese castles have steep stone walls.\n\nOne of the most famous castles in Japan is Himeji Castle, also known as the White Heron Castle, which dates back to the 14th century."
   },
   {
     "id": 69,
@@ -2865,7 +3077,9 @@
       "29500f30e211803c87cedcb432ce6273"
     ],
     "icon": "aomr_wooden_wall_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Defensive barrier.",
+    "descricao_avancada": "Protects towns. Shift-click to place wall sections, and then click to place the wall."
   },
   {
     "id": 70,
@@ -2908,7 +3122,10 @@
       "2b200f30e21180959b79cf558a439244"
     ],
     "icon": "aomr_sentry_tower_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Defensive fortification.",
+    "descricao_avancada": "Provides line of sight around your town and lets units garrison inside. Upgrade them to fire upon enemies.",
+    "historia": "Towers start out as Sentry Towers. They have a significant line of sight, but cannot fire upon enemies. The Watch Tower improvement gives Towers gain the ability to fire arrows. The Guard Tower improvement further increases the range and strength of Tower attacks. The final Tower improvement, Ballista Tower, is available only to the Egyptians.\n\nTowers initially cannot attack units directly beneath them, but researching Boiling Oil will permit them to do so. Ranged attacks have difficulty hitting fast-moving targets, such as cavalry. Research Crenellations to improve the chance to hit such units."
   },
   {
     "id": 71,
@@ -2932,7 +3149,10 @@
     "tempo_construir_segundos": 5400,
     "era_id": 4,
     "icon": "aomr_wonder_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "id": 72,
@@ -2960,7 +3180,9 @@
     "armadura_antiperfurante": 40,
     "armadura_anticontusao": 99,
     "madeira": 40,
-    "tempo_construir_segundos": 15
+    "tempo_construir_segundos": 15,
+    "descricao_resumida": "All-purpose mobile drop site.",
+    "descricao_avancada": "Norse mobile drop site for Food, Gold, and Wood."
   },
   {
     "tipo": [
@@ -2985,7 +3207,10 @@
     "nome": "Wonder (Zeus)",
     "ingles": "Wonder (Zeus)",
     "panteao": "Greek :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3010,7 +3235,10 @@
     "nome": "Wonder (Poseidon)",
     "ingles": "Wonder (Poseidon)",
     "panteao": "Greek :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3035,7 +3263,10 @@
     "nome": "Wonder (Hades)",
     "ingles": "Wonder (Hades)",
     "panteao": "Greek :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3060,7 +3291,10 @@
     "nome": "Wonder (Demeter)",
     "ingles": "Wonder (Demeter)",
     "panteao": "Greek :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3085,7 +3319,10 @@
     "nome": "Wonder (Isis)",
     "ingles": "Wonder (Isis)",
     "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
-    "panteao_id": 2
+    "panteao_id": 2,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3110,7 +3347,10 @@
     "nome": "Wonder (Set)",
     "ingles": "Wonder (Set)",
     "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
-    "panteao_id": 2
+    "panteao_id": 2,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3135,7 +3375,10 @@
     "nome": "Wonder (Thor)",
     "ingles": "Wonder (Thor)",
     "panteao": "Nordic :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3160,7 +3403,10 @@
     "nome": "Wonder (Odin)",
     "ingles": "Wonder (Odin)",
     "panteao": "Nordic :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3185,7 +3431,10 @@
     "nome": "Wonder (Loki)",
     "ingles": "Wonder (Loki)",
     "panteao": "Nordic :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3210,7 +3459,10 @@
     "nome": "Wonder (Gaia)",
     "ingles": "Wonder (Gaia)",
     "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
-    "panteao_id": 4
+    "panteao_id": 4,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3235,7 +3487,10 @@
     "nome": "Wonder (Fu Xi)",
     "ingles": "Wonder (Fu Xi)",
     "panteao": "Chinese :aomr_pantheon_chinese_icon:",
-    "panteao_id": 5
+    "panteao_id": 5,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3260,7 +3515,10 @@
     "nome": "Wonder (Nu Wa)",
     "ingles": "Wonder (Nu Wa)",
     "panteao": "Chinese :aomr_pantheon_chinese_icon:",
-    "panteao_id": 5
+    "panteao_id": 5,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3285,7 +3543,10 @@
     "nome": "Wonder (Shennong)",
     "ingles": "Wonder (Shennong)",
     "panteao": "Chinese :aomr_pantheon_chinese_icon:",
-    "panteao_id": 5
+    "panteao_id": 5,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3310,7 +3571,10 @@
     "nome": "Wonder (Amaterasu)",
     "ingles": "Wonder (Amaterasu)",
     "panteao": "Japanese :aomr_pantheon_japanese_icon:",
-    "panteao_id": 6
+    "panteao_id": 6,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3335,7 +3599,10 @@
     "nome": "Wonder (Tsukuyomi)",
     "ingles": "Wonder (Tsukuyomi)",
     "panteao": "Japanese :aomr_pantheon_japanese_icon:",
-    "panteao_id": 6
+    "panteao_id": 6,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3360,7 +3627,10 @@
     "nome": "Wonder (Susanoo)",
     "ingles": "Wonder (Susanoo)",
     "panteao": "Japanese :aomr_pantheon_japanese_icon:",
-    "panteao_id": 6
+    "panteao_id": 6,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3385,7 +3655,10 @@
     "nome": "Wonder (Quetzalcoatl)",
     "ingles": "Wonder (Quetzalcoatl)",
     "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
-    "panteao_id": 7
+    "panteao_id": 7,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3410,7 +3683,10 @@
     "nome": "Wonder (Tezcatlipoca)",
     "ingles": "Wonder (Tezcatlipoca)",
     "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
-    "panteao_id": 7
+    "panteao_id": 7,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3435,7 +3711,10 @@
     "nome": "Wonder (Huitzilopochtli)",
     "ingles": "Wonder (Huitzilopochtli)",
     "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
-    "panteao_id": 7
+    "panteao_id": 7,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3460,7 +3739,10 @@
     "nome": "Wonder (Ra)",
     "ingles": "Wonder (Ra)",
     "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
-    "panteao_id": 2
+    "panteao_id": 2,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3485,7 +3767,10 @@
     "nome": "Wonder (Frey)",
     "ingles": "Wonder (Frey)",
     "panteao": "Nordic :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3510,7 +3795,10 @@
     "nome": "Wonder (Urano)",
     "ingles": "Wonder (Urano)",
     "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
-    "panteao_id": 4
+    "panteao_id": 4,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "tipo": [
@@ -3535,7 +3823,10 @@
     "nome": "Wonder (Cronos)",
     "ingles": "Wonder (Cronos)",
     "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
-    "panteao_id": 4
+    "panteao_id": 4,
+    "descricao_resumida": "Spectacular monument.",
+    "descricao_avancada": "Constructing a Wonder advances you to the Wonder Age, where the Gods will reward you with great world ending power.",
+    "historia": "Each culture in Age of Mythology has the ability to construct one unique building, its Wonder of the World. Wonders are expensive and take a long time to build, but mark a civilization as one of outstanding achievement. Building a Wonder counts significant points toward your civilization score, and may result in a win, depending on the victory conditions for a game. Players can also spend Favor at the Wonder to petition their gods to grant them additional uses of God Powers.\n\nA distinguishing cultural characteristic of great ancient civilizations was architecture. Buildings in all parts of the world looked quite different and employed different construction techniques. In many cases, particularly noteworthy buildings stood as icons for the building civilization, marking it for all time as a culture that achieved greatness, if only temporarily. Examples of such cultural icons are the Pyramids at Giza and the Parthenon at Athens."
   },
   {
     "id": 121,
@@ -3584,7 +3875,10 @@
       39,
       40,
       41
-    ]
+    ],
+    "descricao_resumida": "Trains Villagers.",
+    "descricao_avancada": "Trains Villagers and is a drop site for all resources. Village Centers can be built anywhere on the map.",
+    "historia": "The Village Center represents the establishment of a new village for strategic or resource gathering purposes. Village Centers can train Villagers and can be built anywhere on the map, but do not provide most of the other benefits that Town Centers do. You can only build Village Centers starting in the Classical Age.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 122,
@@ -3630,7 +3924,10 @@
     "unidades": "Laborer",
     "unidades_ids": [
       49
-    ]
+    ],
+    "descricao_resumida": "Trains Villagers.",
+    "descricao_avancada": "Trains Villagers and is a drop site for all resources. Village Centers can be built anywhere on the map.",
+    "historia": "The Village Center represents the establishment of a new village for strategic or resource gathering purposes. Village Centers can train Villagers and can be built anywhere on the map, but do not provide most of the other benefits that Town Centers do. You can only build Village Centers starting in the Classical Age.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 123,
@@ -3674,7 +3971,10 @@
     "unidades_ids": [
       75,
       76
-    ]
+    ],
+    "descricao_resumida": "Trains Villagers.",
+    "descricao_avancada": "Trains Villagers and is a drop site for all resources. Village Centers can be built anywhere on the map.",
+    "historia": "The Village Center represents the establishment of a new village for strategic or resource gathering purposes. Village Centers can train Villagers and can be built anywhere on the map, but do not provide most of the other benefits that Town Centers do. You can only build Village Centers starting in the Classical Age.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 124,
@@ -3715,7 +4015,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Trains Villagers.",
+    "descricao_avancada": "Trains Villagers and is a drop site for all resources. Village Centers can be built anywhere on the map.",
+    "historia": "The Village Center represents the establishment of a new village for strategic or resource gathering purposes. Village Centers can train Villagers and can be built anywhere on the map, but do not provide most of the other benefits that Town Centers do. You can only build Village Centers starting in the Classical Age.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 104,
@@ -3758,7 +4061,10 @@
     "unidades_ids": [
       139,
       140
-    ]
+    ],
+    "descricao_resumida": "Trains Villagers.",
+    "descricao_avancada": "Trains Villagers and is a drop site for all resources. Village Centers can be built anywhere on the map.",
+    "historia": "The Village Center represents the establishment of a new village for strategic or resource gathering purposes. Village Centers can train Villagers and can be built anywhere on the map, but do not provide most of the other benefits that Town Centers do. You can only build Village Centers starting in the Classical Age.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 105,
@@ -3800,7 +4106,10 @@
     "unidades_ids": [
       175,
       176
-    ]
+    ],
+    "descricao_resumida": "Trains Villagers.",
+    "descricao_avancada": "Trains Villagers and is a drop site for all resources. Village Centers can be built anywhere on the map.",
+    "historia": "The Village Center represents the establishment of a new village for strategic or resource gathering purposes. Village Centers can train Villagers and can be built anywhere on the map, but do not provide most of the other benefits that Town Centers do. You can only build Village Centers starting in the Classical Age.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 106,
@@ -3842,7 +4151,10 @@
     "unidades": "Quimichin Spy",
     "unidades_ids": [
       209
-    ]
+    ],
+    "descricao_resumida": "Trains Villagers.",
+    "descricao_avancada": "Trains Villagers and is a drop site for all resources. Village Centers can be built anywhere on the map.",
+    "historia": "The Village Center represents the establishment of a new village for strategic or resource gathering purposes. Village Centers can train Villagers and can be built anywhere on the map, but do not provide most of the other benefits that Town Centers do. You can only build Village Centers starting in the Classical Age.\n\nThe rise of agriculture provided a food surplus that had to be collected and stored to be available in winter months and other periods when food was scarce. The need to collect, store, and protect food surpluses gave rise to the first villages and towns as administrative centers. These quickly became central to many additional activities, including the gathering and storage of other resources, the manufacturing of goods, the housing of population, and trade with other residents or foreigners. All villages and towns had an administrative center that was the locus of governmental power and leadership. At first this might have been the local leader's home. Important supplies, especially food surpluses, were stored in such a place, but its destruction usually meant the loss of the town's governmental infrastructure. If this could not be restored, the town or village ceased to function."
   },
   {
     "id": 107,
@@ -3900,7 +4212,10 @@
       39,
       40,
       41
-    ]
+    ],
+    "descricao_resumida": "Heavily fortified Town Center.",
+    "descricao_avancada": "A heavily fortified Town Center which trains units and researches technologies faster.",
+    "historia": "When the Town Center is forged into a Citadel, it becomes an unyielding fortress, a bastion of strength against the fiercest onslaughts. This mighty stronghold stands firm against waves of enemy soldiers, legendary myth units, and devastating god powers. Though its walls can be repaired after battle scars, once the Citadel falls completely, it cannot rise again, making its defense the cornerstone of your survival and victory."
   },
   {
     "id": 108,
@@ -3949,7 +4264,10 @@
       51,
       53,
       60
-    ]
+    ],
+    "descricao_resumida": "Heavily fortified Town Center.",
+    "descricao_avancada": "A heavily fortified Town Center which trains units and researches technologies faster.",
+    "historia": "When the Town Center is forged into a Citadel, it becomes an unyielding fortress, a bastion of strength against the fiercest onslaughts. This mighty stronghold stands firm against waves of enemy soldiers, legendary myth units, and devastating god powers. Though its walls can be repaired after battle scars, once the Citadel falls completely, it cannot rise again, making its defense the cornerstone of your survival and victory."
   },
   {
     "id": 109,
@@ -3993,7 +4311,10 @@
     "unidades": "Berserk",
     "unidades_ids": [
       77
-    ]
+    ],
+    "descricao_resumida": "Heavily fortified Town Center.",
+    "descricao_avancada": "A heavily fortified Town Center which trains units and researches technologies faster.",
+    "historia": "When the Town Center is forged into a Citadel, it becomes an unyielding fortress, a bastion of strength against the fiercest onslaughts. This mighty stronghold stands firm against waves of enemy soldiers, legendary myth units, and devastating god powers. Though its walls can be repaired after battle scars, once the Citadel falls completely, it cannot rise again, making its defense the cornerstone of your survival and victory."
   },
   {
     "id": 110,
@@ -4031,7 +4352,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Heavily fortified Town Center.",
+    "descricao_avancada": "A heavily fortified Town Center which trains units and researches technologies faster.",
+    "historia": "When the Town Center is forged into a Citadel, it becomes an unyielding fortress, a bastion of strength against the fiercest onslaughts. This mighty stronghold stands firm against waves of enemy soldiers, legendary myth units, and devastating god powers. Though its walls can be repaired after battle scars, once the Citadel falls completely, it cannot rise again, making its defense the cornerstone of your survival and victory."
   },
   {
     "id": 111,
@@ -4070,7 +4394,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Heavily fortified Town Center.",
+    "descricao_avancada": "A heavily fortified Town Center which trains units and researches technologies faster.",
+    "historia": "When the Town Center is forged into a Citadel, it becomes an unyielding fortress, a bastion of strength against the fiercest onslaughts. This mighty stronghold stands firm against waves of enemy soldiers, legendary myth units, and devastating god powers. Though its walls can be repaired after battle scars, once the Citadel falls completely, it cannot rise again, making its defense the cornerstone of your survival and victory."
   },
   {
     "id": 112,
@@ -4112,7 +4439,10 @@
     "unidades": "Miko (Hero)",
     "unidades_ids": [
       176
-    ]
+    ],
+    "descricao_resumida": "Heavily fortified Town Center.",
+    "descricao_avancada": "A heavily fortified Town Center which trains units and researches technologies faster.",
+    "historia": "When the Town Center is forged into a Citadel, it becomes an unyielding fortress, a bastion of strength against the fiercest onslaughts. This mighty stronghold stands firm against waves of enemy soldiers, legendary myth units, and devastating god powers. Though its walls can be repaired after battle scars, once the Citadel falls completely, it cannot rise again, making its defense the cornerstone of your survival and victory."
   },
   {
     "id": 113,
@@ -4155,7 +4485,10 @@
     "unidades": "Quimichin Spy",
     "unidades_ids": [
       209
-    ]
+    ],
+    "descricao_resumida": "Heavily fortified Town Center.",
+    "descricao_avancada": "A heavily fortified Town Center which trains units and researches technologies faster.",
+    "historia": "When the Town Center is forged into a Citadel, it becomes an unyielding fortress, a bastion of strength against the fiercest onslaughts. This mighty stronghold stands firm against waves of enemy soldiers, legendary myth units, and devastating god powers. Though its walls can be repaired after battle scars, once the Citadel falls completely, it cannot rise again, making its defense the cornerstone of your survival and victory."
   },
   {
     "id": 114,
@@ -4212,7 +4545,10 @@
       88,
       242,
       243
-    ]
+    ],
+    "descricao_resumida": "Ullr's fortification. Trains elite units and siege units.",
+    "descricao_avancada": "Hill Fort summoned by Ullr to defend the realm of men. Garrisons units, and trains elite units and siege weapons.",
+    "historia": "After the creation of the cosmos, the Aesir gods hired a jotun (giant) to build a fortification, according to Snorri Sturluson that would be “reliable and secure against mountain-giants and frost-giants even though they should come over into Midgard.” The builder claimed that he could build the hill fort in three seasons, and his price was the goddess Freyja’s hand in marriage as well as the sun and moon. The gods, confident that he would not be able to complete this task in the allotted time frame, agreed.\n\nThe builder was allowed to use his horse Svadilfari in the building process; however, the Aesir soon realized that Svadilfari was no regular horse, and his supernatural abilities were allowing the builder to complete the hill fort at an alarming rate. So, the gods convinced Loki to solve the issue: Loki transformed into a mare and distracted Svadilfari, preventing the builder from completing the fortification on time. Enraged by the Aesir’s trick, the builder grew angry and attacked, allowing the Aesir to break their oath – Thor killed the builder and the Aesir received a top tier fortress for free."
   },
   {
     "id": 115,
@@ -4241,7 +4577,10 @@
     "unidades_ids": [
       127
     ],
-    "nome": "Hesperides Tree"
+    "nome": "Hesperides Tree",
+    "descricao_resumida": "Trains Dryads.",
+    "descricao_avancada": "Trains Dryads for whomever captures and controls it. You can train 5 Dryads per Hesperides Tree.",
+    "historia": "A tree on which golden apples grew was protected by the nymph daughters of Atlas, the Hesperides. It was a wedding gift to the goddess Hera, and its golden fruit was said to grant immortality. The serpent-dragon Ladon helped the Hesperides guard the tree, but even such fierce protectors could not prevent the fruit from slipping away into the myths of Atalanta, Heracles, and several others."
   },
   {
     "id": 116,
@@ -4269,7 +4608,9 @@
     "unidades_ids": [
       127
     ],
-    "nome": "Summoning Tree"
+    "nome": "Summoning Tree",
+    "descricao_avancada": "This tree summons Gaia, the earth goddess.",
+    "historia": "These trees of power and prophecy were summoned with the great Seed of Gaia God Power. They grew from the Gaia Pools that formed on some of the atolls around the destroyed island of Old Atlantis. The Summoning Trees radiated the energy of nature itself, seeking to draw forth the essence of Gaia to help cleanse the earth."
   },
   {
     "id": 117,
@@ -4327,7 +4668,9 @@
     "tecnologias_ids": [
       null,
       null
-    ]
+    ],
+    "descricao_avancada": "Large cities use shipyards to mass-produce warships.",
+    "historia": "This building produces warships. A dominant navy was crucial to ancient seafaring civilizations, as it allowed them to protect and patrol their own coastlines and trade routes, and also to threaten those of others. The Norse went 'viking' to raid others for trade goods and gold, and the skill of their sailors and their sturdy, swift longboats allowed them to do so for many centuries."
   },
   {
     "id": 118,
@@ -4357,7 +4700,10 @@
     "tecnologias_ids": [
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Provides line of sight.",
+    "descricao_avancada": "Summoned by Egyptian Priests to aid in scouting and provide line of sight.",
+    "historia": "Although Priests are not fast scouts and do not initially have a great line of sight, they can construct Obelisks, which do have a good line of sight, to help explore the map.\n\nThe obelisk, or 'tejen' in Egyptian, was synonymous with protection. The four-sided stone column was thought to draw evil up from the ground and disperse it up into the sky. Atop the obelisk was the pyramidon, a small pyramid that symbolized the sun. Obelisks were often inscribed with hieroglyphics. The word is Greek in origin and refers to a roasting spit."
   },
   {
     "id": 119,
@@ -4393,7 +4739,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Food drop site. An enchanted shrine that spawns deer and wolves.",
+    "descricao_avancada": "Food drop site. A Shrine enchanted by Minakatatomi to periodically spawn huntable deer as well as friendly defensive wolves.",
+    "historia": "Japanese shrines are deeply associated with the Shinto religion. With an estimated 80,000 official shrines in Japan, these spaces are integral to Japanese history and tourism. Shrines are typically dedicated to an individual kami and are found in places where people felt a close connection to the kami. As a result, shrines are often located in beautiful natural settings such as forests, bodies of water, waterfalls, or mountains.\n\nShrines are marked by torii gates at the entrance and typically feature a honden (main hall) and a haiden (worship hall). Their size can vary: some miniature shrines can be found by the roadside, while others, like the Ise Grand Shrine, are large and attract millions of visitors each year.\n\nOne of the most distinctive aspects of Japanese shrines is the tradition of dismantling and rebuilding them approximately every twenty years, a practice known as Shikinen Sengu. This ritual originated in the 7th century CE and has continued for over a thousand years."
   },
   {
     "id": 120,
@@ -4424,6 +4773,9 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Provides access through walls.",
+    "descricao_avancada": "Gates provide access through walls.",
+    "historia": "Gates may be built as part of a Wall. Click on a length of Wall and then click 'Build Gate' to replace it with a Gate. Your units and those of your allies will automatically open and close the Gate when passing through. Enemy troops can neither pass through nor open a Gate, and must destroy it to move beyond.\n\nGates were constructed in walls to allow access to fortifications. They were the most vulnerable section of a fortification, so extra measures were taken to make them strong. Examples include a long and exposed approach to the gate itself, or exposed passageways behind the gate leading to more gates."
   }
 ]

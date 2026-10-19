@@ -52,7 +52,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_town_center_greek_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Centro de uma cidade.",
+    "descricao_avancada": "Treina Aldeões, avança para outras eras, é o local de entrega de todos os recursos e abriga população. Centros Urbanos são construídos sobre assentamentos.",
+    "historia": "O Centro Urbano treina os aldeões, oferece espaço para a população e atua como o centro da sua cidade. Você só pode construir Centros Urbanos em assentamentos e só pode construir centros urbanos adicionais a partir da Era Clássica. Existem povoados suficientes na maioria dos mapas para que cada jogador tenha três, mas reivindicar mais povoados deixará menos para seus inimigos. Se sua equipe reivindicar todos os povoados em um mapa, você vencerá o jogo sob condições de vitória padrão.\n\nA ascensão da agricultura proporcionou um excedente de comida que precisava ser coletado e armazenado para estar disponível nos meses de inverno e em outros períodos em que a comida era escassa. A necessidade de coletar, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estes rapidamente se tornaram centrais para muitas atividades adicionais, incluindo a coleta e armazenamento de outros recursos, a fabricação de produtos, a habitação da população e o comércio com outros residentes ou estrangeiros. Todas as vilas e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, essa poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados em tal local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou vila deixaria de funcionar."
   },
   {
     "id": 3,
@@ -98,7 +101,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_town_center_egyptian_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Centro de uma cidade.",
+    "descricao_avancada": "Treina Aldeões, avança para outras eras, é o local de entrega de todos os recursos e abriga população. Centros Urbanos são construídos sobre assentamentos.",
+    "historia": "O Centro Urbano treina os aldeões, oferece espaço para a população e atua como o centro da sua cidade. Você só pode construir Centros Urbanos em assentamentos e só pode construir centros urbanos adicionais a partir da Era Clássica. Existem povoados suficientes na maioria dos mapas para que cada jogador tenha três, mas reivindicar mais povoados deixará menos para seus inimigos. Se sua equipe reivindicar todos os povoados em um mapa, você vencerá o jogo sob condições de vitória padrão.\n\nA ascensão da agricultura proporcionou um excedente de comida que precisava ser coletado e armazenado para estar disponível nos meses de inverno e em outros períodos em que a comida era escassa. A necessidade de coletar, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estes rapidamente se tornaram centrais para muitas atividades adicionais, incluindo a coleta e armazenamento de outros recursos, a fabricação de produtos, a habitação da população e o comércio com outros residentes ou estrangeiros. Todas as vilas e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, essa poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados em tal local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou vila deixaria de funcionar."
   },
   {
     "id": 4,
@@ -137,7 +143,10 @@
     "unidades_id": 14,
     "panteao_id": 3,
     "icon": "aomr_town_center_norse_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Centro de uma cidade.",
+    "descricao_avancada": "Treina Aldeões, avança para outras eras, é o local de entrega de todos os recursos e abriga população. Centros Urbanos são construídos sobre assentamentos.",
+    "historia": "O Centro Urbano treina os aldeões, oferece espaço para a população e atua como o centro da sua cidade. Você só pode construir Centros Urbanos em assentamentos e só pode construir centros urbanos adicionais a partir da Era Clássica. Existem povoados suficientes na maioria dos mapas para que cada jogador tenha três, mas reivindicar mais povoados deixará menos para seus inimigos. Se sua equipe reivindicar todos os povoados em um mapa, você vencerá o jogo sob condições de vitória padrão.\n\nA ascensão da agricultura proporcionou um excedente de comida que precisava ser coletado e armazenado para estar disponível nos meses de inverno e em outros períodos em que a comida era escassa. A necessidade de coletar, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estes rapidamente se tornaram centrais para muitas atividades adicionais, incluindo a coleta e armazenamento de outros recursos, a fabricação de produtos, a habitação da população e o comércio com outros residentes ou estrangeiros. Todas as vilas e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, essa poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados em tal local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou vila deixaria de funcionar."
   },
   {
     "id": 5,
@@ -169,7 +178,10 @@
     "tecnologias_id": "29500f30e21180888b25f958d43e6616",
     "panteao_id": 4,
     "icon": "aomr_town_center_atlantean_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Centro de uma cidade.",
+    "descricao_avancada": "Treina Aldeões, avança para outras eras, é o local de entrega de todos os recursos e abriga população. Centros Urbanos são construídos sobre assentamentos.",
+    "historia": "O Centro Urbano treina os aldeões, oferece espaço para a população e atua como o centro da sua cidade. Você só pode construir Centros Urbanos em assentamentos e só pode construir centros urbanos adicionais a partir da Era Clássica. Existem povoados suficientes na maioria dos mapas para que cada jogador tenha três, mas reivindicar mais povoados deixará menos para seus inimigos. Se sua equipe reivindicar todos os povoados em um mapa, você vencerá o jogo sob condições de vitória padrão.\n\nA ascensão da agricultura proporcionou um excedente de comida que precisava ser coletado e armazenado para estar disponível nos meses de inverno e em outros períodos em que a comida era escassa. A necessidade de coletar, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estes rapidamente se tornaram centrais para muitas atividades adicionais, incluindo a coleta e armazenamento de outros recursos, a fabricação de produtos, a habitação da população e o comércio com outros residentes ou estrangeiros. Todas as vilas e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, essa poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados em tal local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou vila deixaria de funcionar."
   },
   {
     "id": 6,
@@ -205,7 +217,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_town_center_chinese",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Centro de uma cidade.",
+    "descricao_avancada": "Treina Aldeões, avança para outras eras, é o local de entrega de todos os recursos e abriga população. Centros Urbanos são construídos sobre assentamentos.",
+    "historia": "O Centro Urbano treina os aldeões, oferece espaço para a população e atua como o centro da sua cidade. Você só pode construir Centros Urbanos em assentamentos e só pode construir centros urbanos adicionais a partir da Era Clássica. Existem povoados suficientes na maioria dos mapas para que cada jogador tenha três, mas reivindicar mais povoados deixará menos para seus inimigos. Se sua equipe reivindicar todos os povoados em um mapa, você vencerá o jogo sob condições de vitória padrão.\n\nA ascensão da agricultura proporcionou um excedente de comida que precisava ser coletado e armazenado para estar disponível nos meses de inverno e em outros períodos em que a comida era escassa. A necessidade de coletar, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estes rapidamente se tornaram centrais para muitas atividades adicionais, incluindo a coleta e armazenamento de outros recursos, a fabricação de produtos, a habitação da população e o comércio com outros residentes ou estrangeiros. Todas as vilas e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, essa poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados em tal local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou vila deixaria de funcionar."
   },
   {
     "id": 7,
@@ -242,7 +257,10 @@
     "unidades_id": 139,
     "panteao_id": 6,
     "icon": "aomr_town_center_japanese_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Centro de uma cidade.",
+    "descricao_avancada": "Treina Aldeões, avança para outras eras, é o local de entrega de todos os recursos e abriga população. Centros Urbanos são construídos sobre assentamentos.",
+    "historia": "O Centro Urbano treina os aldeões, oferece espaço para a população e atua como o centro da sua cidade. Você só pode construir Centros Urbanos em assentamentos e só pode construir centros urbanos adicionais a partir da Era Clássica. Existem povoados suficientes na maioria dos mapas para que cada jogador tenha três, mas reivindicar mais povoados deixará menos para seus inimigos. Se sua equipe reivindicar todos os povoados em um mapa, você vencerá o jogo sob condições de vitória padrão.\n\nA ascensão da agricultura proporcionou um excedente de comida que precisava ser coletado e armazenado para estar disponível nos meses de inverno e em outros períodos em que a comida era escassa. A necessidade de coletar, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estes rapidamente se tornaram centrais para muitas atividades adicionais, incluindo a coleta e armazenamento de outros recursos, a fabricação de produtos, a habitação da população e o comércio com outros residentes ou estrangeiros. Todas as vilas e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, essa poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados em tal local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou vila deixaria de funcionar."
   },
   {
     "id": 9,
@@ -283,7 +301,10 @@
     ],
     "panteao_id": 7,
     "icon": "aomr_town_center_icon",
-    "armadura_anticontusao": 10
+    "armadura_anticontusao": 10,
+    "descricao_resumida": "Centro de uma cidade.",
+    "descricao_avancada": "Treina Aldeões, avança para outras eras, é o local de entrega de todos os recursos e abriga população. Centros Urbanos são construídos sobre assentamentos.",
+    "historia": "O Centro Urbano treina os aldeões, oferece espaço para a população e atua como o centro da sua cidade. Você só pode construir Centros Urbanos em assentamentos e só pode construir centros urbanos adicionais a partir da Era Clássica. Existem povoados suficientes na maioria dos mapas para que cada jogador tenha três, mas reivindicar mais povoados deixará menos para seus inimigos. Se sua equipe reivindicar todos os povoados em um mapa, você vencerá o jogo sob condições de vitória padrão.\n\nA ascensão da agricultura proporcionou um excedente de comida que precisava ser coletado e armazenado para estar disponível nos meses de inverno e em outros períodos em que a comida era escassa. A necessidade de coletar, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estes rapidamente se tornaram centrais para muitas atividades adicionais, incluindo a coleta e armazenamento de outros recursos, a fabricação de produtos, a habitação da população e o comércio com outros residentes ou estrangeiros. Todas as vilas e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, essa poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados em tal local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou vila deixaria de funcionar."
   },
   {
     "id": 8,
@@ -310,7 +331,10 @@
     "tecnologias_id": "2b200f30e21180d88cbbe6e49f2601e4",
     "panteao_id": 5,
     "icon": "aomr_house_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Abriga população de 10.",
+    "descricao_avancada": "Abriga uma população de 10. Depois de atingir o limite de construção da Casa, você deve construir Centros Urbanos para abrigar população adicional.",
+    "historia": "Você pode construir um número limitado de Casas. Cada Casa suporta um número fixo de unidades populacionais (aldeões, soldados, navios, criaturas mitológicas e unidades comerciais). Quando este limite for atingido, a produção de novas unidades será interrompida.\n\nQuando a agricultura tornou possível a vida sedentária, os humanos deixaram de ocupar locais de acampamento transitórios perto de áreas de caça ou abrigos naturais como cavernas, e começaram a construir alojamentos mais permanentes perto das suas quintas. Habitações robustas melhoraram a qualidade e a longevidade da vida."
   },
   {
     "id": 11,
@@ -336,7 +360,10 @@
     "panteao_id": 4,
     "icon": "aomr_manor_icon",
     "armadura_anticontusao": 5,
-    "tempo_construir_segundos": 25
+    "tempo_construir_segundos": 25,
+    "descricao_resumida": "Abriga população de 20.",
+    "descricao_avancada": "Abriga uma população de 20. Depois de atingir o limite de construção da Mansão, você deve construir Centros Urbanos para abrigar população adicional.",
+    "historia": "Você pode construir um número limitado de Mansões. Cada Mansão suporta um número fixo de unidades populacionais (aldeões, soldados, navios, criaturas mitológicas e unidades comerciais). Uma vez atingido esse limite, a produção de novas unidades será interrompida. As unidades atlantes também podem guarnecer dentro de suas Mansões para proteção.\n\nQuando a agricultura tornou possível a vida sedentária, os humanos deixaram de ocupar acampamentos transitórios perto de áreas de caça ou abrigos naturais como cavernas, e começaram a construir alojamentos mais permanentes perto de suas fazendas. Habitações robustas melhoraram a qualidade e a longevidade da vida.\n\nNo seu auge, Atlântida era o lar de dezenas de milhares. Os atlantes construíram casas robustas de madeira, pedra e gesso. Estas grandes mansões familiares permitiram que várias gerações de atlantes vivessem juntas sob o mesmo teto. Entre as campanhas, os soldados atlantes foram acolhidos, alimentados, vestidos e tratados como família."
   },
   {
     "id": 14,
@@ -373,7 +400,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_storehouse_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Ponto de coleta de Madeira e Ouro.",
+    "descricao_avancada": "Um local de entrega onde os Aldeões depositam a Madeira e o Ouro que recolheram.",
+    "historia": "O Armazém Grego funciona como um local de entrega de Ouro e Madeira. Construa um Armazém perto de Minas de Ouro ou florestas onde você deseja coletar. Você também pode pesquisar avanços no Armazém que melhoram a eficiência dos coletores de Ouro e Madeira."
   },
   {
     "id": 15,
@@ -409,7 +439,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_granary_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Ponto de coleta de Comida.",
+    "descricao_avancada": "Um local de entrega onde os Aldeões depositam a Comida que recolheram.",
+    "historia": "Em Age of Mythology, o Celeiro é um local de entrega para todos os tipos de comida. Você pode pesquisar avanços no Celeiro para aumentar as taxas de coleta de Comida.\n\nAs sociedades agrícolas armazenavam seus excedentes de grãos em celeiros para que os alimentos ficassem disponíveis durante os meses do inverno. Os celeiros podiam ser grandes silos de tijolo ou pedra, ou construções que abrigam jarras ou barris de grãos. O armazenamento inadequado faria com que os grãos estragassem, forçando os agricultores a retomar a caça e a coleta nômades para evitar a fome antes da próxima safra."
   },
   {
     "id": 16,
@@ -441,7 +474,10 @@
     "tecnologias_id": "29500f30e2118049b752f3de95be8821",
     "panteao_id": 2,
     "icon": "aomr_mining_camp_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Ponto de coleta de Ouro.",
+    "descricao_avancada": "Um local de entrega onde os Aldeões depositam o Ouro que recolheram.",
+    "historia": "O Campo de Mineração é um local de entrega egípcio para trabalhadores que coletam Ouro. Coloque-o adjacente a uma Mina de Ouro que você deseja utilizar. Você pode pesquisar avanços no Campo de Mineração para aumentar as taxas de coleta de Ouro. Você ganhará mais ouro se um Faraó ou Sacerdote fortalecer o acampamento de mineração.\n\nOs desertos que cercavam o antigo Egito eram ricos em minerais, especialmente sal, cobre e ouro. Para colher esses recursos, os egípcios construíram minas, principalmente minas a céu aberto, que exigiam trabalho árduo para operar."
   },
   {
     "id": 17,
@@ -474,7 +510,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_lumber_camp_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Ponto de coleta de Madeira.",
+    "descricao_avancada": "Um local de entrega onde os Aldeões depositam a Madeira que recolheram.",
+    "historia": "O Campo Madeireiro é um local de entrega egípcio para trabalhadores que coletam Madeira. Coloque-o próximo a uma fonte de Madeira que deseja utilizar. Você pode pesquisar avanços no Campo Madeireiro para aumentar as taxas de coleta de madeira. Você ganhará mais madeira se um Faraó ou Sacerdote fortalecer o Campo Madeireiro.\n\nMadeira era um recurso relativamente escasso para os antigos egípcios, em parte porque o único abastecimento de água confiável era o Rio Nilo, e em parte porque poucas espécies de árvores nativas forneciam lenha que poderia ser trabalhada. Os egípcios muitas vezes compensavam negociando a famosa lenha de cedro do Líbano. Devido à raridade e ao custo da madeira, a maior parte das construções no Egito era feita de pedra ou tijolo de barro."
   },
   {
     "id": 18,
@@ -509,7 +548,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_granary_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Ponto de coleta de Comida.",
+    "descricao_avancada": "Um local de entrega onde os Aldeões depositam a Comida que recolheram.",
+    "historia": "Em Age of Mythology, o Celeiro é um local de entrega para todos os tipos de comida. Você pode pesquisar avanços no Celeiro para aumentar as taxas de coleta de Comida.\n\nAs sociedades agrícolas armazenavam seus excedentes de grãos em celeiros para que os alimentos ficassem disponíveis durante os meses do inverno. Os celeiros podiam ser grandes silos de tijolo ou pedra, ou construções que abrigam jarras ou barris de grãos. O armazenamento inadequado faria com que os grãos estragassem, forçando os agricultores a retomar a caça e a coleta nômades para evitar a fome antes da próxima safra."
   },
   {
     "id": 19,
@@ -544,7 +586,10 @@
     ],
     "panteao_id": 4,
     "icon": "aomr_economic_guild_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Pesquisa melhorias econômicas.",
+    "descricao_avancada": "As Guildas Econômicas são usadas para pesquisar todas as melhorias econômicas atlantes.",
+    "historia": "A Guilda Econômica é o repositório Atlante para a maioria dos avanços econômicos.\n\nHistoricamente, as guildas eram associações de ofícios e serviços semelhantes que se uniam para resolver problemas comuns e apoiar uns aos outros. Os problemas com o sistema surgiram devido às dependências estritas de uma parte do ofício em relação a outra. As guildas desenvolviam regras que estabeleceram os papéis dos membros e códigos de comportamento. Algumas impediam que os membros roubassem trabalhadores talentosos uns dos outros; outras eram mandatos para ajudar outros membros da guilda com dinheiro ou ofício; outras ainda definem os preços pelos quais os membros poderiam vender seus ofícios ou serviços.\n\nAs guildas atlantes elegiam três supervisores que faziam parte do Conselho, um órgão de governo liderado pelo Teocrata. Os ofícios da Atlântida eram tão valiosos e valorizados que estes supervisores exerciam um poder significativo sobre a política atlante."
   },
   {
     "id": 20,
@@ -579,7 +624,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_silo",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Local de entrega para todos os recursos.",
+    "descricao_avancada": "Um local de entrega onde os Aldeões depositam a Comida, a Madeira ou o Ouro que recolheram.",
+    "historia": "O Silo serve como local de entrega de recursos chinês.\n\nOs grãos eram essenciais para manter o governo do imperador na China antiga. Por muito tempo, os agricultores pagaram ao governo não em moeda, e sim em vários tipos de produtos, sendo os grãos os mais importantes. Para garantir esses recursos, grandes silos foram construídos em toda a China, armazenando alimentos em quantidade suficiente para durar vários anos, ou até mais de uma década. Muitas batalhas em grande escala eram focadas nesses silos. Os defensores eram capazes de enfrentar cercos prolongados com seus grãos armazenados, enquanto os atacantes, ao capturar um silo, muitas vezes viam as forças sitiadas se renderem para sobreviver. Esses silos enormes simbolizavam o controle e o domínio sobre a região."
   },
   {
     "id": 10,
@@ -609,7 +657,10 @@
     "tecnologias_ids": [],
     "panteao_id": 7,
     "icon": "aomr_calpulli_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Local de entrega para todos os recursos.",
+    "descricao_avancada": "Um local de entrega onde os Aldeões depositam a Comida, a Madeira ou o Ouro que recolheram.",
+    "historia": "Na sociedade Asteca pré-Colombiana, os calpulli, traduzidos por ''grandes casas'', serviam como unidades comunitárias fundamentais dentro das cidades-estado Nahua, ou altepetls. Cada calpulli era composto por famílias ou grupos de parentesco que compartilhavam terras, trabalho e responsabilidade. Juntos, organizaram o cultivo de plantações, gerenciaram a produção de alimentos e supervisionaram a criação de bens e tributos devidos ao Estado. Funcionando como um centro social e econômico, o calpulli era o coração da vida cotidiana, onde recursos como alimentos, madeira e materiais preciosos eram coletados, produzidos e distribuídos para o bem-estar da comunidade em geral."
   },
   {
     "id": 21,
@@ -692,7 +743,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fornece acesso a unidades e tecnologias mitológicas.",
+    "descricao_avancada": "Treina poderosas unidades mitológicas e fornece melhorias mitológicas concedidas pelos deuses.",
+    "historia": "No Templo, você pode treinar unidades mitológicas e pesquisar avanços que requerem o favor dos deuses para serem acessadas. Os gregos podem orar em seus templos para obter favores.\n\nA maioria das civilizações antigas investiu riquezas consideráveis em sua vida religiosa, incluindo a construção de templos ou locais semelhantes onde ritos e cerimônias eram realizados, líderes religiosos eram treinados e crenças eram refinadas e transmitidas. Os templos eram frequentemente dedicados a um ou mais deuses e funcionavam como pontos de comunicação entre humanos e divindades. Os crentes podem visitar um templo para pedir ajuda aos deuses e oferecer orações, tributos ou sacrifícios para melhorar a recepção dos pedidos. Os templos costumavam ser construções magníficas que ofuscavam qualquer outra coisa na cidade."
   },
   {
     "id": 22,
@@ -750,7 +804,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fornece acesso a unidades e tecnologias mitológicas.",
+    "descricao_avancada": "Treina poderosas unidades mitológicas e fornece melhorias mitológicas concedidas pelos deuses.",
+    "historia": "No Templo, você pode treinar unidades mitológicas e pesquisar avanços que requerem o favor dos deuses para serem acessadas. Os gregos podem orar em seus templos para obter favores.\n\nA maioria das civilizações antigas investiu riquezas consideráveis em sua vida religiosa, incluindo a construção de templos ou locais semelhantes onde ritos e cerimônias eram realizados, líderes religiosos eram treinados e crenças eram refinadas e transmitidas. Os templos eram frequentemente dedicados a um ou mais deuses e funcionavam como pontos de comunicação entre humanos e divindades. Os crentes podem visitar um templo para pedir ajuda aos deuses e oferecer orações, tributos ou sacrifícios para melhorar a recepção dos pedidos. Os templos costumavam ser construções magníficas que ofuscavam qualquer outra coisa na cidade."
   },
   {
     "id": 23,
@@ -814,7 +871,10 @@
     ],
     "panteao_id": 3,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fornece acesso a unidades e tecnologias mitológicas.",
+    "descricao_avancada": "Treina poderosas unidades mitológicas e fornece melhorias mitológicas concedidas pelos deuses.",
+    "historia": "No Templo, você pode treinar unidades mitológicas e pesquisar avanços que requerem o favor dos deuses para serem acessadas. Os gregos podem orar em seus templos para obter favores.\n\nA maioria das civilizações antigas investiu riquezas consideráveis em sua vida religiosa, incluindo a construção de templos ou locais semelhantes onde ritos e cerimônias eram realizados, líderes religiosos eram treinados e crenças eram refinadas e transmitidas. Os templos eram frequentemente dedicados a um ou mais deuses e funcionavam como pontos de comunicação entre humanos e divindades. Os crentes podem visitar um templo para pedir ajuda aos deuses e oferecer orações, tributos ou sacrifícios para melhorar a recepção dos pedidos. Os templos costumavam ser construções magníficas que ofuscavam qualquer outra coisa na cidade."
   },
   {
     "id": 24,
@@ -877,7 +937,10 @@
     ],
     "panteao_id": 4,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fornece acesso a unidades e tecnologias mitológicas.",
+    "descricao_avancada": "Treina poderosas unidades mitológicas e fornece melhorias mitológicas concedidas pelos deuses.",
+    "historia": "No Templo, você pode treinar unidades mitológicas e pesquisar avanços que requerem o favor dos deuses para serem acessadas. Os gregos podem orar em seus templos para obter favores.\n\nA maioria das civilizações antigas investiu riquezas consideráveis em sua vida religiosa, incluindo a construção de templos ou locais semelhantes onde ritos e cerimônias eram realizados, líderes religiosos eram treinados e crenças eram refinadas e transmitidas. Os templos eram frequentemente dedicados a um ou mais deuses e funcionavam como pontos de comunicação entre humanos e divindades. Os crentes podem visitar um templo para pedir ajuda aos deuses e oferecer orações, tributos ou sacrifícios para melhorar a recepção dos pedidos. Os templos costumavam ser construções magníficas que ofuscavam qualquer outra coisa na cidade."
   },
   {
     "id": 25,
@@ -937,7 +1000,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fornece acesso a unidades e tecnologias mitológicas.",
+    "descricao_avancada": "Treina poderosas unidades mitológicas e fornece melhorias mitológicas concedidas pelos deuses.",
+    "historia": "No Templo, você pode treinar unidades mitológicas e pesquisar avanços que requerem o favor dos deuses para serem acessadas. Os gregos podem orar em seus templos para obter favores.\n\nA maioria das civilizações antigas investiu riquezas consideráveis em sua vida religiosa, incluindo a construção de templos ou locais semelhantes onde ritos e cerimônias eram realizados, líderes religiosos eram treinados e crenças eram refinadas e transmitidas. Os templos eram frequentemente dedicados a um ou mais deuses e funcionavam como pontos de comunicação entre humanos e divindades. Os crentes podem visitar um templo para pedir ajuda aos deuses e oferecer orações, tributos ou sacrifícios para melhorar a recepção dos pedidos. Os templos costumavam ser construções magníficas que ofuscavam qualquer outra coisa na cidade."
   },
   {
     "id": 26,
@@ -997,7 +1063,10 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fornece acesso a unidades e tecnologias mitológicas.",
+    "descricao_avancada": "Treina poderosas unidades mitológicas e fornece melhorias mitológicas concedidas pelos deuses.",
+    "historia": "No Templo, você pode treinar unidades mitológicas e pesquisar avanços que requerem o favor dos deuses para serem acessadas. Os gregos podem orar em seus templos para obter favores.\n\nA maioria das civilizações antigas investiu riquezas consideráveis em sua vida religiosa, incluindo a construção de templos ou locais semelhantes onde ritos e cerimônias eram realizados, líderes religiosos eram treinados e crenças eram refinadas e transmitidas. Os templos eram frequentemente dedicados a um ou mais deuses e funcionavam como pontos de comunicação entre humanos e divindades. Os crentes podem visitar um templo para pedir ajuda aos deuses e oferecer orações, tributos ou sacrifícios para melhorar a recepção dos pedidos. Os templos costumavam ser construções magníficas que ofuscavam qualquer outra coisa na cidade."
   },
   {
     "id": 12,
@@ -1033,7 +1102,10 @@
     ],
     "panteao_id": 7,
     "icon": "aomr_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fornece acesso a unidades e tecnologias mitológicas.",
+    "descricao_avancada": "Treina poderosas unidades mitológicas e fornece melhorias mitológicas concedidas pelos deuses.",
+    "historia": "No Templo, você pode treinar unidades mitológicas e pesquisar avanços que requerem o favor dos deuses para serem acessadas. Os gregos podem orar em seus templos para obter favores.\n\nA maioria das civilizações antigas investiu riquezas consideráveis em sua vida religiosa, incluindo a construção de templos ou locais semelhantes onde ritos e cerimônias eram realizados, líderes religiosos eram treinados e crenças eram refinadas e transmitidas. Os templos eram frequentemente dedicados a um ou mais deuses e funcionavam como pontos de comunicação entre humanos e divindades. Os crentes podem visitar um templo para pedir ajuda aos deuses e oferecer orações, tributos ou sacrifícios para melhorar a recepção dos pedidos. Os templos costumavam ser construções magníficas que ofuscavam qualquer outra coisa na cidade."
   },
   {
     "id": 27,
@@ -1076,7 +1148,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Melhora armamento.",
+    "descricao_avancada": "Permite melhorar armas e armaduras de infantaria, soldados de ataque a distância, cavalaria e navios.",
+    "historia": "Você pode pesquisar avanços no Arsenal que tornem seus soldados mais eficazes em combate e forneçam-lhes armaduras melhores.\n\nO Arsenal era uma forja especializada onde bronze, ferro e outros materiais eram transformados em ferramentas, armas, escudos e armaduras. Os artesãos do arsenal também fizeram experiências, buscando maneiras de melhorar seus produtos, pois exércitos com equipamento superior poderiam ter uma vantagem significativa na batalha."
   },
   {
     "id": 28,
@@ -1109,7 +1184,10 @@
     ],
     "panteao_id": 2,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Melhora armamento.",
+    "descricao_avancada": "Permite melhorar armas e armaduras de infantaria, soldados de ataque a distância, cavalaria e navios.",
+    "historia": "Você pode pesquisar avanços no Arsenal que tornem seus soldados mais eficazes em combate e forneçam-lhes armaduras melhores.\n\nO Arsenal era uma forja especializada onde bronze, ferro e outros materiais eram transformados em ferramentas, armas, escudos e armaduras. Os artesãos do arsenal também fizeram experiências, buscando maneiras de melhorar seus produtos, pois exércitos com equipamento superior poderiam ter uma vantagem significativa na batalha."
   },
   {
     "id": 29,
@@ -1136,7 +1214,10 @@
     "tecnologias_id": "2a800f30e21180d48ffbe93f81fd8799",
     "panteao_id": 3,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Melhora armamento.",
+    "descricao_avancada": "Permite melhorar armas e armaduras de infantaria, soldados de ataque a distância, cavalaria e navios.",
+    "historia": "Você pode pesquisar avanços no Arsenal que tornem seus soldados mais eficazes em combate e forneçam-lhes armaduras melhores.\n\nO Arsenal era uma forja especializada onde bronze, ferro e outros materiais eram transformados em ferramentas, armas, escudos e armaduras. Os artesãos do arsenal também fizeram experiências, buscando maneiras de melhorar seus produtos, pois exércitos com equipamento superior poderiam ter uma vantagem significativa na batalha."
   },
   {
     "id": 31,
@@ -1167,7 +1248,10 @@
     ],
     "panteao_id": 4,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Melhora armamento.",
+    "descricao_avancada": "Permite melhorar armas e armaduras de infantaria, soldados de ataque a distância, cavalaria e navios.",
+    "historia": "Você pode pesquisar avanços no Arsenal que tornem seus soldados mais eficazes em combate e forneçam-lhes armaduras melhores.\n\nO Arsenal era uma forja especializada onde bronze, ferro e outros materiais eram transformados em ferramentas, armas, escudos e armaduras. Os artesãos do arsenal também fizeram experiências, buscando maneiras de melhorar seus produtos, pois exércitos com equipamento superior poderiam ter uma vantagem significativa na batalha."
   },
   {
     "id": 32,
@@ -1198,7 +1282,10 @@
     ],
     "panteao_id": 5,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Melhora armamento.",
+    "descricao_avancada": "Permite melhorar armas e armaduras de infantaria, soldados de ataque a distância, cavalaria e navios.",
+    "historia": "Você pode pesquisar avanços no Arsenal que tornem seus soldados mais eficazes em combate e forneçam-lhes armaduras melhores.\n\nO Arsenal era uma forja especializada onde bronze, ferro e outros materiais eram transformados em ferramentas, armas, escudos e armaduras. Os artesãos do arsenal também fizeram experiências, buscando maneiras de melhorar seus produtos, pois exércitos com equipamento superior poderiam ter uma vantagem significativa na batalha."
   },
   {
     "id": 33,
@@ -1228,7 +1315,10 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_armory_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Melhora armamento.",
+    "descricao_avancada": "Permite melhorar armas e armaduras de infantaria, soldados de ataque a distância, cavalaria e navios.",
+    "historia": "Você pode pesquisar avanços no Arsenal que tornem seus soldados mais eficazes em combate e forneçam-lhes armaduras melhores.\n\nO Arsenal era uma forja especializada onde bronze, ferro e outros materiais eram transformados em ferramentas, armas, escudos e armaduras. Os artesãos do arsenal também fizeram experiências, buscando maneiras de melhorar seus produtos, pois exércitos com equipamento superior poderiam ter uma vantagem significativa na batalha."
   },
   {
     "id": 34,
@@ -1261,7 +1351,10 @@
     "panteao_id": 3,
     "icon": "aomr_dwarven_armory_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Melhora armamento.",
+    "descricao_avancada": "A Armaria especial de Thor melhora armas e armaduras de infantaria, cavalaria e navios. A Armaria dos Anões também gera um Anão grátis para cada melhoria pesquisada, além de pesquisar mais rápido em eras posteriores.",
+    "historia": "Você pode pesquisar avanços na Armaria que tornem seus soldados mais eficazes em combate e forneçam-lhes armaduras melhores.\n\nA Armaria era uma forja especializada onde bronze, ferro e outros materiais eram transformados em ferramentas, armas, escudos e armaduras. Os artesãos da armaria também faziam experiências, buscando maneiras de melhorar seus produtos, pois exércitos com equipamento superior poderiam ter uma vantagem significativa na batalha.\n\nA Armaria Anã de Thor é especial, pois permite todos os avanços na Era Arcaica, embora atualizações mais poderosas ainda exijam atualizações anteriores como pré-requisitos e os custos possam ser proibitivos. Thor também tem acesso a avanços exclusivos adicionais além do nível final de atualizações padrão.\n\nOs anões da mitologia nórdica eram mestres ferreiros e criaram praticamente todas as armas lendárias, incluindo a lança de Odin, Gungnir, e o martelo de Thor, Mjollnir."
   },
   {
     "id": 35,
@@ -1303,7 +1396,10 @@
     "panteao_id": 1,
     "icon": "aomr_military_academy_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina unidades de infantaria.",
+    "descricao_avancada": "Academias Militares gregas treinam e melhoram unidades de infantaria e contrainfantaria.",
+    "historia": "A civilização grega usa a Academia Militar para produzir e aprimorar unidades de infantaria.\n\nDurante a maior parte de sua era clássica, os exércitos gregos eram puramente de infantaria. A população masculina adulta de uma cidade servia nas fileiras, lutando com longas lanças e espadas, carregando o escudo áspide e usando o capacete com crista, uma couraça e grevas (nas canelas). Embora a batalha hoplita fosse geralmente simples e geralmente breve devido à sua violência, exigia disciplina firme e algum treinamento. Mover-se e lutar em formações densas com equipamentos e armas pesadas exigia prática. O treinamento ocorria regularmente em uma academia ou instituição similar."
   },
   {
     "id": 36,
@@ -1346,7 +1442,10 @@
     "panteao_id": 1,
     "icon": "aomr_archery_range_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina soldados de ataque a distância.",
+    "descricao_avancada": "Campos de Arqueiros gregos treinam e melhoram soldados de longo alcance e unidades contrassoldados de longo alcance.",
+    "historia": "A civilização grega usa o Campo de Arqueiros para produzir e atualizar soldados treinados para lutar com armas de projeteis.\n\nNa época de Filipe e Alexandre da Macedônia, os exércitos de infantaria puramente hoplitas estavam em grande desvantagem ao lutar contra exércitos mistos de infantaria, arqueiros e cavalaria. Depois disso, os exércitos antigos mais eficazes combinaram todas as armas. No entanto, os soldados que usavam armas de projeteis, como o arco e o dardo, exigiam mais habilidade e treinamento para serem eficazes."
   },
   {
     "id": 37,
@@ -1388,7 +1487,10 @@
     "panteao_id": 1,
     "icon": "aomr_stable_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina unidades de cavalaria.",
+    "descricao_avancada": "Estábulos gregos treinam e melhoram unidades de cavalaria e contra-cavalaria.",
+    "historia": "A civilização grega usa o estábulo para produzir e atualizar unidades de cavalaria.\n\nOs guerreiros montados trouxeram novas dimensões para a guerra e o combate. Eles podiam se mover rapidamente como invasores e no campo de batalha. Em perseguição, eles podiam cavalgar inimigos em retirada. Homens atacando animais de grande porte eram aterrorizantes para os homens a pé. O aumento da importância dos guerreiros montados criou uma demanda por um grande número de cavalos, que foram criados e mantidos no estábulo. Guerreiros montados treinados nas proximidades, aprendendo habilidades necessárias para lutar a cavalo."
   },
   {
     "id": 38,
@@ -1443,7 +1545,10 @@
     "panteao_id": 2,
     "icon": "aomr_barracks_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina soldados rasos.",
+    "descricao_avancada": "O Quartel egípcio treina Lanceiros, Soldados com Machado e Fundeiros.",
+    "historia": "Clique no Quartel Militar para treinar um novo soldado egípcio ou para pesquisar avanços na qualidade dos soldados disponíveis. As capacidades do soldado que podem ser produzidas também são determinadas em parte por avanços nas armaduras e armas, que podem ser pesquisadas na Armaria.\n\nTodas as civilizações tiveram a necessidade de treinar soldados pelo menos para defesa, se não agressão, contra seus vizinhos. Para muitos, esse treinamento acontecia em um quartel, que servia tanto como alojamento quanto como campo de treinamento. Novos recrutas foram designados para o quartel e após um período de treinamento estavam prontos para o serviço. No quartel aprenderam a mecânica de suas armas, o exercício dos movimentos no campo de batalha e a disciplina necessária para obedecer às ordens em combate."
   },
   {
     "id": 39,
@@ -1493,7 +1598,10 @@
     "panteao_id": 3,
     "icon": "aomr_longhouse_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina infantaria.",
+    "descricao_avancada": "Casas comunais nórdicas treinam e aprimoram unidades de infantaria básicas.",
+    "historia": "O rigoroso clima escandinavo forçava os nórdicos a ficarem enclausurados durante grande parte do ano. O treinamento de combate no inverno e a prática de armas aconteciam em grandes construções comunitárias chamados Casas Comunais. Elas preenchiam diversas funções, como locais de reunião, salões de festas e oficinas de artesanato.\n\nOs edifícios nórdicos eram em grande parte construídos em madeira, pedra e grama. Os invernos rigorosos exigiam que os edifícios tivessem paredes grossas que retivessem o calor e telhados fortemente inclinados que eliminassem mais facilmente as fortes neves do inverno. Uma fazenda nórdica do século 11 foi descoberta, escavada, e reconstruída em Newfoundland, em L'Anse aux Meadows. A fazenda é composta por três salões onde até 160 pessoas comiam, trabalhavam, dormiam e socializavam. Outros edifícios incluem duas oficinas e abrigos para gado."
   },
   {
     "id": 40,
@@ -1542,7 +1650,10 @@
     "panteao_id": 3,
     "icon": "aomr_great_hall_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina heróis e cavalaria.",
+    "descricao_avancada": "Os Grandes Salões nórdicos treinam e melhoram heróis e cavalaria.",
+    "historia": "Os chefes e reis mais poderosos construíam grandes salões para abrigar suas famílias e pertences. Como mais uma demonstração de status, eles realizavam festas e até ocasionalmente festivais ou ritos religiosos nesses salões, convidando seus seguidores e aliados mais leais. Dar presentes era um componente crucial das relações sociais nórdicas, e os convidados desses eventos podiam esperar ser generosamente recompensados por sua presença e lealdade contínua."
   },
   {
     "id": 41,
@@ -1590,7 +1701,10 @@
     "panteao_id": 4,
     "icon": "aomr_military_barracks_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina unidades da linha principal.",
+    "descricao_avancada": "Quartéis Militares atlantes treinam Murmilos, Contarius e Arcus.",
+    "historia": "Clique nos ícones de unidade no Quartel Militar para treinar um novo soldado atlante ou para pesquisar avanços na qualidade dos soldados disponíveis. As capacidades do soldado que podem ser produzidas também são determinadas em parte por avanços nas armaduras e armas, que podem ser pesquisadas na Armaria.\n\nTodas as civilizações tiveram a necessidade de treinar soldados pelo menos para defesa, se não agressão, contra seus vizinhos. Para muitos, esse treinamento acontecia em um quartel, que servia tanto como alojamento quanto como campo de treinamento. Novos recrutas foram designados para o quartel e após um período de treinamento estavam prontos para o serviço. No quartel aprenderam a mecânica de suas armas, o exercício dos movimentos no campo de batalha e a disciplina necessária para obedecer às ordens em combate."
   },
   {
     "id": 42,
@@ -1635,7 +1749,10 @@
     "panteao_id": 4,
     "icon": "aomr_counter-barracks_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina contraunidades.",
+    "descricao_avancada": "Contraquartéis atlantes treinam unidades contra-cavalaria, contrassoldados de longo alcance e contrainfantaria.",
+    "historia": "Clique nos ícones de unidade no Quartel Militar para treinar um novo soldado atlante ou para pesquisar avanços na qualidade dos soldados disponíveis. Os soldados disponíveis aqui são muito fortes contra apenas um tipo de unidade. As capacidades do soldado que podem ser produzidas também são determinadas em parte por avanços nas armaduras e armas, que podem ser pesquisadas na Armaria.\n\nTodas as civilizações tiveram a necessidade de treinar soldados pelo menos para defesa, se não agressão, contra seus vizinhos. Para muitos, esse treinamento acontecia em um quartel, que servia tanto como alojamento quanto como campo de treinamento. Novos recrutas eram designados para o quartel e após um período de treinamento estavam prontos para o serviço. No quartel aprendiam a mecânica de suas armas, o exercício dos movimentos no campo de batalha e a disciplina necessária para obedecer às ordens em combate."
   },
   {
     "id": 43,
@@ -1683,7 +1800,10 @@
     "panteao_id": 5,
     "icon": "aomr_military_academy_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina unidades de infantaria.",
+    "descricao_avancada": "Academias Militares gregas treinam e melhoram unidades de infantaria e contrainfantaria.",
+    "historia": "A civilização grega usa a Academia Militar para produzir e aprimorar unidades de infantaria.\n\nDurante a maior parte de sua era clássica, os exércitos gregos eram puramente de infantaria. A população masculina adulta de uma cidade servia nas fileiras, lutando com longas lanças e espadas, carregando o escudo áspide e usando o capacete com crista, uma couraça e grevas (nas canelas). Embora a batalha hoplita fosse geralmente simples e geralmente breve devido à sua violência, exigia disciplina firme e algum treinamento. Mover-se e lutar em formações densas com equipamentos e armas pesadas exigia prática. O treinamento ocorria regularmente em uma academia ou instituição similar."
   },
   {
     "id": 44,
@@ -1730,7 +1850,10 @@
     "panteao_id": 5,
     "icon": "aomr_imperial_academy",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Treina heróis chineses.",
+    "descricao_avancada": "Construção de ensino superior que produz heróis e pesquisa aprimoramentos chineses exclusivos.",
+    "historia": "A Taixue, ou Academia Imperial, foi a primeira instituição oficial de ensino superior da China, com origens que remontam a mais de 2.000 anos, à dinastia Zhou. Na antiga Taixue, esperava-se que os alunos estudassem as filosofias dos antigos sábios e dominassem as ''Seis Artes'', que incluíam caligrafia, matemática, arquearia e carruagem.\n\nTaixues persistiram na China por mais de dois milênios, produzindo não apenas artistas, filósofos e burocratas, mas também muitos estrategistas renomados.\n\n''O imperador entra na Academia Imperial para buscar orientação dos mestres e aprender o caminho.''"
   },
   {
     "id": 45,
@@ -1771,7 +1894,10 @@
     "panteao_id": 5,
     "icon": "aomr_machine_workshop",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Treina arqueiros e Armas de Cerco. Pode ser aprimorada com uma Torre ou um Pátio de Treinamento.",
+    "descricao_avancada": "Treina soldados chineses avançados de longo alcance e Armas de Cerco. Pode ser aprimorada com uma Torre para defesa ou um Pátio de Treinamento para acelerar a produção.",
+    "historia": "Os militares chineses dependiam muito de armamento de cerco e soldados de longo alcance devido à prevalência de cidades e vilas fortificadas em toda a China. Armas como a besta de cerco, uma besta do tamanho de uma cama operada por vários soldados, trabucos de tração e o Egu Che, uma carroça de gancho projetada para danificar muralhas, foram empregados com grande efeito pelos exércitos chineses."
   },
   {
     "id": 74,
@@ -1803,7 +1929,10 @@
     "panteao_id": 7,
     "icon": "aomr_war_hut_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina unidades de infantaria.",
+    "descricao_avancada": "As Cabanas de Guerra astecas treinam e aprimoram unidades de infantaria e contrainfantaria.",
+    "historia": "Na sociedade asteca, a participação no calpulli estabelecia a educação religiosa e secular de cada indivíduo, bem como o seu treinamento para a guerra.\n\nA Cabana de Guerra inspira-se nos históricos telpochcalli (''casas da juventude''), que desempenharam um papel importante na preparação dos seus alunos para a vida militar. Essas escolas funcionavam tanto como campos de treinamento quanto como espaços de convivência, onde os jovens fortaleciam-se por meio de exercícios físicos rigorosos e aprendiam a usar diferentes armas. A instrução era ministrada por guerreiros veteranos, que transmitiam habilidades práticas de combate e disciplina adquiridas em experiências reais no campo de batalha."
   },
   {
     "id": 75,
@@ -1836,7 +1965,10 @@
     "panteao_id": 7,
     "icon": "aomr_noble_hut_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina unidades de elite.",
+    "descricao_avancada": "Cabanas de Nobres Astecas treinam e aprimoram poderosas unidades de elite.",
+    "historia": "Na sociedade asteca, a participação no calpulli estabelecia a educação religiosa e secular de cada indivíduo, bem como seu treinamento para a guerra.\n\nA Cabana dos Nobres se inspira no calmecac histórico, uma escola especial frequentada por meninos da classe alta. Na Cabana dos Nobres, jovens guerreiros são preparados para a liderança e treinados nos costumes da elite em religião, governo e guerra."
   },
   {
     "id": 46,
@@ -1869,7 +2001,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produz unidades navais.",
+    "descricao_avancada": "Constrói navios e unidades mitológicas navais, além de servir de depósito para peixes e outras comidas. Deve ser construído próximo à água.",
+    "historia": "A Doca constrói Navios de Pesca e serve como local de armazenamento para todo tipo de comida. Além disso, constrói todos os tipos de navios de guerra e unidades mitológicas navais. Você também pode aprimorar seus navios e pesquisar avanços para eles na Doca.\n\nMuito antes do início da história escrita, os humanos já construíam barcos e se aventuravam no mar para comercializar e pescar. A construção de barcos tornou-se uma habilidade importante para civilizações que tinham acesso ao mar para o comércio e a pesca. Normalmente, a construção de barcos era realizada em oficinas à beira da água, em portos protegidos. Barcos também descarregavam a pesca nesses lugares."
   },
   {
     "id": 47,
@@ -1902,7 +2037,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produz unidades navais.",
+    "descricao_avancada": "Constrói navios e unidades mitológicas navais, além de servir de depósito para peixes e outras comidas. Deve ser construído próximo à água.",
+    "historia": "A Doca constrói Navios de Pesca e serve como local de armazenamento para todo tipo de comida. Além disso, constrói todos os tipos de navios de guerra e unidades mitológicas navais. Você também pode aprimorar seus navios e pesquisar avanços para eles na Doca.\n\nMuito antes do início da história escrita, os humanos já construíam barcos e se aventuravam no mar para comercializar e pescar. A construção de barcos tornou-se uma habilidade importante para civilizações que tinham acesso ao mar para o comércio e a pesca. Normalmente, a construção de barcos era realizada em oficinas à beira da água, em portos protegidos. Barcos também descarregavam a pesca nesses lugares."
   },
   {
     "id": 48,
@@ -1935,7 +2073,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produz unidades navais.",
+    "descricao_avancada": "Constrói navios e unidades mitológicas navais, além de servir de depósito para peixes e outras comidas. Deve ser construído próximo à água.",
+    "historia": "A Doca constrói Navios de Pesca e serve como local de armazenamento para todo tipo de comida. Além disso, constrói todos os tipos de navios de guerra e unidades mitológicas navais. Você também pode aprimorar seus navios e pesquisar avanços para eles na Doca.\n\nMuito antes do início da história escrita, os humanos já construíam barcos e se aventuravam no mar para comercializar e pescar. A construção de barcos tornou-se uma habilidade importante para civilizações que tinham acesso ao mar para o comércio e a pesca. Normalmente, a construção de barcos era realizada em oficinas à beira da água, em portos protegidos. Barcos também descarregavam a pesca nesses lugares."
   },
   {
     "id": 49,
@@ -1968,7 +2109,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produz unidades navais.",
+    "descricao_avancada": "Constrói navios e unidades mitológicas navais, além de servir de depósito para peixes e outras comidas. Deve ser construído próximo à água.",
+    "historia": "A Doca constrói Navios de Pesca e serve como local de armazenamento para todo tipo de comida. Além disso, constrói todos os tipos de navios de guerra e unidades mitológicas navais. Você também pode aprimorar seus navios e pesquisar avanços para eles na Doca.\n\nMuito antes do início da história escrita, os humanos já construíam barcos e se aventuravam no mar para comercializar e pescar. A construção de barcos tornou-se uma habilidade importante para civilizações que tinham acesso ao mar para o comércio e a pesca. Normalmente, a construção de barcos era realizada em oficinas à beira da água, em portos protegidos. Barcos também descarregavam a pesca nesses lugares."
   },
   {
     "id": 50,
@@ -2001,7 +2145,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produz unidades navais.",
+    "descricao_avancada": "Constrói navios e unidades mitológicas navais, além de servir de depósito para peixes e outras comidas. Deve ser construído próximo à água.",
+    "historia": "A Doca constrói Navios de Pesca e serve como local de armazenamento para todo tipo de comida. Além disso, constrói todos os tipos de navios de guerra e unidades mitológicas navais. Você também pode aprimorar seus navios e pesquisar avanços para eles na Doca.\n\nMuito antes do início da história escrita, os humanos já construíam barcos e se aventuravam no mar para comercializar e pescar. A construção de barcos tornou-se uma habilidade importante para civilizações que tinham acesso ao mar para o comércio e a pesca. Normalmente, a construção de barcos era realizada em oficinas à beira da água, em portos protegidos. Barcos também descarregavam a pesca nesses lugares."
   },
   {
     "id": 78,
@@ -2034,7 +2181,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produz unidades navais.",
+    "descricao_avancada": "Constrói navios e unidades mitológicas navais, além de servir de depósito para peixes e outras comidas. Deve ser construído próximo à água.",
+    "historia": "A Doca constrói Navios de Pesca e serve como local de armazenamento para todo tipo de comida. Além disso, constrói todos os tipos de navios de guerra e unidades mitológicas navais. Você também pode aprimorar seus navios e pesquisar avanços para eles na Doca.\n\nMuito antes do início da história escrita, os humanos já construíam barcos e se aventuravam no mar para comercializar e pescar. A construção de barcos tornou-se uma habilidade importante para civilizações que tinham acesso ao mar para o comércio e a pesca. Normalmente, a construção de barcos era realizada em oficinas à beira da água, em portos protegidos. Barcos também descarregavam a pesca nesses lugares."
   },
   {
     "id": 79,
@@ -2067,7 +2217,10 @@
     "dano_perfurante": 8,
     "alcance": 18,
     "velocidade_de_ataque_atk_s": 1,
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Produz unidades navais.",
+    "descricao_avancada": "Constrói navios e unidades mitológicas navais, além de servir de depósito para peixes e outras comidas. Deve ser construído próximo à água.",
+    "historia": "A Doca constrói Navios de Pesca e serve como local de armazenamento para todo tipo de comida. Além disso, constrói todos os tipos de navios de guerra e unidades mitológicas navais. Você também pode aprimorar seus navios e pesquisar avanços para eles na Doca.\n\nMuito antes do início da história escrita, os humanos já construíam barcos e se aventuravam no mar para comercializar e pescar. A construção de barcos tornou-se uma habilidade importante para civilizações que tinham acesso ao mar para o comércio e a pesca. Normalmente, a construção de barcos era realizada em oficinas à beira da água, em portos protegidos. Barcos também descarregavam a pesca nesses lugares."
   },
   {
     "id": 51,
@@ -2098,7 +2251,10 @@
     ],
     "panteao_id": 1,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Troca recursos e unidades comerciais.",
+    "descricao_avancada": "Você pode treinar Caravanas e comercializar recursos em seu Mercado.",
+    "historia": "No Mercado, você pode vender Comida e Madeira por Ouro ou comprar Comida e Madeira com Ouro. Você também pode pesquisar avanços comerciais e criar caravanas para negociar com os Centros Urbanos.\n\nEm cada cidade grande, os residentes criavam um centro comercial, ou mercado, onde eram trocados alimentos e produtos artesanais. Nas cidades maiores, os mercados também se tornavam centros de comércio com outras cidades. Mercados como a ágora grega também se tornavam locais de troca de ideias, entretenimento (bardos, acrobatas, músicos) e divulgação de notícias."
   },
   {
     "id": 52,
@@ -2125,7 +2281,10 @@
     "tecnologias_id": "2a800f30e211802bad29c6756f35589e",
     "panteao_id": 2,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Troca recursos e unidades comerciais.",
+    "descricao_avancada": "Você pode treinar Caravanas e comercializar recursos em seu Mercado.",
+    "historia": "No Mercado, você pode vender Comida e Madeira por Ouro ou comprar Comida e Madeira com Ouro. Você também pode pesquisar avanços comerciais e criar caravanas para negociar com os Centros Urbanos.\n\nEm cada cidade grande, os residentes criavam um centro comercial, ou mercado, onde eram trocados alimentos e produtos artesanais. Nas cidades maiores, os mercados também se tornavam centros de comércio com outras cidades. Mercados como a ágora grega também se tornavam locais de troca de ideias, entretenimento (bardos, acrobatas, músicos) e divulgação de notícias."
   },
   {
     "id": 53,
@@ -2150,7 +2309,10 @@
     "era_id": 2,
     "panteao_id": 3,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Troca recursos e unidades comerciais.",
+    "descricao_avancada": "Você pode treinar Caravanas e comercializar recursos em seu Mercado.",
+    "historia": "No Mercado, você pode vender Comida e Madeira por Ouro ou comprar Comida e Madeira com Ouro. Você também pode pesquisar avanços comerciais e criar caravanas para negociar com os Centros Urbanos.\n\nEm cada cidade grande, os residentes criavam um centro comercial, ou mercado, onde eram trocados alimentos e produtos artesanais. Nas cidades maiores, os mercados também se tornavam centros de comércio com outras cidades. Mercados como a ágora grega também se tornavam locais de troca de ideias, entretenimento (bardos, acrobatas, músicos) e divulgação de notícias."
   },
   {
     "id": 54,
@@ -2175,7 +2337,10 @@
     "era_id": 2,
     "panteao_id": 4,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Troca recursos e unidades comerciais.",
+    "descricao_avancada": "Você pode treinar Caravanas e comercializar recursos em seu Mercado.",
+    "historia": "No Mercado, você pode vender Comida e Madeira por Ouro ou comprar Comida e Madeira com Ouro. Você também pode pesquisar avanços comerciais e criar caravanas para negociar com os Centros Urbanos.\n\nEm cada cidade grande, os residentes criavam um centro comercial, ou mercado, onde eram trocados alimentos e produtos artesanais. Nas cidades maiores, os mercados também se tornavam centros de comércio com outras cidades. Mercados como a ágora grega também se tornavam locais de troca de ideias, entretenimento (bardos, acrobatas, músicos) e divulgação de notícias."
   },
   {
     "id": 55,
@@ -2202,7 +2367,10 @@
     "tecnologias_id": "2b200f30e2118032a6c1e0ccba610132",
     "panteao_id": 5,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Troca recursos e unidades comerciais.",
+    "descricao_avancada": "Você pode treinar Caravanas e comercializar recursos em seu Mercado.",
+    "historia": "No Mercado, você pode vender Comida e Madeira por Ouro ou comprar Comida e Madeira com Ouro. Você também pode pesquisar avanços comerciais e criar caravanas para negociar com os Centros Urbanos.\n\nEm cada cidade grande, os residentes criavam um centro comercial, ou mercado, onde eram trocados alimentos e produtos artesanais. Nas cidades maiores, os mercados também se tornavam centros de comércio com outras cidades. Mercados como a ágora grega também se tornavam locais de troca de ideias, entretenimento (bardos, acrobatas, músicos) e divulgação de notícias."
   },
   {
     "id": 56,
@@ -2227,7 +2395,10 @@
     "era_id": 2,
     "panteao_id": 6,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Troca recursos e unidades comerciais.",
+    "descricao_avancada": "Você pode treinar Caravanas e comercializar recursos em seu Mercado.",
+    "historia": "No Mercado, você pode vender Comida e Madeira por Ouro ou comprar Comida e Madeira com Ouro. Você também pode pesquisar avanços comerciais e criar caravanas para negociar com os Centros Urbanos.\n\nEm cada cidade grande, os residentes criavam um centro comercial, ou mercado, onde eram trocados alimentos e produtos artesanais. Nas cidades maiores, os mercados também se tornavam centros de comércio com outras cidades. Mercados como a ágora grega também se tornavam locais de troca de ideias, entretenimento (bardos, acrobatas, músicos) e divulgação de notícias."
   },
   {
     "id": 80,
@@ -2252,7 +2423,10 @@
     "era_id": 2,
     "panteao_id": 7,
     "icon": "aomr_market_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Troca recursos e unidades comerciais.",
+    "descricao_avancada": "Você pode treinar Caravanas e comercializar recursos em seu Mercado.",
+    "historia": "No Mercado, você pode vender Comida e Madeira por Ouro ou comprar Comida e Madeira com Ouro. Você também pode pesquisar avanços comerciais e criar caravanas para negociar com os Centros Urbanos.\n\nEm cada cidade grande, os residentes criavam um centro comercial, ou mercado, onde eram trocados alimentos e produtos artesanais. Nas cidades maiores, os mercados também se tornavam centros de comércio com outras cidades. Mercados como a ágora grega também se tornavam locais de troca de ideias, entretenimento (bardos, acrobatas, músicos) e divulgação de notícias."
   },
   {
     "id": 57,
@@ -2305,7 +2479,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortificação. Treina cercos, heróis e poderosas unidades exclusivas.",
+    "descricao_avancada": "Fortalezas gregas disparam flechas e guarnecem unidades. Também treinam armas de cerco, heróis e poderosas unidades exclusivas.",
+    "historia": "A Fortaleza Grega é uma poderosa construção defensiva no qual certas unidades podem guarnecer. Unidades guarnecidas aumentam o poder de fogo da Fortaleza. Você também pode treinar unidades únicas, heróis e armas de cerco, bem como pesquisar melhorias militares na Fortaleza.\n\nA civilização micênica da Grécia da Idade do Bronze era uma coleção de cidades estado, cada uma centrada em uma fortaleza no topo de uma colina. A competição entre as cidades estado por terras agrícolas e pomares, combinada com a ameaça de ataques bárbaros vindos do norte, tornou as defesas fortes cruciais para a sobrevivência. A fortaleza típica usava falésias, paredes de pedra, portões fortes e abordagens sinuosas e expostas para criar uma poderosa posição defensiva. Além disso, uma fortaleza funcionava como palácio, arsenal e centro administrativo em muitas cidades."
   },
   {
     "id": 58,
@@ -2362,7 +2539,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortificação. Treina e melhora unidades montadas.",
+    "descricao_avancada": "Fortalezas Migdol egípcias disparam flechas e guarnecem unidades. Também treinam e melhoram poderosas unidades montadas.",
+    "historia": "A Fortaleza Egípcia Migdol é uma construção defensiva excepcional com um ataque poderoso. Você pode construir e atualizar uma variedade de unidades militares na Fortaleza Migdol, incluindo Arqueiros em Biga, Cameleiros e Elefantes de Guerra.\n\nEmbora os antigos egípcios estivessem em grande parte isolados por extensos desertos, eles ainda estavam abertos a ataques vindos do Oriente Médio, do mar e do vale do Nilo, vindos do sul. Onde eram vulneráveis, construíram grandes fortalezas. O nome Migdol vem de uma fortaleza com torres anexas encontrada no norte do Egito, perto de uma cidade que se acredita ter sido chamada de Migdol. Outras fortalezas que incorporam torres semelhantes são por vezes caracterizadas como sendo do estilo Migdol."
   },
   {
     "id": 59,
@@ -2411,7 +2591,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Construção militar. Treina unidades de elite e unidades de cerco.",
+    "descricao_avancada": "Fortes de Colina nórdicos disparam flechas e guarnecem unidades. Também treinam unidades de elite e armas de cerco.",
+    "historia": "As elites locais das sociedades nórdicas construíram fortalezas para servir como base de operações. Eram estruturas defensáveis fortes, onde podiam armazenar comida e tesouros. As elites cercavam-se de guerreiros habilidosos que sustentavam com riquezas e terra.\n\nOs primeiros castelos encontrados no norte da Europa, especialmente na Grã-Bretanha, eram chamados de castelos de mota, ou ''motte-and-bailey''. A mota (''motte'') era uma colina, às vezes fabricada, e o recinto fortificado (''bailey'') era um pátio cercado por uma muralha de paliçada. Uma torre de madeira defendia a mota, posteriormente dando origem à torre de menagem - a construção central de castelos medievais."
   },
   {
     "id": 60,
@@ -2459,7 +2642,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortificação. Treina unidades de elite e armas de cerco.",
+    "descricao_avancada": "Palácios atlantes disparam flechas e guarnecem unidades. Também treinam e melhoram unidades de elite e armas de cerco.",
+    "historia": "O Palácio Atlante é uma forte construção defensiva que pode ser guarnecida com certas unidades. Unidades de guarnição aumentam o poder de fogo do Palácio. Você também pode treinar unidades únicas e armas de cerco, bem como pesquisar melhorias militares no Palácio.\n\nEntre as muitas maravilhas de Atlântida estavam seus palácios. Originalmente fortalezas, essas altas estruturas de pedra defendiam templos e cidades atlantes. Nove delas estavam no topo de penhascos com vista para os portos de Atlântida, mas nenhum governante vivia neles. Eles serviam como local de reunião para cidadãos atlantes, campos de treinamento militar e lugares seguros para todos os atlantes se abrigarem durante tempestades e guerras."
   },
   {
     "id": 61,
@@ -2508,7 +2694,10 @@
     "velocidade_de_ataque_atk_s": 1,
     "armadura_anticontusao": 5,
     "guarnicao": 20,
-    "no_projeteis": 3
+    "no_projeteis": 3,
+    "descricao_resumida": "Fortificação. Treina cavalaria de elite chinesa.",
+    "descricao_avancada": "Baoleis chineses disparam flechas e guarnecem unidades. Eles também treinam cavalaria de elite chinesa com habilidades poderosas.",
+    "historia": "Baolei é o nome de um forte imponente da China antiga. Esses bastiões tinham vários fins: eram usados para observar a área ao redor, serviam de polo central para a defesa da cidade e abrigavam soldados em quartéis. Como estruturas icônicas, os Baoleis eram considerados centros de poder e proteção para grandes faixas de território."
   },
   {
     "id": 77,
@@ -2556,7 +2745,10 @@
     ],
     "panteao_id": 7,
     "icon": "aomr_great_temple_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fortificação. Treina unidades de elite.",
+    "descricao_avancada": "Grandes Templos astecas disparam flechas e unidades de guarnição. Eles também treinam e aprimoram unidades de elite.",
+    "historia": "Erguendo-se como uma montanha sagrada do coração da cidade, o Grande Templo é o nexo divino onde deuses e mortais se encontram. Criada pelas mãos de mestres construtores e consagrada por antigos sacerdotes, esta imponente pirâmide é tanto um local de adoração quanto uma fortaleza de poder espiritual. Seus degraus ecoam os cânticos de cerimônias em honra aos deuses do sol, da chuva e da guerra. Ele invoca as bênçãos e a proteção dos deuses, prometendo vitória.\n\nÀ sua sombra, guerreiros encontram coragem, e sacerdotes canalizam a vontade divina para influenciar o destino dos reinos. As paredes do Grande Templo são adornadas com intrincadas esculturas que contam histórias de criação, sacrifício e equilíbrio cósmico, lembrando a todos que entram da dança eterna entre luz e escuridão.\n\nDiz-se que o Grande Templo detém o coração pulsante do povo Asteca. Um farol sagrado que, enquanto permanece alto e inflexível, une o mundo mortal à vigilância eterna dos deuses."
   },
   {
     "id": 62,
@@ -2593,7 +2785,10 @@
     "panteao_id": 2,
     "icon": "aomr_siege_works_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Constrói e melhora armas de cerco.",
+    "descricao_avancada": "Oficinas de Cerco egípcias constroem e aprimoram poderosas armas de cerco.",
+    "historia": "Por volta de 700 a.C., as táticas de cerco egípcias foram fortemente influenciadas pelos avanços feitos no Oriente Médio. Os exércitos que atacam uma fortaleza podem ser equipados com plataformas elevadas para que os arqueiros possam disparar contra as muralhas defensivas, e os sapadores possam ser protegidos por abrigos. Escadas cobertas ou simples poderiam ser usadas para escalar paredes. Por volta de 400 a.C., as potências mediterrâneas também estavam incorporando catapultas em seus exércitos.\n\n\"Então eles lutaram contra Tetehen, grande em poder. Encontraram-na cheia de soldados, com todos os valentes homens da Northland. Então o aríete foi empregado contra ele, seu muro foi derrubado e uma grande matança foi feita entre eles de número desconhecido; também o filho do chefe de Mim, Tefnakhte.\" -- A estela Piankhi"
   },
   {
     "id": 63,
@@ -2634,7 +2829,10 @@
     "panteao_id": 6,
     "icon": "aomr_dojo_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina guerreiros japoneses de elite.",
+    "descricao_avancada": "Os Dojos japoneses treinam e aprimoram guerreiros japoneses de elite.",
+    "historia": "O dojo japonês é um espaço de reflexão espiritual. Seja para treinamento militar ou meditação, é considerado na cultura japonesa um lugar para ''polir a alma''. No Japão moderno, os dojos são mais comumente associados às artes marciais e servem como espaços para a prática de disciplinas como judô e aikido.\n\nOs dojos são tradicionalmente ligados ao kami Takemikazuchi, reverenciado como o kami patrono das artes marciais. Muitos dojos – especialmente os de aikido – possuem pequenos santuários dedicados a Takemikazuchi, onde alunos e mestres podem oferecer culto."
   },
   {
     "id": 64,
@@ -2673,7 +2871,9 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_shrine_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_avancada": "Um pequeno local de adoração.",
+    "historia": "Pequenos santuários, não tão formais ou elaborados quanto grandes templos, eram encontrados em muitos lugares do mundo antigo. Em residências, alcovas nas paredes continham pequenas estátuas de deuses dedicadas a aspectos como prosperidade, ancestralidade ou fertilidade. As beiras das estradas eram locais populares para santuários dedicados a deuses que protegiam as viagens e o comércio."
   },
   {
     "id": 65,
@@ -2715,7 +2915,10 @@
     "panteao_id": 6,
     "icon": "aomr_guardhouse_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina soldados rasos.",
+    "descricao_avancada": "Os Postos de Vigia japoneses treinam e aprimoram unidades de infantaria e soldados de longo alcance.",
+    "historia": "Os Postos de Vigia ficavam do lado de fora dos castelos para vigiar quem entrava ou saía do local. Esses espaços não eram destinados aos samurais de elite, sendo normalmente ocupados por soldados comuns de infantaria.\n\nHoje, restam apenas três Postos de Vigia do período Edo. Um deles, o Doshin Bansho, fica fora do castelo do xogunato Tokugawa, bem ao lado do portão Ōte-mon, que era vigiado pelos soldados estacionados no Posto de Vigia."
   },
   {
     "id": 66,
@@ -2754,7 +2957,10 @@
     "panteao_id": 6,
     "icon": "aomr_stable_icon",
     "armadura_anticontusao": 5,
-    "guarnicao": 5
+    "guarnicao": 5,
+    "descricao_resumida": "Construção militar. Treina unidades de cavalaria.",
+    "descricao_avancada": "Estábulos gregos treinam e melhoram unidades de cavalaria e contra-cavalaria.",
+    "historia": "A civilização grega usa o estábulo para produzir e atualizar unidades de cavalaria.\n\nOs guerreiros montados trouxeram novas dimensões para a guerra e o combate. Eles podiam se mover rapidamente como invasores e no campo de batalha. Em perseguição, eles podiam cavalgar inimigos em retirada. Homens atacando animais de grande porte eram aterrorizantes para os homens a pé. O aumento da importância dos guerreiros montados criou uma demanda por um grande número de cavalos, que foram criados e mantidos no estábulo. Guerreiros montados treinados nas proximidades, aprendendo habilidades necessárias para lutar a cavalo."
   },
   {
     "id": 67,
@@ -2790,7 +2996,10 @@
     ],
     "panteao_id": 6,
     "icon": "aomr_watermill_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Local de entrega de Comida e Madeira.",
+    "descricao_avancada": "Um local de entrega onde os Plebeus depositam a Madeira e o Ouro que coletaram.",
+    "historia": "O moinho de água apareceu pela primeira vez no Japão em 610 EC. Os moinhos de água há muito têm importância econômica no Japão, desempenhando um papel fundamental em indústrias como a moagem de arroz e grãos, bem como na fabricação de papel. As rodas d'água tornaram-se particularmente importantes durante o período Edo. Um exemplo especialmente famoso dessa época são as rodas d'água Asakura, que operam há mais de 230 anos e ainda fornecem água para os campos de arroz ao redor."
   },
   {
     "id": 68,
@@ -2836,7 +3045,10 @@
     "unidades_id": 146,
     "panteao_id": 6,
     "icon": "aomr_castle_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fortificação. Treina máquinas de cerco e heróis.",
+    "descricao_avancada": "Os Castelos japoneses disparam flechas e guarnecem unidades. Eles também treinam máquinas de cerco e heróis.",
+    "historia": "Os castelos no Japão eram tradicionalmente construídos para os daimyō, que eram senhores feudais e faziam parte da classe guerreira no Japão feudal. Começaram a ser construídos na segunda metade do século VII, inicialmente como fortalezas de madeira bastante rudimentares; no entanto, à medida que a classe dos daimyō ganhava poder e absorvia rivais mais fracos, as fortificações se tornaram mais complexas, incorporando pedra. Posteriormente, essas fortalezas começaram a incorporar elementos mais típicos de castelos, como portões e torres.\n\nOs castelos eram frequentemente construídos nas montanhas, aproveitando as defesas naturais oferecidas pelo terreno. Caso não houvesse montanhas adequadas na região, eram criadas elevações artificiais para construir o castelo no topo; isso explica por que muitos castelos japoneses que ainda existem possuem paredes de pedra íngremes.\n\nUm dos castelos mais famosos do Japão é o Castelo de Himeji, também conhecido como Castelo da Garça Branca, e sua construção data do século XIV."
   },
   {
     "id": 69,
@@ -2865,7 +3077,9 @@
       "29500f30e211803c87cedcb432ce6273"
     ],
     "icon": "aomr_wooden_wall_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Barreira defensiva.",
+    "descricao_avancada": "Protege cidades. Pressione Shift e clique para colocar seções da muralha, e depois clique para colocar a muralha."
   },
   {
     "id": 70,
@@ -2908,7 +3122,10 @@
       "2b200f30e21180959b79cf558a439244"
     ],
     "icon": "aomr_sentry_tower_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Fortificação defensiva.",
+    "descricao_avancada": "Fornece linha de visão em torno de sua cidade e permite que unidades guarneçam seu interior. Melhore-a para que dispare contra inimigos.",
+    "historia": "As Torres começam como Torres de Sentinela. Elas têm uma linha de visão significativa, mas não podem atirar em inimigos. O avanço da Torre de Vigia, dá às Torres a habilidade de atirar flechas. O avanço da Torre de Guarda aumenta ainda mais o alcance e a força dos ataques da Torre. O avanço final da Torre, a Torre de Balista, está disponível apenas para os egípcios.\n\nAs torres inicialmente não podem atacar unidades diretamente abaixo delas, mas pesquisar Óleo Fervente permitirá que elas façam isso. Ataques à distância têm dificuldade em atingir alvos em movimento rápido, como cavalaria. Pesquise Ameias para aumentar a chance de atingir essas unidades."
   },
   {
     "id": 71,
@@ -2932,7 +3149,10 @@
     "tempo_construir_segundos": 5400,
     "era_id": 4,
     "icon": "aomr_wonder_icon",
-    "armadura_anticontusao": 5
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "id": 72,
@@ -2960,7 +3180,9 @@
     "armadura_antiperfurante": 40,
     "armadura_anticontusao": 99,
     "madeira": 40,
-    "tempo_construir_segundos": 15
+    "tempo_construir_segundos": 15,
+    "descricao_resumida": "Local de entrega móvel para todos os fins.",
+    "descricao_avancada": "Local de entrega móvel nórdico para Comida, Ouro e Madeira."
   },
   {
     "tipo": [
@@ -2985,7 +3207,10 @@
     "nome": "Maravilha (Zeus)",
     "ingles": "Wonder (Zeus)",
     "panteao": "Grego :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3010,7 +3235,10 @@
     "nome": "Maravilha (Poseidon)",
     "ingles": "Wonder (Poseidon)",
     "panteao": "Grego :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3035,7 +3263,10 @@
     "nome": "Maravilha (Hades)",
     "ingles": "Wonder (Hades)",
     "panteao": "Grego :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3060,7 +3291,10 @@
     "nome": "Maravilha (Deméter)",
     "ingles": "Wonder (Demeter)",
     "panteao": "Grego :aomr_pantheon_greeks_icon:",
-    "panteao_id": 1
+    "panteao_id": 1,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3085,7 +3319,10 @@
     "nome": "Maravilha (Ísis)",
     "ingles": "Wonder (Isis)",
     "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
-    "panteao_id": 2
+    "panteao_id": 2,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3110,7 +3347,10 @@
     "nome": "Maravilha (Set)",
     "ingles": "Wonder (Set)",
     "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
-    "panteao_id": 2
+    "panteao_id": 2,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3135,7 +3375,10 @@
     "nome": "Maravilha (Thor)",
     "ingles": "Wonder (Thor)",
     "panteao": "Nórdico :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3160,7 +3403,10 @@
     "nome": "Maravilha (Odin)",
     "ingles": "Wonder (Odin)",
     "panteao": "Nórdico :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3185,7 +3431,10 @@
     "nome": "Maravilha (Loki)",
     "ingles": "Wonder (Loki)",
     "panteao": "Nórdico :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3210,7 +3459,10 @@
     "nome": "Maravilha (Gaia)",
     "ingles": "Wonder (Gaia)",
     "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
-    "panteao_id": 4
+    "panteao_id": 4,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3235,7 +3487,10 @@
     "nome": "Maravilha (Fu Xi)",
     "ingles": "Wonder (Fu Xi)",
     "panteao": "Chinês :aomr_pantheon_chinese_icon:",
-    "panteao_id": 5
+    "panteao_id": 5,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3260,7 +3515,10 @@
     "nome": "Maravilha (Nu Wa)",
     "ingles": "Wonder (Nu Wa)",
     "panteao": "Chinês :aomr_pantheon_chinese_icon:",
-    "panteao_id": 5
+    "panteao_id": 5,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3285,7 +3543,10 @@
     "nome": "Maravilha (Shennong)",
     "ingles": "Wonder (Shennong)",
     "panteao": "Chinês :aomr_pantheon_chinese_icon:",
-    "panteao_id": 5
+    "panteao_id": 5,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3310,7 +3571,10 @@
     "nome": "Maravilha (Amaterasu)",
     "ingles": "Wonder (Amaterasu)",
     "panteao": "Japonês :aomr_pantheon_japanese_icon:",
-    "panteao_id": 6
+    "panteao_id": 6,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3335,7 +3599,10 @@
     "nome": "Maravilha (Tsukuyomi)",
     "ingles": "Wonder (Tsukuyomi)",
     "panteao": "Japonês :aomr_pantheon_japanese_icon:",
-    "panteao_id": 6
+    "panteao_id": 6,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3360,7 +3627,10 @@
     "nome": "Maravilha (Susanoo)",
     "ingles": "Wonder (Susanoo)",
     "panteao": "Japonês :aomr_pantheon_japanese_icon:",
-    "panteao_id": 6
+    "panteao_id": 6,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3385,7 +3655,10 @@
     "nome": "Maravilha (Quetzalcoatl)",
     "ingles": "Wonder (Quetzalcoatl)",
     "panteao": "Astecas :aomr_pantheon_azteca_icon:",
-    "panteao_id": 7
+    "panteao_id": 7,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3410,7 +3683,10 @@
     "nome": "Maravilha (Tezcatlipoca)",
     "ingles": "Wonder (Tezcatlipoca)",
     "panteao": "Astecas :aomr_pantheon_azteca_icon:",
-    "panteao_id": 7
+    "panteao_id": 7,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3435,7 +3711,10 @@
     "nome": "Maravilha (Huitzilopochtli)",
     "ingles": "Wonder (Huitzilopochtli)",
     "panteao": "Astecas :aomr_pantheon_azteca_icon:",
-    "panteao_id": 7
+    "panteao_id": 7,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3460,7 +3739,10 @@
     "nome": "Maravilha (Rá)",
     "ingles": "Wonder (Ra)",
     "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
-    "panteao_id": 2
+    "panteao_id": 2,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3485,7 +3767,10 @@
     "nome": "Maravilha (Frey)",
     "ingles": "Wonder (Frey)",
     "panteao": "Nórdico :aomr_pantheon_norse_icon:",
-    "panteao_id": 3
+    "panteao_id": 3,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3510,7 +3795,10 @@
     "nome": "Maravilha (Urano)",
     "ingles": "Wonder (Urano)",
     "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
-    "panteao_id": 4
+    "panteao_id": 4,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "tipo": [
@@ -3535,7 +3823,10 @@
     "nome": "Maravilha (Cronos)",
     "ingles": "Wonder (Cronos)",
     "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
-    "panteao_id": 4
+    "panteao_id": 4,
+    "descricao_resumida": "Monumento espetacular.",
+    "descricao_avancada": "Construir uma Maravilha leva você à Era das Maravilhas, onde os Deuses irão recompensá-lo com um grande poder de acabar com o mundo.",
+    "historia": "Cada cultura em Age of Mythology tem a capacidade de construir um edifício único, a sua Maravilha do Mundo. Maravilhas são caras e levam muito tempo para serem construídas, mas marcam uma civilização como uma conquista notável. Construir uma Maravilha conta pontos significativos para sua pontuação de civilização e pode resultar em vitória, dependendo das condições de vitória do jogo. Os jogadores também podem gastar Favor na Maravilha para pedir a seus deuses que lhes concedam usos adicionais de Poderes Divinos.\n\nUma característica cultural distinta das grandes civilizações antigas foi a arquitetura. Os edifícios em todas as partes do mundo pareciam bastante diferentes e empregavam diferentes técnicas de construção. Em muitos casos, edifícios particularmente notáveis permaneceram como ícones da civilização da construção, marcando-a para sempre como uma cultura que alcançou grandeza, mesmo que apenas temporariamente. Exemplos de tais ícones culturais são as Pirâmides de Gizé e o Partenon de Atenas."
   },
   {
     "id": 121,
@@ -3584,7 +3875,10 @@
       39,
       40,
       41
-    ]
+    ],
+    "descricao_resumida": "Treina Aldeões.",
+    "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
+    "historia": "O Centro de Aldeia representa o estabelecimento de uma nova aldeia para fins estratégicos ou de recolhimento de recursos. Os Centros de Aldeia podem treinar Aldeões e podem ser construídos em qualquer lugar do mapa, mas não oferecem a maioria dos outros benefícios que os Centros Urbanos oferecem. Você só pode construir Centros de Aldeia a partir da Era Clássica.\n\nA ascensão da agricultura proporcionou um excedente de alimentos que teve que ser coletado e armazenado para estar disponível nos meses de inverno e outros períodos em que os alimentos eram escassos. A necessidade de colher, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estas tornaram-se rapidamente centrais para muitas atividades adicionais, incluindo a colheita e armazenamento de outros recursos, a fabricação de produtos, o alojamento da população e o comércio com outros residentes ou estrangeiros. Todas as aldeias e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, esta poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados nesse local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou aldeia deixaria de funcionar."
   },
   {
     "id": 122,
@@ -3630,7 +3924,10 @@
     "unidades": "Trabalhador",
     "unidades_ids": [
       49
-    ]
+    ],
+    "descricao_resumida": "Treina Aldeões.",
+    "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
+    "historia": "O Centro de Aldeia representa o estabelecimento de uma nova aldeia para fins estratégicos ou de recolhimento de recursos. Os Centros de Aldeia podem treinar Aldeões e podem ser construídos em qualquer lugar do mapa, mas não oferecem a maioria dos outros benefícios que os Centros Urbanos oferecem. Você só pode construir Centros de Aldeia a partir da Era Clássica.\n\nA ascensão da agricultura proporcionou um excedente de alimentos que teve que ser coletado e armazenado para estar disponível nos meses de inverno e outros períodos em que os alimentos eram escassos. A necessidade de colher, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estas tornaram-se rapidamente centrais para muitas atividades adicionais, incluindo a colheita e armazenamento de outros recursos, a fabricação de produtos, o alojamento da população e o comércio com outros residentes ou estrangeiros. Todas as aldeias e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, esta poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados nesse local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou aldeia deixaria de funcionar."
   },
   {
     "id": 123,
@@ -3674,7 +3971,10 @@
     "unidades_ids": [
       75,
       76
-    ]
+    ],
+    "descricao_resumida": "Treina Aldeões.",
+    "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
+    "historia": "O Centro de Aldeia representa o estabelecimento de uma nova aldeia para fins estratégicos ou de recolhimento de recursos. Os Centros de Aldeia podem treinar Aldeões e podem ser construídos em qualquer lugar do mapa, mas não oferecem a maioria dos outros benefícios que os Centros Urbanos oferecem. Você só pode construir Centros de Aldeia a partir da Era Clássica.\n\nA ascensão da agricultura proporcionou um excedente de alimentos que teve que ser coletado e armazenado para estar disponível nos meses de inverno e outros períodos em que os alimentos eram escassos. A necessidade de colher, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estas tornaram-se rapidamente centrais para muitas atividades adicionais, incluindo a colheita e armazenamento de outros recursos, a fabricação de produtos, o alojamento da população e o comércio com outros residentes ou estrangeiros. Todas as aldeias e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, esta poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados nesse local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou aldeia deixaria de funcionar."
   },
   {
     "id": 124,
@@ -3715,7 +4015,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Treina Aldeões.",
+    "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
+    "historia": "O Centro de Aldeia representa o estabelecimento de uma nova aldeia para fins estratégicos ou de recolhimento de recursos. Os Centros de Aldeia podem treinar Aldeões e podem ser construídos em qualquer lugar do mapa, mas não oferecem a maioria dos outros benefícios que os Centros Urbanos oferecem. Você só pode construir Centros de Aldeia a partir da Era Clássica.\n\nA ascensão da agricultura proporcionou um excedente de alimentos que teve que ser coletado e armazenado para estar disponível nos meses de inverno e outros períodos em que os alimentos eram escassos. A necessidade de colher, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estas tornaram-se rapidamente centrais para muitas atividades adicionais, incluindo a colheita e armazenamento de outros recursos, a fabricação de produtos, o alojamento da população e o comércio com outros residentes ou estrangeiros. Todas as aldeias e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, esta poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados nesse local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou aldeia deixaria de funcionar."
   },
   {
     "id": 104,
@@ -3758,7 +4061,10 @@
     "unidades_ids": [
       139,
       140
-    ]
+    ],
+    "descricao_resumida": "Treina Aldeões.",
+    "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
+    "historia": "O Centro de Aldeia representa o estabelecimento de uma nova aldeia para fins estratégicos ou de recolhimento de recursos. Os Centros de Aldeia podem treinar Aldeões e podem ser construídos em qualquer lugar do mapa, mas não oferecem a maioria dos outros benefícios que os Centros Urbanos oferecem. Você só pode construir Centros de Aldeia a partir da Era Clássica.\n\nA ascensão da agricultura proporcionou um excedente de alimentos que teve que ser coletado e armazenado para estar disponível nos meses de inverno e outros períodos em que os alimentos eram escassos. A necessidade de colher, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estas tornaram-se rapidamente centrais para muitas atividades adicionais, incluindo a colheita e armazenamento de outros recursos, a fabricação de produtos, o alojamento da população e o comércio com outros residentes ou estrangeiros. Todas as aldeias e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, esta poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados nesse local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou aldeia deixaria de funcionar."
   },
   {
     "id": 105,
@@ -3800,7 +4106,10 @@
     "unidades_ids": [
       175,
       176
-    ]
+    ],
+    "descricao_resumida": "Treina Aldeões.",
+    "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
+    "historia": "O Centro de Aldeia representa o estabelecimento de uma nova aldeia para fins estratégicos ou de recolhimento de recursos. Os Centros de Aldeia podem treinar Aldeões e podem ser construídos em qualquer lugar do mapa, mas não oferecem a maioria dos outros benefícios que os Centros Urbanos oferecem. Você só pode construir Centros de Aldeia a partir da Era Clássica.\n\nA ascensão da agricultura proporcionou um excedente de alimentos que teve que ser coletado e armazenado para estar disponível nos meses de inverno e outros períodos em que os alimentos eram escassos. A necessidade de colher, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estas tornaram-se rapidamente centrais para muitas atividades adicionais, incluindo a colheita e armazenamento de outros recursos, a fabricação de produtos, o alojamento da população e o comércio com outros residentes ou estrangeiros. Todas as aldeias e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, esta poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados nesse local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou aldeia deixaria de funcionar."
   },
   {
     "id": 106,
@@ -3842,7 +4151,10 @@
     "unidades": "Espião Quimichin",
     "unidades_ids": [
       209
-    ]
+    ],
+    "descricao_resumida": "Treina Aldeões.",
+    "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
+    "historia": "O Centro de Aldeia representa o estabelecimento de uma nova aldeia para fins estratégicos ou de recolhimento de recursos. Os Centros de Aldeia podem treinar Aldeões e podem ser construídos em qualquer lugar do mapa, mas não oferecem a maioria dos outros benefícios que os Centros Urbanos oferecem. Você só pode construir Centros de Aldeia a partir da Era Clássica.\n\nA ascensão da agricultura proporcionou um excedente de alimentos que teve que ser coletado e armazenado para estar disponível nos meses de inverno e outros períodos em que os alimentos eram escassos. A necessidade de colher, armazenar e proteger os excedentes alimentares deu origem às primeiras aldeias e cidades como centros administrativos. Estas tornaram-se rapidamente centrais para muitas atividades adicionais, incluindo a colheita e armazenamento de outros recursos, a fabricação de produtos, o alojamento da população e o comércio com outros residentes ou estrangeiros. Todas as aldeias e cidades tinham um centro administrativo que era o locus do poder e da liderança governamental. A princípio, esta poderia ter sido a casa do líder local. Suprimentos importantes, especialmente excedentes de alimentos, eram armazenados nesse local, mas sua destruição geralmente significava a perda da infraestrutura governamental da cidade. Se isso não pudesse ser restaurado, a cidade ou aldeia deixaria de funcionar."
   },
   {
     "id": 107,
@@ -3900,7 +4212,10 @@
       39,
       40,
       41
-    ]
+    ],
+    "descricao_resumida": "Centro Urbano fortemente fortificado.",
+    "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
+    "historia": "Quando o Centro Urbano é forjado em uma Cidadela, ele se torna uma fortaleza inabalável, um baluarte de força contra os ataques mais ferozes. Esta poderosa fortaleza resiste firmemente a ondas de soldados inimigos, unidades míticas lendárias e poderes divinos devastadores. Embora suas muralhas possam ser reparadas após as cicatrizes de batalha, uma vez que a Cidadela seja destruída completamente, ela não pode ser reconstruída, tornando sua defesa a pedra angular de sua sobrevivência e vitória."
   },
   {
     "id": 108,
@@ -3949,7 +4264,10 @@
       51,
       53,
       60
-    ]
+    ],
+    "descricao_resumida": "Centro Urbano fortemente fortificado.",
+    "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
+    "historia": "Quando o Centro Urbano é forjado em uma Cidadela, ele se torna uma fortaleza inabalável, um baluarte de força contra os ataques mais ferozes. Esta poderosa fortaleza resiste firmemente a ondas de soldados inimigos, unidades míticas lendárias e poderes divinos devastadores. Embora suas muralhas possam ser reparadas após as cicatrizes de batalha, uma vez que a Cidadela seja destruída completamente, ela não pode ser reconstruída, tornando sua defesa a pedra angular de sua sobrevivência e vitória."
   },
   {
     "id": 109,
@@ -3993,7 +4311,10 @@
     "unidades": "Berserker",
     "unidades_ids": [
       77
-    ]
+    ],
+    "descricao_resumida": "Centro Urbano fortemente fortificado.",
+    "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
+    "historia": "Quando o Centro Urbano é forjado em uma Cidadela, ele se torna uma fortaleza inabalável, um baluarte de força contra os ataques mais ferozes. Esta poderosa fortaleza resiste firmemente a ondas de soldados inimigos, unidades míticas lendárias e poderes divinos devastadores. Embora suas muralhas possam ser reparadas após as cicatrizes de batalha, uma vez que a Cidadela seja destruída completamente, ela não pode ser reconstruída, tornando sua defesa a pedra angular de sua sobrevivência e vitória."
   },
   {
     "id": 110,
@@ -4031,7 +4352,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Centro Urbano fortemente fortificado.",
+    "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
+    "historia": "Quando o Centro Urbano é forjado em uma Cidadela, ele se torna uma fortaleza inabalável, um baluarte de força contra os ataques mais ferozes. Esta poderosa fortaleza resiste firmemente a ondas de soldados inimigos, unidades míticas lendárias e poderes divinos devastadores. Embora suas muralhas possam ser reparadas após as cicatrizes de batalha, uma vez que a Cidadela seja destruída completamente, ela não pode ser reconstruída, tornando sua defesa a pedra angular de sua sobrevivência e vitória."
   },
   {
     "id": 111,
@@ -4070,7 +4394,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Centro Urbano fortemente fortificado.",
+    "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
+    "historia": "Quando o Centro Urbano é forjado em uma Cidadela, ele se torna uma fortaleza inabalável, um baluarte de força contra os ataques mais ferozes. Esta poderosa fortaleza resiste firmemente a ondas de soldados inimigos, unidades míticas lendárias e poderes divinos devastadores. Embora suas muralhas possam ser reparadas após as cicatrizes de batalha, uma vez que a Cidadela seja destruída completamente, ela não pode ser reconstruída, tornando sua defesa a pedra angular de sua sobrevivência e vitória."
   },
   {
     "id": 112,
@@ -4112,7 +4439,10 @@
     "unidades": "Miko (Heroína)",
     "unidades_ids": [
       176
-    ]
+    ],
+    "descricao_resumida": "Centro Urbano fortemente fortificado.",
+    "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
+    "historia": "Quando o Centro Urbano é forjado em uma Cidadela, ele se torna uma fortaleza inabalável, um baluarte de força contra os ataques mais ferozes. Esta poderosa fortaleza resiste firmemente a ondas de soldados inimigos, unidades míticas lendárias e poderes divinos devastadores. Embora suas muralhas possam ser reparadas após as cicatrizes de batalha, uma vez que a Cidadela seja destruída completamente, ela não pode ser reconstruída, tornando sua defesa a pedra angular de sua sobrevivência e vitória."
   },
   {
     "id": 113,
@@ -4155,7 +4485,10 @@
     "unidades": "Espião Quimichin",
     "unidades_ids": [
       209
-    ]
+    ],
+    "descricao_resumida": "Centro Urbano fortemente fortificado.",
+    "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
+    "historia": "Quando o Centro Urbano é forjado em uma Cidadela, ele se torna uma fortaleza inabalável, um baluarte de força contra os ataques mais ferozes. Esta poderosa fortaleza resiste firmemente a ondas de soldados inimigos, unidades míticas lendárias e poderes divinos devastadores. Embora suas muralhas possam ser reparadas após as cicatrizes de batalha, uma vez que a Cidadela seja destruída completamente, ela não pode ser reconstruída, tornando sua defesa a pedra angular de sua sobrevivência e vitória."
   },
   {
     "id": 114,
@@ -4212,7 +4545,10 @@
       88,
       242,
       243
-    ]
+    ],
+    "descricao_resumida": "Fortificação de Ullr. Treina unidades de elite e de cerco.",
+    "descricao_avancada": "Forte de Colina gerada por Ullr para defender o reino dos homens. Guarnece unidades e treina unidades de elite e armas de cerco.",
+    "historia": "Após a criação do cosmos, os deuses Aesir contrataram um jotun (gigante) para construir uma fortificação, de acordo com Snorri Sturluson, que seria ''confiável e segura contra os gigantes das montanhas e os gigantes do gelo, mesmo que eles viessem a Midgard''. O construtor afirmou que poderia erguer a fortaleza em três estações, e seu preço era a mão da deusa Freia em casamento, além do sol e da lua. Os deuses, confiantes de que ele não conseguiria completar essa tarefa no prazo estipulado, concordaram.\n\nO construtor foi autorizado a usar seu cavalo Svadilfari no processo de construção; no entanto, os Aesir logo perceberam que Svadilfari não era um cavalo comum, e suas habilidades sobrenaturais estavam permitindo que o construtor completasse a fortaleza a uma velocidade alarmante. Assim, os deuses convenceram Loki a resolver a questão: Loki se transformou em uma égua e distraiu Svadilfari, impedindo que o construtor completasse a fortificação a tempo. Enfurecido pela artimanha dos Aesir, o construtor ficou irritado e atacou, permitindo que os Aesir quebrassem seu juramento. Thor, então, matou o construtor e os Aesir receberam uma fortaleza de primeira linha de graça."
   },
   {
     "id": 115,
@@ -4241,7 +4577,10 @@
     "unidades_ids": [
       127
     ],
-    "nome": "Árvore de Hespérides"
+    "nome": "Árvore de Hespérides",
+    "descricao_resumida": "Treina Dríades.",
+    "descricao_avancada": "Treina Dríades para quem as capturar e controlar. Você pode treinar 5 Dríades por Árvore de Hespérides.",
+    "historia": "Uma árvore na qual cresciam maçãs douradas era protegida pelas filhas ninfas de Atlas, as Hespérides. Foi um presente de casamento para a deusa Hera, e dizia-se que seus frutos dourados davam a imortalidade. O dragão-serpente Ladão ajudou as Hespérides a vigiar a árvore, mas mesmo esses ferozes protetores não conseguiram impedir que o fruto escorregasse para os mitos de Atalanta, Hércules e vários outros."
   },
   {
     "id": 116,
@@ -4269,7 +4608,9 @@
     "unidades_ids": [
       127
     ],
-    "nome": "Árvore de Invocação"
+    "nome": "Árvore de Invocação",
+    "descricao_avancada": "Esta árvore invoca Gaia, a deusa da terra.",
+    "historia": "Essas árvores de poder e profecia foram convocadas com o grande Poder de Deus da Semente de Gaia. Elas cresceram a partir das Poças de Gaia que se formaram em alguns dos atóis ao redor da ilha destruída de Atlântida Velha. As Árvores de Invocação irradiavam a energia da própria natureza, buscando extrair a essência de Gaia para ajudar a limpar a terra."
   },
   {
     "id": 117,
@@ -4327,7 +4668,9 @@
     "tecnologias_ids": [
       null,
       null
-    ]
+    ],
+    "descricao_avancada": "Cidades grandes usam estaleiros para produzir navios de guerra em massa.",
+    "historia": "Este edifício produz navios de guerra. Uma marinha dominante era crucial para as antigas civilizações marítimas, pois lhes permitia proteger e patrulhar suas próprias costas e rotas comerciais, e também ameaçar as de outros. Os nórdicos foram \"vikings\" para atacar outros para o comércio de mercadorias e ouro, e a habilidade de seus marinheiros e seus longboats robustos e rápidos lhes permitiu fazê-lo por muitos séculos."
   },
   {
     "id": 118,
@@ -4357,7 +4700,10 @@
     "tecnologias_ids": [
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Fornece linha de visão.",
+    "descricao_avancada": "Evocado por sacerdotes egípcios para ajudar na exploração e fornecer linha de visão",
+    "historia": "Embora os Sacerdotes não sejam batedores rápidos e não tenham inicialmente uma grande linha de visão, eles podem construir Obeliscos, que têm uma boa linha de visão, para ajudar a explorar o mapa.\n\nO obelisco, ou ''tejen'' em egípcio, era sinônimo de proteção. Acreditava-se que a coluna de pedra de quatro lados tirava o mal do chão e o dispersava no céu. No topo do obelisco estava a pirâmide, uma pequena pirâmide que simbolizava o sol. Obeliscos eram frequentemente inscritos com hieróglifos. A palavra é de origem grega e refere-se a um espeto de churrasco."
   },
   {
     "id": 119,
@@ -4393,7 +4739,10 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Local de entrega de Comida. Um santuário encantado que gera cervos e lobos.",
+    "descricao_avancada": "Local de entrega de Comida. Um santuário encantado por Minakatatomi para gerar periodicamente cervos caçáveis, além de lobos defensivos amigáveis.",
+    "historia": "Os santuários japoneses estão profundamente associados à religião xintoísta. Com cerca de 80.000 santuários oficiais no Japão, esses espaços são parte integrante da história e do turismo japoneses. Os santuários são normalmente dedicados a um deus individual e são encontrados em lugares onde as pessoas sentiram uma conexão estreita com o deus. Como resultado, os santuários geralmente estão localizados em belos cenários naturais, como florestas, corpos d'água, cachoeiras ou montanhas.\n\nOs santuários são marcados por portões torii na entrada e normalmente apresentam um honden (salão principal) e um haiden (salão de adoração). Seu tamanho pode variar: alguns santuários em miniatura podem ser encontrados à beira da estrada, enquanto outros, como o Grande Santuário de Ise, são grandes e atraem milhões de visitantes a cada ano.\n\nUm dos aspectos mais distintivos dos santuários japoneses é a tradição de desmontá-los e reconstruí-los aproximadamente a cada vinte anos, uma prática conhecida como Shikinen Sengu. Este ritual se originou no século VII EC e continuou por mais de mil anos."
   },
   {
     "id": 120,
@@ -4424,6 +4773,9 @@
       null,
       null,
       null
-    ]
+    ],
+    "descricao_resumida": "Fornece acesso através de muralhas.",
+    "descricao_avancada": "Portões dão acesso por muralhas.",
+    "historia": "Os Portões podem ser construídos como parte de uma Muralha. Clique em um trecho da Muralha, depois clique em ''Construir portão'' para substituí-lo por um Portão. Suas unidades e as de seus aliados abrirão e fecharão automaticamente o Portão ao passar. As tropas inimigas não podem passar nem abrir um Portão, e precisam destruí-lo para ir além.\n\nPortões eram construídos em muralhas para permitir o acesso às fortificações. Eles eram a seção mais vulnerável de uma fortificação, então medidas adicionais eram tomadas para torná-los fortes. Alguns exemplos são uma aproximação longa e exposta ao próprio portão, ou passagens expostas atrás do portão que levam a mais portões."
   }
 ]

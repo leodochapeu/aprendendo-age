@@ -9,7 +9,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { PortraitHeaderActions } from "@/components/ui/PortraitHeaderActions";
 import { Section } from "@/components/ui/Section";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
-import { entityDisplayDescription } from "@/data/catalogLocale";
 import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -92,6 +91,9 @@ export function ConstrucaoDetailPage() {
   const showTecnologiasSection = tecnologiaPortraitItems.length > 0 || Boolean(c.tecnologias?.trim());
   const showUnidadesSection = unidadePortraitItems.length > 0 || Boolean(c.unidades?.trim());
   const modelUrl = buildingModelUrl(c.id);
+  const shortDesc = (c.descricao_resumida ?? "").trim();
+  const longDesc = (c.descricao_avancada ?? "").trim();
+  const hist = (c.historia ?? "").trim();
 
   const costSection = (
     <Section title={t("common.costAndTime")}>
@@ -118,12 +120,14 @@ export function ConstrucaoDetailPage() {
       <BackLink to={backToList}>{backLabel}</BackLink>
       <PageHeader
         title={c.nome}
-        description={entityDisplayDescription(c, locale, t)}
+        description={
+          shortDesc ? <NotionText text={shortDesc} className="block" /> : undefined
+        }
         headerIconSrc={construcaoIcon}
       />
 
       <div className="grid items-start gap-6 lg:grid-cols-2">
-        <Section title={t("common.classification")}>
+        <Section title={t("common.aboutBuilding")}>
           <div className="space-y-0">
             {hasTipoContent(c.tipo) ? (
               <InfoRow label={t("common.type")}>
@@ -181,6 +185,14 @@ export function ConstrucaoDetailPage() {
               <InfoRow label={t("common.era")}>
                 <InfoRowPortraitOrText portraits={null} textFallback={<NotionText text={c.era} />} />
               </InfoRow>
+            ) : null}
+            {longDesc && longDesc !== shortDesc ? (
+              <div className="border-t border-aom-border/50 pt-3">
+                <NotionText
+                  text={longDesc}
+                  className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
+                />
+              </div>
             ) : null}
           </div>
         </Section>
@@ -267,6 +279,15 @@ export function ConstrucaoDetailPage() {
           ) : (
             <NotionText text={c.unidades!} />
           )}
+        </Section>
+      ) : null}
+
+      {hist ? (
+        <Section title={t("common.history")} className="mt-6">
+          <NotionText
+            text={hist}
+            className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
+          />
         </Section>
       ) : null}
     </div>
