@@ -282,13 +282,21 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
   const auraRef = useRef<HeroAura | null>(null);
   const idleRef = useRef<IdleVfx | null>(null);
   const heroRef = useRef(hero);
-  heroRef.current = hero;
   const hoverRef = useRef(hover);
-  hoverRef.current = hover;
   const vfxRef = useRef(vfx);
-  vfxRef.current = vfx;
-  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const sourcesKey = urls.join("|");
+  const [loadState, setLoadState] = useState<{ key: string; status: "ready" | "error" } | null>(null);
+  const status: "loading" | "ready" | "error" = !sourcesKey
+    ? "error"
+    : loadState?.key === sourcesKey
+      ? loadState.status
+      : "loading";
+
+  useEffect(() => {
+    heroRef.current = hero;
+    hoverRef.current = hover;
+    vfxRef.current = vfx;
+  }, [hero, hover, vfx]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -369,12 +377,10 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
     if (!stage) return;
     if (!sources.length) {
       clearPivot(stage.pivot);
-      setStatus("error");
       return;
     }
 
     let cancelled = false;
-    setStatus("loading");
     const loader = new GLTFLoader();
     Promise.all(sources.map((item) => loader.loadAsync(item).catch(() => null))).then((loaded) => {
       if (cancelled || stageRef.current !== stage) {
@@ -385,14 +391,14 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
       }
       clearPivot(stage.pivot);
       const models = loaded.filter((gltf): gltf is NonNullable<typeof gltf> => gltf !== null);
-        if (!models.length) {
-          auraRef.current?.dispose();
-          auraRef.current = null;
-          idleRef.current?.dispose();
-          idleRef.current = null;
-          setStatus("error");
-          return;
-        }
+      if (!models.length) {
+        auraRef.current?.dispose();
+        auraRef.current = null;
+        idleRef.current?.dispose();
+        idleRef.current = null;
+        setLoadState({ key: sourcesKey, status: "error" });
+        return;
+      }
       const modelRoot = new THREE.Group();
       modelRoot.name = "unit";
       stage.pivot.add(modelRoot);
@@ -423,7 +429,7 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
       stage.pivot.add(shadow);
       auraRef.current?.dispose();
       auraRef.current = heroRef.current ? createHeroAura(stage.pivot.parent ?? stage.pivot, box, feet) : null;
-      setStatus("ready");
+      setLoadState({ key: sourcesKey, status: "ready" });
     });
 
     return () => {
