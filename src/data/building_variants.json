@@ -74,6 +74,7 @@
           "pt": "Muralha de Cidadela",
           "en": "Citadel Wall"
         },
+        "icon": "aomr_citadel_wall_icon",
         "pantheons": [
           2
         ]
@@ -85,6 +86,7 @@
           "pt": "Muralha de Bronze",
           "en": "Bronze Wall"
         },
+        "icon": "aomr_bronze_wall_icon",
         "pantheons": [
           4
         ]
@@ -96,6 +98,7 @@
           "pt": "Muralha de Ferro",
           "en": "Iron Wall"
         },
+        "icon": "aomr_iron_wall_icon",
         "pantheons": [
           4
         ]
@@ -107,6 +110,7 @@
           "pt": "Muralha de Oricalco",
           "en": "Orichalcum Wall"
         },
+        "icon": "aomr_orichalcum_wall_icon",
         "pantheons": [
           4
         ]
@@ -118,6 +122,7 @@
           "pt": "Grande Muralha",
           "en": "Great Wall"
         },
+        "icon": "aomr_great_wall_chinese_icon",
         "pantheons": [
           5
         ]
@@ -208,6 +213,7 @@
           "pt": "Torre de Balista",
           "en": "Ballista Tower"
         },
+        "icon": "aomr_ballista_tower_icon",
         "pantheons": [
           2
         ]
@@ -219,6 +225,7 @@
           "pt": "Torre de Besta",
           "en": "Crossbow Tower"
         },
+        "icon": "aomr_fusillade_tower_icon",
         "pantheons": [
           5
         ]

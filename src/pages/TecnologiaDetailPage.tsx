@@ -23,6 +23,7 @@ import {
   listIndexReturnTo,
   listOrDetailBackLinkLabel,
 } from "@/lib/listIndexReturnState";
+import { construcaoPublicId, construcaoVariantQuery } from "@/lib/buildingFamilies";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { getTecnologiaAssetUrl } from "@/lib/tecnologiaAssetUrl";
 
@@ -108,10 +109,11 @@ export function TecnologiaDetailPage() {
   const construcaoPortraitItems =
     Array.isArray(construcaoOrigemField) && construcaoOrigemField.length
       ? construcaoOrigemField.map((r, i) => {
-          const c = construcaoById.get(r.id);
+          const publicId = construcaoPublicId(r.id);
+          const c = construcaoById.get(publicId);
           return {
             key: `${r.id}-${i}`,
-            to: localeSectionPath(locale, "construcoes", construcaoSlugById.get(r.id) ?? r.id),
+            to: `${localeSectionPath(locale, "construcoes", construcaoSlugById.get(publicId) ?? publicId)}${construcaoVariantQuery(r.id)}`,
             nome: r.nome,
             src: c ? getConstrucaoAssetUrl(c) : undefined,
           };

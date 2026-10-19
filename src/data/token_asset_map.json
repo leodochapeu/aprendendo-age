@@ -1178,5 +1178,12 @@
   "aomr_asgardian_hill_fort_icon": "/assets/buildings/AoMR_Asgardian_Hill_Fort_icon.webp",
   "aomr_hesperides_tree_icon": "/assets/buildings/AoMR_Hesperides_Tree_icon.webp",
   "aomr_summoning_tree_icon": "/assets/buildings/AoMR_Summoning_Tree_icon.webp",
-  "aomr_gate_icon": "/assets/buildings/AoMR_Gate_icon.webp"
+  "aomr_gate_icon": "/assets/buildings/AoMR_Gate_icon.webp",
+  "aomr_ballista_tower_icon": "/assets/techs/techs_egyptian/AoMR_Ballista_Tower_icon.webp",
+  "aomr_bronze_wall_icon": "/assets/techs/techs_atlantean/AoMR_Bronze_Wall_icon.webp",
+  "aomr_citadel_wall_icon": "/assets/techs/techs_egyptian/AoMR_Citadel_Wall_icon.webp",
+  "aomr_fusillade_tower_icon": "/assets/techs/techs_chinese/AoMR_Fusillade_Tower_icon.webp",
+  "aomr_great_wall_chinese_icon": "/assets/techs/techs_chinese/AoMR_Great_Wall_Chinese_icon.webp",
+  "aomr_iron_wall_icon": "/assets/techs/techs_atlantean/AoMR_Iron_Wall_icon.webp",
+  "aomr_orichalcum_wall_icon": "/assets/techs/techs_atlantean/AoMR_Orichalcum_Wall_icon.webp"
 }

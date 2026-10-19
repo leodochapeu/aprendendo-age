@@ -7,6 +7,7 @@ import { localeSectionPath } from "@/lib/localeRoutes";
 import { getPantheonWatermarkUrl } from "@/lib/pantheonAssetUrl";
 import { getTecnologiaAssetUrl } from "@/lib/tecnologiaAssetUrl";
 import { resolveTecnologiaIndex } from "@/lib/tecnologiaIndex";
+import { construcaoPublicId, construcaoVariantQuery } from "@/lib/buildingFamilies";
 import { getConstrucaoAssetUrl, getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import type { EntityNumRef, EntityStrRef } from "@/lib/entityRefs";
 
@@ -102,11 +103,12 @@ export function createEntityResolver(catalog: LocaleCatalog) {
   }
 
   function resolveConstrucaoLink(id: number, label?: string): ResolvedEntityLink | null {
-    const c = construcaoById.get(id);
+    const publicId = construcaoPublicId(id);
+    const c = construcaoById.get(publicId);
     if (!c) return null;
     return {
       kind: "construcao",
-      to: localeSectionPath(locale, "construcoes", construcaoSlugById.get(id) ?? id),
+      to: `${localeSectionPath(locale, "construcoes", construcaoSlugById.get(publicId) ?? publicId)}${construcaoVariantQuery(id)}`,
       label: label ?? c.nome,
       imageSrc: getConstrucaoAssetUrl(c),
     };

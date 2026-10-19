@@ -1109,7 +1109,7 @@
   },
   {
     "id": 27,
-    "nome": "Armaria (Grega)",
+    "nome": "Armaria",
     "tipo": [
       {
         "type": "Utilidade ⏫"
@@ -1972,7 +1972,7 @@
   },
   {
     "id": 46,
-    "nome": "Doca (Grego)",
+    "nome": "Doca",
     "tipo": [
       {
         "type": "Militar",
@@ -2224,7 +2224,7 @@
   },
   {
     "id": 51,
-    "nome": "Mercado (Grego)",
+    "nome": "Mercado",
     "tipo": [
       {
         "type": "Utilidade ⏫"

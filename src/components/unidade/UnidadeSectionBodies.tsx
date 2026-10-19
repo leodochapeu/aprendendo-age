@@ -21,6 +21,7 @@ import {
 import { getConstrucaoAssetUrl } from "@/lib/entityWatermarkUrls";
 import { getEraAssetUrl } from "@/lib/eraAssetUrl";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
+import { construcaoPublicId, construcaoVariantQuery } from "@/lib/buildingFamilies";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { getPantheonWatermarkUrl } from "@/lib/pantheonAssetUrl";
 
@@ -66,10 +67,11 @@ export function UnidadeVisaoGeralBody({ u }: { u: U }) {
   const construcaoPortraitItems =
     Array.isArray(constrRefs) && constrRefs.length
       ? constrRefs.map((r, i) => {
-          const c = construcaoById.get(r.id);
+          const publicId = construcaoPublicId(r.id);
+          const c = construcaoById.get(publicId);
           return {
             key: `${r.id}-${i}`,
-            to: localeSectionPath(locale, "construcoes", construcaoSlugById.get(r.id) ?? r.id),
+            to: `${localeSectionPath(locale, "construcoes", construcaoSlugById.get(publicId) ?? publicId)}${construcaoVariantQuery(r.id)}`,
             nome: r.nome,
             src: c ? getConstrucaoAssetUrl(c) : undefined,
           };

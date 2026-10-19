@@ -11,6 +11,7 @@ import { InfoRow } from "@/components/ui/InfoRow";
 import { PantheonMetaIcon } from "@/components/ui/PantheonMetaIcon";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
+import { familyMemberForPantheon, isHiddenFamilyMember } from "@/lib/buildingFamilies";
 import { getAldeaoAssetUrl, getConstrucaoAssetUrl, getMapaAssetUrl, getMapaPreviewUrl, getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { formatGodNameForMetaNotion, getDeusAssetUrl } from "@/lib/deusAssetUrl";
 import { getGodPowerAssetUrl } from "@/lib/godPowerAssetUrl";
@@ -36,6 +37,7 @@ export function AstecasPage() {
   const {
     aldeaoSlugById,
     aldeoes,
+    construcaoById,
     construcaoSlugById,
     construcoes,
     deusSlugById,
@@ -98,7 +100,11 @@ export function AstecasPage() {
   const construcoesAztecas = useMemo(
     () =>
       [...construcoes]
-        .filter((c) => c.panteao_id === AZTEC_PANTEON_ID)
+        .filter(
+          (c) =>
+            !isHiddenFamilyMember(c.id) &&
+            (c.panteao_id === AZTEC_PANTEON_ID || familyMemberForPantheon(c.id, AZTEC_PANTEON_ID) != null),
+        )
         .sort((a, b) => a.id - b.id),
     [construcoes],
   );
@@ -261,25 +267,27 @@ export function AstecasPage() {
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("nav.buildings")}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {construcoesAztecas.map((c) => (
+          {construcoesAztecas.map((c) => {
+            const variantId = familyMemberForPantheon(c.id, AZTEC_PANTEON_ID);
+            const variant = variantId != null && variantId !== c.id ? construcaoById.get(variantId) : undefined;
+            const tintName = (variant?.panteao_id != null ? panteaoById.get(variant.panteao_id) : c.panteao_id != null ? panteaoById.get(c.panteao_id) : undefined)?.nome ?? "";
+            const slug = construcaoSlugById.get(c.id) ?? c.id;
+            return (
             <li key={c.id}>
               <EntityCard
-                to={`/construcoes/${construcaoSlugById.get(c.id) ?? c.id}`}
+                to={variant ? `/construcoes/${slug}?v=${variant.id}` : `/construcoes/${slug}`}
                 linkState={listIndexState}
                 title={c.nome}
-                cardTint={
-                  panteaoFieldHasMultiplePantheons(c.panteao)
-                    ? undefined
-                    : pantheonCardTint((c.panteao_id != null ? panteaoById.get(c.panteao_id) : undefined)?.nome ?? "")
-                }
+                cardTint={panteaoFieldHasMultiplePantheons(variant?.panteao ?? c.panteao) ? undefined : pantheonCardTint(tintName)}
                 subtitle={
                   hasTipoContent(c.tipo) ? <UnidadeTipoLine tipo={c.tipo} colored shell="none" /> : undefined
                 }
-                meta={<MetaNotionLine parts={[c.panteao, c.era]} />}
+                meta={<MetaNotionLine parts={[variant?.panteao ?? c.panteao, c.era]} />}
                 watermarkSrc={getConstrucaoAssetUrl(c)}
               />
             </li>
-          ))}
+            );
+          })}
         </ul>
       </section>
 

@@ -10,10 +10,20 @@ const BuildingViewer = lazy(() =>
   import("@/components/unidade/UnidadeModelViewer").then((mod) => ({ default: mod.UnidadeModelViewer })),
 );
 
+export type BuildingVisualChoice = {
+  id: string;
+  label: string;
+  icon?: string;
+};
+
 type BuildingProjectionProps = {
   buildingId: number;
   fallbackUrl?: string;
   defaultPantheonId?: number;
+  /** Visuais da ficha unificada (panteão ou deus). Substitui os botões de variante do JSON. */
+  visuals?: BuildingVisualChoice[];
+  activeVisual?: string;
+  onVisual?: (id: string) => void;
 };
 
 /** Graus acima da horizontal. Perto de 30° lê como isométrica sem virar vista de cima. */
@@ -34,7 +44,14 @@ function catalogKey(ingles: string | undefined): string {
   return (ingles ?? "").toLowerCase().replace(/[^a-z]/g, "");
 }
 
-export function BuildingProjection({ buildingId, fallbackUrl, defaultPantheonId }: BuildingProjectionProps) {
+export function BuildingProjection({
+  buildingId,
+  fallbackUrl,
+  defaultPantheonId,
+  visuals,
+  activeVisual,
+  onVisual,
+}: BuildingProjectionProps) {
   const { t, locale } = useTranslation();
   const { panteaoById, tecnologias } = useCatalog();
   const entry = buildingVariants(buildingId);
@@ -83,9 +100,35 @@ export function BuildingProjection({ buildingId, fallbackUrl, defaultPantheonId 
     );
   };
 
+  const visualButtons = visuals?.length ? (
+    <div className="mb-3 flex flex-wrap justify-end gap-1.5">
+      {visuals.map((item) => {
+        const pressed = activeVisual === item.id;
+        return (
+          <button
+            key={item.id}
+            type="button"
+            title={item.label}
+            aria-label={item.label}
+            aria-pressed={pressed}
+            onClick={() => onVisual?.(item.id)}
+            className={`${BUTTON} ${pressedClass(pressed)}`}
+          >
+            {item.icon ? (
+              <img src={item.icon} alt="" className="h-7 w-7 object-contain" />
+            ) : (
+              <span className="px-1 text-[10px] leading-tight text-amber-100/90">{item.label}</span>
+            )}
+          </button>
+        );
+      })}
+    </div>
+  ) : null;
+
   return (
     <div>
-      {entry ? (
+      {visualButtons}
+      {entry && !visuals?.length ? (
         <div className="mb-3 flex items-start gap-3">
           <div className="flex min-w-0 flex-1 flex-wrap gap-1.5">{upgrades.map(upgradeView)}</div>
           <div className="ml-auto flex shrink-0 flex-wrap justify-end gap-1.5">

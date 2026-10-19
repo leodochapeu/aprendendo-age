@@ -1,6 +1,6 @@
-import { useLocation, useParams } from "react-router-dom";
+import { Navigate, useLocation, useParams, useSearchParams } from "react-router-dom";
 
-import { BuildingProjection } from "@/components/construcao/BuildingProjection";
+import { BuildingProjection, type BuildingVisualChoice } from "@/components/construcao/BuildingProjection";
 import { BackLink } from "@/components/ui/BackLink";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitCluster, InfoRowPortraitOrText } from "@/components/ui/InfoRowPortraitCluster";
@@ -13,7 +13,18 @@ import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { formatArmorPercent } from "@/lib/armorDisplay";
+import {
+  buildingFamilyOf,
+  construcaoPublicId,
+  construcaoVariantQuery,
+  isHiddenFamilyMember,
+  legacyBuildingSlugId,
+  presentFamilyMember,
+  selectedFamilyMember,
+  variantGodLabel,
+} from "@/lib/buildingFamilies";
 import { buildingModelUrl } from "@/lib/buildingModelUrl";
+import { getDeusAssetUrl } from "@/lib/deusAssetUrl";
 import { getConstrucaoAssetUrl, getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { getEraAssetUrl } from "@/lib/eraAssetUrl";
 import {
@@ -56,14 +67,32 @@ function unidadePortraitItemsFromIds(catalog: LocaleCatalog, ids: number[]): Por
 export function ConstrucaoDetailPage() {
   const { t, locale } = useTranslation();
   const catalog = useCatalog();
-  const { construcaoBySlug, eraById, eraSlugById, panteaoById, panteaoSlugById } = catalog;
+  const { construcaoById, construcaoBySlug, construcaoSlugById, deusById, deusSlugById, eraById, eraSlugById, panteaoById, panteaoSlugById } = catalog;
+  const [searchParams, setSearchParams] = useSearchParams();
   const { pathname, search: locSearch, state: navState } = useLocation();
   const linkState = listIndexLinkStateFromLocation(pathname, locSearch);
   const buildingsList = localeSectionPath(locale, "construcoes");
   const backToList = listIndexReturnTo(buildingsList, navState);
   const backLabel = listOrDetailBackLinkLabel(backToList, buildingsList, t("nav.buildings"));
   const { slug } = useParams();
+  const legacyId = slug ? legacyBuildingSlugId(slug) : undefined;
+  if (legacyId != null) {
+    const dest = construcaoSlugById.get(legacyId) ?? legacyId;
+    return <Navigate to={localeSectionPath(locale, "construcoes", dest)} replace state={navState} />;
+  }
   const c = slug ? construcaoBySlug.get(slug) : undefined;
+
+  if (c && isHiddenFamilyMember(c.id)) {
+    const ownerId = construcaoPublicId(c.id);
+    const dest = construcaoSlugById.get(ownerId) ?? ownerId;
+    return (
+      <Navigate
+        to={`${localeSectionPath(locale, "construcoes", dest)}${construcaoVariantQuery(c.id)}`}
+        replace
+        state={navState}
+      />
+    );
+  }
 
   if (!c) {
     return (
@@ -74,38 +103,72 @@ export function ConstrucaoDetailPage() {
     );
   }
 
-  const era = c.era_id != null ? eraById.get(c.era_id) : undefined;
-  const construcaoIcon = getConstrucaoAssetUrl(c);
-  const panteao = c.panteao_id != null ? panteaoById.get(c.panteao_id) : undefined;
+  const family = buildingFamilyOf(c.id);
+  const member = family && family.canonicalId === c.id ? selectedFamilyMember(family, searchParams.get("v")) : undefined;
+  const source = member ? construcaoById.get(member.sourceId) : undefined;
+  const view = member && source ? presentFamilyMember(c, source) : c;
+  const deus = member?.deusId != null ? deusById.get(member.deusId) : undefined;
 
-  const tecnologiaNames = splitCommaNames(c.tecnologias);
+  const visuals: BuildingVisualChoice[] | undefined = family
+    ? family.members.map((item) => {
+        if (item.deusId != null) {
+          const god = deusById.get(item.deusId);
+          const row = construcaoById.get(item.sourceId);
+          return {
+            id: String(item.sourceId),
+            label: variantGodLabel(row?.nome ?? god?.nome ?? String(item.sourceId)),
+            icon: god ? getDeusAssetUrl(god) : undefined,
+          };
+        }
+        const pantheon = panteaoById.get(item.pantheonId);
+        return {
+          id: String(item.sourceId),
+          label: pantheon?.nome ?? String(item.pantheonId),
+          icon: pantheon ? getPantheonWatermarkUrl(pantheon) : undefined,
+        };
+      })
+    : undefined;
+
+  const selectVisual = (id: string) => {
+    if (!family) return;
+    const next = new URLSearchParams(searchParams);
+    if (Number(id) === family.members[0].sourceId) next.delete("v");
+    else next.set("v", id);
+    setSearchParams(next, { replace: true, state: navState });
+  };
+
+  const era = view.era_id != null ? eraById.get(view.era_id) : undefined;
+  const construcaoIcon = getConstrucaoAssetUrl(view);
+  const panteao = view.panteao_id != null ? panteaoById.get(view.panteao_id) : undefined;
+
+  const tecnologiaNames = splitCommaNames(view.tecnologias);
   const tecnologiaPortraitItems = tecnologiaNames.length ? tecnologiaPortraitItemsFromNames(catalog, tecnologiaNames) : [];
 
-  const unidadeIdList = unidadeIdsFromConstrucao(c);
+  const unidadeIdList = unidadeIdsFromConstrucao(view);
   const unidadePortraitItems = unidadeIdList.length ? unidadePortraitItemsFromIds(catalog, unidadeIdList) : [];
 
-  const showTecnologiasSection = tecnologiaPortraitItems.length > 0 || Boolean(c.tecnologias?.trim());
-  const showUnidadesSection = unidadePortraitItems.length > 0 || Boolean(c.unidades?.trim());
-  const modelUrl = buildingModelUrl(c.id);
-  const shortDesc = (c.descricao_resumida ?? "").trim();
-  const longDesc = (c.descricao_avancada ?? "").trim();
-  const hist = (c.historia ?? "").trim();
+  const showTecnologiasSection = tecnologiaPortraitItems.length > 0 || Boolean(view.tecnologias?.trim());
+  const showUnidadesSection = unidadePortraitItems.length > 0 || Boolean(view.unidades?.trim());
+  const modelUrl = buildingModelUrl(member?.sourceId ?? view.id);
+  const shortDesc = (view.descricao_resumida ?? "").trim();
+  const longDesc = (view.descricao_avancada ?? "").trim();
+  const hist = (view.historia ?? "").trim();
 
   const costSection = (
     <Section title={t("common.costAndTime")}>
       <div className="space-y-0">
-        <InfoRow label={t("common.totalCost")}>{c.custo ?? "—"}</InfoRow>
+        <InfoRow label={t("common.totalCost")}>{view.custo ?? "—"}</InfoRow>
         <InfoRow label={t("common.wood")} icon="woodaom">
-          {c.madeira ?? "—"}
+          {view.madeira ?? "—"}
         </InfoRow>
         <InfoRow label={t("common.gold")} icon="goldaom">
-          {c.ouro ?? "—"}
+          {view.ouro ?? "—"}
         </InfoRow>
         <InfoRow label={t("common.buildTime")} icon="aomr_time_icon">
-          {c.tempo_construir_segundos ?? "—"}
+          {view.tempo_construir_segundos ?? "—"}
         </InfoRow>
         <InfoRow label={t("common.garrison")} icon="aom_garrison_icon">
-          {c.guarnicao ?? "—"}
+          {view.guarnicao ?? "—"}
         </InfoRow>
       </div>
     </Section>
@@ -115,7 +178,7 @@ export function ConstrucaoDetailPage() {
     <div>
       <BackLink to={backToList}>{backLabel}</BackLink>
       <PageHeader
-        title={c.nome}
+        title={view.nome}
         description={
           shortDesc ? <NotionText text={shortDesc} className="block" /> : undefined
         }
@@ -151,9 +214,31 @@ export function ConstrucaoDetailPage() {
                   textFallback={null}
                 />
               </InfoRow>
-            ) : c.panteao ? (
+            ) : view.panteao ? (
               <InfoRow label={t("common.pantheon")}>
-                <InfoRowPortraitOrText portraits={null} textFallback={<NotionText text={c.panteao} />} />
+                <InfoRowPortraitOrText portraits={null} textFallback={<NotionText text={view.panteao} />} />
+              </InfoRow>
+            ) : null}
+            {deus ? (
+              <InfoRow label={t("common.god")}>
+                <InfoRowPortraitOrText
+                  portraits={
+                    <PortraitHeaderActions
+                      items={[
+                        {
+                          key: String(deus.id),
+                          to: localeSectionPath(locale, "deuses", deusSlugById.get(deus.id) ?? deus.id),
+                          nome: variantGodLabel(source?.nome ?? deus.nome),
+                          src: getDeusAssetUrl(deus),
+                        },
+                      ]}
+                      linkState={linkState}
+                      size="sm"
+                      justify="start"
+                    />
+                  }
+                  textFallback={null}
+                />
               </InfoRow>
             ) : null}
             {era ? (
@@ -177,9 +262,9 @@ export function ConstrucaoDetailPage() {
                   textFallback={null}
                 />
               </InfoRow>
-            ) : c.era ? (
+            ) : view.era ? (
               <InfoRow label={t("common.era")}>
-                <InfoRowPortraitOrText portraits={null} textFallback={<NotionText text={c.era} />} />
+                <InfoRowPortraitOrText portraits={null} textFallback={<NotionText text={view.era} />} />
               </InfoRow>
             ) : null}
             {longDesc && longDesc !== shortDesc ? (
@@ -195,7 +280,15 @@ export function ConstrucaoDetailPage() {
 
         {modelUrl ? (
           <Section title={t("common.projection3d")}>
-            <BuildingProjection key={c.id} buildingId={c.id} fallbackUrl={modelUrl} defaultPantheonId={c.panteao_id} />
+            <BuildingProjection
+              key={c.id}
+              buildingId={c.id}
+              fallbackUrl={modelUrl}
+              defaultPantheonId={view.panteao_id}
+              visuals={visuals}
+              activeVisual={member ? String(member.sourceId) : undefined}
+              onVisual={selectVisual}
+            />
           </Section>
         ) : (
           costSection
@@ -207,31 +300,31 @@ export function ConstrucaoDetailPage() {
         <Section title={t("common.combatDefense")}>
           <div className="space-y-0">
             <InfoRow label={t("common.hitPoints")} icon="aomr_hit_points_icon">
-              {c.pontos_de_vida ?? "—"}
+              {view.pontos_de_vida ?? "—"}
             </InfoRow>
             <InfoRow label={t("common.pierceDamage")} icon="piercedamage">
-              {c.dano_perfurante ?? "—"}
+              {view.dano_perfurante ?? "—"}
             </InfoRow>
             <InfoRow label={t("common.attackSpeed")} icon="aomr_rate_of_fire_icon">
-              {c.velocidade_de_ataque_atk_s ?? "—"}
+              {view.velocidade_de_ataque_atk_s ?? "—"}
             </InfoRow>
             <InfoRow label={t("common.dps")} icon="attack_cur">
-              {c.dps ?? "—"}
+              {view.dps ?? "—"}
             </InfoRow>
             <InfoRow label={t("common.range")} icon="rangeicon">
-              {c.alcance ?? "—"}
+              {view.alcance ?? "—"}
             </InfoRow>
             <InfoRow label={t("common.projectiles")} icon="piercedamage">
-              {c.no_projeteis ?? "—"}
+              {view.no_projeteis ?? "—"}
             </InfoRow>
             <InfoRow label={t("common.hackArmor")} icon="hackarmor">
-              {formatArmorPercent(c.armadura_anticorte)}
+              {formatArmorPercent(view.armadura_anticorte)}
             </InfoRow>
             <InfoRow label={t("common.pierceArmor")} icon="piercearmor">
-              {formatArmorPercent(c.armadura_antiperfurante)}
+              {formatArmorPercent(view.armadura_antiperfurante)}
             </InfoRow>
             <InfoRow label={t("common.crushArmor")} icon="crusharmor">
-              {formatArmorPercent(c.armadura_anticontucao)}
+              {formatArmorPercent(view.armadura_anticontucao)}
             </InfoRow>
           </div>
         </Section>
@@ -248,7 +341,7 @@ export function ConstrucaoDetailPage() {
                 />
               </InfoRowPortraitCluster>
             ) : (
-              <NotionText text={c.tecnologias!} />
+              <NotionText text={view.tecnologias!} />
             )}
           </Section>
         ) : (
@@ -271,7 +364,7 @@ export function ConstrucaoDetailPage() {
               />
             </InfoRowPortraitCluster>
           ) : (
-            <NotionText text={c.unidades!} />
+            <NotionText text={view.unidades!} />
           )}
         </Section>
       ) : null}
