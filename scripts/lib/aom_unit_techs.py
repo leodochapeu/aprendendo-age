@@ -25,6 +25,8 @@ from aom_unit_model import (
     _tech_tags,
     direct_tech_component,
     load_anim_xml,
+    _holds_ranged_weapon,
+    _ranged_pose,
     resolve_visual_root,
     selected_material_variant,
     submodel_map,
@@ -329,6 +331,74 @@ def _safe(text: str) -> str:
     return cleaned or "base"
 
 
+def _needs_ranged_pose(path: tuple[str, ...], by_path: dict[tuple[str, ...], tuple[Any, str | None]]) -> bool:
+    """A pose do arco está no corpo, ou no cavaleiro quando a arma é dele."""
+    body = by_path.get(("body",))
+    if body and _holds_ranged_weapon(body[0]) and (path == ("body",) or len(path) == 1):
+        return True
+    for end in range(1, len(path) + 1):
+        node, _stance = by_path[path[:end]]
+        if _holds_ranged_weapon(node):
+            return True
+    return False
+
+
+def _bake_ranged_copies(
+    bars: BarIndex,
+    root: Any,
+    unit_id: int,
+    parts: list[tuple[tuple[str, ...], Any, str | None]],
+    piece_entries: dict[str, list[dict[str, Any]]],
+) -> None:
+    """Segunda pose para o modo de perfuração, com a arma na mão do disparo.
+
+    O corpo e o que o acompanha (elmo, escudo) ganham uma cópia. A arma de
+    perfuração, que já é exclusiva desse modo, é reassada na pose certa.
+    """
+    by_path = {path: (node, stance) for path, node, stance in parts}
+    for path, _node, stance in parts:
+        if stance == "hack" or not _needs_ranged_pose(path, by_path):
+            continue
+        part_key = "-".join(path).lower()
+        only: str | tuple[str, ...] = "body" if path == ("body",) else path + ("body",)
+        try:
+            prims, _names = visual_primitives(bars, root, techs=set(), only=only)
+        except (RuntimeError, FileNotFoundError, OSError, ValueError):
+            prims = []
+        if not prims:
+            continue
+        if stance == "pierce":
+            entries = piece_entries.get(part_key, [])
+            base = next(
+                (
+                    item
+                    for item in entries
+                    if item.get("stance") == "pierce" and item.get("requires") == [] and not item.get("sex")
+                ),
+                None,
+            )
+            if base is None:
+                continue
+            relative = base["url"].split("/assets/unit-models/", 1)[-1]
+            dest = PUBLIC_MODELS / relative
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            write_static_glb(prims, dest)
+            continue
+        filename = f"{_safe(part_key)}-ranged-base.glb"
+        dest = PUBLIC_MODELS / "tech" / str(unit_id) / filename
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        write_static_glb(prims, dest)
+        url = f"/assets/unit-models/tech/{unit_id}/{filename}"
+        entries = piece_entries.setdefault(part_key, [])
+        for item in entries:
+            if item.get("sex") or item.get("stance"):
+                continue
+            item["stance"] = "hack"
+        if any(item.get("stance") == "pierce" and item.get("url") == url for item in entries):
+            continue
+        entries.append({"requires": [], "url": url, "stance": "pierce"})
+
+
 def bake_unit_techs(
     bars: BarIndex,
     anim_relative: str,
@@ -379,6 +449,13 @@ def _bake_unit_techs(
             if token is not None:
                 _sex_choice.reset(token)
 
+    if has_stance:
+        token = _ranged_pose.set(True)
+        try:
+            _bake_ranged_copies(bars, root, unit_id, parts, piece_entries)
+        finally:
+            _ranged_pose.reset(token)
+
     option_tags: list[str] = []
     for tag in sorted(changed):
         info = _classify(tag, known)
@@ -409,6 +486,7 @@ def _bake_unit_techs(
     )
     for group in groups:
         group["options"].sort(key=lambda option: option["rank"])
+    groups = [group for group in groups if group["id"] != "weapons" or _weapon_options_differ(group, piece_entries)]
     result: dict[str, Any] = {"groups": groups, "pieces": piece_entries}
     if has_stance:
         result["stance"] = True
@@ -510,6 +588,64 @@ def _bake_sex_parts(
             entries.append(entry)
         if entries:
             piece_entries.setdefault(part_key, []).extend(entries)
+
+
+def _glb_color(path: Path) -> tuple[int, int, int] | None:
+    """Cor média da textura, sem o fundo escuro."""
+    if not path.exists():
+        return None
+    import io
+
+    from PIL import Image
+
+    from aom_unit_model import read_glb
+
+    gltf, blob = read_glb(path)
+    images = gltf.get("images") or []
+    if not images or "bufferView" not in images[0]:
+        return None
+    view = gltf["bufferViews"][images[0]["bufferView"]]
+    start = view.get("byteOffset", 0)
+    raw = blob[start : start + view["byteLength"]]
+    image = Image.open(io.BytesIO(raw)).convert("RGB")
+    image.thumbnail((32, 32))
+    pixels = [pixel for pixel in image.getdata() if sum(pixel) > 80]
+    if len(pixels) < 32:
+        return None
+    count = len(pixels)
+    return tuple(sum(pixel[channel] for pixel in pixels) // count for channel in range(3))  # type: ignore[return-value]
+
+
+def _weapon_options_differ(group: dict[str, Any], pieces: dict[str, list[dict[str, Any]]]) -> bool:
+    """Cobre, bronze e ferro só viram botão se a cor da arma mudar de fato."""
+    compared = False
+    for entries in pieces.values():
+        base = next((item for item in entries if item.get("requires") == [] and not item.get("sex")), None)
+        if base is None:
+            continue
+        base_color = _glb_color(PUBLIC_MODELS.parents[1] / base["url"].lstrip("/"))
+        if base_color is None:
+            continue
+        for option in group["options"]:
+            match = next(
+                (
+                    item
+                    for item in entries
+                    if item.get("requires") == [option["tag"]]
+                    and not item.get("sex")
+                    and item.get("stance") == base.get("stance")
+                ),
+                None,
+            )
+            if match is None:
+                continue
+            color = _glb_color(PUBLIC_MODELS.parents[1] / match["url"].lstrip("/"))
+            if color is None:
+                return True
+            compared = True
+            if max(abs(color[channel] - base_color[channel]) for channel in range(3)) > 24:
+                return True
+    return not compared
 
 
 def _piece_changes(tag: str, pieces: dict[str, list[dict[str, Any]]]) -> bool:

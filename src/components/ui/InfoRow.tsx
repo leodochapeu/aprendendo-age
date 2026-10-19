@@ -9,9 +9,11 @@ type InfoRowProps = {
   children: ReactNode;
   /** Chave em `token_asset_map.json` (ex.: `foodaom`) ou caminho `/assets/...`. Aceita vários. */
   icon?: string | string[];
+  /** Controle ao lado do rótulo, fora do texto em maiúsculas (ex.: botão de informação). */
+  labelAddon?: ReactNode;
 };
 
-export function InfoRow({ label, children, icon }: InfoRowProps) {
+export function InfoRow({ label, children, icon, labelAddon }: InfoRowProps) {
   const icons = (Array.isArray(icon) ? icon : icon ? [icon] : [])
     .map((key) => resolveTokenIconSrc(key))
     .filter((src): src is string => Boolean(src));
@@ -27,6 +29,7 @@ export function InfoRow({ label, children, icon }: InfoRowProps) {
           </span>
         ) : null}
         <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">{label}</span>
+        {labelAddon}
       </div>
       <div className="min-w-0 text-sm text-zinc-200">{children}</div>
     </div>

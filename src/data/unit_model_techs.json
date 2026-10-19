@@ -10633,35 +10633,6 @@
       ]
     }
   },
-  "56": {
-    "groups": [
-      {
-        "id": "myth:feetofthejackal",
-        "kind": "myth",
-        "options": [
-          {
-            "tag": "feetofthejackal",
-            "catalog": "feetofthejackal",
-            "rank": 1
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/56/body-base.glb"
-        },
-        {
-          "requires": [
-            "feetofthejackal"
-          ],
-          "url": "/assets/unit-models/tech/56/body-feetofthejackal.glb"
-        }
-      ]
-    }
-  },
   "57": {
     "groups": [
       {
@@ -18873,218 +18844,6 @@
     },
     "stance": true
   },
-  "13": {
-    "groups": [
-      {
-        "id": "weapons",
-        "kind": "armory",
-        "options": [
-          {
-            "tag": "copperweapons",
-            "catalog": "copperweapons",
-            "rank": 1
-          },
-          {
-            "tag": "bronzeweapons",
-            "catalog": "bronzeweapons",
-            "rank": 2
-          },
-          {
-            "tag": "ironweapons",
-            "catalog": "ironweapons",
-            "rank": 3
-          }
-        ]
-      }
-    ],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/13/body-base.glb"
-        }
-      ],
-      "rider": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/13/rider-slice-base.glb"
-        }
-      ],
-      "rider-weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "bronzeweapons"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "ironweapons",
-            "mediuminfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "copperweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "heavyinfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "heavyinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "copperweapons"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "bronzeweapons",
-            "championinfantry"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
-          "stance": "hack"
-        },
-        {
-          "requires": [
-            "championinfantry",
-            "ironweapons"
-          ],
-          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
-          "stance": "hack"
-        }
-      ],
-      "rider-javelin": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/13/rider-javelin-slice-base.glb",
-          "stance": "pierce"
-        }
-      ]
-    },
-    "stance": true
-  },
-  "38": {
-    "groups": [],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/38/body-base.glb"
-        }
-      ],
-      "rider": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/38/rider-slice-base.glb"
-        }
-      ],
-      "rider-weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/38/rider-weapon-slice-base.glb",
-          "stance": "hack"
-        }
-      ],
-      "rider-javelin": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/38/rider-javelin-slice-base.glb",
-          "stance": "pierce"
-        }
-      ],
-      "rider-shield": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/38/rider-shield-slice-base.glb"
-        }
-      ],
-      "rider-helmet": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/38/rider-helmet-slice-base.glb"
-        }
-      ]
-    },
-    "stance": true
-  },
   "40": {
     "groups": [],
     "pieces": {
@@ -19113,32 +18872,6 @@
           "requires": [],
           "url": "/assets/unit-models/tech/40/medusahead-base.glb",
           "stance": "hack"
-        }
-      ]
-    },
-    "stance": true
-  },
-  "39": {
-    "groups": [],
-    "pieces": {
-      "body": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/39/body-base.glb"
-        }
-      ],
-      "weapon": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/39/weapon-base.glb",
-          "stance": "hack"
-        }
-      ],
-      "bow": [
-        {
-          "requires": [],
-          "url": "/assets/unit-models/tech/39/bow-base.glb",
-          "stance": "pierce"
         }
       ]
     },
@@ -20499,5 +20232,280 @@
       ]
     },
     "sex": true
+  },
+  "38": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/body-base.glb"
+        }
+      ],
+      "rider": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-ranged-base.glb",
+          "stance": "pierce"
+        }
+      ],
+      "rider-weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        }
+      ],
+      "rider-javelin": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-javelin-slice-base.glb",
+          "stance": "pierce"
+        }
+      ],
+      "rider-shield": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-shield-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-shield-ranged-base.glb",
+          "stance": "pierce"
+        }
+      ],
+      "rider-helmet": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-helmet-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/38/rider-helmet-ranged-base.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "39": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/39/body-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/39/body-ranged-base.glb",
+          "stance": "pierce"
+        }
+      ],
+      "weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/39/weapon-base.glb",
+          "stance": "hack"
+        }
+      ],
+      "bow": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/39/bow-base.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
+  },
+  "56": {
+    "groups": [
+      {
+        "id": "myth:feetofthejackal",
+        "kind": "myth",
+        "options": [
+          {
+            "tag": "feetofthejackal",
+            "catalog": "feetofthejackal",
+            "rank": 1
+          }
+        ]
+      }
+    ],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/56/body-base.glb"
+        },
+        {
+          "requires": [
+            "feetofthejackal"
+          ],
+          "url": "/assets/unit-models/tech/56/body-feetofthejackal.glb"
+        }
+      ]
+    }
+  },
+  "13": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/13/body-base.glb"
+        }
+      ],
+      "rider": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/13/rider-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/13/rider-ranged-base.glb",
+          "stance": "pierce"
+        }
+      ],
+      "rider-weapon": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "ironweapons",
+            "mediuminfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "copperweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "heavyinfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "heavyinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-base.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "copperweapons"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-copperweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "bronzeweapons",
+            "championinfantry"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-bronzeweapons.glb",
+          "stance": "hack"
+        },
+        {
+          "requires": [
+            "championinfantry",
+            "ironweapons"
+          ],
+          "url": "/assets/unit-models/tech/13/rider-weapon-slice-ironweapons.glb",
+          "stance": "hack"
+        }
+      ],
+      "rider-javelin": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/13/rider-javelin-slice-base.glb",
+          "stance": "pierce"
+        }
+      ]
+    },
+    "stance": true
   }
 }

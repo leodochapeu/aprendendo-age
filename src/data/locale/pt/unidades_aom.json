@@ -1937,6 +1937,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Voador",
+        "icon": "aomr_type_flying_unit_icon"
       }
     ],
     "panteao": [

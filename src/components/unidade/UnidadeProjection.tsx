@@ -40,8 +40,8 @@ for (const [token, src] of Object.entries(tokenAssetMap)) {
   iconByTag.set(tag, { src, label });
 }
 
-/** Voadores: Fênix, Pégaso, Pássaro de Estínfalo, Qinglong, Yinglong, Zhuque e Onmoraki. */
-const HOVER_UNITS = new Set([8, 70, 130, 170, 172, 173, 204]);
+/** Voadores: Pégaso, Ícaro, Fênix, Pássaro de Estínfalo, Qinglong, Yinglong, Zhuque e Onmoraki. */
+const HOVER_UNITS = new Set([8, 28, 70, 130, 170, 172, 173, 204]);
 
 const STANCE_BUTTON =
   "inline-flex h-10 min-w-10 cursor-pointer items-center justify-center rounded-lg border px-1.5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40";

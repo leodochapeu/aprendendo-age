@@ -78,7 +78,6 @@ ALLOW: dict[str, str] = {
     "objects/lampades/lampades_staff_glow": "glow",
     "objects/automaton/automaton_glow": "glow",
     "units/manticore/manticore_eyes": "eyes",
-    "units/manticore/manticore_tail": "glow",
     "objects/mummy/mummy_flies": "flies",
     "objects/mummy/minion_flies": "flies",
     "objects/shade/shade_cloud": "smoke",

@@ -1047,6 +1047,22 @@ export const ptMessages: TranslationTree = {
       trainTime: "Tempo treino",
       moveSpeed: "Vel. movimento",
       attributeStrength: "Força atributos",
+      attributeStrengthInfo: {
+        aria: "Como a força atributos é calculada",
+        title: "Força atributos",
+        intro:
+          "Esse número resume o quanto a unidade entrega de combate pelo que custa para colocá-la em campo. Atributos altos aumentam a conta; tempo de treino, recursos e população diminuem.",
+        addsTitle: "Entra na soma",
+        subtractsTitle: "É descontado",
+        adds: "Pontos de vida\nArmadura anticorte, pelo número da porcentagem\nArmadura antiperfurante, pelo número da porcentagem\nVelocidade de movimento\nDPS\n50 a mais, se a unidade for artilharia",
+        subtracts: "Tempo de treino\nMetade de comida, madeira e ouro — favor não entra\nPopulação",
+        note: "O alcance não entra na conta. O bônus de artilharia é o que representa o ataque à distância.",
+        thisUnit: "Nesta unidade",
+        artilleryBonus: "Bônus de artilharia",
+        resourceHalf: "Metade dos recursos",
+        resourceHalfDetail: "{{food}} de comida, {{wood}} de madeira e {{gold}} de ouro ({{sum}} ÷ 2)",
+        result: "Resultado",
+      },
     },
     aldeoes: {
       resourceCost: "Recursos (custo)",

@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 
+import { ForcaAtributosInfo } from "@/components/unidade/ForcaAtributosInfo";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitOrText } from "@/components/ui/InfoRowPortraitCluster";
 import { PortraitHeaderActions } from "@/components/ui/PortraitHeaderActions";
@@ -235,7 +236,11 @@ export function UnidadeCustoBody({ u }: { u: U }) {
       <InfoRow label={t("spreadsheet.unidades.moveSpeed")} icon="aomr_speed_icon">
         {u.velocidade_movimento ?? "—"}
       </InfoRow>
-      <InfoRow label={t("spreadsheet.unidades.attributeStrength")} icon="attack_cur">
+      <InfoRow
+        label={t("spreadsheet.unidades.attributeStrength")}
+        icon="attack_cur"
+        labelAddon={<ForcaAtributosInfo u={u} />}
+      >
         {u.forca_atributos ?? "—"}
       </InfoRow>
     </div>

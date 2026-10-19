@@ -409,6 +409,8 @@ def _is_death_component(elem: ET.Element) -> bool:
 _sex_choice: ContextVar[str | None] = ContextVar("aom_unit_sex", default=None)
 # Aldeão não fica com o arco na pose da página.
 _bare_hands: ContextVar[bool] = ContextVar("aom_bare_hands", default=False)
+# Arco e dardo usam o quadro do ataque à distância. A Idle deixa a arma atravessada no corpo.
+_ranged_pose: ContextVar[bool] = ContextVar("aom_ranged_pose", default=False)
 
 
 def bare_hands_anim(anim_relative: str) -> bool:
@@ -1514,7 +1516,58 @@ def _ensure_tma(bars: BarIndex, relative: str) -> Path | None:
     return tma_path if tma_path.exists() else None
 
 
-def _pose_clip(root: ET.Element) -> tuple[str, int] | None:
+def _holds_ranged_weapon(root: ET.Element) -> bool:
+    """A Idle não carrega o arco ou o dardo; eles só existem no ataque à distância."""
+    idle: set[str] = set()
+    ranged: set[str] = set()
+    for elem in root.iter():
+        if _tag(elem) != "anim":
+            continue
+        label = (elem.text or elem.get("name") or "").strip().lower()
+        if label not in {"idle", "rangedattack"}:
+            continue
+        bucket = idle if label == "idle" else ranged
+        for child in elem:
+            if _tag(child) != "attach":
+                continue
+            name = (child.get("name") or "").strip().lower()
+            if name:
+                bucket.add(name)
+    return bool((ranged - idle) & {"bow", "javelin", "rangedweapon"})
+
+
+def _anim_clip(root: ET.Element, label: str) -> tuple[str, float] | None:
+    """Caminho da animação e a fração do golpe (tag Attack)."""
+    for elem in root.iter():
+        if _tag(elem) != "anim":
+            continue
+        name = (elem.text or elem.get("name") or "").strip().lower()
+        if name != label:
+            continue
+        path = ""
+        fraction = 0.4
+        for sub in elem.iter():
+            tag = _tag(sub)
+            if tag == "file" and sub.text and not path:
+                candidate = sub.text.replace("\\", "/").strip()
+                low = candidate.lower()
+                if "_igc" not in low and "/igc/" not in low:
+                    path = candidate
+            if tag == "tag" and (sub.get("type") or "").lower() == "attack" and sub.text:
+                try:
+                    fraction = float(sub.text.strip())
+                except ValueError:
+                    pass
+        if path:
+            return path, min(max(fraction, 0.0), 1.0)
+    return None
+
+
+def _pose_clip(root: ET.Element) -> tuple[str, int | float] | None:
+    if _ranged_pose.get() and _holds_ranged_weapon(root):
+        ranged = _anim_clip(root, "rangedattack")
+        if ranged:
+            return ranged
     for path in models_in_anim(root):
         key = path.replace("\\", "/").strip().lower()
         if key.endswith(".tmm"):
@@ -1528,6 +1581,34 @@ def _pose_clip(root: ET.Element) -> tuple[str, int] | None:
     return clip, 0
 
 
+def _frame_weapon_in_hand(data: bytes, target: int) -> int:
+    """O quadro do golpe solta o dardo: o osso da arma sai da mão.
+
+    Fica o quadro mais perto do golpe em que a arma ainda está na mão.
+    """
+    count = tma_frame_count(data)
+    pairs = (
+        ("mixamorig:weaponright", "mixamorig:righthand"),
+        ("mixamorig:weaponleft", "mixamorig:lefthand"),
+    )
+    best: tuple[int, int] | None = None
+    for frame in range(count):
+        worlds = tma_pose_worlds(data, frame)
+        gaps: list[float] = []
+        for bone, hand in pairs:
+            if bone not in worlds or hand not in worlds:
+                continue
+            gaps.append(
+                sum((worlds[bone][row][3] - worlds[hand][row][3]) ** 2 for row in range(3)) ** 0.5
+            )
+        if not gaps or max(gaps) > 0.35:
+            continue
+        score = abs(frame - target)
+        if best is None or score < best[0]:
+            best = (score, frame)
+    return best[1] if best else target
+
+
 def _posed_bone_worlds(
     bars: BarIndex,
     root: ET.Element,
@@ -1538,13 +1619,18 @@ def _posed_bone_worlds(
     request = _pose_clip(root)
     if not request:
         return None
-    clip, frame = request
+    clip, marker = request
     tma_path = _ensure_tma(bars, clip)
     if tma_path is None:
         return None
     data = tma_path.read_bytes()
-    if frame < 0:
+    if isinstance(marker, float):
+        count = tma_frame_count(data)
+        frame = _frame_weapon_in_hand(data, int(round(marker * (count - 1))))
+    elif marker < 0:
         frame = tma_frame_count(data) - 1
+    else:
+        frame = marker
     named = tma_pose_worlds(data, frame)
     if not named:
         return None
@@ -1716,6 +1802,172 @@ def _textured_mesh(bars: BarIndex, model_path: str, transform: list[list[float]]
     return prims
 
 
+def _component_only_attachments(root: ET.Element) -> list[tuple[str, str | ET.Element]]:
+    """Armas presas no componente, e não num quadro de animação.
+
+    O Anubita carrega as foices assim. Sem isso o corpo assado some com elas,
+    porque a fatia do corpo não entra nos anexos.
+    """
+    component = _body_component(root)
+    on_component: set[str] = set()
+    for child in component:
+        if _tag(child) != "attach":
+            continue
+        name = (child.get("name") or "").strip().lower()
+        if name:
+            on_component.add(name)
+    if not on_component:
+        return []
+    on_anim: set[str] = set()
+    for elem in root.iter():
+        if _tag(elem) != "anim":
+            continue
+        for child in elem:
+            if _tag(child) != "attach":
+                continue
+            name = (child.get("name") or "").strip().lower()
+            if name:
+                on_anim.add(name)
+    welded: list[tuple[str, str | ET.Element]] = []
+    for name, source in _attachment_sources(root):
+        low = name.lower()
+        if low not in on_component or low in on_anim:
+            continue
+        # Só as armas das duas mãos. Rider, elmo e escudo já são peças à parte.
+        if low not in {"weaponright", "weaponleft"}:
+            continue
+        if low in GATHER_ATTACHMENTS or low in PROJECTILE_ATTACHMENTS:
+            continue
+        if isinstance(source, str) and "/vfx/" in source.replace("\\", "/").lower():
+            continue
+        welded.append((name, source))
+    return welded
+
+
+def _cloud(prims: list[dict[str, Any]]) -> list[tuple[float, float, float]]:
+    return [point for prim in prims for point in prim["positions"]]
+
+
+def _principal_axis(points: list[tuple[float, float, float]]) -> tuple[list[float], list[float]]:
+    count = len(points)
+    mean = [sum(point[axis] for point in points) / count for axis in range(3)]
+    axis = [0.1, 1.0, 0.1]
+    for _ in range(8):
+        acc = [0.0, 0.0, 0.0]
+        for point in points:
+            delta = [point[i] - mean[i] for i in range(3)]
+            proj = delta[0] * axis[0] + delta[1] * axis[1] + delta[2] * axis[2]
+            for i in range(3):
+                acc[i] += proj * delta[i]
+        length = (acc[0] ** 2 + acc[1] ** 2 + acc[2] ** 2) ** 0.5 or 1.0
+        axis = [value / length for value in acc]
+    return mean, axis
+
+
+def _rotate_about(vector: tuple[float, float, float], axis: tuple[float, float, float], cosine: float, sine: float) -> tuple[float, float, float]:
+    dot = axis[0] * vector[0] + axis[1] * vector[1] + axis[2] * vector[2]
+    cross = (
+        axis[1] * vector[2] - axis[2] * vector[1],
+        axis[2] * vector[0] - axis[0] * vector[2],
+        axis[0] * vector[1] - axis[1] * vector[0],
+    )
+    scale = 1.0 - cosine
+    return (
+        vector[0] * cosine + cross[0] * sine + axis[0] * dot * scale,
+        vector[1] * cosine + cross[1] * sine + axis[1] * dot * scale,
+        vector[2] * cosine + cross[2] * sine + axis[2] * dot * scale,
+    )
+
+
+def _expose_mounted_blade(weapon: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Espada curta da montaria que aponta para trás, escondida no cavalo.
+
+    A Idle do Aquiles deixa a lâmina na horizontal. O cabo é a ponta da arma
+    mais perto da origem do cavaleiro, onde está a mão. A lâmina passa a pender.
+    Lanças compridas, que já apontam para a frente, ficam como estão.
+    """
+    weapon_points = _cloud(weapon)
+    if len(weapon_points) < 16:
+        return weapon
+    mean, axis = _principal_axis(weapon_points)
+    projections = [
+        (point[0] - mean[0]) * axis[0] + (point[1] - mean[1]) * axis[1] + (point[2] - mean[2]) * axis[2]
+        for point in weapon_points
+    ]
+    length = max(projections) - min(projections)
+    if length < 0.25 or length > 1.3 or abs(axis[1]) > 0.45:
+        return weapon
+    low = weapon_points[min(range(len(weapon_points)), key=projections.__getitem__)]
+    high = weapon_points[max(range(len(weapon_points)), key=projections.__getitem__)]
+
+    def origin_gap(point: tuple[float, float, float]) -> float:
+        return point[0] ** 2 + point[1] ** 2 + point[2] ** 2
+
+    grip = low if origin_gap(low) <= origin_gap(high) else high
+    tip = high if grip is low else low
+    direction = [tip[i] - grip[i] for i in range(3)]
+    span = (direction[0] ** 2 + direction[1] ** 2 + direction[2] ** 2) ** 0.5 or 1.0
+    direction = [value / span for value in direction]
+    # Eixo da rotação: lâmina atual × para baixo.
+    cross = (direction[2], 0.0, -direction[0])
+    sine = (cross[0] ** 2 + cross[1] ** 2 + cross[2] ** 2) ** 0.5
+    cosine = -direction[1]
+    if sine < 1e-4:
+        return weapon
+    hinge = (cross[0] / sine, cross[1] / sine, cross[2] / sine)
+    turned: list[dict[str, Any]] = []
+    for prim in weapon:
+        turned.append(
+            {
+                **prim,
+                "positions": [
+                    tuple(
+                        grip[i] + _rotate_about((point[0] - grip[0], point[1] - grip[1], point[2] - grip[2]), hinge, cosine, sine)[i]
+                        for i in range(3)
+                    )
+                    for point in prim["positions"]
+                ],
+                "normals": [_rotate_about(normal, hinge, cosine, sine) for normal in prim["normals"]],
+            }
+        )
+    return turned
+
+
+def _clear_mounted_blade(body: list[dict[str, Any]], weapon: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Tira a espada de dentro do cavalo e traz para o flanco, à altura do cavaleiro."""
+    body_points = _cloud(body)
+    weapon_points = _cloud(weapon)
+    if len(body_points) < 20 or len(weapon_points) < 16:
+        return weapon
+    depth = max(point[2] for point in body_points) - min(point[2] for point in body_points)
+    if depth < 1.6:
+        return weapon
+    span = max(max(point[axis] for point in weapon_points) - min(point[axis] for point in weapon_points) for axis in range(3))
+    if span > 1.3:
+        return weapon
+    body_x1 = max(point[0] for point in body_points)
+    body_z = sum(point[2] for point in body_points) / len(body_points)
+    weapon_x = sum(point[0] for point in weapon_points) / len(weapon_points)
+    weapon_z = sum(point[2] for point in weapon_points) / len(weapon_points)
+    shift_x = 0.0
+    shift_z = 0.0
+    if weapon_z < body_z - 0.35:
+        shift_z = (body_z - 0.15) - weapon_z
+    # A câmera da página fica do lado +X. No outro flanco a lâmina some atrás do peito.
+    shift_x = (body_x1 + 0.12) - weapon_x
+    if abs(shift_x) < 0.01 and abs(shift_z) < 0.01:
+        return weapon
+    moved: list[dict[str, Any]] = []
+    for prim in weapon:
+        moved.append(
+            {
+                **prim,
+                "positions": [(point[0] + shift_x, point[1], point[2] + shift_z) for point in prim["positions"]],
+            }
+        )
+    return moved
+
+
 def visual_primitives(
     bars: BarIndex,
     root: ET.Element,
@@ -1782,6 +2034,22 @@ def visual_primitives(
     body_count = len(prims)
     only_head = only[0] if isinstance(only, tuple) else only
     if only_head == "body":
+        for name, source in _component_only_attachments(root):
+            if isinstance(source, str):
+                try:
+                    included = load_anim_xml(bars, source)
+                except (RuntimeError, FileNotFoundError, ET.ParseError, OSError):
+                    continue
+            else:
+                included = source
+            if included is None:
+                continue
+            matrix = socket_matrix(body_gltf, body_blob, _socket_name(body_gltf, root, name), bone_worlds)
+            if matrix is None:
+                continue
+            child_prims, _child_names = visual_primitives(bars, included, depth + 1, techs, "body", texture_variant)
+            if child_prims:
+                prims.extend(apply_matrix(child_prims, matrix))
         return prims, []
 
     attached: list[str] = []
@@ -1832,7 +2100,12 @@ def visual_primitives(
                     matrix = [row[:] for row in matrix]
                     for row in range(3):
                         matrix[row][3] += shift[row]
-        prims.extend(apply_matrix(child_prims, matrix))
+        if low == "rider" and isinstance(only, tuple) and len(only) > 1 and only[1].lower() == "weapon":
+            child_prims = _expose_mounted_blade(child_prims)
+        placed = apply_matrix(child_prims, matrix)
+        if low == "rider" and isinstance(only, tuple) and len(only) > 1 and only[1].lower() == "weapon":
+            placed = _clear_mounted_blade(prims, placed)
+        prims.extend(placed)
         attached.append(name)
     if only:
         return prims[body_count:], attached

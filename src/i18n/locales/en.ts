@@ -1046,6 +1046,22 @@ export const enMessages: TranslationTree = {
       trainTime: "Train time",
       moveSpeed: "Move speed",
       attributeStrength: "Attribute strength",
+      attributeStrengthInfo: {
+        aria: "How attribute strength is calculated",
+        title: "Attribute strength",
+        intro:
+          "This number sums how much combat the unit brings for what it costs to field. High stats raise the score; train time, resources, and population lower it.",
+        addsTitle: "Added",
+        subtractsTitle: "Subtracted",
+        adds: "Hit points\nHack armor, as the percent number\nPierce armor, as the percent number\nMovement speed\nDPS\n50 extra, when the unit is ranged",
+        subtracts: "Train time\nHalf of food, wood, and gold — favor is left out\nPopulation",
+        note: "Range is not in the formula. The ranged bonus is what stands in for attacking at a distance.",
+        thisUnit: "This unit",
+        artilleryBonus: "Ranged bonus",
+        resourceHalf: "Half the resources",
+        resourceHalfDetail: "{{food}} food, {{wood}} wood, and {{gold}} gold ({{sum}} ÷ 2)",
+        result: "Result",
+      },
     },
     aldeoes: {
       resourceCost: "Resource cost",
