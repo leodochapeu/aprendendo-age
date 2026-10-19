@@ -431,8 +431,11 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
       stage.target.copy(center);
       const radius = Math.max(framedSize.x, framedSize.y, framedSize.z) * 0.5 || 1;
       stage.distance.current = (radius / Math.tan((stage.camera.fov * Math.PI) / 360)) * 1.18;
+      const unitShadow = Math.max(feet.radius * 1.05, Math.max(size.x, size.z) * 0.22);
+      const buildingFootprint = Math.hypot(size.x, size.z) * 0.58;
+      const shadowRadius = pitchRef.current == null ? unitShadow : buildingFootprint;
       const shadow = new THREE.Mesh(
-        new THREE.CircleGeometry(Math.max(feet.radius * 1.05, Math.max(size.x, size.z) * 0.22), 40),
+        new THREE.CircleGeometry(shadowRadius, 48),
         new THREE.MeshBasicMaterial({
           color: 0x000000,
           transparent: true,

@@ -4583,96 +4583,6 @@
     "historia": "A tree on which golden apples grew was protected by the nymph daughters of Atlas, the Hesperides. It was a wedding gift to the goddess Hera, and its golden fruit was said to grant immortality. The serpent-dragon Ladon helped the Hesperides guard the tree, but even such fierce protectors could not prevent the fruit from slipping away into the myths of Atalanta, Heracles, and several others."
   },
   {
-    "id": 116,
-    "tipo": [
-      {
-        "type": "Utilidade ⏫"
-      }
-    ],
-    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
-    "dps": 0,
-    "armadura_anticorte": 45,
-    "armadura_antiperfurante": 90,
-    "armadura_anticontucao": 5,
-    "madeira": 0,
-    "ouro": 0,
-    "custo": 0,
-    "era": "Classical :aomr_classical_age_icon:",
-    "era_id": 2,
-    "panteao_id": 4,
-    "ingles": "Summoning Tree",
-    "tempo_construir_segundos": 30,
-    "pontos_de_vida": 2500,
-    "icon": "aomr_summoning_tree_icon",
-    "unidades": "Dryad",
-    "unidades_ids": [
-      127
-    ],
-    "nome": "Summoning Tree",
-    "descricao_avancada": "This tree summons Gaia, the earth goddess.",
-    "historia": "These trees of power and prophecy were summoned with the great Seed of Gaia God Power. They grew from the Gaia Pools that formed on some of the atolls around the destroyed island of Old Atlantis. The Summoning Trees radiated the energy of nature itself, seeking to draw forth the essence of Gaia to help cleanse the earth."
-  },
-  {
-    "id": 117,
-    "nome": "Naval Shipyard",
-    "tipo": [
-      {
-        "type": "Militar",
-        "icon": "aomr_type_infantry_icon"
-      },
-      {
-        "type": "Recurso ⚒"
-      }
-    ],
-    "panteao": "Geral",
-    "pontos_de_vida": 1200,
-    "dps": 0,
-    "armadura_anticorte": 30,
-    "armadura_antiperfurante": 90,
-    "armadura_anticontucao": 5,
-    "madeira": 250,
-    "ouro": 0,
-    "custo": 250,
-    "era": "Archaic :aomr_archaic_age_icon:",
-    "ingles": "Naval Shipyard",
-    "tempo_construir_segundos": 50,
-    "era_id": 1,
-    "icon": "aomr_dock_icon",
-    "armadura_anticontusao": 5,
-    "guarnicao": 5,
-    "unidades": "Scylla, Carcinos, Leviathan, War Turtle, Jormun Elver, Kraken, Servant, Nereid, Man O' War, Trireme, Pentekonter, Juggernaut, Kebenit, Ramming Galley, War Barge, Longboat, Dreki, Dragon Ship, Bireme, Fire Ship, Siege Bireme",
-    "unidades_ids": [
-      34,
-      42,
-      63,
-      73,
-      93,
-      94,
-      118,
-      128,
-      136,
-      250,
-      251,
-      252,
-      253,
-      254,
-      255,
-      256,
-      257,
-      258,
-      259,
-      260,
-      261
-    ],
-    "tecnologias": "Chthonic Rites, Crimson Linen",
-    "tecnologias_ids": [
-      null,
-      null
-    ],
-    "descricao_avancada": "Large cities use shipyards to mass-produce warships.",
-    "historia": "This building produces warships. A dominant navy was crucial to ancient seafaring civilizations, as it allowed them to protect and patrol their own coastlines and trade routes, and also to threaten those of others. The Norse went 'viking' to raid others for trade goods and gold, and the skill of their sailors and their sturdy, swift longboats allowed them to do so for many centuries."
-  },
-  {
     "id": 118,
     "nome": "Obelisk",
     "tipo": [
@@ -4777,5 +4687,205 @@
     "descricao_resumida": "Provides access through walls.",
     "descricao_avancada": "Gates provide access through walls.",
     "historia": "Gates may be built as part of a Wall. Click on a length of Wall and then click 'Build Gate' to replace it with a Gate. Your units and those of your allies will automatically open and close the Gate when passing through. Enemy troops can neither pass through nor open a Gate, and must destroy it to move beyond.\n\nGates were constructed in walls to allow access to fortifications. They were the most vulnerable section of a fortification, so extra measures were taken to make them strong. Examples include a long and exposed approach to the gate itself, or exposed passageways behind the gate leading to more gates."
+  },
+  {
+    "id": 125,
+    "nome": "Monument",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 450,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 50,
+    "custo": 100,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Monument to Villagers",
+    "tempo_construir_segundos": 20,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_villagers_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Generates Favor.",
+    "descricao_avancada": "A small Monument. Monuments generate Favor. You must build smaller Monuments before you can build the larger ones.",
+    "rotulo": "Monument to Villagers"
+  },
+  {
+    "id": 126,
+    "nome": "Monument to Soldiers",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 450,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 100,
+    "madeira": 0,
+    "ouro": 100,
+    "custo": 200,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Monument to Soldiers",
+    "tempo_construir_segundos": 30,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_soldiers_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Generates Favor.",
+    "descricao_avancada": "A moderate Monument. Monuments generate Favor. You must build smaller Monuments before you can build the larger ones."
+  },
+  {
+    "id": 127,
+    "nome": "Monument to Priests",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 600,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 200,
+    "madeira": 0,
+    "ouro": 200,
+    "custo": 400,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Monument to Priests",
+    "tempo_construir_segundos": 40,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_priests_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Generates Favor.",
+    "descricao_avancada": "A large Monument. Monuments generate Favor. You must build smaller Monuments before you can build the larger ones."
+  },
+  {
+    "id": 128,
+    "nome": "Monument to Pharaohs",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 800,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 300,
+    "madeira": 0,
+    "ouro": 300,
+    "custo": 600,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Monument to Pharaohs",
+    "tempo_construir_segundos": 50,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_pharaohs_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Generates Favor.",
+    "descricao_avancada": "A very large Monument. Monuments generate Favor. You must build smaller Monuments before you can build the larger ones."
+  },
+  {
+    "id": 129,
+    "nome": "Monument to Gods (Ra)",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 600,
+    "madeira": 0,
+    "ouro": 600,
+    "custo": 1200,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Monument to Gods (Ra)",
+    "tempo_construir_segundos": 60,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_gods_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Generates Favor.",
+    "descricao_avancada": "The greatest Monument of them all. Monuments generate Favor.",
+    "rotulo": "Gods (Ra)"
+  },
+  {
+    "id": 130,
+    "nome": "Monument to Gods (Isis)",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 600,
+    "madeira": 0,
+    "ouro": 600,
+    "custo": 1200,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Monument to Gods (Isis)",
+    "tempo_construir_segundos": 60,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_gods_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Generates Favor.",
+    "descricao_avancada": "The greatest Monument of them all. Monuments generate Favor.",
+    "rotulo": "Gods (Isis)"
+  },
+  {
+    "id": 131,
+    "nome": "Monument to Gods (Set)",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 600,
+    "madeira": 0,
+    "ouro": 600,
+    "custo": 1200,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Monument to Gods (Set)",
+    "tempo_construir_segundos": 60,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_gods_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Generates Favor.",
+    "descricao_avancada": "The greatest Monument of them all. Monuments generate Favor.",
+    "rotulo": "Gods (Set)"
   }
 ]

@@ -21,6 +21,7 @@ import {
   legacyBuildingSlugId,
   presentFamilyMember,
   selectedFamilyMember,
+  variantButtonLabel,
   variantGodLabel,
 } from "@/lib/buildingFamilies";
 import { buildingModelUrl } from "@/lib/buildingModelUrl";
@@ -111,9 +112,17 @@ export function ConstrucaoDetailPage() {
 
   const visuals: BuildingVisualChoice[] | undefined = family
     ? family.members.map((item) => {
+        const row = construcaoById.get(item.sourceId);
+        if (family.kind === "upgrade") {
+          const god = item.deusId != null ? deusById.get(item.deusId) : undefined;
+          return {
+            id: String(item.sourceId),
+            label: row ? variantButtonLabel(row) : String(item.sourceId),
+            icon: (god ? getDeusAssetUrl(god) : undefined) ?? (row ? getConstrucaoAssetUrl(row) : undefined),
+          };
+        }
         if (item.deusId != null) {
           const god = deusById.get(item.deusId);
-          const row = construcaoById.get(item.sourceId);
           return {
             id: String(item.sourceId),
             label: variantGodLabel(row?.nome ?? god?.nome ?? String(item.sourceId)),
@@ -138,7 +147,7 @@ export function ConstrucaoDetailPage() {
   };
 
   const era = view.era_id != null ? eraById.get(view.era_id) : undefined;
-  const construcaoIcon = getConstrucaoAssetUrl(view);
+  const construcaoIcon = getConstrucaoAssetUrl(family?.kind === "upgrade" && source ? source : view);
   const panteao = view.panteao_id != null ? panteaoById.get(view.panteao_id) : undefined;
 
   const tecnologiaNames = splitCommaNames(view.tecnologias);
@@ -158,6 +167,11 @@ export function ConstrucaoDetailPage() {
     <Section title={t("common.costAndTime")}>
       <div className="space-y-0">
         <InfoRow label={t("common.totalCost")}>{view.custo ?? "—"}</InfoRow>
+        {"comida" in view && typeof view.comida === "number" ? (
+          <InfoRow label={t("common.food")} icon="foodaom">
+            {view.comida}
+          </InfoRow>
+        ) : null}
         <InfoRow label={t("common.wood")} icon="woodaom">
           {view.madeira ?? "—"}
         </InfoRow>

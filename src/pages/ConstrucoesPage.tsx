@@ -12,7 +12,7 @@ import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useListPageSearchQuery } from "@/hooks/useListPageSearchQuery";
 import { useTranslation } from "@/hooks/useTranslation";
-import { buildingFamilyOf, isHiddenFamilyMember } from "@/lib/buildingFamilies";
+import { buildingFamilyOf, familyListedAsGeneral, isHiddenFamilyMember, variantButtonLabel } from "@/lib/buildingFamilies";
 import { getConstrucaoAssetUrl } from "@/lib/entityWatermarkUrls";
 import { panteaoFieldHasMultiplePantheons, pantheonCardTint } from "@/lib/pantheonCardTint";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
@@ -32,7 +32,7 @@ function matches(
       ? family.members
           .map((member) => {
             const row = byId.get(member.sourceId);
-            return row ? `${row.nome} ${row.panteao ?? ""} ${row.ingles ?? ""}` : "";
+            return row ? `${variantButtonLabel(row)} ${row.nome} ${row.panteao ?? ""} ${row.ingles ?? ""}` : "";
           })
           .join(" ")
       : "";
@@ -76,7 +76,7 @@ export function ConstrucoesPage() {
               linkState={listIndexState}
               title={c.nome}
               cardTint={
-                buildingFamilyOf(c.id) || panteaoFieldHasMultiplePantheons(c.panteao)
+                familyListedAsGeneral(c.id) || panteaoFieldHasMultiplePantheons(c.panteao)
                   ? undefined
                   : pantheonCardTint(
                       (c.panteao_id != null ? panteaoById.get(c.panteao_id) : undefined)?.nome ?? "",
@@ -87,7 +87,7 @@ export function ConstrucoesPage() {
                   <UnidadeTipoLine tipo={c.tipo} colored shell="none" />
                 ) : undefined
               }
-              meta={<MetaNotionLine parts={[buildingFamilyOf(c.id) ? t("common.general") : c.panteao, c.era]} />}
+              meta={<MetaNotionLine parts={[familyListedAsGeneral(c.id) ? t("common.general") : c.panteao, c.era]} />}
               hoverPreview={
                 <EntityCardPreviewStats
                   items={[

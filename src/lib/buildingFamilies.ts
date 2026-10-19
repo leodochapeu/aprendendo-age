@@ -12,12 +12,19 @@ export type BuildingFamilyMember = {
 
 export type BuildingFamily = {
   canonicalId: number;
+  /** `upgrade`: mesma construção, botões com o ícone de cada variante. Sem isso, a lista mostra "Geral". */
+  kind?: "upgrade";
   members: BuildingFamilyMember[];
 };
 
-function family(canonicalId: number, rows: Array<[sourceId: number, pantheonId: number, deusId?: number]>): BuildingFamily {
+function family(
+  canonicalId: number,
+  rows: Array<[sourceId: number, pantheonId: number, deusId?: number]>,
+  kind?: "upgrade",
+): BuildingFamily {
   return {
     canonicalId,
+    kind,
     members: rows.map(([sourceId, pantheonId, deusId]) => ({ sourceId, pantheonId, deusId })),
   };
 }
@@ -74,6 +81,19 @@ const FAMILIES: BuildingFamily[] = [
     [98, 7, 83],
     [99, 7, 84],
   ]),
+  family(64, [
+    [64, 6],
+    [119, 6],
+  ], "upgrade"),
+  family(125, [
+    [125, 2],
+    [126, 2],
+    [127, 2],
+    [128, 2],
+    [129, 2, 4],
+    [130, 2, 5],
+    [131, 2, 6],
+  ], "upgrade"),
 ];
 
 const byMemberId = new Map<number, BuildingFamily>();
@@ -112,7 +132,26 @@ const VARIANT_FIELDS = [
   "dps",
   "velocidade_de_ataque_atk_s",
   "no_projeteis",
+  "comida",
+  "tempo_construir_segundos",
+  "era",
+  "era_id",
+  "armadura_anticorte",
+  "armadura_antiperfurante",
+  "armadura_anticontucao",
+  "armadura_anticontusao",
 ] as const;
+
+/** Famílias que reúnem vários panteões aparecem como "Geral" na lista. */
+export function familyListedAsGeneral(id: number): boolean {
+  const entry = byCanonicalId.get(id);
+  return entry != null && entry.kind !== "upgrade";
+}
+
+export function variantButtonLabel(row: { nome: string }): string {
+  const rotulo = (row as { rotulo?: string }).rotulo;
+  return rotulo?.trim() || row.nome;
+}
 
 export function buildingFamilyOf(id: number): BuildingFamily | undefined {
   return byMemberId.get(id) ?? byCanonicalId.get(id);

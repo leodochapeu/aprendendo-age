@@ -87,7 +87,6 @@
     "dps": 5,
     "armadura_anticorte": 30,
     "armadura_antiperfurante": 20,
-    "construcao": [],
     "comida": 70,
     "madeira": 0,
     "ouro": 0,
@@ -136,7 +135,6 @@
     "dps": 1.1,
     "armadura_anticorte": 10,
     "armadura_antiperfurante": 70,
-    "construcao": [],
     "comida": 75,
     "madeira": 0,
     "ouro": 0,
@@ -1275,7 +1273,6 @@
     "dps": 0,
     "armadura_anticorte": 10,
     "armadura_antiperfurante": 70,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -1405,7 +1402,6 @@
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 35,
     "armadura_anticontusao": 99,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 165,
@@ -2371,10 +2367,6 @@
       {
         "nome": "Dock",
         "id": 46
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -2946,10 +2938,6 @@
       {
         "nome": "Dock",
         "id": 46
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -3341,7 +3329,6 @@
     "dps": 280,
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -4358,10 +4345,6 @@
       {
         "nome": "Dock",
         "id": 47
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -4721,7 +4704,6 @@
     "dps": 9,
     "armadura_anticorte": 35,
     "armadura_antiperfurante": 40,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 50,
@@ -4900,7 +4882,6 @@
     "dps": 0,
     "armadura_anticorte": 10,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -5028,10 +5009,6 @@
       {
         "nome": "Dock",
         "id": 47
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 225,
@@ -5106,7 +5083,6 @@
     "dps": 280,
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -5590,7 +5566,6 @@
     "dps": 27,
     "armadura_anticorte": 35,
     "armadura_antiperfurante": 50,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 150,
@@ -6383,10 +6358,6 @@
       {
         "nome": "Dock",
         "id": 48
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 200,
@@ -6455,10 +6426,6 @@
       {
         "nome": "Dock",
         "id": 48
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 300,
@@ -6889,7 +6856,6 @@
     "dps": 31.5,
     "armadura_anticorte": 20,
     "armadura_antiperfurante": 40,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -7016,7 +6982,6 @@
     "dps": 80,
     "armadura_anticorte": 50,
     "armadura_antiperfurante": 50,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -7093,7 +7058,6 @@
     "dps": 280,
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -7834,7 +7798,6 @@
     "dps": 20,
     "armadura_anticorte": 35,
     "armadura_antiperfurante": 20,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -7977,7 +7940,6 @@
     "dps": 6.6,
     "armadura_anticorte": 15,
     "armadura_antiperfurante": 35,
-    "construcao": [],
     "comida": 45,
     "madeira": 0,
     "ouro": 0,
@@ -8038,10 +8000,6 @@
       {
         "nome": "Dock",
         "id": 49
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -8100,7 +8058,6 @@
     "dps": 30,
     "armadura_anticorte": 35,
     "armadura_antiperfurante": 30,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -8484,7 +8441,6 @@
     "dps": 8.4,
     "armadura_anticorte": 30,
     "armadura_antiperfurante": 70,
-    "construcao": [],
     "comida": 125,
     "madeira": 0,
     "ouro": 105,
@@ -8624,10 +8580,6 @@
       {
         "nome": "Hesperides Tree",
         "id": 115
-      },
-      {
-        "nome": "Summoning Tree",
-        "id": 116
       }
     ],
     "comida": 0,
@@ -8690,10 +8642,6 @@
       {
         "nome": "Dock",
         "id": 49
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -9262,10 +9210,6 @@
       {
         "nome": "Dock",
         "id": 49
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 250,
@@ -9322,7 +9266,6 @@
     "dps": 20,
     "armadura_anticorte": 40,
     "armadura_antiperfurante": 40,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -9395,7 +9338,6 @@
     "dps": 280,
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -10238,7 +10180,6 @@
     "dps": 6,
     "armadura_anticorte": 15,
     "armadura_antiperfurante": 35,
-    "construcao": [],
     "comida": 65,
     "madeira": 45,
     "ouro": 0,
@@ -10293,7 +10234,6 @@
     "dps": 9,
     "armadura_anticorte": 15,
     "armadura_antiperfurante": 35,
-    "construcao": [],
     "comida": 50,
     "madeira": 0,
     "ouro": 50,
@@ -10418,7 +10358,6 @@
     "dps": 8.45,
     "armadura_anticorte": 10,
     "armadura_antiperfurante": 25,
-    "construcao": [],
     "comida": 0,
     "madeira": 60,
     "ouro": 35,
@@ -10859,7 +10798,6 @@
     "dps": 9,
     "armadura_anticorte": 10,
     "armadura_antiperfurante": 25,
-    "construcao": [],
     "comida": 60,
     "madeira": 0,
     "ouro": 0,
@@ -11622,7 +11560,6 @@
     "dps": 0,
     "armadura_anticorte": 55,
     "armadura_antiperfurante": 55,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -11761,7 +11698,6 @@
     "dps": 280,
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -12029,7 +11965,6 @@
     "dps": 10,
     "armadura_anticorte": 45,
     "armadura_antiperfurante": 10,
-    "construcao": [],
     "comida": 75,
     "madeira": 0,
     "ouro": 50,
@@ -12079,7 +12014,6 @@
     "dps": 7.8,
     "armadura_anticorte": 35,
     "armadura_antiperfurante": 5,
-    "construcao": [],
     "comida": 30,
     "madeira": 0,
     "ouro": 50,
@@ -12688,7 +12622,6 @@
     "dps": 15,
     "armadura_anticorte": 30,
     "armadura_antiperfurante": 50,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 50,
@@ -12740,7 +12673,6 @@
     "dps": 0,
     "armadura_anticorte": 25,
     "armadura_antiperfurante": 40,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 120,
@@ -13144,7 +13076,6 @@
     "dps": 75,
     "armadura_anticorte": 20,
     "armadura_antiperfurante": 30,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -13424,7 +13355,6 @@
     "dps": 3.6,
     "armadura_anticorte": 25,
     "armadura_antiperfurante": 30,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 25,
@@ -13476,7 +13406,6 @@
     "dps": 19.2,
     "armadura_anticorte": 45,
     "armadura_antiperfurante": 15,
-    "construcao": [],
     "comida": 105,
     "madeira": 0,
     "ouro": 75,
@@ -13594,7 +13523,6 @@
     "dps": 33,
     "armadura_anticorte": 30,
     "armadura_antiperfurante": 60,
-    "construcao": [],
     "comida": 250,
     "madeira": 0,
     "ouro": 250,
@@ -13977,7 +13905,6 @@
     "dps": 280,
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -14860,7 +14787,6 @@
     "dps": 8.8,
     "armadura_anticorte": 10,
     "armadura_antiperfurante": 35,
-    "construcao": [],
     "comida": 100,
     "madeira": 0,
     "ouro": 0,
@@ -15175,7 +15101,6 @@
     "dps": 88,
     "armadura_anticorte": 20,
     "armadura_antiperfurante": 50,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -15839,7 +15764,6 @@
     "dps": 9,
     "armadura_anticorte": 30,
     "armadura_antiperfurante": 40,
-    "construcao": [],
     "comida": 100,
     "madeira": 0,
     "ouro": 0,
@@ -15994,7 +15918,6 @@
     "dps": 280,
     "armadura_anticorte": 60,
     "armadura_antiperfurante": 80,
-    "construcao": [],
     "comida": 0,
     "madeira": 0,
     "ouro": 0,
@@ -16772,10 +16695,6 @@
       {
         "nome": "Dock",
         "id": 46
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -16830,10 +16749,6 @@
       {
         "nome": "Dock",
         "id": 46
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -16893,10 +16808,6 @@
       {
         "nome": "Dock",
         "id": 46
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -16950,10 +16861,6 @@
       {
         "nome": "Dock",
         "id": 47
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17008,10 +16915,6 @@
       {
         "nome": "Dock",
         "id": 47
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17072,10 +16975,6 @@
       {
         "nome": "Dock",
         "id": 47
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17129,10 +17028,6 @@
       {
         "nome": "Dock",
         "id": 48
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17187,10 +17082,6 @@
       {
         "nome": "Dock",
         "id": 48
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17251,10 +17142,6 @@
       {
         "nome": "Dock",
         "id": 48
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17309,10 +17196,6 @@
       {
         "nome": "Dock",
         "id": 49
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17367,10 +17250,6 @@
       {
         "nome": "Dock",
         "id": 49
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,
@@ -17431,10 +17310,6 @@
       {
         "nome": "Dock",
         "id": 49
-      },
-      {
-        "nome": "Naval Shipyard",
-        "id": 117
       }
     ],
     "comida": 0,

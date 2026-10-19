@@ -4583,96 +4583,6 @@
     "historia": "Uma árvore na qual cresciam maçãs douradas era protegida pelas filhas ninfas de Atlas, as Hespérides. Foi um presente de casamento para a deusa Hera, e dizia-se que seus frutos dourados davam a imortalidade. O dragão-serpente Ladão ajudou as Hespérides a vigiar a árvore, mas mesmo esses ferozes protetores não conseguiram impedir que o fruto escorregasse para os mitos de Atalanta, Hércules e vários outros."
   },
   {
-    "id": 116,
-    "tipo": [
-      {
-        "type": "Utilidade ⏫"
-      }
-    ],
-    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
-    "dps": 0,
-    "armadura_anticorte": 45,
-    "armadura_antiperfurante": 90,
-    "armadura_anticontucao": 5,
-    "madeira": 0,
-    "ouro": 0,
-    "custo": 0,
-    "era": "Clássica :aomr_classical_age_icon:",
-    "era_id": 2,
-    "panteao_id": 4,
-    "ingles": "Summoning Tree",
-    "tempo_construir_segundos": 30,
-    "pontos_de_vida": 2500,
-    "icon": "aomr_summoning_tree_icon",
-    "unidades": "Dríade",
-    "unidades_ids": [
-      127
-    ],
-    "nome": "Árvore de Invocação",
-    "descricao_avancada": "Esta árvore invoca Gaia, a deusa da terra.",
-    "historia": "Essas árvores de poder e profecia foram convocadas com o grande Poder de Deus da Semente de Gaia. Elas cresceram a partir das Poças de Gaia que se formaram em alguns dos atóis ao redor da ilha destruída de Atlântida Velha. As Árvores de Invocação irradiavam a energia da própria natureza, buscando extrair a essência de Gaia para ajudar a limpar a terra."
-  },
-  {
-    "id": 117,
-    "nome": "Estaleiro Naval",
-    "tipo": [
-      {
-        "type": "Militar",
-        "icon": "aomr_type_infantry_icon"
-      },
-      {
-        "type": "Recurso ⚒"
-      }
-    ],
-    "panteao": "Geral",
-    "pontos_de_vida": 1200,
-    "dps": 0,
-    "armadura_anticorte": 30,
-    "armadura_antiperfurante": 90,
-    "armadura_anticontucao": 5,
-    "madeira": 250,
-    "ouro": 0,
-    "custo": 250,
-    "era": "Arcaica :aomr_archaic_age_icon:",
-    "ingles": "Naval Shipyard",
-    "tempo_construir_segundos": 50,
-    "era_id": 1,
-    "icon": "aomr_dock_icon",
-    "armadura_anticontusao": 5,
-    "guarnicao": 5,
-    "unidades": "Cila, Carcinos, Leviatã, Tartaruga de Guerra, Jormun Elver, Kraken, Servo, Nereida, Caravela, Trirreme, Penteconter, Juggernaut, Kebenit, Galé com Aríete, Barcaça de Guerra, Dracar, Dreki, Barco Dragão, Birreme, Navio de Fogo, Birreme de Cerco",
-    "unidades_ids": [
-      34,
-      42,
-      63,
-      73,
-      93,
-      94,
-      118,
-      128,
-      136,
-      250,
-      251,
-      252,
-      253,
-      254,
-      255,
-      256,
-      257,
-      258,
-      259,
-      260,
-      261
-    ],
-    "tecnologias": "Ritos Ctônicos, Linho Carmesim",
-    "tecnologias_ids": [
-      null,
-      null
-    ],
-    "descricao_avancada": "Cidades grandes usam estaleiros para produzir navios de guerra em massa.",
-    "historia": "Este edifício produz navios de guerra. Uma marinha dominante era crucial para as antigas civilizações marítimas, pois lhes permitia proteger e patrulhar suas próprias costas e rotas comerciais, e também ameaçar as de outros. Os nórdicos foram \"vikings\" para atacar outros para o comércio de mercadorias e ouro, e a habilidade de seus marinheiros e seus longboats robustos e rápidos lhes permitiu fazê-lo por muitos séculos."
-  },
-  {
     "id": 118,
     "nome": "Obelisco",
     "tipo": [
@@ -4777,5 +4687,205 @@
     "descricao_resumida": "Fornece acesso através de muralhas.",
     "descricao_avancada": "Portões dão acesso por muralhas.",
     "historia": "Os Portões podem ser construídos como parte de uma Muralha. Clique em um trecho da Muralha, depois clique em ''Construir portão'' para substituí-lo por um Portão. Suas unidades e as de seus aliados abrirão e fecharão automaticamente o Portão ao passar. As tropas inimigas não podem passar nem abrir um Portão, e precisam destruí-lo para ir além.\n\nPortões eram construídos em muralhas para permitir o acesso às fortificações. Eles eram a seção mais vulnerável de uma fortificação, então medidas adicionais eram tomadas para torná-los fortes. Alguns exemplos são uma aproximação longa e exposta ao próprio portão, ou passagens expostas atrás do portão que levam a mais portões."
+  },
+  {
+    "id": 125,
+    "nome": "Monumento",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 450,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 50,
+    "madeira": 0,
+    "ouro": 50,
+    "custo": 100,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Monument to Villagers",
+    "tempo_construir_segundos": 20,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_villagers_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gera Favor.",
+    "descricao_avancada": "Um pequeno Monumento. Monumentos geram Favor. Você deve construir Monumentos menores antes de construir os maiores.",
+    "rotulo": "Monumento aos Aldeões"
+  },
+  {
+    "id": 126,
+    "nome": "Monumento aos Soldados",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 450,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 100,
+    "madeira": 0,
+    "ouro": 100,
+    "custo": 200,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Monument to Soldiers",
+    "tempo_construir_segundos": 30,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_soldiers_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gera Favor.",
+    "descricao_avancada": "Um Monumento médio. Monumentos geram Favor. Você deve construir Monumentos menores antes de construir os maiores."
+  },
+  {
+    "id": 127,
+    "nome": "Monumento aos Sacerdotes",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 600,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 200,
+    "madeira": 0,
+    "ouro": 200,
+    "custo": 400,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Monument to Priests",
+    "tempo_construir_segundos": 40,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_priests_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gera Favor.",
+    "descricao_avancada": "Um Monumento grande. Monumentos geram Favor. Você deve construir Monumentos menores antes de construir os maiores."
+  },
+  {
+    "id": 128,
+    "nome": "Monumento aos Faraós",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 800,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 300,
+    "madeira": 0,
+    "ouro": 300,
+    "custo": 600,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Monument to Pharaohs",
+    "tempo_construir_segundos": 50,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_pharaohs_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gera Favor.",
+    "descricao_avancada": "Um Monumento muito grande. Monumentos geram Favor. Você deve construir Monumentos menores antes de construir os maiores."
+  },
+  {
+    "id": 129,
+    "nome": "Monumento aos Deuses (Rá)",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 600,
+    "madeira": 0,
+    "ouro": 600,
+    "custo": 1200,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Monument to Gods (Ra)",
+    "tempo_construir_segundos": 60,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_gods_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gera Favor.",
+    "descricao_avancada": "O maior Monumento de todos. Monumentos geram Favor.",
+    "rotulo": "Deuses (Rá)"
+  },
+  {
+    "id": 130,
+    "nome": "Monumento aos Deuses (Ísis)",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 600,
+    "madeira": 0,
+    "ouro": 600,
+    "custo": 1200,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Monument to Gods (Isis)",
+    "tempo_construir_segundos": 60,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_gods_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gera Favor.",
+    "descricao_avancada": "O maior Monumento de todos. Monumentos geram Favor.",
+    "rotulo": "Deuses (Ísis)"
+  },
+  {
+    "id": 131,
+    "nome": "Monumento aos Deuses (Set)",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "comida": 600,
+    "madeira": 0,
+    "ouro": 600,
+    "custo": 1200,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Monument to Gods (Set)",
+    "tempo_construir_segundos": 60,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_monument_to_gods_icon",
+    "armadura_anticontusao": 5,
+    "descricao_resumida": "Gera Favor.",
+    "descricao_avancada": "O maior Monumento de todos. Monumentos geram Favor.",
+    "rotulo": "Deuses (Set)"
   }
 ]

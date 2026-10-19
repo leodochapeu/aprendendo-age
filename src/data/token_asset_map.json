@@ -1185,5 +1185,10 @@
   "aomr_fusillade_tower_icon": "/assets/techs/techs_chinese/AoMR_Fusillade_Tower_icon.webp",
   "aomr_great_wall_chinese_icon": "/assets/techs/techs_chinese/AoMR_Great_Wall_Chinese_icon.webp",
   "aomr_iron_wall_icon": "/assets/techs/techs_atlantean/AoMR_Iron_Wall_icon.webp",
-  "aomr_orichalcum_wall_icon": "/assets/techs/techs_atlantean/AoMR_Orichalcum_Wall_icon.webp"
+  "aomr_orichalcum_wall_icon": "/assets/techs/techs_atlantean/AoMR_Orichalcum_Wall_icon.webp",
+  "aomr_monument_to_villagers_icon": "/assets/buildings/AoMR_Monument_To_Villagers_icon.webp",
+  "aomr_monument_to_soldiers_icon": "/assets/buildings/AoMR_Monument_To_Soldiers_icon.webp",
+  "aomr_monument_to_priests_icon": "/assets/buildings/AoMR_Monument_To_Priests_icon.webp",
+  "aomr_monument_to_pharaohs_icon": "/assets/buildings/AoMR_Monument_To_Pharaohs_icon.webp",
+  "aomr_monument_to_gods_icon": "/assets/buildings/AoMR_Monument_To_Gods_icon.webp"
 }

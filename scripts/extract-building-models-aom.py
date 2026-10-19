@@ -94,7 +94,7 @@ def _save(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def _wonder_civ(ingles: str, proto: str) -> str | None:
-    if proto != "Wonder":
+    if proto not in {"Wonder", "MonumentToGods"}:
         return None
     match = re.search(r"\(([^)]+)\)\s*$", ingles)
     if not match:
