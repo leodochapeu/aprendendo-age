@@ -5,8 +5,9 @@ import { useAuth } from "@/context/AuthContext";
 import { useMusic } from "@/context/MusicContext";
 import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useTranslation } from "@/hooks/useTranslation";
+import { canSendSiteNotification } from "@/lib/auth/constants";
 import { cn } from "@/lib/cn";
-import { localeAuthPath } from "@/lib/localeRoutes";
+import { localeAuthPath, localeNotificationComposePath } from "@/lib/localeRoutes";
 
 function GearIcon({ className }: { className?: string }) {
   return (
@@ -37,7 +38,7 @@ function menuItemClassName() {
 
 export function SettingsMenu({ className }: { className?: string }) {
   const { t, locale } = useTranslation();
-  const { status } = useAuth();
+  const { status, profile, profileLoadState } = useAuth();
   const { ligada, volume, faixa, setLigada, setVolume, avancar } = useMusic();
   const { targetFlag, switchLocale, switchLanguageLabel } = useLocaleSwitch();
   const { pathname } = useLocation();
@@ -45,10 +46,18 @@ export function SettingsMenu({ className }: { className?: string }) {
   const rootRef = useRef<HTMLDivElement>(null);
 
   const isAuthenticated = status === "authenticated";
+  const canSendNotification =
+    isAuthenticated && profileLoadState === "ready" && canSendSiteNotification(profile?.role);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const onClose = () => setOpen(false);
+    window.addEventListener("shell:close-settings", onClose);
+    return () => window.removeEventListener("shell:close-settings", onClose);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -78,14 +87,17 @@ export function SettingsMenu({ className }: { className?: string }) {
   return (
     <div
       ref={rootRef}
-      className={cn(
-        "fixed right-4 top-[max(1rem,env(safe-area-inset-top,0px)+0.5rem)] z-[60]",
-        className,
-      )}
+      className={cn("relative", className)}
     >
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() =>
+          setOpen((current) => {
+            const next = !current;
+            if (next) window.dispatchEvent(new Event("shell:close-notifications"));
+            return next;
+          })
+        }
         aria-expanded={open}
         aria-haspopup="menu"
         aria-label={t("settings.openMenu")}
@@ -139,6 +151,17 @@ export function SettingsMenu({ className }: { className?: string }) {
               {t("settings.profile")}
             </Link>
           )}
+
+          {canSendNotification ? (
+            <Link
+              role="menuitem"
+              to={localeNotificationComposePath(locale)}
+              className={menuItemClassName()}
+              onClick={() => setOpen(false)}
+            >
+              {t("notifications.composeMenu")}
+            </Link>
+          ) : null}
 
           <div className="my-1 border-t border-aom-border/80" role="separator" />
 

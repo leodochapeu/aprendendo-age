@@ -16,6 +16,11 @@ export function canRequestCommunityVideo(role: UserRole | null | undefined): boo
   return role === "admin" || role === "streamer";
 }
 
+/** Quem pode disparar um aviso para todo mundo que acessa o site. */
+export function canSendSiteNotification(role: UserRole | null | undefined): boolean {
+  return role === "admin" || role === "streamer";
+}
+
 /** Quem pode cadastrar canais em Links (admin). */
 export function canManageChannels(role: UserRole | null | undefined): boolean {
   return role === "admin";

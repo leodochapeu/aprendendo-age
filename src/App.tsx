@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "@/components/layout/AppShell";
+import { SiteNotificationsProvider } from "@/context/SiteNotificationsContext";
 import { startAppUpdateWatcher } from "@/lib/appUpdateWatcher";
 import { AldeaoComparePage } from "@/pages/AldeaoComparePage";
 import { AldeaoDetailPage } from "@/pages/AldeaoDetailPage";
@@ -23,6 +24,8 @@ import { GodpowersPage } from "@/pages/GodpowersPage";
 import { HomePage } from "@/pages/HomePage";
 import { MapaDetailPage } from "@/pages/MapaDetailPage";
 import { MapasPage } from "@/pages/MapasPage";
+import { NotificationComposePage } from "@/pages/NotificationComposePage";
+import { NotificationsPage } from "@/pages/NotificationsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { PanteaoDetailPage } from "@/pages/PanteaoDetailPage";
 import { PanteoesPage } from "@/pages/PanteoesPage";
@@ -68,6 +71,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <SiteNotificationsProvider>
       <Routes>
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
@@ -156,10 +160,15 @@ export default function App() {
           <Route path="player/:id" element={<PublicPlayerProfilePage />} />
           <Route path="perfil" element={<ProfilePage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="notificacoes" element={<NotificationsPage />} />
+          <Route path="notifications" element={<NotificationsPage />} />
+          <Route path="notificacoes/enviar" element={<NotificationComposePage />} />
+          <Route path="notifications/send" element={<NotificationComposePage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      </SiteNotificationsProvider>
     </BrowserRouter>
   );
 }

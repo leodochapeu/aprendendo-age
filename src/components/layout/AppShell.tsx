@@ -1,8 +1,11 @@
 import { useLayoutEffect, useEffect, useMemo, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
+import { NotificationBanner } from "@/components/notifications/NotificationBanner";
+import { NotificationBell } from "@/components/notifications/NotificationBell";
 import { SettingsMenu } from "@/components/ui/SettingsMenu";
 import { MusicProvider } from "@/context/MusicContext";
+import { useSiteNotifications } from "@/context/SiteNotificationsContext";
 import { cn } from "@/lib/cn";
 import { useTranslation } from "@/hooks/useTranslation";
 import { localeSectionPath, sectionFromPathSegment, type LocaleSection } from "@/lib/localeRoutes";
@@ -299,6 +302,7 @@ function MenuGlyph({ open }: { open: boolean }) {
 export function AppShell() {
   const { pathname, key } = useLocation();
   const { t, locale } = useTranslation();
+  const { bannerOffset } = useSiteNotifications();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useLayoutEffect(() => {
@@ -337,10 +341,20 @@ export function AppShell() {
 
   return (
     <MusicProvider>
-    <div className="flex min-h-screen flex-col md:flex-row">
-      <SettingsMenu />
+    <div className="flex min-h-screen flex-col md:flex-row" style={{ paddingTop: bannerOffset }}>
+      <NotificationBanner />
+      <div
+        className="fixed right-4 z-[60] flex items-start gap-2"
+        style={{ top: `calc(${bannerOffset}px + max(1rem, env(safe-area-inset-top, 0px)))` }}
+      >
+        <NotificationBell />
+        <SettingsMenu />
+      </div>
 
-      <header className="sticky top-0 z-30 flex min-h-16 shrink-0 items-center gap-3 border-b border-aom-border bg-zinc-950/95 px-3 py-3 backdrop-blur-sm md:hidden">
+      <header
+        className="sticky z-30 flex min-h-16 shrink-0 items-center gap-3 border-b border-aom-border bg-zinc-950/95 px-3 py-3 backdrop-blur-sm md:hidden"
+        style={{ top: bannerOffset }}
+      >
         <button
           type="button"
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-aom-border bg-zinc-900/80 text-amber-200 transition-colors hover:bg-zinc-800/90 focus:outline-none focus:ring-2 focus:ring-amber-500/35"
@@ -356,7 +370,7 @@ export function AppShell() {
             {appTitle}
           </div>
         </div>
-        <div className="w-10 shrink-0" aria-hidden />
+        <div className="w-[6.5rem] shrink-0" aria-hidden />
       </header>
 
       <aside
@@ -364,6 +378,15 @@ export function AppShell() {
           "hidden shrink-0 border-b border-aom-border bg-zinc-950/95 backdrop-blur-sm md:flex md:flex-col md:w-56 md:border-r md:border-b-0 md:py-6",
           "md:sticky md:top-0 md:z-20 md:self-start md:h-[100dvh] md:min-h-[100dvh] md:overflow-hidden",
         )}
+        style={
+          bannerOffset > 0
+            ? {
+                top: bannerOffset,
+                height: `calc(100dvh - ${bannerOffset}px)`,
+                minHeight: `calc(100dvh - ${bannerOffset}px)`,
+              }
+            : undefined
+        }
       >
         <div className="shrink-0 px-4 pb-3 pt-4 md:px-5 md:pb-6 md:pt-0">
           <div className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-wide text-amber-200">

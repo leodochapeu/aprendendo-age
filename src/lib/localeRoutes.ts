@@ -57,6 +57,16 @@ const SECTION_SEGMENT: Record<Locale, Record<LocaleSection, string>> = {
   },
 };
 
+const NOTIFICATION_LIST_SEGMENT: Record<Locale, string> = {
+  pt: "notificacoes",
+  en: "notifications",
+};
+
+const NOTIFICATION_COMPOSE_SEGMENT: Record<Locale, string> = {
+  pt: "enviar",
+  en: "send",
+};
+
 const AUTH_SEGMENT: Record<Locale, Record<AuthSection, string>> = {
   pt: {
     login: "entrar",
@@ -116,6 +126,14 @@ export function localeAuthPath(locale: Locale, section: AuthSection): string {
   return `/${localeAuthSegment(locale, section)}`;
 }
 
+export function localeNotificationsPath(locale: Locale): string {
+  return `/${NOTIFICATION_LIST_SEGMENT[locale]}`;
+}
+
+export function localeNotificationComposePath(locale: Locale): string {
+  return `${localeNotificationsPath(locale)}/${NOTIFICATION_COMPOSE_SEGMENT[locale]}`;
+}
+
 export function allSectionPathSegments(section: LocaleSection): string[] {
   return [SECTION_SEGMENT.pt[section], SECTION_SEGMENT.en[section]];
 }
@@ -164,6 +182,17 @@ export function swapLocaleInPath(pathname: string, toLocale: Locale): string {
       return `/${parts.join("/")}${search}`;
     }
     return `${pathname}`;
+  }
+
+  const notificationLocale = (["pt", "en"] as const).find((item) => parts[0] === NOTIFICATION_LIST_SEGMENT[item]);
+  if (notificationLocale) {
+    if (notificationLocale !== toLocale) {
+      parts[0] = NOTIFICATION_LIST_SEGMENT[toLocale];
+      if (parts[1] === NOTIFICATION_COMPOSE_SEGMENT[notificationLocale]) {
+        parts[1] = NOTIFICATION_COMPOSE_SEGMENT[toLocale];
+      }
+    }
+    return `/${parts.join("/")}${search}`;
   }
 
   const section = sectionFromPathSegment(parts[0]!);
