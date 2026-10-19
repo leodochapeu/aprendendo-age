@@ -33,7 +33,7 @@ import { panteaoFieldHasMultiplePantheons, pantheonCardTint } from "@/lib/panthe
 import { resolveTokenIconSrc } from "@/lib/tokenIconUrl";
 import { hasTipoContent } from "@/lib/unidadeTipo";
 import { StartGodPortraits } from "@/components/start/StartGodPortraits";
-import { startNovoTagClass } from "@/pages/StartsPage";
+import { startNovoTagClass } from "@/components/start/startNovoTag";
 
 const sectionTitleClass =
   "mb-4 font-[family-name:var(--font-display)] text-xl font-semibold text-amber-100/95";

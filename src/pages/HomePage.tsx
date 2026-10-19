@@ -12,6 +12,17 @@ import { trilhaShared } from "@/pages/trilha-de-aprendizado/trilhaAssets";
 
 const HERO_BG = "/assets/others/AprendendoAge_BG.webp";
 
+type HomeNavCard = {
+  to: string;
+  step: number;
+  title: string;
+  description: string;
+  imageSrc?: string;
+  count?: number;
+  accent?: "amber";
+  isNew?: boolean;
+};
+
 export function HomePage() {
   const { t, locale } = useTranslation();
   const {
@@ -32,7 +43,7 @@ export function HomePage() {
   const trailLabel = t("pages.home.showcase.trailStep");
   const newLabel = t("common.new");
 
-  const entryCards = [
+  const entryCards: HomeNavCard[] = [
     {
       to: "/trilha-de-aprendizado",
       step: 1,
@@ -49,7 +60,6 @@ export function HomePage() {
       imageSrc: getTokenAssetUrl("aomr_zeus_icon"),
       count: startsBuildOrder.length,
       accent: "amber" as const,
-      isNew: true,
     },
   ];
 
@@ -143,7 +153,7 @@ export function HomePage() {
     },
   ];
 
-  const communityCards = [
+  const communityCards: HomeNavCard[] = [
     {
       to: "/videos-comunidade",
       step: 1,

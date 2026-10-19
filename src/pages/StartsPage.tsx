@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
 import { StartAuthorsMeta, startAuthorsSearchText } from "@/components/start/StartAuthorsMeta";
 import { StartFilterTags } from "@/components/start/StartFilterTags";
+import { startNovoTagClass } from "@/components/start/startNovoTag";
 import { StartGodPortraits } from "@/components/start/StartGodPortraits";
 import { EntityCard } from "@/components/ui/EntityCard";
 import { NotionText } from "@/components/ui/NotionText";
@@ -33,17 +34,6 @@ function matchesStart(
   const hay = [s.titulo, startAuthorsSearchText(s.author), ...s.god].join(" ").toLowerCase();
   return hay.includes(needle);
 }
-
-const startNovoTagClassBase =
-  "inline-flex shrink-0 items-center rounded border border-sky-700/55 bg-sky-950/80 font-semibold text-sky-200";
-
-export const startNovoTagClass = cn(startNovoTagClassBase, "rounded-md px-2 py-0.5 text-xs");
-
-/** Variação menor (menu lateral / navegação). */
-export const startNovoTagClassNav = cn(
-  startNovoTagClassBase,
-  "px-1 py-px text-[0.6rem] leading-tight",
-);
 
 export function StartsPage() {
   const { t } = useTranslation();

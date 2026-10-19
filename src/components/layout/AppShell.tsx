@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 import { useTranslation } from "@/hooks/useTranslation";
 import { localeSectionPath, sectionFromPathSegment, type LocaleSection } from "@/lib/localeRoutes";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
-import { startNovoTagClassNav } from "@/pages/StartsPage";
+import { startNovoTagClassNav } from "@/components/start/startNovoTag";
 
 const LIST_INDEX_SECTIONS = new Set<LocaleSection>([
   "construcoes",
@@ -51,7 +51,7 @@ function isNavItemActive(item: NavLinkItem, pathname: string): boolean {
 function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
   return [
     { to: "/", labelKey: "nav.home", end: true },
-    { to: localeSectionPath(locale, "starts"), labelKey: "nav.starts", navNovo: true },
+    { to: localeSectionPath(locale, "starts"), labelKey: "nav.starts" },
     {
       to: "/trilha-de-aprendizado",
       labelKey: "nav.trilha",
@@ -81,13 +81,11 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
         {
           to: "/videos-comunidade",
           labelKey: "nav.communityVideos",
-          navNovo: true,
           match: (p: string) => p === "/videos-comunidade" || p.startsWith("/videos-comunidade/"),
         },
         {
           to: "/jogadores-aom",
           labelKey: "nav.players",
-          navNovo: true,
           match: (p: string) => p === "/jogadores-aom" || p === "/aom-players",
         },
         {
@@ -98,7 +96,6 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
         {
           to: "/links-streamers",
           labelKey: "nav.streamerLinks",
-          navNovo: true,
           match: (p: string) => p === "/links-streamers" || p === "/streamer-links",
         },
         {

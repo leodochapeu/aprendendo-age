@@ -1732,9 +1732,7 @@
     "slug": "poseidon-com-mosca",
     "image": "aomr_poseidon_icon"
   },
-  {
-    "status": "new",
-    "id": 36,
+  {    "id": 36,
     "titulo": "Safe Demeter by Mosca",
     "author": [
       {
@@ -1955,9 +1953,7 @@
     "slug": "demeter-por-mosca-mosca-moose-aom",
     "pantheon": "Greek"
   },
-  {
-    "status": "new",
-    "id": 37,
+  {    "id": 37,
     "titulo": "2 TC :aomr_town_center_icon: + Demeter's Pioneers of Pan :aomr_pans_pioneers_icon: by TheRapl",
     "author": [
       {
@@ -4346,9 +4342,7 @@
     "slug": "cronos-2tc-tpisai",
     "image": "aomr_kronos_icon"
   },
-  {
-    "status": "new",
-    "id": 19,
+  {    "id": 19,
     "titulo": "Cronos Rush - by MilanoGods",
     "author": [
       {
@@ -7222,9 +7216,7 @@
     "slug": "tsukuyomi-rush-2tc-husksuppe",
     "image": "aomr_tsukuyomi_icon"
   },
-  {
-    "status": "new",
-    "id": 32,
+  {    "id": 32,
     "titulo": "Huitzilopochtli (with Blood Pact :aomr_blood_pact_icon:) - by TheRapl",
     "author": [
       {
@@ -7396,9 +7388,7 @@
     "pantheon": "Aztecs",
     "image": "aomr_huitzilopochtli_icon"
   },
-  {
-    "status": "new",
-    "id": 33,
+  {    "id": 33,
     "titulo": "Tezcatlipoca 4:07 - by TheRapl",
     "author": [
       {
@@ -7552,9 +7542,7 @@
     "pantheon": "Aztecs",
     "image": "aomr_tezcatlipoca_icon"
   },
-  {
-    "status": "new",
-    "id": 34,
+  {    "id": 34,
     "titulo": "Quetzalcoatl (Calpulli :aomr_calpulli_icon: Upgrades :aomr_calpulli_craft_workshop_icon::aomr_calpulli_lumber_outpost_icon:) by TheRapl",
     "author": [
       {
@@ -7730,9 +7718,7 @@
     "slug": "quetzalcoatl-build-order-4-07-by-therapl-therapl",
     "pantheon": "Aztecs"
   },
-  {
-    "status": "new",
-    "id": 35,
+  {    "id": 35,
     "titulo": "Quetzalcoatl ECO (All Upgrades :aomr_calpulli_craft_workshop_icon::aomr_calpulli_lumber_outpost_icon::aomr_calpulli_livestock_pen_icon: from Calpulli :aomr_calpulli_icon:) by HuskSuppe",
     "author": [
       {
@@ -7922,9 +7908,7 @@
     "slug": "quetzalcoatl-eco-todos-upgrades-do-calpulli-husksuppe",
     "pantheon": "Aztecs"
   },
-  {
-    "status": "new",
-    "id": 38,
+  {    "id": 38,
     "titulo": "Tezcatlipoca (Upgrades :aomr_calpulli_lumber_outpost_icon::aomr_calpulli_livestock_pen_icon::aomr_calpulli_craft_workshop_icon: from Calpulli :aomr_calpulli_icon:) by HuskSuppe",
     "author": [
       {
