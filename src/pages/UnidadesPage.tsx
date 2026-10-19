@@ -19,6 +19,7 @@ import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useListViewMode } from "@/hooks/useListViewMode";
 import { useListPageSearchQuery } from "@/hooks/useListPageSearchQuery";
+import { useUnitListFilters } from "@/hooks/useUnitListFilters";
 import { useTranslation } from "@/hooks/useTranslation";
 import { getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { formatArmorPercent } from "@/lib/armorDisplay";
@@ -27,12 +28,7 @@ import type { ResolvedEntityLink } from "@/lib/entityResolve";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
 import { cn } from "@/lib/cn";
 import { pantheonCardTint } from "@/lib/pantheonCardTint";
-import {
-  countActiveUnitFilters,
-  emptyUnitListFilters,
-  unidadeMatchesFilters,
-  type UnitListFilters,
-} from "@/lib/unidadeFilters";
+import { countActiveUnitFilters, unidadeMatchesFilters } from "@/lib/unidadeFilters";
 import {
   hasTipoContent,
   tipoItemsToSearchBlob,
@@ -142,7 +138,7 @@ export function UnidadesPage() {
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [beneficiosOpen, setBeneficiosOpen] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [unitFilters, setUnitFilters] = useState<UnitListFilters>(emptyUnitListFilters);
+  const [unitFilters, setUnitFilters] = useUnitListFilters();
 
   const searched = useMemo(() => unidades.filter((u) => matches(u, q)), [unidades, q]);
   const filtered = useMemo(

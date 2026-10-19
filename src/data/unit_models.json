@@ -262,5 +262,10 @@
   "189": "/assets/unit-models/189-tanuki.glb",
   "188": "/assets/unit-models/188-kappa.glb",
   "21": "/assets/unit-models/21-lykaonwolf.glb",
-  "105": "/assets/unit-models/105-oracle.glb"
+  "105": "/assets/unit-models/105-oracle.glb",
+  "1": "/assets/unit-models/1-villagergreek.glb",
+  "49": "/assets/unit-models/49-villageregyptian.glb",
+  "76": "/assets/unit-models/76-villagernorse.glb",
+  "139": "/assets/unit-models/139-villagerchinese.glb",
+  "175": "/assets/unit-models/175-villagerjapanese.glb"
 }

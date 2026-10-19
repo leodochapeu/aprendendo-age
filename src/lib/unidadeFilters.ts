@@ -91,6 +91,48 @@ export function emptyUnitListFilters(): UnitListFilters {
   return { pantheonIds: [], eraIds: [], tipoKeys: [], advanced: [] };
 }
 
+function finiteIds(value: unknown): number[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((id): id is number => typeof id === "number" && Number.isFinite(id));
+}
+
+function isCompareOp(value: unknown): value is CompareOp {
+  return typeof value === "string" && (COMPARE_OPS as readonly string[]).includes(value);
+}
+
+function isStatField(value: unknown): value is UnitStatField | "" {
+  return value === "" || (typeof value === "string" && (UNIT_STAT_FIELDS as readonly string[]).includes(value));
+}
+
+/** Reidrata o filtro salvo ao voltar do detalhe. JSON inválido vira filtro vazio. */
+export function parseUnitListFilters(raw: string): UnitListFilters {
+  try {
+    const data = JSON.parse(raw) as unknown;
+    if (!data || typeof data !== "object") return emptyUnitListFilters();
+    const record = data as Record<string, unknown>;
+    const tipoKeys = Array.isArray(record.tipoKeys)
+      ? record.tipoKeys.filter((key): key is string => typeof key === "string" && key.length > 0)
+      : [];
+    const advanced = Array.isArray(record.advanced)
+      ? record.advanced.flatMap((rule) => {
+          if (!rule || typeof rule !== "object") return [];
+          const item = rule as Record<string, unknown>;
+          if (typeof item.id !== "string" || !item.id) return [];
+          if (!isStatField(item.field) || !isCompareOp(item.op) || typeof item.value !== "string") return [];
+          return [{ id: item.id, field: item.field, op: item.op, value: item.value }];
+        })
+      : [];
+    return {
+      pantheonIds: finiteIds(record.pantheonIds),
+      eraIds: finiteIds(record.eraIds),
+      tipoKeys,
+      advanced,
+    };
+  } catch {
+    return emptyUnitListFilters();
+  }
+}
+
 export function createAdvancedRule(): UnitAdvancedRule {
   const id =
     typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"

@@ -103,6 +103,7 @@ export const ptMessages: TranslationTree = {
     general: "Geral",
     baseGatherRates: "Taxas de coleta (base)",
     metadata: "Metadados",
+    aboutMap: "Sobre o Mapa",
     map2d: "Mapa em 2D",
     map3d: "Mapa em 3D",
     mapPreview: "Mapa Preview",

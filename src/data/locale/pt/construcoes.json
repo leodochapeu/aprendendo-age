@@ -2961,5 +2961,1469 @@
     "armadura_anticontusao": 99,
     "madeira": 40,
     "tempo_construir_segundos": 15
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 81,
+    "nome": "Maravilha (Zeus)",
+    "ingles": "Wonder (Zeus)",
+    "panteao": "Grego :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 82,
+    "nome": "Maravilha (Poseidon)",
+    "ingles": "Wonder (Poseidon)",
+    "panteao": "Grego :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 83,
+    "nome": "Maravilha (Hades)",
+    "ingles": "Wonder (Hades)",
+    "panteao": "Grego :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 84,
+    "nome": "Maravilha (Deméter)",
+    "ingles": "Wonder (Demeter)",
+    "panteao": "Grego :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 85,
+    "nome": "Maravilha (Ísis)",
+    "ingles": "Wonder (Isis)",
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "panteao_id": 2
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 86,
+    "nome": "Maravilha (Set)",
+    "ingles": "Wonder (Set)",
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "panteao_id": 2
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 87,
+    "nome": "Maravilha (Thor)",
+    "ingles": "Wonder (Thor)",
+    "panteao": "Nórdico :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 88,
+    "nome": "Maravilha (Odin)",
+    "ingles": "Wonder (Odin)",
+    "panteao": "Nórdico :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 89,
+    "nome": "Maravilha (Loki)",
+    "ingles": "Wonder (Loki)",
+    "panteao": "Nórdico :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 90,
+    "nome": "Maravilha (Gaia)",
+    "ingles": "Wonder (Gaia)",
+    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
+    "panteao_id": 4
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 91,
+    "nome": "Maravilha (Fu Xi)",
+    "ingles": "Wonder (Fu Xi)",
+    "panteao": "Chinês :aomr_pantheon_chinese_icon:",
+    "panteao_id": 5
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 92,
+    "nome": "Maravilha (Nu Wa)",
+    "ingles": "Wonder (Nu Wa)",
+    "panteao": "Chinês :aomr_pantheon_chinese_icon:",
+    "panteao_id": 5
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 93,
+    "nome": "Maravilha (Shennong)",
+    "ingles": "Wonder (Shennong)",
+    "panteao": "Chinês :aomr_pantheon_chinese_icon:",
+    "panteao_id": 5
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 94,
+    "nome": "Maravilha (Amaterasu)",
+    "ingles": "Wonder (Amaterasu)",
+    "panteao": "Japonês :aomr_pantheon_japanese_icon:",
+    "panteao_id": 6
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 95,
+    "nome": "Maravilha (Tsukuyomi)",
+    "ingles": "Wonder (Tsukuyomi)",
+    "panteao": "Japonês :aomr_pantheon_japanese_icon:",
+    "panteao_id": 6
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 96,
+    "nome": "Maravilha (Susanoo)",
+    "ingles": "Wonder (Susanoo)",
+    "panteao": "Japonês :aomr_pantheon_japanese_icon:",
+    "panteao_id": 6
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 97,
+    "nome": "Maravilha (Quetzalcoatl)",
+    "ingles": "Wonder (Quetzalcoatl)",
+    "panteao": "Astecas :aomr_pantheon_azteca_icon:",
+    "panteao_id": 7
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 98,
+    "nome": "Maravilha (Tezcatlipoca)",
+    "ingles": "Wonder (Tezcatlipoca)",
+    "panteao": "Astecas :aomr_pantheon_azteca_icon:",
+    "panteao_id": 7
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 99,
+    "nome": "Maravilha (Huitzilopochtli)",
+    "ingles": "Wonder (Huitzilopochtli)",
+    "panteao": "Astecas :aomr_pantheon_azteca_icon:",
+    "panteao_id": 7
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 100,
+    "nome": "Maravilha (Rá)",
+    "ingles": "Wonder (Ra)",
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "panteao_id": 2
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 101,
+    "nome": "Maravilha (Frey)",
+    "ingles": "Wonder (Frey)",
+    "panteao": "Nórdico :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 102,
+    "nome": "Maravilha (Urano)",
+    "ingles": "Wonder (Urano)",
+    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
+    "panteao_id": 4
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 103,
+    "nome": "Maravilha (Cronos)",
+    "ingles": "Wonder (Cronos)",
+    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
+    "panteao_id": 4
+  },
+  {
+    "id": 121,
+    "nome": "Centro de Aldeia (Grego)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Grego :aomr_pantheon_greeks_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Village Center (Greek)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 1,
+    "icon": "aomr_village_center_greek_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Pedreiros, Arquitetos, Segredos dos Titãs, Maçãs Douradas, Sangue Divino",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Aldeão, Orfeu (Herói), Iolau (Herói), Ícaro (Herói), Belerofonte (Herói), Rei Midas (Herói), Perseus (Herói), Polifemo (Herói)",
+    "unidades_ids": [
+      1,
+      6,
+      16,
+      28,
+      38,
+      39,
+      40,
+      41
+    ]
+  },
+  {
+    "id": 122,
+    "nome": "Centro de Aldeia (Egípcio)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Village Center (Egyptian)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 2,
+    "icon": "aomr_village_center_egyptian_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Pedreiros, Arquitetos, Segredos dos Titãs, Pele do Rinoceronte, Ritos Funerários, Espírito de Maat, Nebty, Novo Reino, Livro de Thoth",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Trabalhador",
+    "unidades_ids": [
+      49
+    ]
+  },
+  {
+    "id": 123,
+    "nome": "Centro de Aldeia (Nórdico)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Nórdico :aomr_pantheon_norse_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Village Center (Norse)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 3,
+    "icon": "aomr_village_center_norse_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Pedreiros, Arquitetos, Segredos dos Titãs, Dádiva de Frey, Rigsthula, Juramento do Anel",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Anão, Coletor",
+    "unidades_ids": [
+      75,
+      76
+    ]
+  },
+  {
+    "id": 124,
+    "nome": "Centro de Aldeia (Atlante)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Village Center (Atlantean)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 4,
+    "icon": "aomr_village_center_atlantean_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Pedreiros, Arquitetos, Segredos dos Titãs, Canais",
+    "unidades": "Cidadão",
+    "unidades_ids": [
+      104
+    ],
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 104,
+    "nome": "Centro de Aldeia (Chinês)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Chinês :aomr_pantheon_chinese_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Village Center (Chinese)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 5,
+    "icon": "aomr_village_center_chinese_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Pedreiros, Arquitetos, Segredos dos Titãs, Chefe Kuafu, Perseguindo o Sol",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Camponês, Kuafu",
+    "unidades_ids": [
+      139,
+      140
+    ]
+  },
+  {
+    "id": 105,
+    "nome": "Centro de Aldeia (Japonês)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Japonês :aomr_pantheon_japanese_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Village Center (Japanese)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 6,
+    "icon": "aomr_village_center_japanese_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Pedreiros, Arquitetos, Segredos dos Titãs, Província Divina",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Plebeu, Miko (Heroína)",
+    "unidades_ids": [
+      175,
+      176
+    ]
+  },
+  {
+    "id": 106,
+    "nome": "Centro de Aldeia (Asteca)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Astecas :aomr_pantheon_azteca_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Village Center (Aztec)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 7,
+    "icon": "aomr_village_center_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Pedreiros, Arquitetos, Segredos dos Titãs, Saia Serpente, Santuários de Coatepec",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Espião Quimichin",
+    "unidades_ids": [
+      209
+    ]
+  },
+  {
+    "id": 107,
+    "nome": "Centro da Cidadela (Grego)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Grego :aomr_pantheon_greeks_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Citadel Center (Greek)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 1,
+    "icon": "aomr_citadel_center_greek_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Pedreiros, Arquitetos, Centro Urbano Fortificado, Segredos dos Titãs, Maçãs Douradas, Sangue Divino",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Ájax (Herói), Jasão (Herói), Orfeu (Herói), Teseu (Herói), Aquiles (Herói), Atalanta (Heroína), Hércules (Herói), Iolau (Herói), Quíron (Herói), Hipólita (Heroína), Ícaro (Herói), Odisseu (Herói), Belerofonte (Herói), Rei Midas (Herói), Perseus (Herói), Polifemo (Herói)",
+    "unidades_ids": [
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      15,
+      16,
+      26,
+      27,
+      28,
+      29,
+      38,
+      39,
+      40,
+      41
+    ]
+  },
+  {
+    "id": 108,
+    "nome": "Centro da Cidadela (Egípcio)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Citadel Center (Egyptian)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 2,
+    "icon": "aomr_citadel_center_egyptian_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Pedreiros, Arquitetos, Centro Urbano Fortificado, Segredos dos Titãs, Pele do Rinoceronte, Ritos Funerários, Espírito de Maat, Nebty, Novo Reino, Livro de Thoth",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Sacerdote (Herói), Mercenário, Cavalaria Mercenária",
+    "unidades_ids": [
+      51,
+      53,
+      60
+    ]
+  },
+  {
+    "id": 109,
+    "nome": "Centro da Cidadela (Nórdico)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Nórdico :aomr_pantheon_norse_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Citadel Center (Norse)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 3,
+    "icon": "aomr_citadel_center_norse_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Pedreiros, Arquitetos, Centro Urbano Fortificado, Segredos dos Titãs, Dádiva de Frey, Rigsthula, Juramento do Anel",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Berserker",
+    "unidades_ids": [
+      77
+    ]
+  },
+  {
+    "id": 110,
+    "nome": "Centro da Cidadela (Atlante)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Citadel Center (Atlantean)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 4,
+    "icon": "aomr_citadel_center_atlantean_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Pedreiros, Arquitetos, Centro Urbano Fortificado, Segredos dos Titãs, Canais",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 111,
+    "nome": "Centro da Cidadela (Chinês)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Chinês :aomr_pantheon_chinese_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Citadel Center (Chinese)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 5,
+    "icon": "aomr_citadel_center_chinese_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Pedreiros, Arquitetos, Centro Urbano Fortificado, Segredos dos Titãs, Chefe Kuafu, Perseguindo o Sol",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 112,
+    "nome": "Centro da Cidadela (Japonês)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Japonês :aomr_pantheon_japanese_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Citadel Center (Japanese)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 6,
+    "icon": "aomr_citadel_center_japanese_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Pedreiros, Arquitetos, Centro Urbano Fortificado, Segredos dos Titãs, Província Divina",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Miko (Heroína)",
+    "unidades_ids": [
+      176
+    ]
+  },
+  {
+    "id": 113,
+    "nome": "Centro da Cidadela (Asteca)",
+    "tipo": [
+      {
+        "type": "Básico"
+      }
+    ],
+    "panteao": "Astecas :aomr_pantheon_azteca_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Citadel Center (Aztec)",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 7,
+    "icon": "aomr_citadel_center_aztec_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Pedreiros, Arquitetos, Centro Urbano Fortificado, Segredos dos Titãs, Saia Serpente, Santuários de Coatepec",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Espião Quimichin",
+    "unidades_ids": [
+      209
+    ]
+  },
+  {
+    "id": 114,
+    "nome": "Svadilfari Asgardiano",
+    "tipo": [
+      {
+        "type": "Militar",
+        "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Proteção 🧱"
+      }
+    ],
+    "panteao": "Nórdico :aomr_pantheon_norse_icon:",
+    "pontos_de_vida": 2700,
+    "dps": 30,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 270,
+    "ouro": 300,
+    "custo": 570,
+    "era": "Heróica :aomr_heroic_age_icon:",
+    "ingles": "Asgardian Hill Fort",
+    "tempo_construir_segundos": 250,
+    "era_id": 3,
+    "panteao_id": 3,
+    "icon": "aomr_asgardian_hill_fort_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 30,
+    "alcance": 4,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 20,
+    "favor": 5,
+    "tecnologias": "Cavalos de Carga, Engenheiros, Fortificações Avançadas, Infantaria Média, Infantaria Pesada, Infantaria Campeã, Banquetes Renomados, Nove Ondas, Verrumão dos Anões, Bravura, Convocar Soldados do Forte de Colina, Recrutar Soldados do Forte de Colina, Ydalir",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Huscarl, Aríete Portátil, Balista",
+    "unidades_ids": [
+      88,
+      242,
+      243
+    ]
+  },
+  {
+    "id": 115,
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
+    "dps": 0,
+    "armadura_anticorte": 0,
+    "armadura_antiperfurante": 0,
+    "armadura_anticontucao": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "custo": 0,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "era_id": 2,
+    "panteao_id": 4,
+    "ingles": "Hesperides Tree",
+    "tempo_construir_segundos": 0,
+    "pontos_de_vida": 720,
+    "icon": "aomr_hesperides_tree_icon",
+    "guarnicao": 5,
+    "unidades": "Dríade",
+    "unidades_ids": [
+      127
+    ],
+    "nome": "Árvore de Hespérides"
+  },
+  {
+    "id": 116,
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "panteao": "Atlante :aomr_pantheon_atlanteans_icon:",
+    "dps": 0,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 0,
+    "ouro": 0,
+    "custo": 0,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "era_id": 2,
+    "panteao_id": 4,
+    "ingles": "Summoning Tree",
+    "tempo_construir_segundos": 30,
+    "pontos_de_vida": 2500,
+    "icon": "aomr_summoning_tree_icon",
+    "unidades": "Dríade",
+    "unidades_ids": [
+      127
+    ],
+    "nome": "Árvore de Invocação"
+  },
+  {
+    "id": 117,
+    "nome": "Estaleiro Naval",
+    "tipo": [
+      {
+        "type": "Militar",
+        "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Geral",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 250,
+    "ouro": 0,
+    "custo": 250,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Naval Shipyard",
+    "tempo_construir_segundos": 50,
+    "era_id": 1,
+    "icon": "aomr_dock_icon",
+    "armadura_anticontusao": 5,
+    "guarnicao": 5,
+    "unidades": "Cila, Carcinos, Leviatã, Tartaruga de Guerra, Jormun Elver, Kraken, Servo, Nereida, Caravela, Trirreme, Penteconter, Juggernaut, Kebenit, Galé com Aríete, Barcaça de Guerra, Dracar, Dreki, Barco Dragão, Birreme, Navio de Fogo, Birreme de Cerco",
+    "unidades_ids": [
+      34,
+      42,
+      63,
+      73,
+      93,
+      94,
+      118,
+      128,
+      136,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261
+    ],
+    "tecnologias": "Ritos Ctônicos, Linho Carmesim",
+    "tecnologias_ids": [
+      null,
+      null
+    ]
+  },
+  {
+    "id": 118,
+    "nome": "Obelisco",
+    "tipo": [
+      {
+        "type": "Visão 👁‍🗨"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 50,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 0,
+    "ouro": 10,
+    "custo": 10,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Obelisk",
+    "tempo_construir_segundos": 12,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_obelisk_icon",
+    "armadura_anticontusao": 5,
+    "tecnologias": "Fogueiras Sinalizadoras, Pombos Correio",
+    "tecnologias_ids": [
+      null,
+      null
+    ]
+  },
+  {
+    "id": 119,
+    "nome": "Santuário da Caça",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      },
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "panteao": "Japonês :aomr_pantheon_japanese_icon:",
+    "pontos_de_vida": 800,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 75,
+    "ouro": 0,
+    "custo": 75,
+    "guarnicao": 1,
+    "era": "Clássica :aomr_classical_age_icon:",
+    "ingles": "Shrine of the Hunt",
+    "tempo_construir_segundos": 15,
+    "era_id": 2,
+    "panteao_id": 6,
+    "icon": "aomr_shrine_of_the_hunt_icon",
+    "armadura_anticontusao": 5,
+    "tecnologias": "Kagura, Varinhas de Gohei, Guardiões Sagrados, Jardins de Sakuras",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 120,
+    "nome": "Portão de Madeira",
+    "tipo": [
+      {
+        "type": "Proteção 🧱"
+      }
+    ],
+    "panteao": "Geral",
+    "pontos_de_vida": 500,
+    "dps": 0,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 0,
+    "ouro": 15,
+    "custo": 15,
+    "era": "Arcaica :aomr_archaic_age_icon:",
+    "ingles": "Wooden Gate",
+    "tempo_construir_segundos": 15,
+    "era_id": 1,
+    "icon": "aomr_gate_icon",
+    "armadura_anticontusao": 5,
+    "tecnologias": "Muralha de Pedra, Muralha Fortificada, Defesas Avançadas, Paredes de Espinhos",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]

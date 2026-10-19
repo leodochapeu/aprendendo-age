@@ -103,6 +103,7 @@ export const enMessages: TranslationTree = {
     general: "General",
     baseGatherRates: "Base gather rates",
     metadata: "Metadata",
+    aboutMap: "About the map",
     map2d: "2D map",
     map3d: "3D map",
     mapPreview: "Map preview",

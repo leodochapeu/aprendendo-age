@@ -58,6 +58,8 @@ export function TecnologiaDetailPage() {
   }
 
   const tecIndex = tecnologias.indexOf(tech);
+  const shortDesc = (tech.descricao_resumida ?? "").trim();
+  const hist = (tech.historia ?? "").trim();
 
   const eraRefs = tech.eras;
   const panteoesField = tech.panteoes;
@@ -123,6 +125,9 @@ export function TecnologiaDetailPage() {
         title={
           tech.nome ||
           t("common.untitledTech", { index: tecIndex >= 0 ? tecIndex : "?" })
+        }
+        description={
+          shortDesc ? <NotionText text={shortDesc} className="block" /> : undefined
         }
         headerIconSrc={getTecnologiaAssetUrl(tech)}
       />
@@ -210,6 +215,15 @@ export function TecnologiaDetailPage() {
           </Section>
         ) : null}
       </div>
+
+      {hist ? (
+        <Section title={t("common.history")} className="mt-6">
+          <NotionText
+            text={hist}
+            className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
+          />
+        </Section>
+      ) : null}
     </div>
   );
 }

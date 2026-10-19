@@ -29,11 +29,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Greek)",
+        "id": 121
       }
     ],
     "comida": 50,
@@ -195,12 +196,20 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 100,
@@ -274,12 +283,20 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 100,
@@ -329,8 +346,20 @@
     "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:",
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
+      },
+      {
+        "nome": "Village Center (Greek)",
+        "id": 121
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "forca_atributos": 0,
@@ -409,12 +438,20 @@
     "armadura_antiperfurante": 40,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 100,
@@ -788,12 +825,20 @@
     "armadura_antiperfurante": 45,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 75,
@@ -856,12 +901,20 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 75,
@@ -924,12 +977,20 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 75,
@@ -979,8 +1040,20 @@
     "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:",
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
+      },
+      {
+        "nome": "Village Center (Greek)",
+        "id": 121
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "forca_atributos": 0,
@@ -1669,16 +1742,20 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
       },
       {
-        "id": 57,
-        "nome": "Strength"
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 0,
@@ -1751,16 +1828,20 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
       },
       {
-        "id": 57,
-        "nome": "Strength"
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 0,
@@ -1814,8 +1895,20 @@
     "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:",
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
+      },
+      {
+        "nome": "Village Center (Greek)",
+        "id": 121
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "forca_atributos": 0,
@@ -1888,16 +1981,20 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "id": 1,
-        "nome": "Centro Urbano (Grego)"
+        "nome": "Town Center",
+        "id": 1
       },
       {
-        "id": 21,
-        "nome": "Temple (Greek)"
+        "nome": "Temple",
+        "id": 21
       },
       {
-        "id": 57,
-        "nome": "Strength"
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
       }
     ],
     "comida": 0,
@@ -2272,11 +2369,12 @@
     "armadura_antiperfurante": 65,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -2552,7 +2650,25 @@
         "descricao": "Leaps valiantly into battle, injuring the targeted unit greatly."
       }
     ],
-    "historia": "Age -- 18\nHomeland -- Corinth\nOccupation -- prince and equestrian\n\nThe son of a king of Corinth, a city noted for horses, Bellerophon was trained from youth to be the great horseman of his age. At the age of sixteen, he set out for adventure, but a jealous rival tricked him into undertaking the dangerous quest of killing the Chimera. This fire-breathing beast was terrorizing the countryside of Lycia, carrying off people and livestock. A local seer instructed Bellerophon to pray to Athena and sleep in her temple. In a dream, the goddess told Bellerophon of a golden bridle that could be used to catch the Pegasus. When he awoke he had the bridle, with which he caught the Pegasus drinking at the Pirene well. He was able to control the beast thanks to the bridle and his equestrian skill. Together they flew to the Chimera's lair, where he used a spear to lodge a lump of lead in its throat. The Chimera's fiery breath melted the lead, which choked the beast to death.\n\nAfter several other adventures, Bellerophon married a princess of Lycia and eventually became king. His thirst for adventure returned, however, and then he arrogantly attempted to reach Olympus on Pegasus. An angry Zeus sent a gadfly to bite Pegasus and Bellerophon was thrown off. Though Athena spared him by having him fall onto soft ground, he wandered alone for the rest of his life, searching for Pegasus, and died a lame beggar."
+    "historia": "Age -- 18\nHomeland -- Corinth\nOccupation -- prince and equestrian\n\nThe son of a king of Corinth, a city noted for horses, Bellerophon was trained from youth to be the great horseman of his age. At the age of sixteen, he set out for adventure, but a jealous rival tricked him into undertaking the dangerous quest of killing the Chimera. This fire-breathing beast was terrorizing the countryside of Lycia, carrying off people and livestock. A local seer instructed Bellerophon to pray to Athena and sleep in her temple. In a dream, the goddess told Bellerophon of a golden bridle that could be used to catch the Pegasus. When he awoke he had the bridle, with which he caught the Pegasus drinking at the Pirene well. He was able to control the beast thanks to the bridle and his equestrian skill. Together they flew to the Chimera's lair, where he used a spear to lodge a lump of lead in its throat. The Chimera's fiery breath melted the lead, which choked the beast to death.\n\nAfter several other adventures, Bellerophon married a princess of Lycia and eventually became king. His thirst for adventure returned, however, and then he arrogantly attempted to reach Olympus on Pegasus. An angry Zeus sent a gadfly to bite Pegasus and Bellerophon was thrown off. Though Athena spared him by having him fall onto soft ground, he wandered alone for the rest of his life, searching for Pegasus, and died a lame beggar.",
+    "construcao": [
+      {
+        "nome": "Town Center",
+        "id": 1
+      },
+      {
+        "nome": "Village Center (Greek)",
+        "id": 121
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
+      }
+    ]
   },
   {
     "id": 39,
@@ -2608,7 +2724,25 @@
         "descricao": "Turn an enemy to solid gold. Any player can defeat the gold unit to gain a ${DEMETER_MIDAS_TOUCH_REWARD_AMOUNT} gold reward."
       }
     ],
-    "historia": "Age -- 51\nHomeland -- Phrygia\nOccupation -- King\n\nLegendary King of Phrygia, Midas was known for his immense wealth and ambition. One day, while walking through his rose garden, he found a drunken satyr sleeping. Recognizing him as Silenus, the foster father of the god Dionysus, Midas treated him hospitably and, after eleven days, returned him to Dionysus. Grateful, Dionysus offered Midas any wish as a reward. Driven by greed, Midas asked for the power to turn anything he touched into gold. At first, he delighted in his new ability, transforming much of his household, including every rose in his garden, into gold. He ordered a feast to celebrate, but upon taking the first bite, he discovered that food and water also turned to gold upon touching his lips. Desperate, Midas prayed to Dionysus to lift what had become a curse. The god heard his plea and instructed him to wash in the river Pactolus, which washed away his power and turned the river sands to gold."
+    "historia": "Age -- 51\nHomeland -- Phrygia\nOccupation -- King\n\nLegendary King of Phrygia, Midas was known for his immense wealth and ambition. One day, while walking through his rose garden, he found a drunken satyr sleeping. Recognizing him as Silenus, the foster father of the god Dionysus, Midas treated him hospitably and, after eleven days, returned him to Dionysus. Grateful, Dionysus offered Midas any wish as a reward. Driven by greed, Midas asked for the power to turn anything he touched into gold. At first, he delighted in his new ability, transforming much of his household, including every rose in his garden, into gold. He ordered a feast to celebrate, but upon taking the first bite, he discovered that food and water also turned to gold upon touching his lips. Desperate, Midas prayed to Dionysus to lift what had become a curse. The god heard his plea and instructed him to wash in the river Pactolus, which washed away his power and turned the river sands to gold.",
+    "construcao": [
+      {
+        "nome": "Town Center",
+        "id": 1
+      },
+      {
+        "nome": "Village Center (Greek)",
+        "id": 121
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
+      }
+    ]
   },
   {
     "id": 40,
@@ -2664,7 +2798,25 @@
         "descricao": "Turns a targeted enemy myth unit to stone, instantly destroying most myth units. Survivors break free after a short time."
       }
     ],
-    "historia": "Age -- 36\nHomeland -- originally Argos, later Seriphos and Mycenae\nOccupation -- prince and hero\n\nThe son of Zeus and Danae, the mortal daughter of the king of Argos, Perseus and his mother were banished by his grandfather, who feared a prophecy that the grandson would kill him. Perseus grew to be a formidable warrior and protector of his mother. A suitor of his mother sent Perseus on a hopeless quest to kill Medusa, which he fulfilled with the help of Athena and Hermes. Returning home, he slew a ravaging sea monster and freed the beautiful Andromeda, whom he took as his wife. Perseus eventually killed his grandfather as prophesied, in an accident with a discus, but refused to become ruler of Argos. He ruled instead over Tiryns and Mycenae, establishing a family whose descendants included Heracles."
+    "historia": "Age -- 36\nHomeland -- originally Argos, later Seriphos and Mycenae\nOccupation -- prince and hero\n\nThe son of Zeus and Danae, the mortal daughter of the king of Argos, Perseus and his mother were banished by his grandfather, who feared a prophecy that the grandson would kill him. Perseus grew to be a formidable warrior and protector of his mother. A suitor of his mother sent Perseus on a hopeless quest to kill Medusa, which he fulfilled with the help of Athena and Hermes. Returning home, he slew a ravaging sea monster and freed the beautiful Andromeda, whom he took as his wife. Perseus eventually killed his grandfather as prophesied, in an accident with a discus, but refused to become ruler of Argos. He ruled instead over Tiryns and Mycenae, establishing a family whose descendants included Heracles.",
+    "construcao": [
+      {
+        "nome": "Town Center",
+        "id": 1
+      },
+      {
+        "nome": "Village Center (Greek)",
+        "id": 121
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
+      }
+    ]
   },
   {
     "id": 41,
@@ -2727,7 +2879,25 @@
         "descricao": "Slams the ground, scattering and damaging nearby enemy units."
       }
     ],
-    "historia": "Age -- 205\nHomeland -- Sicily\nOccupation -- shepherd\n\nThis son of Poseidon was a Cyclops who lived a solitary existence in a cave near Sicily herding sheep. His life was interrupted when Odysseus and his men landed nearby seeking food during their journey home from Troy. Odysseus wanted to see a Cyclops, so he and his crew hid in Polyphemus' cave. Gasping at the sight of the one-eyed giant, they revealed their presence and the Cyclops grabbed two of the men and ate them. He blocked the cave entrance with a large rock and continued eating two men each meal. Desperate, Odysseus and his men fashioned a large pole into a spear and stabbed Polyphemus in the eye after getting him drunk. The men then hung from the bellies of the sheep when the Cyclops let them out the next day. Not content with merely escaping, Odysseus taunted Polyphemus from his ship and revealed his name. The Cyclops called upon his father Poseidon to curse the Greeks and the god complied, harassing Odysseus for the rest of his journey."
+    "historia": "Age -- 205\nHomeland -- Sicily\nOccupation -- shepherd\n\nThis son of Poseidon was a Cyclops who lived a solitary existence in a cave near Sicily herding sheep. His life was interrupted when Odysseus and his men landed nearby seeking food during their journey home from Troy. Odysseus wanted to see a Cyclops, so he and his crew hid in Polyphemus' cave. Gasping at the sight of the one-eyed giant, they revealed their presence and the Cyclops grabbed two of the men and ate them. He blocked the cave entrance with a large rock and continued eating two men each meal. Desperate, Odysseus and his men fashioned a large pole into a spear and stabbed Polyphemus in the eye after getting him drunk. The men then hung from the bellies of the sheep when the Cyclops let them out the next day. Not content with merely escaping, Odysseus taunted Polyphemus from his ship and revealed his name. The Cyclops called upon his father Poseidon to curse the Greeks and the god complied, harassing Odysseus for the rest of his journey.",
+    "construcao": [
+      {
+        "nome": "Town Center",
+        "id": 1
+      },
+      {
+        "nome": "Village Center (Greek)",
+        "id": 121
+      },
+      {
+        "nome": "Fortress",
+        "id": 57
+      },
+      {
+        "nome": "Citadel Center (Greek)",
+        "id": 107
+      }
+    ]
   },
   {
     "id": 42,
@@ -2774,11 +2944,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -3217,11 +3388,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 3
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Egyptian)",
+        "id": 122
       }
     ],
     "comida": 50,
@@ -3366,12 +3538,16 @@
     "armadura_antiperfurante": 1,
     "construcao": [
       {
-        "id": 3,
-        "nome": "Urban Center (Egyptian)"
+        "nome": "Town Center",
+        "id": 3
       },
       {
-        "id": 22,
-        "nome": "Temple (Egyptian)"
+        "nome": "Temple",
+        "id": 22
+      },
+      {
+        "nome": "Citadel Center (Egyptian)",
+        "id": 108
       }
     ],
     "comida": 0,
@@ -3489,11 +3665,12 @@
     "armadura_antiperfurante": 15,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 3
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Citadel Center (Egyptian)",
+        "id": 108
       }
     ],
     "comida": 0,
@@ -3978,11 +4155,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 3
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Citadel Center (Egyptian)",
+        "id": 108
       }
     ],
     "comida": 0,
@@ -4178,11 +4356,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -4777,8 +4956,8 @@
     "armadura_antiperfurante": 25,
     "construcao": [
       {
-        "nome": "Templo (Egípcio)",
-        "id": 12
+        "nome": "Temple",
+        "id": 22
       }
     ],
     "comida": 0,
@@ -4847,11 +5026,12 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 225,
@@ -4973,11 +5153,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 4
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Norse)",
+        "id": 123
       }
     ],
     "comida": 0,
@@ -5026,11 +5207,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 4
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Norse)",
+        "id": 123
       }
     ],
     "comida": 50,
@@ -5085,12 +5267,16 @@
     "armadura_antiperfurante": 5,
     "construcao": [
       {
-        "id": 39,
-        "nome": "Casa Comunal"
+        "nome": "Longhouse",
+        "id": 39
       },
       {
-        "id": 4,
-        "nome": "Urban Center (Nordic)"
+        "nome": "Town Center",
+        "id": 4
+      },
+      {
+        "nome": "Citadel Center (Norse)",
+        "id": 109
       }
     ],
     "comida": 50,
@@ -5839,8 +6025,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "id": 59,
-        "nome": "Forte da Colina"
+        "nome": "Hill Fort",
+        "id": 59
+      },
+      {
+        "nome": "Asgardian Hill Fort",
+        "id": 114
       }
     ],
     "comida": 0,
@@ -6191,11 +6381,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 200,
@@ -6262,11 +6453,12 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 300,
@@ -6948,11 +7140,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 5
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Atlantean)",
+        "id": 124
       }
     ],
     "comida": 85,
@@ -7843,11 +8036,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -8428,10 +8622,12 @@
     "armadura_antiperfurante": 50,
     "construcao": [
       {
-        "nome": "HesperidesTree"
+        "nome": "Hesperides Tree",
+        "id": 115
       },
       {
-        "nome": "SummoningTree"
+        "nome": "Summoning Tree",
+        "id": 116
       }
     ],
     "comida": 0,
@@ -8492,11 +8688,12 @@
     "armadura_antiperfurante": 50,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -9063,11 +9260,12 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 250,
@@ -9245,11 +9443,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 6
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Chinese)",
+        "id": 104
       }
     ],
     "comida": 40,
@@ -9304,11 +9503,12 @@
     "armadura_antiperfurante": 40,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 6
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Chinese)",
+        "id": 104
       }
     ],
     "comida": 50,
@@ -9429,8 +9629,8 @@
     "armadura_antiperfurante": 25,
     "construcao": [
       {
-        "id": 43,
-        "nome": "Campo Militar"
+        "nome": "Military Academy",
+        "id": 43
       }
     ],
     "comida": 30,
@@ -9486,8 +9686,8 @@
     "armadura_antiperfurante": 5,
     "construcao": [
       {
-        "id": 43,
-        "nome": "Campo Militar"
+        "nome": "Military Academy",
+        "id": 43
       }
     ],
     "comida": 50,
@@ -9555,8 +9755,8 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "id": 45,
-        "nome": "Machine Workshop"
+        "nome": "Machine Workshop",
+        "id": 45
       }
     ],
     "comida": 0,
@@ -9619,8 +9819,8 @@
     "armadura_antiperfurante": 40,
     "construcao": [
       {
-        "id": 43,
-        "nome": "Campo Militar"
+        "nome": "Military Academy",
+        "id": 43
       }
     ],
     "comida": 0,
@@ -9734,8 +9934,8 @@
     "armadura_antiperfurante": 45,
     "construcao": [
       {
-        "nome": "Mercado (Grego)",
-        "id": 80
+        "nome": "Market",
+        "id": 55
       }
     ],
     "comida": 150,
@@ -10268,8 +10468,8 @@
     "armadura_antiperfurante": 25,
     "construcao": [
       {
-        "id": 45,
-        "nome": "Machine Workshop"
+        "nome": "Machine Workshop",
+        "id": 45
       }
     ],
     "comida": 0,
@@ -10588,8 +10788,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -11363,8 +11563,8 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 50
       }
     ],
     "comida": 170,
@@ -11609,11 +11809,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Town Center",
+        "id": 7
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Village Center (Japanese)",
+        "id": 105
       }
     ],
     "comida": 50,
@@ -11674,8 +11875,16 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "id": 7,
-        "nome": "Urban Center (Japanese)"
+        "nome": "Town Center",
+        "id": 7
+      },
+      {
+        "nome": "Village Center (Japanese)",
+        "id": 105
+      },
+      {
+        "nome": "Citadel Center (Japanese)",
+        "id": 112
       }
     ],
     "comida": 50,
@@ -12252,8 +12461,8 @@
     "armadura_antiperfurante": 50,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 78
       }
     ],
     "comida": 220,
@@ -13692,8 +13901,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 78
       }
     ],
     "comida": 0,
@@ -13878,8 +14087,16 @@
     "armadura_antiperfurante": 45,
     "construcao": [
       {
-        "id": 9,
-        "nome": "Urban Center (Aztec)"
+        "nome": "Town Center",
+        "id": 9
+      },
+      {
+        "nome": "Village Center (Aztec)",
+        "id": 106
+      },
+      {
+        "nome": "Citadel Center (Aztec)",
+        "id": 113
       }
     ],
     "comida": 0,
@@ -14000,8 +14217,8 @@
     "armadura_antiperfurante": 55,
     "construcao": [
       {
-        "id": 75,
-        "nome": "Noble's Hut"
+        "nome": "Noble's Hut",
+        "id": 75
       }
     ],
     "comida": 35,
@@ -14058,8 +14275,8 @@
     "armadura_antiperfurante": 15,
     "construcao": [
       {
-        "id": 75,
-        "nome": "Noble's Hut"
+        "nome": "Noble's Hut",
+        "id": 75
       }
     ],
     "comida": 70,
@@ -14116,8 +14333,8 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "id": 74,
-        "nome": "War Hut"
+        "nome": "War Hut",
+        "id": 74
       }
     ],
     "comida": 55,
@@ -14181,8 +14398,8 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "id": 75,
-        "nome": "Noble's Hut"
+        "nome": "Noble's Hut",
+        "id": 75
       }
     ],
     "comida": 0,
@@ -14240,8 +14457,8 @@
     "armadura_antiperfurante": 15,
     "construcao": [
       {
-        "id": 74,
-        "nome": "War Hut"
+        "nome": "War Hut",
+        "id": 74
       }
     ],
     "comida": 0,
@@ -14839,8 +15056,8 @@
     "armadura_antiperfurante": 65,
     "construcao": [
       {
-        "id": 77,
-        "nome": "Great Temple"
+        "nome": "Great Temple",
+        "id": 77
       }
     ],
     "comida": 0,
@@ -14898,8 +15115,8 @@
     "armadura_antiperfurante": 20,
     "construcao": [
       {
-        "id": 77,
-        "nome": "Great Temple"
+        "nome": "Great Temple",
+        "id": 77
       }
     ],
     "comida": 90,
@@ -15324,8 +15541,8 @@
     "armadura_antiperfurante": 40,
     "construcao": [
       {
-        "id": 77,
-        "nome": "Great Temple"
+        "nome": "Great Temple",
+        "id": 77
       }
     ],
     "comida": 60,
@@ -16052,11 +16269,12 @@
     "armadura_antiperfurante": 90,
     "construcao": [
       {
-        "nome": "Forte da Colina",
+        "nome": "Hill Fort",
         "id": 59
       },
       {
-        "nome": "AsgardianHillFort"
+        "nome": "Asgardian Hill Fort",
+        "id": 114
       }
     ],
     "comida": 0,
@@ -16115,11 +16333,12 @@
     "armadura_antiperfurante": 90,
     "construcao": [
       {
-        "nome": "Forte da Colina",
+        "nome": "Hill Fort",
         "id": 59
       },
       {
-        "nome": "AsgardianHillFort"
+        "nome": "Asgardian Hill Fort",
+        "id": 114
       }
     ],
     "comida": 0,
@@ -16371,11 +16590,8 @@
     "armadura_antiperfurante": 90,
     "construcao": [
       {
-        "nome": "Oficina de Máquina",
+        "nome": "Machine Workshop",
         "id": 45
-      },
-      {
-        "nome": "MachineWorkshopTower"
       }
     ],
     "comida": 0,
@@ -16434,11 +16650,8 @@
     "armadura_antiperfurante": 90,
     "construcao": [
       {
-        "nome": "Oficina de Máquina",
+        "nome": "Machine Workshop",
         "id": 45
-      },
-      {
-        "nome": "MachineWorkshopTower"
       }
     ],
     "comida": 0,
@@ -16557,11 +16770,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16614,11 +16828,12 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16676,11 +16891,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16732,11 +16948,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16789,11 +17006,12 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16852,11 +17070,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16908,11 +17127,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16965,11 +17185,12 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17028,11 +17249,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17085,11 +17307,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17142,11 +17365,12 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17205,11 +17429,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Naval Shipyard",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17261,8 +17486,8 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -17315,8 +17540,8 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -17375,8 +17600,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -17429,8 +17654,8 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 78
       }
     ],
     "comida": 0,
@@ -17483,8 +17708,8 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 78
       }
     ],
     "comida": 0,
@@ -17543,8 +17768,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Dock",
+        "id": 78
       }
     ],
     "comida": 0,

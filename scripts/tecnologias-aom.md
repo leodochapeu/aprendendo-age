@@ -13,6 +13,7 @@ Extrai custos, tempo, era, ícone e prédios de pesquisa do jogo para `tecnologi
 |-------------|--------|--------|
 | `npm run data:extract-tecnologias` | `extract-tecnologias-aom.py` | Extrai do `Data.bar` / cache |
 | `npm run data:merge-tecnologias` | `merge-tecnologias-aom.py` | Atualiza PT e EN no catálogo |
+| `npm run data:fill-tecnologias-descricoes` | `fill-tecnologias-descricoes.py` | Preenche `descricao_resumida`, `historia` e `campo` vazio |
 | — | `fill-tecnologias-beneficia.py` | Gera `beneficia` (ícone + nome) a partir dos efeitos |
 | — | `sync-tech-icons-aom.py` | Exporta ícones WebP + `token_asset_map.json` |
 
@@ -33,13 +34,19 @@ python scripts/merge-tecnologias-aom.py --tech "Hand Axe",Sarissa --write
 # Preencher beneficia (ex.: astecas id=7, só vazios)
 python scripts/fill-tecnologias-beneficia.py --pantheon-id 7 --only-empty --dry-run
 python scripts/fill-tecnologias-beneficia.py --pantheon-id 7 --only-empty --write
+
+# Descrições (LR / HISTORY) + Campo/Efeito quando vazio
+python scripts/fill-tecnologias-descricoes.py --dry-run
+python scripts/fill-tecnologias-descricoes.py --write
 ```
 
 ## Campos
 
-**Preservados no merge:** `beneficia`, `campo`, `tipo`, `panteoes`, `god_especifico`, `god_dono`
+**Preservados no merge:** `beneficia`, `campo`, `tipo`, `panteoes`, `god_especifico`, `god_dono`, `descricao_resumida`, `historia`
 
 **Atualizados do jogo:** `nome`, `ingles`, `comida`, `madeira`, `ouro`, `favor`, `tempo_s`, `eras`, `icon`, `construcao_origem` (IDs preservados quando possível)
+
+**Só pelo fill de descrições:** `descricao_resumida` (`STR_TECH_*_LR`), `historia` (`STR_HISTORY_TECHS_*`); `campo` só se estiver vazio (linhas via `STR_EFFECT_*`)
 
 ## Aliases de matching
 

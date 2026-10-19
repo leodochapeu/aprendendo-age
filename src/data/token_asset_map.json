@@ -1161,5 +1161,22 @@
   "aomr_lykaon_wolf_icon": "/assets/unit_myths/AoMR_Lykaon_Wolf_icon.webp",
   "aomr_titan_age_icon": "/assets/ages/AoMR_Titan_Age_icon.webp",
   "aomr_lykaon_feral_repose_ability_icon": "/assets/others/AoMR_Lykaon_Feral_Repose_Ability_Icon.webp",
-  "aomr_lykaon_feral_surge_ability_icon": "/assets/others/AoMR_Lykaon_Feral_Surge_Ability_Icon.webp"
+  "aomr_lykaon_feral_surge_ability_icon": "/assets/others/AoMR_Lykaon_Feral_Surge_Ability_Icon.webp",
+  "aomr_village_center_greek_icon": "/assets/buildings/AoMR_Village_Center_Greek_icon.webp",
+  "aomr_village_center_egyptian_icon": "/assets/buildings/AoMR_Village_Center_Egyptians_icon.webp",
+  "aomr_village_center_atlantean_icon": "/assets/buildings/AoMR_Village_Center_Atlanteans_icon.webp",
+  "aomr_village_center_chinese_icon": "/assets/buildings/AoMR_Village_Center_Chinese.webp",
+  "aomr_village_center_japanese_icon": "/assets/buildings/AoMR_Village_Center_Japanese_icon.webp",
+  "aomr_village_center_icon": "/assets/buildings/village_center_icon.webp",
+  "aomr_citadel_center_greek_icon": "/assets/buildings/AoMR_Citadel_Center_Greek_icon.webp",
+  "aomr_citadel_center_egyptian_icon": "/assets/buildings/AoMR_Citadel_Center_Egyptian_icon.webp",
+  "aomr_citadel_center_norse_icon": "/assets/buildings/AoMR_Citadel_Center_Norse_icon.webp",
+  "aomr_citadel_center_atlantean_icon": "/assets/buildings/AoMR_Citadel_Center_Atlantean_icon.webp",
+  "aomr_citadel_center_chinese_icon": "/assets/buildings/AoMR_Citadel_Center_Chinese_icon.webp",
+  "aomr_citadel_center_japanese_icon": "/assets/buildings/AoMR_Citadel_Center_Japanese_icon.webp",
+  "aomr_citadel_center_aztec_icon": "/assets/buildings/AoMR_Citadel_Center_Aztec_icon.webp",
+  "aomr_asgardian_hill_fort_icon": "/assets/buildings/AoMR_Asgardian_Hill_Fort_icon.webp",
+  "aomr_hesperides_tree_icon": "/assets/buildings/AoMR_Hesperides_Tree_icon.webp",
+  "aomr_summoning_tree_icon": "/assets/buildings/AoMR_Summoning_Tree_icon.webp",
+  "aomr_gate_icon": "/assets/buildings/AoMR_Gate_icon.webp"
 }

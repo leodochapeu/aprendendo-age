@@ -239,7 +239,7 @@ export function UnidadeFiltersModal({
       title={t("pages.unidades.filters.title")}
       className="max-w-2xl"
     >
-      <div className="space-y-4">
+      <div className="space-y-4 pb-8">
         <MultiSelect
           label={t("common.pantheon")}
           placeholder={t("pages.unidades.filters.pantheonPlaceholder")}
@@ -324,7 +324,7 @@ export function UnidadeFiltersModal({
         </div>
       </div>
 
-      <div className="sticky bottom-0 -mx-5 -mb-5 mt-5 flex items-center justify-between gap-3 border-t border-aom-border bg-zinc-950/95 px-5 py-3">
+      <div className="sticky bottom-0 -mx-5 -mb-5 mt-1 flex items-center justify-between gap-3 border-t border-aom-border bg-zinc-950 px-5 py-4">
         <button
           type="button"
           disabled={activeCount === 0}

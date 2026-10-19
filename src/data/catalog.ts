@@ -18,6 +18,10 @@ export type Mapa = {
   tipo: string;
   /** Token `aomr_…` em `token_asset_map` (preenchido no JSON; não deriva de `ingles`). */
   icon: string | null;
+  /** Rollover curto do seletor de mapas (`STR_MAP_*_DESC`). */
+  descricao_resumida?: string;
+  /** Texto da tela de carregamento (`STR_MAP_*_DESC_LOAD`), se diferente do curto. */
+  historia?: string;
 };
 import { buildIndexSlugMaps, buildRecordSlugMaps } from "@/lib/entitySlug";
 import { buildTecnologiaNotionIdIndexMap } from "@/lib/tecnologiaIndex";
@@ -167,6 +171,10 @@ export type Tecnologia = {
   beneficia?: string;
   /** Cada item = um efeito mecânico (parágrafo do corpo da página Notion). */
   campo?: string[];
+  /** Rollover curto do jogo (`STR_TECH_*_LR`). */
+  descricao_resumida?: string;
+  /** Enciclopédia do jogo (`STR_HISTORY_TECHS_*`). */
+  historia?: string;
   comida?: number;
   favor?: number;
   icon: string;

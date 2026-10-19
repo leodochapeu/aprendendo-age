@@ -10,7 +10,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_acropolis_icon"
+    "icon": "aomr_acropolis_icon",
+    "descricao_resumida": "Os jogadores começam em planaltos facilmente defensáveis.",
+    "historia": "Os jogadores começam em planaltos facilmente defensáveis. Construa uma fortaleza inexpugnável ou dispute com seus oponentes para colher os recursos mais abundantes nos vales ao redor."
   },
   {
     "nome": "Alfheim",
@@ -23,7 +25,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_alfheim_icon"
+    "icon": "aomr_alfheim_icon",
+    "descricao_resumida": "Relíquias esquecidas estão entre as colinas escarpadas do reino de Frey.",
+    "historia": "Relíquias esquecidas jazem entre as colinas escarpadas do reino de Frey. Fortifique os muitos desfiladeiros por sua conta e risco, ou use-os para atacar impiedosamente seus inimigos."
   },
   {
     "nome": "Anatólia",
@@ -36,7 +40,9 @@
     "padrao": true,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_anatolia_icon"
+    "icon": "aomr_anatolia_icon",
+    "descricao_resumida": "Penhascos e desfiladeiros que protegem as minas de ouro estão espalhados pelas frias planícies além do Mediterrâneo.",
+    "historia": "Penhascos e desfiladeiros que protegem as minas de ouro estão espalhados pelas frias planícies além do Mediterrâneo. Corpos d'água periféricos fornecem peixes ou uma rota alternativa para atacar seus oponentes."
   },
   {
     "nome": "Arábia Seca",
@@ -62,7 +68,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_arena_icon"
+    "icon": "aomr_arena_icon",
+    "descricao_resumida": "Um anel de muralhas de pedra dá uma falsa sensação de segurança em um mapa muito aberto.",
+    "historia": "Um anel de muralhas de pedra dá uma falsa sensação de segurança em um mapa muito aberto. Expanda sua economia por sua conta e risco, ou tente tomar o controle da região central e seus recursos."
   },
   {
     "nome": "Arquipélago",
@@ -75,7 +83,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_archipelago_icon"
+    "icon": "aomr_archipelago_icon",
+    "descricao_resumida": "Esta ensolarada cadeia de ilhas escarpadas pode isolar os jogadores aleatoriamente.",
+    "historia": "Esta ensolarada cadeia de ilhas escarpadas pode isolar os jogadores aleatoriamente. Um cuidadoso reconhecimento do terreno revelará se as batalhas serão travadas em terra, no mar ou em ambos."
   },
   {
     "nome": "Atacama",
@@ -101,7 +111,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_air_icon"
+    "icon": "aomr_air_icon",
+    "descricao_resumida": "Os jogadores começam próximos uns dos outros, mas separados por uma montanha alta.",
+    "historia": "Os jogadores começam próximos uns dos outros, mas separados por uma montanha alta. O caminho para seus inimigos é longo e tortuoso, mas ninguém está seguro nesta terra de ninguém."
   },
   {
     "nome": "Bosque de Bambu",
@@ -114,7 +126,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_bamboo_grove_icon"
+    "icon": "aomr_bamboo_grove_icon",
+    "descricao_resumida": "Defenda a passagem estreita na floresta de bambu. Os recursos estão atrás da sua base.",
+    "historia": "Você começa em uma passagem estreita dentro da floresta de bambu. Segure o ponto de estrangulamento, explore os recursos atrás da sua base e defenda-se contra ataques inimigos pela frente."
   },
   {
     "nome": "Budapeste",
@@ -140,7 +154,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_watering_hole_icon"
+    "icon": "aomr_watering_hole_icon",
+    "descricao_resumida": "Os rebanhos migratórios que matam a sede nos rios e lagoas são a principal fonte de comida desta região.",
+    "historia": "Os rebanhos migratórios que matam a sede nos rios e lagoas são a principal fonte de comida desta região. Use corpos de água como recursos defensivos ou expanda para o meio do mapa em busca de recursos e povoados."
   },
   {
     "nome": "Continente Congelado",
@@ -166,7 +182,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_gold_rush_icon"
+    "icon": "aomr_gold_rush_icon",
+    "descricao_resumida": "A maior parte do ouro encontra-se em um pequeno deserto no centro dessas planícies gramadas.",
+    "historia": "A maior parte do ouro encontra-se em um pequeno deserto no centro dessas planícies gramadas. Se você falhar em garantir esta valiosa região, sua derrota será garantida."
   },
   {
     "nome": "Crista de Obsidiana",
@@ -179,7 +197,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_obsidian_ridge_icon"
+    "icon": "aomr_obsidian_ridge_icon",
+    "descricao_resumida": "Um planalto acidentado rico em recursos, com passagens estreitas e penhascos densos que favorecem a defesa, mas tornam o movimento arriscado, enquanto a escassez de comida exige planejamento cuidadoso.",
+    "historia": "Um planalto acidentado das terras altas repleto de ouro e madeira, onde passagens estreitas canalizam o movimento em direção ao centro, convidando o conflito a reivindicar suas riquezas. Florestas densas, afloramentos rochosos e penhascos íngremes criam posições defensivas fortes, mas tornam a navegação perigosa, enquanto a escassez de comida exige planejamento cuidadoso e controle estratégico do terreno."
   },
   {
     "nome": "Dança da Cobra",
@@ -192,7 +212,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_snake_dance_icon"
+    "icon": "aomr_snake_dance_icon",
+    "descricao_resumida": "Um vale central aberto conectando todos os jogadores desliza através de montanhas imponentes.",
+    "historia": "Um vale central aberto conectando todos os jogadores serpenteia por montanhas imponentes. Embora os desfiladeiros estreitos possam ser o caminho mais direto, um ataque pela estrada aberta pode ser a chave para a vitória."
   },
   {
     "nome": "Desfiladeiro",
@@ -218,7 +240,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_elysium_icon"
+    "icon": "aomr_elysium_icon",
+    "descricao_resumida": "Uma abundância de animais vivem neste paraíso exuberante e calmo.",
+    "historia": "Uma abundância de animais vivem neste paraíso exuberante e calmo. Pequenas florestas cercam as lagoas que guardam as riquezas deste mundo mitológico."
   },
   {
     "nome": "Ermos Congelados",
@@ -257,7 +281,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_steppe_icon"
+    "icon": "aomr_steppe_icon",
+    "descricao_resumida": "Pastagens férteis cercam uma estepe árida e aberta.",
+    "historia": "O generoso perímetro de pastagens oferece amplos recursos, mas o verdadeiro poder está no controle da estepe central e seus assentamentos vitais."
   },
   {
     "nome": "Floresta das Trevas",
@@ -270,7 +296,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_mirkwood_icon"
+    "icon": "aomr_mirkwood_icon",
+    "descricao_resumida": "Passagens estreitas conectam amigos e inimigos no meio desta vasta floresta.",
+    "historia": "Passagens estreitas conectam amigos e inimigos no meio desta vasta floresta. Espere batalhas intensas onde qualidade supera quantidade."
   },
   {
     "nome": "Floresta de Ferro",
@@ -283,7 +311,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_ironwood_icon"
+    "icon": "aomr_ironwood_icon",
+    "descricao_resumida": "Uma fina barreira florestal serpenteia pelo centro do mapa, dividindo as equipes.",
+    "historia": "Uma fina barreira florestal serpenteia pelo centro do mapa, dividindo as equipes. Corte as árvores ou use os Poderes Divinos para alcançar seus inimigos."
   },
   {
     "nome": "Floresta Nebulosa",
@@ -296,7 +326,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_cloud_forest_icon"
+    "icon": "aomr_cloud_forest_icon",
+    "descricao_resumida": "Uma floresta tropical de montanha envolta em névoa, ao longo da rota de migração dos Astecas, apresenta trilhas íngremes e copas densas que formam pontos naturais de estrangulamento e emboscadas.",
+    "historia": "Uma floresta tropical de montanha envolta em névoa, ao longo da rota de migração dos Astecas, apresenta trilhas íngremes e copa densa."
   },
   {
     "nome": "Gizé",
@@ -309,7 +341,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_giza_icon"
+    "icon": "aomr_giza_icon",
+    "descricao_resumida": "Um vasto deserto rodeia bolsões de terras férteis e ricas em recursos na terra das Pirâmides.",
+    "historia": "Um vasto deserto rodeia bolsões de terras férteis e ricas em recursos na terra das Pirâmides. São poucas as pequenas florestas e serão muito disputadas."
   },
   {
     "nome": "Grande Muralha",
@@ -322,7 +356,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_great_wall_icon"
+    "icon": "aomr_great_wall_icon",
+    "descricao_resumida": "Fortaleça suas defesas. A Grande Muralha fornece tempo para se preparar antes de atacar o inimigo.",
+    "historia": "A Grande Muralha oferece uma trégua temporária. Fortaleça suas defesas e planeje seu ataque antes de avançar sobre o inimigo!"
   },
   {
     "nome": "Haywire",
@@ -348,7 +384,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_islands_icon"
+    "icon": "aomr_islands_icon",
+    "descricao_resumida": "Cada jogador está em sua própria ilha e deve se transportar para chegar aos outros.",
+    "historia": "Cada jogador está em sua própria ilha e deve se transportar para chegar aos outros. Há várias outras ilhas desocupadas com recursos e talvez até outros Assentamentos."
   },
   {
     "nome": "Jotunheim",
@@ -361,7 +399,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_jotunheim_icon"
+    "icon": "aomr_jotunheim_icon",
+    "descricao_resumida": "As passagens de montanha são as únicas conexões entre vales de propriedade de diferentes equipes.",
+    "historia": "As passagens de montanha são as únicas conexões entre vales cobertos de neve que pertencem a diferentes equipes. Espere lutas ferozes sobre esses gargalos em todas as fases do jogo."
   },
   {
     "nome": "Kerlaugar",
@@ -374,7 +414,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_kerlaugar_icon"
+    "icon": "aomr_kerlaugar_icon",
+    "descricao_resumida": "Dois rios navegáveis serpenteiam através de uma tundra coberta de neve.",
+    "historia": "Dois rios navegáveis serpenteiam através de uma tundra coberta de neve. Explore-os para conseguir peixes, ou use-os como vias de ataque."
   },
   {
     "nome": "Kii",
@@ -387,7 +429,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_kii_icon"
+    "icon": "aomr_kii_icon",
+    "descricao_resumida": "Uma densa floresta central esconde relíquias antigas e predadores perigosos.",
+    "historia": "Na península sagrada de Kii, uma densa floresta central esconde relíquias antigas e predadores perigosos. Povoados e recursos encontram-se nos arredores abertos."
   },
   {
     "nome": "Lago Fantasma",
@@ -400,7 +444,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_ghost_lake_icon"
+    "icon": "aomr_ghost_lake_icon",
+    "descricao_resumida": "O sinistro lago congelado no centro deste mapa pode nunca descongelar, mas mesmo assim não se pode construir nele.",
+    "historia": "O sinistro lago congelado no centro deste mapa pode nunca descongelar, mas mesmo assim não se pode construir nele. Vasculhe o gelo e a terra ao seu redor para encontrar inúmeros animais perdidos."
   },
   {
     "nome": "Lago Qinghai",
@@ -413,7 +459,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_qinghai_lake_icon"
+    "icon": "aomr_qinghai_lake_icon",
+    "descricao_resumida": "Capture o santuário no lago para obter um bônus econômico. Unidades terrestres e navais podem atravessar o vau (águas rasas).",
+    "historia": "Um santuário misterioso repousa sobre o maior lago da China, com vaus navegáveis ​​tanto por unidades terrestres como navais. Capture-o para ganhar um bônus econômico."
   },
   {
     "nome": "Lagoa Azul",
@@ -426,7 +474,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_blue_lagoon_icon"
+    "icon": "aomr_blue_lagoon_icon",
+    "descricao_resumida": "Este reino calmo de penhascos e lagoas é o lar de muitos animais selvagens.",
+    "historia": "Este reino calmo de penhascos e lagoas é o lar de muitos animais selvagens. Cace para fornecer comida abundante ao seu povo, mas tenha cuidado com os invasores inimigos que atormentam seus grupos de caça."
   },
   {
     "nome": "Mar dos Vermes",
@@ -439,7 +489,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_sea_of_worms_icon"
+    "icon": "aomr_sea_of_worms_icon",
+    "descricao_resumida": "Um oceano misterioso divide o continente principal de uma ilha rica do outro lado.",
+    "historia": "Um oceano misterioso divide o continente principal de uma rica ilha. Lute pelos peixes, se quiser, mas cuidado com os ataques terrestres de oponentes desconfortavelmente próximos."
   },
   {
     "nome": "Mar Negro",
@@ -452,7 +504,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_black_sea_icon"
+    "icon": "aomr_black_sea_icon",
+    "descricao_resumida": "As águas escuras do mar interior dividem as terras das equipes em ilhas separadas.",
+    "historia": "As águas escuras deste mar interior dividem o mapa em duas ilhas. Lute pelo grande oceano central ou faça uma travessia furtiva nas águas rasas periféricas."
   },
   {
     "nome": "Mediterrâneo",
@@ -465,7 +519,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_mediterranean_icon"
+    "icon": "aomr_mediterranean_icon",
+    "descricao_resumida": "Área rural verdejante repleta de animais de rebanho rodeia um mar repleto de peixes.",
+    "historia": "Área rural verdejante repleta de animais de rebanho rodeia um mar repleto de peixes. Espere por batalhas navais no mar interior enquanto exércitos devastam a paisagem próxima."
   },
   {
     "nome": "Megalópole",
@@ -478,7 +534,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_megalopolis_icon"
+    "icon": "aomr_megalopolis_icon",
+    "descricao_resumida": "Os aliados começam próximos uns dos outros e compartilham uma grande posição de fácil defesa.",
+    "historia": "Os aliados começam próximos uns dos outros e compartilham uma grande posição de fácil defesa. Ataque seus inimigos por sua própria conta e risco, sabendo que a vantagem do defensor é ainda maior do que o normal."
   },
   {
     "nome": "Midgard",
@@ -491,7 +549,9 @@
     "padrao": true,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_midgard_icon"
+    "icon": "aomr_midgard_icon",
+    "descricao_resumida": "Águas de vida abundante cercam um interior congelado com pouca comida a oferecer.",
+    "historia": "Águas de vida abundante cercam um interior congelado com pouca comida a oferecer. A competição por peixes será feroz, mas ataques na curta distância entre as bases são igualmente prováveis."
   },
   {
     "nome": "Migração de Equipe",
@@ -504,7 +564,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_team_migration_icon"
+    "icon": "aomr_team_migration_icon",
+    "descricao_resumida": "Quanto tempo você pode ficar na ilha compartilhada por sua equipe antes de precisar se mudar para a ilha central que contém os recursos adicionais?",
+    "historia": "Cada equipe começa em uma pequena ilha compartilhada com poucos recursos. Você vai ficar na ilha compartilhada por sua equipe, ou fazer uma apropriação antecipada de terras para os recursos extras no continente?"
   },
   {
     "nome": "Miragem",
@@ -517,7 +579,9 @@
     "padrao": true,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_mirage_icon"
+    "icon": "aomr_mirage_icon",
+    "descricao_resumida": "As oportunidades de pesca ao longo das costas são cruciais para a sobrevivência neste ambiente hostil.",
+    "historia": "As oportunidades de pesca ao longo das costas são cruciais para a sobrevivência neste ambiente hostil. Estabelecer uma visão ao redor do oceano pode ajudar a evitar que inimigos contestem seus locais de pesca."
   },
   {
     "nome": "Monte Olimpo",
@@ -530,7 +594,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_mount_olympus_icon"
+    "icon": "aomr_mount_olympus_icon",
+    "descricao_resumida": "Conquiste o maciço do Olimpo, que dizem ser a casa dos Deuses Gregos.",
+    "historia": "Conquiste o maciço do Olimpo, que se diz ser a casa dos deuses gregos. Procure nos arredores da montanha nevada por locais sagrados de relíquias."
   },
   {
     "nome": "Muspellheim",
@@ -543,7 +609,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_muspellheim_icon"
+    "icon": "aomr_muspellheim_icon",
+    "descricao_resumida": "Persevere neste reino nórdico de fogo e encontre o seu caminho atravessando ou contornando as montanhas e desfiladeiros centrais.",
+    "historia": "Persevere neste reino nórdico de fogo e encontre o seu caminho através ou ao redor das montanhas e desfiladeiros centrais. Só há madeira disponível longe do centro, deixando as bases perigosamente abertas."
   },
   {
     "nome": "Nômade",
@@ -556,7 +624,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_nomad_icon"
+    "icon": "aomr_nomad_icon",
+    "descricao_resumida": "Seus Aldeões começam dispersos sem o Centro Urbano e devem se apressar para reivindicar um Povoado durante o tempo em que o combate é evitado.",
+    "historia": "Seus Aldeões começam espalhados sem o Centro Urbano e devem correr para reivindicar um Povoado durante o tempo em que o combate é impedido. Você vai escolher um local fácil de defender ou perto de muitos recursos?"
   },
   {
     "nome": "Nômade de Terra",
@@ -569,7 +639,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_land_nomad_icon"
+    "icon": "aomr_land_nomad_icon",
+    "descricao_resumida": "Seus Aldeões começam dispersos sem o Centro Urbano e devem se apressar para reivindicar um Povoado durante o tempo em que o combate é evitado.",
+    "historia": "Seus Aldeões começam espalhados sem o Centro Urbano e devem correr para reivindicar um Povoado durante o tempo em que o combate é impedido. Você vai escolher um local fácil de defender ou perto de muitos recursos?"
   },
   {
     "nome": "O Coração de Tenochtitlán",
@@ -582,7 +654,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_tenochtitlans_heart_icon"
+    "icon": "aomr_tenochtitlans_heart_icon",
+    "descricao_resumida": "Situado antes da capital fundadora da cidade asteca, este mapa urbano de canais e marcos capturáveis é definido por estradas elevadas estreitas e distritos densos.",
+    "historia": "Localizado antes da capital fundadora do Império Asteca, este mapa urbano apresenta canais sinuosos e marcos capturáveis que geram conflitos constantes. Estradas estreitas e distritos densamente povoados criam pontos de estrangulamento naturais, forçando uma agressividade equilibrada em uma competição por recursos-chave."
   },
   {
     "nome": "Okuchichibu",
@@ -595,7 +669,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_okuchichibu_icon"
+    "icon": "aomr_okuchichibu_icon",
+    "descricao_resumida": "Desfiladeiros estreitos são a única maneira de acessar os planaltos defensáveis que abrigam Povoados vitais.",
+    "historia": "À sombra das Montanhas Okuchichibu, desfiladeiros estreios são a única maneira de acessar os planaltos defensáveis que abrigam povoados vitais. Tome-os para lutar em uma posição de força e use as passagens estreitas e perigosas para sua vantagem defensiva."
   },
   {
     "nome": "Oásis",
@@ -608,7 +684,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_oasis_icon"
+    "icon": "aomr_oasis_icon",
+    "descricao_resumida": "Os oásis centrais contêm a maior parte do suprimento de madeira do mapa e funcionam como bastiões defensivos.",
+    "historia": "Os oásis centrais contêm a maior parte do suprimento de madeira do mapa e funcionam como bastiões defensivos. Rebanhos de animais selvagens espalhados pelo mapa são fontes tentadoras de comida, mas deixam os caçadores vulneráveis a invasões."
   },
   {
     "nome": "Pastagens de Aso",
@@ -621,7 +699,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_aso_grasslands_icon"
+    "icon": "aomr_aso_grasslands_icon",
+    "descricao_resumida": "Uma grande floresta com uma única clareira leva cada jogador a um confronto central.",
+    "historia": "Nessas planícies vulcânicas, uma grande floresta com um único passe canaliza cada jogador para um confronto central. Fazer uso dos recursos abundantes em sua metade deste mapa é de igual importância para fortificar a clareira central."
   },
   {
     "nome": "Planalto",
@@ -634,7 +714,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_highland_icon"
+    "icon": "aomr_highland_icon",
+    "descricao_resumida": "Colinas verdejantes separadas por rios com travessias defensivas estreitas.",
+    "historia": "Colinas gramadas são separadas por rios com travessias estreitas. Use a parte rasa como gargalos defensivos ou como vias de agressão."
   },
   {
     "nome": "Pradaria",
@@ -660,7 +742,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_marsh_icon"
+    "icon": "aomr_marsh_icon",
+    "descricao_resumida": "Planícies verdejantes cercam este perigoso pântano, cujo centro está cheio de animais e relíquias.",
+    "historia": "Planícies verdejantes cercam este perigoso pântano, cujo centro está cheio de animais e relíquias. Busque os recursos na terra de ninguém por sua conta e risco."
   },
   {
     "nome": "Rei da Colina",
@@ -687,7 +771,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Naval 🌊",
-    "icon": "aomr_yellow_river_icon"
+    "icon": "aomr_yellow_river_icon",
+    "descricao_resumida": "Travessias previsíveis no Rio Amarelo criam pontos de estrangulamento. Proteja-os e conquiste as margens férteis.",
+    "historia": "O Rio Amarelo divide a região e se bifurca no centro para formar uma ilha. Travessias rasas oferecem passagem, tornando os ataques previsíveis e recompensando a percepção aguçada do seu oponente. Os jogadores devem migrar para margens mais férteis conforme os recursos iniciais se acabam."
   },
   {
     "nome": "Rio Estige",
@@ -700,7 +786,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_river_styx_icon"
+    "icon": "aomr_river_styx_icon",
+    "descricao_resumida": "Os jogadores começam em uma pequena ilha subterrânea. Os recursos são escassos, mas pode-se encontrar mais no terreno central do outro lado do rio Estige.",
+    "historia": "Os jogadores começam em uma pequena ilha subterrânea. Os recursos são escassos, mas pode-se encontrar mais no terreno central do outro lado do rio Estige – se você puder enfrentar turbas de sombras hostis e serpentes venenosas."
   },
   {
     "nome": "Rio Nilo",
@@ -713,7 +801,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_river_nile_icon"
+    "icon": "aomr_river_nile_icon",
+    "descricao_resumida": "Um rio largo separa as terras desérticas de diferentes equipes.",
+    "historia": "Um rio largo separa as terras desérticas de diferentes equipes. A água não pode ser atravessada a pé, então prepare-se para combates terrestres e navais."
   },
   {
     "nome": "Rota da Seda",
@@ -727,7 +817,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_silk_road_icon"
+    "icon": "aomr_silk_road_icon",
+    "descricao_resumida": "Capture Postos de Comércio ao longo da Rota da Seda para ganhar recursos. Controle-os mantendo unidades ou construções próximas.",
+    "historia": "Com recursos limitados para explorar, os jogadores precisam capturar Postos de Comércio ao longo da Rota da Seda que concedem recursos de sua escolha. Os Postos de Comércio permanecerão sob seu controle enquanto suas unidades ou construções estiverem por perto."
   },
   {
     "nome": "Savana",
@@ -740,7 +832,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_savannah_icon"
+    "icon": "aomr_savannah_icon",
+    "descricao_resumida": "As vastas pastagens da África oferecem muita comida para caçar, mas pouca água.",
+    "historia": "As vastas pastagens da África oferecem muita comida para caçar, mas pouca água. Calcule cuidadosamente se as florestas esparsas são mais úteis como fontes de madeira ou como obstáculos defensivos."
   },
   {
     "nome": "Senjōgahara",
@@ -753,7 +847,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_senjogahara_icon"
+    "icon": "aomr_senjogahara_icon",
+    "descricao_resumida": "Anéis densos de floresta fornecem defesa inicial, mas as batalhas acabarão sendo travadas no centro aberto.",
+    "historia": "Densos anéis de floresta proporcionam defesa inicial, mas as batalhas em dado momento ocorrerão no centro aberto. Você atacará o centro aberto ou protegerá as clareiras ricas em recursos nos flancos, usando o terreno defensivo a seu favor?"
   },
   {
     "nome": "Setonaikai",
@@ -766,7 +862,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_setonaikai_icon"
+    "icon": "aomr_setonaikai_icon",
+    "descricao_resumida": "Exércitos e frotas se chocam no mesmo mar raso.",
+    "historia": "Exércitos e frotas se enfrentam no raso Mar Interior de Seto. Uma marinha forte pode controlar o suprimento de peixes e até sitiar bases inimigas, mas somente uma poderosa força combinada alcançará a vitória."
   },
   {
     "nome": "Socotra",
@@ -792,7 +890,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_temple_of_the_jaguar_icon"
+    "icon": "aomr_temple_of_the_jaguar_icon",
+    "descricao_resumida": "Escondido no fundo da selva, um templo esquecido está entre uma densa copa e caminhos estreitos, protegido por armadilhas e vida selvagem, oferecendo relíquias e visão, mas pouco espaço para construções de apoio.",
+    "historia": "Escondido nas profundezas da selva, um templo esquecido se ergue em meio a denso dossel e caminhos estreitos e sinuosos, protegido por pontos naturais de estrangulamento, armadilhas e animais selvagens à espreita. Controlar pontos estratégicos proporciona uma visão ampla do terreno circundante, mas o espaço aberto limitado impede que os jogadores construam estruturas de apoio ao redor do prêmio."
   },
   {
     "nome": "Terra da Flor de Pêssego",
@@ -805,7 +905,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_peach_blossom_land_icon"
+    "icon": "aomr_peach_blossom_land_icon",
+    "descricao_resumida": "Comece perto dos inimigos no centro. Aventure-se para garantir recursos ou ataque cedo para obter uma vantagem.",
+    "historia": "Os jogadores começam juntos neste paraíso mítico, mas devem se aventurar na Terra da Flor de Pêssego em busca de recursos ou para atacar cedo e obter vantagem."
   },
   {
     "nome": "Travessia do Rio de Sangue",
@@ -818,7 +920,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_blood_river_crossing_icon"
+    "icon": "aomr_blood_river_crossing_icon",
+    "descricao_resumida": "Um rio sagrado divide o mapa, com uma travessia central contestada para emboscadas, muitos animais para caça e relíquias, mas ouro e madeira espalhados.",
+    "historia": "Um rio sagrado divide o mapa, com sua travessia central formando um ponto de estrangulamento contestado, perfeito para emboscadas e ataques-surpresa. Animais para caça e relíquias poderosas são abundantes, mas ouro e madeira estão espalhados pela terra."
   },
   {
     "nome": "Tundra",
@@ -831,7 +935,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_tundra_icon"
+    "icon": "aomr_tundra_icon",
+    "descricao_resumida": "Rebanhos de animais árticos vagam por esta terra fria de ventos fortes, mas poucas árvores crescem.",
+    "historia": "Rebanhos de animais árticos vagam por esta terra fria de ventos fortes, mas poucas árvores crescem. Em um mundo onde a competição por recursos é rápida, a única lei é invadir ou ser invadido."
   },
   {
     "nome": "Vale da Serpente do Sol",
@@ -844,7 +950,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_valley_of_the_sun_serpent_icon"
+    "icon": "aomr_valley_of_the_sun_serpent_icon",
+    "descricao_resumida": "Escondido entre os picos das montanhas, este vale fértil oferece ouro abundante, mas pouca madeira, recompensando apenas aqueles que planejam com cuidado.",
+    "historia": "Escondido entre os picos das montanhas, acredita-se que esse vale fértil tenha sido tocado pelo favor divino de Quetzalcoatl. O ouro é abundante e o poder está ao alcance, mas a Madeira é rara, exigindo planejamento cuidadoso por aqueles que buscam tê-la."
   },
   {
     "nome": "Vale dos Reis",
@@ -857,7 +965,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_valley_of_kings_icon"
+    "icon": "aomr_valley_of_kings_icon",
+    "descricao_resumida": "As formações rochosas salientes que pontilham a paisagem abrigam florestas preciosas e relíquias inestimáveis na terra das tumbas do Egito.",
+    "historia": "As formações rochosas salientes que pontilham a paisagem abrigam florestas preciosas e relíquias inestimáveis na terra das tumbas do Egito. Embora as múmias estejam adormecidas, a área em breve estará repleta de combates."
   },
   {
     "nome": "Vaus do Nilo",
@@ -870,7 +980,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_nile_shallows_icon"
+    "icon": "aomr_nile_shallows_icon",
+    "descricao_resumida": "Esta área fértil, mas aberta, no Baixo Egito contém uma abundância de animais para caça.",
+    "historia": "Esta área fértil, mas aberta, no Baixo Egito contém uma abundância de animais para caça. As florestas escassas fazem da madeira um recurso precioso neste mapa agressivo."
   },
   {
     "nome": "Vinlandsaga",
@@ -883,7 +995,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_vinlandsaga_icon"
+    "icon": "aomr_vinlandsaga_icon",
+    "descricao_resumida": "Quando os recursos da sua pequena ilha começam a se esgotar, a única opção é partir para o Novo Mundo.",
+    "historia": "Quando os recursos da sua pequena ilha começam a se esgotar, a única opção é partir para o Novo Mundo. Será que o seu assentamento durará mais tempo do que o dos colonos da Vinlândia?"
   },
   {
     "nome": "Érebo",
@@ -896,6 +1010,8 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_erebus_icon"
+    "icon": "aomr_erebus_icon",
+    "descricao_resumida": "Sombras de rostos, serpentes e rios de terra derretida no reino subterâneo de Hades.",
+    "historia": "Enfrente sombras, serpentes e rios de lama no reino do submundo de Hades. Aventure-se pelo mapa por sua conta e risco!"
   }
 ]

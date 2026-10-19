@@ -10,7 +10,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_acropolis_icon"
+    "icon": "aomr_acropolis_icon",
+    "descricao_resumida": "Players begin on easily defensible plateaus.",
+    "historia": "Players begin on easily defensible plateaus. Construct an impregnable fortress or race your opponents to harvest the more abundant resources in the surrounding valleys."
   },
   {
     "nome": "Alfheim",
@@ -23,7 +25,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_alfheim_icon"
+    "icon": "aomr_alfheim_icon",
+    "descricao_resumida": "Forgotten relics lie between the craggy hills of Freyr's realm.",
+    "historia": "Forgotten relics lie between the craggy hills of Freyr's realm. Fortify the many passes at your own risk, or use them to mercilessly raid your enemies."
   },
   {
     "nome": "Anatolia",
@@ -36,7 +40,9 @@
     "padrao": true,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_anatolia_icon"
+    "icon": "aomr_anatolia_icon",
+    "descricao_resumida": "Cliffs and gorges protecting gold mines punctuate the cold plains beyond the Mediterranean.",
+    "historia": "Cliffs and gorges protecting gold mines punctuate the cold plains beyond the Mediterranean. Outlying bodies of water provide fish or an alternative route to attack your opponents."
   },
   {
     "nome": "Archipelago",
@@ -49,7 +55,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_archipelago_icon"
+    "icon": "aomr_archipelago_icon",
+    "descricao_resumida": "This sun-swept, cliffed island chain may isolate players at random.",
+    "historia": "This sun-swept, cliffed island chain may isolate players at random. Careful scouting will reveal whether battles will be fought on land, at sea, or both."
   },
   {
     "nome": "Arena",
@@ -62,7 +70,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_arena_icon"
+    "icon": "aomr_arena_icon",
+    "descricao_resumida": "A ring of stone walls provides a false sense of security on an otherwise very open map.",
+    "historia": "A ring of stone walls provides a false sense of security on an otherwise very open map. Boom your economy at your own risk, or strike out to seize control of the central region and its resources."
   },
   {
     "nome": "Aso Grasslands",
@@ -75,7 +85,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_aso_grasslands_icon"
+    "icon": "aomr_aso_grasslands_icon",
+    "descricao_resumida": "A great forest with a single glade funnels each player into a central confrontation.",
+    "historia": "On these volcanic plains, a great forest with a single pass funnels each player into a central confrontation. Making use of the abundant resources in your half of this map is of equal importance to fortifying the central glade."
   },
   {
     "nome": "Atacama",
@@ -101,7 +113,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_air_icon"
+    "icon": "aomr_air_icon",
+    "descricao_resumida": "Players begin in close proximity to each other, but separated by a tall mountain.",
+    "historia": "Players begin in close proximity to each other, but separated by a tall mountain. The route to your enemies is long and circuitous, but nobody's gatherers are safe in the surrounding no-man's land."
   },
   {
     "nome": "Bamboo Grove",
@@ -114,7 +128,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_bamboo_grove_icon"
+    "icon": "aomr_bamboo_grove_icon",
+    "descricao_resumida": "Defend the narrow pass in the bamboo forest. Resources lie behind your base.",
+    "historia": "You start in a narrow pass within the bamboo forest. Hold the chokepoint, exploit the resources behind your base, and defend against enemy attacks from the front."
   },
   {
     "nome": "Black Sea",
@@ -127,7 +143,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_black_sea_icon"
+    "icon": "aomr_black_sea_icon",
+    "descricao_resumida": "The dark waters of the inland sea divide team lands into separate islands.",
+    "historia": "The dark waters of this inland sea divide the map into two islands. Fight over the large central ocean or make a stealthy crossing on the peripheral shallows."
   },
   {
     "nome": "Blood River Crossing",
@@ -140,7 +158,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_blood_river_crossing_icon"
+    "icon": "aomr_blood_river_crossing_icon",
+    "descricao_resumida": "A sacred river splits the map, with a contested central crossing for ambushes, abundant huntable animals and relics, but scattered gold and wood.",
+    "historia": "A sacred river splits the map, with its central crossing forming a contested chokepoint perfect for ambushes and surprise attacks. Huntable animals and powerful relics are plentiful, but gold and wood are scattered across the land."
   },
   {
     "nome": "Blue Lagoon",
@@ -153,7 +173,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_blue_lagoon_icon"
+    "icon": "aomr_blue_lagoon_icon",
+    "descricao_resumida": "This calm realm of cliffs and lagoons is home to many wild animals.",
+    "historia": "This calm realm of cliffs and lagoons is home to many wild animals. Hunt to provide your people with abundant food, but beware of enemy raiders harassing your hunting parties."
   },
   {
     "nome": "Budapest",
@@ -179,7 +201,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_cloud_forest_icon"
+    "icon": "aomr_cloud_forest_icon",
+    "descricao_resumida": "A mist-shrouded mountain rainforest along the Aztecs’ migration route features steep paths and dense canopies that form natural chokepoints and ambush points.",
+    "historia": "A mist-shrouded mountain rainforest lies along the Aztecs’ migration route, consisting of steep paths and dense canopy."
   },
   {
     "nome": "Dry Arabia",
@@ -205,7 +229,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_elysium_icon"
+    "icon": "aomr_elysium_icon",
+    "descricao_resumida": "An abundance of animals live in this lush and calm paradise.",
+    "historia": "An abundance of animals live in this lush and calm paradise. Small forests surround the ponds that hold the riches of this mythological world."
   },
   {
     "nome": "Erebus",
@@ -218,7 +244,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_erebus_icon"
+    "icon": "aomr_erebus_icon",
+    "descricao_resumida": "Face shades, serpents, and rivers of molten earth in Hades' underworld realm.",
+    "historia": "Face shades, serpents, and rivers of molten earth in Hades' underworld realm. Venture out across the map early at your own peril!"
   },
   {
     "nome": "Frozen Continent",
@@ -257,7 +285,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_ghost_lake_icon"
+    "icon": "aomr_ghost_lake_icon",
+    "descricao_resumida": "The sinister, frozen lake in the center of this map may never thaw, but still cannot be built upon.",
+    "historia": "The sinister, frozen lake in the center of this map may never thaw, but still cannot be built upon. Scout the frozen ice and the land around it for numerous stray livestock."
   },
   {
     "nome": "Giza",
@@ -270,7 +300,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_giza_icon"
+    "icon": "aomr_giza_icon",
+    "descricao_resumida": "A vast desert surrounds pockets of resource-rich, fertile land in the land of the Pyramids.",
+    "historia": "A vast desert surrounds pockets of resource-rich, fertile land in the land of the Pyramids. Small forests are few and will be fought over dearly."
   },
   {
     "nome": "Gold Rush",
@@ -283,7 +315,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_gold_rush_icon"
+    "icon": "aomr_gold_rush_icon",
+    "descricao_resumida": "Most of the gold lies in a small desert in the center of these otherwise grassy plains.",
+    "historia": "Most of the gold lies in a small desert in the center of these otherwise grassy plains. Failure to secure this valuable region will spell certain defeat."
   },
   {
     "nome": "Gorge",
@@ -309,7 +343,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_great_wall_icon"
+    "icon": "aomr_great_wall_icon",
+    "descricao_resumida": "Fortify your defenses. The Great Wall provides time to prepare before breaking through to the enemy.",
+    "historia": "The Great Wall offers a temporary truce. Fortify your defenses and plan your attack before breaking through to the enemy!"
   },
   {
     "nome": "Haywire",
@@ -348,7 +384,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_highland_icon"
+    "icon": "aomr_highland_icon",
+    "descricao_resumida": "Grassy hills separated by rivers with defensive narrow crossings.",
+    "historia": "Grassy hills are separated by rivers with narrow crossings. Use the shallows as defensive bottlenecks or as avenues for aggression."
   },
   {
     "nome": "IronWood",
@@ -361,7 +399,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_ironwood_icon"
+    "icon": "aomr_ironwood_icon",
+    "descricao_resumida": "A thin forest barrier snakes through the center of the map, dividing teams.",
+    "historia": "A thin forest barrier snakes through the center of the map, dividing teams. Chop the trees or use God Powers to reach your enemies."
   },
   {
     "nome": "Islands",
@@ -374,7 +414,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_islands_icon"
+    "icon": "aomr_islands_icon",
+    "descricao_resumida": "Each player is on their own island and must transport to reach others.",
+    "historia": "Each player starts on their own island and must transport to reach others. Several other unoccupied islands contain resources and perhaps even more Settlements."
   },
   {
     "nome": "Jotunheim",
@@ -387,7 +429,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_jotunheim_icon"
+    "icon": "aomr_jotunheim_icon",
+    "descricao_resumida": "Mountain passes are the only connections among valleys owned by different teams.",
+    "historia": "Mountain passes are the only connections between snowbound valleys owned by different teams. Expect fierce fights over these bottlenecks at all stages of the game."
   },
   {
     "nome": "Kerlaugar",
@@ -400,7 +444,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_kerlaugar_icon"
+    "icon": "aomr_kerlaugar_icon",
+    "descricao_resumida": "Two wadable and sailable rivers wind through a snowbound tundra.",
+    "historia": "Two wadable and sailable rivers wind through a snowbound tundra. Exploit them for their fish, or use them as avenues of attack."
   },
   {
     "nome": "Kii",
@@ -413,7 +459,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_kii_icon"
+    "icon": "aomr_kii_icon",
+    "descricao_resumida": "A dense central forest conceals both ancient relics and dangerous predators.",
+    "historia": "On the sacred Kii peninsula, a dense central forest conceals both ancient relics and dangerous predators. Settlements and resources lie in the open surroundings."
   },
   {
     "nome": "King of the Hill",
@@ -439,7 +487,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_land_nomad_icon"
+    "icon": "aomr_land_nomad_icon",
+    "descricao_resumida": "Your Villagers start scattered with no Town Center, and must race to claim a Settlement during the time that combat is prevented.",
+    "historia": "Your Villagers start scattered with no Town Center, and must race to claim a Settlement during the time that combat is prevented. Will you choose an easily defensible location or one near many resources?"
   },
   {
     "nome": "Marsh",
@@ -452,7 +502,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_marsh_icon"
+    "icon": "aomr_marsh_icon",
+    "descricao_resumida": "Grassy plains surround this dangerous swamp, whose center is full of animals and relics.",
+    "historia": "Grassy plains surround this dangerous swamp, whose center is full of animals and relics. Seek the resources in no man’s land at your own peril."
   },
   {
     "nome": "Mediterranean",
@@ -465,7 +517,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_mediterranean_icon"
+    "icon": "aomr_mediterranean_icon",
+    "descricao_resumida": "Grassy countryside teeming with herd animals surrounds a sea replete with fish.",
+    "historia": "Grassy countryside teeming with herd animals surrounds a sea replete with fish. Expect naval battles on the inland sea while armies ravage the nearby landscape."
   },
   {
     "nome": "Megalopolis",
@@ -478,7 +532,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_megalopolis_icon"
+    "icon": "aomr_megalopolis_icon",
+    "descricao_resumida": "Allies start close to each other and share a large defensible position.",
+    "historia": "Allies start close to each other and share a large defensible position. Raid your enemies at your own peril, knowing that the defender’s advantage is even larger than usual."
   },
   {
     "nome": "Midgard",
@@ -491,7 +547,9 @@
     "padrao": true,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_midgard_icon"
+    "icon": "aomr_midgard_icon",
+    "descricao_resumida": "Waters abundant with life surround a frozen mainland with little food to offer.",
+    "historia": "Waters abundant with life surround a frozen mainland with little food to offer. Competition over fish will be heated, but raids over the short distance between bases are just as likely."
   },
   {
     "nome": "Mirage",
@@ -504,7 +562,9 @@
     "padrao": true,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_mirage_icon"
+    "icon": "aomr_mirage_icon",
+    "descricao_resumida": "The fishing opportunities along the shores are crucial to survival in this otherwise harsh environment.",
+    "historia": "The fishing opportunities along the shores are crucial to survival in this otherwise harsh environment. Establishing vision around your ocean may help to prevent enemies from contesting your fishing grounds."
   },
   {
     "nome": "MirkWood",
@@ -517,7 +577,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_mirkwood_icon"
+    "icon": "aomr_mirkwood_icon",
+    "descricao_resumida": "Narrow passageways connect friends and foes in the midst of this vast forest.",
+    "historia": "Narrow passageways connect friends and foes in the midst of this vast forest. Expect heated battles where quality trumps quantity."
   },
   {
     "nome": "Mount Olympus",
@@ -530,7 +592,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_mount_olympus_icon"
+    "icon": "aomr_mount_olympus_icon",
+    "descricao_resumida": "Conquer the Olympus massif, said to be the home of the Greek Gods.",
+    "historia": "Conquer the Olympus massif, said to be the home of the Greek Gods. Scout the surroundings of the snowy mountain for sacred relic sites."
   },
   {
     "nome": "Muspellheim",
@@ -543,7 +607,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_muspellheim_icon"
+    "icon": "aomr_muspellheim_icon",
+    "descricao_resumida": "Endure in this Norse realm of fire and find your way through or around the central mountains and gorges.",
+    "historia": "Endure in this Norse realm of fire and find your way through or around the central mountains and gorges. Wood is only available further away from the center, leaving bases dangerously open."
   },
   {
     "nome": "Nile Shallows",
@@ -556,7 +622,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_nile_shallows_icon"
+    "icon": "aomr_nile_shallows_icon",
+    "descricao_resumida": "This fertile but open area in Lower Egypt contains an abundance of huntable animals.",
+    "historia": "This fertile but open area in Lower Egypt contains an abundance of huntable animals. Scarce forests make wood a precious resource on this aggressive map."
   },
   {
     "nome": "Nomad",
@@ -569,7 +637,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_nomad_icon"
+    "icon": "aomr_nomad_icon",
+    "descricao_resumida": "Your Villagers start scattered with no Town Center, and must race to claim a Settlement during the time that combat is prevented.",
+    "historia": "Your Villagers start scattered with no Town Center, and must race to claim a Settlement during the time that combat is prevented. Will you choose an easily defensible location or one near many resources?"
   },
   {
     "nome": "Oasis",
@@ -585,7 +655,9 @@
     "no_oasis_so_tem_1_zona_de_caca_inicial": "aomr_caribou_icon: at its base along with the :aomr_berry_bush_icon: berries and :aomr_chicken_icon: chickens. Because of this, leaving the base is almost immediate after moving to Classic :aomr_classical_age_icon:.",
     "entao_sabendo_disso_voce_podera_raidar_seu_rival_muito_cedo_porem_nesse_mapa_tambem_tem_muita_cabra": "aomr_goat_icon:. So if you are the target of this aggression, you can turn to your :aomr_goat_icon: goats.",
     "esse_mapa_existem_3_variacoes": "",
-    "icon": "aomr_oasis_icon"
+    "icon": "aomr_oasis_icon",
+    "descricao_resumida": "Central oases contain most of the map’s wood supply and double as defensive bulwarks.",
+    "historia": "Central oases contain most of the map’s wood supply and double as defensive bulwarks. Herds of wild animals scattered around the map are tempting sources of food, but leave hunters vulnerable to raids."
   },
   {
     "nome": "Obsidian Ridge",
@@ -598,7 +670,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_obsidian_ridge_icon"
+    "icon": "aomr_obsidian_ridge_icon",
+    "descricao_resumida": "A rugged highland plateau rich in resources, with narrow passages and dense cliffs that favor defense but make movement risky, while scarce food demands careful planning.",
+    "historia": "A rugged highland plateau teeming with gold and wood, where narrow passages funnel movement toward the center, inviting conflict to claim its riches. Dense forests, rocky outcrops, and sheer cliffs create strong defensive positions but makes navigation perilous, while scarce food demands careful planning and strategic control of the terrain."
   },
   {
     "nome": "Okuchichibu",
@@ -611,7 +685,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_okuchichibu_icon"
+    "icon": "aomr_okuchichibu_icon",
+    "descricao_resumida": "Narrow passes are the only way to access the defensible plateaus holding vital Settlements.",
+    "historia": "In the shadow of the Okuchichibu Mountains, narrow passes are the only way to access the defensible plateaus holding vital Settlements. Claim them to fight from a position of strength, and use the narrow, dangerous passes to your defensive advantage."
   },
   {
     "nome": "Peach Blossom Land",
@@ -624,7 +700,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_peach_blossom_land_icon"
+    "icon": "aomr_peach_blossom_land_icon",
+    "descricao_resumida": "Start near enemies in the center; venture out to secure resources or attack early for an advantage.",
+    "historia": "Players begin together in this mythical paradise, but must venture out into the Peach Blossom Land for resources, or attack early to seize the advantage."
   },
   {
     "nome": "Prairie",
@@ -650,7 +728,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_qinghai_lake_icon"
+    "icon": "aomr_qinghai_lake_icon",
+    "descricao_resumida": "Capture the shrine on the lake for an economic bonus. Both land and naval units can traverse the shallows.",
+    "historia": "A mysterious shrine rests upon China's largest lake, its shallows navigable by land and naval units alike. Capture it to gain an economic bonus."
   },
   {
     "nome": "River Nile",
@@ -663,7 +743,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_river_nile_icon"
+    "icon": "aomr_river_nile_icon",
+    "descricao_resumida": "A broad river separates the desert lands of different teams.",
+    "historia": "A broad river separates the desert lands of different teams. The water is not fordable, so be prepared for both land and naval combat."
   },
   {
     "nome": "River Styx",
@@ -676,7 +758,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_river_styx_icon"
+    "icon": "aomr_river_styx_icon",
+    "descricao_resumida": "Players begin on a small subterranean island. Resources are scarce, but more can be found on the central landmass across the River Styx.",
+    "historia": "Players begin on a small subterranean island. Resources are scarce, but more can be found on the central landmass across the River Styx – if you can brave swarms of hostile shades and venomous serpents."
   },
   {
     "nome": "Savannah",
@@ -689,7 +773,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_savannah_icon"
+    "icon": "aomr_savannah_icon",
+    "descricao_resumida": "Africa’s vast grasslands offer plenty of food to hunt, but little water.",
+    "historia": "Africa’s vast grasslands offer plenty of food to hunt, but little water. Weigh carefully whether the sparse forests are more useful as sources of wood or as defensive obstacles."
   },
   {
     "nome": "Sea of Worms",
@@ -702,7 +788,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_sea_of_worms_icon"
+    "icon": "aomr_sea_of_worms_icon",
+    "descricao_resumida": "A mysterious ocean divides the main landmass from a rich island on the other side.",
+    "historia": "A mysterious ocean divides the main landmass from a rich island on the other side. Fight over the fish if you will, but beware land attacks from opponents far too close for comfort."
   },
   {
     "nome": "Senjōgahara",
@@ -715,7 +803,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_senjogahara_icon"
+    "icon": "aomr_senjogahara_icon",
+    "descricao_resumida": "Dense rings of forest provide early defense, but battles will eventually rage on the open center.",
+    "historia": "Dense rings of forest provide early defense, but battles will eventually rage on the open center. Will you rush the open center, or secure the resource-rich clearings on the flanks, using their defensive terrain to your advantage?"
   },
   {
     "nome": "Setonaikai",
@@ -728,7 +818,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_setonaikai_icon"
+    "icon": "aomr_setonaikai_icon",
+    "descricao_resumida": "Armies and fleets clash on the same shallow sea.",
+    "historia": "Armies and fleets clash on the shallow Seto Inland Sea. A strong navy can control the fish supply and even besiege enemy bases, but only a powerful combined force will achieve victory."
   },
   {
     "nome": "Silk Road",
@@ -742,7 +834,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_silk_road_icon"
+    "icon": "aomr_silk_road_icon",
+    "descricao_resumida": "Capture Trading Posts along the Silk Road to gain resources. Control them by keeping units or buildings nearby.",
+    "historia": "With limited resources to gather, players need to capture Trading Posts along the Silk Road which grant resources of your choice. The Trading Posts will stay under your control as long as your units or buildings are nearby."
   },
   {
     "nome": "Snake Dance",
@@ -755,7 +849,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_snake_dance_icon"
+    "icon": "aomr_snake_dance_icon",
+    "descricao_resumida": "An open central vale connecting all players slithers through towering mountains.",
+    "historia": "An open central vale connecting all players slithers through towering mountains. While the narrow passes may be the more direct way, an attack through the open road might be the key to victory."
   },
   {
     "nome": "Socotra",
@@ -781,7 +877,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_steppe_icon"
+    "icon": "aomr_steppe_icon",
+    "descricao_resumida": "Fertile grasslands surround a barren and open steppe.",
+    "historia": "The generous grassland perimeter offers ample resources, but true power lies in controlling the central open steppe and its vital settlements."
   },
   {
     "nome": "Team Migration",
@@ -794,7 +892,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_team_migration_icon"
+    "icon": "aomr_team_migration_icon",
+    "descricao_resumida": "How long can you stay on the island shared by your team before you need to move to the central island that holds extra resources?",
+    "historia": "Each team begins on a small shared island with few resources. Will you stay on the island shared by your team, or make an early land grab for the extra resources on the mainland?"
   },
   {
     "nome": "Temple of the Jaguar Moon",
@@ -807,7 +907,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_temple_of_the_jaguar_icon"
+    "icon": "aomr_temple_of_the_jaguar_icon",
+    "descricao_resumida": "Hidden deep in the jungle, a forgotten temple sits among dense canopy and narrow paths, guarded by traps and wildlife, offering relics and vision but little space for support buildings.",
+    "historia": "Hidden deep within the jungle, a forgotten temple rises amid thick canopy and winding, narrow paths, protected by natural chokepoints, traps, and prowling wildlife. Controlling chokepoints provide expansive vision over the surrounding terrain, but limited open space prevents players from constructing support buildings around the prize."
   },
   {
     "nome": "Tenochtitlan's Heart",
@@ -820,7 +922,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_tenochtitlans_heart_icon"
+    "icon": "aomr_tenochtitlans_heart_icon",
+    "descricao_resumida": "Set before the founding capital of Aztec city, this urban map of canals and capturable landmarks is defined by narrow causeways and dense districts.",
+    "historia": "Located before the founding capital of the Aztec Empire, this urban map features winding canals and capturable landmarks that drive constant conflict. Narrow causeways and tightly packed districts create natural chokepoints, forcing a balanced aggression in a competition for key resources."
   },
   {
     "nome": "Tundra",
@@ -833,7 +937,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_tundra_icon"
+    "icon": "aomr_tundra_icon",
+    "descricao_resumida": "Herds of arctic animals roam this cold, windswept land, but few trees grow.",
+    "historia": "Herds of arctic animals roam this cold, windswept land, but few trees grow. In a world where competition over resources is swift, the only law is raid or be raided."
   },
   {
     "nome": "Valley of Kings",
@@ -846,7 +952,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_valley_of_kings_icon"
+    "icon": "aomr_valley_of_kings_icon",
+    "descricao_resumida": "The cliff outcroppings dotting the landscape house precious forests and priceless relics in the land of Egypt's tombs.",
+    "historia": "The cliff outcroppings dotting the landscape house precious forests and priceless relics in the land of Egypt's tombs. Though the mummies lie sleeping, the area will soon be alive with combat."
   },
   {
     "nome": "Valley of the Sun Serpent",
@@ -859,7 +967,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Terra 🌳",
-    "icon": "aomr_valley_of_the_sun_serpent_icon"
+    "icon": "aomr_valley_of_the_sun_serpent_icon",
+    "descricao_resumida": "Hidden between mountain peaks, this fertile valley offers abundant Gold but scarce Wood, rewarding only those who plan carefully.",
+    "historia": "Hidden between mountain peaks, this fertile valley is believed to be touched by Quetzalcoatl’s divine favor. Gold is plentiful and power is within reach, yet Wood is rare, demanding careful planning from those who seek to claim it."
   },
   {
     "nome": "Vinlandsaga",
@@ -872,7 +982,9 @@
     "padrao": false,
     "partidas_rapidas": false,
     "tipo": "Naval 🌊",
-    "icon": "aomr_vinlandsaga_icon"
+    "icon": "aomr_vinlandsaga_icon",
+    "descricao_resumida": "When the resources on your small island start to run out, the only choice is to set sail for the New World.",
+    "historia": "When the resources on your small island start to run out, the only choice is to set sail for the New World. Will your settlement last longer than that of the Vinlanders?"
   },
   {
     "nome": "Watering Hole",
@@ -885,7 +997,9 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Terra 🌳",
-    "icon": "aomr_watering_hole_icon"
+    "icon": "aomr_watering_hole_icon",
+    "descricao_resumida": "Migratory herds slaking their thirst at rivers and ponds are this region’s main source of food.",
+    "historia": "Migratory herds slaking their thirst at rivers and ponds are this region’s main source of food. Use bodies of water as defensive features, or expand out into the middle of the map for resources and settlements."
   },
   {
     "nome": "Yellow River",
@@ -899,6 +1013,8 @@
     "padrao": true,
     "partidas_rapidas": true,
     "tipo": "Naval 🌊",
-    "icon": "aomr_yellow_river_icon"
+    "icon": "aomr_yellow_river_icon",
+    "descricao_resumida": "Predictable crossings on the Yellow River create chokepoints. Secure them and conquer the fertile banks.",
+    "historia": "The Yellow River divides the region and forks in the center to form an island. Shallow crossings offer passage, making attacks predictable and rewarding keen awareness of your opponent. Players must migrate to more fertile banks as the starting resources run dry."
   }
 ]

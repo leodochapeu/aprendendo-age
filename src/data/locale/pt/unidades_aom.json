@@ -30,10 +30,11 @@
     "construcao": [
       {
         "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       }
     ],
     "comida": 50,
@@ -202,7 +203,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 100,
@@ -283,7 +285,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 100,
@@ -337,14 +340,16 @@
         "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       },
       {
         "nome": "Fortaleza",
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "forca_atributos": 0,
@@ -437,7 +442,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 100,
@@ -820,7 +826,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 75,
@@ -895,7 +902,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 75,
@@ -970,7 +978,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 75,
@@ -1024,14 +1033,16 @@
         "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       },
       {
         "nome": "Fortaleza",
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "forca_atributos": 0,
@@ -1736,7 +1747,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 0,
@@ -1821,7 +1833,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 0,
@@ -1879,14 +1892,16 @@
         "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       },
       {
         "nome": "Fortaleza",
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "forca_atributos": 0,
@@ -1978,7 +1993,8 @@
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "comida": 0,
@@ -2366,10 +2382,11 @@
     "construcao": [
       {
         "nome": "Doca (Grego)",
-        "id": 79
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -2647,17 +2664,19 @@
     "construcao": [
       {
         "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       },
       {
         "nome": "Fortaleza",
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
@@ -2726,17 +2745,19 @@
     "construcao": [
       {
         "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       },
       {
         "nome": "Fortaleza",
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
@@ -2805,17 +2826,19 @@
     "construcao": [
       {
         "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       },
       {
         "nome": "Fortaleza",
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
@@ -2884,17 +2907,19 @@
     "construcao": [
       {
         "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "id": 1
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Grego)",
+        "id": 121
       },
       {
         "nome": "Fortaleza",
         "id": 57
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Grego)",
+        "id": 107
       }
     ],
     "descricao_resumida": "Herói. Bom contra unidades mitológicas.",
@@ -2953,10 +2978,11 @@
     "construcao": [
       {
         "nome": "Doca (Grego)",
-        "id": 79
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -3455,11 +3481,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Egípcio)",
+        "id": 3
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Egípcio)",
+        "id": 122
       }
     ],
     "comida": 50,
@@ -3594,12 +3621,8 @@
         "id": 22
       },
       {
-        "nome": "Templo (Grego)",
-        "id": 12
-      },
-      {
-        "nome": "CitadelCenter",
-        "id": 12
+        "nome": "Centro da Cidadela (Egípcio)",
+        "id": 108
       }
     ],
     "comida": 0,
@@ -3717,11 +3740,12 @@
     "armadura_antiperfurante": 15,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Egípcio)",
+        "id": 3
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Egípcio)",
+        "id": 108
       }
     ],
     "comida": 0,
@@ -4206,11 +4230,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Egípcio)",
+        "id": 3
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Egípcio)",
+        "id": 108
       }
     ],
     "comida": 0,
@@ -4401,11 +4426,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Egípcio)",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -5028,7 +5054,7 @@
     "construcao": [
       {
         "nome": "Templo (Egípcio)",
-        "id": 12
+        "id": 22
       }
     ],
     "comida": 0,
@@ -5097,11 +5123,12 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Egípcio)",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 225,
@@ -5223,11 +5250,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Nórdico)",
+        "id": 4
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Nórdico)",
+        "id": 123
       }
     ],
     "comida": 0,
@@ -5276,11 +5304,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Nórdico)",
+        "id": 4
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Nórdico)",
+        "id": 123
       }
     ],
     "comida": 50,
@@ -5343,11 +5372,8 @@
         "id": 4
       },
       {
-        "nome": "Casa Comunal",
-        "id": 39
-      },
-      {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Nórdico)",
+        "id": 109
       }
     ],
     "comida": 50,
@@ -6079,7 +6105,8 @@
         "id": 59
       },
       {
-        "nome": "AsgardianHillFort"
+        "nome": "Svadilfari Asgardiano",
+        "id": 114
       }
     ],
     "comida": 0,
@@ -6426,11 +6453,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Nórdico)",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 200,
@@ -6497,11 +6525,12 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Nórdico)",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 300,
@@ -7212,11 +7241,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Atlante)",
+        "id": 5
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Atlante)",
+        "id": 124
       }
     ],
     "comida": 85,
@@ -8098,11 +8128,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Atlante)",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -8670,10 +8701,12 @@
     "armadura_antiperfurante": 50,
     "construcao": [
       {
-        "nome": "HesperidesTree"
+        "nome": "Árvore de Hespérides",
+        "id": 115
       },
       {
-        "nome": "SummoningTree"
+        "nome": "Árvore de Invocação",
+        "id": 116
       }
     ],
     "comida": 0,
@@ -8734,11 +8767,12 @@
     "armadura_antiperfurante": 50,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Atlante)",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -9336,11 +9370,12 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Atlante)",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 250,
@@ -9518,11 +9553,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Chinês)",
+        "id": 6
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Chinês)",
+        "id": 104
       }
     ],
     "comida": 40,
@@ -9577,11 +9613,12 @@
     "armadura_antiperfurante": 40,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Chinês)",
+        "id": 6
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Chinês)",
+        "id": 104
       }
     ],
     "comida": 50,
@@ -9704,12 +9741,6 @@
       {
         "nome": "Campo Militar",
         "id": 43
-      },
-      {
-        "nome": "MilitaryCampTower"
-      },
-      {
-        "nome": "MilitaryCampTrainingYard"
       }
     ],
     "comida": 30,
@@ -9767,12 +9798,6 @@
       {
         "nome": "Campo Militar",
         "id": 43
-      },
-      {
-        "nome": "MilitaryCampTower"
-      },
-      {
-        "nome": "MilitaryCampTrainingYard"
       }
     ],
     "comida": 50,
@@ -9842,12 +9867,6 @@
       {
         "nome": "Oficina de Máquina",
         "id": 45
-      },
-      {
-        "nome": "MachineWorkshopTower"
-      },
-      {
-        "nome": "MachineWorkshopTrainingYard"
       }
     ],
     "comida": 0,
@@ -9912,12 +9931,6 @@
       {
         "nome": "Campo Militar",
         "id": 43
-      },
-      {
-        "nome": "MilitaryCampTower"
-      },
-      {
-        "nome": "MilitaryCampTrainingYard"
       }
     ],
     "comida": 0,
@@ -10031,8 +10044,8 @@
     "armadura_antiperfurante": 45,
     "construcao": [
       {
-        "nome": "Mercado (Grego)",
-        "id": 80
+        "nome": "Mercado (Chinês)",
+        "id": 55
       }
     ],
     "comida": 150,
@@ -10566,12 +10579,6 @@
       {
         "nome": "Oficina de Máquina",
         "id": 45
-      },
-      {
-        "nome": "MachineWorkshopTower"
-      },
-      {
-        "nome": "MachineWorkshopTrainingYard"
       }
     ],
     "comida": 0,
@@ -10890,8 +10897,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Chinês)",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -11678,8 +11685,8 @@
     "armadura_antiperfurante": 70,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Chinês)",
+        "id": 50
       }
     ],
     "comida": 170,
@@ -11936,11 +11943,12 @@
     "armadura_antiperfurante": 35,
     "construcao": [
       {
-        "nome": "Centro Urbano (Grego)",
-        "id": 9
+        "nome": "Centro Urbano (Japonês)",
+        "id": 7
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Japonês)",
+        "id": 105
       }
     ],
     "comida": 50,
@@ -12001,10 +12009,12 @@
         "id": 7
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Japonês)",
+        "id": 105
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Japonês)",
+        "id": 112
       }
     ],
     "comida": 50,
@@ -12579,8 +12589,8 @@
     "armadura_antiperfurante": 50,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Japonês)",
+        "id": 78
       }
     ],
     "comida": 220,
@@ -13997,8 +14007,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Japonês)",
+        "id": 78
       }
     ],
     "comida": 0,
@@ -14187,10 +14197,12 @@
         "id": 9
       },
       {
-        "nome": "VillageCenter"
+        "nome": "Centro de Aldeia (Asteca)",
+        "id": 106
       },
       {
-        "nome": "CitadelCenter"
+        "nome": "Centro da Cidadela (Asteca)",
+        "id": 113
       }
     ],
     "comida": 0,
@@ -14311,7 +14323,7 @@
     "armadura_antiperfurante": 55,
     "construcao": [
       {
-        "nome": "Noble's Hut",
+        "nome": "Cabana do Nobre",
         "id": 75
       }
     ],
@@ -14369,7 +14381,7 @@
     "armadura_antiperfurante": 15,
     "construcao": [
       {
-        "nome": "Noble's Hut",
+        "nome": "Cabana do Nobre",
         "id": 75
       }
     ],
@@ -14427,7 +14439,7 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "War Hut",
+        "nome": "Cabana de Guerra",
         "id": 74
       }
     ],
@@ -14492,7 +14504,7 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Noble's Hut",
+        "nome": "Cabana do Nobre",
         "id": 75
       }
     ],
@@ -14551,7 +14563,7 @@
     "armadura_antiperfurante": 15,
     "construcao": [
       {
-        "nome": "War Hut",
+        "nome": "Cabana de Guerra",
         "id": 74
       }
     ],
@@ -15145,7 +15157,7 @@
     "armadura_antiperfurante": 65,
     "construcao": [
       {
-        "nome": "Great Temple",
+        "nome": "Grande Templo",
         "id": 77
       }
     ],
@@ -15203,7 +15215,7 @@
     "armadura_antiperfurante": 20,
     "construcao": [
       {
-        "nome": "Great Temple",
+        "nome": "Grande Templo",
         "id": 77
       }
     ],
@@ -15629,7 +15641,7 @@
     "armadura_antiperfurante": 40,
     "construcao": [
       {
-        "nome": "Great Temple",
+        "nome": "Grande Templo",
         "id": 77
       }
     ],
@@ -16359,7 +16371,8 @@
         "id": 59
       },
       {
-        "nome": "AsgardianHillFort"
+        "nome": "Svadilfari Asgardiano",
+        "id": 114
       }
     ],
     "comida": 0,
@@ -16422,7 +16435,8 @@
         "id": 59
       },
       {
-        "nome": "AsgardianHillFort"
+        "nome": "Svadilfari Asgardiano",
+        "id": 114
       }
     ],
     "comida": 0,
@@ -16677,9 +16691,6 @@
       {
         "nome": "Oficina de Máquina",
         "id": 45
-      },
-      {
-        "nome": "MachineWorkshopTower"
       }
     ],
     "comida": 0,
@@ -16740,9 +16751,6 @@
       {
         "nome": "Oficina de Máquina",
         "id": 45
-      },
-      {
-        "nome": "MachineWorkshopTower"
       }
     ],
     "comida": 0,
@@ -16862,10 +16870,11 @@
     "construcao": [
       {
         "nome": "Doca (Grego)",
-        "id": 79
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16919,10 +16928,11 @@
     "construcao": [
       {
         "nome": "Doca (Grego)",
-        "id": 79
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -16980,10 +16990,11 @@
     "construcao": [
       {
         "nome": "Doca (Grego)",
-        "id": 79
+        "id": 46
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17035,11 +17046,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Egípcio)",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17092,11 +17104,12 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Egípcio)",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17154,11 +17167,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Egípcio)",
+        "id": 47
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17210,11 +17224,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Nórdico)",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17267,11 +17282,12 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Nórdico)",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17329,11 +17345,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Nórdico)",
+        "id": 48
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17386,11 +17403,12 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Atlante)",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17443,11 +17461,12 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Atlante)",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17505,11 +17524,12 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Atlante)",
+        "id": 49
       },
       {
-        "nome": "NavalShipyard"
+        "nome": "Estaleiro Naval",
+        "id": 117
       }
     ],
     "comida": 0,
@@ -17561,8 +17581,8 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Chinês)",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -17615,8 +17635,8 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Chinês)",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -17674,8 +17694,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Chinês)",
+        "id": 50
       }
     ],
     "comida": 0,
@@ -17728,8 +17748,8 @@
     "armadura_antiperfurante": 30,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Japonês)",
+        "id": 78
       }
     ],
     "comida": 0,
@@ -17782,8 +17802,8 @@
     "armadura_antiperfurante": 10,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Japonês)",
+        "id": 78
       }
     ],
     "comida": 0,
@@ -17841,8 +17861,8 @@
     "armadura_antiperfurante": 60,
     "construcao": [
       {
-        "nome": "Doca (Grego)",
-        "id": 79
+        "nome": "Doca (Japonês)",
+        "id": 78
       }
     ],
     "comida": 0,

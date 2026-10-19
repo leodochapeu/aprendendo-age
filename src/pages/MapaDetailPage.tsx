@@ -4,8 +4,8 @@ import { useLocation, useParams } from "react-router-dom";
 import { AppPageDetail } from "@/components/layout/AppPageDetail";
 import { BackLink } from "@/components/ui/BackLink";
 import { InfoRow } from "@/components/ui/InfoRow";
+import { NotionText } from "@/components/ui/NotionText";
 import { Section } from "@/components/ui/Section";
-import { entityDisplayDescription } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
@@ -174,7 +174,7 @@ function MapaPreviewSection({
 }
 
 export function MapaDetailPage() {
-  const { t, locale } = useTranslation();
+  const { t } = useTranslation();
   const { mapaBySlug } = useCatalog();
   const { state: navState } = useLocation();
   const backToList = listIndexReturnTo("/mapas", navState);
@@ -200,13 +200,17 @@ export function MapaDetailPage() {
   const previewUrl = getMapaPreviewUrl(m);
   const map3dUrl = getMapa3dUrl(m);
   const dlcIcons = mapaOrigemTitleIcons(m.origem);
+  const shortDesc = (m.descricao_resumida ?? "").trim();
+  const hist = (m.historia ?? "").trim();
 
   return (
     <AppPageDetail
       backTo="/mapas"
       backLabel={backLabel}
       title={m.nome}
-      description={entityDisplayDescription(m, locale, t)}
+      description={
+        shortDesc ? <NotionText text={shortDesc} className="block" /> : undefined
+      }
       headerIconSrc={mapaIcon}
       heroBackgroundSrc={previewUrl}
       heroBackgroundFallbackSrc={mapaIcon}
@@ -228,7 +232,7 @@ export function MapaDetailPage() {
       }
     >
       <div className="grid gap-6 lg:grid-cols-2">
-        <Section title={t("common.metadata")} className="h-full">
+        <Section title={t("common.aboutMap")} className="h-full">
           <div className="space-y-0">
             <InfoRow label={t("common.ranked")}>{fmtSimNao(m.mapas_da_ranqueada)}</InfoRow>
             <InfoRow label={t("common.leftRanked")}>{fmtSimNao(m.saiu_da_ranqueada)}</InfoRow>
@@ -236,6 +240,14 @@ export function MapaDetailPage() {
             <InfoRow label={t("common.quickMatches")}>{fmtSimNao(m.partidas_rapidas)}</InfoRow>
             <InfoRow label={t("common.type")}>{m.tipo ?? "—"}</InfoRow>
             <InfoRow label={t("common.origin")}>{formatMapaOrigem(m.origem) || "—"}</InfoRow>
+            {hist && hist !== shortDesc ? (
+              <div className="border-t border-aom-border/50 pt-3">
+                <NotionText
+                  text={hist}
+                  className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
+                />
+              </div>
+            ) : null}
           </div>
         </Section>
         {mapaIcon ? (

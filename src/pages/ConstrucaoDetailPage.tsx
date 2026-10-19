@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 import { BackLink } from "@/components/ui/BackLink";
@@ -13,6 +14,7 @@ import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { formatArmorPercent } from "@/lib/armorDisplay";
+import { buildingModelUrl } from "@/lib/buildingModelUrl";
 import { getConstrucaoAssetUrl, getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { getEraAssetUrl } from "@/lib/eraAssetUrl";
 import {
@@ -25,6 +27,10 @@ import { tecnologiaPortraitItemsFromNames } from "@/lib/tecnologiaPortraitItems"
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { hasTipoContent } from "@/lib/unidadeTipo";
 import type { PortraitHeaderItem } from "@/components/ui/PortraitHeaderActions";
+
+const BuildingProjection = lazy(() =>
+  import("@/components/unidade/UnidadeModelViewer").then((mod) => ({ default: mod.UnidadeModelViewer })),
+);
 
 function splitCommaNames(raw: string | undefined): string[] {
   if (!raw?.trim()) return [];
@@ -85,6 +91,27 @@ export function ConstrucaoDetailPage() {
 
   const showTecnologiasSection = tecnologiaPortraitItems.length > 0 || Boolean(c.tecnologias?.trim());
   const showUnidadesSection = unidadePortraitItems.length > 0 || Boolean(c.unidades?.trim());
+  const modelUrl = buildingModelUrl(c.id);
+
+  const costSection = (
+    <Section title={t("common.costAndTime")}>
+      <div className="space-y-0">
+        <InfoRow label={t("common.totalCost")}>{c.custo ?? "—"}</InfoRow>
+        <InfoRow label={t("common.wood")} icon="woodaom">
+          {c.madeira ?? "—"}
+        </InfoRow>
+        <InfoRow label={t("common.gold")} icon="goldaom">
+          {c.ouro ?? "—"}
+        </InfoRow>
+        <InfoRow label={t("common.buildTime")} icon="aomr_time_icon">
+          {c.tempo_construir_segundos ?? "—"}
+        </InfoRow>
+        <InfoRow label={t("common.garrison")} icon="aom_garrison_icon">
+          {c.guarnicao ?? "—"}
+        </InfoRow>
+      </div>
+    </Section>
+  );
 
   return (
     <div>
@@ -95,7 +122,7 @@ export function ConstrucaoDetailPage() {
         headerIconSrc={construcaoIcon}
       />
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid items-start gap-6 lg:grid-cols-2">
         <Section title={t("common.classification")}>
           <div className="space-y-0">
             {hasTipoContent(c.tipo) ? (
@@ -158,26 +185,19 @@ export function ConstrucaoDetailPage() {
           </div>
         </Section>
 
-        <Section title={t("common.costAndTime")}>
-          <div className="space-y-0">
-            <InfoRow label={t("common.totalCost")}>{c.custo ?? "—"}</InfoRow>
-            <InfoRow label={t("common.wood")} icon="woodaom">
-              {c.madeira ?? "—"}
-            </InfoRow>
-            <InfoRow label={t("common.gold")} icon="goldaom">
-              {c.ouro ?? "—"}
-            </InfoRow>
-            <InfoRow label={t("common.buildTime")} icon="aomr_time_icon">
-              {c.tempo_construir_segundos ?? "—"}
-            </InfoRow>
-            <InfoRow label={t("common.garrison")} icon="aom_garrison_icon">
-              {c.guarnicao ?? "—"}
-            </InfoRow>
-          </div>
-        </Section>
+        {modelUrl ? (
+          <Section title={t("common.projection3d")}>
+            <Suspense fallback={<p className="text-zinc-500">{t("common.loading")}</p>}>
+              <BuildingProjection urls={[modelUrl]} />
+            </Suspense>
+          </Section>
+        ) : (
+          costSection
+        )}
       </div>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-2">
+      <div className="mt-6 grid items-start gap-6 lg:grid-cols-2">
+        {modelUrl ? costSection : null}
         <Section title={t("common.combatDefense")}>
           <div className="space-y-0">
             <InfoRow label={t("common.hitPoints")} icon="aomr_hit_points_icon">

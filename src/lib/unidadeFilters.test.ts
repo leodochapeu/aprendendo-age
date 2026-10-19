@@ -4,6 +4,7 @@ import type { Unidade } from "@/data/catalog";
 import {
   countActiveUnitFilters,
   emptyUnitListFilters,
+  parseUnitListFilters,
   unidadeMatchesFilters,
   type UnitListFilters,
 } from "@/lib/unidadeFilters";
@@ -32,6 +33,34 @@ const hoplite = unit({
 function filters(partial: Partial<UnitListFilters> = {}): UnitListFilters {
   return { ...emptyUnitListFilters(), ...partial };
 }
+
+describe("parseUnitListFilters", () => {
+  it("recupera panteão, era, categoria e condição", () => {
+    const raw = JSON.stringify(
+      filters({
+        pantheonIds: [1],
+        eraIds: [2],
+        tipoKeys: ["icon:aomr_type_infantry_icon"],
+        advanced: [{ id: "hp", field: "pontos_de_vida", op: "gt", value: "100" }],
+      }),
+    );
+    expect(parseUnitListFilters(raw)).toEqual(JSON.parse(raw));
+  });
+
+  it("ignora JSON inválido ou campos desconhecidos", () => {
+    expect(parseUnitListFilters("não-json")).toEqual(emptyUnitListFilters());
+    expect(
+      parseUnitListFilters(
+        JSON.stringify({
+          pantheonIds: [1, "grego"],
+          eraIds: [],
+          tipoKeys: ["icon:ok", ""],
+          advanced: [{ id: "x", field: "inexistente", op: "gt", value: "1" }],
+        }),
+      ),
+    ).toEqual(filters({ pantheonIds: [1], tipoKeys: ["icon:ok"] }));
+  });
+});
 
 describe("unidadeMatchesFilters", () => {
   it("deixa passar tudo quando não há filtro", () => {

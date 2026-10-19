@@ -2961,5 +2961,1469 @@
     "armadura_anticontusao": 99,
     "madeira": 40,
     "tempo_construir_segundos": 15
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 81,
+    "nome": "Wonder (Zeus)",
+    "ingles": "Wonder (Zeus)",
+    "panteao": "Greek :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 82,
+    "nome": "Wonder (Poseidon)",
+    "ingles": "Wonder (Poseidon)",
+    "panteao": "Greek :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 83,
+    "nome": "Wonder (Hades)",
+    "ingles": "Wonder (Hades)",
+    "panteao": "Greek :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 84,
+    "nome": "Wonder (Demeter)",
+    "ingles": "Wonder (Demeter)",
+    "panteao": "Greek :aomr_pantheon_greeks_icon:",
+    "panteao_id": 1
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 85,
+    "nome": "Wonder (Isis)",
+    "ingles": "Wonder (Isis)",
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "panteao_id": 2
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 86,
+    "nome": "Wonder (Set)",
+    "ingles": "Wonder (Set)",
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "panteao_id": 2
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 87,
+    "nome": "Wonder (Thor)",
+    "ingles": "Wonder (Thor)",
+    "panteao": "Nordic :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 88,
+    "nome": "Wonder (Odin)",
+    "ingles": "Wonder (Odin)",
+    "panteao": "Nordic :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 89,
+    "nome": "Wonder (Loki)",
+    "ingles": "Wonder (Loki)",
+    "panteao": "Nordic :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 90,
+    "nome": "Wonder (Gaia)",
+    "ingles": "Wonder (Gaia)",
+    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
+    "panteao_id": 4
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 91,
+    "nome": "Wonder (Fu Xi)",
+    "ingles": "Wonder (Fu Xi)",
+    "panteao": "Chinese :aomr_pantheon_chinese_icon:",
+    "panteao_id": 5
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 92,
+    "nome": "Wonder (Nu Wa)",
+    "ingles": "Wonder (Nu Wa)",
+    "panteao": "Chinese :aomr_pantheon_chinese_icon:",
+    "panteao_id": 5
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 93,
+    "nome": "Wonder (Shennong)",
+    "ingles": "Wonder (Shennong)",
+    "panteao": "Chinese :aomr_pantheon_chinese_icon:",
+    "panteao_id": 5
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 94,
+    "nome": "Wonder (Amaterasu)",
+    "ingles": "Wonder (Amaterasu)",
+    "panteao": "Japanese :aomr_pantheon_japanese_icon:",
+    "panteao_id": 6
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 95,
+    "nome": "Wonder (Tsukuyomi)",
+    "ingles": "Wonder (Tsukuyomi)",
+    "panteao": "Japanese :aomr_pantheon_japanese_icon:",
+    "panteao_id": 6
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 96,
+    "nome": "Wonder (Susanoo)",
+    "ingles": "Wonder (Susanoo)",
+    "panteao": "Japanese :aomr_pantheon_japanese_icon:",
+    "panteao_id": 6
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 97,
+    "nome": "Wonder (Quetzalcoatl)",
+    "ingles": "Wonder (Quetzalcoatl)",
+    "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
+    "panteao_id": 7
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 98,
+    "nome": "Wonder (Tezcatlipoca)",
+    "ingles": "Wonder (Tezcatlipoca)",
+    "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
+    "panteao_id": 7
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 99,
+    "nome": "Wonder (Huitzilopochtli)",
+    "ingles": "Wonder (Huitzilopochtli)",
+    "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
+    "panteao_id": 7
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 100,
+    "nome": "Wonder (Ra)",
+    "ingles": "Wonder (Ra)",
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "panteao_id": 2
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 101,
+    "nome": "Wonder (Frey)",
+    "ingles": "Wonder (Frey)",
+    "panteao": "Nordic :aomr_pantheon_norse_icon:",
+    "panteao_id": 3
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 102,
+    "nome": "Wonder (Urano)",
+    "ingles": "Wonder (Urano)",
+    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
+    "panteao_id": 4
+  },
+  {
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "pontos_de_vida": 9999,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "armadura_anticontusao": 5,
+    "madeira": 5000,
+    "ouro": 5000,
+    "custo": 15000,
+    "tempo_construir_segundos": 5400,
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "era_id": 4,
+    "icon": "aomr_wonder_icon",
+    "id": 103,
+    "nome": "Wonder (Cronos)",
+    "ingles": "Wonder (Cronos)",
+    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
+    "panteao_id": 4
+  },
+  {
+    "id": 121,
+    "nome": "Village Center (Greek)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Greek :aomr_pantheon_greeks_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Village Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 1,
+    "icon": "aomr_village_center_greek_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Masons, Architects, Secrets of the Titans, Golden Apples, Divine Blood",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Villager, Orpheus (Hero), Iolaus (Hero), Icarus (Hero), Bellerophon (Hero), King Midas (Hero), Perseus (Hero), Polyphemus (Hero)",
+    "unidades_ids": [
+      1,
+      6,
+      16,
+      28,
+      38,
+      39,
+      40,
+      41
+    ]
+  },
+  {
+    "id": 122,
+    "nome": "Village Center (Egyptian)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Village Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 2,
+    "icon": "aomr_village_center_egyptian_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Masons, Architects, Secrets of the Titans, Skin of the Rhino, Funeral Rites, Spirit of Maat, Nebty, New Kingdom, Book of Thoth",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Laborer",
+    "unidades_ids": [
+      49
+    ]
+  },
+  {
+    "id": 123,
+    "nome": "Village Center (Norse)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Nordic :aomr_pantheon_norse_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Village Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 3,
+    "icon": "aomr_village_center_norse_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Masons, Architects, Secrets of the Titans, Freyr's Gift, Rigsthula, Ring-Oath",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Dwarf, Gatherer",
+    "unidades_ids": [
+      75,
+      76
+    ]
+  },
+  {
+    "id": 124,
+    "nome": "Village Center (Atlantean)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Village Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 4,
+    "icon": "aomr_village_center_atlantean_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Masons, Architects, Secrets of the Titans, Channels",
+    "unidades": "Citizen",
+    "unidades_ids": [
+      104
+    ],
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 104,
+    "nome": "Village Center (Chinese)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Chinese :aomr_pantheon_chinese_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Village Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 5,
+    "icon": "aomr_village_center_chinese_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Masons, Architects, Secrets of the Titans, Kuafu Chieftain, Chasing The Sun",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Peasant, Kuafu",
+    "unidades_ids": [
+      139,
+      140
+    ]
+  },
+  {
+    "id": 105,
+    "nome": "Village Center (Japanese)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Japanese :aomr_pantheon_japanese_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Village Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 6,
+    "icon": "aomr_village_center_japanese_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Masons, Architects, Secrets of the Titans, Divine Prefecture",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Commoner, Miko (Hero)",
+    "unidades_ids": [
+      175,
+      176
+    ]
+  },
+  {
+    "id": 106,
+    "nome": "Village Center (Aztec)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
+    "pontos_de_vida": 1200,
+    "dps": 6,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Village Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 7,
+    "icon": "aomr_village_center_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 6,
+    "alcance": 18,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 2,
+    "guarnicao": 15,
+    "tecnologias": "Masons, Architects, Secrets of the Titans, Serpent Skirt, Coatepec Shrines",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Quimichin Spy",
+    "unidades_ids": [
+      209
+    ]
+  },
+  {
+    "id": 107,
+    "nome": "Citadel Center (Greek)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Greek :aomr_pantheon_greeks_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Citadel Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 1,
+    "icon": "aomr_citadel_center_greek_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Masons, Architects, Fortified Town Center, Secrets of the Titans, Golden Apples, Divine Blood",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Ajax (Hero), Jason (Hero), Orpheus (Hero), Theseus (Hero), Achilles (Hero), Atalanta (Hero), Heracles (Hero), Iolaus (Hero), Chiron (Hero), Hippolyta (Hero), Icarus (Hero), Odysseus (Hero), Bellerophon (Hero), King Midas (Hero), Perseus (Hero), Polyphemus (Hero)",
+    "unidades_ids": [
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      15,
+      16,
+      26,
+      27,
+      28,
+      29,
+      38,
+      39,
+      40,
+      41
+    ]
+  },
+  {
+    "id": 108,
+    "nome": "Citadel Center (Egyptian)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Citadel Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 2,
+    "icon": "aomr_citadel_center_egyptian_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Masons, Architects, Fortified Town Center, Secrets of the Titans, Skin of the Rhino, Funeral Rites, Spirit of Maat, Nebty, New Kingdom, Book of Thoth",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Priest (Hero), Mercenary, Mercenary Cavalry",
+    "unidades_ids": [
+      51,
+      53,
+      60
+    ]
+  },
+  {
+    "id": 109,
+    "nome": "Citadel Center (Norse)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Nordic :aomr_pantheon_norse_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Citadel Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 3,
+    "icon": "aomr_citadel_center_norse_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Masons, Architects, Fortified Town Center, Secrets of the Titans, Freyr's Gift, Rigsthula, Ring-Oath",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Berserk",
+    "unidades_ids": [
+      77
+    ]
+  },
+  {
+    "id": 110,
+    "nome": "Citadel Center (Atlantean)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Citadel Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 4,
+    "icon": "aomr_citadel_center_atlantean_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Masons, Architects, Fortified Town Center, Secrets of the Titans, Channels",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 111,
+    "nome": "Citadel Center (Chinese)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Chinese :aomr_pantheon_chinese_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Citadel Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 5,
+    "icon": "aomr_citadel_center_chinese_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Masons, Architects, Fortified Town Center, Secrets of the Titans, Kuafu Chieftain, Chasing The Sun",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 112,
+    "nome": "Citadel Center (Japanese)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Japanese :aomr_pantheon_japanese_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Citadel Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 6,
+    "icon": "aomr_citadel_center_japanese_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Masons, Architects, Fortified Town Center, Secrets of the Titans, Divine Prefecture",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Miko (Hero)",
+    "unidades_ids": [
+      176
+    ]
+  },
+  {
+    "id": 113,
+    "nome": "Citadel Center (Aztec)",
+    "tipo": [
+      {
+        "type": "Basic"
+      }
+    ],
+    "panteao": "Aztecs :aomr_pantheon_azteca_icon:",
+    "pontos_de_vida": 3600,
+    "dps": 12,
+    "armadura_anticorte": 55,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 10,
+    "madeira": 350,
+    "ouro": 350,
+    "custo": 700,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Citadel Center",
+    "tempo_construir_segundos": 150,
+    "era_id": 2,
+    "panteao_id": 7,
+    "icon": "aomr_citadel_center_aztec_icon",
+    "armadura_anticontusao": 10,
+    "dano_perfurante": 12,
+    "alcance": 20,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 25,
+    "tecnologias": "Masons, Architects, Fortified Town Center, Secrets of the Titans, Serpent Skirt, Coatepec Shrines",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Quimichin Spy",
+    "unidades_ids": [
+      209
+    ]
+  },
+  {
+    "id": 114,
+    "nome": "Asgardian Hill Fort",
+    "tipo": [
+      {
+        "type": "Militar",
+        "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Proteção 🧱"
+      }
+    ],
+    "panteao": "Nordic :aomr_pantheon_norse_icon:",
+    "pontos_de_vida": 2700,
+    "dps": 30,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 270,
+    "ouro": 300,
+    "custo": 570,
+    "era": "Heroic :aomr_heroic_age_icon:",
+    "ingles": "Asgardian Hill Fort",
+    "tempo_construir_segundos": 250,
+    "era_id": 3,
+    "panteao_id": 3,
+    "icon": "aomr_asgardian_hill_fort_icon",
+    "armadura_anticontusao": 5,
+    "dano_perfurante": 30,
+    "alcance": 4,
+    "velocidade_de_ataque_atk_s": 1,
+    "no_projeteis": 3,
+    "guarnicao": 20,
+    "favor": 5,
+    "tecnologias": "Draft Horses, Engineers, Advanced Fortifications, Medium Infantry, Heavy Infantry, Champion Infantry, Feasts of Renown, Nine Waves, Dwarven Auger, Bravery, Levy Hill Fort Soldiers, Conscript Hill Fort Soldiers, Ydalir",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "unidades": "Huskarl, Portable Ram, Ballista",
+    "unidades_ids": [
+      88,
+      242,
+      243
+    ]
+  },
+  {
+    "id": 115,
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
+    "dps": 0,
+    "armadura_anticorte": 0,
+    "armadura_antiperfurante": 0,
+    "armadura_anticontucao": 0,
+    "madeira": 0,
+    "ouro": 0,
+    "custo": 0,
+    "era": "Classical :aomr_classical_age_icon:",
+    "era_id": 2,
+    "panteao_id": 4,
+    "ingles": "Hesperides Tree",
+    "tempo_construir_segundos": 0,
+    "pontos_de_vida": 720,
+    "icon": "aomr_hesperides_tree_icon",
+    "guarnicao": 5,
+    "unidades": "Dryad",
+    "unidades_ids": [
+      127
+    ],
+    "nome": "Hesperides Tree"
+  },
+  {
+    "id": 116,
+    "tipo": [
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "panteao": "Atlantean :aomr_pantheon_atlanteans_icon:",
+    "dps": 0,
+    "armadura_anticorte": 45,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 0,
+    "ouro": 0,
+    "custo": 0,
+    "era": "Classical :aomr_classical_age_icon:",
+    "era_id": 2,
+    "panteao_id": 4,
+    "ingles": "Summoning Tree",
+    "tempo_construir_segundos": 30,
+    "pontos_de_vida": 2500,
+    "icon": "aomr_summoning_tree_icon",
+    "unidades": "Dryad",
+    "unidades_ids": [
+      127
+    ],
+    "nome": "Summoning Tree"
+  },
+  {
+    "id": 117,
+    "nome": "Naval Shipyard",
+    "tipo": [
+      {
+        "type": "Militar",
+        "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Recurso ⚒"
+      }
+    ],
+    "panteao": "Geral",
+    "pontos_de_vida": 1200,
+    "dps": 0,
+    "armadura_anticorte": 30,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 250,
+    "ouro": 0,
+    "custo": 250,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Naval Shipyard",
+    "tempo_construir_segundos": 50,
+    "era_id": 1,
+    "icon": "aomr_dock_icon",
+    "armadura_anticontusao": 5,
+    "guarnicao": 5,
+    "unidades": "Scylla, Carcinos, Leviathan, War Turtle, Jormun Elver, Kraken, Servant, Nereid, Man O' War, Trireme, Pentekonter, Juggernaut, Kebenit, Ramming Galley, War Barge, Longboat, Dreki, Dragon Ship, Bireme, Fire Ship, Siege Bireme",
+    "unidades_ids": [
+      34,
+      42,
+      63,
+      73,
+      93,
+      94,
+      118,
+      128,
+      136,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261
+    ],
+    "tecnologias": "Chthonic Rites, Crimson Linen",
+    "tecnologias_ids": [
+      null,
+      null
+    ]
+  },
+  {
+    "id": 118,
+    "nome": "Obelisk",
+    "tipo": [
+      {
+        "type": "Visão 👁‍🗨"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "pontos_de_vida": 50,
+    "dps": 0,
+    "armadura_anticorte": 5,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 0,
+    "ouro": 10,
+    "custo": 10,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Obelisk",
+    "tempo_construir_segundos": 12,
+    "era_id": 1,
+    "panteao_id": 2,
+    "icon": "aomr_obelisk_icon",
+    "armadura_anticontusao": 5,
+    "tecnologias": "Signal Fires, Carrier Pigeons",
+    "tecnologias_ids": [
+      null,
+      null
+    ]
+  },
+  {
+    "id": 119,
+    "nome": "Shrine of the Hunt",
+    "tipo": [
+      {
+        "type": "Recurso ⚒"
+      },
+      {
+        "type": "Utilidade ⏫"
+      }
+    ],
+    "panteao": "Japanese :aomr_pantheon_japanese_icon:",
+    "pontos_de_vida": 800,
+    "dps": 0,
+    "armadura_anticorte": 40,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 75,
+    "ouro": 0,
+    "custo": 75,
+    "guarnicao": 1,
+    "era": "Classical :aomr_classical_age_icon:",
+    "ingles": "Shrine of the Hunt",
+    "tempo_construir_segundos": 15,
+    "era_id": 2,
+    "panteao_id": 6,
+    "icon": "aomr_shrine_of_the_hunt_icon",
+    "armadura_anticontusao": 5,
+    "tecnologias": "Kagura, Gohei Wands, Sacred Custodians, Sakura Gardens",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "id": 120,
+    "nome": "Wooden Gate",
+    "tipo": [
+      {
+        "type": "Proteção 🧱"
+      }
+    ],
+    "panteao": "Geral",
+    "pontos_de_vida": 500,
+    "dps": 0,
+    "armadura_anticorte": 50,
+    "armadura_antiperfurante": 90,
+    "armadura_anticontucao": 5,
+    "madeira": 0,
+    "ouro": 15,
+    "custo": 15,
+    "era": "Archaic :aomr_archaic_age_icon:",
+    "ingles": "Wooden Gate",
+    "tempo_construir_segundos": 15,
+    "era_id": 1,
+    "icon": "aomr_gate_icon",
+    "armadura_anticontusao": 5,
+    "tecnologias": "Stone Wall, Fortified Wall, Advanced Defenses, Thorned Walls",
+    "tecnologias_ids": [
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]

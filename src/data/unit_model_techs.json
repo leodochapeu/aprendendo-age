@@ -20414,5 +20414,90 @@
       ]
     },
     "sex": true
+  },
+  "1": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/1/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/1/body-female-base.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
+  },
+  "49": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/49/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/49/body-female-base.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
+  },
+  "76": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/76/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/76/body-female-base.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
+  },
+  "139": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/139/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/139/body-female-base.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
+  },
+  "175": {
+    "groups": [],
+    "pieces": {
+      "body": [
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/175/body-base.glb"
+        },
+        {
+          "requires": [],
+          "url": "/assets/unit-models/tech/175/body-female-base.glb",
+          "sex": "female"
+        }
+      ]
+    },
+    "sex": true
   }
 }
