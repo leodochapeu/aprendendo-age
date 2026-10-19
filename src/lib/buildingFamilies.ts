@@ -199,8 +199,8 @@ export function presentFamilyMember<T extends { id: number; nome: string; ingles
   canonical: T,
   member: T,
 ): T {
-  const next = { ...canonical } as T & Record<string, unknown>;
-  const source = member as T & Record<string, unknown>;
+  const next: Record<string, unknown> = { ...canonical };
+  const source = member as Record<string, unknown>;
   for (const key of VARIANT_FIELDS) {
     if (key in source) next[key] = source[key];
     else delete next[key];
@@ -209,5 +209,5 @@ export function presentFamilyMember<T extends { id: number; nome: string; ingles
   next.nome = canonical.nome;
   next.ingles = canonical.ingles;
   next.icon = canonical.icon;
-  return next;
+  return next as T;
 }
