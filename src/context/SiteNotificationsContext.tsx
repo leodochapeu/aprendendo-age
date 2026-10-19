@@ -13,6 +13,7 @@ import { fetchNotificationPreview } from "@/lib/siteNotificationsApi";
 import {
   mergeReadIds,
   NOTIFICATION_READS_KEY,
+  NOTIFICATION_TICKER_COLLAPSED_KEY,
   parseStoredReadIds,
   type SiteNotification,
 } from "@/lib/siteNotifications";
@@ -28,6 +29,10 @@ type SiteNotificationsContextValue = {
   refresh: () => Promise<void>;
   bannerOffset: number;
   setBannerOffset: (height: number) => void;
+  tickerCollapsed: boolean;
+  setTickerCollapsed: (collapsed: boolean) => void;
+  tickerOffset: number;
+  setTickerOffset: (height: number) => void;
 };
 
 const SiteNotificationsContext = createContext<SiteNotificationsContextValue | null>(null);
@@ -37,6 +42,14 @@ function readStoredIds(): string[] {
     return parseStoredReadIds(localStorage.getItem(NOTIFICATION_READS_KEY));
   } catch {
     return [];
+  }
+}
+
+function readTickerCollapsed(): boolean {
+  try {
+    return localStorage.getItem(NOTIFICATION_TICKER_COLLAPSED_KEY) === "1";
+  } catch {
+    return false;
   }
 }
 
@@ -56,6 +69,8 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
   const [error, setError] = useState(false);
   const [readIds, setReadIds] = useState<string[]>(readStoredIds);
   const [bannerOffset, setBannerOffsetState] = useState(0);
+  const [tickerOffset, setTickerOffsetState] = useState(0);
+  const [tickerCollapsed, setTickerCollapsedState] = useState(readTickerCollapsed);
   const requestId = useRef(0);
 
   const refresh = useCallback(async () => {
@@ -103,6 +118,20 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
     setBannerOffsetState((current) => (current === next ? current : next));
   }, []);
 
+  const setTickerOffset = useCallback((height: number) => {
+    const next = Math.max(0, Math.ceil(height));
+    setTickerOffsetState((current) => (current === next ? current : next));
+  }, []);
+
+  const setTickerCollapsed = useCallback((collapsed: boolean) => {
+    setTickerCollapsedState(collapsed);
+    try {
+      localStorage.setItem(NOTIFICATION_TICKER_COLLAPSED_KEY, collapsed ? "1" : "0");
+    } catch {
+      /* storage indisponível */
+    }
+  }, []);
+
   const readSet = useMemo(() => new Set(readIds), [readIds]);
   const unreadCount = useMemo(
     () => activeIds.reduce((count, id) => count + (readSet.has(id) ? 0 : 1), 0),
@@ -121,8 +150,27 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
       refresh,
       bannerOffset,
       setBannerOffset,
+      tickerCollapsed,
+      setTickerCollapsed,
+      tickerOffset,
+      setTickerOffset,
     }),
-    [preview, unreadCount, total, loading, error, readIds, markRead, refresh, bannerOffset, setBannerOffset],
+    [
+      preview,
+      unreadCount,
+      total,
+      loading,
+      error,
+      readIds,
+      markRead,
+      refresh,
+      bannerOffset,
+      setBannerOffset,
+      tickerCollapsed,
+      setTickerCollapsed,
+      tickerOffset,
+      setTickerOffset,
+    ],
   );
 
   return <SiteNotificationsContext.Provider value={value}>{children}</SiteNotificationsContext.Provider>;

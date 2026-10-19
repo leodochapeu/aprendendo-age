@@ -3,6 +3,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 import { NotificationBanner } from "@/components/notifications/NotificationBanner";
 import { NotificationBell } from "@/components/notifications/NotificationBell";
+import { NotificationTicker, NotificationTickerToggle } from "@/components/notifications/NotificationTicker";
 import { SettingsMenu } from "@/components/ui/SettingsMenu";
 import { MusicProvider } from "@/context/MusicContext";
 import { useSiteNotifications } from "@/context/SiteNotificationsContext";
@@ -302,7 +303,7 @@ function MenuGlyph({ open }: { open: boolean }) {
 export function AppShell() {
   const { pathname, key } = useLocation();
   const { t, locale } = useTranslation();
-  const { bannerOffset } = useSiteNotifications();
+  const { bannerOffset, tickerOffset } = useSiteNotifications();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useLayoutEffect(() => {
@@ -343,10 +344,12 @@ export function AppShell() {
     <MusicProvider>
     <div className="flex min-h-screen flex-col md:flex-row" style={{ paddingTop: bannerOffset }}>
       <NotificationBanner />
+      <NotificationTicker />
       <div
         className="fixed right-4 z-[60] flex items-start gap-2"
         style={{ top: `calc(${bannerOffset}px + max(1rem, env(safe-area-inset-top, 0px)))` }}
       >
+        <NotificationTickerToggle />
         <NotificationBell />
         <SettingsMenu />
       </div>
@@ -439,7 +442,10 @@ export function AppShell() {
         </>
       ) : null}
 
-      <main className="min-w-0 flex-1 px-4 py-6 md:px-10 md:py-10">
+      <main
+        className="min-w-0 flex-1 px-4 py-6 md:px-10 md:py-10"
+        style={tickerOffset > 0 ? { paddingTop: tickerOffset } : undefined}
+      >
         <Outlet />
       </main>
     </div>

@@ -9,7 +9,13 @@ import {
 
 const BUCKET = "site-notifications";
 
-const FEED_COLUMNS = "id, title, description, link_url, image_url, starts_at, expires_at, created_at";
+const FEED_COLUMNS = "id, title, description, link_url, image_url, starts_at, expires_at, created_at, highlighted";
+const FEED_COLUMNS_LEGACY = "id, title, description, link_url, image_url, starts_at, expires_at, created_at";
+
+function isMissingHighlightedColumn(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false;
+  return error.code === "42703" || (error.message ?? "").includes("highlighted");
+}
 
 type SiteNotificationRow = {
   id: string;
@@ -20,6 +26,7 @@ type SiteNotificationRow = {
   starts_at: string;
   expires_at: string;
   created_at: string;
+  highlighted: boolean | null;
 };
 
 export type NotificationPreview =
@@ -37,6 +44,7 @@ export type SendSiteNotificationInput = {
   imageUrl: string | null;
   startsAt: Date;
   expiresAt: Date;
+  highlighted: boolean;
 };
 
 export type SendSiteNotificationResult =
@@ -57,6 +65,7 @@ function mapNotification(row: SiteNotificationRow): SiteNotification {
     startsAt: row.starts_at,
     expiresAt: row.expires_at,
     createdAt: row.created_at,
+    highlighted: row.highlighted === true,
   };
 }
 
@@ -65,24 +74,27 @@ export async function fetchNotificationPreview(): Promise<NotificationPreview> {
   const supabase = createSupabasePublicClient();
   if (!supabase) return { ok: false, reason: "unconfigured" };
 
-  const [listResult, idsResult] = await Promise.all([
+  const listQuery = (columns: string) =>
     supabase
       .from("site_notifications")
-      .select(FEED_COLUMNS, { count: "exact" })
+      .select(columns, { count: "exact" })
       .order("starts_at", { ascending: false })
       .order("id", { ascending: false })
-      .range(0, NOTIFICATION_PREVIEW_LIMIT - 1),
-    supabase
-      .from("site_notifications")
-      .select("id")
-      .order("starts_at", { ascending: false })
-      .order("id", { ascending: false })
-      .limit(1000),
-  ]);
+      .range(0, NOTIFICATION_PREVIEW_LIMIT - 1);
+
+  let listResult = await listQuery(FEED_COLUMNS);
+  if (isMissingHighlightedColumn(listResult.error)) listResult = await listQuery(FEED_COLUMNS_LEGACY);
+
+  const idsResult = await supabase
+    .from("site_notifications")
+    .select("id")
+    .order("starts_at", { ascending: false })
+    .order("id", { ascending: false })
+    .limit(1000);
 
   if (listResult.error || idsResult.error) return { ok: false, reason: "load" };
 
-  const rows = (listResult.data ?? []) as SiteNotificationRow[];
+  const rows = (listResult.data ?? []) as unknown as SiteNotificationRow[];
   const ids = (idsResult.data ?? []) as { id: string }[];
   return {
     ok: true,
@@ -96,15 +108,18 @@ export async function fetchNotificationPage(offset: number): Promise<Notificatio
   const supabase = createSupabasePublicClient();
   if (!supabase) return { ok: false, reason: "unconfigured" };
 
-  const { data, error } = await supabase
-    .from("site_notifications")
-    .select(FEED_COLUMNS)
-    .order("starts_at", { ascending: false })
-    .order("id", { ascending: false })
-    .range(offset, offset + NOTIFICATION_HISTORY_PAGE_SIZE - 1);
+  const pageQuery = (columns: string) =>
+    supabase
+      .from("site_notifications")
+      .select(columns)
+      .order("starts_at", { ascending: false })
+      .order("id", { ascending: false })
+      .range(offset, offset + NOTIFICATION_HISTORY_PAGE_SIZE - 1);
 
-  if (error) return { ok: false, reason: "load" };
-  return { ok: true, items: ((data ?? []) as SiteNotificationRow[]).map(mapNotification) };
+  let result = await pageQuery(FEED_COLUMNS);
+  if (isMissingHighlightedColumn(result.error)) result = await pageQuery(FEED_COLUMNS_LEGACY);
+  if (result.error) return { ok: false, reason: "load" };
+  return { ok: true, items: ((result.data ?? []) as unknown as SiteNotificationRow[]).map(mapNotification) };
 }
 
 export async function uploadNotificationImage(userId: string, file: File): Promise<UploadNotificationImageResult> {
@@ -149,6 +164,7 @@ export async function sendSiteNotification(input: SendSiteNotificationInput): Pr
       starts_at: input.startsAt.toISOString(),
       expires_at: input.expiresAt.toISOString(),
       created_by: user.id,
+      highlighted: input.highlighted,
     })
     .select("id")
     .single();

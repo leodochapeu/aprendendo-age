@@ -45,6 +45,7 @@ export function NotificationComposePage() {
   const [image, setImage] = useState<File | null>(null);
   const [imageKey, setImageKey] = useState(0);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [highlighted, setHighlighted] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -109,6 +110,7 @@ export function NotificationComposePage() {
         imageUrl,
         startsAt: windowResult.startsAt,
         expiresAt: windowResult.expiresAt,
+        highlighted,
       });
       if (!sent.ok) {
         if (uploadedPath) await removeNotificationImage(uploadedPath);
@@ -124,6 +126,7 @@ export function NotificationComposePage() {
       setExpiresAtLocal(defaultExpiresLocal());
       setImage(null);
       setImageKey((current) => current + 1);
+      setHighlighted(false);
       showToast(t("notifications.sent"));
       void refresh();
     } finally {
@@ -211,6 +214,19 @@ export function NotificationComposePage() {
               </div>
             ) : null}
           </div>
+
+          <label className="flex items-start gap-2 text-sm text-zinc-200">
+            <input
+              type="checkbox"
+              checked={highlighted}
+              onChange={(event) => setHighlighted(event.target.checked)}
+              className="mt-0.5 accent-amber-400"
+            />
+            <span>
+              <span className="font-medium">{t("notifications.highlight")}</span>
+              <span className="mt-0.5 block text-xs text-zinc-500">{t("notifications.highlightHint")}</span>
+            </span>
+          </label>
 
           <fieldset className="text-sm">
             <legend className="text-zinc-400">{t("notifications.when")}</legend>

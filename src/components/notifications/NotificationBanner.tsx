@@ -9,14 +9,14 @@ import type { SiteNotification } from "@/lib/siteNotifications";
 export function NotificationBanner() {
   const { preview, readIds, markRead, setBannerOffset } = useSiteNotifications();
   const { t } = useTranslation();
-  const newest = preview[0] ?? null;
+  const featured = preview.find((item) => item.highlighted && !readIds.includes(item.id)) ?? null;
   const [shown, setShown] = useState<SiteNotification | null>(null);
   const frameRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!newest || readIds.includes(newest.id) || shown?.id === newest.id) return;
-    setShown(newest);
-  }, [newest, readIds, shown]);
+    if (shown || !featured) return;
+    setShown(featured);
+  }, [featured, shown]);
 
   useEffect(() => {
     if (!shown) return;

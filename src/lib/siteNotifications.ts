@@ -1,4 +1,6 @@
 export const NOTIFICATION_READS_KEY = "aprendendo-age.notification-reads";
+export const NOTIFICATION_TICKER_COLLAPSED_KEY = "aprendendo-age.notification-ticker-collapsed";
+export const NOTIFICATION_TICKER_LIMIT = 3;
 export const NOTIFICATION_PREVIEW_LIMIT = 10;
 export const NOTIFICATION_HISTORY_PAGE_SIZE = 15;
 export const NOTIFICATION_TITLE_MAX = 120;
@@ -25,6 +27,7 @@ export type SiteNotification = {
   startsAt: string;
   expiresAt: string;
   createdAt: string;
+  highlighted: boolean;
 };
 
 export type NotificationLink = {
