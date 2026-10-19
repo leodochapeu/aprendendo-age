@@ -25,6 +25,7 @@ from aom_unit_model import (
     _tech_tags,
     direct_tech_component,
     load_anim_xml,
+    _held_projectile,
     _holds_ranged_weapon,
     _ranged_pose,
     resolve_visual_root,
@@ -295,7 +296,8 @@ def _parts(bars: BarIndex, root: Any) -> list[tuple[tuple[str, ...], Any, str | 
             if _bare_hands.get() and low == "rangedweapon":
                 continue
             if low in PROJECTILE_ATTACHMENTS and not (low == "javelin" and stance == "pierce"):
-                continue
+                if not _held_projectile(node, low) or stance != "pierce":
+                    continue
             included = _load_attachment(bars, source)
             if included is None:
                 continue
@@ -591,25 +593,49 @@ def _bake_sex_parts(
 
 
 def _glb_color(path: Path) -> tuple[int, int, int] | None:
-    """Cor média da textura, sem o fundo escuro."""
+    """Cor média dos texels que a malha usa, sem a margem clara do atlas."""
     if not path.exists():
         return None
     import io
 
     from PIL import Image
 
-    from aom_unit_model import read_glb
+    from aom_unit_model import read_accessor, read_glb
 
     gltf, blob = read_glb(path)
-    images = gltf.get("images") or []
-    if not images or "bufferView" not in images[0]:
-        return None
-    view = gltf["bufferViews"][images[0]["bufferView"]]
-    start = view.get("byteOffset", 0)
-    raw = blob[start : start + view["byteLength"]]
-    image = Image.open(io.BytesIO(raw)).convert("RGB")
-    image.thumbnail((32, 32))
-    pixels = [pixel for pixel in image.getdata() if sum(pixel) > 80]
+    decoded: list[Image.Image | None] = []
+    for image_def in gltf.get("images") or []:
+        if "bufferView" not in image_def:
+            decoded.append(None)
+            continue
+        view = gltf["bufferViews"][image_def["bufferView"]]
+        start = view.get("byteOffset", 0)
+        raw = blob[start : start + view["byteLength"]]
+        decoded.append(Image.open(io.BytesIO(raw)).convert("RGB"))
+    pixels: list[tuple[int, int, int]] = []
+    for mesh in gltf.get("meshes") or []:
+        for prim in mesh.get("primitives") or []:
+            attrs = prim.get("attributes") or {}
+            if "TEXCOORD_0" not in attrs:
+                continue
+            image = None
+            material_index = prim.get("material")
+            if material_index is not None:
+                texture = ((gltf.get("materials") or [{}])[material_index].get("pbrMetallicRoughness") or {}).get("baseColorTexture") or {}
+                source = None
+                if "index" in texture:
+                    source = (gltf.get("textures") or [{}])[texture["index"]].get("source")
+                if isinstance(source, int) and source < len(decoded):
+                    image = decoded[source]
+            if image is None and decoded:
+                image = decoded[0]
+            if image is None:
+                continue
+            width, height = image.size
+            for uv in read_accessor(gltf, blob, attrs["TEXCOORD_0"]):
+                pixel = image.getpixel((int((uv[0] % 1) * (width - 1)), int((uv[1] % 1) * (height - 1))))
+                if sum(pixel[:3]) > 80:
+                    pixels.append((pixel[0], pixel[1], pixel[2]))
     if len(pixels) < 32:
         return None
     count = len(pixels)

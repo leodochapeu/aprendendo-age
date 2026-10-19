@@ -10534,60 +10534,6 @@
     "historia": "Nome científico – Draco vindictus sinensis\nTamanho – 204 kg, 5 metros de comprimento\nDieta – carnívoro\n\nYazi é uma criatura mítica com um corpo que combina características de lobo, leopardo e dragão. Traz uma lâmina afiada na boca e é frequentemente retratado com um olhar raivoso, criando uma imagem aterrorizante.\n\nNas lendas populares chinesas, Yazi simboliza uma natureza vingativa e a prontidão para retaliar qualquer ofensa. Ele também serve como talismã protetor contra o mal. Devido a esses atributos, Yazi é amplamente usado na decoração de armas e construções, uma besta guardiã incumbida de afastar os maus espíritos."
   },
   {
-    "id": 151,
-    "nome": "Cavaleiro Qing",
-    "ingles": "Qing Rider",
-    "tipo": [
-      {
-        "type": "Cavalaria",
-        "icon": "aomr_type_cavalry_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 5,
-        "nome": "Chinês :aomr_pantheon_chinese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 3,
-        "nome": "Heróica :aomr_heroic_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon",
-        "value": "2"
-      },
-      {
-        "type": "Arma de cerco",
-        "icon": "aomr_type_siege_weapon_icon",
-        "value": "3"
-      }
-    ],
-    "pontos_de_vida": 95,
-    "velocidade_de_ataque_atk_s": 1,
-    "dps": 6,
-    "armadura_anticorte": 15,
-    "armadura_antiperfurante": 35,
-    "comida": 65,
-    "madeira": 45,
-    "ouro": 0,
-    "favor": 0,
-    "custo_total": 110,
-    "populacao": 2,
-    "tempo_treinamento": 18,
-    "velocidade_movimento": 5.85,
-    "icon": "aomr_qingqi_icon",
-    "armadura_anticontusao": 99,
-    "dano_cortante": 6,
-    "alcance": 0.75,
-    "descricao_resumida": "Cavalaria. Boa contra soldados de longo alcance e armas de cerco.",
-    "descricao_avancada": "Combate soldados de longo alcance. Cavalaria boa apenas contra soldados de longo alcance e armas de cerco."
-  },
-  {
     "id": 152,
     "nome": "Cavaleiro de Terracota",
     "ingles": "Terracotta Rider",
@@ -13118,56 +13064,6 @@
     "historia": "Nome científico – Daemon aquarius\nTamanho – 38 kg\nDieta – carne de cavalo e pepinos\n\nO Kappa, um espírito da água, é um yōkai particularmente infame. Com a cabeça de um macaco e um casco de tartaruga nas costas, essa criatura violenta e demoníaca é conhecida por atrair pessoas desavisadas para corpos d'água para afogá-las. Muitas vezes tem como alvo mulheres e crianças, mas também é conhecido por ferir ou matar cavalos. No entanto, nem tudo sobre o Kappa é negativo. É um especialista em consertar ossos, e alguns médicos até procuraram sua ajuda para aprender essas práticas médicas. Apesar de suas tendências violentas, o Kappa é relativamente fácil de enganar. Os humanos podem suborná-lo com um pepino ou enganá-lo para se curvar. No topo da cabeça do Kappa há um recuo cheio de água – se essa água derramar quando o Kappa se curvar, ele se torna impotente e não pode mais atacar."
   },
   {
-    "id": 189,
-    "nome": "Tanuki",
-    "ingles": "Tanuki",
-    "tipo": [
-      {
-        "type": "Unidade mítica",
-        "icon": "aomr_type_myth_unit_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 2,
-        "nome": "Clássica :aomr_classical_age_icon:"
-      }
-    ],
-    "multiplicador": [],
-    "pontos_de_vida": 125,
-    "velocidade_de_ataque_atk_s": 0,
-    "dps": 0,
-    "armadura_anticorte": 25,
-    "armadura_antiperfurante": 40,
-    "comida": 0,
-    "madeira": 0,
-    "ouro": 120,
-    "favor": 10,
-    "custo_total": 130,
-    "populacao": 3,
-    "tempo_treinamento": 16,
-    "velocidade_movimento": 4.5,
-    "icon": "aomr_tanuki_icon",
-    "armadura_anticontusao": 80,
-    "fraco_contra": "Herói :aomr_type_hero_icon:",
-    "descricao_resumida": "Unidade mitológica. Cura unidades aliadas.",
-    "descricao_avancada": "Unidade mitológica. Cura unidades aliadas ao seu redor. Não tem ataque.",
-    "habilidades": [
-      {
-        "nome": "Cura em Área (Passivo)",
-        "descricao": "Cura unidades aliadas próximas.",
-        "icon": "aomr_tanuki_ability_icon"
-      }
-    ],
-    "historia": "Nome científico – Tanuculus mirificus\nTamanho – 6 kg\nDieta – pequenos mamíferos e saquê\n\nO tanuki é uma criatura mitológica proeminente na memória cultural japonesa. Baseado no tanuki da vida real – também conhecido como cão-guaxinim – esses seres míticos estão profundamente associados à natureza e à magia que ela personifica. Geralmente benevolentes com os humanos, eles são conhecidos por oferecer cura ou auxílio àqueles que consideram dignos."
-  },
-  {
     "id": 190,
     "nome": "Wanyūdō",
     "ingles": "Wanyūdō",
@@ -13516,60 +13412,6 @@
     "historia": "As onna-musha eram uma classe de elite de mulheres guerreiras no Japão feudal. Elas eram habilidosas com arco e flecha, equitação e artes marciais. Uma dos onna-musha mais famosas da história foi Tomoe Gozen, que nasceu em 1157 EC e, de acordo com alguns rumores, viveu até os noventa anos. As histórias falam de seu destemor, capacidade de liderar outras pessoas no campo de batalha e seu papel significativo na Guerra Genpei. Em uma batalha particularmente famosa, quando seu líder Yoshinaka foi mortalmente ferido, Tomoe cavalgou e decapitou Onda no Hachiro Morishige antes de escapar do campo de batalha."
   },
   {
-    "id": 195,
-    "nome": "Espada Ronin",
-    "ingles": "Masterless Sword",
-    "tipo": [
-      {
-        "type": "Unidade mítica",
-        "icon": "aomr_type_myth_unit_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 3,
-        "nome": "Heróica :aomr_heroic_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Unidade mítica",
-        "icon": "aomr_type_myth_unit_icon",
-        "value": "2"
-      },
-      {
-        "type": "Herói",
-        "icon": "aomr_type_hero_icon",
-        "value": "0.5"
-      }
-    ],
-    "pontos_de_vida": 15,
-    "velocidade_de_ataque_atk_s": 1.5,
-    "dps": 75,
-    "armadura_anticorte": 20,
-    "armadura_antiperfurante": 30,
-    "comida": 0,
-    "madeira": 0,
-    "ouro": 0,
-    "favor": 0,
-    "custo_total": 0,
-    "populacao": 0,
-    "tempo_treinamento": 0,
-    "velocidade_movimento": 4,
-    "icon": "aomr_masterless_sword_icon",
-    "armadura_anticontusao": 80,
-    "dano_cortante": 50,
-    "alcance": 1,
-    "fraco_contra": "Herói :aomr_type_hero_icon:",
-    "descricao_avancada": "A espada de um samurai, deixada para trás após sua morte. Pode atacar uma última vez."
-  },
-  {
     "id": 196,
     "nome": "Oni",
     "ingles": "Oni",
@@ -13848,55 +13690,6 @@
     "descricao_resumida": "Unidade mitológica. Boa contra soldados humanos, mas dura pouco tempo.",
     "descricao_avancada": "Unidade mitológica. Um cadáver reanimado que arranha os inimigos. Bom contra soldados humanos, mas dura pouco tempo.",
     "historia": "Nome científico – Telum cadavericum\nTamanho – 52 kg\nDieta – nada\n\nUm miserável é um cadáver que os Onmoraki usam como projétil para arremessar contra os inimigos. Semelhante ao conceito ocidental de zumbi, o miserável é um corpo morto que pode ser reanimado por um curto período de tempo para lutar por um exército."
-  },
-  {
-    "id": 200,
-    "nome": "Samurai Hatamoto",
-    "ingles": "Hatamoto Samurai",
-    "tipo": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 4,
-        "nome": "Mítica :aomr_mythic_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon",
-        "value": "1.5"
-      }
-    ],
-    "pontos_de_vida": 190,
-    "velocidade_de_ataque_atk_s": 1.2,
-    "dps": 19.2,
-    "armadura_anticorte": 45,
-    "armadura_antiperfurante": 15,
-    "comida": 105,
-    "madeira": 0,
-    "ouro": 75,
-    "favor": 0,
-    "custo_total": 180,
-    "populacao": 0,
-    "tempo_treinamento": 0,
-    "velocidade_movimento": 4.2,
-    "icon": "aomr_samurai_icon",
-    "armadura_anticontusao": 99,
-    "dano_divino": 16,
-    "alcance": 0.5,
-    "descricao_resumida": "Infantaria. Guerreiro versátil.",
-    "descricao_avancada": "Infantaria cara, mas durável, convocada por Takemikazuchi. Boa contra qualquer coisa que consiga alcançar."
   },
   {
     "id": 201,

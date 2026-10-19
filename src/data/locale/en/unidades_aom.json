@@ -10424,60 +10424,6 @@
     "historia": "Scientific name: Draco vindictus sinensis\nSize: 450 lbs, 17' long\nDiet: Carnivorous\n\nYazi is a mythical creature with a body that combines features of a wolf, leopard, and dragon. It holds a sharp blade in its mouth and is often depicted with a fierce, angry glare, creating a terrifying image.\n\nIn Chinese folk legends, Yazi symbolizes a vengeful nature and a readiness to repay any slight. It also serves as a protective talisman against evil. Because of these attributes, Yazi is widely used in the decoration of weapons and buildings as a guardian beast to ward off evil spirits."
   },
   {
-    "id": 151,
-    "nome": "Qing Rider",
-    "ingles": "Qing Rider",
-    "tipo": [
-      {
-        "type": "Cavalaria",
-        "icon": "aomr_type_cavalry_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 5,
-        "nome": "Chinês :aomr_pantheon_chinese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 3,
-        "nome": "Heroic :aomr_heroic_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon",
-        "value": "2"
-      },
-      {
-        "type": "Arma de cerco",
-        "icon": "aomr_type_siege_weapon_icon",
-        "value": "3"
-      }
-    ],
-    "pontos_de_vida": 95,
-    "velocidade_de_ataque_atk_s": 1,
-    "dps": 6,
-    "armadura_anticorte": 15,
-    "armadura_antiperfurante": 35,
-    "comida": 65,
-    "madeira": 45,
-    "ouro": 0,
-    "favor": 0,
-    "custo_total": 110,
-    "populacao": 2,
-    "tempo_treinamento": 18,
-    "velocidade_movimento": 5.85,
-    "icon": "aomr_qingqi_icon",
-    "armadura_anticontusao": 99,
-    "dano_cortante": 6,
-    "alcance": 0.75,
-    "descricao_resumida": "Cavalry. Good vs. ranged soldiers and siege engines.",
-    "descricao_avancada": "Counter to ranged soldiers. Cavalry only good against ranged soldiers and siege engines."
-  },
-  {
     "id": 152,
     "nome": "Terracotta Rider",
     "ingles": "Terracotta Rider",
@@ -12990,56 +12936,6 @@
     "historia": "Scientific name – Daemon aquarius\nSize – 85 lbs\nDiet – horse meat and cucumbers\n\nThe Kappa, a water sprite, is a particularly infamous yōkai. With the head of a monkey and a tortoise shell on its back, this violent and demonic creature is known for luring unsuspecting people into bodies of water to drown them. It often targets women and children but is also known to harm or kill horses. However, not everything about the Kappa is negative. It is an expert in setting bones, and some doctors have even sought its help to learn these medical practices. Despite its violent tendencies, the Kappa is relatively easy to outwit. Humans can bribe it with a cucumber or trick it into bowing. Atop the Kappa's head is an indentation filled with water – if this water spills when the Kappa bows, it becomes powerless and can no longer attack."
   },
   {
-    "id": 189,
-    "nome": "Tanuki",
-    "ingles": "Tanuki",
-    "tipo": [
-      {
-        "type": "Mythic",
-        "icon": "aomr_type_myth_unit_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 2,
-        "nome": "Classical :aomr_classical_age_icon:"
-      }
-    ],
-    "multiplicador": [],
-    "pontos_de_vida": 125,
-    "velocidade_de_ataque_atk_s": 0,
-    "dps": 0,
-    "armadura_anticorte": 25,
-    "armadura_antiperfurante": 40,
-    "comida": 0,
-    "madeira": 0,
-    "ouro": 120,
-    "favor": 10,
-    "custo_total": 130,
-    "populacao": 3,
-    "tempo_treinamento": 16,
-    "velocidade_movimento": 4.5,
-    "icon": "aomr_tanuki_icon",
-    "armadura_anticontusao": 80,
-    "fraco_contra": "Herói :aomr_type_hero_icon:",
-    "descricao_resumida": "Myth unit. Heals allied units.",
-    "descricao_avancada": "Myth unit. Heals allied units around it. Has no attack.",
-    "habilidades": [
-      {
-        "nome": "Area Heal (Passive)",
-        "descricao": "Heals nearby allied units.",
-        "icon": "aomr_tanuki_ability_icon"
-      }
-    ],
-    "historia": "Scientific name – Tanuculus mirificus\nSize – 13 lbs\nDiet – small mammals and sake\n\nThe tanuki is a prominent mythological creature in Japanese cultural memory. Based on the real-life tanuki – also known as the raccoon dog – these mythical beings are deeply associated with nature and the magic it embodies. Generally benevolent toward humans, they are known to offer healing or aid to those whom they deem worthy."
-  },
-  {
     "id": 190,
     "nome": "Wanyūdō",
     "ingles": "Wanyūdō",
@@ -13398,60 +13294,6 @@
     "historia": "The onna-musha were an elite class of warrior women in feudal Japan. They were skilled in archery, horseback riding, and martial arts. One of the most famous onna-musha in history was Tomoe Gozen, who was born in 1157 CE and, according to some rumors, lived to be ninety years old. Stories tell of her fearlessness, ability to lead others on the battlefield, and her significant role in the Genpei War. In one particularly famous battle, when her leader Yoshinaka was mortally wounded, Tomoe rode out and beheaded Onda no Hachiro Morishige before escaping the battlefield."
   },
   {
-    "id": 195,
-    "nome": "Masterless Sword",
-    "ingles": "Masterless Sword",
-    "tipo": [
-      {
-        "type": "Mythic",
-        "icon": "aomr_type_myth_unit_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 3,
-        "nome": "Heroic :aomr_heroic_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Unidade mítica",
-        "icon": "aomr_type_myth_unit_icon",
-        "value": "2"
-      },
-      {
-        "type": "Herói",
-        "icon": "aomr_type_hero_icon",
-        "value": "0.5"
-      }
-    ],
-    "pontos_de_vida": 15,
-    "velocidade_de_ataque_atk_s": 1.5,
-    "dps": 75,
-    "armadura_anticorte": 20,
-    "armadura_antiperfurante": 30,
-    "comida": 0,
-    "madeira": 0,
-    "ouro": 0,
-    "favor": 0,
-    "custo_total": 0,
-    "populacao": 0,
-    "tempo_treinamento": 0,
-    "velocidade_movimento": 4,
-    "icon": "aomr_masterless_sword_icon",
-    "armadura_anticontusao": 80,
-    "dano_cortante": 50,
-    "alcance": 1,
-    "fraco_contra": "Herói :aomr_type_hero_icon:",
-    "descricao_avancada": "A Samurai's sword, left behind after it perished. Can attack one final time."
-  },
-  {
     "id": 196,
     "nome": "Oni",
     "ingles": "Oni",
@@ -13734,55 +13576,6 @@
     "descricao_resumida": "Myth unit. Good vs. human soldiers, but only lasts a short time.",
     "descricao_avancada": "Myth unit. A reanimated corpse who claws at enemies. Good against human soldiers, but only lasts a short time.",
     "historia": "Scientific Name – Telum cadavericum\nSize – 115 lbs\nDiet – nothing\n\nA wretch is a corpse that the Onmoraki uses as a projectile to hurl at enemies. Similar to the Western concept of a zombie, the wretch is a dead body that can be reanimated for a short period of time to fight for an army."
-  },
-  {
-    "id": 200,
-    "nome": "Hatamoto Samurai",
-    "ingles": "Hatamoto Samurai",
-    "tipo": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 4,
-        "nome": "Mythic :aomr_mythic_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon",
-        "value": "1.5"
-      }
-    ],
-    "pontos_de_vida": 190,
-    "velocidade_de_ataque_atk_s": 1.2,
-    "dps": 19.2,
-    "armadura_anticorte": 45,
-    "armadura_antiperfurante": 15,
-    "comida": 105,
-    "madeira": 0,
-    "ouro": 75,
-    "favor": 0,
-    "custo_total": 180,
-    "populacao": 0,
-    "tempo_treinamento": 0,
-    "velocidade_movimento": 4.2,
-    "icon": "aomr_samurai_icon",
-    "armadura_anticontusao": 99,
-    "dano_divino": 16,
-    "alcance": 0.5,
-    "descricao_resumida": "Infantry. Versatile warrior.",
-    "descricao_avancada": "Expensive but durable infantry summoned by Takemikazuchi. Good against whatever it can reach."
   },
   {
     "id": 201,

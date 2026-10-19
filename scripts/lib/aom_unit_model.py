@@ -405,6 +405,24 @@ def _is_death_component(elem: ET.Element) -> bool:
     return _component_label(elem).startswith("death")
 
 
+def _is_cinematic_component(elem: ET.Element) -> bool:
+    """Plano técnico do cinema, como o quadrado sob a Miko."""
+    return _component_label(elem).startswith("cinematic")
+
+
+def _held_projectile(root: ET.Element, name: str) -> bool:
+    """Dardo preso no componente, na mão, e não só no quadro do arremesso."""
+    component = _body_component(root)
+    for child in component:
+        if _tag(child) != "attach":
+            continue
+        if (child.get("name") or "").strip().lower() != name:
+            continue
+        point = (child.get("attachpoint") or "").strip().lower()
+        return point == "weapon" or point.startswith("weapon")
+    return False
+
+
 # Corpo feminino, quando o animfile tem os dois. None usa o primeiro submodel (masculino).
 _sex_choice: ContextVar[str | None] = ContextVar("aom_unit_sex", default=None)
 # Aldeão não fica com o arco na pose da página.
@@ -678,7 +696,9 @@ def models_in_anim(root: ET.Element) -> list[str]:
     scope_root = _visual_scope(root)
     components = [child for child in scope_root if _tag(child) == "component"]
     # DeathComp só anima a morte; não entra na pose Idle do site.
-    scopes = [c for c in components if not _is_death_component(c)] or components or [scope_root]
+    scopes = [
+        c for c in components if not _is_death_component(c) and not _is_cinematic_component(c)
+    ] or components or [scope_root]
     for scope in scopes:
         picked = _pick_model(list(_iter_model_files(scope)))
         if picked and picked not in found:
@@ -872,24 +892,107 @@ def _parent_texture_path(model_path: str) -> str | None:
     return None
 
 
+def _named_material_texture(
+    bars: BarIndex, model_path: str, material_name: str, variant: int
+) -> tuple[str | None, tuple[str, str] | None]:
+    """O .material diz qual albedo cada submaterial usa. O elmo não é o corpo."""
+    material = load_material_xml(bars, model_path)
+    if material is None:
+        return None, None
+    kind, override = _material_look(material, material_name, variant)
+    if not override:
+        return kind, None
+    rel = override if override.lower().endswith(".ddt") else f"{override}.ddt"
+    return kind, bars.find(bars.ddt_index(), rel)
+
+
+def _emission_shell(bars: BarIndex, model_path: str, material_name: str, variant: int = 0) -> bool:
+    """Malha de brilho na borda, sem cor. Cobre o corpo de verdade quando existe."""
+    if variant:
+        return False
+    kind, named = _named_material_texture(bars, model_path, material_name, variant)
+    return kind == "edge_emission" and named is None
+
+
+def _drop_covered_shells(prims: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if any(not prim.get("shell") for prim in prims):
+        kept = [prim for prim in prims if not prim.get("shell")]
+        return _unbury_markings(kept)
+    return prims
+
+
+def _unbury_markings(prims: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Desenho em alfa por cima do corpo. Sem o vulto, ele fica por dentro da malha."""
+    if len(prims) < 2:
+        return prims
+    largest = max(prims, key=lambda prim: len(prim["positions"]))
+    box_min = [min(point[axis] for point in largest["positions"]) for axis in range(3)]
+    box_max = [max(point[axis] for point in largest["positions"]) for axis in range(3)]
+    for prim in prims:
+        points = prim["positions"]
+        if prim is largest or len(points) > len(largest["positions"]) * 0.5 or not _inked(prim.get("image")):
+            continue
+        inside = 0
+        for point in points:
+            if all(box_min[axis] - 0.05 <= point[axis] <= box_max[axis] + 0.05 for axis in range(3)):
+                inside += 1
+        if inside < len(points) * 0.8:
+            continue
+        normals = prim.get("normals") or []
+        if len(normals) != len(points):
+            continue
+        lifted: list[tuple[float, float, float]] = []
+        for point, normal in zip(points, normals):
+            length = (normal[0] ** 2 + normal[1] ** 2 + normal[2] ** 2) ** 0.5 or 1.0
+            lifted.append(
+                (
+                    point[0] + normal[0] / length * 0.08,
+                    point[1] + normal[1] / length * 0.08,
+                    point[2] + normal[2] / length * 0.08,
+                )
+            )
+        prim["positions"] = lifted
+    return prims
+
+
+def _inked(image: bytes | None) -> bool:
+    if not image:
+        return False
+    with Image.open(io.BytesIO(image)) as picture:
+        rgb = picture.convert("RGB")
+        rgb.thumbnail((48, 48))
+        pixels = list(rgb.getdata())
+    if len(pixels) < 16:
+        return False
+    dark = sum(1 for red, green, blue in pixels if red + green + blue < 40)
+    bright = sum(1 for red, green, blue in pixels if red + green + blue > 180)
+    return dark > len(pixels) * 0.5 and bright > len(pixels) * 0.01
+
+
+def _same_hit(left: tuple[str, str] | None, right: tuple[str, str] | None) -> bool:
+    if left is None or right is None:
+        return False
+    return left[1].replace("\\", "/").lower() == right[1].replace("\\", "/").lower()
+
+
 def ensure_texture(bars: BarIndex, model_path: str, material_name: str, variant: int = 0) -> bytes | None:
     hit = _find_upgrade_basecolor(bars, model_path, material_name, variant) if variant else None
+    kind = None
     if hit is None:
-        hit = _find_basecolor(bars, model_path, material_name)
-    if hit is None:
-        parent = _parent_texture_path(model_path)
-        if parent:
-            hit = _find_basecolor(bars, parent, material_name)
-    if hit is None:
-        material = load_material_xml(bars, model_path)
-        if material is not None:
-            kind, override = _material_look(material, material_name, variant)
-            if override:
-                rel = override if override.lower().endswith(".ddt") else f"{override}.ddt"
-                hit = bars.find(bars.ddt_index(), rel)
-            elif kind == "edge_emission":
-                # Corpo sem albedo: no jogo é um vulto escuro com brilho na borda.
-                return _solid_texture((32, 34, 38))
+        kind, named = _named_material_texture(bars, model_path, material_name, variant)
+        if kind == "edge_emission" and named is None:
+            # Sem albedo: no jogo é um vulto escuro com brilho na borda.
+            return _solid_texture((32, 34, 38))
+        generic = _find_basecolor(bars, model_path, material_name)
+        # O arquivo genérico da pasta pinta todo submaterial com a textura do corpo.
+        hit = named if named is not None and not _same_hit(named, generic) else generic
+        if hit is None:
+            parent = _parent_texture_path(model_path)
+            if parent:
+                hit = _find_basecolor(bars, parent, material_name)
+        if hit is None and kind == "edge_emission":
+            # Corpo sem albedo: no jogo é um vulto escuro com brilho na borda.
+            return _solid_texture((32, 34, 38))
     if hit is None:
         low = model_path.replace("\\", "/").lower()
         if "wheel" in low.rsplit("/", 1)[-1]:
@@ -1471,15 +1574,28 @@ def resolve_visual_root(bars: BarIndex, root: ET.Element, depth: int = 0) -> ET.
     return root
 
 
+def _own_anims(scope: ET.Element):
+    """Animações da unidade. As de um anexo (o tronco do aríete) não valem para o corpo."""
+
+    def walk(node: ET.Element, in_attachment: bool):
+        tag = _tag(node)
+        nested = in_attachment or tag == "attachment"
+        if tag == "anim" and not nested:
+            yield node
+            return
+        for child in node:
+            yield from walk(child, nested)
+
+    yield from walk(scope, False)
+
+
 def _idle_clip(root: ET.Element) -> str | None:
     """A Idle às vezes está no submodel (corpo masculino/feminino), não na raiz."""
     scopes = [_visual_scope(root)]
     if scopes[0] is not root:
         scopes.append(root)
     for scope in scopes:
-        for child in scope.iter():
-            if _tag(child) != "anim":
-                continue
+        for child in _own_anims(scope):
             label = (child.text or child.get("name") or "").strip().lower()
             if label != "idle":
                 continue
@@ -1833,10 +1949,11 @@ def _component_only_attachments(root: ET.Element) -> list[tuple[str, str | ET.El
         low = name.lower()
         if low not in on_component or low in on_anim:
             continue
+        held_javelin = low == "javelin" and _held_projectile(root, low)
         # Só as armas das duas mãos. Rider, elmo e escudo já são peças à parte.
-        if low not in {"weaponright", "weaponleft"}:
+        if low not in {"weaponright", "weaponleft"} and not held_javelin:
             continue
-        if low in GATHER_ATTACHMENTS or low in PROJECTILE_ATTACHMENTS:
+        if low in GATHER_ATTACHMENTS or (low in PROJECTILE_ATTACHMENTS and not held_javelin):
             continue
         if isinstance(source, str) and "/vfx/" in source.replace("\\", "/").lower():
             continue
@@ -1846,6 +1963,60 @@ def _component_only_attachments(root: ET.Element) -> list[tuple[str, str | ET.El
 
 def _cloud(prims: list[dict[str, Any]]) -> list[tuple[float, float, float]]:
     return [point for prim in prims for point in prim["positions"]]
+
+
+def _raise_held_javelin(
+    body: list[dict[str, Any]],
+    weapon: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """O dardo da Idle aponta para a câmera e some na vista de frente.
+
+    Gira em volta da mão para a ponta subir, sem soltar o cabo.
+    """
+    points = _cloud(weapon)
+    body_points = _cloud(body)
+    if len(points) < 8 or len(body_points) < 8:
+        return weapon
+    spans = [max(point[axis] for point in points) - min(point[axis] for point in points) for axis in range(3)]
+    length = max(spans)
+    if length < 1.05 or spans[1] > length * 0.35:
+        return weapon
+    sample = body_points[::12] or body_points
+    grip = min(
+        points,
+        key=lambda point: min(
+            (point[0] - other[0]) ** 2 + (point[1] - other[1]) ** 2 + (point[2] - other[2]) ** 2
+            for other in sample
+        ),
+    )
+    ends = [min(points, key=lambda point: point[axis]) for axis in range(3)]
+    ends.extend(max(points, key=lambda point: point[axis]) for axis in range(3))
+    tip = max(ends, key=lambda point: point[2])
+    forward = tip[2] - grip[2]
+    if forward < 0.25:
+        return weapon
+    import math
+
+    pitch = math.radians(-64)
+    roll = math.radians(-18)
+    pitch_cos, pitch_sin = math.cos(pitch), math.sin(pitch)
+    roll_cos, roll_sin = math.cos(roll), math.sin(roll)
+    raised: list[dict[str, Any]] = []
+    for prim in weapon:
+        moved = dict(prim)
+        moved["positions"] = []
+        for x, y, z in prim["positions"]:
+            local_x = x - grip[0]
+            local_y = y - grip[1]
+            local_z = z - grip[2]
+            pitched_y = local_y * pitch_cos - local_z * pitch_sin
+            pitched_z = local_y * pitch_sin + local_z * pitch_cos
+            # A câmera padrão está do outro lado. A ponta vem para o lado visível.
+            rolled_x = local_x * roll_cos - pitched_y * roll_sin
+            rolled_y = local_x * roll_sin + pitched_y * roll_cos
+            moved["positions"].append((grip[0] + rolled_x, grip[1] + rolled_y, grip[2] + pitched_z))
+        raised.append(moved)
+    return raised
 
 
 def _principal_axis(points: list[tuple[float, float, float]]) -> tuple[list[float], list[float]]:
@@ -1933,8 +2104,8 @@ def _expose_mounted_blade(weapon: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return turned
 
 
-def _clear_mounted_blade(body: list[dict[str, Any]], weapon: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Tira a espada de dentro do cavalo e traz para o flanco, à altura do cavaleiro."""
+def _lean_mounted_blade(body: list[dict[str, Any]], weapon: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """A lâmina pendurada atravessa o cavalo. Inclina a ponta para fora, com o cabo na mão."""
     body_points = _cloud(body)
     weapon_points = _cloud(weapon)
     if len(body_points) < 20 or len(weapon_points) < 16:
@@ -1945,24 +2116,59 @@ def _clear_mounted_blade(body: list[dict[str, Any]], weapon: list[dict[str, Any]
     span = max(max(point[axis] for point in weapon_points) - min(point[axis] for point in weapon_points) for axis in range(3))
     if span > 1.3:
         return weapon
-    body_x1 = max(point[0] for point in body_points)
-    body_z = sum(point[2] for point in body_points) / len(body_points)
-    weapon_x = sum(point[0] for point in weapon_points) / len(weapon_points)
-    weapon_z = sum(point[2] for point in weapon_points) / len(weapon_points)
-    shift_x = 0.0
-    shift_z = 0.0
-    if weapon_z < body_z - 0.35:
-        shift_z = (body_z - 0.15) - weapon_z
-    # A câmera da página fica do lado +X. No outro flanco a lâmina some atrás do peito.
-    shift_x = (body_x1 + 0.12) - weapon_x
-    if abs(shift_x) < 0.01 and abs(shift_z) < 0.01:
+    grip = max(weapon_points, key=lambda point: point[1])
+    tip = min(weapon_points, key=lambda point: point[1])
+    drop = grip[1] - tip[1]
+    if drop < 0.2:
+        return weapon
+    side = -1.0 if grip[0] < 0 else 1.0
+    flank = min(point[0] for point in body_points) if side < 0 else max(point[0] for point in body_points)
+    target = flank + side * 0.14
+    need = target - tip[0]
+    if side * need <= 0.02:
+        return weapon
+    leaned: list[dict[str, Any]] = []
+    for prim in weapon:
+        leaned.append(
+            {
+                **prim,
+                "positions": [
+                    (point[0] + need * (grip[1] - point[1]) / drop, point[1], point[2])
+                    for point in prim["positions"]
+                ],
+            }
+        )
+    return leaned
+
+
+def _seat_mounted_blade(
+    bars: BarIndex, rider_root: ET.Element, weapon: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """Encosta o cabo da espada pendurada na mão direita do cavaleiro."""
+    points = _cloud(weapon)
+    if len(points) < 16:
+        return weapon
+    paths = models_in_anim(rider_root)
+    if not paths:
+        return weapon
+    glb_path = ensure_model_glb(bars, paths[0])
+    if glb_path is None:
+        return weapon
+    gltf, blob = read_glb(glb_path)
+    hand = _bone_translation(gltf, _posed_bone_worlds(bars, rider_root, gltf, blob), "mixamorig:righthand")
+    if hand is None:
+        return weapon
+    grip = min(points, key=lambda point: sum((point[i] - hand[i]) ** 2 for i in range(3)))
+    delta = [hand[i] - grip[i] for i in range(3)]
+    gap = (delta[0] ** 2 + delta[1] ** 2 + delta[2] ** 2) ** 0.5
+    if gap < 0.02 or gap > 0.4:
         return weapon
     moved: list[dict[str, Any]] = []
     for prim in weapon:
         moved.append(
             {
                 **prim,
-                "positions": [(point[0] + shift_x, point[1], point[2] + shift_z) for point in prim["positions"]],
+                "positions": [(point[0] + delta[0], point[1] + delta[1], point[2] + delta[2]) for point in prim["positions"]],
             }
         )
     return moved
@@ -2024,6 +2230,8 @@ def visual_primitives(
     for prim in prims:
         body_variant = texture_variant or _bare_variant(_body_component(root))
         prim["image"] = ensure_texture(bars, body_path, prim["material"], body_variant)
+        if prim["image"] is not None and _emission_shell(bars, body_path, prim["material"], body_variant):
+            prim["shell"] = True
     for extra in model_paths[1:]:
         if _is_dummy_model(extra):
             continue
@@ -2049,13 +2257,16 @@ def visual_primitives(
                 continue
             child_prims, _child_names = visual_primitives(bars, included, depth + 1, techs, "body", texture_variant)
             if child_prims:
-                prims.extend(apply_matrix(child_prims, matrix))
-        return prims, []
+                placed = apply_matrix(child_prims, matrix)
+                if name.lower() == "javelin":
+                    placed = _raise_held_javelin(prims, placed)
+                prims.extend(placed)
+        return _drop_covered_shells(prims), []
 
     attached: list[str] = []
     for name, source in attachments:
         low = name.lower()
-        if low in PROJECTILE_ATTACHMENTS and low != (only_head or "").lower():
+        if low in PROJECTILE_ATTACHMENTS and low != (only_head or "").lower() and not _held_projectile(root, low):
             continue
         if low in GATHER_ATTACHMENTS and low != (only_head or "").lower():
             continue
@@ -2100,16 +2311,23 @@ def visual_primitives(
                     matrix = [row[:] for row in matrix]
                     for row in range(3):
                         matrix[row][3] += shift[row]
+        leaned = False
         if low == "rider" and isinstance(only, tuple) and len(only) > 1 and only[1].lower() == "weapon":
-            child_prims = _expose_mounted_blade(child_prims)
+            hung = _expose_mounted_blade(child_prims)
+            if hung is not child_prims:
+                hung = _seat_mounted_blade(bars, included, hung)
+                leaned = True
+            child_prims = hung
         placed = apply_matrix(child_prims, matrix)
-        if low == "rider" and isinstance(only, tuple) and len(only) > 1 and only[1].lower() == "weapon":
-            placed = _clear_mounted_blade(prims, placed)
+        if leaned:
+            placed = _lean_mounted_blade(prims, placed)
+        if low == "javelin":
+            placed = _raise_held_javelin(prims[:body_count], placed)
         prims.extend(placed)
         attached.append(name)
     if only:
         return prims[body_count:], attached
-    return prims, attached
+    return _drop_covered_shells(prims), attached
 
 
 def bake_unit_glb(
