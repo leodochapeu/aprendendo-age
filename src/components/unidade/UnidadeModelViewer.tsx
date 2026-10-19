@@ -13,6 +13,8 @@ type UnidadeModelViewerProps = {
   hero?: boolean;
   hover?: boolean;
   vfx?: IdleVfxAnchor[];
+  /** Graus acima da horizontal. Sem o valor, a câmera fica quase frontal, como nas unidades. */
+  pitch?: number;
 };
 
 type Stage = {
@@ -273,10 +275,11 @@ function clearPivot(pivot: THREE.Group) {
   }
 }
 
-export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = [] }: UnidadeModelViewerProps) {
+export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = [], pitch }: UnidadeModelViewerProps) {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const yawRef = useRef(0.45);
+  const pitchRef = useRef(pitch);
   const dragRef = useRef({ x: 0, active: false });
   const stageRef = useRef<Stage | null>(null);
   const auraRef = useRef<HeroAura | null>(null);
@@ -296,7 +299,8 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
     heroRef.current = hero;
     hoverRef.current = hover;
     vfxRef.current = vfx;
-  }, [hero, hover, vfx]);
+    pitchRef.current = pitch;
+  }, [hero, hover, vfx, pitch]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -335,11 +339,23 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
 
     const placeCamera = () => {
       const yaw = yawRef.current;
-      camera.position.set(
-        target.x + Math.sin(yaw) * distance.current,
-        target.y + distance.current * 0.06,
-        target.z + Math.cos(yaw) * distance.current,
-      );
+      const pitchDeg = pitchRef.current;
+      if (pitchDeg == null) {
+        camera.position.set(
+          target.x + Math.sin(yaw) * distance.current,
+          target.y + distance.current * 0.06,
+          target.z + Math.cos(yaw) * distance.current,
+        );
+      } else {
+        const pitchRad = (pitchDeg * Math.PI) / 180;
+        const horizontal = distance.current * Math.cos(pitchRad);
+        const vertical = distance.current * Math.sin(pitchRad);
+        camera.position.set(
+          target.x + Math.sin(yaw) * horizontal,
+          target.y + vertical,
+          target.z + Math.cos(yaw) * horizontal,
+        );
+      }
       camera.lookAt(target);
     };
 

@@ -1,6 +1,6 @@
-import { lazy, Suspense } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
+import { BuildingProjection } from "@/components/construcao/BuildingProjection";
 import { BackLink } from "@/components/ui/BackLink";
 import { InfoRow } from "@/components/ui/InfoRow";
 import { InfoRowPortraitCluster, InfoRowPortraitOrText } from "@/components/ui/InfoRowPortraitCluster";
@@ -26,10 +26,6 @@ import { tecnologiaPortraitItemsFromNames } from "@/lib/tecnologiaPortraitItems"
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { hasTipoContent } from "@/lib/unidadeTipo";
 import type { PortraitHeaderItem } from "@/components/ui/PortraitHeaderActions";
-
-const BuildingProjection = lazy(() =>
-  import("@/components/unidade/UnidadeModelViewer").then((mod) => ({ default: mod.UnidadeModelViewer })),
-);
 
 function splitCommaNames(raw: string | undefined): string[] {
   if (!raw?.trim()) return [];
@@ -199,9 +195,7 @@ export function ConstrucaoDetailPage() {
 
         {modelUrl ? (
           <Section title={t("common.projection3d")}>
-            <Suspense fallback={<p className="text-zinc-500">{t("common.loading")}</p>}>
-              <BuildingProjection urls={[modelUrl]} />
-            </Suspense>
+            <BuildingProjection key={c.id} buildingId={c.id} fallbackUrl={modelUrl} defaultPantheonId={c.panteao_id} />
           </Section>
         ) : (
           costSection

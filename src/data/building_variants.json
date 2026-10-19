@@ -1,0 +1,274 @@
+{
+  "8": {
+    "pantheons": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "models": {
+      "1": {
+        "base": "/assets/building-models/variants/8-1-base.glb"
+      },
+      "2": {
+        "base": "/assets/building-models/variants/8-2-base.glb"
+      },
+      "3": {
+        "base": "/assets/building-models/variants/8-3-base.glb"
+      },
+      "5": {
+        "base": "/assets/building-models/variants/8-5-base.glb"
+      },
+      "6": {
+        "base": "/assets/building-models/variants/8-6-base.glb"
+      },
+      "7": {
+        "base": "/assets/building-models/variants/8-7-base.glb"
+      }
+    }
+  },
+  "69": {
+    "pantheons": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "upgrades": [
+      {
+        "tag": "stonewall",
+        "rank": 1,
+        "catalog": "Stone Wall",
+        "icon": "aomr_stone_wall_greek_icon",
+        "pantheons": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "tag": "fortifiedwall",
+        "rank": 2,
+        "catalog": "Fortified Wall",
+        "icon": "aomr_fortified_wall_greek_icon",
+        "pantheons": [
+          1,
+          2,
+          5,
+          6
+        ]
+      },
+      {
+        "tag": "citadelwall",
+        "rank": 3,
+        "label": {
+          "pt": "Muralha de Cidadela",
+          "en": "Citadel Wall"
+        },
+        "pantheons": [
+          2
+        ]
+      },
+      {
+        "tag": "bronzewall",
+        "rank": 2,
+        "label": {
+          "pt": "Muralha de Bronze",
+          "en": "Bronze Wall"
+        },
+        "pantheons": [
+          4
+        ]
+      },
+      {
+        "tag": "ironwall",
+        "rank": 3,
+        "label": {
+          "pt": "Muralha de Ferro",
+          "en": "Iron Wall"
+        },
+        "pantheons": [
+          4
+        ]
+      },
+      {
+        "tag": "orichalcumwall",
+        "rank": 4,
+        "label": {
+          "pt": "Muralha de Oricalco",
+          "en": "Orichalcum Wall"
+        },
+        "pantheons": [
+          4
+        ]
+      },
+      {
+        "tag": "greatwall",
+        "rank": 3,
+        "label": {
+          "pt": "Grande Muralha",
+          "en": "Great Wall"
+        },
+        "pantheons": [
+          5
+        ]
+      }
+    ],
+    "models": {
+      "1": {
+        "base": "/assets/building-models/variants/69-base-wall_wooden_short.glb",
+        "stonewall": "/assets/building-models/variants/69-stonewall-wall_stone_g_short.glb",
+        "fortifiedwall": "/assets/building-models/variants/69-fortifiedwall-wall_fortified_g_short.glb"
+      },
+      "2": {
+        "base": "/assets/building-models/variants/69-base-wall_wooden_short.glb",
+        "stonewall": "/assets/building-models/variants/69-stonewall-wall_stone_e_short.glb",
+        "fortifiedwall": "/assets/building-models/variants/69-fortifiedwall-wall_fortified_e_short.glb",
+        "citadelwall": "/assets/building-models/variants/69-citadelwall-wall_citadel_short.glb"
+      },
+      "3": {
+        "base": "/assets/building-models/variants/69-base-wall_wooden_short.glb",
+        "stonewall": "/assets/building-models/variants/69-stonewall-wall_stone_n_short.glb"
+      },
+      "4": {
+        "base": "/assets/building-models/variants/69-base-wall_wooden_short.glb",
+        "stonewall": "/assets/building-models/variants/69-stonewall-wall_stone_a_short.glb",
+        "bronzewall": "/assets/building-models/variants/69-bronzewall-wall_bronze_short.glb",
+        "ironwall": "/assets/building-models/variants/69-ironwall-wall_iron_short.glb",
+        "orichalcumwall": "/assets/building-models/variants/69-orichalcumwall-wall_orichalcum_short.glb"
+      },
+      "5": {
+        "base": "/assets/building-models/variants/69-base-wall_wooden_short.glb",
+        "stonewall": "/assets/building-models/variants/69-stonewall-wall_stone_c_short.glb",
+        "fortifiedwall": "/assets/building-models/variants/69-fortifiedwall-wall_fortified_c_short.glb",
+        "greatwall": "/assets/building-models/variants/69-greatwall-wall_great_short.glb"
+      },
+      "6": {
+        "base": "/assets/building-models/variants/69-base-wall_wooden_short.glb",
+        "stonewall": "/assets/building-models/variants/69-stonewall-wall_stone_j_short.glb",
+        "fortifiedwall": "/assets/building-models/variants/69-fortifiedwall-wall_fortified_j_short.glb"
+      },
+      "7": {
+        "base": "/assets/building-models/variants/69-base-wall_wooden_short.glb",
+        "stonewall": "/assets/building-models/variants/69-stonewall-wall_stone_z_short.glb"
+      }
+    }
+  },
+  "70": {
+    "pantheons": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "upgrades": [
+      {
+        "tag": "watchtower",
+        "rank": 1,
+        "catalog": "Watch Tower",
+        "icon": "aomr_watch_tower_greek_icon",
+        "pantheons": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "tag": "guardtower",
+        "rank": 2,
+        "catalog": "Guard Tower",
+        "icon": "aomr_guard_tower_greek_icon",
+        "pantheons": [
+          1,
+          2,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "tag": "ballistatower",
+        "rank": 3,
+        "label": {
+          "pt": "Torre de Balista",
+          "en": "Ballista Tower"
+        },
+        "pantheons": [
+          2
+        ]
+      },
+      {
+        "tag": "fusilladetower",
+        "rank": 3,
+        "label": {
+          "pt": "Torre de Besta",
+          "en": "Crossbow Tower"
+        },
+        "pantheons": [
+          5
+        ]
+      },
+      {
+        "tag": "watchtower",
+        "rank": 1,
+        "catalog": "Tzompantli Watch Tower",
+        "icon": "aomr_tzompantli_watch_tower_icon",
+        "pantheons": [
+          7
+        ]
+      }
+    ],
+    "models": {
+      "1": {
+        "base": "/assets/building-models/variants/70-base-sentry_tower.glb",
+        "watchtower": "/assets/building-models/variants/70-watchtower-watch_tower_g_age4.glb",
+        "guardtower": "/assets/building-models/variants/70-guardtower-guard_tower_g_age4.glb"
+      },
+      "2": {
+        "base": "/assets/building-models/variants/70-base-sentry_tower.glb",
+        "watchtower": "/assets/building-models/variants/70-watchtower-watch_tower_e_age4.glb",
+        "guardtower": "/assets/building-models/variants/70-guardtower-guard_tower_e_age4.glb",
+        "ballistatower": "/assets/building-models/variants/70-ballistatower-ballista_tower.glb"
+      },
+      "3": {
+        "base": "/assets/building-models/variants/70-base-sentry_tower.glb",
+        "watchtower": "/assets/building-models/variants/70-watchtower-watch_tower_n_age4.glb"
+      },
+      "4": {
+        "base": "/assets/building-models/variants/70-base-sentry_tower.glb",
+        "watchtower": "/assets/building-models/variants/70-watchtower-watch_tower_a_age4.glb",
+        "guardtower": "/assets/building-models/variants/70-guardtower-guard_tower_a_age4.glb"
+      },
+      "5": {
+        "base": "/assets/building-models/variants/70-base-sentry_tower.glb",
+        "watchtower": "/assets/building-models/variants/70-watchtower-watch_tower_c_age4.glb",
+        "guardtower": "/assets/building-models/variants/70-guardtower-guard_tower_c_age4.glb",
+        "fusilladetower": "/assets/building-models/variants/70-fusilladetower-fusillade_tower.glb"
+      },
+      "6": {
+        "base": "/assets/building-models/variants/70-base-sentry_tower.glb",
+        "watchtower": "/assets/building-models/variants/70-watchtower-watch_tower_j_age4.glb",
+        "guardtower": "/assets/building-models/variants/70-guardtower-guard_tower_j_age4.glb"
+      },
+      "7": {
+        "base": "/assets/building-models/variants/70-base-tzompantli_tower_z_age1.glb",
+        "watchtower": "/assets/building-models/variants/70-watchtower-tzompantli_tower_z_age4.glb"
+      }
+    }
+  }
+}

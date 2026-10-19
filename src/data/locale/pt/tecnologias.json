@@ -366,7 +366,7 @@
     "comida": 200,
     "construcao_origem": [
       {
-        "nome": "Muralha de Madeira",
+        "nome": "Muralha",
         "id": 69
       },
       {
@@ -1067,7 +1067,7 @@
     "comida": 500,
     "construcao_origem": [
       {
-        "nome": "Muralha de Madeira",
+        "nome": "Muralha",
         "id": 69
       },
       {
@@ -10998,7 +10998,7 @@
     "beneficia": ":aomr_sentry_tower_icon: Torre de Sentinela e:aomr_baolei: Baolei (:piercedamage::rangeicon::los_icon_aoe3de:)",
     "construcao_origem": [
       {
-        "nome": "Muralha de Madeira",
+        "nome": "Muralha",
         "id": 69
       },
       {
@@ -14415,7 +14415,7 @@
     "tempo_s": 40,
     "construcao_origem": [
       {
-        "nome": "Muralha de Madeira",
+        "nome": "Muralha",
         "id": 69
       },
       {

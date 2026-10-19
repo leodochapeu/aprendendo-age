@@ -30,11 +30,16 @@ PRESERVED_FIELDS = frozenset(
         "unidades_ids",
         "unidades_id",
         "ingles",
+        "descricao_resumida",
+        "descricao_avancada",
+        "historia",
     }
 )
 
 BUILDING_CATALOG_ALIASES = {
     "Wooden Wall": "WallShort",
+    "Wall": "WallShort",
+    "Wooden Gate": "WallGate",
     "OX": "OxCartBuilding",
 }
 
@@ -83,6 +88,12 @@ def _catalog_name_candidates(catalog_name: str) -> list[str]:
 
     add(catalog_name)
     add(BUILDING_CATALOG_ALIASES.get(catalog_name, ""))
+
+    # "Wonder (Zeus)", "Village Center (Greek)" → base name before " ("
+    if " (" in catalog_name and catalog_name.endswith(")"):
+        base = catalog_name[: catalog_name.rfind(" (")].strip()
+        add(base)
+        add(BUILDING_CATALOG_ALIASES.get(base, ""))
 
     return out
 

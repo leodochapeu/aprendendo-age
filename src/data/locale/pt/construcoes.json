@@ -3052,7 +3052,7 @@
   },
   {
     "id": 69,
-    "nome": "Muralha de Madeira",
+    "nome": "Muralha",
     "tipo": [
       {
         "type": "Proteção 🧱"
@@ -3068,7 +3068,7 @@
     "ouro": 6,
     "custo": 6,
     "era": "Arcaica :aomr_archaic_age_icon:",
-    "ingles": "Wooden Wall",
+    "ingles": "Wall",
     "tecnologias": "Muralha de Pedra, Muralha Fortificada",
     "tempo_construir_segundos": 15,
     "era_id": 1,

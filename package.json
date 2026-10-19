@@ -22,6 +22,7 @@
     "data:merge-godpowers": "python scripts/merge-godpowers-aom.py",
     "data:extract-construcoes": "python scripts/extract-construcoes-aom.py",
     "data:merge-construcoes": "python scripts/merge-construcoes-aom.py",
+    "data:fill-construcoes-descricoes": "python scripts/fill-construcoes-descricoes.py",
     "data:extract-relics": "python scripts/extract-relics-aom.py",
     "data:merge-relics": "python scripts/merge-relics-aom.py",
     "data:extract-mapas": "python scripts/extract-mapas-aom.py",
