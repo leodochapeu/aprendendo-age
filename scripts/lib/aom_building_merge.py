@@ -41,6 +41,8 @@ BUILDING_CATALOG_ALIASES = {
     "Wall": "WallShort",
     "Wooden Gate": "WallGate",
     "OX": "OxCartBuilding",
+    # O proto "Shrine" é o santuário de campanha. A ficha é o japonês da Miko.
+    "Shrine": "ShrineJapanese",
 }
 
 STAT_FIELDS = (
@@ -108,12 +110,12 @@ def resolve_proto_name(
     compact_index = {_compact_key(proto): proto for proto in extracted_index}
 
     for candidate in _catalog_name_candidates(catalog_name):
-        if candidate in extracted_index:
-            return candidate
-
         aliased = BUILDING_CATALOG_ALIASES.get(candidate)
         if aliased and aliased in extracted_index:
             return aliased
+
+        if candidate in extracted_index:
+            return candidate
 
         resolved = compact_index.get(_compact_key(candidate))
         if resolved:
