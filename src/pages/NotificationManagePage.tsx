@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { InstagramSyncPanel } from "@/components/notifications/InstagramSyncPanel";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SearchField } from "@/components/ui/SearchField";
 import { useAuth } from "@/context/AuthContext";
@@ -201,6 +202,8 @@ export function NotificationManagePage() {
           ) : null
         }
       />
+
+      {canManage ? <InstagramSyncPanel onPublished={() => void load()} /> : null}
 
       {!configured ? <p className="text-sm text-zinc-400">{t("notifications.errors.unconfigured")}</p> : null}
       {configured && (status === "loading" || (status === "authenticated" && profileLoadState !== "ready")) ? (
