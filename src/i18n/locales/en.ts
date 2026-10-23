@@ -1124,6 +1124,7 @@ export const enMessages: TranslationTree = {
     instagramChannels: "Channels",
     instagramChannelPlaceholder: "@username or profile link",
     instagramAddChannel: "Add channel",
+    instagramRemoveConfirm: "Remove @{{username}}?",
     instagramSave: "Save",
     instagramSaving: "Saving…",
     instagramSaved: "Settings saved.",

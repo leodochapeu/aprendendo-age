@@ -1125,6 +1125,7 @@ export const ptMessages: TranslationTree = {
     instagramChannels: "Canais",
     instagramChannelPlaceholder: "@usuario ou link do perfil",
     instagramAddChannel: "Adicionar canal",
+    instagramRemoveConfirm: "Remover @{{username}}?",
     instagramSave: "Salvar",
     instagramSaving: "Salvando…",
     instagramSaved: "Configuração salva.",
