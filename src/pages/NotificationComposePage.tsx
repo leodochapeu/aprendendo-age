@@ -1,4 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useAuth } from "@/context/AuthContext";
@@ -13,11 +14,19 @@ import {
   NOTIFICATION_DESCRIPTION_MAX,
   NOTIFICATION_LINK_MAX,
   NOTIFICATION_TITLE_MAX,
+  notificationImageStoragePath,
   resolveNotificationLink,
   resolveNotificationWindow,
   toDatetimeLocalValue,
 } from "@/lib/siteNotifications";
-import { removeNotificationImage, sendSiteNotification, uploadNotificationImage } from "@/lib/siteNotificationsApi";
+import { localeNotificationManagePath } from "@/lib/localeRoutes";
+import {
+  fetchManagedNotification,
+  removeNotificationImage,
+  sendSiteNotification,
+  updateSiteNotification,
+  uploadNotificationImage,
+} from "@/lib/siteNotificationsApi";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 const inputClass =
@@ -30,7 +39,10 @@ function defaultExpiresLocal(): string {
 }
 
 export function NotificationComposePage() {
-  const { t } = useTranslation();
+  const { id } = useParams();
+  const editing = Boolean(id);
+  const navigate = useNavigate();
+  const { t, locale } = useTranslation();
   const { showToast } = useToast();
   const { refresh } = useSiteNotifications();
   const { status, user, profile, profileLoadState } = useAuth();
@@ -46,11 +58,49 @@ export function NotificationComposePage() {
   const [imageKey, setImageKey] = useState(0);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [highlighted, setHighlighted] = useState(false);
+  const [existingImageUrl, setExistingImageUrl] = useState<string | null>(null);
+  const [imageRemoved, setImageRemoved] = useState(false);
+  const [originalStartsAt, setOriginalStartsAt] = useState<string | null>(null);
+  const [itemReady, setItemReady] = useState(!editing);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const canSend =
     configured && status === "authenticated" && profileLoadState === "ready" && canSendSiteNotification(profile?.role);
+
+  useEffect(() => {
+    if (!editing || !id || !canSend) return;
+    let cancel = false;
+    setItemReady(false);
+    void fetchManagedNotification(id).then((result) => {
+      if (cancel) return;
+      if (!result.ok) {
+        setError(t(result.message === "NOT_FOUND" ? "notifications.errors.notFound" : "notifications.loadError"));
+        return;
+      }
+      const item = result.item;
+      const starts = new Date(item.startsAt);
+      setTitle(item.title);
+      setDescription(item.description);
+      setLink(item.linkUrl ?? "");
+      setHighlighted(item.highlighted);
+      setExistingImageUrl(item.imageUrl);
+      setImageRemoved(false);
+      setOriginalStartsAt(item.startsAt);
+      setExpiresAtLocal(toDatetimeLocalValue(new Date(item.expiresAt)));
+      if (starts.getTime() > Date.now()) {
+        setMode("schedule");
+        setStartsAtLocal(toDatetimeLocalValue(starts));
+      } else {
+        setMode("now");
+        setStartsAtLocal("");
+      }
+      setItemReady(true);
+    });
+    return () => {
+      cancel = true;
+    };
+  }, [canSend, editing, id, t]);
 
   useEffect(() => {
     if (!image) {
@@ -71,7 +121,11 @@ export function NotificationComposePage() {
       setError(t(`notifications.errors.${textError}`));
       return;
     }
-    const windowResult = resolveNotificationWindow({ mode, startsAtLocal, expiresAtLocal });
+    const keptStart =
+      editing && mode === "now" && originalStartsAt && new Date(originalStartsAt).getTime() <= Date.now()
+        ? new Date(originalStartsAt)
+        : null;
+    const windowResult = resolveNotificationWindow({ mode, startsAtLocal, expiresAtLocal, keepStartsAt: keptStart });
     if (!windowResult.ok) {
       setError(t(`notifications.errors.${windowResult.error}`));
       return;
@@ -91,7 +145,7 @@ export function NotificationComposePage() {
     setSaving(true);
     let uploadedPath: string | null = null;
     try {
-      let imageUrl: string | null = null;
+      let imageUrl: string | null = imageRemoved ? null : existingImageUrl;
       if (image) {
         const uploaded = await uploadNotificationImage(user.id, image);
         if (!uploaded.ok) {
@@ -103,7 +157,7 @@ export function NotificationComposePage() {
       }
 
       const resolvedLink = resolveNotificationLink(link);
-      const sent = await sendSiteNotification({
+      const payload = {
         title,
         description,
         linkUrl: resolvedLink?.href ?? null,
@@ -111,10 +165,29 @@ export function NotificationComposePage() {
         startsAt: windowResult.startsAt,
         expiresAt: windowResult.expiresAt,
         highlighted,
-      });
+      };
+      const sent = editing && id ? await updateSiteNotification({ ...payload, id }) : await sendSiteNotification(payload);
       if (!sent.ok) {
         if (uploadedPath) await removeNotificationImage(uploadedPath);
-        setError(t(sent.message === "SUPABASE_NOT_CONFIGURED" ? "notifications.errors.unconfigured" : "notifications.errors.save"));
+        setError(
+          t(
+            sent.message === "SUPABASE_NOT_CONFIGURED"
+              ? "notifications.errors.unconfigured"
+              : editing
+                ? "notifications.errors.update"
+                : "notifications.errors.save",
+          ),
+        );
+        return;
+      }
+
+      const previousPath = notificationImageStoragePath(existingImageUrl);
+      if (previousPath && imageUrl !== existingImageUrl) await removeNotificationImage(previousPath);
+
+      if (editing) {
+        showToast(t("notifications.updated"));
+        void refresh();
+        navigate(localeNotificationManagePath(locale));
         return;
       }
 
@@ -137,10 +210,16 @@ export function NotificationComposePage() {
   return (
     <div className="mx-auto max-w-xl">
       <PageHeader
-        title={t("notifications.composeTitle")}
-        description={t("notifications.composeDescription")}
-        className="mb-6"
+        title={t(editing ? "notifications.editTitle" : "notifications.composeTitle")}
+        description={t(editing ? "notifications.editDescription" : "notifications.composeDescription")}
+        className="mb-4"
       />
+      <Link
+        to={localeNotificationManagePath(locale)}
+        className="mb-6 inline-block text-sm text-zinc-400 underline-offset-2 hover:text-amber-100 hover:underline"
+      >
+        {t("notifications.manageMenu")}
+      </Link>
 
       {!configured ? <p className="text-sm text-zinc-400">{t("notifications.errors.unconfigured")}</p> : null}
       {configured && (status === "loading" || (status === "authenticated" && profileLoadState !== "ready")) ? (
@@ -150,7 +229,9 @@ export function NotificationComposePage() {
         <p className="text-sm text-zinc-400">{t("notifications.forbidden")}</p>
       ) : null}
 
-      {canSend ? (
+      {canSend && editing && !itemReady && !error ? <p className="text-sm text-zinc-400">{t("notifications.loading")}</p> : null}
+
+      {canSend && itemReady ? (
         <form onSubmit={(event) => void handleSubmit(event)} className="flex flex-col gap-4">
           <label className="block text-sm">
             <span className="text-zinc-400">{t("notifications.fieldTitle")}</span>
@@ -198,13 +279,18 @@ export function NotificationComposePage() {
               onChange={(event) => setImage(event.target.files?.[0] ?? null)}
               className={cn(inputClass, "file:mr-3 file:rounded-md file:border-0 file:bg-zinc-800 file:px-2 file:py-1 file:text-xs file:text-zinc-200")}
             />
-            {previewUrl ? (
+            {previewUrl || (!imageRemoved && existingImageUrl) ? (
               <div className="mt-2">
-                <img src={previewUrl} alt="" className="max-h-40 rounded-lg border border-aom-border object-cover" />
+                <img
+                  src={previewUrl ?? existingImageUrl ?? ""}
+                  alt=""
+                  className="max-h-40 rounded-lg border border-aom-border object-cover"
+                />
                 <button
                   type="button"
                   onClick={() => {
                     setImage(null);
+                    setImageRemoved(true);
                     setImageKey((current) => current + 1);
                   }}
                   className="mt-2 text-xs text-zinc-400 underline-offset-2 hover:text-amber-100 hover:underline"
@@ -289,7 +375,7 @@ export function NotificationComposePage() {
             disabled={saving}
             className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {saving ? t("notifications.sending") : t("notifications.send")}
+            {saving ? t(editing ? "notifications.saving" : "notifications.sending") : t(editing ? "notifications.save" : "notifications.send")}
           </button>
         </form>
       ) : null}

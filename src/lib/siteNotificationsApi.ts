@@ -172,3 +172,105 @@ export async function sendSiteNotification(input: SendSiteNotificationInput): Pr
   if (error) return { ok: false, message: "SAVE" };
   return { ok: true };
 }
+
+export type ManageNotificationsResult =
+  | { ok: true; items: SiteNotification[] }
+  | { ok: false; message: "SUPABASE_NOT_CONFIGURED" | "NOT_AUTHENTICATED" | "LOAD" };
+
+export type ManagedNotificationResult =
+  | { ok: true; item: SiteNotification }
+  | { ok: false; message: "SUPABASE_NOT_CONFIGURED" | "NOT_AUTHENTICATED" | "NOT_FOUND" | "LOAD" };
+
+export type UpdateSiteNotificationInput = SendSiteNotificationInput & { id: string };
+
+export type NotificationMutationResult =
+  | { ok: true }
+  | { ok: false; message: "SUPABASE_NOT_CONFIGURED" | "NOT_AUTHENTICATED" | "SAVE" };
+
+async function authenticatedNotifications() {
+  const supabase = createSupabaseClient();
+  if (!supabase) return { ok: false as const, message: "SUPABASE_NOT_CONFIGURED" as const };
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { ok: false as const, message: "NOT_AUTHENTICATED" as const };
+  return { ok: true as const, supabase };
+}
+
+export async function fetchManagedNotifications(): Promise<ManageNotificationsResult> {
+  const session = await authenticatedNotifications();
+  if (!session.ok) return session;
+
+  const listQuery = (columns: string) =>
+    session.supabase
+      .from("site_notifications")
+      .select(columns)
+      .order("starts_at", { ascending: false })
+      .limit(500);
+
+  let result = await listQuery(FEED_COLUMNS);
+  if (isMissingHighlightedColumn(result.error)) result = await listQuery(FEED_COLUMNS_LEGACY);
+  if (result.error) return { ok: false, message: "LOAD" };
+  return { ok: true, items: ((result.data ?? []) as unknown as SiteNotificationRow[]).map(mapNotification) };
+}
+
+export async function fetchManagedNotification(id: string): Promise<ManagedNotificationResult> {
+  const session = await authenticatedNotifications();
+  if (!session.ok) return session;
+
+  const oneQuery = (columns: string) =>
+    session.supabase.from("site_notifications").select(columns).eq("id", id).maybeSingle();
+
+  let result = await oneQuery(FEED_COLUMNS);
+  if (isMissingHighlightedColumn(result.error)) result = await oneQuery(FEED_COLUMNS_LEGACY);
+  if (result.error) return { ok: false, message: "LOAD" };
+  if (!result.data) return { ok: false, message: "NOT_FOUND" };
+  return { ok: true, item: mapNotification(result.data as unknown as SiteNotificationRow) };
+}
+
+export async function updateSiteNotification(input: UpdateSiteNotificationInput): Promise<NotificationMutationResult> {
+  const session = await authenticatedNotifications();
+  if (!session.ok) return session;
+
+  const { data, error } = await session.supabase
+    .from("site_notifications")
+    .update({
+      title: input.title.trim(),
+      description: input.description.trim(),
+      link_url: input.linkUrl,
+      image_url: input.imageUrl,
+      starts_at: input.startsAt.toISOString(),
+      expires_at: input.expiresAt.toISOString(),
+      highlighted: input.highlighted,
+    })
+    .eq("id", input.id)
+    .select("id")
+    .maybeSingle();
+
+  if (error || !data) return { ok: false, message: "SAVE" };
+  return { ok: true };
+}
+
+export async function publishSiteNotificationNow(id: string): Promise<NotificationMutationResult> {
+  const session = await authenticatedNotifications();
+  if (!session.ok) return session;
+
+  const { data, error } = await session.supabase
+    .from("site_notifications")
+    .update({ starts_at: new Date().toISOString() })
+    .eq("id", id)
+    .select("id")
+    .maybeSingle();
+
+  if (error || !data) return { ok: false, message: "SAVE" };
+  return { ok: true };
+}
+
+export async function deleteSiteNotification(id: string): Promise<NotificationMutationResult> {
+  const session = await authenticatedNotifications();
+  if (!session.ok) return session;
+
+  const { data, error } = await session.supabase.from("site_notifications").delete().eq("id", id).select("id");
+  if (error || !data?.length) return { ok: false, message: "SAVE" };
+  return { ok: true };
+}

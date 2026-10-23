@@ -7,7 +7,7 @@ import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useTranslation } from "@/hooks/useTranslation";
 import { canSendSiteNotification } from "@/lib/auth/constants";
 import { cn } from "@/lib/cn";
-import { localeAuthPath, localeNotificationComposePath } from "@/lib/localeRoutes";
+import { localeAuthPath, localeNotificationManagePath } from "@/lib/localeRoutes";
 
 function GearIcon({ className }: { className?: string }) {
   return (
@@ -155,11 +155,11 @@ export function SettingsMenu({ className }: { className?: string }) {
           {canSendNotification ? (
             <Link
               role="menuitem"
-              to={localeNotificationComposePath(locale)}
+              to={localeNotificationManagePath(locale)}
               className={menuItemClassName()}
               onClick={() => setOpen(false)}
             >
-              {t("notifications.composeMenu")}
+              {t("notifications.manageMenu")}
             </Link>
           ) : null}
 

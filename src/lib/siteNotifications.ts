@@ -39,10 +39,14 @@ export type NotificationTextError = "title" | "description" | "link";
 export type NotificationWindowError = "schedule" | "schedulePast" | "expires" | "expiresOrder";
 export type NotificationImageError = "imageType" | "imageSize";
 
+export type NotificationPhase = "scheduled" | "active" | "expired";
+
 export type NotificationWindowInput = {
   mode: "now" | "schedule";
   startsAtLocal: string;
   expiresAtLocal: string;
+  /** No modo imediato, preserva o início de um aviso que já começou. */
+  keepStartsAt?: Date | null;
 };
 
 export type NotificationWindow =
@@ -111,7 +115,8 @@ export function resolveNotificationWindow(input: NotificationWindowInput, now = 
 
   let startsAt: Date;
   if (input.mode === "now") {
-    startsAt = now;
+    const kept = input.keepStartsAt;
+    startsAt = kept && !Number.isNaN(kept.getTime()) ? kept : now;
   } else {
     const parsed = parseDatetimeLocal(input.startsAtLocal);
     if (!parsed) return { ok: false, error: "schedule" };
@@ -131,6 +136,29 @@ export function notificationImageError(file: File): NotificationImageError | nul
 
 export function notificationImageExtension(type: string): string | null {
   return IMAGE_TYPES[type] ?? null;
+}
+
+export function notificationPhase(startsAt: string, expiresAt: string, now = Date.now()): NotificationPhase {
+  const starts = new Date(startsAt).getTime();
+  const expires = new Date(expiresAt).getTime();
+  if (Number.isNaN(starts) || Number.isNaN(expires)) return "expired";
+  if (starts > now) return "scheduled";
+  if (expires > now) return "active";
+  return "expired";
+}
+
+export function notificationImageStoragePath(url: string | null | undefined): string | null {
+  if (!url) return null;
+  const marker = "/object/public/site-notifications/";
+  const index = url.indexOf(marker);
+  if (index === -1) return null;
+  const path = (url.slice(index + marker.length).split("?")[0] ?? "").trim();
+  if (!path || path.includes("..") || path.startsWith("/")) return null;
+  try {
+    return decodeURIComponent(path);
+  } catch {
+    return null;
+  }
 }
 
 export function toDatetimeLocalValue(date: Date): string {
