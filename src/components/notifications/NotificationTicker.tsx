@@ -143,7 +143,7 @@ export function NotificationTicker() {
   return (
     <div
       ref={frameRef}
-      className="fixed inset-x-0 z-10 hidden border-b border-amber-500/30 bg-zinc-950/95 md:block"
+      className="fixed inset-x-0 z-[19] hidden border-b border-amber-500/30 bg-zinc-950/95 md:block"
       style={{ top: bannerOffset }}
       role="region"
       aria-label={t("notifications.tickerLabel")}
