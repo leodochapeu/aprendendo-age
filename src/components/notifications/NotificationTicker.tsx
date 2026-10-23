@@ -55,8 +55,9 @@ function TickerSlide({ item, onActivate }: { item: SiteNotification; onActivate:
 
 export function NotificationTickerToggle() {
   const { t } = useTranslation();
-  const { preview, tickerCollapsed, setTickerCollapsed } = useSiteNotifications();
-  if (!tickerCollapsed || preview.length === 0) return null;
+  const { preview, bannerOffset, tickerCollapsed, setTickerCollapsed } = useSiteNotifications();
+  const featuredOpen = bannerOffset > 0;
+  if (preview.length === 0 || (!tickerCollapsed && !featuredOpen)) return null;
 
   return (
     <button
@@ -87,7 +88,7 @@ export function NotificationTicker() {
   const [animate, setAnimate] = useState(true);
   const frameRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
-  const visible = !tickerCollapsed && items.length > 0;
+  const visible = !tickerCollapsed && bannerOffset === 0 && items.length > 0;
 
   useEffect(() => {
     setIndex(0);
