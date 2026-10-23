@@ -19,6 +19,22 @@ describe("resolveNotificationLink", () => {
     });
   });
 
+  it("trata o próprio site como caminho interno", () => {
+    expect(resolveNotificationLink("https://www.aprendendoage.com/videos-comunidade")).toEqual({
+      href: "/videos-comunidade",
+      kind: "internal",
+    });
+    expect(resolveNotificationLink("https://aprendendoage.com/starts?q=1#lista")).toEqual({
+      href: "/starts?q=1#lista",
+      kind: "internal",
+    });
+    expect(resolveNotificationLink("https://www.aprendendoage.com")).toEqual({ href: "/", kind: "internal" });
+    expect(resolveNotificationLink("https://www.aprendendoage.com.evil.test/videos")).toEqual({
+      href: "https://www.aprendendoage.com.evil.test/videos",
+      kind: "external",
+    });
+  });
+
   it("recusa protocolo solto, javascript e link vazio", () => {
     expect(resolveNotificationLink("//evil.test")).toBeNull();
     expect(resolveNotificationLink("javascript:alert(1)")).toBeNull();

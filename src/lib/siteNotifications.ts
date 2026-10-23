@@ -77,6 +77,8 @@ export function mergeReadIds(current: readonly string[], incoming: readonly stri
   return [...next].slice(-MAX_STORED_READS);
 }
 
+const SITE_HOSTS = new Set(["www.aprendendoage.com", "aprendendoage.com"]);
+
 export function resolveNotificationLink(raw: string | null | undefined): NotificationLink | null {
   if (!raw) return null;
   const href = raw.trim();
@@ -84,11 +86,14 @@ export function resolveNotificationLink(raw: string | null | undefined): Notific
   if (href.startsWith("/") && !href.startsWith("//")) return { href, kind: "internal" };
   try {
     const url = new URL(href);
-    if (url.protocol === "http:" || url.protocol === "https:") return { href, kind: "external" };
+    if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+    if (SITE_HOSTS.has(url.hostname)) {
+      return { href: `${url.pathname}${url.search}${url.hash}`, kind: "internal" };
+    }
+    return { href, kind: "external" };
   } catch {
     return null;
   }
-  return null;
 }
 
 export function notificationTextError(title: string, description: string, link: string): NotificationTextError | null {
