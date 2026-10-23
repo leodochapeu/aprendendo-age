@@ -12,6 +12,7 @@ import {
 import { fetchNotificationPreview } from "@/lib/siteNotificationsApi";
 import {
   mergeReadIds,
+  NOTIFICATION_BELL_SEEN_KEY,
   NOTIFICATION_READS_KEY,
   NOTIFICATION_TICKER_COLLAPSED_KEY,
   parseStoredReadIds,
@@ -25,7 +26,9 @@ type SiteNotificationsContextValue = {
   loading: boolean;
   error: boolean;
   readIds: readonly string[];
+  bellSeenIds: readonly string[];
   markRead: (ids: readonly string[]) => void;
+  acknowledgeBell: () => void;
   refresh: () => Promise<void>;
   bannerOffset: number;
   setBannerOffset: (height: number) => void;
@@ -37,14 +40,6 @@ type SiteNotificationsContextValue = {
 
 const SiteNotificationsContext = createContext<SiteNotificationsContextValue | null>(null);
 
-function readStoredIds(): string[] {
-  try {
-    return parseStoredReadIds(localStorage.getItem(NOTIFICATION_READS_KEY));
-  } catch {
-    return [];
-  }
-}
-
 function readTickerCollapsed(): boolean {
   try {
     return localStorage.getItem(NOTIFICATION_TICKER_COLLAPSED_KEY) === "1";
@@ -53,11 +48,19 @@ function readTickerCollapsed(): boolean {
   }
 }
 
-function writeStoredIds(ids: readonly string[]): void {
+function writeStoredIds(key: string, ids: readonly string[]): void {
   try {
-    localStorage.setItem(NOTIFICATION_READS_KEY, JSON.stringify(ids));
+    localStorage.setItem(key, JSON.stringify(ids));
   } catch {
     /* storage indisponível */
+  }
+}
+
+function readStoredKey(key: string): string[] {
+  try {
+    return parseStoredReadIds(localStorage.getItem(key));
+  } catch {
+    return [];
   }
 }
 
@@ -67,7 +70,10 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [readIds, setReadIds] = useState<string[]>(readStoredIds);
+  const [readIds, setReadIds] = useState<string[]>(() => readStoredKey(NOTIFICATION_READS_KEY));
+  const [bellSeenIds, setBellSeenIds] = useState<string[]>(() => readStoredKey(NOTIFICATION_BELL_SEEN_KEY));
+  const activeIdsRef = useRef<string[]>([]);
+  activeIdsRef.current = activeIds;
   const [bannerOffset, setBannerOffsetState] = useState(0);
   const [tickerOffset, setTickerOffsetState] = useState(0);
   const [tickerCollapsed, setTickerCollapsedState] = useState(readTickerCollapsed);
@@ -108,7 +114,17 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
     setReadIds((current) => {
       const next = mergeReadIds(current, ids);
       if (next === current) return current;
-      writeStoredIds(next);
+      writeStoredIds(NOTIFICATION_READS_KEY, next);
+      return next;
+    });
+  }, []);
+
+  const acknowledgeBell = useCallback(() => {
+    const ids = activeIdsRef.current;
+    setBellSeenIds((current) => {
+      const next = mergeReadIds(current, ids);
+      if (next === current) return current;
+      writeStoredIds(NOTIFICATION_BELL_SEEN_KEY, next);
       return next;
     });
   }, []);
@@ -132,10 +148,10 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
     }
   }, []);
 
-  const readSet = useMemo(() => new Set(readIds), [readIds]);
+  const bellSeenSet = useMemo(() => new Set(bellSeenIds), [bellSeenIds]);
   const unreadCount = useMemo(
-    () => activeIds.reduce((count, id) => count + (readSet.has(id) ? 0 : 1), 0),
-    [activeIds, readSet],
+    () => activeIds.reduce((count, id) => count + (bellSeenSet.has(id) ? 0 : 1), 0),
+    [activeIds, bellSeenSet],
   );
 
   const value = useMemo<SiteNotificationsContextValue>(
@@ -146,7 +162,9 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
       loading,
       error,
       readIds,
+      bellSeenIds,
       markRead,
+      acknowledgeBell,
       refresh,
       bannerOffset,
       setBannerOffset,
@@ -162,7 +180,9 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
       loading,
       error,
       readIds,
+      bellSeenIds,
       markRead,
+      acknowledgeBell,
       refresh,
       bannerOffset,
       setBannerOffset,

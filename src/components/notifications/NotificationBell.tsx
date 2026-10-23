@@ -59,7 +59,8 @@ function NotificationPreviewItem({
 export function NotificationBell() {
   const { t, locale } = useTranslation();
   const { pathname } = useLocation();
-  const { preview, unreadCount, hasMore, loading, error, readIds, markRead, bannerOffset } = useSiteNotifications();
+  const { preview, unreadCount, hasMore, loading, error, bellSeenIds, markRead, acknowledgeBell, bannerOffset } =
+    useSiteNotifications();
   const [open, setOpen] = useState(false);
   const [unreadSnapshot, setUnreadSnapshot] = useState<ReadonlySet<string>>(new Set());
   const rootRef = useRef<HTMLDivElement>(null);
@@ -96,8 +97,9 @@ export function NotificationBell() {
 
   useEffect(() => {
     if (!open) return;
+    acknowledgeBell();
     markRead(preview.map((item) => item.id));
-  }, [open, preview, markRead]);
+  }, [open, preview, acknowledgeBell, markRead]);
 
   const badge = unreadCount > 9 ? "9+" : String(unreadCount);
   const label =
@@ -111,8 +113,9 @@ export function NotificationBell() {
       if (next) {
         window.dispatchEvent(new Event("shell:close-settings"));
         window.dispatchEvent(new Event("shell:notifications-opened"));
-        const read = new Set(readIds);
-        setUnreadSnapshot(new Set(preview.filter((item) => !read.has(item.id)).map((item) => item.id)));
+        const seen = new Set(bellSeenIds);
+        setUnreadSnapshot(new Set(preview.filter((item) => !seen.has(item.id)).map((item) => item.id)));
+        acknowledgeBell();
         markRead(preview.map((item) => item.id));
       }
       return next;
@@ -120,7 +123,7 @@ export function NotificationBell() {
   }
 
   return (
-    <div ref={rootRef} className="relative">
+    <div ref={rootRef} className="relative z-10">
       <button
         type="button"
         onClick={toggle}
@@ -137,7 +140,7 @@ export function NotificationBell() {
       >
         <BellIcon />
         {unreadCount > 0 ? (
-          <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-amber-400 px-1 text-[10px] font-bold leading-none text-zinc-950">
+          <span className="absolute -right-1 -top-1 z-10 flex h-4 min-w-4 items-center justify-center rounded-full bg-amber-400 px-1 text-[10px] font-bold leading-none text-zinc-950">
             {badge}
           </span>
         ) : null}

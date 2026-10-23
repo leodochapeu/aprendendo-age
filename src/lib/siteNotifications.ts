@@ -1,4 +1,5 @@
 export const NOTIFICATION_READS_KEY = "aprendendo-age.notification-reads";
+export const NOTIFICATION_BELL_SEEN_KEY = "aprendendo-age.notification-bell-seen";
 export const NOTIFICATION_TICKER_COLLAPSED_KEY = "aprendendo-age.notification-ticker-collapsed";
 export const NOTIFICATION_TICKER_LIMIT = 3;
 export const NOTIFICATION_PREVIEW_LIMIT = 10;
