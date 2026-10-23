@@ -1128,6 +1128,8 @@ export const enMessages: TranslationTree = {
     instagramSaving: "Saving…",
     instagramSaved: "Settings saved.",
     instagramSyncNow: "Sync now",
+    instagramSchedule: "Daily sync",
+    instagramTargetChannels: "Target channels",
     instagramLastRunNever: "Has not run yet.",
     instagramLastRun: "Last run: {{when}} · {{count}} post(s). {{message}}",
     instagramModalTitle: "Sync Instagram",

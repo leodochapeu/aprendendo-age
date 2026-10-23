@@ -43,8 +43,12 @@ export function InstagramSyncPanel({ onPublished }: { onPublished: () => void })
   const [lastRunMessage, setLastRunMessage] = useState<string | null>(null);
   const [channels, setChannels] = useState<InstagramSyncChannel[]>([]);
   const [channelDraft, setChannelDraft] = useState("");
+  const [draftChannels, setDraftChannels] = useState<InstagramSyncChannel[]>([]);
+  const [showChannelInput, setShowChannelInput] = useState(false);
   const [ready, setReady] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [scheduleOpen, setScheduleOpen] = useState(false);
+  const [channelsOpen, setChannelsOpen] = useState(false);
 
   const [open, setOpen] = useState(false);
   const [from, setFrom] = useState(today);
@@ -79,33 +83,63 @@ export function InstagramSyncPanel({ onPublished }: { onPublished: () => void })
     setSaving(true);
     const ok = await saveInstagramSyncSettings({ enabled, runTime, userId: user.id });
     setSaving(false);
-    showToast(ok ? t("notifications.instagramSaved") : t("notifications.loadError"));
+    if (!ok) {
+      showToast(t("notifications.loadError"));
+      return;
+    }
+    showToast(t("notifications.instagramSaved"));
+    setScheduleOpen(false);
   }
 
-  async function addChannel() {
+  function openChannels() {
+    setDraftChannels(channels);
+    setChannelDraft("");
+    setShowChannelInput(false);
+    setChannelsOpen(true);
+  }
+
+  function stageChannel() {
     const username = parseInstagramUsername(channelDraft);
     if (!username) {
       showToast(t("notifications.instagramInvalidChannel"));
       return;
     }
-    const ok = await addInstagramSyncChannel(username);
-    if (!ok) {
-      showToast(t("notifications.loadError"));
+    if (draftChannels.some((channel) => channel.username === username)) {
+      setChannelDraft("");
+      setShowChannelInput(false);
       return;
     }
+    setDraftChannels((current) => [...current, { id: `new:${username}`, username }]);
     setChannelDraft("");
-    setChannels(await fetchInstagramSyncChannels());
-    showToast(t("notifications.instagramChannelSaved"));
+    setShowChannelInput(false);
   }
 
-  async function removeChannel(id: string) {
-    const ok = await removeInstagramSyncChannel(id);
-    if (!ok) {
-      showToast(t("notifications.loadError"));
+  async function saveChannels() {
+    const pending = channelDraft.trim() ? parseInstagramUsername(channelDraft) : null;
+    if (channelDraft.trim() && !pending) {
+      showToast(t("notifications.instagramInvalidChannel"));
       return;
     }
-    setChannels(await fetchInstagramSyncChannels());
-    showToast(t("notifications.instagramChannelRemoved"));
+    const next = pending && !draftChannels.some((channel) => channel.username === pending)
+      ? [...draftChannels, { id: `new:${pending}`, username: pending }]
+      : draftChannels;
+    setSaving(true);
+    const removed = channels.filter((channel) => !next.some((item) => item.id === channel.id));
+    const added = next.filter((channel) => channel.id.startsWith("new:"));
+    const results = await Promise.all([
+      ...removed.map((channel) => removeInstagramSyncChannel(channel.id)),
+      ...added.map((channel) => addInstagramSyncChannel(channel.username)),
+    ]);
+    const fresh = await fetchInstagramSyncChannels();
+    setChannels(fresh);
+    setSaving(false);
+    if (results.some((ok) => !ok)) {
+      showToast(t("notifications.loadError"));
+      setDraftChannels(fresh);
+      return;
+    }
+    showToast(t("notifications.instagramSaved"));
+    setChannelsOpen(false);
   }
 
   function openModal() {
@@ -159,6 +193,9 @@ export function InstagramSyncPanel({ onPublished }: { onPublished: () => void })
   const freshCount = posts?.filter((post) => !post.alreadyImported).length ?? 0;
   const allFreshSelected = freshCount > 0 && posts?.every((post) => post.alreadyImported || selected.has(post.externalId));
 
+  const outlineButton =
+    "rounded-lg border border-amber-500/45 bg-amber-500/15 px-4 py-2 text-sm font-semibold text-amber-100 hover:bg-amber-500/25";
+
   const lastRun = lastRunAt
     ? t("notifications.instagramLastRun", {
         when: new Intl.DateTimeFormat(localeTag, { dateStyle: "short", timeStyle: "short" }).format(new Date(lastRunAt)),
@@ -176,26 +213,27 @@ export function InstagramSyncPanel({ onPublished }: { onPublished: () => void })
           </h2>
           <p className="mt-1 max-w-2xl text-sm text-zinc-400">{t("notifications.instagramDescription")}</p>
         </div>
-        <button
-          type="button"
-          onClick={openModal}
-          className="rounded-lg border border-amber-500/45 bg-amber-500/15 px-4 py-2 text-sm font-semibold text-amber-100 hover:bg-amber-500/25"
-        >
-          {t("notifications.instagramSyncNow")}
-        </button>
+        <div className="flex flex-wrap gap-2">
+          <button type="button" onClick={openModal} className={outlineButton}>
+            {t("notifications.instagramSyncNow")}
+          </button>
+          <button type="button" onClick={() => setScheduleOpen(true)} className={outlineButton}>
+            {t("notifications.instagramSchedule")}
+          </button>
+          <button type="button" onClick={openChannels} className={outlineButton}>
+            {t("notifications.instagramTargetChannels")}
+          </button>
+        </div>
       </div>
 
-      <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
+      <p className="mt-3 text-xs text-zinc-500">{lastRun}</p>
+
+      <ModalApp open={scheduleOpen} onClose={() => setScheduleOpen(false)} title={t("notifications.instagramSchedule")}>
         <label className="flex items-center gap-2 text-sm text-zinc-200">
-          <input
-            type="checkbox"
-            checked={enabled}
-            onChange={(event) => setEnabled(event.target.checked)}
-            className="accent-amber-400"
-          />
+          <input type="checkbox" checked={enabled} onChange={(event) => setEnabled(event.target.checked)} className="accent-amber-400" />
           {t("notifications.instagramEnabled")}
         </label>
-        <label className="block text-sm">
+        <label className="block max-w-xs text-sm">
           <span className="text-zinc-400">{t("notifications.instagramRunTime")}</span>
           <input type="time" value={runTime} onChange={(event) => setRunTime(event.target.value)} className={fieldClass} />
         </label>
@@ -207,38 +245,52 @@ export function InstagramSyncPanel({ onPublished }: { onPublished: () => void })
         >
           {saving ? t("notifications.instagramSaving") : t("notifications.instagramSave")}
         </button>
-      </div>
+      </ModalApp>
 
-      <div className="mt-4">
-        <p className="text-sm text-zinc-400">{t("notifications.instagramChannels")}</p>
-        <ul className="mt-2 flex flex-wrap gap-2">
-          {channels.map((channel) => (
+      <ModalApp open={channelsOpen} onClose={() => setChannelsOpen(false)} title={t("notifications.instagramTargetChannels")}>
+        <ul className="flex flex-wrap gap-2">
+          {draftChannels.map((channel) => (
             <li key={channel.id} className="flex items-center gap-2 rounded-full border border-aom-border bg-zinc-900/80 px-3 py-1 text-sm text-zinc-100">
               @{channel.username}
-              <button type="button" onClick={() => void removeChannel(channel.id)} className="text-zinc-400 hover:text-red-200" aria-label={t("notifications.delete")}>
+              <button
+                type="button"
+                onClick={() => setDraftChannels((current) => current.filter((item) => item.id !== channel.id))}
+                className="text-zinc-400 hover:text-red-200"
+                aria-label={t("notifications.delete")}
+              >
                 ×
               </button>
             </li>
           ))}
         </ul>
-        <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+        {showChannelInput ? (
           <input
             value={channelDraft}
             onChange={(event) => setChannelDraft(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                stageChannel();
+              }
+            }}
             placeholder={t("notifications.instagramChannelPlaceholder")}
             className={fieldClass}
+            autoFocus
           />
-          <button
-            type="button"
-            onClick={() => void addChannel()}
-            className="rounded-lg border border-aom-border px-4 py-2 text-sm text-zinc-100 hover:border-amber-500/40"
-          >
+        ) : (
+          <button type="button" onClick={() => setShowChannelInput(true)} className={outlineButton}>
             {t("notifications.instagramAddChannel")}
           </button>
-        </div>
-      </div>
-
-      <p className="mt-3 text-xs text-zinc-500">{lastRun}</p>
+        )}
+        <button
+          type="button"
+          onClick={() => void saveChannels()}
+          disabled={saving}
+          className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-amber-400 disabled:opacity-50"
+        >
+          {saving ? t("notifications.instagramSaving") : t("notifications.instagramSave")}
+        </button>
+      </ModalApp>
 
       <ModalApp open={open} onClose={() => setOpen(false)} title={t("notifications.instagramModalTitle")} description={t("notifications.instagramModalDescription")}>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end">

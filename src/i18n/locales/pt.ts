@@ -1129,6 +1129,8 @@ export const ptMessages: TranslationTree = {
     instagramSaving: "Salvando…",
     instagramSaved: "Configuração salva.",
     instagramSyncNow: "Sincronizar agora",
+    instagramSchedule: "Sincronização diária",
+    instagramTargetChannels: "Canais alvo",
     instagramLastRunNever: "Ainda não rodou.",
     instagramLastRun: "Última execução: {{when}} · {{count}} publicação(ões). {{message}}",
     instagramModalTitle: "Sincronizar Instagram",
