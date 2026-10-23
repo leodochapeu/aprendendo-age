@@ -174,7 +174,7 @@ export function NotificationTicker() {
         pausedRef.current = false;
       }}
     >
-      <div className="flex h-14 items-center pl-56 pr-[17rem]">
+      <div className="flex h-16 items-center pl-[calc(14rem+2.5rem)] pr-[17rem]">
         <div className="min-w-0 flex-1 overflow-hidden">
           <div
             className={cn("flex", animate && "transition-transform duration-500 ease-out")}

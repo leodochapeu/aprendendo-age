@@ -347,7 +347,9 @@ export function AppShell() {
       <NotificationTicker />
       <div
         className="fixed right-4 z-[60] flex items-start gap-2"
-        style={{ top: `calc(${bannerOffset}px + max(1rem, env(safe-area-inset-top, 0px)))` }}
+        style={{
+          top: `calc(${bannerOffset}px + max(${tickerOffset > 0 ? "0.625rem" : "1rem"}, env(safe-area-inset-top, 0px)))`,
+        }}
       >
         <NotificationTickerToggle />
         <NotificationBell />
