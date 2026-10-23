@@ -53,34 +53,53 @@ function TickerSlide({ item, onActivate }: { item: SiteNotification; onActivate:
   );
 }
 
+const clusterButtonClass = cn(
+  "hidden h-10 w-10 items-center justify-center rounded-full border border-aom-border md:flex",
+  "bg-zinc-950/90 text-amber-200/95 shadow-lg shadow-black/30 backdrop-blur-sm",
+  "transition hover:border-amber-500/45 hover:bg-zinc-900",
+  "focus:outline-none focus:ring-2 focus:ring-amber-500/35",
+);
+
 export function NotificationTickerToggle() {
   const { t } = useTranslation();
   const { preview, bannerOffset, tickerCollapsed, setTickerCollapsed } = useSiteNotifications();
   const featuredOpen = bannerOffset > 0;
-  if (preview.length === 0 || (!tickerCollapsed && !featuredOpen)) return null;
+  if (preview.length === 0) return null;
+
+  if (tickerCollapsed || featuredOpen) {
+    return (
+      <button
+        type="button"
+        onClick={() => setTickerCollapsed(false)}
+        aria-expanded={false}
+        aria-label={t("notifications.tickerShow")}
+        title={t("notifications.tickerShow")}
+        className={clusterButtonClass}
+      >
+        <AlertIcon />
+      </button>
+    );
+  }
 
   return (
     <button
       type="button"
-      onClick={() => setTickerCollapsed(false)}
-      aria-expanded={false}
-      aria-label={t("notifications.tickerShow")}
-      title={t("notifications.tickerShow")}
-      className={cn(
-        "hidden h-10 w-10 items-center justify-center rounded-full border border-aom-border md:flex",
-        "bg-zinc-950/90 text-amber-200/95 shadow-lg shadow-black/30 backdrop-blur-sm",
-        "transition hover:border-amber-500/45 hover:bg-zinc-900",
-        "focus:outline-none focus:ring-2 focus:ring-amber-500/35",
-      )}
+      onClick={() => setTickerCollapsed(true)}
+      aria-expanded
+      aria-label={t("notifications.tickerHide")}
+      title={t("notifications.tickerHide")}
+      className={clusterButtonClass}
     >
-      <AlertIcon />
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="m6 14 6-6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
     </button>
   );
 }
 
 export function NotificationTicker() {
   const { t } = useTranslation();
-  const { preview, bannerOffset, tickerCollapsed, setTickerCollapsed, setTickerOffset, markRead } = useSiteNotifications();
+  const { preview, bannerOffset, tickerCollapsed, setTickerOffset, markRead } = useSiteNotifications();
   const items = preview.slice(0, NOTIFICATION_TICKER_LIMIT);
   const slideKey = items.map((item) => item.id).join("|");
   const slides = items.length > 1 ? [...items, items[0]!] : items;
@@ -155,7 +174,7 @@ export function NotificationTicker() {
         pausedRef.current = false;
       }}
     >
-      <div className="flex h-14 items-center gap-3 pl-56 pr-[17rem]">
+      <div className="flex h-14 items-center pl-56 pr-[17rem]">
         <div className="min-w-0 flex-1 overflow-hidden">
           <div
             className={cn("flex", animate && "transition-transform duration-500 ease-out")}
@@ -168,22 +187,6 @@ export function NotificationTicker() {
             ))}
           </div>
         </div>
-        <button
-          type="button"
-          onClick={() => setTickerCollapsed(true)}
-          aria-expanded
-          aria-label={t("notifications.tickerHide")}
-          title={t("notifications.tickerHide")}
-          className={cn(
-            "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-aom-border text-zinc-300",
-            "transition hover:border-amber-500/40 hover:bg-zinc-900 hover:text-white",
-            "focus:outline-none focus:ring-2 focus:ring-amber-500/35",
-          )}
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="m6 14 6-6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
       </div>
     </div>
   );
