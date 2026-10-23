@@ -446,7 +446,7 @@ export function AppShell() {
 
       <main
         className="min-w-0 flex-1 px-4 py-6 md:px-10 md:py-10"
-        style={tickerOffset > 0 ? { paddingTop: tickerOffset } : undefined}
+        style={tickerOffset > 0 ? { paddingTop: `calc(${tickerOffset}px + 2.5rem)` } : undefined}
       >
         <Outlet />
       </main>
