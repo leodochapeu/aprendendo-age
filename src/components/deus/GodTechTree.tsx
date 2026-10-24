@@ -149,6 +149,8 @@ function BuildingAgeCell({
   const branch = loose[age] ?? [];
   const hasIcons = branch.length > 0 || lines.some((line) => line.slots[age]);
   const spine = spineClass(age, buildingAge, lastContent);
+  const firstFilledLine = lines.findIndex((line) => line.slots[age]);
+  const leadSlots = firstFilledLine >= 0 ? firstFilledLine : branch.length > 0 ? lines.length : 0;
 
   return (
     <div
@@ -170,7 +172,7 @@ function BuildingAgeCell({
       {hasIcons ? (
         <span
           className={cn("absolute top-1/2 z-0 h-px -translate-y-1/2", LINE)}
-          style={{ left: "calc(var(--tree-icon) / 2)", width: "calc(var(--tree-icon) * 1.2)" }}
+          style={{ left: "calc(var(--tree-icon) / 2)", width: `calc(var(--tree-icon) * ${1.2 + leadSlots * 1.1})` }}
         />
       ) : null}
       <div className="flex h-full items-center" style={{ gap: "calc(var(--tree-icon) * 0.1)" }}>
