@@ -164,7 +164,7 @@ export function CommunityTopicsPage() {
       {creating ? (
         <CreateTopicDialog
           onClose={() => setCreating(false)}
-          onCreated={(slug) => {
+          onCreated={() => {
             setCreating(false);
             showToast(t("topics.created"));
           }}
