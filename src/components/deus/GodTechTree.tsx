@@ -89,7 +89,7 @@ function BuildingColumn({ row, linkState }: { row: GodTechTreeRow; linkState?: L
             }}
           />
         ) : null}
-        {row.cells.map((cell, age) => {
+        {row.cells.map((_, age) => {
           const branch = loose[age] ?? [];
           const hasIcons = branch.length > 0 || lines.some((line) => line.slots[age]);
           return (
