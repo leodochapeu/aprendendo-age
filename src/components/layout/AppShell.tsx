@@ -102,11 +102,6 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
           labelKey: "nav.streamerLinks",
           match: (p: string) => p === "/links-streamers" || p === "/streamer-links",
         },
-        {
-          to: "/rank",
-          labelKey: "nav.rank",
-          match: (p: string) => p === "/rank" || p.startsWith("/rank/"),
-        },
       ],
     },
   ];

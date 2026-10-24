@@ -952,6 +952,7 @@ export const enMessages: TranslationTree = {
       tabsLabel: "Player sections",
       tabCorrida: "AoM Race",
       tabJogadores: "Players",
+      tabRank: "Rank (RR)",
       tableCaption: "Player ranking by RR",
       tableSectionDesc: "Spreadsheet sorted by current RR (highest to lowest).",
       listAria: "Player list",

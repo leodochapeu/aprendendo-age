@@ -124,7 +124,7 @@ function goToRankForm(navigate: NavigateFunction, alias: string, profileId: numb
   navigate({ pathname: "/rank/form", search: sp.toString() });
 }
 
-export function RankPage() {
+export function RankPage({ embedded = false }: { embedded?: boolean }) {
   const { t } = useTranslation();
   const tiers = useMemo(() => getRankGuideTiers(t), [t]);
   const headerIcon = getTokenAssetUrl("aomr_wonder_age_icon");
@@ -176,12 +176,14 @@ export function RankPage() {
   }
 
   return (
-    <div className="space-y-10 pb-16">
-      <PageHeader
-        title={t("pages.rank.pageTitle")}
-        headerIconSrc={headerIcon}
-        description={t("pages.rank.pageDescription")}
-      />
+    <div className={embedded ? "space-y-10" : "space-y-10 pb-16"}>
+      {embedded ? null : (
+        <PageHeader
+          title={t("pages.rank.pageTitle")}
+          headerIconSrc={headerIcon}
+          description={t("pages.rank.pageDescription")}
+        />
+      )}
 
       <div className="rounded-2xl border border-aom-border/50 bg-zinc-900/40 p-4 sm:p-5">
         <p className="text-sm leading-relaxed text-zinc-400 sm:max-w-2xl">{t("pages.rank.consultIntro")}</p>

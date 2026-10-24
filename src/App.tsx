@@ -3,7 +3,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "@/components/layout/AppShell";
 import { SiteNotificationsProvider } from "@/context/SiteNotificationsContext";
+import { useTranslation } from "@/hooks/useTranslation";
 import { startAppUpdateWatcher } from "@/lib/appUpdateWatcher";
+import { localePlayersPath } from "@/lib/localeRoutes";
 import { AldeaoComparePage } from "@/pages/AldeaoComparePage";
 import { AldeaoDetailPage } from "@/pages/AldeaoDetailPage";
 import { AldeoesPage } from "@/pages/AldeoesPage";
@@ -38,7 +40,6 @@ import { LoginPage } from "@/pages/LoginPage";
 import { PublicPlayerProfilePage } from "@/pages/PublicPlayerProfilePage";
 import { ProfilePage } from "@/pages/ProfilePage";
 import { RegisterPage } from "@/pages/RegisterPage";
-import { RankPage } from "@/pages/RankPage";
 import { ReliquiasDetailPage } from "@/pages/ReliquiasDetailPage";
 import { ReliquiasPage } from "@/pages/ReliquiasPage";
 import { SecretStartBuilderPage } from "@/pages/SecretStartBuilderPage";
@@ -56,6 +57,11 @@ import { UnidadesPage } from "@/pages/UnidadesPage";
 const BattleRandomPage = lazy(() =>
   import("@/pages/BattleRandomPage").then((m) => ({ default: m.BattleRandomPage })),
 );
+
+function LegacyRankRedirect() {
+  const { locale } = useTranslation();
+  return <Navigate to={`${localePlayersPath(locale)}?tab=rank`} replace />;
+}
 
 function BattleRandomFallback() {
   return (
@@ -134,7 +140,7 @@ export default function App() {
               </Suspense>
             }
           />
-          <Route path="rank" element={<RankPage />} />
+          <Route path="rank" element={<LegacyRankRedirect />} />
           <Route path="rank/form" element={<FormRankPage />} />
           <Route path="jogadores-aom" element={<JogadoresAomPage />} />
           <Route path="aom-players" element={<JogadoresAomPage />} />

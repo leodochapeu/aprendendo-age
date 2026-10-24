@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import { CorridaAomTab } from "@/components/jogadores/CorridaAomTab";
 import { JogadoresAomTab } from "@/components/jogadores/JogadoresAomTab";
@@ -6,17 +7,24 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
 import { fetchAomRacePlayers, type AomRacePlayer } from "@/lib/playersApi";
+import { RankPage } from "@/pages/RankPage";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 
-type PlayersTabId = "corrida" | "jogadores";
+type PlayersTabId = "corrida" | "jogadores" | "rank";
+
+const PLAYER_TABS: PlayersTabId[] = ["corrida", "jogadores", "rank"];
+
+function tabFromSearch(value: string | null): PlayersTabId {
+  return PLAYER_TABS.includes(value as PlayersTabId) ? (value as PlayersTabId) : "corrida";
+}
 
 export function JogadoresAomPage() {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const headerIcon = getTokenAssetUrl("aomr_wonder_age_icon");
   const supabaseConfigured = isSupabaseConfigured();
-
-  const [activeTab, setActiveTab] = useState<PlayersTabId>("corrida");
+  const activeTab = tabFromSearch(searchParams.get("tab"));
   const [players, setPlayers] = useState<AomRacePlayer[]>([]);
   const [loading, setLoading] = useState(supabaseConfigured);
   const [error, setError] = useState<string | null>(null);
@@ -65,7 +73,12 @@ export function JogadoresAomPage() {
   const tabs: { id: PlayersTabId; labelKey: string }[] = [
     { id: "corrida", labelKey: "pages.players.tabCorrida" },
     { id: "jogadores", labelKey: "pages.players.tabJogadores" },
+    { id: "rank", labelKey: "pages.players.tabRank" },
   ];
+
+  function selectTab(id: PlayersTabId) {
+    setSearchParams(id === "corrida" ? {} : { tab: id }, { replace: true });
+  }
 
   return (
     <div className="space-y-8 pb-16">
@@ -88,7 +101,7 @@ export function JogadoresAomPage() {
               type="button"
               role="tab"
               aria-selected={active}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => selectTab(tab.id)}
               className={cn(
                 "rounded-lg px-4 py-2 text-sm font-medium transition",
                 active
@@ -102,7 +115,9 @@ export function JogadoresAomPage() {
         })}
       </div>
 
-      {loading ? (
+      {activeTab === "rank" ? (
+        <RankPage embedded />
+      ) : loading ? (
         <div className="flex flex-col items-center justify-center rounded-2xl border border-aom-border/50 bg-zinc-950/60 py-16">
           <span
             className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-amber-500/25 border-t-amber-500"

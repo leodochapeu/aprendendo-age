@@ -953,6 +953,7 @@ export const ptMessages: TranslationTree = {
       tabsLabel: "Seções de jogadores",
       tabCorrida: "Corrida AoM",
       tabJogadores: "Jogadores",
+      tabRank: "Rank (RR)",
       tableCaption: "Ranking de jogadores por RR",
       tableSectionDesc: "Planilha ordenada pelo RR atual (maior para menor).",
       listAria: "Lista de jogadores",

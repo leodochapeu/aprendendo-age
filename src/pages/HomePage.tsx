@@ -186,7 +186,7 @@ export function HomePage() {
       isNew: true,
     },
     {
-      to: "/rank",
+      to: `${localePlayersPath(locale)}?tab=rank`,
       step: 5,
       title: t("nav.rank"),
       description: t("pages.home.showcase.rank.description"),
