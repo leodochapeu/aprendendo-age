@@ -3,6 +3,7 @@ import type { Tecnologia, Unidade } from "@/data/catalog";
 import { firstNumId } from "@/lib/entityRefs";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import type { Deus } from "@/lib/godMajorTree";
+import { treeIconPreview, type TreeIconPreview } from "@/lib/treeIconPreview";
 
 export type GodTechTreeFrame = "tech" | "unit" | "myth" | "hero" | "ship";
 
@@ -14,6 +15,7 @@ export type GodTechTreeItem = {
   /** Nome em inglês, usado para alinhar linhas de melhoria (Machado → Serra → Carpinteiros). */
   ingles?: string;
   frame: GodTechTreeFrame;
+  preview?: TreeIconPreview;
 };
 
 /** Uma linha vertical de melhorias, com um espaço por era. `null` = essa era não tem o elo. */
@@ -27,6 +29,7 @@ export type GodTechTreeBuildingMark = {
   nome: string;
   icon?: string;
   to?: string;
+  preview?: TreeIconPreview;
 };
 
 export type GodTechTreeCell = {
@@ -84,6 +87,7 @@ export function buildGodTechTree(god: Deus, catalog: LocaleCatalog): GodTechTree
         icon: unit.icon,
         to: linkTo(catalog, "unidades", catalog.unidadeSlugById.get(unit.id)),
         frame: unitFrame(unit),
+        preview: treeIconPreview(unit),
       });
     }
   });
@@ -100,6 +104,7 @@ export function buildGodTechTree(god: Deus, catalog: LocaleCatalog): GodTechTree
         to: linkTo(catalog, "tecnologias", catalog.tecnologiaSlugByIndex.get(index)),
         ingles: tech.ingles,
         frame: "tech",
+        preview: treeIconPreview(tech),
       });
     }
   });
@@ -132,6 +137,7 @@ export function buildGodTechTree(god: Deus, catalog: LocaleCatalog): GodTechTree
       nome,
       icon: building.icon,
       to: linkTo(catalog, "construcoes", catalog.construcaoSlugById.get(id)),
+      preview: treeIconPreview(building),
     };
 
     rows.push({

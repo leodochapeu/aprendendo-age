@@ -118,6 +118,7 @@ export const ptMessages: TranslationTree = {
     mapPreviewInGame: "No Jogo",
     mapPreview3dVision: "Visão 3d",
     god: "Deus",
+    cost: "Custo",
     costAndTime: "Custo e tempo",
     combatDefense: "Combate / defesa",
     relatedUnits: "Unidades relacionadas",

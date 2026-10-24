@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 
 import { MinorAgeContent } from "@/components/deus/GodMinorChoices";
 import { Section } from "@/components/ui/Section";
@@ -16,7 +15,9 @@ import {
   type GodTechTreeRow,
 } from "@/lib/godTechTree";
 import { getEraAssetUrl } from "@/lib/eraAssetUrl";
+import { TreeIconHover } from "@/components/deus/TreeIconHover";
 import { getIconFieldUrl } from "@/lib/notionTokenAssets";
+import type { TreeIconPreview } from "@/lib/treeIconPreview";
 import type { ListIndexLinkState } from "@/lib/listIndexReturnState";
 import { cn } from "@/lib/cn";
 
@@ -120,7 +121,7 @@ type BuildingColumnModel = {
   loose: GodTechTreeItem[][];
   lines: GodTechTreeLine[];
   buildingAge: number;
-  building?: { nome: string; icon?: string; to?: string };
+  building?: { nome: string; icon?: string; to?: string; preview?: TreeIconPreview };
   lastContent: number;
 };
 
@@ -205,7 +206,7 @@ function TreeIcon({
   frame,
   linkState,
 }: {
-  item: { nome: string; icon?: string; to?: string };
+  item: { nome: string; icon?: string; to?: string; preview?: TreeIconPreview };
   frame: GodTechTreeFrame | "building";
   linkState?: ListIndexLinkState;
 }) {
@@ -215,22 +216,20 @@ function TreeIcon({
   ) : (
     <span className="px-0.5 text-center text-[9px] font-semibold text-zinc-400">{item.nome.slice(0, 2)}</span>
   );
-  const className = cn(
-    "relative z-[1] flex size-10 items-center justify-center border bg-black p-0.5 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.65)]",
-    FRAME[frame],
-    item.to && "transition hover:brightness-125 hover:outline hover:outline-1 hover:outline-[#f0d48a]",
-  );
-  if (!item.to) {
-    return (
-      <div className={className} title={item.nome} aria-label={item.nome}>
-        {body}
-      </div>
-    );
-  }
   return (
-    <Link to={item.to} state={linkState} title={item.nome} aria-label={item.nome} className={className}>
+    <TreeIconHover
+      nome={item.nome}
+      src={src}
+      preview={item.preview}
+      to={item.to}
+      linkState={linkState}
+      className={cn(
+        "relative z-[1] flex size-10 items-center justify-center border bg-black p-0.5 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.65)] transition",
+        FRAME[frame],
+      )}
+    >
       {body}
-    </Link>
+    </TreeIconHover>
   );
 }
 

@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-
+import { TreeIconHover } from "@/components/deus/TreeIconHover";
 import { type GodChoiceFrame, type GodChoiceIcon, type GodMinorChoiceRow } from "@/lib/godMinorChoices";
 import type { ListIndexLinkState } from "@/lib/listIndexReturnState";
 import { cn } from "@/lib/cn";
@@ -45,21 +44,19 @@ function ChoiceIcon({ item, linkState }: { item: GodChoiceIcon; linkState?: List
   ) : (
     <span className="px-0.5 text-center text-[9px] font-semibold text-zinc-400">{item.nome.slice(0, 2)}</span>
   );
-  const className = cn(
-    "flex shrink-0 items-center justify-center border bg-black p-0.5 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.65)]",
-    FRAME[item.frame],
-    item.to && "transition hover:brightness-125 hover:outline hover:outline-1 hover:outline-[#f0d48a]",
-  );
-  if (!item.to) {
-    return (
-      <div className={className} title={item.nome} aria-label={item.nome}>
-        {body}
-      </div>
-    );
-  }
   return (
-    <Link to={item.to} state={linkState} title={item.nome} aria-label={item.nome} className={className}>
+    <TreeIconHover
+      nome={item.nome}
+      src={item.src}
+      preview={item.preview}
+      to={item.to}
+      linkState={linkState}
+      className={cn(
+        "flex shrink-0 items-center justify-center border bg-black p-0.5 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.65)] transition",
+        FRAME[item.frame],
+      )}
+    >
       {body}
-    </Link>
+    </TreeIconHover>
   );
 }

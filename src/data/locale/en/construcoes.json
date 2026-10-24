@@ -4887,5 +4887,34 @@
     "descricao_resumida": "Generates Favor.",
     "descricao_avancada": "The greatest Monument of them all. Monuments generate Favor.",
     "rotulo": "Gods (Set)"
+  },
+  {
+    "id": 132,
+    "nome": "Lighthouse",
+    "pontos_de_vida": 1400,
+    "dps": 0,
+    "armadura_anticorte": 40.0,
+    "armadura_antiperfurante": 90.0,
+    "armadura_anticontucao": 5.0,
+    "armadura_anticontusao": 5.0,
+    "madeira": 0,
+    "ouro": 200,
+    "guarnicao": 10,
+    "custo": 200,
+    "tempo_construir_segundos": 120,
+    "icon": "aomr_lighthouse_icon",
+    "era_id": 4,
+    "panteao_id": 2,
+    "ingles": "Lighthouse",
+    "tipo": [
+      {
+        "type": "Visão 👁‍🗨"
+      }
+    ],
+    "panteao": "Egyptian :aomr_pantheon_egyptians_icon:",
+    "era": "Mythic :aomr_mythic_age_icon:",
+    "descricao_resumida": "Provides gigantic line of sight.",
+    "descricao_avancada": "Provides gigantic line of sight, but cannot attack.",
+    "historia": "The Egyptian Lighthouse acts as a giant outpost, providing a large line of sight.\n\nThe Pharos lighthouse in Alexandria, Egypt, was one of the Seven Wonders of the Ancient World and remarkable for its architecture and size. It warned mariners at night of shoal waters along the tricky coast. It was actually built by Greek rulers of Egypt who had taken control after the death of Alexander and the breakup of his brief empire. The list of seven wonders was made by a Greek and heavily favored Greek artifacts. Most had relatively short lives, including the lighthouse, which was felled by an earthquake."
   }
 ]

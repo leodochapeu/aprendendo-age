@@ -4887,5 +4887,34 @@
     "descricao_resumida": "Gera Favor.",
     "descricao_avancada": "O maior Monumento de todos. Monumentos geram Favor.",
     "rotulo": "Deuses (Set)"
+  },
+  {
+    "id": 132,
+    "nome": "Farol",
+    "pontos_de_vida": 1400,
+    "dps": 0,
+    "armadura_anticorte": 40.0,
+    "armadura_antiperfurante": 90.0,
+    "armadura_anticontucao": 5.0,
+    "armadura_anticontusao": 5.0,
+    "madeira": 0,
+    "ouro": 200,
+    "guarnicao": 10,
+    "custo": 200,
+    "tempo_construir_segundos": 120,
+    "icon": "aomr_lighthouse_icon",
+    "era_id": 4,
+    "panteao_id": 2,
+    "ingles": "Lighthouse",
+    "tipo": [
+      {
+        "type": "Visão 👁‍🗨"
+      }
+    ],
+    "panteao": "Egípcio :aomr_pantheon_egyptians_icon:",
+    "era": "Mítica :aomr_mythic_age_icon:",
+    "descricao_resumida": "Fornece linha de visão gigantesca.",
+    "descricao_avancada": "Fornece linha de visão gigantesca, mas não pode atacar.",
+    "historia": "O Farol Egípcio serve de posto avançado gigante, fornecendo uma grande linha de visão.\n\nO farol de Pharos, em Alexandria, no Egito, foi uma das Sete Maravilhas do Mundo Antigo e notável por sua arquitetura e tamanho. Ele alertava os marinheiros à noite sobre águas rasas ao longo da costa traiçoeira. Na verdade, ele foi construído por governantes gregos do Egito que assumiram o controle após a morte de Alexandre e a dissolução de seu breve império. A lista das sete maravilhas foi feita por um grego e favorecia muito os artefatos gregos. A maioria teve vidas relativamente curtas, incluindo o farol, que foi ao chão após um terremoto."
   }
 ]

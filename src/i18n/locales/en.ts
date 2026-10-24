@@ -118,6 +118,7 @@ export const enMessages: TranslationTree = {
     mapPreviewInGame: "In game",
     mapPreview3dVision: "3D vision",
     god: "God",
+    cost: "Cost",
     costAndTime: "Cost and time",
     combatDefense: "Combat / defense",
     relatedUnits: "Related units",

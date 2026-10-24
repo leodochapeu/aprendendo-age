@@ -7,6 +7,7 @@ import type { Deus } from "@/lib/godMajorTree";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { getTecnologiaAssetUrl } from "@/lib/tecnologiaAssetUrl";
 import { resolveTecnologiaIndex } from "@/lib/tecnologiaIndex";
+import { treeIconPreview, type TreeIconPreview } from "@/lib/treeIconPreview";
 
 export type GodChoiceFrame = "power" | "tech" | "myth" | "portrait";
 
@@ -16,6 +17,7 @@ export type GodChoiceIcon = {
   src?: string;
   to?: string;
   frame: GodChoiceFrame;
+  preview?: TreeIconPreview;
 };
 
 export type GodMinorChoice = {
@@ -90,6 +92,7 @@ function minorChoice(minor: Deus, catalog: LocaleCatalog): GodMinorChoice {
       src: getUnidadeAssetUrl(unit),
       to: link(catalog, "unidades", catalog.unidadeSlugById.get(unit.id)),
       frame: "myth",
+      preview: treeIconPreview(unit),
     });
   }
 
@@ -111,6 +114,7 @@ function minorChoice(minor: Deus, catalog: LocaleCatalog): GodMinorChoice {
       src: getDeusAssetUrl(minor),
       to: link(catalog, "deuses", catalog.deusSlugById.get(minor.id)),
       frame: "portrait",
+      preview: treeIconPreview({ descricao_resumida: minor.foco }),
     },
     icons,
   };
@@ -127,6 +131,7 @@ function powerIcon(god: Deus, catalog: LocaleCatalog, prefix: string): GodChoice
     src: getGodPowerAssetUrl(power),
     to: link(catalog, "poderes", catalog.godpowerSlugById.get(power.id)),
     frame: "power",
+    preview: treeIconPreview(power),
   };
 }
 
@@ -137,6 +142,7 @@ function techIcon(catalog: LocaleCatalog, tech: Tecnologia, index: number, prefi
     src: getTecnologiaAssetUrl(tech),
     to: link(catalog, "tecnologias", catalog.tecnologiaSlugByIndex.get(index)),
     frame: "tech",
+    preview: treeIconPreview(tech),
   };
 }
 
