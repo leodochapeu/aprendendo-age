@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } from "react";
 
 import { useSiteNotifications } from "@/context/SiteNotificationsContext";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -66,6 +66,8 @@ export function TrilhaDeck() {
   const navRef = useRef<HTMLElement>(null);
   const scrollLock = useRef(0);
   const [activeId, setActiveId] = useState(() => readHash() ?? "inicio");
+  const [indexOpen, setIndexOpen] = useState(true);
+  const indexId = useId();
 
   const goTo = useCallback((id: string) => {
     const target = document.getElementById(id);
@@ -133,6 +135,7 @@ export function TrilhaDeck() {
 
   const activeIndex = Math.max(0, PANELS.findIndex((panel) => panel.id === activeId));
   const activeChapterId = PANELS[activeIndex]?.chapterId ?? "inicio";
+  const indexLabel = indexOpen ? t("common.collapseHeader") : t("common.expandHeader");
 
   return (
     <TrilhaJumpContext.Provider value={goTo}>
@@ -176,8 +179,28 @@ export function TrilhaDeck() {
                   {t("pages.trilha.deck.next")}
                 </button>
               </div>
+              <button
+                type="button"
+                onClick={() => setIndexOpen((open) => !open)}
+                aria-expanded={indexOpen}
+                aria-controls={indexId}
+                title={indexLabel}
+                aria-label={indexLabel}
+                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-zinc-900/50 text-amber-100/90 transition hover:border-amber-500/40 hover:bg-zinc-900/80 focus:outline-none focus:ring-2 focus:ring-amber-500/25"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                  className={cn("transition-transform", indexOpen && "rotate-180")}
+                >
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
-            <ol className="mt-2 flex flex-wrap gap-1.5">
+            <ol id={indexId} className={cn("mt-2 flex flex-wrap gap-1.5", !indexOpen && "hidden")}>
               {TRILHA_CHAPTERS.map((item, index) => {
                 const active = item.id === activeChapterId;
                 const firstPanel = PANELS.find((panel) => panel.chapterId === item.id);
