@@ -23,6 +23,7 @@ import { PAGE_COMMENT_PAGE_SIZE, type CommentErrorCode, type PageComment } from 
 import {
   createPageComment,
   deletePageComment,
+  fetchMyCommentActivity,
   fetchPageComments,
   reportPageComment,
   searchCommentMentions,
@@ -33,14 +34,27 @@ import {
 import { playerProfilePagePath } from "@/lib/playersApi";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
-const MAP_KIND = "mapas";
-
 type Draft =
   | { mode: "new"; body: string; mentions: CommentMention[] }
   | { mode: "reply"; body: string; mentions: CommentMention[]; replyTo: PageComment }
   | { mode: "edit"; body: string; mentions: CommentMention[]; commentId: string };
 
 export function MapComments({ slug, mapName }: { slug: string; mapName: string }) {
+  const { t } = useTranslation();
+  return <PageComments key={slug} pageKind="mapas" pageKey={slug} itemName={mapName} kindLabel={t("comments.kinds.map")} />;
+}
+
+export function PageComments({
+  pageKind,
+  pageKey,
+  itemName,
+  kindLabel,
+}: {
+  pageKind: string;
+  pageKey: string;
+  itemName: string;
+  kindLabel: string;
+}) {
   const { t, locale } = useTranslation();
   const { showToast } = useToast();
   const { status, user, profile } = useAuth();
@@ -48,7 +62,7 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
   const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
   const [items, setItems] = useState<PageComment[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
   const [draft, setDraft] = useState<Draft | null>(null);
   const [sending, setSending] = useState(false);
@@ -56,39 +70,67 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
   const composerRef = useRef<HTMLDivElement>(null);
   const pageCount = Math.max(1, Math.ceil(total / PAGE_COMMENT_PAGE_SIZE));
 
-  useEffect(() => {
-    setPage(0);
-    setDraft(null);
-  }, [slug]);
+  const firstLoad = useRef(true);
+  const itemIds = items.map((item) => item.id).join(",");
 
   useEffect(() => {
     if (!isSupabaseConfigured()) {
-      setLoading(false);
+      setLoaded(true);
       return;
     }
     let cancel = false;
-    setLoading(true);
-    void fetchPageComments(MAP_KIND, slug, page, user?.id ?? null).then((result) => {
-      if (cancel) return;
-      if (!result.ok) {
-        setError(true);
-        setLoading(false);
-        return;
-      }
-      const lastPage = Math.max(0, Math.ceil(result.data.total / PAGE_COMMENT_PAGE_SIZE) - 1);
-      if (page > lastPage) {
-        setPage(lastPage);
-        return;
-      }
-      setError(false);
-      setItems(result.data.items);
-      setTotal(result.data.total);
-      setLoading(false);
+    const run = () => {
+      void fetchPageComments(pageKind, pageKey, page, null).then((result) => {
+        if (cancel) return;
+        if (!result.ok) {
+          setError(true);
+          setLoaded(true);
+          return;
+        }
+        const lastPage = Math.max(0, Math.ceil(result.data.total / PAGE_COMMENT_PAGE_SIZE) - 1);
+        if (page > lastPage) {
+          setPage(lastPage);
+          return;
+        }
+        setError(false);
+        setItems(result.data.items);
+        setTotal(result.data.total);
+        setLoaded(true);
+      });
+    };
+    if (firstLoad.current) {
+      firstLoad.current = false;
+      const cancelSchedule = scheduleAfterPaint(run);
+      return () => {
+        cancel = true;
+        cancelSchedule();
+      };
+    }
+    run();
+    return () => {
+      cancel = true;
+    };
+  }, [pageKind, pageKey, page]);
+
+  useEffect(() => {
+    if (!user?.id || !itemIds) return;
+    let cancel = false;
+    void fetchMyCommentActivity(itemIds.split(","), user.id).then((flags) => {
+      if (cancel || !flags) return;
+      const liked = new Set(flags.liked);
+      const reported = new Set(flags.reported);
+      setItems((current) =>
+        current.map((item) => ({
+          ...item,
+          likedByMe: liked.has(item.id),
+          reportedByMe: reported.has(item.id),
+        })),
+      );
     });
     return () => {
       cancel = true;
     };
-  }, [slug, page, user?.id]);
+  }, [user?.id, itemIds]);
 
   function openDraft(next: Draft) {
     setDraft(next);
@@ -103,7 +145,7 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
   }
 
   async function reload(nextPage = page) {
-    const result = await fetchPageComments(MAP_KIND, slug, nextPage, user?.id ?? null);
+    const result = await fetchPageComments(pageKind, pageKey, nextPage, user?.id ?? null);
     if (!result.ok) {
       setError(true);
       return;
@@ -126,9 +168,9 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
       draft.mode === "edit"
         ? await updatePageComment(draft.commentId, body)
         : await createPageComment({
-            pageKind: MAP_KIND,
-            pageKey: slug,
-            pageTitle: mapName,
+            pageKind,
+            pageKey,
+            pageTitle: itemName,
             body,
             replyTo: draft.mode === "reply" ? draft.replyTo.id : null,
             createdBy: user.id,
@@ -204,7 +246,7 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
   return (
     <Section title={t("comments.title")} className="mt-6">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-zinc-500">{t("comments.count", { count: total })}</p>
+        {loaded ? <p className="text-xs text-zinc-500">{t("comments.count", { count: total })}</p> : <span />}
         {loggedIn ? (
           <button
             type="button"
@@ -227,7 +269,8 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
         <div ref={composerRef} className="mb-5">
           <CommentComposer
             key={draft.mode === "edit" ? draft.commentId : draft.mode === "reply" ? draft.replyTo.id : "new"}
-            mapName={mapName}
+            itemName={itemName}
+            kindLabel={kindLabel}
             draft={draft}
             sending={sending}
             onChange={(body, mentions) => setDraft({ ...draft, body, mentions })}
@@ -237,9 +280,8 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
         </div>
       ) : null}
 
-      {loading ? <p className="text-sm text-zinc-400">{t("notifications.loading")}</p> : null}
-      {!loading && error ? <p className="text-sm text-red-200">{t("comments.loadError")}</p> : null}
-      {!loading && !error && items.length === 0 ? <p className="text-sm text-zinc-400">{t("comments.empty")}</p> : null}
+      {loaded && error ? <p className="text-sm text-red-200">{t("comments.loadError")}</p> : null}
+      {loaded && !error && items.length === 0 ? <p className="text-sm text-zinc-400">{t("comments.empty")}</p> : null}
 
       <ul className="space-y-3">
         {items.map((comment) => (
@@ -271,7 +313,7 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
         ))}
       </ul>
 
-      {total > PAGE_COMMENT_PAGE_SIZE ? (
+      {loaded && total > PAGE_COMMENT_PAGE_SIZE ? (
         <div className="mt-4 flex items-center justify-between gap-3">
           <button
             type="button"
@@ -297,14 +339,16 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
 }
 
 function CommentComposer({
-  mapName,
+  itemName,
+  kindLabel,
   draft,
   sending,
   onChange,
   onCancel,
   onSubmit,
 }: {
-  mapName: string;
+  itemName: string;
+  kindLabel: string;
   draft: Draft;
   sending: boolean;
   onChange: (body: string, mentions: CommentMention[]) => void;
@@ -412,8 +456,8 @@ function CommentComposer({
     >
       <p className="text-xs font-semibold tracking-wide text-zinc-400">{t("comments.formTitle")}</p>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
-        <LockedField label={t("comments.kind")} value={t("comments.kinds.map")} />
-        <LockedField label={t("comments.item")} value={mapName} />
+        <LockedField label={t("comments.kind")} value={kindLabel} />
+        <LockedField label={t("comments.item")} value={itemName} />
       </div>
       {draft.mode === "reply" ? (
         <div className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/5 px-3 py-2">
@@ -642,6 +686,15 @@ function LockedField({ label, value }: { label: string; value: string }) {
       <input readOnly value={value} className="mt-1 w-full cursor-default rounded-lg border border-white/10 bg-zinc-900/80 px-3 py-2 text-sm text-zinc-300" />
     </label>
   );
+}
+
+function scheduleAfterPaint(run: () => void): () => void {
+  if (typeof window.requestIdleCallback === "function") {
+    const id = window.requestIdleCallback(() => run(), { timeout: 1200 });
+    return () => window.cancelIdleCallback(id);
+  }
+  const id = window.setTimeout(run, 1);
+  return () => window.clearTimeout(id);
 }
 
 function ToolButton({ label, onClick, children }: { label: string; onClick: () => void; children: ReactNode }) {

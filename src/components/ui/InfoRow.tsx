@@ -11,15 +11,26 @@ type InfoRowProps = {
   icon?: string | string[];
   /** Controle ao lado do rótulo, fora do texto em maiúsculas (ex.: botão de informação). */
   labelAddon?: ReactNode;
+  /** Rótulo à esquerda e valor à direita, na mesma linha. */
+  aside?: boolean;
+  /** Sem divisória inferior — o contentor trata das bordas. */
+  borderless?: boolean;
 };
 
-export function InfoRow({ label, children, icon, labelAddon }: InfoRowProps) {
+export function InfoRow({ label, children, icon, labelAddon, aside = false, borderless = false }: InfoRowProps) {
   const icons = (Array.isArray(icon) ? icon : icon ? [icon] : [])
     .map((key) => resolveTokenIconSrc(key))
     .filter((src): src is string => Boolean(src));
 
   return (
-    <div className="grid gap-1 border-b border-zinc-800/80 py-3 last:border-0 sm:grid-cols-[minmax(0,220px)_1fr] sm:items-start sm:gap-6">
+    <div
+      className={cn(
+        aside
+          ? "grid grid-cols-[minmax(0,1fr)_minmax(0,max-content)] items-center gap-x-3 py-3"
+          : "grid gap-1 py-3 sm:grid-cols-[minmax(0,220px)_1fr] sm:items-start sm:gap-6",
+        !borderless && "border-b border-zinc-800/80 last:border-0",
+      )}
+    >
       <div className="flex min-w-0 items-center gap-2">
         {icons.length ? (
           <span className="flex shrink-0 items-center gap-1">
@@ -31,7 +42,7 @@ export function InfoRow({ label, children, icon, labelAddon }: InfoRowProps) {
         <span className="text-xs font-medium uppercase tracking-wide text-zinc-500">{label}</span>
         {labelAddon}
       </div>
-      <div className="min-w-0 text-sm text-zinc-200">{children}</div>
+      <div className={cn("min-w-0 text-sm text-zinc-200", aside && "text-right")}>{children}</div>
     </div>
   );
 }

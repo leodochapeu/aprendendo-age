@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { NotionText } from "@/components/ui/NotionText";
@@ -56,6 +57,9 @@ export function ReliquiasDetailPage() {
         <Section title={t("common.advancedDescription")} className="mt-6">
           <NotionText text={r.descricao_avancada} />
         </Section>
+      ) : null}
+      {slug ? (
+        <PageComments pageKind="reliquias" pageKey={slug} itemName={r.nome} kindLabel={t("comments.kinds.relic")} />
       ) : null}
     </div>
   );

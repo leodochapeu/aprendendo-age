@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import { DeusPortraitHeaderActions } from "@/components/deus/DeusPortraitHeaderActions";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
@@ -185,6 +186,9 @@ export function GodpowerDetailPage() {
         <Section title={t("common.advancedDescription")} className="mt-6">
           <NotionText text={g.descricao_avancada} />
         </Section>
+      ) : null}
+      {slug ? (
+        <PageComments pageKind="poderes" pageKey={slug} itemName={g.nome} kindLabel={t("comments.kinds.godPower")} />
       ) : null}
     </div>
   );

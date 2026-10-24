@@ -139,6 +139,23 @@ export async function fetchPageComments(
   };
 }
 
+export async function fetchMyCommentActivity(
+  commentIds: string[],
+  userId: string,
+): Promise<{ liked: string[]; reported: string[] } | null> {
+  const supabase = createSupabaseClient();
+  if (!supabase || commentIds.length === 0) return { liked: [], reported: [] };
+  const [mine, reports] = await Promise.all([
+    supabase.from("page_comment_likes").select("comment_id").eq("created_by", userId).in("comment_id", commentIds),
+    supabase.from("page_comment_reports").select("comment_id").eq("created_by", userId).in("comment_id", commentIds),
+  ]);
+  if (mine.error || reports.error) return null;
+  return {
+    liked: ((mine.data as { comment_id: string }[] | null) ?? []).map((row) => row.comment_id),
+    reported: ((reports.data as { comment_id: string }[] | null) ?? []).map((row) => row.comment_id),
+  };
+}
+
 export async function createPageComment(input: {
   pageKind: string;
   pageKey: string;

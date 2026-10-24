@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 import { MapComments } from "@/components/comments/MapComments";
@@ -16,6 +16,44 @@ import { listIndexBackLinkLabel, listIndexReturnTo } from "@/lib/listIndexReturn
 import { formatMapaOrigem, mapaOrigemTitleIcons } from "@/lib/mapaOrigemIcons";
 
 type PreviewTabId = "ingame" | "vision3d";
+
+function MapAboutFacts({ items }: { items: { key: string; label: string; value: ReactNode }[] }) {
+  const pairs: { key: string; label: string; value: ReactNode }[][] = [];
+  for (let i = 0; i < items.length; i += 2) pairs.push(items.slice(i, i + 2));
+
+  return (
+    <div>
+      {pairs.map((pair, index) => {
+        const hasNext = index < pairs.length - 1;
+        return (
+          <div
+            key={pair[0]?.key ?? index}
+            className={cn("grid grid-cols-1 sm:grid-cols-2", hasNext && "sm:border-b sm:border-zinc-800/80")}
+          >
+            {pair.map((item, col) => (
+              <div
+                key={item.key}
+                className={cn(
+                  "min-w-0",
+                  col === 0 &&
+                    pair.length > 1 &&
+                    "border-b border-zinc-800/80 sm:border-b-0 sm:border-r sm:pr-5",
+                  col === 1 && "sm:pl-5",
+                  col === 1 && hasNext && "border-b border-zinc-800/80 sm:border-b-0",
+                  pair.length === 1 && hasNext && "border-b border-zinc-800/80 sm:border-b-0",
+                )}
+              >
+                <InfoRow label={item.label} aside borderless>
+                  {item.value}
+                </InfoRow>
+              </div>
+            ))}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 function MapaPreviewSection({
   mapName,
@@ -237,22 +275,24 @@ export function MapaDetailPage() {
     >
       <div className="grid gap-6 lg:grid-cols-2">
         <Section title={t("common.aboutMap")} className="h-full">
-          <div className="space-y-0">
-            <InfoRow label={t("common.ranked")}>{fmtSimNao(m.mapas_da_ranqueada)}</InfoRow>
-            <InfoRow label={t("common.leftRanked")}>{fmtSimNao(m.saiu_da_ranqueada)}</InfoRow>
-            <InfoRow label={t("common.default")}>{fmtSimNao(m.padrao)}</InfoRow>
-            <InfoRow label={t("common.quickMatches")}>{fmtSimNao(m.partidas_rapidas)}</InfoRow>
-            <InfoRow label={t("common.type")}>{m.tipo ?? "—"}</InfoRow>
-            <InfoRow label={t("common.origin")}>{formatMapaOrigem(m.origem) || "—"}</InfoRow>
-            {hist && hist !== shortDesc ? (
-              <div className="border-t border-aom-border/50 pt-3">
-                <NotionText
-                  text={hist}
-                  className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
-                />
-              </div>
-            ) : null}
-          </div>
+          {hist && hist !== shortDesc ? (
+            <div className="border-b border-zinc-800/80 pb-3">
+              <NotionText
+                text={hist}
+                className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
+              />
+            </div>
+          ) : null}
+          <MapAboutFacts
+            items={[
+              { key: "ranked", label: t("common.ranked"), value: fmtSimNao(m.mapas_da_ranqueada) },
+              { key: "leftRanked", label: t("common.leftRanked"), value: fmtSimNao(m.saiu_da_ranqueada) },
+              { key: "default", label: t("common.default"), value: fmtSimNao(m.padrao) },
+              { key: "quick", label: t("common.quickMatches"), value: fmtSimNao(m.partidas_rapidas) },
+              { key: "type", label: t("common.type"), value: m.tipo ?? "—" },
+              { key: "origin", label: t("common.origin"), value: formatMapaOrigem(m.origem) || "—" },
+            ]}
+          />
         </Section>
         {mapaIcon ? (
           <Section title={t("common.map2d")} className="h-full">

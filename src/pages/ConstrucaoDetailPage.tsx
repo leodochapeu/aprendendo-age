@@ -1,5 +1,6 @@
 import { Navigate, useLocation, useParams, useSearchParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import { BuildingProjection, type BuildingVisualChoice } from "@/components/construcao/BuildingProjection";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
@@ -392,6 +393,9 @@ export function ConstrucaoDetailPage() {
             className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
           />
         </Section>
+      ) : null}
+      {slug ? (
+        <PageComments pageKind="construcoes" pageKey={slug} itemName={view.nome} kindLabel={t("comments.kinds.building")} />
       ) : null}
     </div>
   );

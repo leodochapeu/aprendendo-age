@@ -1,6 +1,7 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 
 import { DeusPortraitHeaderActions } from "@/components/deus/DeusPortraitHeaderActions";
+import { PageComments } from "@/components/comments/MapComments";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
@@ -191,6 +192,9 @@ export function PanteaoDetailPage() {
             </InfoRow>
           ) : null}
         </div>
+        {slug ? (
+          <PageComments pageKind="panteoes" pageKey={slug} itemName={p.nome} kindLabel={t("comments.kinds.pantheon")} />
+        ) : null}
       </div>
     </div>
   );

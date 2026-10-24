@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import {
   UnidadeCombateBody,
   UnidadeCustoBody,
@@ -108,6 +109,9 @@ export function UnidadeDetailPage() {
       ) : null}
 
       {(u.historia ?? "").trim() ? <UnidadeHistoriaDetails historia={u.historia!} /> : null}
+      {slug ? (
+        <PageComments pageKind="unidades" pageKey={slug} itemName={u.nome} kindLabel={t("comments.kinds.unit")} />
+      ) : null}
     </div>
   );
 }

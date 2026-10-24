@@ -1,5 +1,6 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import { DeusBuildAvaliacaoCards } from "@/components/deus/DeusBuildAvaliacaoCards";
 import { DeusExplicacaoMaiorSection } from "@/components/deus/DeusExplicacaoMaiorSection";
 import { GodMajorDecisionTree } from "@/components/deus/GodMajorDecisionTree";
@@ -303,6 +304,7 @@ export function DeusDetailPage() {
           <NotionText text={joinRefNomes(d.unidades_exclusivas)} />
         </Section>
       ) : null}
+      {slug ? <PageComments pageKind="deuses" pageKey={slug} itemName={d.nome} kindLabel={t("comments.kinds.god")} /> : null}
     </div>
   );
 }

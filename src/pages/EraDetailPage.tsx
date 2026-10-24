@@ -1,5 +1,6 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
@@ -98,6 +99,7 @@ export function EraDetailPage() {
           </Section>
         )}
       </div>
+      {slug ? <PageComments pageKind="eras" pageKey={slug} itemName={e.nome} kindLabel={t("comments.kinds.age")} /> : null}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { InfoRow } from "@/components/ui/InfoRow";
@@ -227,6 +228,9 @@ export function TecnologiaDetailPage() {
             className="block whitespace-pre-line text-sm leading-relaxed text-zinc-300"
           />
         </Section>
+      ) : null}
+      {slug ? (
+        <PageComments pageKind="tecnologias" pageKey={slug} itemName={tech.nome} kindLabel={t("comments.kinds.technology")} />
       ) : null}
     </div>
   );

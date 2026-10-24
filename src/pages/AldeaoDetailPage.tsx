@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 
 import { AldeaoBonusBody, AldeaoColetaBody, AldeaoGeralBody } from "@/components/aldeao/AldeaoSectionBodies";
+import { PageComments } from "@/components/comments/MapComments";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -73,6 +74,9 @@ export function AldeaoDetailPage() {
           <AldeaoBonusBody a={a} />
         </Section>
       </div>
+      {slug ? (
+        <PageComments pageKind="aldeoes" pageKey={slug} itemName={a.nome} kindLabel={t("comments.kinds.villager")} />
+      ) : null}
     </div>
   );
 }

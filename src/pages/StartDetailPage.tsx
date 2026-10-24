@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 
+import { PageComments } from "@/components/comments/MapComments";
 import { StartAuthorsMeta } from "@/components/start/StartAuthorsMeta";
 import { StartGodPortraits } from "@/components/start/StartGodPortraits";
 import { StartStructuredContent } from "@/components/starts/StartStructuredContent";
@@ -54,6 +55,14 @@ export function StartDetailPage() {
 
       {!hasStructured && s.youtube.length === 0 ? (
         <p className="mt-6 text-sm text-zinc-500">{t("common.noContentOrVideos")}</p>
+      ) : null}
+      {slug ? (
+        <PageComments
+          pageKind="starts"
+          pageKey={slug}
+          itemName={s.titulo.replace(/:[a-z0-9_-]+:/gi, " ").replace(/\s+/g, " ").trim() || s.titulo}
+          kindLabel={t("comments.kinds.start")}
+        />
       ) : null}
     </div>
   );
