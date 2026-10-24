@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
@@ -138,11 +138,13 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
   const [loading, setLoading] = useState(configured);
   const [error, setError] = useState(false);
   const [index, setIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [reading, setReading] = useState<SiteNotification | null>(null);
   const closeReading = useCallback(() => setReading(null), []);
+  const indexRef = useRef(0);
+  const progressRef = useRef(0);
+  const barRefs = useRef<Array<HTMLSpanElement | null>>([]);
 
   useEffect(() => {
     if (!configured) return;
@@ -178,24 +180,46 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
   const safeIndex = count === 0 ? 0 : index % count;
   const item = featured[safeIndex];
   const playing = count > 1 && !hovered && !hidden && !reducedMotion && !reading;
+  const playingRef = useRef(playing);
+  playingRef.current = playing;
+  const imageKey = featured.map((slide) => slide.imageUrl ?? "").join("|");
 
   useEffect(() => {
-    if (!playing) return;
-    const started = performance.now();
+    for (const url of imageKey.split("|")) {
+      if (!url) continue;
+      const preload = new Image();
+      preload.src = url;
+    }
+  }, [imageKey]);
+
+  useEffect(() => {
     let frame = 0;
+    let last = performance.now();
     const tick = (now: number) => {
-      const ratio = Math.min(1, (now - started) / SLIDE_MS);
-      setProgress(ratio);
-      if (ratio >= 1) {
-        setProgress(0);
-        setIndex((current) => (current + 1) % count);
-        return;
+      const elapsed = now - last;
+      last = now;
+      if (playingRef.current && count > 1) {
+        progressRef.current += elapsed / SLIDE_MS;
+        if (progressRef.current >= 1) {
+          progressRef.current = 0;
+          const next = (indexRef.current + 1) % count;
+          indexRef.current = next;
+          setIndex(next);
+        }
+      }
+      const active = count === 0 ? 0 : indexRef.current % count;
+      const ratio = reducedMotion ? 1 : Math.min(1, progressRef.current);
+      for (let slideIndex = 0; slideIndex < count; slideIndex += 1) {
+        const bar = barRefs.current[slideIndex];
+        if (!bar) continue;
+        const width = slideIndex < active ? 1 : slideIndex === active ? ratio : 0;
+        bar.style.transform = `scaleX(${width})`;
       }
       frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [playing, safeIndex, count]);
+  }, [count, reducedMotion]);
 
   useEffect(() => {
     const onHide = () => setHidden(document.visibilityState === "hidden");
@@ -205,17 +229,19 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
 
   function goTo(next: number) {
     if (count === 0) return;
-    setIndex((next + count) % count);
-    setProgress(0);
+    const resolved = (next + count) % count;
+    indexRef.current = resolved;
+    progressRef.current = 0;
+    setIndex(resolved);
   }
 
   if (!archive && (!configured || loading || error || featured.length === 0)) return null;
 
   return (
     <div className={archive ? "mx-auto max-w-6xl" : undefined}>
-      <style>{`@keyframes showcase-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }`}</style>
+      <style>{`@keyframes showcase-in { from { opacity: 0; } to { opacity: 1; } }`}</style>
       <section
-        className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black px-6 py-8 text-white shadow-2xl shadow-black/40 sm:px-10 sm:py-12"
+        className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-black px-6 py-8 text-white shadow-2xl shadow-black/40 sm:px-10 sm:py-12"
         aria-roledescription="carousel"
         aria-label={t("notifications.showcaseEyebrow")}
         tabIndex={0}
@@ -237,6 +263,10 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
           if (!event.currentTarget.contains(event.relatedTarget)) setHovered(false);
         }}
       >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -z-10 inset-0 bg-[radial-gradient(ellipse_42%_55%_at_76%_46%,rgba(245,158,11,0.14),transparent_70%)]"
+        />
         <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-zinc-500">{t("notifications.showcaseEyebrow")}</p>
 
         {loading ? <p className="mt-16 text-sm text-zinc-500">{t("notifications.loading")}</p> : null}
@@ -249,16 +279,16 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
         ) : null}
 
         {item ? (
-          <div key={item.id} className="mt-8 grid items-center gap-8 lg:grid-cols-2 [animation:showcase-in_0.7s_ease]">
-            <div className="order-1 flex w-full min-w-0 items-center justify-center lg:order-2">
+          <div key={item.id} className="mt-8 grid items-center gap-8 lg:grid-cols-2 [animation:showcase-in_0.45s_ease]">
+            <div className="order-1 flex h-[min(46vh,24rem)] w-full min-w-0 items-center justify-center lg:order-2">
               {item.imageUrl ? (
                 <img
                   src={item.imageUrl}
                   alt=""
-                  className="max-h-[min(72vh,42rem)] w-auto max-w-full rounded-[1.75rem] object-contain"
+                  className="max-h-full w-auto max-w-full rounded-[1.75rem] object-contain"
                 />
               ) : (
-                <div className="flex h-64 w-full items-end rounded-[1.75rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_58%)] p-8">
+                <div className="flex h-full w-full items-end rounded-[1.75rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_58%)] p-8">
                   <span className="font-[family-name:var(--font-display)] text-7xl text-white/15">{String(safeIndex + 1).padStart(2, "0")}</span>
                 </div>
               )}
@@ -270,7 +300,7 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
                 {String(count).padStart(2, "0")}
               </p>
               <p className="mt-4 text-sm text-zinc-400">{formatNotificationTime(item.startsAt, localeTag)}</p>
-              <h1 className="mt-4 max-w-xl font-[family-name:var(--font-display)] text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl">
+              <h1 className="mt-4 max-w-xl font-[family-name:var(--font-display)] text-4xl font-semibold leading-[1.05] tracking-tight text-white line-clamp-3 sm:text-5xl">
                 {item.title}
               </h1>
               <p className="mt-6 max-w-xl whitespace-pre-wrap text-base leading-relaxed text-zinc-400 line-clamp-4 sm:text-lg sm:leading-relaxed">
@@ -293,23 +323,24 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
         {count > 1 ? (
           <div className="mt-10 flex items-center gap-4">
             <div className="flex min-w-0 flex-1 gap-2" role="tablist" aria-label={t("notifications.showcaseEyebrow")}>
-              {featured.map((slide, slideIndex) => {
-                const active = slideIndex === safeIndex;
-                const width = slideIndex < safeIndex ? "100%" : active ? `${Math.round((reducedMotion ? 1 : progress) * 100)}%` : "0%";
-                return (
+              {featured.map((slide, slideIndex) => (
                   <button
                     key={slide.id}
                     type="button"
                     role="tab"
-                    aria-selected={active}
+                    aria-selected={slideIndex === safeIndex}
                     aria-label={t("notifications.showcaseSlide", { current: slideIndex + 1, total: count })}
                     onClick={() => goTo(slideIndex)}
                     className="h-0.5 min-w-0 flex-1 overflow-hidden rounded-full bg-white/15"
                   >
-                    <span className="block h-full bg-white" style={{ width }} />
+                    <span
+                      ref={(node) => {
+                        barRefs.current[slideIndex] = node;
+                      }}
+                      className="block h-full origin-left bg-white"
+                    />
                   </button>
-                );
-              })}
+                ))}
             </div>
             <div className="flex shrink-0 gap-2">
               <button
