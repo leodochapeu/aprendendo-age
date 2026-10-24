@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import { HomeLiveStreamers } from "@/components/home/HomeLiveStreamers";
 import { HomeShowcaseCard } from "@/components/home/HomeShowcaseCard";
 import { NotificationNewsCarousel } from "@/pages/NotificationShowcasePage";
 import { HomeShowcaseCarousel } from "@/components/home/HomeShowcaseCarousel";
@@ -248,6 +249,7 @@ export function HomePage() {
 
       <div className="space-y-14 px-4 pb-10 md:space-y-16 md:px-10 md:pb-14">
         <NotificationNewsCarousel />
+        <HomeLiveStreamers />
         <PageHeader
           title={t("pages.home.exploreTitle")}
           description={t("pages.home.exploreDesc")}

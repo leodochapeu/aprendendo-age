@@ -201,6 +201,9 @@ export const enMessages: TranslationTree = {
       startHere: "Start here:",
       trilhaCta: "Learning path",
       buildOrdersCta: "View build orders",
+      streamersTitle: "Streamers",
+      streamersDesc: "Who from the community is live right now.",
+      streamersCta: "See channels",
       exploreTitle: "Explore the site",
       exploreDesc:
         "From basics to advanced play: a guided path, the game catalog, and tools built with the Brazilian AoM community.",

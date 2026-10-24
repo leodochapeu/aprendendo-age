@@ -201,6 +201,9 @@ export const ptMessages: TranslationTree = {
       startHere: "Comece por aqui:",
       trilhaCta: "Trilha de aprendizado",
       buildOrdersCta: "Ver build orders",
+      streamersTitle: "Streamers",
+      streamersDesc: "Quem da comunidade está ao vivo agora.",
+      streamersCta: "Ver canais",
       exploreTitle: "Explore o site",
       exploreDesc:
         "Do básico ao avançado: trilha guiada, catálogo do jogo e ferramentas feitas com a comunidade brasileira de AoM.",
