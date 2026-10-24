@@ -31,6 +31,7 @@ import { NotificationManagePage } from "@/pages/NotificationManagePage";
 import { NotificationShowcasePage } from "@/pages/NotificationShowcasePage";
 import { NotificationsPage } from "@/pages/NotificationsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { CommentModerationPage } from "@/pages/CommentModerationPage";
 import { PageSuggestionsPage } from "@/pages/PageSuggestionsPage";
 import { PanteaoDetailPage } from "@/pages/PanteaoDetailPage";
 import { PanteoesPage } from "@/pages/PanteoesPage";
@@ -174,6 +175,8 @@ export default function App() {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="sugestoes" element={<PageSuggestionsPage />} />
           <Route path="suggestions" element={<PageSuggestionsPage />} />
+          <Route path="moderacao" element={<CommentModerationPage />} />
+          <Route path="moderation" element={<CommentModerationPage />} />
           <Route path="notificacoes" element={<NotificationsPage />} />
           <Route path="notifications" element={<NotificationsPage />} />
           <Route path="notificacoes/apresentacao" element={<NotificationShowcasePage />} />

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
+import { MapComments } from "@/components/comments/MapComments";
 import { AppPageDetail } from "@/components/layout/AppPageDetail";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
 import { BackLink } from "@/components/ui/BackLink";
@@ -263,6 +264,7 @@ export function MapaDetailPage() {
           </Section>
         ) : null}
       </div>
+      <MapComments slug={slug ?? m.nome} mapName={m.nome} />
       <MapaPreviewSection
         key={`${previewUrl ?? ""}|${map3dUrl ?? ""}`}
         mapName={m.nome}

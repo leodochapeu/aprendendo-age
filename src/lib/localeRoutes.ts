@@ -82,6 +82,11 @@ const SUGGESTIONS_SEGMENT: Record<Locale, string> = {
   en: "suggestions",
 };
 
+const MODERATION_SEGMENT: Record<Locale, string> = {
+  pt: "moderacao",
+  en: "moderation",
+};
+
 const AUTH_SEGMENT: Record<Locale, Record<AuthSection, string>> = {
   pt: {
     login: "entrar",
@@ -162,6 +167,10 @@ export function localeSuggestionsPath(locale: Locale): string {
   return `/${SUGGESTIONS_SEGMENT[locale]}`;
 }
 
+export function localeModerationPath(locale: Locale): string {
+  return `/${MODERATION_SEGMENT[locale]}`;
+}
+
 export function allSectionPathSegments(section: LocaleSection): string[] {
   return [SECTION_SEGMENT.pt[section], SECTION_SEGMENT.en[section]];
 }
@@ -214,6 +223,11 @@ export function swapLocaleInPath(pathname: string, toLocale: Locale): string {
 
   if (parts[0] === SUGGESTIONS_SEGMENT.pt || parts[0] === SUGGESTIONS_SEGMENT.en) {
     parts[0] = SUGGESTIONS_SEGMENT[toLocale];
+    return `/${parts.join("/")}${search}`;
+  }
+
+  if (parts[0] === MODERATION_SEGMENT.pt || parts[0] === MODERATION_SEGMENT.en) {
+    parts[0] = MODERATION_SEGMENT[toLocale];
     return `/${parts.join("/")}${search}`;
   }
 

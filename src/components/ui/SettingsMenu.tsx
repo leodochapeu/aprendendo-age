@@ -7,7 +7,7 @@ import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useTranslation } from "@/hooks/useTranslation";
 import { canSendSiteNotification, canSuggestPageChange } from "@/lib/auth/constants";
 import { cn } from "@/lib/cn";
-import { localeAuthPath, localeNotificationManagePath, localeSuggestionsPath } from "@/lib/localeRoutes";
+import { localeAuthPath, localeModerationPath, localeNotificationManagePath, localeSuggestionsPath } from "@/lib/localeRoutes";
 
 function GearIcon({ className }: { className?: string }) {
   return (
@@ -173,6 +173,17 @@ export function SettingsMenu({ className }: { className?: string }) {
               onClick={() => setOpen(false)}
             >
               {t("suggestions.menu")}
+            </Link>
+          ) : null}
+
+          {canSuggest ? (
+            <Link
+              role="menuitem"
+              to={localeModerationPath(locale)}
+              className={menuItemClassName()}
+              onClick={() => setOpen(false)}
+            >
+              {t("comments.moderationMenu")}
             </Link>
           ) : null}
 
