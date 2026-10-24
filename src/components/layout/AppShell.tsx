@@ -85,21 +85,25 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
         {
           to: "/videos-comunidade",
           labelKey: "nav.communityVideos",
+          icon: "aomr_relic_scroll_icon",
           match: (p: string) => p === "/videos-comunidade" || p.startsWith("/videos-comunidade/"),
         },
         {
           to: "/jogadores-aom",
           labelKey: "nav.players",
+          icon: "aomr_type_hero_icon",
           match: (p: string) => p === "/jogadores-aom" || p === "/aom-players",
         },
         {
           to: "/clans",
           labelKey: "nav.clans",
+          icon: "aomr_pantheon_norse_icon",
           match: (p: string) => p === "/clans" || p.startsWith("/clans/"),
         },
         {
           to: "/links-streamers",
           labelKey: "nav.streamerLinks",
+          icon: "aomr_ambassadors_icon",
           match: (p: string) => p === "/links-streamers" || p === "/streamer-links",
         },
       ],
@@ -266,7 +270,7 @@ function ShellNavLinks({
 }
 
 const DESKTOP_NAV_COLLAPSED_KEY = "aprendendo-age.desktop-nav-collapsed";
-const DESKTOP_NAV_AUTO_COLLAPSE_MS = 10_000;
+const DESKTOP_NAV_AUTO_COLLAPSE_MS = 20_000;
 
 function readDesktopNavCollapsed(): boolean {
   try {

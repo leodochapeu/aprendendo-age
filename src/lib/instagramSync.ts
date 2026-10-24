@@ -19,6 +19,16 @@ export function parseInstagramUsername(raw: string): string | null {
   return value;
 }
 
+const INSTAGRAM_NOTICE_MS = 7 * 24 * 60 * 60 * 1000;
+
+export function instagramNotificationWindow(postedAt: string, now = new Date()): { startsAt: Date; expiresAt: Date } {
+  const posted = new Date(postedAt);
+  const postedMs = posted.getTime();
+  const nowMs = now.getTime();
+  const startsAt = Number.isFinite(postedMs) && postedMs <= nowMs ? posted : now;
+  return { startsAt, expiresAt: new Date(nowMs + INSTAGRAM_NOTICE_MS) };
+}
+
 export function captionToNotification(caption: string | null | undefined, username: string): { title: string; description: string } {
   const text = (caption ?? "").replace(/\r/g, "").trim();
   const firstLine = text
