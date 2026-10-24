@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -129,8 +130,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<AppUserProfile | null>(null);
   const [profileLoadState, setProfileLoadState] = useState<ProfileLoadState>("idle");
+  const profileReadyUserId = useRef<string | null>(null);
 
   const clearLocalAuth = useCallback(() => {
+    profileReadyUserId.current = null;
     setUser(null);
     setSession(null);
     setProfile(null);
@@ -144,8 +147,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setProfileLoadState("ready");
         return;
       }
-      setProfileLoadState("loading");
-      setProfile(mapRowToProfile(u, null));
+      const alreadyReady = profileReadyUserId.current === u.id;
+      if (!alreadyReady) {
+        setProfileLoadState("loading");
+        setProfile(mapRowToProfile(u, null));
+      }
       setStatus("authenticated");
 
       try {
@@ -159,6 +165,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       } catch {
         setProfile(mapRowToProfile(u, null));
       } finally {
+        profileReadyUserId.current = u.id;
         setProfileLoadState("ready");
       }
     },

@@ -1136,6 +1136,8 @@ export const ptMessages: TranslationTree = {
     loadMore: "Carregar mais",
     loadOlder: "Carregar mais antigas",
     loading: "Carregando…",
+    refresh: "Atualizar",
+    refreshing: "Atualizando…",
     loadError: "Não foi possível carregar as notificações.",
     close: "Fechar",
     openLink: "Abrir link",

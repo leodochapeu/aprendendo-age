@@ -85,7 +85,8 @@ export function NotificationManagePage() {
     configured && status === "authenticated" && profileLoadState === "ready" && canSendSiteNotification(profile?.role);
 
   const [items, setItems] = useState<SiteNotification[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState(false);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
@@ -94,14 +95,17 @@ export function NotificationManagePage() {
   const [dateQuery, setDateQuery] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
 
+  const requestId = useRef(0);
   const load = useCallback(async () => {
-    setLoading(true);
+    const id = ++requestId.current;
+    setRefreshing(true);
     setError(false);
     const result = await fetchManagedNotifications();
-    setLoading(false);
+    if (id !== requestId.current) return;
+    setRefreshing(false);
+    setLoaded(true);
     if (!result.ok) {
       setError(true);
-      setItems([]);
       return;
     }
     const now = Date.now();
@@ -114,8 +118,10 @@ export function NotificationManagePage() {
     );
   }, []);
 
+  const didLoad = useRef(false);
   useEffect(() => {
-    if (!canManage) return;
+    if (!canManage || didLoad.current) return;
+    didLoad.current = true;
     void load();
   }, [canManage, load]);
 
@@ -213,13 +219,7 @@ export function NotificationManagePage() {
         <p className="text-sm text-zinc-400">{t("notifications.forbidden")}</p>
       ) : null}
 
-      {canManage && loading ? <p className="text-sm text-zinc-400">{t("notifications.loading")}</p> : null}
-      {canManage && !loading && error ? <p className="text-sm text-red-200">{t("notifications.loadError")}</p> : null}
-      {canManage && !loading && !error && items.length === 0 ? (
-        <p className="text-sm text-zinc-400">{t("notifications.manageEmpty")}</p>
-      ) : null}
-
-      {canManage && !loading && !error && items.length > 0 ? (
+      {canManage ? (
         <>
           <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end">
             <SearchField
@@ -238,9 +238,24 @@ export function NotificationManagePage() {
                 className={dateInputClass}
               />
             </label>
+            <button
+              type="button"
+              onClick={() => void load()}
+              disabled={refreshing}
+              className="w-fit shrink-0 rounded-lg border border-amber-500/45 bg-amber-500/15 px-4 py-2 text-sm font-semibold text-amber-100 hover:bg-amber-500/25 disabled:opacity-50"
+            >
+              {refreshing ? t("notifications.refreshing") : t("notifications.refresh")}
+            </button>
           </div>
 
-          {filtered.length === 0 ? <p className="text-sm text-zinc-400">{t("notifications.filterEmpty")}</p> : null}
+          {!loaded && refreshing ? <p className="text-sm text-zinc-400">{t("notifications.loading")}</p> : null}
+          {error ? <p className="mb-3 text-sm text-red-200">{t("notifications.loadError")}</p> : null}
+          {loaded && !error && items.length === 0 ? (
+            <p className="text-sm text-zinc-400">{t("notifications.manageEmpty")}</p>
+          ) : null}
+          {items.length > 0 && filtered.length === 0 ? (
+            <p className="text-sm text-zinc-400">{t("notifications.filterEmpty")}</p>
+          ) : null}
 
           <ul className="flex flex-col gap-3">
             {filtered.map((item) => {

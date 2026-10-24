@@ -1135,6 +1135,8 @@ export const enMessages: TranslationTree = {
     loadMore: "Load more",
     loadOlder: "Load older",
     loading: "Loading…",
+    refresh: "Refresh",
+    refreshing: "Refreshing…",
     loadError: "Could not load notifications.",
     close: "Close",
     openLink: "Open link",
