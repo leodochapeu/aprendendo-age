@@ -6,7 +6,7 @@ import { useSiteNotifications } from "@/context/SiteNotificationsContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
 import { localeToHtmlLang } from "@/lib/locale";
-import { localeNotificationsPath } from "@/lib/localeRoutes";
+import { localeNotificationShowcasePath, localeNotificationsPath } from "@/lib/localeRoutes";
 import { formatNotificationTime, type SiteNotification } from "@/lib/siteNotifications";
 
 function BellIcon() {
@@ -178,15 +178,24 @@ export function NotificationBell() {
                 ))
               : null}
           </div>
-          {hasMore ? (
+          <div className="border-t border-aom-border/80">
             <Link
-              to={localeNotificationsPath(locale)}
+              to={localeNotificationShowcasePath(locale)}
               onClick={() => setOpen(false)}
-              className="border-t border-aom-border/80 px-3 py-2.5 text-center text-sm font-medium text-amber-200 transition hover:bg-zinc-900/80"
+              className="block px-3 py-2.5 text-center text-sm font-medium text-amber-200 transition hover:bg-zinc-900/80"
             >
-              {t("notifications.loadMore")}
+              {t("notifications.showcaseMenu")}
             </Link>
-          ) : null}
+            {hasMore ? (
+              <Link
+                to={localeNotificationsPath(locale)}
+                onClick={() => setOpen(false)}
+                className="block border-t border-aom-border/60 px-3 py-2.5 text-center text-sm font-medium text-amber-200/80 transition hover:bg-zinc-900/80"
+              >
+                {t("notifications.loadMore")}
+              </Link>
+            ) : null}
+          </div>
         </div>
       ) : null}
     </div>

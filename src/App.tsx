@@ -26,6 +26,7 @@ import { MapaDetailPage } from "@/pages/MapaDetailPage";
 import { MapasPage } from "@/pages/MapasPage";
 import { NotificationComposePage } from "@/pages/NotificationComposePage";
 import { NotificationManagePage } from "@/pages/NotificationManagePage";
+import { NotificationShowcasePage } from "@/pages/NotificationShowcasePage";
 import { NotificationsPage } from "@/pages/NotificationsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { PanteaoDetailPage } from "@/pages/PanteaoDetailPage";
@@ -166,6 +167,8 @@ export default function App() {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="notificacoes" element={<NotificationsPage />} />
           <Route path="notifications" element={<NotificationsPage />} />
+          <Route path="notificacoes/apresentacao" element={<NotificationShowcasePage />} />
+          <Route path="notifications/presentation" element={<NotificationShowcasePage />} />
           <Route path="notificacoes/gerenciar" element={<NotificationManagePage />} />
           <Route path="notifications/manage" element={<NotificationManagePage />} />
           <Route path="notificacoes/enviar" element={<NotificationComposePage />} />

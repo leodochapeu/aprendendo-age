@@ -72,6 +72,11 @@ const NOTIFICATION_MANAGE_SEGMENT: Record<Locale, string> = {
   en: "manage",
 };
 
+const NOTIFICATION_SHOWCASE_SEGMENT: Record<Locale, string> = {
+  pt: "apresentacao",
+  en: "presentation",
+};
+
 const AUTH_SEGMENT: Record<Locale, Record<AuthSection, string>> = {
   pt: {
     login: "entrar",
@@ -144,6 +149,10 @@ export function localeNotificationManagePath(locale: Locale): string {
   return `${localeNotificationsPath(locale)}/${NOTIFICATION_MANAGE_SEGMENT[locale]}`;
 }
 
+export function localeNotificationShowcasePath(locale: Locale): string {
+  return `${localeNotificationsPath(locale)}/${NOTIFICATION_SHOWCASE_SEGMENT[locale]}`;
+}
+
 export function allSectionPathSegments(section: LocaleSection): string[] {
   return [SECTION_SEGMENT.pt[section], SECTION_SEGMENT.en[section]];
 }
@@ -202,6 +211,8 @@ export function swapLocaleInPath(pathname: string, toLocale: Locale): string {
         parts[1] = NOTIFICATION_COMPOSE_SEGMENT[toLocale];
       } else if (parts[1] === NOTIFICATION_MANAGE_SEGMENT[notificationLocale]) {
         parts[1] = NOTIFICATION_MANAGE_SEGMENT[toLocale];
+      } else if (parts[1] === NOTIFICATION_SHOWCASE_SEGMENT[notificationLocale]) {
+        parts[1] = NOTIFICATION_SHOWCASE_SEGMENT[toLocale];
       }
     }
     return `/${parts.join("/")}${search}`;
