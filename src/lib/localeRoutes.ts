@@ -147,6 +147,11 @@ export function localeSectionPath(locale: Locale, section: LocaleSection, slug?:
   return `${base}/${slug}`;
 }
 
+/** Índice de deuses, unidades e starts de um panteão (`/panteoes/astecas/indice`). */
+export function localePantheonIndexPath(locale: Locale, slug: string): string {
+  return `${localeSectionPath(locale, "panteoes", slug)}/indice`;
+}
+
 export function localeAuthPath(locale: Locale, section: AuthSection): string {
   return `/${localeAuthSegment(locale, section)}`;
 }

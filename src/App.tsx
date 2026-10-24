@@ -3,13 +3,15 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { AppShell } from "@/components/layout/AppShell";
 import { SiteNotificationsProvider } from "@/context/SiteNotificationsContext";
+import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { startAppUpdateWatcher } from "@/lib/appUpdateWatcher";
-import { localeModerationPath, localePlayersPath } from "@/lib/localeRoutes";
+import { AZTEC_PANTEON_ID } from "@/lib/astecasCatalog";
+import { localeModerationPath, localePantheonIndexPath, localePlayersPath } from "@/lib/localeRoutes";
 import { AldeaoComparePage } from "@/pages/AldeaoComparePage";
 import { AldeaoDetailPage } from "@/pages/AldeaoDetailPage";
 import { AldeoesPage } from "@/pages/AldeoesPage";
-import { AstecasPage } from "@/pages/AstecasPage";
+import { PanteaoFullPage } from "@/pages/PanteaoFullPage";
 import { BattlePage } from "@/pages/BattlePage";
 import { BattlePantheonPage } from "@/pages/BattlePantheonPage";
 import { ClansPage } from "@/pages/ClansPage";
@@ -61,6 +63,13 @@ const BattleRandomPage = lazy(() =>
   import("@/pages/BattleRandomPage").then((m) => ({ default: m.BattleRandomPage })),
 );
 
+function LegacyAstecasRedirect() {
+  const { locale } = useTranslation();
+  const { panteaoSlugById } = useCatalog();
+  const slug = panteaoSlugById.get(AZTEC_PANTEON_ID) ?? "astecas";
+  return <Navigate to={localePantheonIndexPath(locale, slug)} replace />;
+}
+
 function LegacyRankRedirect() {
   const { locale } = useTranslation();
   return <Navigate to={`${localePlayersPath(locale)}?tab=rank`} replace />;
@@ -90,9 +99,11 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="panteoes" element={<PanteoesPage />} />
           <Route path="pantheons" element={<PanteoesPage />} />
+          <Route path="panteoes/:slug/indice" element={<PanteaoFullPage />} />
+          <Route path="pantheons/:slug/indice" element={<PanteaoFullPage />} />
           <Route path="panteoes/:slug" element={<PanteaoDetailPage />} />
           <Route path="pantheons/:slug" element={<PanteaoDetailPage />} />
-          <Route path="astecas" element={<AstecasPage />} />
+          <Route path="astecas" element={<LegacyAstecasRedirect />} />
           <Route path="deuses" element={<DeusesPage />} />
           <Route path="gods" element={<DeusesPage />} />
           <Route path="deuses/:slug" element={<DeusDetailPage />} />

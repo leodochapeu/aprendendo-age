@@ -10,6 +10,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
+import { localePantheonIndexPath } from "@/lib/localeRoutes";
 import { getDeusAssetUrl } from "@/lib/deusAssetUrl";
 import {
   listIndexLinkStateFromLocation,
@@ -19,7 +20,7 @@ import {
 import { cn } from "@/lib/cn";
 
 export function PanteaoDetailPage() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { aldeaoById, aldeaoSlugById, deusById, deusSlugById, panteaoBySlug, startById } = useCatalog();
   const { pathname, search: locSearch, state: navState } = useLocation();
   const backToList = listIndexReturnTo("/panteoes", navState);
@@ -131,6 +132,23 @@ export function PanteaoDetailPage() {
             siblingNav={<CatalogRecordNav section="panteoes" currentId={p.id} />}
           />
         )}
+
+        {slug ? (
+          <Link
+            to={localePantheonIndexPath(locale, slug)}
+            className="flex items-center justify-between gap-3 rounded-2xl border border-amber-500/40 bg-amber-500/15 px-4 py-3 text-left transition hover:border-amber-400/60 hover:bg-amber-500/25 focus:outline-none focus:ring-2 focus:ring-amber-500/35"
+          >
+            <span>
+              <span className="block font-[family-name:var(--font-display)] text-base font-semibold text-amber-50">
+                {t("common.pantheonIndex")}
+              </span>
+              <span className="mt-0.5 block text-sm text-amber-100/75">{t("common.pantheonIndexHint")}</span>
+            </span>
+            <span aria-hidden className="text-lg text-amber-200">
+              →
+            </span>
+          </Link>
+        ) : null}
 
         {p.description ? (
           <Section title={t("common.description")} className={cn(sectionOnHeroClass)}>

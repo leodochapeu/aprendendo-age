@@ -3,7 +3,6 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { PageComments } from "@/components/comments/MapComments";
 import { DeusBuildAvaliacaoCards } from "@/components/deus/DeusBuildAvaliacaoCards";
 import { DeusExplicacaoMaiorSection } from "@/components/deus/DeusExplicacaoMaiorSection";
-import { GodMinorChoices } from "@/components/deus/GodMinorChoices";
 import { GodTechTree } from "@/components/deus/GodTechTree";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
@@ -21,7 +20,7 @@ import { getDeusAssetUrl } from "@/lib/deusAssetUrl";
 import { firstNome, firstNumId, joinRefNomes } from "@/lib/entityRefs";
 import { getEraAssetUrl } from "@/lib/eraAssetUrl";
 import { getGodPowerAssetUrl } from "@/lib/godPowerAssetUrl";
-import { listIndexLinkStateFromLocation, listIndexReturnTo } from "@/lib/listIndexReturnState";
+import { listIndexLinkStateFromLocation, listIndexReturnTo, pantheonHubName } from "@/lib/listIndexReturnState";
 import { getPantheonWatermarkUrl } from "@/lib/pantheonAssetUrl";
 import { localeSectionPath } from "@/lib/localeRoutes";
 
@@ -46,7 +45,8 @@ export function DeusDetailPage() {
     const pathOnly = backTo.split("?")[0];
     if (pathOnly === "/deuses" || backTo.startsWith("/deuses?")) return t("nav.gods");
     if (pathOnly === "/gods" || backTo.startsWith("/gods?")) return t("nav.gods");
-    if (backTo === "/astecas" || backTo.startsWith("/astecas?")) return t("nav.astecas");
+    const hubName = pantheonHubName(backTo);
+    if (hubName) return hubName;
     if (backTo === "/starts" || backTo.startsWith("/starts?")) return t("nav.starts");
     if (backTo.startsWith("/starts/")) return t("common.backToStart");
     if (backTo.startsWith("/poderes/compare") || backTo.startsWith("/god-powers/compare")) return t("pages.godpowers.comparePowers");
@@ -201,8 +201,6 @@ export function DeusDetailPage() {
       </div>
 
       <GodTechTree god={d} className="mt-6" linkState={linkState} />
-
-      {d.hierarquia === "Maior" ? <GodMinorChoices god={d} className="mt-6" linkState={linkState} /> : null}
 
       {d.hierarquia === "Maior" ? (
         <Section title={t("common.archetypeEval")} className="mt-6">

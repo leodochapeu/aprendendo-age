@@ -1,13 +1,13 @@
 import { useMemo } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import { StartAuthorsMeta } from "@/components/start/StartAuthorsMeta";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
+import { BackLink } from "@/components/ui/BackLink";
 import { EntityCard } from "@/components/ui/EntityCard";
 import { MetaNotionLine } from "@/components/ui/MetaNotionLine";
 import { NotionText } from "@/components/ui/NotionText";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { InfoRow } from "@/components/ui/InfoRow";
 import { PantheonMetaIcon } from "@/components/ui/PantheonMetaIcon";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -15,13 +15,11 @@ import { familyMemberForPantheon } from "@/lib/buildingFamilies";
 import {
   AZTEC_PANTEON_ID,
   MAPAS_OBSIDIAN_ORIGEM,
-  isAztecAldeao,
-  isAztecConstrucao,
-  isAztecDeus,
-  isAztecGodpower,
-  isAztecUnidade,
   isObsidianMap,
+  isPantheonConstrucao,
+  isPantheonRef,
 } from "@/lib/astecasCatalog";
+import { localeSectionPath } from "@/lib/localeRoutes";
 import { getAldeaoAssetUrl, getConstrucaoAssetUrl, getMapaAssetUrl, getMapaPreviewUrl, getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { formatGodNameForMetaNotion, getDeusAssetUrl } from "@/lib/deusAssetUrl";
 import { getGodPowerAssetUrl } from "@/lib/godPowerAssetUrl";
@@ -38,8 +36,9 @@ import { startNovoTagClass } from "@/components/start/startNovoTag";
 const sectionTitleClass =
   "mb-4 font-[family-name:var(--font-display)] text-xl font-semibold text-amber-100/95";
 
-export function AstecasPage() {
-  const { t } = useTranslation();
+export function PanteaoFullPage() {
+  const { t, locale } = useTranslation();
+  const { slug } = useParams();
   const catalog = useCatalog();
   const {
     aldeaoSlugById,
@@ -55,7 +54,7 @@ export function AstecasPage() {
     mapaSlugByIndex,
     mapas,
     panteaoById,
-    panteaoSlugById,
+    panteaoBySlug,
     startsBuildOrder,
     unidadeSlugById,
     unidades,
@@ -66,50 +65,51 @@ export function AstecasPage() {
     [pathname, locSearch],
   );
 
-  const cardTint = pantheonCardTint("Astecas");
-  const panteaoAzteca = panteaoById.get(AZTEC_PANTEON_ID);
-  const panteaoFichaSlug = panteaoAzteca ? panteaoSlugById.get(panteaoAzteca.id) : undefined;
+  const pantheon = slug ? panteaoBySlug.get(slug) : undefined;
+  const pantheonId = pantheon?.id;
+  const cardTint = pantheonCardTint(pantheon?.nome ?? "");
+  const backTo = slug ? localeSectionPath(locale, "panteoes", slug) : localeSectionPath(locale, "panteoes");
 
-  const deusesAztecas = useMemo(
+  const deusesDoPanteao = useMemo(
     () =>
       [...deuses]
-        .filter(isAztecDeus)
+        .filter((d) => pantheonId != null && isPantheonRef(d.panteao, pantheonId))
         .sort((a, b) => {
           const aM = a.hierarquia?.toLowerCase() === "maior" ? 0 : 1;
           const bM = b.hierarquia?.toLowerCase() === "maior" ? 0 : 1;
           if (aM !== bM) return aM - bM;
           return a.id - b.id;
         }),
-    [deuses],
+    [deuses, pantheonId],
   );
 
-  const godpowersAztecas = useMemo(
+  const godpowersDoPanteao = useMemo(
     () =>
       [...godpowers]
-        .filter(isAztecGodpower)
+        .filter((g) => pantheonId != null && isPantheonRef(g.panteao, pantheonId))
         .sort((a, b) => a.id - b.id),
-    [godpowers],
+    [godpowers, pantheonId],
   );
 
-  const aldeoesAztecas = useMemo(
-    () => aldeoes.filter(isAztecAldeao),
-    [aldeoes],
+  const aldeoesDoPanteao = useMemo(
+    () => aldeoes.filter((a) => pantheonId != null && isPantheonRef(a.panteao, pantheonId)),
+    [aldeoes, pantheonId],
   );
 
-  const unidadesAztecas = useMemo(
+  const unidadesDoPanteao = useMemo(
     () =>
       [...unidades]
-        .filter(isAztecUnidade)
+        .filter((u) => pantheonId != null && isPantheonRef(u.panteao, pantheonId))
         .sort((a, b) => a.id - b.id),
-    [unidades],
+    [unidades, pantheonId],
   );
 
-  const construcoesAztecas = useMemo(
+  const construcoesDoPanteao = useMemo(
     () =>
       [...construcoes]
-        .filter(isAztecConstrucao)
+        .filter((c) => pantheonId != null && isPantheonConstrucao(c, pantheonId))
         .sort((a, b) => a.id - b.id),
-    [construcoes],
+    [construcoes, pantheonId],
   );
 
   const mapasObsidian = useMemo(
@@ -120,63 +120,47 @@ export function AstecasPage() {
     [mapas],
   );
 
-  const startsAztecas = useMemo(
+  const startsDoPanteao = useMemo(
     () =>
       [...startsBuildOrder]
-        .filter((s) => s.pantheon === "Astecas")
+        .filter((s) => pantheon != null && s.pantheon === pantheon.nome)
         .sort((a, b) => {
           const aNew = a.status === "new" ? 0 : 1;
           const bNew = b.status === "new" ? 0 : 1;
           if (aNew !== bNew) return aNew - bNew;
           return a.id - b.id;
         }),
-    [startsBuildOrder],
+    [pantheon, startsBuildOrder],
   );
+
+  if (!pantheon || pantheonId == null) {
+    return (
+      <div>
+        <BackLink to={backTo}>{t("nav.pantheons")}</BackLink>
+        <p className="text-zinc-400">{t("common.entityNotFound.pantheon")}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
-      {panteaoAzteca ? (
-        <>
-          <PageHeader
-            title={panteaoAzteca.nome}
-            headerIconSrc={getPantheonWatermarkUrl(panteaoAzteca)}
-            description={<NotionText text={panteaoAzteca.description} />}
-          />
-          <div className="mb-10 -mt-2 space-y-0 rounded-2xl border border-aom-border bg-aom-card/60 p-5">
-            {Array.isArray(panteaoAzteca.vill) && panteaoAzteca.vill.length > 0 ? (
-              <InfoRow label={t("common.villager")} icon="aomr_settler_icon">
-                {panteaoAzteca.vill.map((v) => v.nome).join(", ")}
-              </InfoRow>
-            ) : null}
-            {Array.isArray(panteaoAzteca.deuses) && panteaoAzteca.deuses.length > 0 ? (
-              <InfoRow label={t("common.gods")} icon={panteaoAzteca.icon ?? undefined}>
-                {panteaoAzteca.deuses.map((d) => d.nome).join(", ")}
-              </InfoRow>
-            ) : null}
-            {panteaoFichaSlug ? (
-              <p className="pt-1 text-sm text-zinc-500">
-                <Link
-                  to={`/panteoes/${panteaoFichaSlug}`}
-                  className="text-amber-200/90 underline-offset-2 hover:underline"
-                >
-                  {t("common.pantheonPageLink")}
-                </Link>{" "}
-                {t("common.inGeneralList")}
-              </p>
-            ) : null}
-          </div>
-        </>
-      ) : (
-        <PageHeader title={t("pages.astecas.title")} description={t("pages.astecas.description")} />
-      )}
+      <BackLink to={backTo}>{pantheon.nome}</BackLink>
+      <PageHeader
+        title={t("common.pantheonIndex")}
+        headerIconSrc={getPantheonWatermarkUrl(pantheon)}
+        description={
+          pantheonId === AZTEC_PANTEON_ID ? t("pages.astecas.description") : t("common.pantheonIndexHint")
+        }
+      />
 
+      {deusesDoPanteao.length > 0 ? (
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("nav.gods")}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {deusesAztecas.map((d) => (
+          {deusesDoPanteao.map((d) => (
             <li key={d.id}>
               <EntityCard
-                to={`/deuses/${deusSlugById.get(d.id) ?? d.id}`}
+                to={localeSectionPath(locale, "deuses", deusSlugById.get(d.id) ?? d.id)}
                 linkState={listIndexState}
                 title={d.nome}
                 cardTint={cardTint}
@@ -193,18 +177,20 @@ export function AstecasPage() {
           ))}
         </ul>
       </section>
+      ) : null}
 
+      {godpowersDoPanteao.length > 0 ? (
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("nav.godpowers")}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {godpowersAztecas.map((g) => {
+          {godpowersDoPanteao.map((g) => {
             const gid = firstNumId(g.god);
             const deus = gid != null ? deusById.get(gid) : undefined;
             const godLine = deus ? formatGodNameForMetaNotion(deus) : joinRefNomes(g.god);
             return (
               <li key={g.id}>
                 <EntityCard
-                  to={`/poderes/${godpowerSlugById.get(g.id) ?? g.id}`}
+                  to={localeSectionPath(locale, "poderes", godpowerSlugById.get(g.id) ?? g.id)}
                   linkState={listIndexState}
                   title={g.nome}
                   cardTint={cardTint}
@@ -219,14 +205,16 @@ export function AstecasPage() {
           })}
         </ul>
       </section>
+      ) : null}
 
+      {aldeoesDoPanteao.length > 0 ? (
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("nav.villagers")}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {aldeoesAztecas.map((a) => (
+          {aldeoesDoPanteao.map((a) => (
             <li key={a.id}>
               <EntityCard
-                to={`/aldeoes/${aldeaoSlugById.get(a.id) ?? a.id}`}
+                to={localeSectionPath(locale, "aldeoes", aldeaoSlugById.get(a.id) ?? a.id)}
                 linkState={listIndexState}
                 title={a.nome}
                 cardTint={cardTint}
@@ -238,14 +226,16 @@ export function AstecasPage() {
           ))}
         </ul>
       </section>
+      ) : null}
 
+      {unidadesDoPanteao.length > 0 ? (
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("nav.units")}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {unidadesAztecas.map((u) => (
+          {unidadesDoPanteao.map((u) => (
             <li key={u.id}>
               <EntityCard
-                to={`/unidades/${unidadeSlugById.get(u.id) ?? u.id}`}
+                to={localeSectionPath(locale, "unidades", unidadeSlugById.get(u.id) ?? u.id)}
                 linkState={listIndexState}
                 title={u.nome}
                 cardTint={cardTint}
@@ -266,19 +256,25 @@ export function AstecasPage() {
           ))}
         </ul>
       </section>
+      ) : null}
 
+      {construcoesDoPanteao.length > 0 ? (
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("nav.buildings")}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {construcoesAztecas.map((c) => {
-            const variantId = familyMemberForPantheon(c.id, AZTEC_PANTEON_ID);
+          {construcoesDoPanteao.map((c) => {
+            const variantId = familyMemberForPantheon(c.id, pantheonId);
             const variant = variantId != null && variantId !== c.id ? construcaoById.get(variantId) : undefined;
             const tintName = (variant?.panteao_id != null ? panteaoById.get(variant.panteao_id) : c.panteao_id != null ? panteaoById.get(c.panteao_id) : undefined)?.nome ?? "";
-            const slug = construcaoSlugById.get(c.id) ?? c.id;
+            const buildingSlug = construcaoSlugById.get(c.id) ?? c.id;
             return (
             <li key={c.id}>
               <EntityCard
-                to={variant ? `/construcoes/${slug}?v=${variant.id}` : `/construcoes/${slug}`}
+                to={
+                  variant
+                    ? `${localeSectionPath(locale, "construcoes", buildingSlug)}?v=${variant.id}`
+                    : localeSectionPath(locale, "construcoes", buildingSlug)
+                }
                 linkState={listIndexState}
                 title={c.nome}
                 cardTint={panteaoFieldHasMultiplePantheons(variant?.panteao ?? c.panteao) ? undefined : pantheonCardTint(tintName)}
@@ -293,15 +289,17 @@ export function AstecasPage() {
           })}
         </ul>
       </section>
+      ) : null}
 
+      {startsDoPanteao.length > 0 ? (
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("common.startsBuildOrders")}</h2>
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {startsAztecas.map((s) => (
+          {startsDoPanteao.map((s) => (
             <li key={s.slug} className="min-h-[8.5rem]">
               <EntityCard
                 className="h-full"
-                to={`/starts/${s.slug}`}
+                to={localeSectionPath(locale, "starts", s.slug)}
                 linkState={listIndexState}
                 watermarkSrc={resolveTokenIconSrc(s.image)}
                 title={
@@ -325,7 +323,9 @@ export function AstecasPage() {
           ))}
         </ul>
       </section>
+      ) : null}
 
+      {pantheonId === AZTEC_PANTEON_ID && mapasObsidian.length > 0 ? (
       <section className="mt-10">
         <h2 className={sectionTitleClass}>{t("common.mapsObsidianMirror")}</h2>
         <p className="mb-4 text-sm text-zinc-400">
@@ -338,7 +338,7 @@ export function AstecasPage() {
             return (
               <li key={`${m.nome}-${i}`}>
                 <EntityCard
-                  to={`/mapas/${mapaSlugByIndex.get(i) ?? i}`}
+                  to={localeSectionPath(locale, "mapas", mapaSlugByIndex.get(i) ?? i)}
                   linkState={listIndexState}
                   title={m.nome}
                   subtitle={m.tipo}
@@ -374,6 +374,7 @@ export function AstecasPage() {
           })}
         </ul>
       </section>
+      ) : null}
     </div>
   );
 }

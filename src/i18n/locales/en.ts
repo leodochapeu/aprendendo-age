@@ -142,6 +142,8 @@ export const enMessages: TranslationTree = {
     initial: "Initial",
     baseTimeSec: "Base time (sec)",
     noContentOrVideos: "No content or videos in this entry.",
+    pantheonIndex: "Pantheon index",
+    pantheonIndexHint: "Gods, god powers, units, buildings, and starts.",
     pantheonPageLink: "Pantheon page",
     inGeneralList: "in the general list.",
     mapsObsidianMirror: "Maps — Obsidian Mirror (2026)",

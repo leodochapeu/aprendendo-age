@@ -9,7 +9,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
-import { localePlayersPath, localeSectionPath } from "@/lib/localeRoutes";
+import { AZTEC_PANTEON_ID } from "@/lib/astecasCatalog";
+import { localePantheonIndexPath, localePlayersPath, localeSectionPath } from "@/lib/localeRoutes";
 import { trilhaShared } from "@/pages/trilha-de-aprendizado/trilhaAssets";
 
 const HERO_BG = "/assets/others/AprendendoAge_BG.webp";
@@ -35,6 +36,7 @@ export function HomePage() {
     godpowers,
     mapas,
     panteoes,
+    panteaoSlugById,
     reliquias,
     startsBuildOrder,
     tecnologias,
@@ -75,7 +77,7 @@ export function HomePage() {
       count: panteoes.length,
     },
     {
-      to: "/astecas",
+      to: localePantheonIndexPath(locale, panteaoSlugById.get(AZTEC_PANTEON_ID) ?? "astecas"),
       step: 2,
       title: t("nav.astecas"),
       description: t("pages.home.showcase.astecas.description"),

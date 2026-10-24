@@ -76,7 +76,7 @@ export function CatalogRecordNav({ section, currentId, className }: CatalogRecor
   const { locale } = useTranslation();
   const { state } = useLocation();
   const paths = useMemo(
-    () => detailSiblingPaths(catalog, section, currentId, locale, detailNavScopeFromState(state)),
+    () => detailSiblingPaths(catalog, section, currentId, locale, detailNavScopeFromState(state, catalog)),
     [catalog, section, currentId, locale, state],
   );
   if (!paths) return null;

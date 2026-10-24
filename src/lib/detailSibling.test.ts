@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { getLocaleCatalog } from "@/data/catalogLocale";
+import { AZTEC_PANTEON_ID } from "@/lib/astecasCatalog";
 import { isHiddenFamilyMember } from "@/lib/buildingFamilies";
 import { circularSiblingIds, detailIdsForScope, orderedDetailIds } from "@/lib/detailSibling";
 
@@ -33,20 +34,30 @@ describe("detailIdsForScope", () => {
   });
 
   it("vindo de Astecas, deuses e mapas ficam no recorte da página", () => {
-    const gods = detailIdsForScope(catalog, "deuses", orderedDetailIds(catalog, "deuses", "astecas")[0]!, "astecas");
+    const gods = detailIdsForScope(
+      catalog,
+      "deuses",
+      orderedDetailIds(catalog, "deuses", AZTEC_PANTEON_ID)[0]!,
+      AZTEC_PANTEON_ID,
+    );
     expect(gods.length).toBeGreaterThan(1);
     expect(gods.length).toBeLessThan(catalog.deuses.length);
 
-    const maps = detailIdsForScope(catalog, "mapas", orderedDetailIds(catalog, "mapas", "astecas")[0]!, "astecas");
+    const maps = detailIdsForScope(
+      catalog,
+      "mapas",
+      orderedDetailIds(catalog, "mapas", AZTEC_PANTEON_ID)[0]!,
+      AZTEC_PANTEON_ID,
+    );
     expect(maps.length).toBeGreaterThan(1);
     expect(maps.length).toBeLessThan(catalog.mapas.length);
   });
 
   it("uma ficha fora do recorte asteca usa a lista inteira", () => {
     const all = orderedDetailIds(catalog, "deuses", "all");
-    const aztec = new Set(orderedDetailIds(catalog, "deuses", "astecas"));
+    const aztec = new Set(orderedDetailIds(catalog, "deuses", AZTEC_PANTEON_ID));
     const outsider = all.find((id) => !aztec.has(id));
     expect(outsider).toBeDefined();
-    expect(detailIdsForScope(catalog, "deuses", outsider!, "astecas")).toEqual(all);
+    expect(detailIdsForScope(catalog, "deuses", outsider!, AZTEC_PANTEON_ID)).toEqual(all);
   });
 });

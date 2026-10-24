@@ -1,3 +1,7 @@
+import { getLocaleCatalog } from "@/data/catalogLocale";
+import { AZTEC_PANTEON_ID } from "@/lib/astecasCatalog";
+import { readStoredLocale } from "@/lib/locale";
+
 /** Chave de `location.state` ao abrir o detalhe a partir de uma listagem. */
 export const LIST_INDEX_RETURN = "aprendendoListIndex" as const;
 
@@ -37,17 +41,28 @@ export function listIndexReturnTo(fallback: string, state: unknown): string {
   return fallback;
 }
 
-const ASTECAS_INDEX = "/astecas";
+/** Nome do panteão quando o «Voltar» aponta para o índice (`/panteoes/:slug/indice` ou `/astecas`). */
+export function pantheonHubName(backTo: string): string | null {
+  const path = pathnameOnly(backTo);
+  const catalog = getLocaleCatalog(readStoredLocale());
+  if (path === "/astecas") return catalog.panteaoById.get(AZTEC_PANTEON_ID)?.nome ?? null;
+  const hub = path.match(/^\/(?:panteoes|pantheons)\/([^/]+)\/indice$/);
+  if (!hub?.[1]) return null;
+  let slug = hub[1];
+  try {
+    slug = decodeURIComponent(slug);
+  } catch {
+    /* mantém o segmento */
+  }
+  return catalog.panteaoBySlug.get(slug)?.nome ?? null;
+}
 
 /**
  * Rótulo do «Voltar» quando o `to` provém de {@link listIndexReturnTo} após o índice
- * de Astecas (`/astecas`); caso contrário usa `defaultLabel` (ex.: "Unidades").
+ * de um panteão; caso contrário usa `defaultLabel` (ex.: "Unidades").
  */
 export function listIndexBackLinkLabel(backTo: string, defaultLabel: string): string {
-  if (backTo === ASTECAS_INDEX || backTo.startsWith(`${ASTECAS_INDEX}?`)) {
-    return "Astecas";
-  }
-  return defaultLabel;
+  return pantheonHubName(backTo) ?? defaultLabel;
 }
 
 function pathnameOnly(href: string): string {
@@ -60,6 +75,8 @@ function pathnameOnly(href: string): string {
  * (`listPath`, com ou sem `?search=`) ou para outra página (ex.: detalhe aberto via retrato).
  */
 export function listOrDetailBackLinkLabel(backTo: string, listPath: string, listLabel: string): string {
+  const hubName = pantheonHubName(backTo);
+  if (hubName) return hubName;
   const listBase = pathnameOnly(listPath);
   const backPath = pathnameOnly(backTo);
   if (backPath === listBase || backTo.startsWith(`${listBase}?`)) {

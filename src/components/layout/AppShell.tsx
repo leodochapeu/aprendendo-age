@@ -66,7 +66,6 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
       labelKey: "nav.modules.conhecimentoAge",
       items: [
         { to: localeSectionPath(locale, "panteoes"), labelKey: "nav.pantheons", icon: "aomr_pantheon_greeks_icon" },
-        { to: "/astecas", labelKey: "nav.astecas", icon: "aomr_pantheon_aztecs_icon" },
         { to: localeSectionPath(locale, "deuses"), labelKey: "nav.gods", icon: "aomr_amaterasu_icon" },
         { to: localeSectionPath(locale, "eras"), labelKey: "nav.eras", icon: "aomr_wonder_age_icon" },
         { to: localeSectionPath(locale, "poderes"), labelKey: "nav.godpowers", icon: "aomr_lightning_storm_icon" },

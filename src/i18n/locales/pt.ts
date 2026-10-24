@@ -142,6 +142,8 @@ export const ptMessages: TranslationTree = {
     initial: "Inicial",
     baseTimeSec: "Tempo base (s)",
     noContentOrVideos: "Sem conteúdo nem vídeos nesta entrada.",
+    pantheonIndex: "Índice do panteão",
+    pantheonIndexHint: "Deuses, poderes divinos, unidades, construções e starts.",
     pantheonPageLink: "Página do panteão",
     inGeneralList: "na lista geral.",
     mapsObsidianMirror: "Mapas — Obsidian Mirror (2026)",

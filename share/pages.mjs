@@ -510,6 +510,19 @@ function page(path, search) {
 
   if (exact[path]) return exact[path];
 
+  const hub = path.match(/^\/(panteoes|pantheons)\/([^/]+)\/indice$/);
+  if (hub) {
+    const en = hub[1] === "pantheons";
+    const name = exact[`/${hub[1]}/${hub[2]}`]?.title ?? hub[2];
+    return {
+      title: name,
+      description: en
+        ? `Index of ${name}: gods, god powers, units, buildings, and starts.`
+        : `Índice de ${name}: deuses, poderes, unidades, construções e starts.`,
+      lang: en ? "en" : "pt",
+    };
+  }
+
   const compare = path.match(
     /^\/(unidades|units|poderes|god-powers|aldeoes|villagers)\/compare\/([^/]+)\/([^/]+)$/,
   );

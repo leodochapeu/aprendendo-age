@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import { GodMinorChoices } from "@/components/deus/GodMinorChoices";
 import { Section } from "@/components/ui/Section";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -39,38 +40,43 @@ export function GodTechTree({ god, className, linkState }: Props) {
   const { t } = useTranslation();
   const catalog = useCatalog();
   const rows = buildGodTechTree(god, catalog);
-  if (!rows.length) return null;
+  if (!rows.length && god.hierarquia !== "Maior") return null;
 
   const ages = [1, 2, 3, 4].map((id) => catalog.eraById.get(id)).filter((era) => era != null);
 
   return (
     <Section title={t("common.techTree")} className={className}>
-      <div className="overflow-x-auto rounded-xl bg-[#100e0c] bg-[radial-gradient(ellipse_at_top,rgba(90,68,32,0.16),transparent_58%)] px-2 py-3">
-        <div className="flex w-max items-start">
-          <div className="sticky left-0 z-20 flex w-[4.75rem] shrink-0 flex-col px-1.5">
-            <div className="h-12" />
-            <div className="flex flex-col rounded-md bg-black shadow-[0_10px_28px_rgba(0,0,0,0.95)]">
-              {ages.map((era) => {
-                const icon = getEraAssetUrl(era);
-                return (
-                  <div key={era.id} className={cn(BAND, "flex items-center justify-center")}>
-                    {icon ? (
-                      <img
-                        src={icon}
-                        alt={era.nome}
-                        title={era.nome}
-                        className="size-10 object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.95)]"
-                      />
-                    ) : null}
-                  </div>
-                );
-              })}
+      <div className="overflow-hidden rounded-xl bg-[#100e0c] bg-[radial-gradient(ellipse_at_top,rgba(90,68,32,0.16),transparent_58%)]">
+        {god.hierarquia === "Maior" ? <GodMinorChoices god={god} linkState={linkState} /> : null}
+        {rows.length ? (
+          <div className="overflow-x-auto px-2 py-3">
+            <div className="flex w-max items-start">
+              <div className="sticky left-0 z-20 flex w-[4.75rem] shrink-0 flex-col px-1.5">
+                <div className="h-12" />
+                <div className="flex flex-col rounded-md bg-black/75 shadow-[0_10px_28px_rgba(0,0,0,0.55)]">
+                  {ages.map((era) => {
+                    const icon = getEraAssetUrl(era);
+                    return (
+                      <div key={era.id} className={cn(BAND, "flex items-center justify-center")}>
+                        {icon ? (
+                          <img
+                            src={icon}
+                            alt={era.nome}
+                            title={era.nome}
+                            className="size-10 object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.85)]"
+                          />
+                        ) : null}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              {rows.map((row) => (
+                <BuildingColumn key={row.buildingId} row={row} linkState={linkState} />
+              ))}
             </div>
           </div>
-          {rows.map((row) => (
-            <BuildingColumn key={row.buildingId} row={row} linkState={linkState} />
-          ))}
-        </div>
+        ) : null}
       </div>
     </Section>
   );

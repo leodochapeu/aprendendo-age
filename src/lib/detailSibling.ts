@@ -1,13 +1,6 @@
 import type { LocaleCatalog } from "@/data/catalogLocale";
 import type { Locale } from "@/i18n/types";
-import {
-  isAztecAldeao,
-  isAztecConstrucao,
-  isAztecDeus,
-  isAztecGodpower,
-  isAztecUnidade,
-  isObsidianMap,
-} from "@/lib/astecasCatalog";
+import { AZTEC_PANTEON_ID, isObsidianMap, isPantheonConstrucao, isPantheonRef } from "@/lib/astecasCatalog";
 import { isHiddenFamilyMember } from "@/lib/buildingFamilies";
 import { localeSectionPath, type LocaleSection } from "@/lib/localeRoutes";
 import { listIndexReturnTo } from "@/lib/listIndexReturnState";
@@ -15,7 +8,8 @@ import { listIndexReturnTo } from "@/lib/listIndexReturnState";
 /** Seções de catálogo com ficha por slug. Starts fica de fora. */
 export type DetailNavSection = Exclude<LocaleSection, "starts">;
 
-export type DetailNavScope = "all" | "astecas";
+/** `"all"` ou o id do panteão cujo índice originou a ficha. */
+export type DetailNavScope = "all" | number;
 
 /**
  * Vizinho anterior e próximo numa lista ordenada por id.
@@ -64,30 +58,46 @@ export function orderedDetailIds(
   section: DetailNavSection,
   scope: DetailNavScope,
 ): number[] {
-  const aztec = scope === "astecas";
+  const pantheonId = scope === "all" ? null : scope;
   switch (section) {
     case "panteoes":
       return sortedIds(catalog.panteoes, catalog.panteaoSlugById, () => true);
     case "deuses":
-      return sortedIds(catalog.deuses, catalog.deusSlugById, (d) => !aztec || isAztecDeus(d));
+      return sortedIds(catalog.deuses, catalog.deusSlugById, (d) => pantheonId == null || isPantheonRef(d.panteao, pantheonId));
     case "eras":
       return sortedIds(catalog.eras, catalog.eraSlugById, () => true);
     case "poderes":
-      return sortedIds(catalog.godpowers, catalog.godpowerSlugById, (g) => !aztec || isAztecGodpower(g));
+      return sortedIds(
+        catalog.godpowers,
+        catalog.godpowerSlugById,
+        (g) => pantheonId == null || isPantheonRef(g.panteao, pantheonId),
+      );
     case "construcoes":
       return sortedIds(
         catalog.construcoes,
         catalog.construcaoSlugById,
-        (c) => !isHiddenFamilyMember(c.id) && (!aztec || isAztecConstrucao(c)),
+        (c) => !isHiddenFamilyMember(c.id) && (pantheonId == null || isPantheonConstrucao(c, pantheonId)),
       );
     case "unidades":
-      return sortedIds(catalog.unidades, catalog.unidadeSlugById, (u) => !aztec || isAztecUnidade(u));
+      return sortedIds(
+        catalog.unidades,
+        catalog.unidadeSlugById,
+        (u) => pantheonId == null || isPantheonRef(u.panteao, pantheonId),
+      );
     case "aldeoes":
-      return sortedIds(catalog.aldeoes, catalog.aldeaoSlugById, (a) => !aztec || isAztecAldeao(a));
+      return sortedIds(
+        catalog.aldeoes,
+        catalog.aldeaoSlugById,
+        (a) => pantheonId == null || isPantheonRef(a.panteao, pantheonId),
+      );
     case "reliquias":
       return sortedIds(catalog.reliquias, catalog.reliquiaSlugById, () => true);
     case "mapas":
-      return indexIds(catalog.mapas, catalog.mapaSlugByIndex, (m) => !aztec || isObsidianMap(m));
+      return indexIds(
+        catalog.mapas,
+        catalog.mapaSlugByIndex,
+        (m) => pantheonId == null || (pantheonId === AZTEC_PANTEON_ID && isObsidianMap(m)),
+      );
     case "tecnologias":
       return indexIds(catalog.tecnologias, catalog.tecnologiaSlugByIndex, () => true);
     default:
@@ -96,8 +106,8 @@ export function orderedDetailIds(
 }
 
 /**
- * Lista usada nas setas. Vindo de Astecas, fica no recorte asteca daquela seção
- * quando a ficha atual pertence a ele; senão, a lista inteira da seção.
+ * Lista usada nas setas. Vindo do índice de um panteão, fica no recorte daquela
+ * civilização quando a ficha atual pertence a ele; senão, a lista inteira da seção.
  */
 export function detailIdsForScope(
   catalog: LocaleCatalog,
@@ -105,8 +115,8 @@ export function detailIdsForScope(
   currentId: number,
   scope: DetailNavScope,
 ): number[] {
-  if (scope !== "astecas") return orderedDetailIds(catalog, section, "all");
-  const subset = orderedDetailIds(catalog, section, "astecas");
+  if (scope === "all") return orderedDetailIds(catalog, section, "all");
+  const subset = orderedDetailIds(catalog, section, scope);
   if (subset.length >= 2 && subset.includes(currentId)) return subset;
   return orderedDetailIds(catalog, section, "all");
 }
@@ -138,10 +148,19 @@ function slugFor(catalog: LocaleCatalog, section: DetailNavSection, id: number):
   }
 }
 
-export function detailNavScopeFromState(state: unknown): DetailNavScope {
+export function detailNavScopeFromState(state: unknown, catalog: LocaleCatalog): DetailNavScope {
   const back = listIndexReturnTo("/", state);
-  const path = back.split("?")[0];
-  return path === "/astecas" ? "astecas" : "all";
+  const path = back.split("?")[0] ?? "/";
+  if (path === "/astecas") return AZTEC_PANTEON_ID;
+  const hub = path.match(/^\/(?:panteoes|pantheons)\/([^/]+)\/indice$/);
+  if (!hub) return "all";
+  let slug = hub[1] ?? "";
+  try {
+    slug = decodeURIComponent(slug);
+  } catch {
+    /* mantém o segmento */
+  }
+  return catalog.panteaoBySlug.get(slug)?.id ?? "all";
 }
 
 export function detailSiblingPaths(
