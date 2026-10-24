@@ -271,12 +271,15 @@ function ShellNavLinks({
 }
 
 const DESKTOP_NAV_COLLAPSED_KEY = "aprendendo-age.desktop-nav-collapsed";
+const DESKTOP_NAV_AUTO_COLLAPSE_MS = 10_000;
 
 function readDesktopNavCollapsed(): boolean {
   try {
-    return window.localStorage.getItem(DESKTOP_NAV_COLLAPSED_KEY) === "1";
+    const stored = window.localStorage.getItem(DESKTOP_NAV_COLLAPSED_KEY);
+    if (stored == null) return true;
+    return stored !== "0";
   } catch {
-    return false;
+    return true;
   }
 }
 
@@ -348,6 +351,15 @@ export function AppShell() {
       return next;
     });
   }
+
+  useEffect(() => {
+    if (desktopNavCollapsed) return;
+    const timer = window.setTimeout(() => {
+      setDesktopNavCollapsed(true);
+      writeDesktopNavCollapsed(true);
+    }, DESKTOP_NAV_AUTO_COLLAPSE_MS);
+    return () => window.clearTimeout(timer);
+  }, [desktopNavCollapsed]);
 
   useLayoutEffect(() => {
     if (isCatalogListIndex(pathname)) {
@@ -424,8 +436,8 @@ export function AppShell() {
       <aside
         id="app-desktop-nav"
         className={cn(
-          "hidden shrink-0 border-aom-border bg-zinc-950/95 backdrop-blur-sm md:sticky md:top-0 md:z-20 md:flex md:h-[100dvh] md:min-h-[100dvh] md:flex-col md:self-start md:overflow-hidden md:border-r",
-          desktopNavCollapsed ? "md:w-14 md:items-center md:py-4" : "md:w-56 md:py-6",
+          "relative hidden shrink-0 overflow-hidden border-aom-border bg-zinc-950/95 backdrop-blur-sm md:sticky md:top-0 md:z-20 md:flex md:h-[100dvh] md:min-h-[100dvh] md:min-w-14 md:flex-col md:self-start md:border-r md:transition-[width] md:duration-700 md:ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:md:transition-none",
+          desktopNavCollapsed ? "md:w-14" : "md:w-56",
         )}
         style={
           bannerOffset > 0
@@ -437,7 +449,20 @@ export function AppShell() {
             : undefined
         }
       >
-        {desktopNavCollapsed ? (
+        <div
+          className={cn(
+            "absolute inset-y-0 left-0 flex w-14 flex-col items-center gap-3 py-4 transition-opacity duration-300 ease-out motion-reduce:transition-none",
+            desktopNavCollapsed ? "opacity-100 delay-300" : "pointer-events-none opacity-0 delay-0",
+          )}
+          inert={!desktopNavCollapsed}
+        >
+          <img
+            src="/favicon.png?v=2"
+            alt={appTitle}
+            width={40}
+            height={40}
+            className="size-10 rounded-md object-cover"
+          />
           <button
             type="button"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-aom-border bg-zinc-900/80 text-amber-200 transition-colors hover:bg-zinc-800/90 focus:outline-none focus:ring-2 focus:ring-amber-500/35"
@@ -449,32 +474,37 @@ export function AppShell() {
           >
             <SidebarToggleGlyph collapsed />
           </button>
-        ) : (
-          <>
-            <div className="shrink-0 px-4 pb-3 pt-4 md:px-5 md:pb-6 md:pt-0">
-              <div className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-wide text-amber-200">
-                {appTitle}
-              </div>
-              <div className="mt-1 flex items-center justify-between gap-2">
-                <p className="min-w-0 text-xs text-zinc-500">{appByline}</p>
-                <button
-                  type="button"
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-aom-border bg-zinc-900/80 text-amber-200/90 transition-colors hover:bg-zinc-800 hover:text-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-500/35"
-                  aria-expanded
-                  aria-controls="app-desktop-nav"
-                  aria-label={t("common.collapseMenu")}
-                  title={t("common.collapseMenu")}
-                  onClick={toggleDesktopNav}
-                >
-                  <SidebarToggleGlyph collapsed={false} />
-                </button>
-              </div>
+        </div>
+        <div
+          className={cn(
+            "flex h-full w-56 shrink-0 flex-col py-6 transition-opacity duration-300 ease-out motion-reduce:transition-none",
+            desktopNavCollapsed ? "pointer-events-none opacity-0 delay-0" : "opacity-100 delay-150",
+          )}
+          inert={desktopNavCollapsed}
+        >
+          <div className="shrink-0 px-4 pb-3 pt-4 md:px-5 md:pb-6 md:pt-0">
+            <div className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-wide text-amber-200">
+              {appTitle}
             </div>
-            <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-2 pb-3 md:px-3 md:pb-6">
-              <ShellNavLinks pathname={pathname} t={t} locale={locale} />
-            </nav>
-          </>
-        )}
+            <div className="mt-1 flex items-center justify-between gap-2">
+              <p className="min-w-0 text-xs text-zinc-500">{appByline}</p>
+              <button
+                type="button"
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-aom-border bg-zinc-900/80 text-amber-200/90 transition-colors hover:bg-zinc-800 hover:text-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-500/35"
+                aria-expanded
+                aria-controls="app-desktop-nav"
+                aria-label={t("common.collapseMenu")}
+                title={t("common.collapseMenu")}
+                onClick={toggleDesktopNav}
+              >
+                <SidebarToggleGlyph collapsed={false} />
+              </button>
+            </div>
+          </div>
+          <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-2 pb-3 md:px-3 md:pb-6">
+            <ShellNavLinks pathname={pathname} t={t} locale={locale} />
+          </nav>
+        </div>
       </aside>
 
       {mobileMenuOpen ? (
