@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { ChannelGrid } from "@/components/channels/ChannelCard";
+import { LiveStreamCard } from "@/components/channels/LiveStreamCard";
 import { ChannelSubmitModal } from "@/components/channels/ChannelSubmitModal";
 import { PageHeader } from "@/components/ui/PageHeader";
 import type { Channel } from "@/data/channels";
@@ -80,8 +81,16 @@ export function LinksStreamersPage() {
   const canAddChannel =
     status === "authenticated" && profileLoadState === "ready" && canManageChannels(profile?.role);
 
-  const { liveIds, checking } = useChannelLiveStatus(channels);
+  const { liveIds, liveById, checking } = useChannelLiveStatus(channels);
   const displayChannels = useMemo(() => sortChannelsLiveFirst(channels, liveIds), [channels, liveIds]);
+  const liveChannels = useMemo(
+    () => displayChannels.filter((channel) => liveById.has(channel.id)),
+    [displayChannels, liveById],
+  );
+  const otherChannels = useMemo(
+    () => displayChannels.filter((channel) => !liveById.has(channel.id)),
+    [displayChannels, liveById],
+  );
 
   return (
     <div className="space-y-8 pb-16">
@@ -135,8 +144,21 @@ export function LinksStreamersPage() {
         ) : channels.length === 0 ? (
           <p className="px-4 py-12 text-center text-sm text-zinc-500">{t("pages.streamerLinks.empty")}</p>
         ) : (
-          <div className="p-4 sm:p-5">
-            <ChannelGrid channels={displayChannels} liveChannelIds={liveIds} />
+          <div className="space-y-5 p-4 sm:p-5">
+            {liveChannels.length > 0 ? (
+              <ul className="grid gap-4 sm:grid-cols-2" aria-label={t("pages.streamerLinks.liveListAria")}>
+                {liveChannels.map((channel) => {
+                  const preview = liveById.get(channel.id);
+                  if (!preview) return null;
+                  return (
+                    <li key={channel.id} className="min-w-0">
+                      <LiveStreamCard channel={channel} preview={preview} />
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+            {otherChannels.length > 0 ? <ChannelGrid channels={otherChannels} /> : null}
           </div>
         )}
       </div>

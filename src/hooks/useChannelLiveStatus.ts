@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import type { Channel } from "@/data/channels";
-import { fetchChannelLiveStatus } from "@/lib/channelLiveStatus";
+import { fetchChannelLiveStatus, type ChannelLiveSnapshot } from "@/lib/channelLiveStatus";
 
 const POLL_INTERVAL_MS = 3 * 60 * 1000;
 
 export function useChannelLiveStatus(channels: Channel[]) {
-  const [liveIds, setLiveIds] = useState<Set<string>>(() => new Set());
+  const [liveById, setLiveById] = useState<Map<string, ChannelLiveSnapshot>>(() => new Map());
   const [checking, setChecking] = useState(false);
   const channelsRef = useRef(channels);
   channelsRef.current = channels;
@@ -15,14 +15,14 @@ export function useChannelLiveStatus(channels: Channel[]) {
     const list = channelsRef.current;
     const streamable = list.filter((c) => c.category === "youtube" || c.category === "twitch");
     if (streamable.length === 0) {
-      setLiveIds(new Set());
+      setLiveById(new Map());
       return;
     }
 
     setChecking(true);
     try {
-      const ids = await fetchChannelLiveStatus(list);
-      setLiveIds(ids);
+      const next = await fetchChannelLiveStatus(list);
+      setLiveById(next);
     } catch {
       /* fail-open: mantém estado anterior */
     } finally {
@@ -33,7 +33,7 @@ export function useChannelLiveStatus(channels: Channel[]) {
   useEffect(() => {
     const streamable = channels.filter((c) => c.category === "youtube" || c.category === "twitch");
     if (streamable.length === 0) {
-      setLiveIds(new Set());
+      setLiveById(new Map());
       return;
     }
 
@@ -42,8 +42,8 @@ export function useChannelLiveStatus(channels: Channel[]) {
     void (async () => {
       setChecking(true);
       try {
-        const ids = await fetchChannelLiveStatus(channels);
-        if (!cancelled) setLiveIds(ids);
+        const next = await fetchChannelLiveStatus(channels);
+        if (!cancelled) setLiveById(next);
       } catch {
         /* fail-open */
       } finally {
@@ -61,5 +61,7 @@ export function useChannelLiveStatus(channels: Channel[]) {
     };
   }, [channels, runCheck]);
 
-  return { liveIds, checking, refreshLiveStatus: runCheck };
+  const liveIds = useMemo(() => new Set(liveById.keys()), [liveById]);
+
+  return { liveIds, liveById, checking, refreshLiveStatus: runCheck };
 }

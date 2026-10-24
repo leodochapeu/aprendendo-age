@@ -463,6 +463,11 @@ export const enMessages: TranslationTree = {
       unconfigured: "Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.",
       empty: "No links registered yet.",
       liveChecking: "Checking live streams…",
+      liveListAria: "Live streamers",
+      liveBadge: "Live",
+      liveViewersAria: "{{count}} watching",
+      livePreviewAlt: "Live preview of {{name}}",
+      liveTitleFallback: "Streaming now",
       addChannel: "Add channel",
       adminSubmit: {
         modalTitle: "Add channel",

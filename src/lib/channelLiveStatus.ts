@@ -6,15 +6,29 @@ const CONCURRENCY = 5;
 
 type CacheEntry<T> = { value: T; expiresAt: number };
 
-const twitchLiveCache = new Map<string, CacheEntry<boolean>>();
-const youtubeChannelCache = new Map<string, CacheEntry<{ channelId: string; uploadsPlaylistId: string }>>();
+/** Dados da transmissão para o card com print da live. */
+export type ChannelLiveSnapshot = {
+  title: string | null;
+  viewerCount: number | null;
+  thumbnailUrl: string | null;
+  portraitUrl: string | null;
+};
 
-function getCached<T>(map: Map<string, CacheEntry<T>>, key: string): T | null {
+type YouTubeChannelRef = {
+  channelId: string;
+  uploadsPlaylistId: string;
+  portraitUrl: string | null;
+};
+
+const twitchSnapshotCache = new Map<string, CacheEntry<ChannelLiveSnapshot | null>>();
+const youtubeChannelCache = new Map<string, CacheEntry<YouTubeChannelRef>>();
+
+function getCached<T>(map: Map<string, CacheEntry<T>>, key: string): T | undefined {
   const entry = map.get(key);
-  if (!entry) return null;
+  if (!entry) return undefined;
   if (Date.now() > entry.expiresAt) {
     map.delete(key);
-    return null;
+    return undefined;
   }
   return entry.value;
 }
@@ -56,137 +70,209 @@ export function parseTwitchUptimeResponse(text: string): boolean {
   return /\d+\s*(second|minute|hour|day)s?/.test(normalized);
 }
 
-async function fetchTwitchLiveStatus(login: string): Promise<boolean> {
-  const cached = getCached(twitchLiveCache, login);
-  if (cached !== null) return cached;
+/** Título da live. Decapi devolve a frase ou "{login} is offline". */
+export function parseTwitchTitleResponse(text: string): string | null {
+  const trimmed = text.trim();
+  if (!trimmed) return null;
+  if (/is offline/i.test(trimmed)) return null;
+  if (/^error\b/i.test(trimmed)) return null;
+  return trimmed;
+}
 
+/** Contagem de espectadores. Decapi devolve um número ou texto de offline. */
+export function parseTwitchViewerCount(text: string): number | null {
+  const trimmed = text.trim();
+  if (!trimmed || /offline/i.test(trimmed)) return null;
+  const digits = trimmed.replace(/[^\d]/g, "");
+  if (!digits) return null;
+  const value = Number.parseInt(digits, 10);
+  return Number.isFinite(value) ? value : null;
+}
+
+/** URL do avatar. Decapi devolve o link direto ou uma mensagem de erro. */
+export function parseTwitchAvatarResponse(text: string): string | null {
+  const trimmed = text.trim();
+  if (!/^https?:\/\//i.test(trimmed)) return null;
+  return trimmed;
+}
+
+/** Print público da live na CDN da Twitch. `refreshedAt` troca o cache a cada minuto. */
+export function twitchLivePreviewUrl(login: string, refreshedAt = Date.now()): string {
+  const safe = login.toLowerCase().replace(/[^a-z0-9_]/g, "");
+  const bucket = Math.floor(refreshedAt / 60_000);
+  return `https://static-cdn.jtvnw.net/previews-ttv/live_user_${safe}-1280x720.jpg?t=${bucket}`;
+}
+
+async function fetchText(url: string): Promise<string | null> {
   try {
-    const res = await fetch(`https://decapi.me/twitch/uptime/${encodeURIComponent(login)}`);
-    if (!res.ok) {
-      setCache(twitchLiveCache, login, false);
-      return false;
-    }
-    const text = await res.text();
-    const isLive = parseTwitchUptimeResponse(text);
-    setCache(twitchLiveCache, login, isLive);
-    return isLive;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return await res.text();
   } catch {
-    setCache(twitchLiveCache, login, false);
-    return false;
+    return null;
   }
 }
 
-async function resolveYouTubeChannel(
-  channel: Channel,
-  apiKey: string,
-): Promise<{ channelId: string; uploadsPlaylistId: string } | null> {
+function pickYouTubeThumbnail(
+  thumbnails: Record<string, { url?: string } | undefined> | undefined,
+): string | null {
+  if (!thumbnails) return null;
+  for (const key of ["maxres", "standard", "high", "medium", "default"]) {
+    const url = thumbnails[key]?.url;
+    if (url) return url;
+  }
+  return null;
+}
+
+async function fetchTwitchLiveSnapshot(channel: Channel): Promise<ChannelLiveSnapshot | null> {
+  const login = parseTwitchLogin(channel.urlLink);
+  if (!login) return null;
+
+  const cached = getCached(twitchSnapshotCache, login);
+  if (cached !== undefined) return cached;
+
+  const uptimeText = await fetchText(`https://decapi.me/twitch/uptime/${encodeURIComponent(login)}`);
+  const isLive = uptimeText != null && parseTwitchUptimeResponse(uptimeText);
+  if (!isLive) {
+    setCache(twitchSnapshotCache, login, null);
+    return null;
+  }
+
+  const portraitFromChannel = channel.imagePath?.trim() || null;
+  const [titleText, viewersText, avatarText] = await Promise.all([
+    fetchText(`https://decapi.me/twitch/title/${encodeURIComponent(login)}`),
+    fetchText(`https://decapi.me/twitch/viewercount/${encodeURIComponent(login)}`),
+    portraitFromChannel
+      ? Promise.resolve(null)
+      : fetchText(`https://decapi.me/twitch/avatar/${encodeURIComponent(login)}`),
+  ]);
+
+  const snapshot: ChannelLiveSnapshot = {
+    title: titleText ? parseTwitchTitleResponse(titleText) : null,
+    viewerCount: viewersText ? parseTwitchViewerCount(viewersText) : null,
+    thumbnailUrl: twitchLivePreviewUrl(login),
+    portraitUrl: portraitFromChannel ?? (avatarText ? parseTwitchAvatarResponse(avatarText) : null),
+  };
+  setCache(twitchSnapshotCache, login, snapshot);
+  return snapshot;
+}
+
+async function resolveYouTubeChannel(channel: Channel, apiKey: string): Promise<YouTubeChannelRef | null> {
   const cached = getCached(youtubeChannelCache, channel.id);
   if (cached) return cached;
 
   const directId = parseYouTubeChannelId(channel.urlLink);
-  if (directId) {
-    const res = await fetch(
-      `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${encodeURIComponent(directId)}&key=${encodeURIComponent(apiKey)}`,
-    );
-    if (!res.ok) return null;
-    const json = (await res.json()) as {
-      items?: Array<{ id?: string; contentDetails?: { relatedPlaylists?: { uploads?: string } } }>;
-    };
-    const item = json.items?.[0];
-    const uploads = item?.contentDetails?.relatedPlaylists?.uploads;
-    if (!item?.id || !uploads) return null;
-    const value = { channelId: item.id, uploadsPlaylistId: uploads };
-    setCache(youtubeChannelCache, channel.id, value);
-    return value;
-  }
-
-  const handle = parseYouTubeChannelHandle(channel.urlLink);
-  if (!handle) return null;
+  const query = directId
+    ? `id=${encodeURIComponent(directId)}`
+    : (() => {
+        const handle = parseYouTubeChannelHandle(channel.urlLink);
+        return handle ? `forHandle=${encodeURIComponent(handle)}` : null;
+      })();
+  if (!query) return null;
 
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forHandle=${encodeURIComponent(handle)}&key=${encodeURIComponent(apiKey)}`,
+    `https://www.googleapis.com/youtube/v3/channels?part=contentDetails,snippet&${query}&key=${encodeURIComponent(apiKey)}`,
   );
   if (!res.ok) return null;
 
   const json = (await res.json()) as {
-    items?: Array<{ id?: string; contentDetails?: { relatedPlaylists?: { uploads?: string } } }>;
+    items?: Array<{
+      id?: string;
+      snippet?: { thumbnails?: Record<string, { url?: string }> };
+      contentDetails?: { relatedPlaylists?: { uploads?: string } };
+    }>;
   };
   const item = json.items?.[0];
   const uploads = item?.contentDetails?.relatedPlaylists?.uploads;
   if (!item?.id || !uploads) return null;
 
-  const value = { channelId: item.id, uploadsPlaylistId: uploads };
+  const value: YouTubeChannelRef = {
+    channelId: item.id,
+    uploadsPlaylistId: uploads,
+    portraitUrl: pickYouTubeThumbnail(item.snippet?.thumbnails),
+  };
   setCache(youtubeChannelCache, channel.id, value);
   return value;
 }
 
-async function fetchYouTubeLiveStatus(channel: Channel, apiKey: string): Promise<boolean> {
+async function fetchYouTubeLiveSnapshot(channel: Channel, apiKey: string): Promise<ChannelLiveSnapshot | null> {
   try {
     const resolved = await resolveYouTubeChannel(channel, apiKey);
-    if (!resolved) return false;
+    if (!resolved) return null;
 
     const playlistRes = await fetch(
       `https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${encodeURIComponent(resolved.uploadsPlaylistId)}&maxResults=1&key=${encodeURIComponent(apiKey)}`,
     );
-    if (!playlistRes.ok) return false;
+    if (!playlistRes.ok) return null;
 
     const playlistJson = (await playlistRes.json()) as {
       items?: Array<{ contentDetails?: { videoId?: string } }>;
     };
     const videoId = playlistJson.items?.[0]?.contentDetails?.videoId;
-    if (!videoId) return false;
+    if (!videoId) return null;
 
     const videoRes = await fetch(
       `https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails,snippet&id=${encodeURIComponent(videoId)}&key=${encodeURIComponent(apiKey)}`,
     );
-    if (!videoRes.ok) return false;
+    if (!videoRes.ok) return null;
 
     const videoJson = (await videoRes.json()) as {
       items?: Array<{
-        snippet?: { liveBroadcastContent?: string };
-        liveStreamingDetails?: { actualStartTime?: string; actualEndTime?: string };
+        snippet?: {
+          title?: string;
+          liveBroadcastContent?: string;
+          thumbnails?: Record<string, { url?: string }>;
+        };
+        liveStreamingDetails?: { concurrentViewers?: string };
       }>;
     };
     const item = videoJson.items?.[0];
-    if (!item) return false;
+    if (!item || item.snippet?.liveBroadcastContent !== "live") return null;
 
-    return item.snippet?.liveBroadcastContent === "live";
+    const viewersRaw = item.liveStreamingDetails?.concurrentViewers;
+    const viewerCount = viewersRaw != null ? Number.parseInt(String(viewersRaw), 10) : null;
+
+    return {
+      title: item.snippet?.title?.trim() || null,
+      viewerCount: viewerCount != null && Number.isFinite(viewerCount) ? viewerCount : null,
+      thumbnailUrl:
+        pickYouTubeThumbnail(item.snippet?.thumbnails) ??
+        `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`,
+      portraitUrl: channel.imagePath?.trim() || resolved.portraitUrl,
+    };
   } catch {
-    return false;
+    return null;
   }
 }
 
-async function checkChannelLive(channel: Channel, youtubeApiKey: string | null): Promise<boolean> {
-  if (channel.category === "twitch") {
-    const login = parseTwitchLogin(channel.urlLink);
-    if (!login) return false;
-    return fetchTwitchLiveStatus(login);
-  }
-
+async function checkChannelLive(
+  channel: Channel,
+  youtubeApiKey: string | null,
+): Promise<ChannelLiveSnapshot | null> {
+  if (channel.category === "twitch") return fetchTwitchLiveSnapshot(channel);
   if (channel.category === "youtube") {
-    if (!youtubeApiKey) return false;
-    return fetchYouTubeLiveStatus(channel, youtubeApiKey);
+    if (!youtubeApiKey) return null;
+    return fetchYouTubeLiveSnapshot(channel, youtubeApiKey);
   }
-
-  return false;
+  return null;
 }
 
-/** Consulta status ao vivo para canais YouTube/Twitch (fail-open por canal). */
-export async function fetchChannelLiveStatus(channels: Channel[]): Promise<Set<string>> {
+/** Consulta quem está ao vivo e o print/título/retrato quando a plataforma expõe. */
+export async function fetchChannelLiveStatus(channels: Channel[]): Promise<Map<string, ChannelLiveSnapshot>> {
   const streamChannels = channels.filter((c) => c.category === "youtube" || c.category === "twitch");
-  if (streamChannels.length === 0) return new Set();
+  if (streamChannels.length === 0) return new Map();
 
   const youtubeApiKey = getYouTubeApiKey();
-  const liveFlags = await mapWithConcurrency(streamChannels, CONCURRENCY, async (channel) => ({
+  const snapshots = await mapWithConcurrency(streamChannels, CONCURRENCY, async (channel) => ({
     id: channel.id,
-    isLive: await checkChannelLive(channel, youtubeApiKey),
+    snapshot: await checkChannelLive(channel, youtubeApiKey),
   }));
 
-  const liveIds = new Set<string>();
-  for (const { id, isLive } of liveFlags) {
-    if (isLive) liveIds.add(id);
+  const liveById = new Map<string, ChannelLiveSnapshot>();
+  for (const { id, snapshot } of snapshots) {
+    if (snapshot) liveById.set(id, snapshot);
   }
-  return liveIds;
+  return liveById;
 }
 
 /** Canais ao vivo primeiro; ordem relativa preservada dentro de cada grupo. */

@@ -463,6 +463,11 @@ export const ptMessages: TranslationTree = {
       unconfigured: "Supabase não configurado. Defina VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY.",
       empty: "Nenhum link cadastrado ainda.",
       liveChecking: "Verificando transmissões…",
+      liveListAria: "Streamers ao vivo",
+      liveBadge: "Ao vivo",
+      liveViewersAria: "{{count}} assistindo",
+      livePreviewAlt: "Prévia da live de {{name}}",
+      liveTitleFallback: "Transmitindo agora",
       addChannel: "Adicionar canal",
       adminSubmit: {
         modalTitle: "Adicionar canal",
