@@ -9,6 +9,7 @@ import { formatNotificationTime, NOTIFICATION_HISTORY_PAGE_SIZE, resolveNotifica
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 const SHOWCASE_LIMIT = 5;
+const ARCHIVE_PAGE_SIZE = 10;
 const SLIDE_MS = 8000;
 
 function useReducedMotion(): boolean {
@@ -141,6 +142,8 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
   const [hovered, setHovered] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [reading, setReading] = useState<SiteNotification | null>(null);
+  const [archivePage, setArchivePage] = useState(0);
+  const archiveRef = useRef<HTMLElement>(null);
   const closeReading = useCallback(() => setReading(null), []);
   const indexRef = useRef(0);
   const progressRef = useRef(0);
@@ -176,6 +179,9 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
 
   const featured = items.slice(0, SHOWCASE_LIMIT);
   const archiveItems = items.slice(SHOWCASE_LIMIT);
+  const archivePageCount = Math.ceil(archiveItems.length / ARCHIVE_PAGE_SIZE);
+  const safeArchivePage = archivePageCount === 0 ? 0 : Math.min(archivePage, archivePageCount - 1);
+  const visibleArchive = archiveItems.slice(safeArchivePage * ARCHIVE_PAGE_SIZE, (safeArchivePage + 1) * ARCHIVE_PAGE_SIZE);
   const count = featured.length;
   const safeIndex = count === 0 ? 0 : index % count;
   const item = featured[safeIndex];
@@ -368,10 +374,10 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
       </section>
 
       {archive && archiveItems.length > 0 ? (
-        <section className="mx-auto mt-14 max-w-3xl" aria-label={t("notifications.showcaseArchive")}>
+        <section ref={archiveRef} className="mx-auto mt-14 max-w-3xl scroll-mt-24" aria-label={t("notifications.showcaseArchive")}>
           <h2 className="text-[11px] font-medium uppercase tracking-[0.28em] text-zinc-500">{t("notifications.showcaseArchive")}</h2>
           <ul className="mt-4 divide-y divide-white/10">
-            {archiveItems.map((entry) => (
+            {visibleArchive.map((entry) => (
               <li key={entry.id} className="flex items-start gap-4 py-4">
                 {entry.imageUrl ? (
                   <img src={entry.imageUrl} alt="" className="h-14 w-14 shrink-0 rounded-lg object-cover opacity-80" />
@@ -392,6 +398,35 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
               </li>
             ))}
           </ul>
+          {archivePageCount > 1 ? (
+            <div className="mt-6 flex items-center justify-between gap-4">
+              <button
+                type="button"
+                onClick={() => {
+                  setArchivePage(safeArchivePage - 1);
+                  archiveRef.current?.scrollIntoView({ block: "start", behavior: reducedMotion ? "auto" : "smooth" });
+                }}
+                disabled={safeArchivePage === 0}
+                className="rounded-full border border-white/15 px-4 py-2 text-sm text-zinc-300 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                {t("notifications.showcasePrevious")}
+              </button>
+              <p className="text-xs tabular-nums tracking-[0.14em] text-zinc-500">
+                {t("notifications.showcasePage", { current: safeArchivePage + 1, total: archivePageCount })}
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setArchivePage(safeArchivePage + 1);
+                  archiveRef.current?.scrollIntoView({ block: "start", behavior: reducedMotion ? "auto" : "smooth" });
+                }}
+                disabled={safeArchivePage >= archivePageCount - 1}
+                className="rounded-full border border-white/15 px-4 py-2 text-sm text-zinc-300 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                {t("notifications.showcaseNext")}
+              </button>
+            </div>
+          ) : null}
         </section>
       ) : null}
       {reading ? <ReadingModal item={reading} localeTag={localeTag} onClose={closeReading} /> : null}

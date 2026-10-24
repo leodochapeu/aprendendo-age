@@ -1149,6 +1149,7 @@ export const enMessages: TranslationTree = {
     showcaseEyebrow: "News",
     showcaseEmpty: "No news on air right now.",
     showcaseArchive: "Earlier",
+    showcasePage: "Page {{current}} of {{total}}",
     showcaseRead: "Read story",
     showcasePrevious: "Previous",
     showcaseNext: "Next",
