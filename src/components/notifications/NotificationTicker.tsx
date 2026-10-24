@@ -2,9 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useSiteNotifications } from "@/context/SiteNotificationsContext";
+import { useLiveTickerEntries } from "@/hooks/useLiveTickerEntries";
 import { useTranslation } from "@/hooks/useTranslation";
+import { channelImageUrl } from "@/lib/channelsApi";
 import { cn } from "@/lib/cn";
 import { NOTIFICATION_TICKER_LIMIT, resolveNotificationLink, type SiteNotification } from "@/lib/siteNotifications";
+import { interleaveTickerSlides, tickerSlideKey, type TickerSlide } from "@/lib/tickerSlides";
 
 const SLIDE_MS = 5000;
 const SLIDE_TRANSITION_MS = 520;
@@ -19,7 +22,7 @@ function AlertIcon() {
   );
 }
 
-function TickerSlide({ item, onActivate }: { item: SiteNotification; onActivate: () => void }) {
+function NewsTickerSlide({ item, onActivate }: { item: SiteNotification; onActivate: () => void }) {
   const link = resolveNotificationLink(item.linkUrl);
   const body = (
     <span className="flex min-w-0 items-center gap-3">
@@ -53,6 +56,44 @@ function TickerSlide({ item, onActivate }: { item: SiteNotification; onActivate:
   );
 }
 
+function LiveTickerSlide({ slide }: { slide: Extract<TickerSlide, { kind: "live" }> }) {
+  const { t } = useTranslation();
+  const { channel, preview } = slide;
+  const portrait = channelImageUrl(channel) ?? preview.portraitUrl ?? undefined;
+  const title = preview.title?.trim();
+  const label = title
+    ? `${t("pages.streamerLinks.liveBadge")} · ${channel.name} · ${title}`
+    : `${t("pages.streamerLinks.liveBadge")} · ${channel.name}`;
+
+  return (
+    <a
+      href={channel.urlLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex h-14 w-full items-center transition hover:text-amber-200"
+      aria-label={label}
+    >
+      <span className="flex min-w-0 items-center gap-3">
+        <span className="relative shrink-0">
+          {portrait ? (
+            <img src={portrait} alt="" className="h-9 w-9 rounded-full object-cover" />
+          ) : (
+            <span className="block h-9 w-9 rounded-full bg-zinc-800" />
+          )}
+          <span className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full bg-emerald-400 ring-2 ring-zinc-950" aria-hidden />
+        </span>
+        <span className="truncate font-[family-name:var(--font-display)] text-sm font-semibold tracking-wide text-amber-50">
+          <span className="mr-2 text-[11px] font-bold uppercase tracking-[0.14em] text-emerald-300">
+            {t("pages.streamerLinks.liveBadge")}
+          </span>
+          {channel.name}
+          {title ? <span className="ml-2 font-medium text-zinc-300">{title}</span> : null}
+        </span>
+      </span>
+    </a>
+  );
+}
+
 const clusterButtonClass = cn(
   "hidden h-10 w-10 items-center justify-center rounded-full border border-aom-border md:flex",
   "bg-zinc-950/90 text-amber-200/95 shadow-lg shadow-black/30 backdrop-blur-sm",
@@ -63,8 +104,9 @@ const clusterButtonClass = cn(
 export function NotificationTickerToggle() {
   const { t } = useTranslation();
   const { preview, bannerOffset, tickerCollapsed, setTickerCollapsed } = useSiteNotifications();
+  const liveEntries = useLiveTickerEntries();
   const featuredOpen = bannerOffset > 0;
-  if (preview.length === 0) return null;
+  if (preview.length === 0 && liveEntries.length === 0) return null;
 
   if (tickerCollapsed || featuredOpen) {
     return (
@@ -100,8 +142,12 @@ export function NotificationTickerToggle() {
 export function NotificationTicker() {
   const { t } = useTranslation();
   const { preview, bannerOffset, tickerCollapsed, setTickerOffset, markRead } = useSiteNotifications();
-  const items = preview.slice(0, NOTIFICATION_TICKER_LIMIT);
-  const slideKey = items.map((item) => item.id).join("|");
+  const liveEntries = useLiveTickerEntries();
+  const items = interleaveTickerSlides(
+    preview.slice(0, NOTIFICATION_TICKER_LIMIT),
+    liveEntries.slice(0, NOTIFICATION_TICKER_LIMIT),
+  );
+  const slideKey = items.map(tickerSlideKey).join("|");
   const slides = items.length > 1 ? [...items, items[0]!] : items;
   const [index, setIndex] = useState(0);
   const [animate, setAnimate] = useState(true);
@@ -181,8 +227,12 @@ export function NotificationTicker() {
             style={{ width: `${slides.length * 100}%`, transform: `translateX(-${shift}%)` }}
           >
             {slides.map((item, slideIndex) => (
-              <div key={`${item.id}-${slideIndex}`} className="shrink-0" style={{ width: `${100 / slides.length}%` }}>
-                <TickerSlide item={item} onActivate={() => markRead([item.id])} />
+              <div key={`${tickerSlideKey(item)}-${slideIndex}`} className="shrink-0" style={{ width: `${100 / slides.length}%` }}>
+                {item.kind === "news" ? (
+                  <NewsTickerSlide item={item.item} onActivate={() => markRead([item.item.id])} />
+                ) : (
+                  <LiveTickerSlide slide={item} />
+                )}
               </div>
             ))}
           </div>
