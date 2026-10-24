@@ -1148,6 +1148,7 @@ export const ptMessages: TranslationTree = {
     showcaseMenu: "Ver apresentação",
     showcaseEyebrow: "Notícias",
     showcaseEmpty: "Nenhuma notícia no ar agora.",
+    showcaseArchive: "Anteriores",
     showcasePrevious: "Anterior",
     showcaseNext: "Próxima",
     showcaseSlide: "Notícia {{current}} de {{total}}",

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "@/hooks/useTranslation";
 import { localeToHtmlLang } from "@/lib/locale";
 import { fetchNotificationPage } from "@/lib/siteNotificationsApi";
-import { formatNotificationTime, resolveNotificationLink, type SiteNotification } from "@/lib/siteNotifications";
+import { formatNotificationTime, NOTIFICATION_HISTORY_PAGE_SIZE, resolveNotificationLink, type SiteNotification } from "@/lib/siteNotifications";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
-const SHOWCASE_LIMIT = 8;
+const SHOWCASE_LIMIT = 5;
 const SLIDE_MS = 8000;
 
 function useReducedMotion(): boolean {
@@ -20,6 +20,25 @@ function useReducedMotion(): boolean {
     return () => media.removeEventListener("change", apply);
   }, []);
   return reduced;
+}
+
+function QuietLink({ linkUrl }: { linkUrl: string | null }) {
+  const { t } = useTranslation();
+  const link = resolveNotificationLink(linkUrl);
+  if (!link) return null;
+  const className = "text-xs text-zinc-500 underline-offset-4 transition hover:text-zinc-300 hover:underline";
+  if (link.kind === "internal") {
+    return (
+      <Link to={link.href} className={className}>
+        {t("notifications.openLink")}
+      </Link>
+    );
+  }
+  return (
+    <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+      {t("notifications.openLink")}
+    </a>
+  );
 }
 
 function ShowcaseLink({ linkUrl }: { linkUrl: string | null }) {
@@ -64,23 +83,36 @@ export function NotificationShowcasePage() {
   useEffect(() => {
     if (!configured) return;
     let cancel = false;
-    void fetchNotificationPage(0).then((result) => {
-      if (cancel) return;
-      setLoading(false);
-      if (!result.ok) {
-        setError(true);
-        return;
+    void (async () => {
+      const collected: SiteNotification[] = [];
+      let offset = 0;
+      for (;;) {
+        const result = await fetchNotificationPage(offset);
+        if (cancel) return;
+        if (!result.ok) {
+          setLoading(false);
+          setError(true);
+          return;
+        }
+        collected.push(...result.items);
+        if (result.items.length < NOTIFICATION_HISTORY_PAGE_SIZE) break;
+        offset += result.items.length;
+        if (offset >= 200) break;
       }
-      setItems(result.items.slice(0, SHOWCASE_LIMIT));
-    });
+      if (cancel) return;
+      setItems(collected);
+      setLoading(false);
+    })();
     return () => {
       cancel = true;
     };
   }, [configured]);
 
-  const count = items.length;
+  const featured = items.slice(0, SHOWCASE_LIMIT);
+  const archive = items.slice(SHOWCASE_LIMIT);
+  const count = featured.length;
   const safeIndex = count === 0 ? 0 : index % count;
-  const item = items[safeIndex];
+  const item = featured[safeIndex];
   const playing = count > 1 && !hovered && !hidden && !reducedMotion;
 
   useEffect(() => {
@@ -187,7 +219,7 @@ export function NotificationShowcasePage() {
         {count > 1 ? (
           <div className="mt-10 flex items-center gap-4">
             <div className="flex min-w-0 flex-1 gap-2" role="tablist" aria-label={t("notifications.showcaseEyebrow")}>
-              {items.map((slide, slideIndex) => {
+              {featured.map((slide, slideIndex) => {
                 const active = slideIndex === safeIndex;
                 const width = slideIndex < safeIndex ? "100%" : active ? `${Math.round((reducedMotion ? 1 : progress) * 100)}%` : "0%";
                 return (
@@ -229,6 +261,31 @@ export function NotificationShowcasePage() {
           {item ? t("notifications.showcaseSlide", { current: safeIndex + 1, total: count }) : ""}
         </p>
       </section>
+
+      {archive.length > 0 ? (
+        <section className="mx-auto mt-14 max-w-3xl" aria-label={t("notifications.showcaseArchive")}>
+          <h2 className="text-[11px] font-medium uppercase tracking-[0.28em] text-zinc-500">{t("notifications.showcaseArchive")}</h2>
+          <ul className="mt-4 divide-y divide-white/10">
+            {archive.map((entry) => (
+              <li key={entry.id} className="flex items-start gap-4 py-4">
+                {entry.imageUrl ? (
+                  <img src={entry.imageUrl} alt="" className="h-14 w-14 shrink-0 rounded-lg object-cover opacity-80" />
+                ) : (
+                  <span className="h-14 w-14 shrink-0 rounded-lg bg-zinc-900/80" />
+                )}
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs text-zinc-500">{formatNotificationTime(entry.startsAt, localeTag)}</p>
+                  <h3 className="mt-1 text-sm font-medium leading-snug text-zinc-300">{entry.title}</h3>
+                  <p className="mt-1 line-clamp-2 whitespace-pre-wrap text-xs leading-relaxed text-zinc-500">{entry.description}</p>
+                  <div className="mt-2">
+                    <QuietLink linkUrl={entry.linkUrl} />
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
     </div>
   );
 }
