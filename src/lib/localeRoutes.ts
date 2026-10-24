@@ -87,6 +87,11 @@ const MODERATION_SEGMENT: Record<Locale, string> = {
   en: "moderation",
 };
 
+const COMMUNITY_TOPICS_SEGMENT: Record<Locale, string> = {
+  pt: "comunidade",
+  en: "community",
+};
+
 const AUTH_SEGMENT: Record<Locale, Record<AuthSection, string>> = {
   pt: {
     login: "entrar",
@@ -171,6 +176,11 @@ export function localeModerationPath(locale: Locale): string {
   return `/${MODERATION_SEGMENT[locale]}`;
 }
 
+export function localeCommunityTopicsPath(locale: Locale, slug?: string): string {
+  const base = `/${COMMUNITY_TOPICS_SEGMENT[locale]}`;
+  return slug ? `${base}/${slug}` : base;
+}
+
 export function allSectionPathSegments(section: LocaleSection): string[] {
   return [SECTION_SEGMENT.pt[section], SECTION_SEGMENT.en[section]];
 }
@@ -228,6 +238,11 @@ export function swapLocaleInPath(pathname: string, toLocale: Locale): string {
 
   if (parts[0] === MODERATION_SEGMENT.pt || parts[0] === MODERATION_SEGMENT.en) {
     parts[0] = MODERATION_SEGMENT[toLocale];
+    return `/${parts.join("/")}${search}`;
+  }
+
+  if (parts[0] === COMMUNITY_TOPICS_SEGMENT.pt || parts[0] === COMMUNITY_TOPICS_SEGMENT.en) {
+    parts[0] = COMMUNITY_TOPICS_SEGMENT[toLocale];
     return `/${parts.join("/")}${search}`;
   }
 

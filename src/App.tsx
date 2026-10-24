@@ -32,6 +32,8 @@ import { NotificationShowcasePage } from "@/pages/NotificationShowcasePage";
 import { NotificationsPage } from "@/pages/NotificationsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { CommentModerationPage } from "@/pages/CommentModerationPage";
+import { CommunityTopicPage } from "@/pages/CommunityTopicPage";
+import { CommunityTopicsPage } from "@/pages/CommunityTopicsPage";
 import { PageSuggestionsPage } from "@/pages/PageSuggestionsPage";
 import { PanteaoDetailPage } from "@/pages/PanteaoDetailPage";
 import { PanteoesPage } from "@/pages/PanteoesPage";
@@ -151,6 +153,10 @@ export default function App() {
           <Route path="links-streamers" element={<LinksStreamersPage />} />
           <Route path="streamer-links" element={<LinksStreamersPage />} />
           <Route path="trilha-de-aprendizado" element={<TrilhaDeAprendizadoPage />} />
+          <Route path="comunidade" element={<CommunityTopicsPage />} />
+          <Route path="comunidade/:slug" element={<CommunityTopicPage />} />
+          <Route path="community" element={<CommunityTopicsPage />} />
+          <Route path="community/:slug" element={<CommunityTopicPage />} />
           <Route path="videos-comunidade" element={<CommunityVideosPage />} />
           <Route path="videos-comunidade/:id" element={<CommunityVideoDetailPage />} />
           <Route
