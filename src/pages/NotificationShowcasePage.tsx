@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
 import { useTranslation } from "@/hooks/useTranslation";
@@ -41,6 +42,67 @@ function QuietLink({ linkUrl }: { linkUrl: string | null }) {
   );
 }
 
+function ReadingModal({
+  item,
+  localeTag,
+  onClose,
+}: {
+  item: SiteNotification;
+  localeTag: string;
+  onClose: () => void;
+}) {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  return createPortal(
+    <div className="fixed inset-0 z-[80] flex items-center justify-center p-4">
+      <button type="button" className="absolute inset-0 bg-black/75" aria-label={t("notifications.close")} onClick={onClose} />
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="notification-reading-title"
+        className="relative flex max-h-[min(88vh,52rem)] w-full max-w-2xl flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-950 text-white shadow-2xl shadow-black/50"
+      >
+        <div className="flex shrink-0 justify-end px-4 py-3">
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-full border border-white/15 px-3 py-1.5 text-sm text-zinc-200 transition hover:bg-white/10"
+          >
+            {t("notifications.close")}
+          </button>
+        </div>
+        <div className="min-h-0 flex-1 overflow-y-auto px-6 pb-8 sm:px-8">
+          {item.imageUrl ? (
+            <img src={item.imageUrl} alt="" className="mx-auto max-h-[46vh] w-auto max-w-full rounded-2xl object-contain" />
+          ) : null}
+          <p className="mt-6 text-sm text-zinc-500">{formatNotificationTime(item.startsAt, localeTag)}</p>
+          <h2 id="notification-reading-title" className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
+            {item.title}
+          </h2>
+          <p className="mt-6 whitespace-pre-wrap text-base leading-relaxed text-zinc-300">{item.description}</p>
+          <div className="mt-8">
+            <ShowcaseLink linkUrl={item.linkUrl} />
+          </div>
+        </div>
+      </div>
+    </div>,
+    document.body,
+  );
+}
+
 function ShowcaseLink({ linkUrl }: { linkUrl: string | null }) {
   const { t } = useTranslation();
   const link = resolveNotificationLink(linkUrl);
@@ -79,6 +141,8 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
   const [progress, setProgress] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [reading, setReading] = useState<SiteNotification | null>(null);
+  const closeReading = useCallback(() => setReading(null), []);
 
   useEffect(() => {
     if (!configured) return;
@@ -113,7 +177,7 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
   const count = featured.length;
   const safeIndex = count === 0 ? 0 : index % count;
   const item = featured[safeIndex];
-  const playing = count > 1 && !hovered && !hidden && !reducedMotion;
+  const playing = count > 1 && !hovered && !hidden && !reducedMotion && !reading;
 
   useEffect(() => {
     if (!playing) return;
@@ -156,6 +220,7 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
         aria-label={t("notifications.showcaseEyebrow")}
         tabIndex={0}
         onKeyDown={(event) => {
+          if (reading) return;
           if (event.key === "ArrowRight") {
             event.preventDefault();
             goTo(safeIndex + 1);
@@ -208,10 +273,17 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
               <h1 className="mt-4 max-w-xl font-[family-name:var(--font-display)] text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl">
                 {item.title}
               </h1>
-              <p className="mt-6 max-w-xl whitespace-pre-wrap text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed line-clamp-6">
+              <p className="mt-6 max-w-xl whitespace-pre-wrap text-base leading-relaxed text-zinc-400 line-clamp-4 sm:text-lg sm:leading-relaxed">
                 {item.description}
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setReading(item)}
+                  className="inline-flex items-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+                >
+                  {t("notifications.showcaseRead")}
+                </button>
                 <ShowcaseLink linkUrl={item.linkUrl} />
               </div>
             </div>
@@ -279,7 +351,10 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
                   <p className="text-xs text-zinc-500">{formatNotificationTime(entry.startsAt, localeTag)}</p>
                   <h3 className="mt-1 text-sm font-medium leading-snug text-zinc-300">{entry.title}</h3>
                   <p className="mt-1 line-clamp-2 whitespace-pre-wrap text-xs leading-relaxed text-zinc-500">{entry.description}</p>
-                  <div className="mt-2">
+                  <div className="mt-2 flex flex-wrap items-center gap-3">
+                    <button type="button" onClick={() => setReading(entry)} className="text-xs text-zinc-400 underline-offset-4 transition hover:text-zinc-200 hover:underline">
+                      {t("notifications.showcaseRead")}
+                    </button>
                     <QuietLink linkUrl={entry.linkUrl} />
                   </div>
                 </div>
@@ -288,6 +363,7 @@ export function NotificationNewsCarousel({ archive = false }: { archive?: boolea
           </ul>
         </section>
       ) : null}
+      {reading ? <ReadingModal item={reading} localeTag={localeTag} onClose={closeReading} /> : null}
     </div>
   );
 }
