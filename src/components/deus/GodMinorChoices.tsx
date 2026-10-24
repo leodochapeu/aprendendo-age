@@ -1,5 +1,5 @@
 import { TreeIconHover } from "@/components/deus/TreeIconHover";
-import { TREE_ICON_FRAME, TREE_ICON_PAD } from "@/components/deus/treeIconFrames";
+import { TREE_ICON_FRAME } from "@/components/deus/treeIconFrames";
 import { type GodChoiceFrame, type GodChoiceIcon, type GodMinorChoiceRow } from "@/lib/godMinorChoices";
 import type { ListIndexLinkState } from "@/lib/listIndexReturnState";
 import { cn } from "@/lib/cn";
@@ -19,16 +19,22 @@ export function MinorAgeContent({
   linkState?: ListIndexLinkState;
 }) {
   return (
-    <div className="flex flex-col justify-center gap-2.5 px-4 py-3 pr-10">
+    <div
+      className="flex h-full flex-col justify-center"
+      style={{
+        gap: "calc(var(--tree-icon) * 0.16)",
+        padding: "calc(var(--tree-icon) * 0.12) calc(var(--tree-icon) * 0.7) calc(var(--tree-icon) * 0.12) calc(var(--tree-icon) * 0.35)",
+      }}
+    >
       {row.icons ? (
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center" style={{ gap: "calc(var(--tree-icon) * 0.12)" }}>
           {row.icons.map((item) => (
             <ChoiceIcon key={item.key} item={item} linkState={linkState} />
           ))}
         </div>
       ) : null}
       {row.minors?.map((minor) => (
-        <div key={minor.id} className="flex items-center gap-1.5">
+        <div key={minor.id} className="flex items-center" style={{ gap: "calc(var(--tree-icon) * 0.12)" }}>
           <ChoiceIcon item={minor.portrait} linkState={linkState} />
           {minor.icons.map((item) => (
             <ChoiceIcon key={item.key} item={item} linkState={linkState} />
@@ -53,12 +59,12 @@ function ChoiceIcon({ item, linkState }: { item: GodChoiceIcon; linkState?: List
       frameClass={FRAME[item.frame]}
       to={item.to}
       linkState={linkState}
-      className={cn(
-        "flex shrink-0 items-center justify-center transition",
-        TREE_ICON_PAD,
-        item.frame === "portrait" ? "size-16" : "size-12",
-        FRAME[item.frame],
-      )}
+      className={cn("flex shrink-0 items-center justify-center transition", FRAME[item.frame])}
+      style={{
+        width: item.frame === "portrait" ? "calc(var(--tree-icon) * 1.15)" : "var(--tree-icon)",
+        height: item.frame === "portrait" ? "calc(var(--tree-icon) * 1.15)" : "var(--tree-icon)",
+        padding: "calc(var(--tree-icon) * 0.05)",
+      }}
     >
       <span className="flex size-full items-center justify-center bg-black">{body}</span>
     </TreeIconHover>
