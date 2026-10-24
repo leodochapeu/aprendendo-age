@@ -3,6 +3,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { PageComments } from "@/components/comments/MapComments";
 import { DeusBuildAvaliacaoCards } from "@/components/deus/DeusBuildAvaliacaoCards";
 import { DeusExplicacaoMaiorSection } from "@/components/deus/DeusExplicacaoMaiorSection";
+import { GodMinorChoices } from "@/components/deus/GodMinorChoices";
 import { GodTechTree } from "@/components/deus/GodTechTree";
 import { BackLink } from "@/components/ui/BackLink";
 import { CatalogRecordNav } from "@/components/ui/DetailSiblingNav";
@@ -200,6 +201,8 @@ export function DeusDetailPage() {
       </div>
 
       <GodTechTree god={d} className="mt-6" linkState={linkState} />
+
+      {d.hierarquia === "Maior" ? <GodMinorChoices god={d} className="mt-6" linkState={linkState} /> : null}
 
       {d.hierarquia === "Maior" ? (
         <Section title={t("common.archetypeEval")} className="mt-6">

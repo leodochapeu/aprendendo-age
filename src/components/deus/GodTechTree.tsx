@@ -47,16 +47,25 @@ export function GodTechTree({ god, className, linkState }: Props) {
     <Section title={t("common.techTree")} className={className}>
       <div className="overflow-x-auto rounded-xl bg-[#100e0c] bg-[radial-gradient(ellipse_at_top,rgba(90,68,32,0.16),transparent_58%)] px-2 py-3">
         <div className="flex w-max items-start">
-          <div className="sticky left-0 z-20 flex w-12 shrink-0 flex-col bg-[#100e0c]/95">
+          <div className="sticky left-0 z-20 flex w-[4.75rem] shrink-0 flex-col px-1.5">
             <div className="h-12" />
-            {ages.map((era) => {
-              const icon = getEraAssetUrl(era);
-              return (
-                <div key={era.id} className={cn(BAND, "flex items-center justify-center")}>
-                  {icon ? <img src={icon} alt={era.nome} title={era.nome} className="size-9 object-contain" /> : null}
-                </div>
-              );
-            })}
+            <div className="flex flex-col rounded-md bg-black shadow-[0_10px_28px_rgba(0,0,0,0.95)]">
+              {ages.map((era) => {
+                const icon = getEraAssetUrl(era);
+                return (
+                  <div key={era.id} className={cn(BAND, "flex items-center justify-center")}>
+                    {icon ? (
+                      <img
+                        src={icon}
+                        alt={era.nome}
+                        title={era.nome}
+                        className="size-10 object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.95)]"
+                      />
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
           </div>
           {rows.map((row) => (
             <BuildingColumn key={row.buildingId} row={row} linkState={linkState} />
