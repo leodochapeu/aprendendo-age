@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 import { TopicCategoryBadge } from "@/components/community/TopicCategoryBadge";
 import { useAuth } from "@/context/AuthContext";
@@ -24,6 +24,7 @@ import {
   deleteTopicPost,
   fetchCommunityTopic,
   fetchTopicPosts,
+  topicPostPageForId,
   reportTopicPost,
   setCommunityTopicStatus,
   toggleTopicPostLike,
@@ -39,12 +40,15 @@ export function CommunityTopicPage() {
   const { t, locale } = useTranslation();
   const { showToast } = useToast();
   const { slug } = useParams();
+  const [searchParams] = useSearchParams();
+  const focusId = searchParams.get("comentario");
   const { status, user, profile, profileLoadState } = useAuth();
   const loggedIn = status === "authenticated" && Boolean(user);
   const canModerate = profileLoadState === "ready" && canSuggestPageChange(profile?.role);
   const localeTag = localeToHtmlLang(locale);
   const [topic, setTopic] = useState<CommunityTopic | null | undefined>(undefined);
   const [page, setPage] = useState(0);
+  const [pageReady, setPageReady] = useState(!focusId);
   const [posts, setPosts] = useState<TopicPost[]>([]);
   const [total, setTotal] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -71,7 +75,29 @@ export function CommunityTopicPage() {
   }, [slug]);
 
   useEffect(() => {
+    if (!focusId) {
+      setPageReady(true);
+      return;
+    }
     if (!topic?.id) return;
+    let cancel = false;
+    void topicPostPageForId(topic.id, focusId).then((index) => {
+      if (cancel) return;
+      if (index != null) setPage(index);
+      setPageReady(true);
+    });
+    return () => {
+      cancel = true;
+    };
+  }, [topic?.id, focusId]);
+
+  useEffect(() => {
+    if (!focusId || !loaded) return;
+    document.getElementById(`comentario-${focusId}`)?.scrollIntoView({ block: "center" });
+  }, [focusId, loaded, posts]);
+
+  useEffect(() => {
+    if (!topic?.id || !pageReady) return;
     let cancel = false;
     void fetchTopicPosts(topic.id, page, user?.id ?? null).then((result) => {
       if (cancel) return;
@@ -93,7 +119,7 @@ export function CommunityTopicPage() {
     return () => {
       cancel = true;
     };
-  }, [topic?.id, page, user?.id]);
+  }, [topic?.id, page, pageReady, user?.id]);
 
   function fail(reason: "unconfigured" | "save" | TopicErrorCode) {
     if (reason === "unconfigured") showToast(t("notifications.errors.unconfigured"), "error");
@@ -262,6 +288,7 @@ export function CommunityTopicPage() {
               post={post}
               locale={locale}
               localeTag={localeTag}
+              focused={post.id === focusId}
               mine={user?.id === post.createdBy}
               confirming={confirmDeleteId === post.id}
               onReply={() => {
@@ -356,6 +383,7 @@ function TopicMessage({
   post,
   locale,
   localeTag,
+  focused,
   mine,
   confirming,
   onReply,
@@ -369,6 +397,7 @@ function TopicMessage({
   post: TopicPost;
   locale: "pt" | "en";
   localeTag: string;
+  focused: boolean;
   mine: boolean;
   confirming: boolean;
   onReply: () => void;
@@ -382,7 +411,7 @@ function TopicMessage({
   const { t } = useTranslation();
   const when = new Intl.DateTimeFormat(localeTag, { dateStyle: "short", timeStyle: "short" }).format(new Date(post.createdAt));
   return (
-    <article className="relative rounded-2xl border border-white/10 bg-zinc-950/70 px-4 py-4">
+    <article id={`comentario-${post.id}`} className={cn("relative rounded-2xl border border-white/10 bg-zinc-950/70 px-4 py-4", focused && "ring-1 ring-amber-400/70")}>
       <span className="absolute -left-[31px] top-5 size-3 rounded-full border border-amber-300/70 bg-zinc-950" aria-hidden />
       <div className="flex items-center gap-3">
         {post.authorLogo ? (

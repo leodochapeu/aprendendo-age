@@ -172,8 +172,9 @@ export function localeSuggestionsPath(locale: Locale): string {
   return `/${SUGGESTIONS_SEGMENT[locale]}`;
 }
 
-export function localeModerationPath(locale: Locale): string {
-  return `/${MODERATION_SEGMENT[locale]}`;
+export function localeModerationPath(locale: Locale, tab?: "suggestions" | "comments"): string {
+  const base = `/${MODERATION_SEGMENT[locale]}`;
+  return tab ? `${base}?tab=${tab}` : base;
 }
 
 export function localeCommunityTopicsPath(locale: Locale, slug?: string): string {

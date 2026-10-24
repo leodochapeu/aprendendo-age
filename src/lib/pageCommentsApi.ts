@@ -262,6 +262,22 @@ export async function fetchCommentReports(): Promise<CommentReadResult<CommentRe
   return { ok: true, data: items };
 }
 
+export async function commentPageForId(pageKind: string, pageKey: string, commentId: string): Promise<number | null> {
+  const supabase = createSupabaseClient();
+  if (!supabase) return null;
+  const row = await supabase.from("page_comments").select("created_at").eq("id", commentId).eq("page_kind", pageKind).eq("page_key", pageKey).maybeSingle();
+  if (row.error || !row.data) return null;
+  const createdAt = (row.data as { created_at: string }).created_at;
+  const older = await supabase
+    .from("page_comments")
+    .select("id", { count: "exact", head: true })
+    .eq("page_kind", pageKind)
+    .eq("page_key", pageKey)
+    .lt("created_at", createdAt);
+  if (older.error) return null;
+  return Math.floor((older.count ?? 0) / PAGE_COMMENT_PAGE_SIZE);
+}
+
 export async function dismissCommentReport(id: string): Promise<CommentWriteResult> {
   const supabase = createSupabaseClient();
   if (!supabase) return { ok: false, reason: "unconfigured" };

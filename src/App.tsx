@@ -5,7 +5,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { SiteNotificationsProvider } from "@/context/SiteNotificationsContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { startAppUpdateWatcher } from "@/lib/appUpdateWatcher";
-import { localePlayersPath } from "@/lib/localeRoutes";
+import { localeModerationPath, localePlayersPath } from "@/lib/localeRoutes";
 import { AldeaoComparePage } from "@/pages/AldeaoComparePage";
 import { AldeaoDetailPage } from "@/pages/AldeaoDetailPage";
 import { AldeoesPage } from "@/pages/AldeoesPage";
@@ -34,7 +34,6 @@ import { NotFoundPage } from "@/pages/NotFoundPage";
 import { CommentModerationPage } from "@/pages/CommentModerationPage";
 import { CommunityTopicPage } from "@/pages/CommunityTopicPage";
 import { CommunityTopicsPage } from "@/pages/CommunityTopicsPage";
-import { PageSuggestionsPage } from "@/pages/PageSuggestionsPage";
 import { PanteaoDetailPage } from "@/pages/PanteaoDetailPage";
 import { PanteoesPage } from "@/pages/PanteoesPage";
 import { FormRankPage } from "@/pages/FormRankPage";
@@ -65,6 +64,11 @@ const BattleRandomPage = lazy(() =>
 function LegacyRankRedirect() {
   const { locale } = useTranslation();
   return <Navigate to={`${localePlayersPath(locale)}?tab=rank`} replace />;
+}
+
+function LegacySuggestionsRedirect() {
+  const { locale } = useTranslation();
+  return <Navigate to={localeModerationPath(locale, "suggestions")} replace />;
 }
 
 function BattleRandomFallback() {
@@ -179,8 +183,8 @@ export default function App() {
           <Route path="player/:id" element={<PublicPlayerProfilePage />} />
           <Route path="perfil" element={<ProfilePage />} />
           <Route path="profile" element={<ProfilePage />} />
-          <Route path="sugestoes" element={<PageSuggestionsPage />} />
-          <Route path="suggestions" element={<PageSuggestionsPage />} />
+          <Route path="sugestoes" element={<LegacySuggestionsRedirect />} />
+          <Route path="suggestions" element={<LegacySuggestionsRedirect />} />
           <Route path="moderacao" element={<CommentModerationPage />} />
           <Route path="moderation" element={<CommentModerationPage />} />
           <Route path="notificacoes" element={<NotificationsPage />} />

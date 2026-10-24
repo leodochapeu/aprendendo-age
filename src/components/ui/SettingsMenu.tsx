@@ -7,7 +7,7 @@ import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useTranslation } from "@/hooks/useTranslation";
 import { canSendSiteNotification, canSuggestPageChange } from "@/lib/auth/constants";
 import { cn } from "@/lib/cn";
-import { localeAuthPath, localeModerationPath, localeNotificationManagePath, localeSuggestionsPath } from "@/lib/localeRoutes";
+import { localeAuthPath, localeModerationPath, localeNotificationManagePath } from "@/lib/localeRoutes";
 
 function GearIcon({ className }: { className?: string }) {
   return (
@@ -162,17 +162,6 @@ export function SettingsMenu({ className }: { className?: string }) {
               onClick={() => setOpen(false)}
             >
               {t("notifications.manageMenu")}
-            </Link>
-          ) : null}
-
-          {canSuggest ? (
-            <Link
-              role="menuitem"
-              to={localeSuggestionsPath(locale)}
-              className={menuItemClassName()}
-              onClick={() => setOpen(false)}
-            >
-              {t("suggestions.menu")}
             </Link>
           ) : null}
 

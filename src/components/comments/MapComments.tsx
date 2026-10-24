@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import { Section } from "@/components/ui/Section";
 import { useAuth } from "@/context/AuthContext";
@@ -24,6 +24,7 @@ import {
   createPageComment,
   deletePageComment,
   fetchMyCommentActivity,
+  commentPageForId,
   fetchPageComments,
   reportPageComment,
   searchCommentMentions,
@@ -59,7 +60,10 @@ export function PageComments({
   const { showToast } = useToast();
   const { status, user, profile } = useAuth();
   const loggedIn = status === "authenticated" && Boolean(user);
+  const [searchParams] = useSearchParams();
+  const focusId = searchParams.get("comentario");
   const [page, setPage] = useState(0);
+  const [pageReady, setPageReady] = useState(!focusId);
   const [total, setTotal] = useState(0);
   const [items, setItems] = useState<PageComment[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -74,6 +78,28 @@ export function PageComments({
   const itemIds = items.map((item) => item.id).join(",");
 
   useEffect(() => {
+    if (!focusId) {
+      setPageReady(true);
+      return;
+    }
+    let cancel = false;
+    void commentPageForId(pageKind, pageKey, focusId).then((index) => {
+      if (cancel) return;
+      if (index != null) setPage(index);
+      setPageReady(true);
+    });
+    return () => {
+      cancel = true;
+    };
+  }, [focusId, pageKind, pageKey]);
+
+  useEffect(() => {
+    if (!focusId || !loaded) return;
+    document.getElementById(`comentario-${focusId}`)?.scrollIntoView({ block: "center" });
+  }, [focusId, loaded, itemIds]);
+
+  useEffect(() => {
+    if (!pageReady) return;
     if (!isSupabaseConfigured()) {
       setLoaded(true);
       return;
@@ -110,7 +136,7 @@ export function PageComments({
     return () => {
       cancel = true;
     };
-  }, [pageKind, pageKey, page]);
+  }, [pageKind, pageKey, page, pageReady]);
 
   useEffect(() => {
     if (!user?.id || !itemIds) return;
@@ -290,6 +316,7 @@ export function PageComments({
               comment={comment}
               localeTag={localeToHtmlLang(locale)}
               locale={locale}
+              focused={comment.id === focusId}
               mine={user?.id === comment.createdBy}
               confirming={confirmDeleteId === comment.id}
               onReply={() => {
@@ -545,6 +572,7 @@ function CommentCard({
   comment,
   localeTag,
   locale,
+  focused,
   mine,
   confirming,
   onReply,
@@ -558,6 +586,7 @@ function CommentCard({
   comment: PageComment;
   localeTag: string;
   locale: "pt" | "en";
+  focused: boolean;
   mine: boolean;
   confirming: boolean;
   onReply: () => void;
@@ -573,7 +602,7 @@ function CommentCard({
   const blocks = parseComment(comment.body);
 
   return (
-    <article className="overflow-hidden rounded-xl border border-white/10 bg-black/20">
+    <article id={`comentario-${comment.id}`} className={cn("overflow-hidden rounded-xl border border-white/10 bg-black/20", focused && "ring-1 ring-amber-400/70")}>
       <div className="flex flex-col md:flex-row">
         <div className="min-w-0 flex-1 px-4 py-3">
           <p className="text-xs text-zinc-500">

@@ -220,6 +220,21 @@ export async function fetchTopicPosts(
   };
 }
 
+export async function topicPostPageForId(topicId: string, postId: string): Promise<number | null> {
+  const supabase = createSupabaseClient();
+  if (!supabase) return null;
+  const row = await supabase.from("community_topic_posts").select("created_at").eq("id", postId).eq("topic_id", topicId).maybeSingle();
+  if (row.error || !row.data) return null;
+  const createdAt = (row.data as { created_at: string }).created_at;
+  const older = await supabase
+    .from("community_topic_posts")
+    .select("id", { count: "exact", head: true })
+    .eq("topic_id", topicId)
+    .lt("created_at", createdAt);
+  if (older.error) return null;
+  return Math.floor((older.count ?? 0) / TOPIC_POST_PAGE_SIZE);
+}
+
 export async function createTopicPost(input: {
   topicId: string;
   body: string;

@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
+import { RecentCommentsPanel } from "@/components/moderation/RecentCommentsPanel";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { SuggestionsPanel } from "@/pages/PageSuggestionsPage";
 import { useAuth } from "@/context/AuthContext";
 import { useToast } from "@/context/ToastContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { canSuggestPageChange } from "@/lib/auth/constants";
 import { commentExcerpt } from "@/lib/commentMarkup";
+import { cn } from "@/lib/cn";
 import { deleteTopicPost, dismissTopicReport, fetchTopicReports, type TopicReport } from "@/lib/communityTopicsApi";
 import { localeToHtmlLang } from "@/lib/locale";
 import { localeCommunityTopicsPath, localeSectionPath, type LocaleSection } from "@/lib/localeRoutes";
 import { type CommentReport } from "@/lib/pageComments";
 import { deletePageComment, dismissCommentReport, fetchCommentReports } from "@/lib/pageCommentsApi";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
+
+const TABS = ["reports", "suggestions", "comments"] as const;
+type ModerationTab = (typeof TABS)[number];
 
 const KINDS = new Set<LocaleSection>([
   "panteoes",
@@ -32,10 +38,23 @@ export function CommentModerationPage() {
   const { t, locale } = useTranslation();
   const { showToast } = useToast();
   const { status, profile, profileLoadState } = useAuth();
+  const [searchParams, setSearchParams] = useSearchParams();
   const configured = isSupabaseConfigured();
   const localeTag = localeToHtmlLang(locale);
   const allowed = status === "authenticated" && profileLoadState === "ready" && canSuggestPageChange(profile?.role);
   const authPending = status === "loading" || (status === "authenticated" && profileLoadState !== "ready");
+  const isAdmin = profile?.role === "admin";
+  const requested = searchParams.get("tab");
+  const tab: ModerationTab = requested === "suggestions" || requested === "comments" ? requested : "reports";
+  const description = !allowed
+    ? undefined
+    : tab === "suggestions"
+      ? isAdmin
+        ? t("suggestions.listDescriptionAdmin")
+        : t("suggestions.listDescriptionOwn")
+      : tab === "comments"
+        ? t("comments.recentDescription")
+        : t("comments.moderationDescription");
   const [items, setItems] = useState<CommentReport[]>([]);
   const [topicReports, setTopicReports] = useState<TopicReport[]>([]);
   const [loading, setLoading] = useState(configured);
@@ -43,8 +62,8 @@ export function CommentModerationPage() {
   const [busyId, setBusyId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!allowed) {
-      setLoading(false);
+    if (!allowed || tab !== "reports") {
+      if (!allowed) setLoading(false);
       return;
     }
     let cancel = false;
@@ -59,7 +78,7 @@ export function CommentModerationPage() {
     return () => {
       cancel = true;
     };
-  }, [allowed]);
+  }, [allowed, tab]);
 
   async function refresh() {
     const result = await fetchCommentReports();
@@ -96,11 +115,35 @@ export function CommentModerationPage() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <PageHeader title={t("comments.moderationTitle")} description={allowed ? t("comments.moderationDescription") : undefined} />
+      <PageHeader title={t("comments.moderationTitle")} description={description} />
       {!configured ? <p className="text-sm text-zinc-400">{t("notifications.errors.unconfigured")}</p> : null}
       {configured && authPending ? <p className="text-sm text-zinc-400">{t("notifications.loading")}</p> : null}
       {configured && !authPending && !allowed ? <p className="text-sm text-zinc-400">{t("comments.moderationForbidden")}</p> : null}
       {allowed ? (
+        <div role="tablist" aria-label={t("comments.moderationTabsLabel")} className="mb-6 flex flex-wrap gap-2 border-b border-aom-border/60 pb-3">
+          {TABS.map((item) => {
+            const active = tab === item;
+            return (
+              <button
+                key={item}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                className={cn(
+                  "rounded-lg px-4 py-2 text-sm font-medium transition",
+                  active ? "bg-amber-500/15 text-amber-200 ring-1 ring-amber-500/35" : "text-zinc-400 hover:bg-zinc-900/80 hover:text-zinc-200",
+                )}
+                onClick={() => setSearchParams(item === "reports" ? {} : { tab: item }, { replace: true })}
+              >
+                {t(`comments.moderationTabs.${item}`)}
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
+      {allowed && tab === "suggestions" ? <SuggestionsPanel /> : null}
+      {allowed && tab === "comments" ? <RecentCommentsPanel /> : null}
+      {allowed && tab === "reports" ? (
         <>
           {loading ? <p className="text-sm text-zinc-400">{t("notifications.loading")}</p> : null}
           {!loading && error ? <p className="text-sm text-red-200">{t("comments.loadError")}</p> : null}
