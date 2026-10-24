@@ -65,6 +65,8 @@ export const enMessages: TranslationTree = {
     majorGods: "Major Gods",
     minorGods: "Minor Gods",
     minorGodTree: "Minor god tree (by age)",
+    techTree: "Technology tree",
+    bonusesAndTraits: "Bonuses and characteristics",
     startsRef: "Starts (references)",
     archetypeEval: "RTS Archetype Rating",
     summary: "Summary",

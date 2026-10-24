@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useTranslation } from "@/hooks/useTranslation";
-import { localeFlag, nextLocale } from "@/lib/locale";
+import { nextLocale } from "@/lib/locale";
 import { swapLocaleInPath } from "@/lib/localeRoutes";
 
 export function useLocaleSwitch() {
@@ -23,7 +23,6 @@ export function useLocaleSwitch() {
   return {
     locale,
     targetLocale,
-    targetFlag: localeFlag(targetLocale),
     switchLocale,
     switchLanguageLabel: t("common.switchLanguage"),
   };

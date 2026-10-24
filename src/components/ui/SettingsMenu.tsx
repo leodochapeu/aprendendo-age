@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import { LocaleFlag } from "@/components/ui/LocaleFlag";
 import { useAuth } from "@/context/AuthContext";
 import { useMusic } from "@/context/MusicContext";
 import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
@@ -40,7 +41,7 @@ export function SettingsMenu({ className }: { className?: string }) {
   const { t, locale } = useTranslation();
   const { status, profile, profileLoadState } = useAuth();
   const { ligada, volume, faixa, setLigada, setVolume, avancar } = useMusic();
-  const { targetFlag, switchLocale, switchLanguageLabel } = useLocaleSwitch();
+  const { targetLocale, switchLocale, switchLanguageLabel } = useLocaleSwitch();
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -255,9 +256,7 @@ export function SettingsMenu({ className }: { className?: string }) {
             }}
             aria-label={switchLanguageLabel}
           >
-            <span aria-hidden className="text-base leading-none">
-              {targetFlag}
-            </span>
+            <LocaleFlag locale={targetLocale} />
             {t("settings.changeLanguage")}
           </button>
         </div>

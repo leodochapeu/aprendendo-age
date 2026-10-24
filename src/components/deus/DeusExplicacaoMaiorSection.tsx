@@ -1,19 +1,22 @@
 import type { DeusExplicacaoBloco } from "@/data/catalog";
 import { NotionText } from "@/components/ui/NotionText";
 import { Section } from "@/components/ui/Section";
+import { useTranslation } from "@/hooks/useTranslation";
 
 type Props = {
   blocos: DeusExplicacaoBloco[];
+  className?: string;
 };
 
 /**
  * Corpo explicativo dos deuses maiores (export Notion), com ícones via {@link NotionText} / token_asset_map.
  */
-export function DeusExplicacaoMaiorSection({ blocos }: Props) {
+export function DeusExplicacaoMaiorSection({ blocos, className }: Props) {
+  const { t } = useTranslation();
   if (!blocos.length) return null;
 
   return (
-    <Section title="Bônus e características" className="mt-6">
+    <Section title={t("common.bonusesAndTraits")} className={className}>
       <div className="space-y-5">
         {blocos.map((b, i) => (
           <DeusExplicacaoBlocoView key={i} bloco={b} />

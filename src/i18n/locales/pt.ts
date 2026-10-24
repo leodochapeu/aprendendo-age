@@ -65,6 +65,8 @@ export const ptMessages: TranslationTree = {
     majorGods: "Deuses Maiores",
     minorGods: "Deuses Menores",
     minorGodTree: "Árvore de deuses menores (por era)",
+    techTree: "Árvore de tecnologia",
+    bonusesAndTraits: "Bônus e características",
     startsRef: "Starts (referências)",
     archetypeEval: "Avaliação Arquétipo RTS",
     summary: "Resumo",

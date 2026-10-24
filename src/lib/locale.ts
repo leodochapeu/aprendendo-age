@@ -35,7 +35,3 @@ export function nextLocale(locale: Locale): Locale {
   const idx = SUPPORTED_LOCALES.indexOf(locale);
   return SUPPORTED_LOCALES[(idx + 1) % SUPPORTED_LOCALES.length] ?? DEFAULT_LOCALE;
 }
-
-export function localeFlag(locale: Locale): string {
-  return locale === "en" ? "🇺🇸" : "🇧🇷";
-}
