@@ -16,6 +16,7 @@ import {
 } from "@/lib/godTechTree";
 import { getEraAssetUrl } from "@/lib/eraAssetUrl";
 import { TreeIconHover } from "@/components/deus/TreeIconHover";
+import { TREE_ICON_FRAME, TREE_ICON_PAD } from "@/components/deus/treeIconFrames";
 import { getIconFieldUrl } from "@/lib/notionTokenAssets";
 import type { TreeIconPreview } from "@/lib/treeIconPreview";
 import type { ListIndexLinkState } from "@/lib/listIndexReturnState";
@@ -31,12 +32,12 @@ const LINE = "bg-[#d4b06a]";
 const AGE_SHADE = "bg-black/75 shadow-[8px_0_18px_rgba(0,0,0,0.45)]";
 
 const FRAME: Record<GodTechTreeFrame | "building", string> = {
-  building: "border-[#e7c98a]",
-  tech: "border-[#c4a46a]",
-  unit: "border-[#c4a46a]",
-  hero: "border-[#e6c35c]",
-  myth: "border-[#b15cff]",
-  ship: "border-[#4c8fd4]",
+  building: TREE_ICON_FRAME.building,
+  tech: TREE_ICON_FRAME.tech,
+  unit: TREE_ICON_FRAME.unit,
+  hero: TREE_ICON_FRAME.hero,
+  myth: TREE_ICON_FRAME.myth,
+  ship: TREE_ICON_FRAME.ship,
 };
 
 export function GodTechTree({ god, className, linkState }: Props) {
@@ -64,14 +65,23 @@ export function GodTechTree({ god, className, linkState }: Props) {
   const buildingColumn = (index: number) => (minorColumn ? index + 3 : index + 2);
 
   return (
-    <Section title={t("common.techTree")} className={className}>
-      <div className="overflow-x-auto rounded-xl bg-[#100e0c] bg-[radial-gradient(ellipse_at_top,rgba(90,68,32,0.16),transparent_58%)] py-2">
+    <Section
+      title={t("common.techTree")}
+      className={cn(
+        className,
+        "flex min-h-[100dvh] flex-col",
+        "[&>div]:flex [&>div]:min-h-0 [&>div]:flex-1 [&>div]:flex-col",
+        "[&>div>div:last-child]:flex [&>div>div:last-child]:min-h-0 [&>div>div:last-child]:flex-1 [&>div>div:last-child]:flex-col",
+      )}
+    >
+      <div className="min-h-0 flex-1 overflow-x-auto rounded-xl bg-[#100e0c] bg-[radial-gradient(ellipse_at_top,rgba(90,68,32,0.16),transparent_58%)] py-3">
         <div
-          className="grid w-max min-w-full"
+          className="grid h-full min-h-full w-max min-w-full"
           style={{
+            gridTemplateRows: "repeat(4, minmax(6.5rem, 1fr))",
             gridTemplateColumns: minorColumn
-              ? `4.75rem max-content repeat(${columns.length}, max-content)`
-              : `4.75rem repeat(${columns.length}, max-content)`,
+              ? `5.75rem max-content repeat(${columns.length}, max-content)`
+              : `5.75rem repeat(${columns.length}, max-content)`,
           }}
         >
           {ages.map((era, age) => {
@@ -89,7 +99,7 @@ export function GodTechTree({ god, className, linkState }: Props) {
                       src={icon}
                       alt={era.nome}
                       title={era.nome}
-                      className="size-11 object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.85)]"
+                      className="size-14 object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.85)]"
                     />
                   ) : null}
                 </div>
@@ -142,14 +152,14 @@ function BuildingAgeCell({
   const spine = spineClass(age, buildingAge, lastContent);
 
   return (
-    <div className="relative flex h-full min-h-[4.5rem] items-center pr-4 pl-10" style={style}>
-      {spine ? <span className={cn("pointer-events-none absolute w-px", LINE, spine)} style={{ left: 20 }} /> : null}
+    <div className="relative flex h-full min-h-[6.5rem] items-center pr-10 pl-20" style={style}>
+      {spine ? <span className={cn("pointer-events-none absolute w-px", LINE, spine)} style={{ left: 24 }} /> : null}
       {building && buildingAge === age ? (
         <div className="absolute top-1/2 left-0 -translate-y-1/2">
           <TreeIcon item={building} frame="building" linkState={linkState} />
         </div>
       ) : null}
-      {hasIcons ? <span className={cn("absolute top-1/2 left-5 h-px w-5 -translate-y-1/2", LINE)} /> : null}
+      {hasIcons ? <span className={cn("absolute top-1/2 left-6 h-px w-14 -translate-y-1/2", LINE)} /> : null}
       <div className="flex h-full items-center gap-1">
         {lines.map((line) => (
           <LineSlot key={line.id} line={line} age={age} linkState={linkState} />
@@ -190,7 +200,7 @@ function LineSlot({
   }
 
   return (
-    <div className="relative w-10 shrink-0 self-stretch">
+    <div className="relative w-12 shrink-0 self-stretch">
       {lineClass ? <span className={cn("absolute left-1/2 w-px -translate-x-1/2", LINE, lineClass)} /> : null}
       {item ? (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -221,14 +231,12 @@ function TreeIcon({
       nome={item.nome}
       src={src}
       preview={item.preview}
+      frameClass={FRAME[frame]}
       to={item.to}
       linkState={linkState}
-      className={cn(
-        "relative z-[1] flex size-10 items-center justify-center border bg-black p-0.5 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.65)] transition",
-        FRAME[frame],
-      )}
+      className={cn("relative z-[1] flex size-12 items-center justify-center transition", TREE_ICON_PAD, FRAME[frame])}
     >
-      {body}
+      <span className="flex size-full items-center justify-center bg-black">{body}</span>
     </TreeIconHover>
   );
 }

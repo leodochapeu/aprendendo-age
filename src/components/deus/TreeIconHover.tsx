@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
 import { NotionText } from "@/components/ui/NotionText";
+import { TREE_ICON_FRAME } from "@/components/deus/treeIconFrames";
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
 import type { ListIndexLinkState } from "@/lib/listIndexReturnState";
@@ -12,7 +13,7 @@ import type { TreeIconPreview } from "@/lib/treeIconPreview";
 const HOVER_MS = 1000;
 
 const GLOW =
-  "hover:border-white hover:shadow-[0_0_0_1px_#fff,0_0_12px_3px_rgba(255,255,255,0.9)] focus-visible:border-white focus-visible:shadow-[0_0_0_1px_#fff,0_0_12px_3px_rgba(255,255,255,0.9)]";
+  "hover:shadow-[0_0_0_1px_#fff,0_0_12px_3px_rgba(255,255,255,0.9)] focus-visible:shadow-[0_0_0_1px_#fff,0_0_12px_3px_rgba(255,255,255,0.9)]";
 
 type Props = {
   nome: string;
@@ -21,10 +22,11 @@ type Props = {
   to?: string;
   linkState?: ListIndexLinkState;
   className?: string;
+  frameClass?: string;
   children: ReactNode;
 };
 
-export function TreeIconHover({ nome, src, preview, to, linkState, className, children }: Props) {
+export function TreeIconHover({ nome, src, preview, to, linkState, className, frameClass, children }: Props) {
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const anchorRef = useRef<HTMLElement | null>(null);
@@ -124,6 +126,7 @@ export function TreeIconHover({ nome, src, preview, to, linkState, className, ch
               id={previewId}
               nome={nome}
               src={src}
+              frameClass={frameClass}
               preview={preview}
               style={{ top: position.top, left: position.left }}
             />,
@@ -136,8 +139,15 @@ export function TreeIconHover({ nome, src, preview, to, linkState, className, ch
 
 const TreePreviewCard = forwardRef<
   HTMLDivElement,
-  { id: string; nome: string; src?: string; preview: TreeIconPreview; style: { top: number; left: number } }
->(function TreePreviewCard({ id, nome, src, preview, style }, ref) {
+  {
+    id: string;
+    nome: string;
+    src?: string;
+    frameClass?: string;
+    preview: TreeIconPreview;
+    style: { top: number; left: number };
+  }
+>(function TreePreviewCard({ id, nome, src, frameClass, preview, style }, ref) {
   const { t } = useTranslation();
   const costs = [
     preview.food != null ? { icon: "foodaom", value: preview.food, label: t("common.food") } : null,
@@ -157,7 +167,9 @@ const TreePreviewCard = forwardRef<
       style={style}
     >
       {src ? (
-        <img src={src} alt="" className="size-16 shrink-0 border border-[#c4a46a] bg-black object-contain p-0.5" />
+        <span className={cn("size-16 shrink-0 p-[3px]", frameClass ?? TREE_ICON_FRAME.portrait)}>
+          <img src={src} alt="" className="size-full bg-black object-contain" />
+        </span>
       ) : null}
       <div className="min-w-0">
         <p className="font-[family-name:var(--font-display)] text-sm font-semibold text-amber-100">{nome}</p>
