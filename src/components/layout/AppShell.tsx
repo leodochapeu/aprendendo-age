@@ -270,6 +270,40 @@ function ShellNavLinks({
   );
 }
 
+const DESKTOP_NAV_COLLAPSED_KEY = "aprendendo-age.desktop-nav-collapsed";
+
+function readDesktopNavCollapsed(): boolean {
+  try {
+    return window.localStorage.getItem(DESKTOP_NAV_COLLAPSED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function writeDesktopNavCollapsed(collapsed: boolean) {
+  try {
+    window.localStorage.setItem(DESKTOP_NAV_COLLAPSED_KEY, collapsed ? "1" : "0");
+  } catch {
+    /* preferência local indisponível */
+  }
+}
+
+function SidebarToggleGlyph({ collapsed }: { collapsed: boolean }) {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect x="3.5" y="4.5" width="17" height="15" rx="2" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M9.5 4.5v15" stroke="currentColor" strokeWidth="1.7" />
+      <path
+        d={collapsed ? "M13 9.5 16 12l-3 2.5" : "M16 9.5 13 12l3 2.5"}
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function MenuGlyph({ open }: { open: boolean }) {
   return (
     <svg
@@ -305,6 +339,15 @@ export function AppShell() {
   const { t, locale } = useTranslation();
   const { bannerOffset, tickerOffset } = useSiteNotifications();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [desktopNavCollapsed, setDesktopNavCollapsed] = useState(readDesktopNavCollapsed);
+
+  function toggleDesktopNav() {
+    setDesktopNavCollapsed((current) => {
+      const next = !current;
+      writeDesktopNavCollapsed(next);
+      return next;
+    });
+  }
 
   useLayoutEffect(() => {
     if (isCatalogListIndex(pathname)) {
@@ -379,9 +422,10 @@ export function AppShell() {
       </header>
 
       <aside
+        id="app-desktop-nav"
         className={cn(
-          "hidden shrink-0 border-b border-aom-border bg-zinc-950/95 backdrop-blur-sm md:flex md:flex-col md:w-56 md:border-r md:border-b-0 md:py-6",
-          "md:sticky md:top-0 md:z-20 md:self-start md:h-[100dvh] md:min-h-[100dvh] md:overflow-hidden",
+          "hidden shrink-0 border-aom-border bg-zinc-950/95 backdrop-blur-sm md:sticky md:top-0 md:z-20 md:flex md:h-[100dvh] md:min-h-[100dvh] md:flex-col md:self-start md:overflow-hidden md:border-r",
+          desktopNavCollapsed ? "md:w-14 md:items-center md:py-4" : "md:w-56 md:py-6",
         )}
         style={
           bannerOffset > 0
@@ -393,15 +437,44 @@ export function AppShell() {
             : undefined
         }
       >
-        <div className="shrink-0 px-4 pb-3 pt-4 md:px-5 md:pb-6 md:pt-0">
-          <div className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-wide text-amber-200">
-            {appTitle}
-          </div>
-          <p className="mt-1 text-xs text-zinc-500">{appByline}</p>
-        </div>
-        <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-2 pb-3 md:px-3 md:pb-6">
-          <ShellNavLinks pathname={pathname} t={t} locale={locale} />
-        </nav>
+        {desktopNavCollapsed ? (
+          <button
+            type="button"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-aom-border bg-zinc-900/80 text-amber-200 transition-colors hover:bg-zinc-800/90 focus:outline-none focus:ring-2 focus:ring-amber-500/35"
+            aria-expanded={false}
+            aria-controls="app-desktop-nav"
+            aria-label={t("common.expandMenu")}
+            title={t("common.expandMenu")}
+            onClick={toggleDesktopNav}
+          >
+            <SidebarToggleGlyph collapsed />
+          </button>
+        ) : (
+          <>
+            <div className="shrink-0 px-4 pb-3 pt-4 md:px-5 md:pb-6 md:pt-0">
+              <div className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-wide text-amber-200">
+                {appTitle}
+              </div>
+              <div className="mt-1 flex items-center justify-between gap-2">
+                <p className="min-w-0 text-xs text-zinc-500">{appByline}</p>
+                <button
+                  type="button"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-aom-border bg-zinc-900/80 text-amber-200/90 transition-colors hover:bg-zinc-800 hover:text-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-500/35"
+                  aria-expanded
+                  aria-controls="app-desktop-nav"
+                  aria-label={t("common.collapseMenu")}
+                  title={t("common.collapseMenu")}
+                  onClick={toggleDesktopNav}
+                >
+                  <SidebarToggleGlyph collapsed={false} />
+                </button>
+              </div>
+            </div>
+            <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-2 pb-3 md:px-3 md:pb-6">
+              <ShellNavLinks pathname={pathname} t={t} locale={locale} />
+            </nav>
+          </>
+        )}
       </aside>
 
       {mobileMenuOpen ? (

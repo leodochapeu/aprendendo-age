@@ -21,6 +21,8 @@ export const ptMessages: TranslationTree = {
     switchLanguage: "Trocar idioma",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
+    collapseMenu: "Recolher menu",
+    expandMenu: "Expandir menu",
     navigation: "Navegação",
     notFound: "Página não encontrada",
     appTitle: "Aprendendo Age",

@@ -21,6 +21,8 @@ export const enMessages: TranslationTree = {
     switchLanguage: "Switch language",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    collapseMenu: "Collapse menu",
+    expandMenu: "Expand menu",
     navigation: "Navigation",
     notFound: "Page not found",
     appTitle: "Aprendendo Age",

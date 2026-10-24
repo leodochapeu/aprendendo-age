@@ -255,7 +255,7 @@ export function ClanDetailPage() {
               </section>
 
               <ClanChannelsSection channels={clanChannels} theme={theme} />
-              <ClanAboutSection theme={theme} />
+              <ClanAboutSection slug={routeSlug} theme={theme} />
               <ClanGodsSection gods={clanGods} theme={theme} loading={godsLoading} />
             </>
           ) : null}
