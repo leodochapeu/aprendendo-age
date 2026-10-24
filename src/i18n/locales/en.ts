@@ -1237,7 +1237,7 @@ export const enMessages: TranslationTree = {
     send: "Send",
     sending: "Sending…",
     sent: "Notification sent.",
-    forbidden: "Only streamers and admins can manage notifications.",
+    forbidden: "Only streamers, moderators, and admins can manage notifications.",
     errors: {
       title: "Enter a title of up to 120 characters.",
       description: "Enter a description of up to 2000 characters.",

@@ -1238,7 +1238,7 @@ export const ptMessages: TranslationTree = {
     send: "Enviar",
     sending: "Enviando…",
     sent: "Notificação enviada.",
-    forbidden: "Só streamers e admins podem gerenciar notificações.",
+    forbidden: "Só streamers, moderadores e admins podem gerenciar notificações.",
     errors: {
       title: "Informe um título de até 120 caracteres.",
       description: "Informe uma descrição de até 2000 caracteres.",

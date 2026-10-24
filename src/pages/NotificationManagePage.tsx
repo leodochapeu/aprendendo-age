@@ -8,7 +8,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useSiteNotifications } from "@/context/SiteNotificationsContext";
 import { useToast } from "@/context/ToastContext";
 import { useTranslation } from "@/hooks/useTranslation";
-import { canSendSiteNotification } from "@/lib/auth/constants";
+import { canSendSiteNotification, canSyncInstagram } from "@/lib/auth/constants";
 import { cn } from "@/lib/cn";
 import { localeToHtmlLang } from "@/lib/locale";
 import { localeNotificationComposePath } from "@/lib/localeRoutes";
@@ -209,7 +209,7 @@ export function NotificationManagePage() {
         }
       />
 
-      {canManage ? <InstagramSyncPanel onPublished={() => void load()} /> : null}
+      {canManage && canSyncInstagram(profile?.role) ? <InstagramSyncPanel onPublished={() => void load()} /> : null}
 
       {!configured ? <p className="text-sm text-zinc-400">{t("notifications.errors.unconfigured")}</p> : null}
       {configured && (status === "loading" || (status === "authenticated" && profileLoadState !== "ready")) ? (
