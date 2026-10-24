@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { HomeShowcaseCard } from "@/components/home/HomeShowcaseCard";
+import { NotificationNewsCarousel } from "@/pages/NotificationShowcasePage";
 import { HomeShowcaseCarousel } from "@/components/home/HomeShowcaseCarousel";
 import { HomeShowcaseSection } from "@/components/home/HomeShowcaseSection";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -246,6 +247,7 @@ export function HomePage() {
       </section>
 
       <div className="space-y-14 px-4 pb-10 md:space-y-16 md:px-10 md:pb-14">
+        <NotificationNewsCarousel />
         <PageHeader
           title={t("pages.home.exploreTitle")}
           description={t("pages.home.exploreDesc")}

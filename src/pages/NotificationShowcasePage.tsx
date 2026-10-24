@@ -67,7 +67,7 @@ function ShowcaseLink({ linkUrl }: { linkUrl: string | null }) {
   );
 }
 
-export function NotificationShowcasePage() {
+export function NotificationNewsCarousel({ archive = false }: { archive?: boolean }) {
   const { t, locale } = useTranslation();
   const configured = isSupabaseConfigured();
   const localeTag = localeToHtmlLang(locale);
@@ -109,7 +109,7 @@ export function NotificationShowcasePage() {
   }, [configured]);
 
   const featured = items.slice(0, SHOWCASE_LIMIT);
-  const archive = items.slice(SHOWCASE_LIMIT);
+  const archiveItems = items.slice(SHOWCASE_LIMIT);
   const count = featured.length;
   const safeIndex = count === 0 ? 0 : index % count;
   const item = featured[safeIndex];
@@ -145,8 +145,10 @@ export function NotificationShowcasePage() {
     setProgress(0);
   }
 
+  if (!archive && (!configured || loading || error || featured.length === 0)) return null;
+
   return (
-    <div className="mx-auto max-w-6xl">
+    <div className={archive ? "mx-auto max-w-6xl" : undefined}>
       <style>{`@keyframes showcase-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }`}</style>
       <section
         className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black px-6 py-8 text-white shadow-2xl shadow-black/40 sm:px-10 sm:py-12"
@@ -262,11 +264,11 @@ export function NotificationShowcasePage() {
         </p>
       </section>
 
-      {archive.length > 0 ? (
+      {archive && archiveItems.length > 0 ? (
         <section className="mx-auto mt-14 max-w-3xl" aria-label={t("notifications.showcaseArchive")}>
           <h2 className="text-[11px] font-medium uppercase tracking-[0.28em] text-zinc-500">{t("notifications.showcaseArchive")}</h2>
           <ul className="mt-4 divide-y divide-white/10">
-            {archive.map((entry) => (
+            {archiveItems.map((entry) => (
               <li key={entry.id} className="flex items-start gap-4 py-4">
                 {entry.imageUrl ? (
                   <img src={entry.imageUrl} alt="" className="h-14 w-14 shrink-0 rounded-lg object-cover opacity-80" />
@@ -288,4 +290,8 @@ export function NotificationShowcasePage() {
       ) : null}
     </div>
   );
+}
+
+export function NotificationShowcasePage() {
+  return <NotificationNewsCarousel archive />;
 }
