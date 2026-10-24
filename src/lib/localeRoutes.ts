@@ -77,6 +77,11 @@ const NOTIFICATION_SHOWCASE_SEGMENT: Record<Locale, string> = {
   en: "presentation",
 };
 
+const SUGGESTIONS_SEGMENT: Record<Locale, string> = {
+  pt: "sugestoes",
+  en: "suggestions",
+};
+
 const AUTH_SEGMENT: Record<Locale, Record<AuthSection, string>> = {
   pt: {
     login: "entrar",
@@ -153,6 +158,10 @@ export function localeNotificationShowcasePath(locale: Locale): string {
   return `${localeNotificationsPath(locale)}/${NOTIFICATION_SHOWCASE_SEGMENT[locale]}`;
 }
 
+export function localeSuggestionsPath(locale: Locale): string {
+  return `/${SUGGESTIONS_SEGMENT[locale]}`;
+}
+
 export function allSectionPathSegments(section: LocaleSection): string[] {
   return [SECTION_SEGMENT.pt[section], SECTION_SEGMENT.en[section]];
 }
@@ -201,6 +210,11 @@ export function swapLocaleInPath(pathname: string, toLocale: Locale): string {
       return `/${parts.join("/")}${search}`;
     }
     return `${pathname}`;
+  }
+
+  if (parts[0] === SUGGESTIONS_SEGMENT.pt || parts[0] === SUGGESTIONS_SEGMENT.en) {
+    parts[0] = SUGGESTIONS_SEGMENT[toLocale];
+    return `/${parts.join("/")}${search}`;
   }
 
   const notificationLocale = (["pt", "en"] as const).find((item) => parts[0] === NOTIFICATION_LIST_SEGMENT[item]);

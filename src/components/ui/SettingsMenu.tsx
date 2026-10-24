@@ -5,9 +5,9 @@ import { useAuth } from "@/context/AuthContext";
 import { useMusic } from "@/context/MusicContext";
 import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useTranslation } from "@/hooks/useTranslation";
-import { canSendSiteNotification } from "@/lib/auth/constants";
+import { canSendSiteNotification, canSuggestPageChange } from "@/lib/auth/constants";
 import { cn } from "@/lib/cn";
-import { localeAuthPath, localeNotificationManagePath } from "@/lib/localeRoutes";
+import { localeAuthPath, localeNotificationManagePath, localeSuggestionsPath } from "@/lib/localeRoutes";
 
 function GearIcon({ className }: { className?: string }) {
   return (
@@ -48,6 +48,8 @@ export function SettingsMenu({ className }: { className?: string }) {
   const isAuthenticated = status === "authenticated";
   const canSendNotification =
     isAuthenticated && profileLoadState === "ready" && canSendSiteNotification(profile?.role);
+  const canSuggest =
+    isAuthenticated && profileLoadState === "ready" && canSuggestPageChange(profile?.role);
 
   useEffect(() => {
     setOpen(false);
@@ -160,6 +162,17 @@ export function SettingsMenu({ className }: { className?: string }) {
               onClick={() => setOpen(false)}
             >
               {t("notifications.manageMenu")}
+            </Link>
+          ) : null}
+
+          {canSuggest ? (
+            <Link
+              role="menuitem"
+              to={localeSuggestionsPath(locale)}
+              className={menuItemClassName()}
+              onClick={() => setOpen(false)}
+            >
+              {t("suggestions.menu")}
             </Link>
           ) : null}
 

@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import { PageSuggestionButton } from "@/components/suggestions/PageSuggestionButton";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
@@ -57,6 +58,7 @@ export function DetailSiblingNav({ prevTo, nextTo, state, className }: DetailSib
       <Link to={nextTo} state={state} title={nextLabel} aria-label={nextLabel} className={buttonClass}>
         <ArrowIcon direction="next" />
       </Link>
+      <PageSuggestionButton />
     </div>
   );
 }

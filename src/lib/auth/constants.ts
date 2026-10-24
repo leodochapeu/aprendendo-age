@@ -26,6 +26,11 @@ export function canSyncInstagram(role: UserRole | null | undefined): boolean {
   return role === "admin" || role === "streamer";
 }
 
+/** Quem pode sugerir alteração de texto nas páginas. */
+export function canSuggestPageChange(role: UserRole | null | undefined): boolean {
+  return role === "admin" || role === "moderator";
+}
+
 /** Quem pode cadastrar canais em Links (admin). */
 export function canManageChannels(role: UserRole | null | undefined): boolean {
   return role === "admin";

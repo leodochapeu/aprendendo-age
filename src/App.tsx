@@ -31,6 +31,7 @@ import { NotificationManagePage } from "@/pages/NotificationManagePage";
 import { NotificationShowcasePage } from "@/pages/NotificationShowcasePage";
 import { NotificationsPage } from "@/pages/NotificationsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { PageSuggestionsPage } from "@/pages/PageSuggestionsPage";
 import { PanteaoDetailPage } from "@/pages/PanteaoDetailPage";
 import { PanteoesPage } from "@/pages/PanteoesPage";
 import { FormRankPage } from "@/pages/FormRankPage";
@@ -171,6 +172,8 @@ export default function App() {
           <Route path="player/:id" element={<PublicPlayerProfilePage />} />
           <Route path="perfil" element={<ProfilePage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="sugestoes" element={<PageSuggestionsPage />} />
+          <Route path="suggestions" element={<PageSuggestionsPage />} />
           <Route path="notificacoes" element={<NotificationsPage />} />
           <Route path="notifications" element={<NotificationsPage />} />
           <Route path="notificacoes/apresentacao" element={<NotificationShowcasePage />} />
