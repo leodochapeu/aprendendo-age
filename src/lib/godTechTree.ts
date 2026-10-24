@@ -4,11 +4,22 @@ import { firstNumId } from "@/lib/entityRefs";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import type { Deus } from "@/lib/godMajorTree";
 
+export type GodTechTreeFrame = "tech" | "unit" | "myth" | "hero" | "ship";
+
 export type GodTechTreeItem = {
   key: string;
   nome: string;
   icon?: string;
   to?: string;
+  /** Nome em inglês, usado para alinhar linhas de melhoria (Machado → Serra → Carpinteiros). */
+  ingles?: string;
+  frame: GodTechTreeFrame;
+};
+
+/** Uma linha vertical de melhorias, com um espaço por era. `null` = essa era não tem o elo. */
+export type GodTechTreeLine = {
+  id: string;
+  slots: (GodTechTreeItem | null)[];
 };
 
 export type GodTechTreeBuildingMark = {
@@ -72,6 +83,7 @@ export function buildGodTechTree(god: Deus, catalog: LocaleCatalog): GodTechTree
         nome: unit.nome,
         icon: unit.icon,
         to: linkTo(catalog, "unidades", catalog.unidadeSlugById.get(unit.id)),
+        frame: unitFrame(unit),
       });
     }
   });
@@ -86,11 +98,13 @@ export function buildGodTechTree(god: Deus, catalog: LocaleCatalog): GodTechTree
         nome: tech.nome,
         icon: tech.icon,
         to: linkTo(catalog, "tecnologias", catalog.tecnologiaSlugByIndex.get(index)),
+        ingles: tech.ingles,
+        frame: "tech",
       });
     }
   });
 
-  const rows: Array<GodTechTreeRow & { rank: number; iconAge: number; nome: string }> = [];
+  const rows: Array<GodTechTreeRow & { rank: number; iconAge: number; nome: string; role: "tc" | "village" | "citadel" | null }> = [];
   for (const [id, draft] of drafts) {
     const building = buildings.get(id);
     if (!building) continue;
@@ -125,6 +139,7 @@ export function buildGodTechTree(god: Deus, catalog: LocaleCatalog): GodTechTree
       rank: buildingRank(building),
       iconAge,
       nome,
+      role: settlementRole(building),
       cells: draft.items.map((items, age) => ({
         building: age === iconAge ? mark : undefined,
         items,
@@ -132,8 +147,82 @@ export function buildGodTechTree(god: Deus, catalog: LocaleCatalog): GodTechTree
     });
   }
 
-  rows.sort((a, b) => a.rank - b.rank || a.iconAge - b.iconAge || a.nome.localeCompare(b.nome, catalog.locale));
-  return rows.map(({ buildingId, cells }) => ({ buildingId, cells }));
+  const visible = collapseSettlements(rows);
+  visible.sort((a, b) => a.rank - b.rank || a.iconAge - b.iconAge || a.nome.localeCompare(b.nome, catalog.locale));
+  return visible.map(({ buildingId, cells }) => ({ buildingId, cells }));
+}
+
+const TECH_LINES: string[][] = [
+  ["Hand Axe", "Bow Saw", "Carpenters"],
+  ["Pickaxe", "Shaft Mine", "Quarry"],
+  ["Husbandry", "Plow", "Irrigation", "Flood Control"],
+  ["Masons", "Architects"],
+  ["Medium Infantry", "Heavy Infantry", "Champion Infantry"],
+  ["Levy Infantry", "Conscript Infantry"],
+  ["Medium Cavalry", "Heavy Cavalry", "Champion Cavalry"],
+  ["Levy Cavalry", "Conscript Cavalry"],
+  ["Medium Ranged Soldiers", "Heavy Ranged Soldiers", "Champion Ranged Soldiers"],
+  ["Levy Ranged Soldiers", "Conscript Ranged Soldiers"],
+  ["Copper Weapons", "Bronze Weapons", "Iron Weapons"],
+  ["Copper Armor", "Bronze Armor", "Iron Armor"],
+  ["Copper Shields", "Bronze Shields", "Iron Shields"],
+  ["Watch Tower", "Guard Tower"],
+  ["Stone Wall", "Fortified Wall"],
+];
+
+/**
+ * Separa tecnologias que formam uma linha de melhoria (uma embaixo da outra, como no jogo)
+ * dos ícones que ficam num ramo horizontal da era.
+ */
+export function splitTechLines(cells: GodTechTreeCell[]): { loose: GodTechTreeItem[][]; lines: GodTechTreeLine[] } {
+  const claimed = new Set<string>();
+  const lines: GodTechTreeLine[] = [];
+
+  TECH_LINES.forEach((names, lineIndex) => {
+    const wanted = new Set(names.map((name) => name.toLowerCase()));
+    const slots: (GodTechTreeItem | null)[] = [null, null, null, null];
+    let found = 0;
+    cells.forEach((cell, age) => {
+      if (age > 3) return;
+      for (const item of cell.items) {
+        if (item.frame !== "tech" || claimed.has(item.key)) continue;
+        const ingles = item.ingles?.trim().toLowerCase();
+        if (!ingles || !wanted.has(ingles) || slots[age]) continue;
+        slots[age] = item;
+        found += 1;
+      }
+    });
+    if (found < 2) return;
+    for (const item of slots) if (item) claimed.add(item.key);
+    lines.push({ id: `line-${lineIndex}`, slots });
+  });
+
+  const loose = cells.map((cell) => cell.items.filter((item) => !claimed.has(item.key)));
+  return { loose, lines };
+}
+
+function collapseSettlements<T extends { role: "tc" | "village" | "citadel" | null; cells: GodTechTreeCell[] }>(rows: T[]): T[] {
+  const tc = rows.find((row) => row.role === "tc");
+  if (!tc) return rows;
+  for (const other of rows) {
+    if (other.role !== "village" && other.role !== "citadel") continue;
+    for (let age = 0; age < AGE_COUNT; age += 1) {
+      const target = tc.cells[age];
+      const source = other.cells[age];
+      if (!target || !source) continue;
+      const seen = new Set(target.items.map((item) => item.key));
+      for (const item of source.items) {
+        if (seen.has(item.key)) continue;
+        target.items.push(item);
+        seen.add(item.key);
+      }
+      target.items.sort((a, b) => {
+        const kind = (item: GodTechTreeItem) => (item.key.startsWith("u-") ? 0 : 1);
+        return kind(a) - kind(b) || a.nome.localeCompare(b.nome);
+      });
+    }
+  }
+  return rows.filter((row) => row.role !== "village" && row.role !== "citadel");
 }
 
 function includeBuilding(building: CatalogBuilding, godName: string, pantheonId: number, isMajor: boolean): boolean {
@@ -222,6 +311,22 @@ function linkTo(catalog: LocaleCatalog, section: "unidades" | "tecnologias" | "c
 
 function labelOf(building: CatalogBuilding): string {
   return `${building.nome} ${building.ingles ?? ""}`.toLowerCase();
+}
+
+function unitFrame(unit: Unidade): GodTechTreeFrame {
+  const tipo = (unit.tipo ?? []).map((item) => item.type ?? "").join(" ");
+  if (/hero|her[oó]i/i.test(tipo)) return "hero";
+  if (/m[ií]tic|myth/i.test(tipo)) return "myth";
+  if (/navio|ship/i.test(tipo)) return "ship";
+  return "unit";
+}
+
+function settlementRole(building: CatalogBuilding): "tc" | "village" | "citadel" | null {
+  const label = labelOf(building);
+  if (/citadel|cidadela/.test(label)) return "citadel";
+  if (/village center|centro de aldeia/.test(label)) return "village";
+  if (/town center|centro urbano/.test(label)) return "tc";
+  return null;
 }
 
 function isHero(unit: Unidade): boolean {

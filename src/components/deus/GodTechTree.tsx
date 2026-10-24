@@ -4,7 +4,14 @@ import { Section } from "@/components/ui/Section";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { Deus } from "@/lib/godMajorTree";
-import { buildGodTechTree, type GodTechTreeBuildingMark, type GodTechTreeItem } from "@/lib/godTechTree";
+import {
+  buildGodTechTree,
+  splitTechLines,
+  type GodTechTreeFrame,
+  type GodTechTreeItem,
+  type GodTechTreeLine,
+  type GodTechTreeRow,
+} from "@/lib/godTechTree";
 import { getEraAssetUrl } from "@/lib/eraAssetUrl";
 import { getIconFieldUrl } from "@/lib/notionTokenAssets";
 import type { ListIndexLinkState } from "@/lib/listIndexReturnState";
@@ -14,6 +21,18 @@ type Props = {
   god: Deus;
   className?: string;
   linkState?: ListIndexLinkState;
+};
+
+const BAND = "h-[4.5rem]";
+const LINE = "bg-[#d4b06a]";
+
+const FRAME: Record<GodTechTreeFrame | "building", string> = {
+  building: "border-[#e7c98a]",
+  tech: "border-[#c4a46a]",
+  unit: "border-[#c4a46a]",
+  hero: "border-[#e6c35c]",
+  myth: "border-[#b15cff]",
+  ship: "border-[#4c8fd4]",
 };
 
 export function GodTechTree({ god, className, linkState }: Props) {
@@ -26,110 +45,152 @@ export function GodTechTree({ god, className, linkState }: Props) {
 
   return (
     <Section title={t("common.techTree")} className={className}>
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[960px] table-fixed border-collapse">
-          <thead>
-            <tr>
-              {ages.map((era) => {
-                const icon = getEraAssetUrl(era);
-                return (
-                  <th
-                    key={era.id}
-                    scope="col"
-                    className="border border-aom-border/80 bg-zinc-950/50 px-2 py-3 text-center"
-                  >
-                    <span className="inline-flex items-center justify-center gap-2">
-                      {icon ? <img src={icon} alt="" className="size-8 object-contain" /> : null}
-                      <span className="font-[family-name:var(--font-display)] text-[11px] font-semibold uppercase tracking-wider text-amber-100/90">
-                        {era.nome}
-                      </span>
-                    </span>
-                  </th>
-                );
-              })}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr key={row.buildingId} className="align-top">
-                {row.cells.map((cell, index) => (
-                  <td key={index} className="border border-aom-border/70 px-3 py-3">
-                    {cell.building ? <BuildingMark building={cell.building} linkState={linkState} /> : null}
-                    {cell.items.length ? (
-                      <div className="flex flex-wrap gap-2">
-                        {cell.items.map((item) => (
-                          <TreeItem key={item.key} item={item} linkState={linkState} />
-                        ))}
-                      </div>
-                    ) : null}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="overflow-x-auto rounded-xl bg-[#100e0c] bg-[radial-gradient(ellipse_at_top,rgba(90,68,32,0.16),transparent_58%)] px-2 py-3">
+        <div className="flex w-max items-start">
+          <div className="sticky left-0 z-20 flex w-12 shrink-0 flex-col bg-[#100e0c]/95">
+            <div className="h-12" />
+            {ages.map((era) => {
+              const icon = getEraAssetUrl(era);
+              return (
+                <div key={era.id} className={cn(BAND, "flex items-center justify-center")}>
+                  {icon ? <img src={icon} alt={era.nome} title={era.nome} className="size-9 object-contain" /> : null}
+                </div>
+              );
+            })}
+          </div>
+          {rows.map((row) => (
+            <BuildingColumn key={row.buildingId} row={row} linkState={linkState} />
+          ))}
+        </div>
       </div>
     </Section>
   );
 }
 
-function BuildingMark({
-  building,
-  linkState,
-}: {
-  building: GodTechTreeBuildingMark;
-  linkState?: ListIndexLinkState;
-}) {
-  const src = getIconFieldUrl(building.icon);
-  const body = (
-    <>
-      {src ? <img src={src} alt="" className="size-11 shrink-0 object-contain" /> : null}
-      <span className="font-[family-name:var(--font-display)] text-sm font-semibold leading-tight text-amber-50 group-hover:text-amber-200">
-        {building.nome}
-      </span>
-    </>
-  );
-  const className = "group mb-3 flex items-center gap-2";
-  if (!building.to) return <div className={className}>{body}</div>;
+function BuildingColumn({ row, linkState }: { row: GodTechTreeRow; linkState?: ListIndexLinkState }) {
+  const { loose, lines } = splitTechLines(row.cells);
+  const buildingAge = Math.max(0, row.cells.findIndex((cell) => cell.building));
+  const building = row.cells[buildingAge]?.building;
+  const lastContent = lastContentAge(loose, lines, buildingAge);
+
   return (
-    <Link to={building.to} state={linkState} className={className}>
-      {body}
-    </Link>
+    <div className="flex shrink-0 flex-col pr-4">
+      <div className="flex h-12 w-10 items-end justify-center">
+        {building && buildingAge === 0 ? <TreeIcon item={building} frame="building" linkState={linkState} /> : null}
+      </div>
+      <div className="relative">
+        {lastContent > buildingAge ? (
+          <span
+            className={cn("pointer-events-none absolute w-px", LINE)}
+            style={{
+              left: 20,
+              top: buildingAge === 0 ? 0 : `calc(${buildingAge} * 4.5rem + 2.25rem)`,
+              height: `calc(${lastContent - buildingAge} * 4.5rem${buildingAge === 0 ? " + 2.25rem" : ""})`,
+            }}
+          />
+        ) : null}
+        {row.cells.map((cell, age) => {
+          const branch = loose[age] ?? [];
+          const hasIcons = branch.length > 0 || lines.some((line) => line.slots[age]);
+          return (
+            <div key={age} className={cn(BAND, "relative flex items-center pl-10")}>
+              {building && buildingAge === age && age !== 0 ? (
+                <div className="absolute left-0 top-1/2 -translate-y-1/2">
+                  <TreeIcon item={building} frame="building" linkState={linkState} />
+                </div>
+              ) : null}
+              {hasIcons ? (
+                <span className={cn("absolute top-1/2 left-5 h-px w-5 -translate-y-1/2", LINE)} />
+              ) : null}
+              <div className="flex h-full items-center gap-1">
+                {lines.map((line) => (
+                  <LineSlot key={line.id} line={line} age={age} linkState={linkState} />
+                ))}
+                {branch.map((item) => (
+                  <TreeIcon key={item.key} item={item} frame={item.frame} linkState={linkState} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
-function TreeItem({ item, linkState }: { item: GodTechTreeItem; linkState?: ListIndexLinkState }) {
-  const src = getIconFieldUrl(item.icon);
-  const body = (
-    <>
-      <span
-        className={cn(
-          "flex size-14 items-center justify-center rounded-md border border-aom-border bg-zinc-950/80 p-0.5",
-          item.to && "transition group-hover:border-amber-400/70",
-        )}
-      >
-        {src ? (
-          <img src={src} alt="" className="size-full object-contain" />
-        ) : (
-          <span className="px-1 text-center text-[10px] font-semibold text-zinc-500">{item.nome.slice(0, 3)}</span>
-        )}
-      </span>
-      <span className="line-clamp-2 w-full text-center text-[10px] leading-tight text-zinc-400 group-hover:text-amber-100">
-        {item.nome}
-      </span>
-    </>
+function LineSlot({
+  line,
+  age,
+  linkState,
+}: {
+  line: GodTechTreeLine;
+  age: number;
+  linkState?: ListIndexLinkState;
+}) {
+  const item = line.slots[age];
+  const first = line.slots.findIndex((slot) => slot != null);
+  const last = lastFilled(line.slots);
+  let lineClass = "";
+  if (first >= 0 && last > first) {
+    if (age === first) lineClass = "top-1/2 bottom-0";
+    else if (age === last) lineClass = "top-0 h-1/2";
+    else if (age > first && age < last) lineClass = "inset-y-0";
+  }
+
+  return (
+    <div className="relative flex h-full w-10 shrink-0 items-center justify-center">
+      {lineClass ? <span className={cn("absolute left-1/2 w-px -translate-x-1/2", LINE, lineClass)} /> : null}
+      {item ? <TreeIcon item={item} frame={item.frame} linkState={linkState} /> : null}
+    </div>
   );
-  const className = "group flex w-16 flex-col items-center gap-1";
+}
+
+function TreeIcon({
+  item,
+  frame,
+  linkState,
+}: {
+  item: { nome: string; icon?: string; to?: string };
+  frame: GodTechTreeFrame | "building";
+  linkState?: ListIndexLinkState;
+}) {
+  const src = getIconFieldUrl(item.icon);
+  const body = src ? (
+    <img src={src} alt="" className="size-full object-contain" />
+  ) : (
+    <span className="px-0.5 text-center text-[9px] font-semibold text-zinc-400">{item.nome.slice(0, 2)}</span>
+  );
+  const className = cn(
+    "relative z-[1] flex size-10 items-center justify-center border bg-black p-0.5 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.65)]",
+    FRAME[frame],
+    item.to && "transition hover:brightness-125 hover:outline hover:outline-1 hover:outline-[#f0d48a]",
+  );
   if (!item.to) {
     return (
-      <div className={className} title={item.nome}>
+      <div className={className} title={item.nome} aria-label={item.nome}>
         {body}
       </div>
     );
   }
   return (
-    <Link to={item.to} state={linkState} title={item.nome} className={className}>
+    <Link to={item.to} state={linkState} title={item.nome} aria-label={item.nome} className={className}>
       {body}
     </Link>
   );
+}
+
+function lastFilled(slots: (GodTechTreeItem | null)[]): number {
+  for (let age = slots.length - 1; age >= 0; age -= 1) {
+    if (slots[age]) return age;
+  }
+  return -1;
+}
+
+function lastContentAge(loose: GodTechTreeItem[][], lines: GodTechTreeLine[], buildingAge: number): number {
+  let last = buildingAge;
+  loose.forEach((items, age) => {
+    if (items.length) last = Math.max(last, age);
+  });
+  for (const line of lines) last = Math.max(last, lastFilled(line.slots));
+  return last;
 }

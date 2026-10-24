@@ -10,7 +10,7 @@ import {
   unidadeSlugById,
 } from "@/data/catalog";
 import type { LocaleCatalog } from "@/data/catalogLocale";
-import { buildGodTechTree } from "@/lib/godTechTree";
+import { buildGodTechTree, splitTechLines } from "@/lib/godTechTree";
 
 const catalog = {
   locale: "pt",
@@ -58,6 +58,11 @@ describe("buildGodTechTree", () => {
     expect(names("Zeus", 35, 1)).toContain("Hoplita");
     expect(names("Zeus", 14, 0)).toEqual(expect.arrayContaining(["Machado de Mão", "Picareta"]));
     expect(names("Zeus", 14, 2)).toContain("Arco de Serra");
+    const store = splitTechLines(row("Zeus", 14).found.cells);
+    const wood = store.lines.find((line) => line.slots[0]?.nome === "Machado de Mão");
+    const gold = store.lines.find((line) => line.slots[0]?.nome === "Picareta");
+    expect(wood?.slots.map((slot) => slot?.nome ?? null)).toEqual(["Machado de Mão", null, "Arco de Serra", "Carpinteiros"]);
+    expect(gold?.slots.map((slot) => slot?.nome ?? null)).toEqual(["Picareta", null, "Poços de Mina", "Pedreira"]);
   });
 
   it("fica com a maravilha de Zeus e o mirmidão na fortaleza", () => {
