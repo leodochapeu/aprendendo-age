@@ -43,9 +43,6 @@ import { ReliquiasPage } from "@/pages/ReliquiasPage";
 import { SecretStartBuilderPage } from "@/pages/SecretStartBuilderPage";
 import { StartDetailPage } from "@/pages/StartDetailPage";
 import { StartsPage } from "@/pages/StartsPage";
-import { AtalhosImportantesPage } from "@/pages/trilha-de-aprendizado/AtalhosImportantesPage";
-import { RushTurtleBoomarPage } from "@/pages/trilha-de-aprendizado/RushTurtleBoomarPage";
-import { TiposUnidadesMultiplicadoresPage } from "@/pages/trilha-de-aprendizado/TiposUnidadesMultiplicadoresPage";
 import { CommunityVideoDetailPage } from "@/pages/CommunityVideoDetailPage";
 import { CommunityVideosPage } from "@/pages/CommunityVideosPage";
 import { TrilhaDeAprendizadoPage } from "@/pages/trilha-de-aprendizado/TrilhaDeAprendizadoPage";
@@ -149,10 +146,16 @@ export default function App() {
           <Route path="videos-comunidade/:id" element={<CommunityVideoDetailPage />} />
           <Route
             path="trilha-de-aprendizado/tipos-unidades-multiplicadores"
-            element={<TiposUnidadesMultiplicadoresPage />}
+            element={<Navigate to="/trilha-de-aprendizado#forcas" replace />}
           />
-          <Route path="trilha-de-aprendizado/atalhos-importantes" element={<AtalhosImportantesPage />} />
-          <Route path="trilha-de-aprendizado/rush-turtle-boom" element={<RushTurtleBoomarPage />} />
+          <Route
+            path="trilha-de-aprendizado/atalhos-importantes"
+            element={<Navigate to="/trilha-de-aprendizado#atalhos" replace />}
+          />
+          <Route
+            path="trilha-de-aprendizado/rush-turtle-boom"
+            element={<Navigate to="/trilha-de-aprendizado#estrategia" replace />}
+          />
           <Route path="entrar" element={<LoginPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="cadastro" element={<RegisterPage />} />

@@ -88,7 +88,7 @@ export function DeusBuildAvaliacaoCards({ rush, turtle, eco, foco }: DeusBuildAv
       <p className="mt-3 text-xs text-zinc-500">
         Escala 1–5 (5 = melhor para o arquétipo).{" "}
         <Link
-          to="/trilha-de-aprendizado/rush-turtle-boom"
+          to="/trilha-de-aprendizado#estrategia-ranking"
           className="text-amber-200/90 underline-offset-2 hover:text-amber-50 hover:underline"
         >
           Ver ranking na trilha

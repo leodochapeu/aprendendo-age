@@ -167,7 +167,7 @@ export function UnidadesPage() {
 
   const canCompare = selectedSlugs.length === 2;
   const showSpreadsheetPreview = viewMode === "planilha" && !compareMode;
-  const beneficiosImgSrc = "/trilha-de-aprendizado/tipos-unidades-multiplicadores/Militares_Beneficios.png";
+  const beneficiosImgSrc = "/trilha-de-aprendizado/tipos-unidades-multiplicadores/Militares_Beneficios.webp";
 
   const beneficiosButton = (
     <button

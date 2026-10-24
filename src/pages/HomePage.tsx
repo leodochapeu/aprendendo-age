@@ -159,7 +159,7 @@ export function HomePage() {
       step: 1,
       title: t("nav.communityVideos"),
       description: t("pages.home.showcase.communityVideos.description"),
-      imageSrc: trilhaShared("ScoobyManiaco_Perfil.png"),
+      imageSrc: trilhaShared("ScoobyManiaco_Perfil.webp"),
       isNew: true,
     },
     {
