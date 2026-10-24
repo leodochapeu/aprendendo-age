@@ -686,6 +686,8 @@ export const ptMessages: TranslationTree = {
         startCta: "Começar",
         softLabel: "Vantagem leve",
         hardLabel: "Vantagem forte",
+        softTerm: "Soft Counter",
+        hardTerm: "Hard Counter",
         beats: "vence",
         chapterStart: "Início",
         chapterForces: "Forças",

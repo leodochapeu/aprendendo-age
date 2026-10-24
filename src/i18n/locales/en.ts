@@ -688,6 +688,8 @@ export const enMessages: TranslationTree = {
         startCta: "Start",
         softLabel: "Soft counter",
         hardLabel: "Hard counter",
+        softTerm: "",
+        hardTerm: "",
         beats: "beats",
         chapterStart: "Start",
         chapterForces: "Matchups",

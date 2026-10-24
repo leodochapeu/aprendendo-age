@@ -53,9 +53,16 @@ export function ForcasMultipliersPanel() {
     >
       <div className="grid gap-5 lg:grid-cols-2">
         <article className="rounded-3xl border border-amber-300/25 bg-amber-950/25 p-6 md:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-200">
-            {t("pages.trilha.deck.softLabel")}
-          </p>
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-200">
+              {t("pages.trilha.deck.softLabel")}
+            </p>
+            {t("pages.trilha.deck.softTerm") ? (
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-100/80">
+                {t("pages.trilha.deck.softTerm")}
+              </p>
+            ) : null}
+          </div>
           <p className="mt-4 font-[family-name:var(--font-display)] text-6xl text-amber-100 md:text-7xl">{factor}×</p>
           <p className="mt-5 flex flex-wrap items-baseline gap-x-3 font-[family-name:var(--font-display)] text-4xl text-zinc-50 md:text-5xl">
             <span>8</span>
@@ -73,9 +80,16 @@ export function ForcasMultipliersPanel() {
         </article>
 
         <article className="rounded-3xl border border-rose-400/35 bg-rose-950/30 p-6 md:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-200">
-            {t("pages.trilha.deck.hardLabel")}
-          </p>
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-200">
+              {t("pages.trilha.deck.hardLabel")}
+            </p>
+            {t("pages.trilha.deck.hardTerm") ? (
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-rose-100/80">
+                {t("pages.trilha.deck.hardTerm")}
+              </p>
+            ) : null}
+          </div>
           <p className="mt-4 font-[family-name:var(--font-display)] text-6xl text-rose-100 md:text-7xl">5×</p>
           <p className="mt-5 font-[family-name:var(--font-display)] text-4xl text-zinc-50 md:text-5xl">30</p>
           <p className="mt-5 text-lg leading-relaxed text-zinc-100 md:text-xl">{t("pages.trilha.multipliers.introP3")}</p>
