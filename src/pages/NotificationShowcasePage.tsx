@@ -151,15 +151,18 @@ export function NotificationShowcasePage() {
 
         {item ? (
           <div key={item.id} className="mt-8 grid items-center gap-8 lg:grid-cols-2 [animation:showcase-in_0.7s_ease]">
-            <div className="relative order-1 aspect-[16/10] w-full min-w-0 overflow-hidden rounded-[1.75rem] bg-zinc-950 lg:order-2">
+            <div className="order-1 flex w-full min-w-0 items-center justify-center lg:order-2">
               {item.imageUrl ? (
-                <img src={item.imageUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+                <img
+                  src={item.imageUrl}
+                  alt=""
+                  className="max-h-[min(72vh,42rem)] w-auto max-w-full rounded-[1.75rem] object-contain"
+                />
               ) : (
-                <div className="flex h-full items-end bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_58%)] p-8">
+                <div className="flex h-64 w-full items-end rounded-[1.75rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_58%)] p-8">
                   <span className="font-[family-name:var(--font-display)] text-7xl text-white/15">{String(safeIndex + 1).padStart(2, "0")}</span>
                 </div>
               )}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
             </div>
             <div className="order-2 min-w-0 lg:order-1">
               <p className="text-xs tabular-nums tracking-[0.22em] text-zinc-500">
