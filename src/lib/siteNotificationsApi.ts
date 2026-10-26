@@ -77,30 +77,22 @@ export async function fetchNotificationPreview(): Promise<NotificationPreview> {
   const listQuery = (columns: string) =>
     supabase
       .from("site_notifications")
-      .select(columns, { count: "exact" })
+      .select(columns)
       .order("starts_at", { ascending: false })
       .order("id", { ascending: false })
-      .range(0, NOTIFICATION_PREVIEW_LIMIT - 1);
+      .limit(NOTIFICATION_PREVIEW_LIMIT + 1);
 
   let listResult = await listQuery(FEED_COLUMNS);
   if (isMissingHighlightedColumn(listResult.error)) listResult = await listQuery(FEED_COLUMNS_LEGACY);
+  if (listResult.error) return { ok: false, reason: "load" };
 
-  const idsResult = await supabase
-    .from("site_notifications")
-    .select("id")
-    .order("starts_at", { ascending: false })
-    .order("id", { ascending: false })
-    .limit(1000);
-
-  if (listResult.error || idsResult.error) return { ok: false, reason: "load" };
-
-  const rows = (listResult.data ?? []) as unknown as SiteNotificationRow[];
-  const ids = (idsResult.data ?? []) as { id: string }[];
+  const rows = ((listResult.data ?? []) as unknown as SiteNotificationRow[]).slice(0, NOTIFICATION_PREVIEW_LIMIT + 1);
+  const page = rows.slice(0, NOTIFICATION_PREVIEW_LIMIT).map(mapNotification);
   return {
     ok: true,
-    preview: rows.map(mapNotification),
-    total: listResult.count ?? rows.length,
-    activeIds: ids.map((row) => row.id),
+    preview: page,
+    total: rows.length > NOTIFICATION_PREVIEW_LIMIT ? page.length + 1 : page.length,
+    activeIds: page.map((item) => item.id),
   };
 }
 

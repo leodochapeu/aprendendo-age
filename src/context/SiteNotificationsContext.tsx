@@ -40,6 +40,10 @@ type SiteNotificationsContextValue = {
 
 const SiteNotificationsContext = createContext<SiteNotificationsContextValue | null>(null);
 
+const REFRESH_MS = 5 * 60_000;
+const MIN_GAP_MS = 4 * 60_000;
+const MAX_BACKOFF_MS = 20 * 60_000;
+
 function readTickerCollapsed(): boolean {
   try {
     return localStorage.getItem(NOTIFICATION_TICKER_COLLAPSED_KEY) === "1";
@@ -78,37 +82,61 @@ export function SiteNotificationsProvider({ children }: { children: ReactNode })
   const [tickerOffset, setTickerOffsetState] = useState(0);
   const [tickerCollapsed, setTickerCollapsedState] = useState(readTickerCollapsed);
   const requestId = useRef(0);
+  const inFlight = useRef(false);
+  const lastFetchAt = useRef(0);
+  const failures = useRef(0);
 
-  const refresh = useCallback(async () => {
+  const load = useCallback(async (force: boolean) => {
+    const now = Date.now();
+    if (inFlight.current) return;
+    const gap = failures.current === 0 ? MIN_GAP_MS : Math.min(MAX_BACKOFF_MS, MIN_GAP_MS * 2 ** failures.current);
+    if (!force && now - lastFetchAt.current < gap) return;
+    inFlight.current = true;
+    lastFetchAt.current = now;
     const id = ++requestId.current;
-    const result = await fetchNotificationPreview();
-    if (id !== requestId.current) return;
-    setLoading(false);
-    if (!result.ok) {
-      setError(result.reason === "load");
-      return;
+    try {
+      const result = await fetchNotificationPreview();
+      if (id !== requestId.current) return;
+      setLoading(false);
+      if (!result.ok) {
+        failures.current += 1;
+        setError(result.reason === "load");
+        return;
+      }
+      failures.current = 0;
+      setError(false);
+      setPreview(result.preview);
+      setActiveIds(result.activeIds);
+      setTotal(result.total);
+    } catch {
+      if (id !== requestId.current) return;
+      failures.current += 1;
+      setLoading(false);
+      setError(true);
+    } finally {
+      if (id === requestId.current) inFlight.current = false;
     }
-    setError(false);
-    setPreview(result.preview);
-    setActiveIds(result.activeIds);
-    setTotal(result.total);
   }, []);
 
+  const refresh = useCallback(() => load(true), [load]);
+
   useEffect(() => {
-    void refresh();
-    const timer = window.setInterval(() => void refresh(), 60_000);
+    void load(true);
+    const timer = window.setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      void load(false);
+    }, REFRESH_MS);
     const onVisible = () => {
-      if (document.visibilityState === "visible") void refresh();
+      if (document.visibilityState === "visible") void load(false);
     };
-    window.addEventListener("focus", onVisible);
     document.addEventListener("visibilitychange", onVisible);
     return () => {
       window.clearInterval(timer);
-      window.removeEventListener("focus", onVisible);
       document.removeEventListener("visibilitychange", onVisible);
       requestId.current += 1;
+      inFlight.current = false;
     };
-  }, [refresh]);
+  }, [load]);
 
   const markRead = useCallback((ids: readonly string[]) => {
     setReadIds((current) => {
