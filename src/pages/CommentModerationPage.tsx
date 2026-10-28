@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
+import { CommunityVideoRequestsPanel } from "@/components/moderation/CommunityVideoRequestsPanel";
 import { RecentCommentsPanel } from "@/components/moderation/RecentCommentsPanel";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SuggestionsPanel } from "@/pages/PageSuggestionsPage";
@@ -17,7 +18,7 @@ import { type CommentReport } from "@/lib/pageComments";
 import { deletePageComment, dismissCommentReport, fetchCommentReports } from "@/lib/pageCommentsApi";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
-const TABS = ["reports", "suggestions", "comments"] as const;
+const TABS = ["reports", "suggestions", "comments", "videos"] as const;
 type ModerationTab = (typeof TABS)[number];
 
 const KINDS = new Set<LocaleSection>([
@@ -45,7 +46,8 @@ export function CommentModerationPage() {
   const authPending = status === "loading" || (status === "authenticated" && profileLoadState !== "ready");
   const isAdmin = profile?.role === "admin";
   const requested = searchParams.get("tab");
-  const tab: ModerationTab = requested === "suggestions" || requested === "comments" ? requested : "reports";
+  const tab: ModerationTab =
+    requested === "suggestions" || requested === "comments" || requested === "videos" ? requested : "reports";
   const description = !allowed
     ? undefined
     : tab === "suggestions"
@@ -54,7 +56,9 @@ export function CommentModerationPage() {
         : t("suggestions.listDescriptionOwn")
       : tab === "comments"
         ? t("comments.recentDescription")
-        : t("comments.moderationDescription");
+        : tab === "videos"
+          ? t("comments.videoRequestsDescription")
+          : t("comments.moderationDescription");
   const [items, setItems] = useState<CommentReport[]>([]);
   const [topicReports, setTopicReports] = useState<TopicReport[]>([]);
   const [loading, setLoading] = useState(configured);
@@ -143,6 +147,7 @@ export function CommentModerationPage() {
       ) : null}
       {allowed && tab === "suggestions" ? <SuggestionsPanel /> : null}
       {allowed && tab === "comments" ? <RecentCommentsPanel /> : null}
+      {allowed && tab === "videos" ? <CommunityVideoRequestsPanel /> : null}
       {allowed && tab === "reports" ? (
         <>
           {loading ? <p className="text-sm text-zinc-400">{t("notifications.loading")}</p> : null}

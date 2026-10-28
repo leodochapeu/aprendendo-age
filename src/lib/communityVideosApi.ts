@@ -25,6 +25,10 @@ export type CommunityVideo = {
   tags: CommunityVideoTag[];
 };
 
+export type CommunityVideoRequest = CommunityVideo & {
+  submitterName: string | null;
+};
+
 export type CommunityVideoSubmitPayload = {
   videoUrl: string;
   title: string;
@@ -300,4 +304,90 @@ export async function submitCommunityVideo(
   }
 
   return { ok: true, id: videoId };
+}
+
+const PENDING_SELECT = `
+  ${VIDEO_SELECT},
+  submitter:profiles!community_videos_submitted_by_fkey ( display_name )
+`;
+
+type PendingVideoRow = VideoRow & {
+  submitter?: { display_name?: string | null } | { display_name?: string | null }[] | null;
+};
+
+function submitterNameFromRow(row: PendingVideoRow): string | null {
+  const raw = row.submitter;
+  const profile = Array.isArray(raw) ? raw[0] : raw;
+  const name = profile?.display_name?.trim();
+  return name || null;
+}
+
+/** Fila de solicitações pendentes. RLS: admin e, após a migration, moderador. */
+export async function fetchPendingCommunityVideos(): Promise<
+  { ok: true; data: CommunityVideoRequest[] } | { ok: false; message: string }
+> {
+  const supabase = createSupabaseClient();
+  if (!supabase) return { ok: false, message: "SUPABASE_NOT_CONFIGURED" };
+
+  const withSubmitter = await supabase
+    .from("community_videos")
+    .select(PENDING_SELECT)
+    .eq("status", "pending")
+    .order("updated_at", { ascending: false });
+
+  if (!withSubmitter.error) {
+    return {
+      ok: true,
+      data: (withSubmitter.data ?? []).map((row) => {
+        const pending = row as PendingVideoRow;
+        return { ...mapVideoRow(pending), submitterName: submitterNameFromRow(pending) };
+      }),
+    };
+  }
+
+  const fallback = await supabase
+    .from("community_videos")
+    .select(VIDEO_SELECT)
+    .eq("status", "pending")
+    .order("updated_at", { ascending: false });
+
+  if (fallback.error) return { ok: false, message: fallback.error.message };
+  return {
+    ok: true,
+    data: (fallback.data ?? []).map((row) => ({ ...mapVideoRow(row as VideoRow), submitterName: null })),
+  };
+}
+
+export async function approveCommunityVideo(
+  id: string,
+): Promise<{ ok: true } | { ok: false; message: string }> {
+  const supabase = createSupabaseClient();
+  if (!supabase) return { ok: false, message: "SUPABASE_NOT_CONFIGURED" };
+
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+  if (userError) return { ok: false, message: userError.message };
+  if (!user) return { ok: false, message: "NOT_AUTHENTICATED" };
+
+  const { error } = await supabase
+    .from("community_videos")
+    .update({ status: "approved", approved_by: user.id })
+    .eq("id", id)
+    .eq("status", "pending");
+
+  if (error) return { ok: false, message: error.message };
+  return { ok: true };
+}
+
+export async function rejectCommunityVideo(
+  id: string,
+): Promise<{ ok: true } | { ok: false; message: string }> {
+  const supabase = createSupabaseClient();
+  if (!supabase) return { ok: false, message: "SUPABASE_NOT_CONFIGURED" };
+
+  const { error } = await supabase.from("community_videos").delete().eq("id", id).eq("status", "pending");
+  if (error) return { ok: false, message: error.message };
+  return { ok: true };
 }
