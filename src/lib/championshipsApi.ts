@@ -10,6 +10,7 @@ export type ChampionshipCard = {
   description: string;
   logoUrl: string;
   phase: ChampionshipPhase;
+  devMode: boolean;
 };
 
 export type ChampionshipPlayer = {
@@ -67,7 +68,7 @@ export type ChampionshipDetail = ChampionshipCard & {
 };
 
 const CHAMP_SELECT =
-  "id, slug, name, description, rules, logo_path, phase, registration_enabled, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
+  "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
 
 export function championshipAssetUrl(path: string | null | undefined) {
   const value = path?.trim() ?? "";
@@ -83,18 +84,28 @@ function phaseOf(value: unknown): ChampionshipPhase {
   return "ongoing";
 }
 
-export async function fetchPublicChampionships(): Promise<ChampionshipCard[]> {
-  const supabase = createSupabasePublicClient();
+function listedOnAprendendoAge(row: { phase?: unknown; public_page?: unknown; dev_mode?: unknown }, includeDev: boolean) {
+  if (row.phase === "draft") return false;
+  if (row.dev_mode === true) return includeDev;
+  return row.public_page === true;
+}
+
+export async function fetchPublicChampionships(includeDev = false): Promise<ChampionshipCard[]> {
+  const supabase = includeDev ? createSupabaseClient() : createSupabasePublicClient();
   if (!supabase) return [];
-  const { data, error } = await supabase
+  let query = supabase
     .from("championships")
-    .select("id, slug, name, description, logo_path, phase")
+    .select("id, slug, name, description, logo_path, phase, public_page, dev_mode")
     .eq("status", "approved")
-    .eq("public_page", true)
+    .neq("phase", "draft")
     .order("name");
+  query = includeDev
+    ? query.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true")
+    : query.eq("public_page", true).eq("dev_mode", false);
+  const { data, error } = await query;
   if (error) throw new Error(error.message);
   return (data ?? [])
-    .filter((row) => typeof row.slug === "string" && row.slug)
+    .filter((row) => listedOnAprendendoAge(row, includeDev) && typeof row.slug === "string" && row.slug)
     .map((row) => ({
       id: row.id as string,
       slug: row.slug as string,
@@ -102,21 +113,18 @@ export async function fetchPublicChampionships(): Promise<ChampionshipCard[]> {
       description: (row.description as string) ?? "",
       logoUrl: championshipAssetUrl(row.logo_path as string | null),
       phase: phaseOf(row.phase),
+      devMode: row.dev_mode === true,
     }));
 }
 
-export async function fetchChampionshipBySlug(slug: string): Promise<ChampionshipDetail | null> {
-  const supabase = createSupabasePublicClient();
+export async function fetchChampionshipBySlug(slug: string, includeDev = false): Promise<ChampionshipDetail | null> {
+  const supabase = includeDev ? createSupabaseClient() : createSupabasePublicClient();
   if (!supabase) return null;
-  const { data: row, error } = await supabase
-    .from("championships")
-    .select(CHAMP_SELECT)
-    .eq("slug", slug)
-    .eq("status", "approved")
-    .eq("public_page", true)
-    .maybeSingle();
+  let query = supabase.from("championships").select(CHAMP_SELECT).eq("slug", slug).eq("status", "approved").neq("phase", "draft");
+  query = includeDev ? query.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true") : query.eq("public_page", true).eq("dev_mode", false);
+  const { data: row, error } = await query.maybeSingle();
   if (error) throw new Error(error.message);
-  if (!row?.slug) return null;
+  if (!row?.slug || !listedOnAprendendoAge(row, includeDev)) return null;
 
   const id = row.id as string;
   const [{ data: entries }, { data: fixtures }, { data: places }] = await Promise.all([
@@ -160,6 +168,7 @@ export async function fetchChampionshipBySlug(slug: string): Promise<Championshi
     rules: (row.rules as string) ?? "",
     logoUrl: championshipAssetUrl(row.logo_path as string | null),
     phase: phaseOf(row.phase),
+    devMode: row.dev_mode === true,
     registrationEnabled: Boolean(row.registration_enabled),
     prizeEnabled: Boolean(row.prize_enabled),
     prizeMode: row.prize_mode === "donations" ? "donations" : "fixed",

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { fetchPublicChampionships, type ChampionshipCard, type ChampionshipPhase } from "@/lib/championshipsApi";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -13,18 +14,23 @@ const PHASE_KEY: Record<ChampionshipPhase, string> = {
 
 export function CampeonatosPage() {
   const { t } = useTranslation();
+  const { status, profile, profileLoadState } = useAuth();
+  const includeDev = status === "authenticated" && profileLoadState === "ready" && profile?.role === "admin";
+  const authReady = status !== "loading" && (status !== "authenticated" || profileLoadState === "ready");
   const [rows, setRows] = useState<ChampionshipCard[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!authReady) return;
     if (!isSupabaseConfigured()) {
       setLoading(false);
       setError(t("pages.championship.unconfigured"));
       return;
     }
     let cancelled = false;
-    void fetchPublicChampionships()
+    setLoading(true);
+    void fetchPublicChampionships(includeDev)
       .then((list) => {
         if (!cancelled) setRows(list);
       })
@@ -37,9 +43,7 @@ export function CampeonatosPage() {
     return () => {
       cancelled = true;
     };
-    // `t` muda de identidade; o carregamento depende só da configuração.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [authReady, includeDev, t]);
 
   return (
     <div className="mx-auto max-w-5xl">
@@ -60,7 +64,10 @@ export function CampeonatosPage() {
               </div>
               <div className="min-w-0">
                 <div className="font-[family-name:var(--font-display)] text-xl text-amber-50 group-hover:text-amber-200">{camp.name}</div>
-                <div className="mt-1 text-xs uppercase tracking-wide text-amber-200/80">{t(PHASE_KEY[camp.phase])}</div>
+                <div className="mt-1 text-xs uppercase tracking-wide text-amber-200/80">
+                  {t(PHASE_KEY[camp.phase])}
+                  {camp.devMode ? " · Modo Dev" : ""}
+                </div>
                 {camp.description ? <p className="mt-2 line-clamp-3 text-sm text-zinc-400">{camp.description}</p> : null}
               </div>
             </div>

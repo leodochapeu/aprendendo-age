@@ -36,7 +36,9 @@ function playerName(camp: ChampionshipDetail, id: string) {
 export function CampeonatoPage() {
   const { slug = "" } = useParams();
   const { t, locale } = useTranslation();
-  const { user, profile, status } = useAuth();
+  const { user, profile, profileLoadState, status } = useAuth();
+  const includeDev = status === "authenticated" && profileLoadState === "ready" && profile?.role === "admin";
+  const authReady = status !== "loading" && (status !== "authenticated" || profileLoadState === "ready");
   const [camp, setCamp] = useState<ChampionshipDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -51,6 +53,7 @@ export function CampeonatoPage() {
   }, []);
 
   useEffect(() => {
+    if (!authReady) return;
     if (!isSupabaseConfigured()) {
       setLoading(false);
       setError(t("pages.championship.unconfigured"));
@@ -58,11 +61,11 @@ export function CampeonatoPage() {
     }
     let cancelled = false;
     setLoading(true);
-    void fetchChampionshipBySlug(slug)
+    void fetchChampionshipBySlug(slug, includeDev)
       .then((row) => {
         if (cancelled) return;
         setCamp(row);
-        if (!row) setError(t("pages.championship.notFound"));
+        setError(row ? null : t("pages.championship.notFound"));
       })
       .catch((err: unknown) => {
         if (!cancelled) setError(err instanceof Error ? err.message : t("pages.championship.loadError"));
@@ -73,7 +76,7 @@ export function CampeonatoPage() {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [authReady, includeDev, slug, t]);
 
   useEffect(() => {
     if (!camp || !user) return;
@@ -153,7 +156,10 @@ export function CampeonatoPage() {
                 <img src={camp.logoUrl} alt="" className="h-20 w-20 rounded-2xl border border-amber-900/50 bg-black/40 object-contain p-2" />
               ) : null}
               <div>
-                <div className="text-xs uppercase tracking-[0.2em] text-amber-200/80">{t(PHASE_KEY[camp.phase])}</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-amber-200/80">
+                  {t(PHASE_KEY[camp.phase])}
+                  {camp.devMode ? " · Modo Dev" : ""}
+                </div>
                 <h1 className="font-[family-name:var(--font-display)] text-4xl text-amber-50">{camp.name}</h1>
                 {camp.description ? <p className="mt-2 max-w-2xl text-zinc-300">{camp.description}</p> : null}
               </div>
