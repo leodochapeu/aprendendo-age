@@ -318,6 +318,9 @@ export const ptMessages: TranslationTree = {
         players: {
           description: "Perfis sincronizados ao AoM Stats, corrida por RR e ranking da comunidade.",
         },
+        championships: {
+          description: "Agenda dos campeonatos: chaves, inscritos, classificação e calendário.",
+        },
         clans: {
           description: "Elencos BR com RR, vitórias e deuses favoritos de cada clã.",
         },

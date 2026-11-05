@@ -318,6 +318,9 @@ export const enMessages: TranslationTree = {
         players: {
           description: "Profiles synced to AoM Stats, RR race, and community leaderboard.",
         },
+        championships: {
+          description: "Championship schedule: brackets, roster, standings, and calendar.",
+        },
         clans: {
           description: "Brazilian rosters with RR, wins, and each clan's favorite gods.",
         },
