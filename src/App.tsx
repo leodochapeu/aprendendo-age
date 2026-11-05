@@ -14,6 +14,8 @@ import { AldeoesPage } from "@/pages/AldeoesPage";
 import { PanteaoFullPage } from "@/pages/PanteaoFullPage";
 import { BattlePage } from "@/pages/BattlePage";
 import { BattlePantheonPage } from "@/pages/BattlePantheonPage";
+import { CampeonatoPage } from "@/pages/CampeonatoPage";
+import { CampeonatosPage } from "@/pages/CampeonatosPage";
 import { ClansPage } from "@/pages/ClansPage";
 import { ClanDetailPage } from "@/pages/ClanDetailPage";
 import { ConstrucaoDetailPage } from "@/pages/ConstrucaoDetailPage";
@@ -95,6 +97,8 @@ export default function App() {
     <BrowserRouter>
       <SiteNotificationsProvider>
       <Routes>
+        <Route path="campeonato/:slug" element={<CampeonatoPage />} />
+        <Route path="championship/:slug" element={<CampeonatoPage />} />
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
           <Route path="panteoes" element={<PanteoesPage />} />
@@ -163,6 +167,8 @@ export default function App() {
           <Route path="rank/form" element={<FormRankPage />} />
           <Route path="jogadores-aom" element={<JogadoresAomPage />} />
           <Route path="aom-players" element={<JogadoresAomPage />} />
+          <Route path="campeonato" element={<CampeonatosPage />} />
+          <Route path="championship" element={<CampeonatosPage />} />
           <Route path="clans" element={<ClansPage />} />
           <Route path="clans/:slug" element={<ClanDetailPage />} />
           <Route path="links-streamers" element={<LinksStreamersPage />} />

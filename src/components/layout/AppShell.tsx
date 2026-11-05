@@ -101,6 +101,12 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
           match: (p: string) => p === "/jogadores-aom" || p === "/aom-players",
         },
         {
+          to: "/campeonato",
+          labelKey: "nav.championships",
+          icon: "aomr_relic_crown_icon",
+          match: (p: string) => p === "/campeonato" || p === "/championship",
+        },
+        {
           to: "/clans",
           labelKey: "nav.clans",
           icon: "aomr_pantheon_norse_icon",
