@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
+import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
 import { ParticleField } from "@/components/campeonato/ParticleField";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -673,63 +674,47 @@ function FixtureCard({
   const when = new Date(fixture.scheduledAt);
   const hasResult = fixtureHasResult(fixture);
   const visible = revealed && hasResult;
-  const aWins = visible && fixture.scoreA > fixture.scoreB;
-  const bWins = visible && fixture.scoreB > fixture.scoreA;
-  const score = visible ? (
-    <span className="tabular-nums">{fixture.scoreA} × {fixture.scoreB}</span>
-  ) : hasResult ? (
-    <span className="tracking-widest text-zinc-500">• × •</span>
-  ) : (
-    "vs"
-  );
   const whenLabel = Number.isNaN(when.getTime())
     ? ""
-    : layout === "stack"
-      ? when.toLocaleTimeString(dateLocale, { hour: "2-digit", minute: "2-digit" })
-      : when.toLocaleString(dateLocale, { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
+    : when.toLocaleString(dateLocale, {
+        day: "2-digit",
+        month: "short",
+        ...(layout === "stack" ? {} : { year: "numeric" as const }),
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+  const playerA = camp.players.find((player) => player.id === fixture.playerAId) ?? { name: playerName(camp, fixture.playerAId), logoUrl: "" };
+  const playerB = camp.players.find((player) => player.id === fixture.playerBId) ?? { name: playerName(camp, fixture.playerBId), logoUrl: "" };
+  const games = visible && fixture.games.length > 0 ? fixture.games : [null];
+  const compact = layout === "stack";
 
   return (
-    <article className={cn("border border-white/10 bg-black/40", layout === "stack" ? "rounded-xl p-2.5" : "rounded-2xl p-4")}>
-      <div className={cn("uppercase tracking-wide text-zinc-500", layout === "stack" ? "text-[10px]" : "text-xs")}>
-        {layout === "stack" ? [whenLabel, fixture.roundLabel].filter(Boolean).join(" · ") : fixture.roundLabel}
-        {layout === "row" && whenLabel ? ` · ${whenLabel}` : ""}
-      </div>
-      {layout === "stack" ? (
-        <div className="mt-2">
-          <div className={cn("text-sm leading-5 break-words", aWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerAId)}</div>
-          <div className="my-1 text-xs text-zinc-400">{score}</div>
-          <div className={cn("text-sm leading-5 break-words", bWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerBId)}</div>
-        </div>
-      ) : (
-        <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-          <div className={cn("min-w-0", aWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerAId)}</div>
-          <div className="text-sm text-zinc-400">{score}</div>
-          <div className={cn("min-w-0 text-right", bWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerBId)}</div>
-        </div>
-      )}
-      {hasResult && !revealed ? (
-        <div className={cn("flex", layout === "stack" ? "mt-2" : "mt-3 justify-center")}>
-          <RevealThisButton label={t("pages.championship.revealThis")} onClick={onReveal} />
-        </div>
-      ) : null}
-      {visible
-        ? fixture.games.map((game) => (
-            <div key={game.id} className="mt-2 text-xs text-zinc-400">
-              {game.mapName} · {game.godA} × {game.godB}
-              {game.winnerSide === "A" ? ` · ${playerName(camp, fixture.playerAId)}` : ` · ${playerName(camp, fixture.playerBId)}`}
-            </div>
-          ))
-        : null}
-      {fixture.links.length > 0 ? (
-        <div className={cn("flex flex-wrap gap-2", layout === "stack" ? "mt-2" : "mt-3")}>
-          {fixture.links.map((link) => (
-            <a key={link.id} href={link.url} target="_blank" rel="noreferrer" className="text-xs text-amber-200 underline-offset-2 hover:underline">
-              {link.label}
-            </a>
-          ))}
-        </div>
-      ) : null}
-    </article>
+    <div className="grid gap-3">
+      {games.map((game, index) => (
+        <EpicMatchCard
+          key={game?.id ?? fixture.id}
+          locale={locale}
+          campLogoUrl={camp.logoUrl}
+          playerA={{ name: playerA.name, logoUrl: playerA.logoUrl }}
+          playerB={{ name: playerB.name, logoUrl: playerB.logoUrl }}
+          scoreA={visible ? fixture.scoreA : null}
+          scoreB={visible ? fixture.scoreB : null}
+          mapName={game?.mapName ?? ""}
+          godA={game?.godA ?? ""}
+          godB={game?.godB ?? ""}
+          winner={visible ? (game ? game.winnerSide : fixture.scoreA === fixture.scoreB ? null : fixture.scoreA > fixture.scoreB ? "A" : "B") : null}
+          whenLabel={whenLabel}
+          roundLabel={fixture.roundLabel}
+          links={visible ? fixture.links : []}
+          revealed={visible}
+          compact={compact}
+          revealLabel={t("pages.championship.revealThis")}
+          victoryLabel={(name) => t("pages.championship.victory", { name })}
+          watchLabel={t("pages.championship.watch")}
+          onReveal={index === 0 && hasResult && !revealed ? onReveal : undefined}
+        />
+      ))}
+    </div>
   );
 }
 

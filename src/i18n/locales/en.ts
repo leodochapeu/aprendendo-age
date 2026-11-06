@@ -221,6 +221,8 @@ export const enMessages: TranslationTree = {
       openPreview: "Open preview",
       backToChampionship: "Back to championship",
       revealThis: "Reveal this",
+      victory: "Victory ({{name}})",
+      watch: "Watch",
       hideResults: "Hide results",
       tableHidden: "Results hidden",
       noFixtureDay: "No matches on this day.",

@@ -221,6 +221,8 @@ export const ptMessages: TranslationTree = {
       openPreview: "Abrir preview",
       backToChampionship: "Voltar ao campeonato",
       revealThis: "Revelar isso",
+      victory: "Vitória ({{name}})",
+      watch: "Assistir",
       hideResults: "Ocultar resultados",
       tableHidden: "Resultados ocultos",
       noFixtureDay: "Nenhuma partida neste dia.",

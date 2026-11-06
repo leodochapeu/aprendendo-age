@@ -485,6 +485,132 @@ body {
   }
 }
 
+.epic-gold-glow {
+  position: absolute;
+  inset: -14%;
+  z-index: 0;
+  border-radius: 2rem;
+  background: radial-gradient(ellipse at center, rgba(255, 210, 110, 0.85), rgba(190, 120, 24, 0.38) 42%, transparent 70%);
+  filter: blur(36px);
+  animation: epic-gold-pulse 6.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.epic-wind {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.epic-wind span {
+  position: absolute;
+  top: -30%;
+  height: 160%;
+  width: 2px;
+  opacity: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 244, 214, 0.05) 20%,
+    rgba(255, 228, 160, 0.85) 50%,
+    rgba(255, 244, 214, 0.05) 80%,
+    transparent 100%
+  );
+  filter: blur(0.4px);
+  animation: epic-wind-pass 14s ease-in-out infinite;
+}
+
+.epic-wind span:nth-child(1) {
+  left: 8%;
+  animation-duration: 13s;
+}
+.epic-wind span:nth-child(2) {
+  left: 24%;
+  width: 1px;
+  animation-duration: 17s;
+  animation-delay: -6s;
+}
+.epic-wind span:nth-child(3) {
+  left: 47%;
+  width: 34px;
+  opacity: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255, 214, 120, 0.16), transparent);
+  filter: blur(1.5px);
+  animation-duration: 19s;
+  animation-delay: -11s;
+}
+.epic-wind span:nth-child(4) {
+  left: 63%;
+  animation-duration: 15s;
+  animation-delay: -3s;
+}
+.epic-wind span:nth-child(5) {
+  left: 81%;
+  width: 1px;
+  animation-duration: 21s;
+  animation-delay: -14s;
+}
+.epic-wind span:nth-child(6) {
+  left: 36%;
+  width: 18px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 236, 190, 0.22), transparent);
+  filter: blur(1.2px);
+  animation-duration: 23s;
+  animation-delay: -9s;
+}
+.epic-wind span:nth-child(7) {
+  left: 72%;
+  animation-duration: 16s;
+  animation-delay: -18s;
+}
+
+@keyframes epic-gold-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.985);
+  }
+  50% {
+    opacity: 0.68;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes epic-wind-pass {
+  0%,
+  68%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-140%, 8%, 0) skewX(-18deg);
+  }
+  74% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.72;
+  }
+  90% {
+    opacity: 0;
+    transform: translate3d(520%, -6%, 0) skewX(-18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .epic-gold-glow,
+  .epic-wind span {
+    animation: none;
+  }
+  .epic-gold-glow {
+    opacity: 0.5;
+  }
+  .epic-wind span {
+    opacity: 0;
+  }
+}
+
 .entity-card-ranked::after {
   content: "";
   pointer-events: none;
