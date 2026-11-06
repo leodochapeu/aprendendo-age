@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { fetchPublicChampionships, type ChampionshipCard, type ChampionshipPhase } from "@/lib/championshipsApi";
@@ -58,10 +59,12 @@ export function CampeonatosPage() {
             to={`/campeonato/${camp.slug}`}
             className="group rounded-2xl border border-amber-900/40 bg-zinc-950/80 p-5 shadow-lg shadow-black/30 transition hover:border-amber-500/40"
           >
-            <div className="flex items-start gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/40">
-                {camp.logoUrl ? <img src={camp.logoUrl} alt="" className="h-full w-full object-contain p-1" /> : null}
-              </div>
+            <div className="flex items-start gap-7">
+              {camp.logoUrl ? (
+                <ChampionshipEmblem src={camp.logoUrl} className="h-16 w-16" burst={1.62} />
+              ) : (
+                <div className="h-16 w-16 shrink-0 rounded-xl border border-white/10 bg-black/40" />
+              )}
               <div className="min-w-0">
                 <div className="font-[family-name:var(--font-display)] text-xl text-amber-50 group-hover:text-amber-200">{camp.name}</div>
                 <div className="mt-1 text-xs uppercase tracking-wide text-amber-200/80">

@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { forwardRef, useEffect, useMemo, useRef, useState, type ReactNode, type UIEvent } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
+import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
+import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
 import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
 import { RosterPresentation } from "@/components/campeonato/RosterPresentation";
 import { ParticleField } from "@/components/campeonato/ParticleField";
@@ -269,6 +271,12 @@ export function CampeonatoPage() {
     setSpoilers((current) => (current.table.all ? current : { ...current, table: { all: true, ids: [] } }));
   }
 
+  const previewHeaderRef = useRef<HTMLElement>(null);
+  const onPreviewScroll = (event: UIEvent<HTMLDivElement>) => {
+    const compact = Math.min(1, Math.max(0, event.currentTarget.scrollTop / 160));
+    previewHeaderRef.current?.style.setProperty("--compact", String(compact));
+  };
+
   const tabs: { id: Tab; label: string }[] = [
     { id: "about", label: t("pages.championship.tabs.about") },
     { id: "brackets", label: t("pages.championship.tabs.brackets") },
@@ -281,7 +289,7 @@ export function CampeonatoPage() {
     <div className="relative min-h-dvh bg-[#07080c] text-zinc-100">
       <ParticleField />
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.72)_78%)]" />
-      <div className={cn("relative mx-auto px-4 py-8 sm:px-6", activeTab === "calendar" ? "max-w-[90rem]" : "max-w-5xl", preview && "py-10")}>
+      <div className={cn("relative mx-auto px-4 sm:px-6", activeTab === "calendar" ? "max-w-[90rem]" : "max-w-5xl", preview ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8")}>
         {preview ? null : (
         <div className="mb-8 flex items-center justify-between text-sm">
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
@@ -299,6 +307,7 @@ export function CampeonatoPage() {
           <>
             {preview ? (
               <PreviewStage
+                ref={previewHeaderRef}
                 camp={camp}
                 tabLabel={tabs.find((item) => item.id === activeTab)?.label ?? ""}
                 backTo={pathname.startsWith("/championship") ? `/championship/${camp.slug}` : `/campeonato/${camp.slug}`}
@@ -315,17 +324,15 @@ export function CampeonatoPage() {
                 }
               />
             ) : (
-            <header className="flex flex-col gap-4 sm:flex-row sm:items-end">
-              {camp.logoUrl ? (
-                <img src={camp.logoUrl} alt="" className="h-20 w-20 rounded-2xl border border-amber-900/50 bg-black/40 object-contain p-2" />
-              ) : null}
+            <header className="flex flex-col gap-5 sm:flex-row sm:items-center">
+              {camp.logoUrl ? <ChampionshipEmblem src={camp.logoUrl} className="mx-12 h-28 w-28" burst={1.78} /> : null}
               <div>
                 <div className="text-xs uppercase tracking-[0.2em] text-amber-200/80">
                   {t(PHASE_KEY[camp.phase])}
                   {camp.devMode ? " · Modo Dev" : ""}
                 </div>
                 <h1 className="font-[family-name:var(--font-display)] text-4xl text-amber-50">{camp.name}</h1>
-                {camp.description ? <p className="mt-2 max-w-2xl text-zinc-300">{camp.description}</p> : null}
+                {camp.description ? <ChampionshipMarkdown source={camp.description} className="mt-2 max-w-2xl" /> : null}
               </div>
             </header>
             )}
@@ -356,13 +363,13 @@ export function CampeonatoPage() {
             </div>
             )}
 
-            <div className="mt-6">
+            <div className={cn(preview ? "min-h-0 flex-1 overflow-y-auto pb-10" : "mt-6")} onScroll={preview ? onPreviewScroll : undefined}>
               {activeTab === "about" ? (
                 <div className="space-y-6">
                   {camp.rules ? (
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
                       <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.rules")}</h2>
-                      <p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-zinc-300">{camp.rules}</p>
+                      <ChampionshipMarkdown source={camp.rules} className="mt-3" />
                     </section>
                   ) : null}
                   {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
@@ -644,44 +651,72 @@ function PreviewLink({ href, label }: { href: string; label: string }) {
   );
 }
 
-function PreviewStage({
-  camp,
-  tabLabel,
-  backTo,
-  backLabel,
-  reveal,
-}: {
-  camp: ChampionshipDetail;
-  tabLabel: string;
-  backTo: string;
-  backLabel: string;
-  reveal: ReactNode;
-}) {
+const PreviewStage = forwardRef<
+  HTMLElement,
+  {
+    camp: ChampionshipDetail;
+    tabLabel: string;
+    backTo: string;
+    backLabel: string;
+    reveal: ReactNode;
+  }
+>(function PreviewStage({ camp, tabLabel, backTo, backLabel, reveal }, ref) {
   const { t } = useTranslation();
+  const frame = "calc(12rem - var(--compact) * 7.25rem)";
   return (
-    <header className="relative z-20 mb-12 pt-10">
-      <Link to={backTo} className="absolute top-0 left-0 text-xs text-zinc-500 hover:text-amber-100">
-        {backLabel}
-      </Link>
-      {reveal ? <div className="absolute top-0 right-0">{reveal}</div> : null}
-      <div className="flex flex-col items-center text-center">
+    <header
+      ref={ref}
+      className="z-30 shrink-0 bg-gradient-to-b from-[#07080c] via-[#07080c] to-transparent px-1 pb-2"
+      style={{ ["--compact" as string]: 0 }}
+    >
+      <div className="flex items-center justify-between gap-3">
+        <Link to={backTo} className="text-xs text-zinc-500 hover:text-amber-100">
+          {backLabel}
+        </Link>
+        {reveal ? <div className="shrink-0">{reveal}</div> : <span />}
+      </div>
+      <div className="flex flex-col items-center text-center" style={{ marginTop: "calc(0.85rem - var(--compact) * 0.55rem)" }}>
         {camp.logoUrl ? (
-          <img
+          <ChampionshipEmblem
             src={camp.logoUrl}
-            alt=""
-            className="h-40 w-40 rounded-[2rem] border border-amber-300/50 bg-black/50 object-contain p-4 shadow-[0_0_90px_rgba(251,191,36,0.22)] sm:h-52 sm:w-52"
+            burst={1.82}
+            style={{ width: frame, height: frame, marginTop: `calc(${frame} * 0.34)`, marginBottom: `calc(${frame} * 0.22)` }}
           />
         ) : null}
-        <div className="mt-8 text-xs uppercase tracking-[0.35em] text-amber-200/75">
+        <div
+          className="uppercase text-amber-200/75"
+          style={{
+            marginTop: "calc(0.35rem - var(--compact) * 0.15rem)",
+            fontSize: "calc(0.75rem - var(--compact) * 0.125rem)",
+            letterSpacing: "0.28em",
+          }}
+        >
           {t(PHASE_KEY[camp.phase])}
           {camp.devMode ? " · Modo Dev" : ""}
         </div>
-        <h1 className="mt-3 max-w-4xl font-[family-name:var(--font-display)] text-5xl text-amber-50 sm:text-6xl">{camp.name}</h1>
-        <p className="mt-4 text-sm uppercase tracking-[0.28em] text-zinc-400">{tabLabel}</p>
+        <h1
+          className="max-w-4xl font-[family-name:var(--font-display)] leading-none text-amber-50"
+          style={{
+            marginTop: "calc(0.7rem - var(--compact) * 0.4rem)",
+            fontSize: "clamp(1.55rem, calc(3.4rem - var(--compact) * 1.85rem), 3.4rem)",
+          }}
+        >
+          {camp.name}
+        </h1>
+        <p
+          className="uppercase text-zinc-400"
+          style={{
+            marginTop: "calc(0.65rem - var(--compact) * 0.35rem)",
+            fontSize: "calc(0.8rem - var(--compact) * 0.15rem)",
+            letterSpacing: "0.22em",
+          }}
+        >
+          {tabLabel}
+        </p>
       </div>
     </header>
   );
-}
+});
 
 function RevealThisButton({ label, onClick }: { label: string; onClick: () => void }) {
   return (

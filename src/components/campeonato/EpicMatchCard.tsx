@@ -114,7 +114,7 @@ export function EpicMatchCard({
             alt=""
             className={cn(
               "pointer-events-none absolute left-1/2 top-[62%] z-[1] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_12px_40px_rgba(0,0,0,0.65)]",
-              compact ? "h-10 w-10 opacity-20" : "h-52 w-52 opacity-45 sm:h-64 sm:w-64",
+              compact ? "h-10 w-10 opacity-20" : "h-64 w-64 scale-125 opacity-50 sm:h-80 sm:w-80",
             )}
           />
         ) : null}
