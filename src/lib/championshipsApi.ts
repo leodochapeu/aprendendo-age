@@ -116,6 +116,28 @@ function phaseOf(value: unknown): ChampionshipPhase {
   return "ongoing";
 }
 
+/** Linha de `championship_fixtures`, inclusive o select curto usado quando as colunas de chaveamento ainda não existem. */
+type ChampionshipFixtureRow = {
+  id: unknown;
+  round_label: unknown;
+  scheduled_at: unknown;
+  status: unknown;
+  player_a_entry_id: unknown;
+  player_b_entry_id: unknown;
+  score_a: unknown;
+  score_b: unknown;
+  stage_id?: unknown;
+  section?: unknown;
+  round_index?: unknown;
+  slot_index?: unknown;
+  group_index?: unknown;
+  series_length?: unknown;
+  feeder_a?: unknown;
+  feeder_b?: unknown;
+  is_bye?: unknown;
+  is_hidden?: unknown;
+};
+
 function listedOnAprendendoAge(row: { phase?: unknown; public_page?: unknown; dev_mode?: unknown }, includeDev: boolean) {
   if (row.phase === "draft") return false;
   if (row.dev_mode === true) return includeDev;
@@ -194,7 +216,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
       .eq("championship_id", id)
       .order("position", { ascending: true }),
   ]);
-  const fixtures = fixturesQuery.data;
+  const fixtures = (fixturesQuery.data ?? []) as ChampionshipFixtureRow[];
   const stages = stagesResult.error ? [] : (stagesResult.data ?? []);
 
   const fixtureIds = (fixtures ?? []).map((fixture) => fixture.id as string);

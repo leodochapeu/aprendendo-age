@@ -57,7 +57,7 @@ function BracketMatchCard({
       className={cn(
         "relative w-full min-w-[200px] overflow-hidden rounded-lg border border-amber-500/25 bg-zinc-950/90 shadow-[0_8px_24px_rgba(0,0,0,0.45)]",
         fixture.isBye && "opacity-40 border-dashed",
-        winner && "border-amber-400/50",
+        winner ? "border-amber-400/50" : false,
       )}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_70%)]" />
