@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { ParticleField } from "@/components/campeonato/ParticleField";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
+import type { Locale } from "@/i18n/types";
+import { cn } from "@/lib/cn";
 import { localeAuthPath } from "@/lib/localeRoutes";
 import {
   fetchChampionshipBySlug,
@@ -16,6 +18,10 @@ import {
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 type Tab = "about" | "brackets" | "roster" | "table" | "calendar";
+type SpoilerTab = "brackets" | "table" | "calendar";
+type CalendarView = "week" | "month";
+type SpoilerEntry = { all: boolean; ids: string[] };
+type SpoilerState = Record<SpoilerTab, SpoilerEntry>;
 
 const PHASE_KEY: Record<ChampionshipPhase, string> = {
   registration: "pages.championship.phase.registration",
@@ -23,7 +29,90 @@ const PHASE_KEY: Record<ChampionshipPhase, string> = {
   finished: "pages.championship.phase.finished",
 };
 
-const SPOILER_KEY = "campeonato-show-results";
+function emptySpoilers(): SpoilerState {
+  return {
+    brackets: { all: false, ids: [] },
+    table: { all: false, ids: [] },
+    calendar: { all: false, ids: [] },
+  };
+}
+
+function spoilerKey(slug: string) {
+  return `campeonato-spoilers:${slug}`;
+}
+
+function readEntry(value: unknown): SpoilerEntry {
+  if (!value || typeof value !== "object") return { all: false, ids: [] };
+  const row = value as { all?: unknown; ids?: unknown };
+  const ids = Array.isArray(row.ids) ? row.ids.filter((id): id is string => typeof id === "string") : [];
+  return { all: row.all === true, ids };
+}
+
+function loadSpoilers(slug: string): SpoilerState {
+  if (!slug || typeof window === "undefined") return emptySpoilers();
+  try {
+    const raw = window.localStorage.getItem(spoilerKey(slug));
+    if (!raw) return emptySpoilers();
+    const parsed = JSON.parse(raw) as Partial<Record<SpoilerTab, unknown>>;
+    return {
+      brackets: readEntry(parsed.brackets),
+      table: readEntry(parsed.table),
+      calendar: readEntry(parsed.calendar),
+    };
+  } catch {
+    return emptySpoilers();
+  }
+}
+
+function isSpoilerTab(tab: Tab): tab is SpoilerTab {
+  return tab === "brackets" || tab === "table" || tab === "calendar";
+}
+
+function fixtureHasResult(fixture: ChampionshipFixture) {
+  return fixture.status === "finished" || fixture.games.length > 0;
+}
+
+function isTabFullyRevealed(tab: SpoilerTab, fixtures: ChampionshipFixture[], entry: SpoilerEntry) {
+  if (entry.all) return true;
+  if (tab === "table") return false;
+  const withResult = fixtures.filter(fixtureHasResult);
+  return withResult.length > 0 && withResult.every((fixture) => entry.ids.includes(fixture.id));
+}
+
+function dateLocaleOf(locale: Locale) {
+  return locale === "en" ? "en-US" : "pt-BR";
+}
+
+function dayKeyFromDate(date: Date) {
+  const pad = (value: number) => String(value).padStart(2, "0");
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+}
+
+function dayKeyFromIso(iso: string) {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "";
+  return dayKeyFromDate(date);
+}
+
+function parseDayKey(key: string) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(key);
+  if (!match) return null;
+  const date = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 12, 0, 0, 0);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function startOfWeek(date: Date) {
+  const copy = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12, 0, 0, 0);
+  copy.setDate(copy.getDate() - copy.getDay());
+  return copy;
+}
+
+function initialDayKey(fixtures: ChampionshipFixture[]) {
+  const keys = [...new Set(fixtures.map((fixture) => dayKeyFromIso(fixture.scheduledAt)).filter(Boolean))].sort();
+  const today = dayKeyFromDate(new Date());
+  if (keys.length === 0) return today;
+  return keys.find((key) => key >= today) ?? keys[keys.length - 1];
+}
 
 function formatBrl(cents: number) {
   return (cents / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -43,14 +132,21 @@ export function CampeonatoPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState<Tab>("about");
-  const [showResults, setShowResults] = useState(false);
+  const [spoilersSlug, setSpoilersSlug] = useState(slug);
+  const [spoilers, setSpoilers] = useState<SpoilerState>(() => loadSpoilers(slug));
   const [entryStatus, setEntryStatus] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryPending, setEntryPending] = useState(false);
 
+  if (spoilersSlug !== slug) {
+    setSpoilersSlug(slug);
+    setSpoilers(loadSpoilers(slug));
+  }
+
   useEffect(() => {
-    setShowResults(window.localStorage.getItem(SPOILER_KEY) === "1");
-  }, []);
+    if (!slug || spoilersSlug !== slug) return;
+    window.localStorage.setItem(spoilerKey(slug), JSON.stringify(spoilers));
+  }, [slug, spoilers, spoilersSlug]);
 
   useEffect(() => {
     if (!authReady) return;
@@ -117,12 +213,25 @@ export function CampeonatoPage() {
     return [...rows.values()].sort((left, right) => right.points - left.points || right.wins - left.wins || left.name.localeCompare(right.name));
   }, [camp]);
 
-  function toggleResults() {
-    setShowResults((current) => {
-      const next = !current;
-      window.localStorage.setItem(SPOILER_KEY, next ? "1" : "0");
-      return next;
+  function toggleRevealAll(scope: SpoilerTab) {
+    const fixtures = camp?.fixtures ?? [];
+    setSpoilers((current) => {
+      const entry = current[scope];
+      const fully = isTabFullyRevealed(scope, fixtures, entry);
+      return { ...current, [scope]: fully ? { all: false, ids: [] } : { all: true, ids: entry.ids } };
     });
+  }
+
+  function revealFixture(scope: "brackets" | "calendar", fixtureId: string) {
+    setSpoilers((current) => {
+      const entry = current[scope];
+      if (entry.all || entry.ids.includes(fixtureId)) return current;
+      return { ...current, [scope]: { all: false, ids: [...entry.ids, fixtureId] } };
+    });
+  }
+
+  function revealTable() {
+    setSpoilers((current) => (current.table.all ? current : { ...current, table: { all: true, ids: [] } }));
   }
 
   const tabs: { id: Tab; label: string }[] = [
@@ -137,7 +246,7 @@ export function CampeonatoPage() {
     <div className="relative min-h-dvh bg-[#07080c] text-zinc-100">
       <ParticleField />
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.72)_78%)]" />
-      <div className="relative mx-auto max-w-5xl px-4 py-8 sm:px-6">
+      <div className={cn("relative mx-auto px-4 py-8 sm:px-6", tab === "calendar" ? "max-w-[90rem]" : "max-w-5xl")}>
         <div className="mb-8 flex items-center justify-between text-sm">
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
             Aprendendo AGE
@@ -165,7 +274,7 @@ export function CampeonatoPage() {
               </div>
             </header>
 
-            <div className="mt-8 flex flex-wrap gap-2 border-b border-white/10 pb-3">
+            <div className="relative z-20 mt-8 flex flex-wrap items-center gap-2 border-b border-white/10 pb-3">
               {tabs.map((item) => (
                 <button
                   key={item.id}
@@ -176,9 +285,14 @@ export function CampeonatoPage() {
                   {item.label}
                 </button>
               ))}
-              <button type="button" onClick={toggleResults} className="ml-auto text-sm text-zinc-400 hover:text-amber-100">
-                {showResults ? t("pages.championship.hideResults") : t("pages.championship.showResults")}
-              </button>
+              {isSpoilerTab(tab) ? (
+                <RevealAllButton
+                  revealed={isTabFullyRevealed(tab, camp.fixtures, spoilers[tab])}
+                  revealLabel={t("pages.championship.revealAll")}
+                  hideLabel={t("pages.championship.hideResults")}
+                  onClick={() => toggleRevealAll(tab)}
+                />
+              ) : null}
             </div>
 
             <div className="mt-6">
@@ -193,7 +307,14 @@ export function CampeonatoPage() {
                   {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
                 </div>
               ) : null}
-              {tab === "brackets" ? <BracketList camp={camp} showResults={showResults} /> : null}
+              {tab === "brackets" ? (
+                <BracketList
+                  camp={camp}
+                  revealedAll={spoilers.brackets.all}
+                  revealedIds={spoilers.brackets.ids}
+                  onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
+                />
+              ) : null}
               {tab === "roster" ? (
                 <Roster
                   camp={camp}
@@ -225,7 +346,7 @@ export function CampeonatoPage() {
               ) : null}
               {tab === "table" ? (
                 <div className="relative overflow-hidden rounded-2xl border border-white/10">
-                  <table className="w-full text-left text-sm">
+                  <table className={cn("w-full text-left text-sm", !spoilers.table.all && "pointer-events-none select-none")}>
                     <thead className="bg-black/40 text-zinc-400">
                       <tr>
                         <th className="px-3 py-2">#</th>
@@ -251,14 +372,22 @@ export function CampeonatoPage() {
                       ))}
                     </tbody>
                   </table>
-                  {!showResults ? (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/70 text-sm text-zinc-200 backdrop-blur-sm">
-                      {t("pages.championship.tableHidden")}
+                  {!spoilers.table.all ? (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/70 text-sm text-zinc-200 backdrop-blur-sm">
+                      <span>{t("pages.championship.tableHidden")}</span>
+                      <RevealThisButton label={t("pages.championship.revealThis")} onClick={revealTable} />
                     </div>
                   ) : null}
                 </div>
               ) : null}
-              {tab === "calendar" ? <Calendar camp={camp} showResults={showResults} /> : null}
+              <div className={tab === "calendar" ? "block" : "hidden"}>
+                <Calendar
+                  camp={camp}
+                  revealedAll={spoilers.calendar.all}
+                  revealedIds={spoilers.calendar.ids}
+                  onReveal={(fixtureId) => revealFixture("calendar", fixtureId)}
+                />
+              </div>
             </div>
           </>
         ) : null}
@@ -327,32 +456,134 @@ function PrizeBlock({ camp }: { camp: ChampionshipDetail }) {
   );
 }
 
+function EyeIcon({ off }: { off?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      {off ? (
+        <>
+          <path d="M3 3l18 18" />
+          <path d="M10.6 6.2A10.6 10.6 0 0 1 12 6c5.5 0 9.2 4.2 10 6-.3.7-1 1.8-2 2.9" />
+          <path d="M6.1 6.7C4 8.1 2.6 10.2 2 12c.8 1.8 4.5 6 10 6 1.5 0 2.9-.3 4.1-.9" />
+          <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+        </>
+      ) : (
+        <>
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+          <circle cx="12" cy="12" r="3" />
+        </>
+      )}
+    </svg>
+  );
+}
+
+function RevealAllButton({
+  revealed,
+  revealLabel,
+  hideLabel,
+  onClick,
+}: {
+  revealed: boolean;
+  revealLabel: string;
+  hideLabel: string;
+  onClick: () => void;
+}) {
+  const label = revealed ? hideLabel : revealLabel;
+  return (
+    <div className="group/eye relative ml-auto shrink-0">
+      <button
+        type="button"
+        aria-pressed={revealed}
+        aria-label={label}
+        onClick={onClick}
+        className={cn(
+          "inline-flex h-8 w-8 items-center justify-center rounded-full border transition",
+          revealed
+            ? "border-amber-400/50 bg-amber-400/15 text-amber-100"
+            : "border-white/10 text-zinc-400 hover:border-amber-400/40 hover:text-amber-100",
+        )}
+      >
+        <EyeIcon off={!revealed} />
+      </button>
+      <div
+        role="tooltip"
+        className="pointer-events-none absolute top-full right-0 z-30 mt-2 whitespace-nowrap rounded-lg border border-zinc-700/80 bg-zinc-950/95 px-2.5 py-1.5 text-xs text-zinc-200 opacity-0 shadow-xl shadow-black/40 transition duration-150 group-hover/eye:opacity-100 group-focus-within/eye:opacity-100"
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function RevealThisButton({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-100 transition hover:bg-amber-400/20"
+    >
+      {label}
+    </button>
+  );
+}
+
 function FixtureCard({
   camp,
   fixture,
-  showResults,
+  revealed,
+  onReveal,
+  layout = "row",
 }: {
   camp: ChampionshipDetail;
   fixture: ChampionshipFixture;
-  showResults: boolean;
+  revealed: boolean;
+  onReveal: () => void;
+  layout?: "row" | "stack";
 }) {
+  const { t, locale } = useTranslation();
+  const dateLocale = dateLocaleOf(locale);
   const when = new Date(fixture.scheduledAt);
-  const aWins = showResults && fixture.games.length > 0 && fixture.scoreA > fixture.scoreB;
-  const bWins = showResults && fixture.games.length > 0 && fixture.scoreB > fixture.scoreA;
+  const hasResult = fixtureHasResult(fixture);
+  const visible = revealed && hasResult;
+  const aWins = visible && fixture.scoreA > fixture.scoreB;
+  const bWins = visible && fixture.scoreB > fixture.scoreA;
+  const score = visible ? (
+    <span className="tabular-nums">{fixture.scoreA} × {fixture.scoreB}</span>
+  ) : hasResult ? (
+    <span className="tracking-widest text-zinc-500">• × •</span>
+  ) : (
+    "vs"
+  );
+  const whenLabel = Number.isNaN(when.getTime())
+    ? ""
+    : layout === "stack"
+      ? when.toLocaleTimeString(dateLocale, { hour: "2-digit", minute: "2-digit" })
+      : when.toLocaleString(dateLocale, { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" });
+
   return (
-    <article className="rounded-2xl border border-white/10 bg-black/40 p-4">
-      <div className="text-xs uppercase tracking-wide text-zinc-500">
-        {fixture.roundLabel}
-        {Number.isNaN(when.getTime()) ? "" : ` · ${when.toLocaleString("pt-BR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" })}`}
+    <article className={cn("border border-white/10 bg-black/40", layout === "stack" ? "rounded-xl p-2.5" : "rounded-2xl p-4")}>
+      <div className={cn("uppercase tracking-wide text-zinc-500", layout === "stack" ? "text-[10px]" : "text-xs")}>
+        {layout === "stack" ? [whenLabel, fixture.roundLabel].filter(Boolean).join(" · ") : fixture.roundLabel}
+        {layout === "row" && whenLabel ? ` · ${whenLabel}` : ""}
       </div>
-      <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-        <div className={aWins ? "text-amber-100" : "text-zinc-100"}>{playerName(camp, fixture.playerAId)}</div>
-        <div className="text-sm text-zinc-400">
-          {showResults && fixture.games.length > 0 ? `${fixture.scoreA} × ${fixture.scoreB}` : "vs"}
+      {layout === "stack" ? (
+        <div className="mt-2">
+          <div className={cn("text-sm leading-5 break-words", aWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerAId)}</div>
+          <div className="my-1 text-xs text-zinc-400">{score}</div>
+          <div className={cn("text-sm leading-5 break-words", bWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerBId)}</div>
         </div>
-        <div className={`text-right ${bWins ? "text-amber-100" : "text-zinc-100"}`}>{playerName(camp, fixture.playerBId)}</div>
-      </div>
-      {showResults
+      ) : (
+        <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+          <div className={cn("min-w-0", aWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerAId)}</div>
+          <div className="text-sm text-zinc-400">{score}</div>
+          <div className={cn("min-w-0 text-right", bWins ? "text-amber-100" : "text-zinc-100")}>{playerName(camp, fixture.playerBId)}</div>
+        </div>
+      )}
+      {hasResult && !revealed ? (
+        <div className={cn("flex", layout === "stack" ? "mt-2" : "mt-3 justify-center")}>
+          <RevealThisButton label={t("pages.championship.revealThis")} onClick={onReveal} />
+        </div>
+      ) : null}
+      {visible
         ? fixture.games.map((game) => (
             <div key={game.id} className="mt-2 text-xs text-zinc-400">
               {game.mapName} · {game.godA} × {game.godB}
@@ -361,7 +592,7 @@ function FixtureCard({
           ))
         : null}
       {fixture.links.length > 0 ? (
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className={cn("flex flex-wrap gap-2", layout === "stack" ? "mt-2" : "mt-3")}>
           {fixture.links.map((link) => (
             <a key={link.id} href={link.url} target="_blank" rel="noreferrer" className="text-xs text-amber-200 underline-offset-2 hover:underline">
               {link.label}
@@ -373,7 +604,17 @@ function FixtureCard({
   );
 }
 
-function BracketList({ camp, showResults }: { camp: ChampionshipDetail; showResults: boolean }) {
+function BracketList({
+  camp,
+  revealedAll,
+  revealedIds,
+  onReveal,
+}: {
+  camp: ChampionshipDetail;
+  revealedAll: boolean;
+  revealedIds: string[];
+  onReveal: (fixtureId: string) => void;
+}) {
   const rounds = [...new Set(camp.fixtures.map((fixture) => fixture.roundLabel))];
   if (rounds.length === 0) return <p className="text-sm text-zinc-500">—</p>;
   return (
@@ -385,7 +626,13 @@ function BracketList({ camp, showResults }: { camp: ChampionshipDetail; showResu
             {camp.fixtures
               .filter((fixture) => fixture.roundLabel === round)
               .map((fixture) => (
-                <FixtureCard key={fixture.id} camp={camp} fixture={fixture} showResults={showResults} />
+                <FixtureCard
+                  key={fixture.id}
+                  camp={camp}
+                  fixture={fixture}
+                  revealed={revealedAll || revealedIds.includes(fixture.id)}
+                  onReveal={() => onReveal(fixture.id)}
+                />
               ))}
           </div>
         </section>
@@ -394,25 +641,265 @@ function BracketList({ camp, showResults }: { camp: ChampionshipDetail; showResu
   );
 }
 
-function Calendar({ camp, showResults }: { camp: ChampionshipDetail; showResults: boolean }) {
-  const groups = new Map<string, ChampionshipFixture[]>();
-  for (const fixture of camp.fixtures) {
-    const date = new Date(fixture.scheduledAt);
-    const key = Number.isNaN(date.getTime()) ? "—" : date.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "long" });
-    groups.set(key, [...(groups.get(key) ?? []), fixture]);
+function weekdayInitials(dateLocale: string) {
+  const sunday = new Date(2026, 0, 4, 12);
+  return Array.from({ length: 7 }, (_, index) => {
+    const date = new Date(sunday);
+    date.setDate(sunday.getDate() + index);
+    return date.toLocaleDateString(dateLocale, { weekday: "narrow" });
+  });
+}
+
+function formatWeekLabel(start: Date, dateLocale: string) {
+  const end = new Date(start);
+  end.setDate(start.getDate() + 6);
+  if (start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear()) {
+    const endLabel = end.toLocaleDateString(dateLocale, { day: "numeric", month: "short", year: "numeric" });
+    return `${start.getDate()} – ${endLabel}`;
   }
+  const startLabel = start.toLocaleDateString(dateLocale, { day: "numeric", month: "short" });
+  const endLabel = end.toLocaleDateString(dateLocale, { day: "numeric", month: "short", year: "numeric" });
+  return `${startLabel} – ${endLabel}`;
+}
+
+function CalendarViewToggle({ view, onChange }: { view: CalendarView; onChange: (view: CalendarView) => void }) {
+  const { t } = useTranslation();
+  const options: { id: CalendarView; label: string }[] = [
+    { id: "week", label: t("pages.championship.calendarWeek") },
+    { id: "month", label: t("pages.championship.calendarMonth") },
+  ];
   return (
-    <div className="space-y-6">
-      {[...groups.entries()].map(([day, fixtures]) => (
-        <section key={day}>
-          <h2 className="mb-3 capitalize text-amber-100">{day}</h2>
-          <div className="grid gap-3">
-            {fixtures.map((fixture) => (
-              <FixtureCard key={fixture.id} camp={camp} fixture={fixture} showResults={showResults} />
-            ))}
-          </div>
-        </section>
+    <div role="group" aria-label={t("pages.championship.calendarView")} className="inline-flex rounded-lg border border-white/10 bg-zinc-900/50 p-0.5">
+      {options.map((option) => (
+        <button
+          key={option.id}
+          type="button"
+          aria-pressed={view === option.id}
+          onClick={() => onChange(option.id)}
+          className={cn(
+            "rounded-md px-2.5 py-1 text-xs font-medium transition",
+            view === option.id ? "bg-amber-500/20 text-amber-100" : "text-zinc-400 hover:text-zinc-200",
+          )}
+        >
+          {option.label}
+        </button>
       ))}
+    </div>
+  );
+}
+
+function FixtureMonthCalendar({
+  markedDays,
+  selectedKey,
+  onSelect,
+}: {
+  markedDays: Set<string>;
+  selectedKey: string;
+  onSelect: (key: string) => void;
+}) {
+  const { t, locale } = useTranslation();
+  const dateLocale = dateLocaleOf(locale);
+  const todayKey = dayKeyFromDate(new Date());
+  const [cursor, setCursor] = useState(() => {
+    const base = parseDayKey(selectedKey) ?? new Date();
+    return { year: base.getFullYear(), month: base.getMonth() };
+  });
+
+  const firstWeekday = new Date(cursor.year, cursor.month, 1).getDay();
+  const daysInMonth = new Date(cursor.year, cursor.month + 1, 0).getDate();
+  const monthLabel = new Date(cursor.year, cursor.month, 1).toLocaleDateString(dateLocale, { month: "long", year: "numeric" });
+  const title = monthLabel.charAt(0).toUpperCase() + monthLabel.slice(1);
+  const cells: Array<number | null> = [
+    ...Array.from({ length: firstWeekday }, () => null),
+    ...Array.from({ length: daysInMonth }, (_, index) => index + 1),
+  ];
+
+  function shift(delta: number) {
+    setCursor((current) => {
+      const next = new Date(current.year, current.month + delta, 1);
+      return { year: next.getFullYear(), month: next.getMonth() };
+    });
+  }
+
+  return (
+    <div className="mx-auto w-full max-w-md rounded-3xl border border-amber-500/25 bg-zinc-950 p-5 shadow-lg shadow-black/40">
+      <div className="flex items-center justify-between gap-3">
+        <h3 className="font-[family-name:var(--font-display)] text-lg tracking-wide text-amber-100">{title}</h3>
+        <div className="flex gap-2">
+          <button type="button" aria-label={t("pages.championship.prevMonth")} className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-amber-500/40 bg-zinc-900 text-lg text-amber-100 hover:border-amber-400 hover:bg-zinc-800" onClick={() => shift(-1)}>
+            ‹
+          </button>
+          <button type="button" aria-label={t("pages.championship.nextMonth")} className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-amber-500/40 bg-zinc-900 text-lg text-amber-100 hover:border-amber-400 hover:bg-zinc-800" onClick={() => shift(1)}>
+            ›
+          </button>
+        </div>
+      </div>
+      <div className="mt-5 grid grid-cols-7 text-center text-xs font-medium tracking-wide text-zinc-500">
+        {weekdayInitials(dateLocale).map((label, index) => (
+          <span key={`${label}-${index}`}>{label}</span>
+        ))}
+      </div>
+      <div className="mt-3 grid grid-cols-7 justify-items-center gap-y-2">
+        {cells.map((day, index) => {
+          if (day == null) return <span key={`empty-${index}`} className="h-10 w-10" />;
+          const key = dayKeyFromDate(new Date(cursor.year, cursor.month, day));
+          const selected = key === selectedKey;
+          const today = key === todayKey;
+          const marked = markedDays.has(key);
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => onSelect(key)}
+              className={cn(
+                "relative inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition",
+                selected ? "bg-amber-400 text-zinc-950" : "bg-emerald-950/80 text-emerald-200 hover:bg-emerald-900",
+                !selected && today && "ring-2 ring-amber-300/80",
+              )}
+            >
+              {day}
+              {marked ? <span className={cn("absolute bottom-1.5 h-1 w-1 rounded-full", selected ? "bg-zinc-950" : "bg-amber-300")} /> : null}
+            </button>
+          );
+        })}
+      </div>
+      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-t border-white/10 pt-3 text-xs text-zinc-400">
+        <span className="inline-flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-emerald-800" />
+          {t("pages.championship.legendOpen")}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+          {t("pages.championship.legendMatch")}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+          {t("pages.championship.legendSelected")}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function Calendar({
+  camp,
+  revealedAll,
+  revealedIds,
+  onReveal,
+}: {
+  camp: ChampionshipDetail;
+  revealedAll: boolean;
+  revealedIds: string[];
+  onReveal: (fixtureId: string) => void;
+}) {
+  const { t, locale } = useTranslation();
+  const dateLocale = dateLocaleOf(locale);
+  const [view, setView] = useState<CalendarView>("week");
+  const [campId, setCampId] = useState(camp.id);
+  const [selectedKey, setSelectedKey] = useState(() => initialDayKey(camp.fixtures));
+  if (campId !== camp.id) {
+    setCampId(camp.id);
+    setSelectedKey(initialDayKey(camp.fixtures));
+    setView("week");
+  }
+
+  const markedDays = useMemo(
+    () => new Set(camp.fixtures.map((fixture) => dayKeyFromIso(fixture.scheduledAt)).filter(Boolean)),
+    [camp.fixtures],
+  );
+  const selectedDate = parseDayKey(selectedKey) ?? new Date();
+  const weekStart = startOfWeek(selectedDate);
+  const todayKey = dayKeyFromDate(new Date());
+  const weekDays = Array.from({ length: 7 }, (_, index) => {
+    const date = new Date(weekStart);
+    date.setDate(weekStart.getDate() + index);
+    return date;
+  });
+
+  function shiftWeek(delta: number) {
+    const next = new Date(selectedDate);
+    next.setDate(selectedDate.getDate() + delta * 7);
+    setSelectedKey(dayKeyFromDate(next));
+  }
+
+  function revealed(fixtureId: string) {
+    return revealedAll || revealedIds.includes(fixtureId);
+  }
+
+  const dayFixtures = camp.fixtures.filter((fixture) => dayKeyFromIso(fixture.scheduledAt) === selectedKey);
+
+  return (
+    <div>
+      <div className="mb-4 flex justify-end">
+        <CalendarViewToggle view={view} onChange={setView} />
+      </div>
+      {camp.fixtures.length === 0 ? <p className="mb-4 text-sm text-zinc-500">{t("pages.championship.noFixtures")}</p> : null}
+      {view === "week" ? (
+        <div>
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <button type="button" aria-label={t("pages.championship.prevWeek")} className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-amber-500/40 bg-zinc-900 text-lg text-amber-100 hover:border-amber-400 hover:bg-zinc-800" onClick={() => shiftWeek(-1)}>
+              ‹
+            </button>
+            <h3 className="text-center font-[family-name:var(--font-display)] text-lg tracking-wide text-amber-100">{formatWeekLabel(weekStart, dateLocale)}</h3>
+            <button type="button" aria-label={t("pages.championship.nextWeek")} className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-amber-500/40 bg-zinc-900 text-lg text-amber-100 hover:border-amber-400 hover:bg-zinc-800" onClick={() => shiftWeek(1)}>
+              ›
+            </button>
+          </div>
+          <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto pb-2 xl:grid xl:grid-cols-7 xl:overflow-visible">
+            {weekDays.map((date) => {
+              const key = dayKeyFromDate(date);
+              const fixtures = camp.fixtures.filter((fixture) => dayKeyFromIso(fixture.scheduledAt) === key);
+              const isToday = key === todayKey;
+              const weekday = date.toLocaleDateString(dateLocale, { weekday: "short" });
+              return (
+                <section
+                  key={key}
+                  className={cn(
+                    "flex min-h-48 w-[13.5rem] shrink-0 snap-start flex-col rounded-2xl border bg-black/30 xl:w-auto xl:min-w-0",
+                    isToday ? "border-amber-400/40" : "border-white/10",
+                  )}
+                >
+                  <div className={cn("border-b border-white/10 px-3 py-2", isToday && "bg-amber-400/10")}>
+                    <div className="text-[11px] uppercase tracking-wide text-zinc-500">{weekday}</div>
+                    <div className={cn("font-[family-name:var(--font-display)] text-lg", isToday ? "text-amber-100" : "text-zinc-200")}>{date.getDate()}</div>
+                  </div>
+                  <div className="flex flex-1 flex-col gap-2 p-2">
+                    {fixtures.map((fixture) => (
+                      <FixtureCard
+                        key={fixture.id}
+                        camp={camp}
+                        fixture={fixture}
+                        layout="stack"
+                        revealed={revealed(fixture.id)}
+                        onReveal={() => onReveal(fixture.id)}
+                      />
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <div>
+          <FixtureMonthCalendar markedDays={markedDays} selectedKey={selectedKey} onSelect={setSelectedKey} />
+          <div className="mt-6 grid gap-3">
+            {dayFixtures.length > 0 ? (
+              dayFixtures.map((fixture) => (
+                <FixtureCard
+                  key={fixture.id}
+                  camp={camp}
+                  fixture={fixture}
+                  revealed={revealed(fixture.id)}
+                  onReveal={() => onReveal(fixture.id)}
+                />
+              ))
+            ) : (
+              <p className="text-sm text-zinc-500">{t("pages.championship.noFixtureDay")}</p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
