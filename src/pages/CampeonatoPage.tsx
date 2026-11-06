@@ -691,7 +691,7 @@ function FixtureCard({
   const compact = layout === "stack";
 
   return (
-    <div className="grid gap-3">
+    <div className={cn("grid min-w-0", compact ? "gap-2" : "gap-3")}>
       {games.map((game, index) => (
         <EpicMatchCard
           key={game?.id ?? fixture.id}
@@ -971,7 +971,7 @@ function Calendar({
                 <section
                   key={key}
                   className={cn(
-                    "flex min-h-48 w-[13.5rem] shrink-0 snap-start flex-col rounded-2xl border bg-black/30 xl:w-auto xl:min-w-0",
+                    "flex min-h-48 w-[11.5rem] min-w-0 shrink-0 snap-start flex-col overflow-hidden rounded-2xl border bg-black/30 xl:w-auto",
                     isToday ? "border-amber-400/40" : "border-white/10",
                   )}
                 >
@@ -979,7 +979,7 @@ function Calendar({
                     <div className="text-[11px] uppercase tracking-wide text-zinc-500">{weekday}</div>
                     <div className={cn("font-[family-name:var(--font-display)] text-lg", isToday ? "text-amber-100" : "text-zinc-200")}>{date.getDate()}</div>
                   </div>
-                  <div className="flex flex-1 flex-col gap-2 p-2">
+                  <div className="flex min-w-0 flex-1 flex-col gap-2 overflow-hidden p-1.5">
                     {fixtures.map((fixture) => (
                       <FixtureCard
                         key={fixture.id}

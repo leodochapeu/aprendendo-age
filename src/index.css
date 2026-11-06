@@ -485,6 +485,16 @@ body {
   }
 }
 
+.epic-gold-glow-inset {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(ellipse at center, rgba(255, 206, 92, 0.28), transparent 68%);
+  filter: blur(10px);
+  animation: epic-gold-pulse 6.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
 .epic-gold-glow {
   position: absolute;
   inset: -14%;
@@ -600,10 +610,12 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .epic-gold-glow,
+  .epic-gold-glow-inset,
   .epic-wind span {
     animation: none;
   }
-  .epic-gold-glow {
+  .epic-gold-glow,
+  .epic-gold-glow-inset {
     opacity: 0.5;
   }
   .epic-wind span {
