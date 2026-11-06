@@ -112,8 +112,8 @@ function tabHasContent(tab: Tab, camp: ChampionshipDetail) {
   return camp.fixtures.length > 0;
 }
 
-function tabBlock(tab: Tab, camp: ChampionshipDetail) {
-  if (!camp.showTabs[tab]) return "admin" as const;
+function tabBlock(tab: Tab, camp: ChampionshipDetail, preview = false) {
+  if (preview ? !camp.showPreviews[tab] : !camp.showTabs[tab]) return "admin" as const;
   if (camp.devMode) return null;
   return tabHasContent(tab, camp) ? null : ("empty" as const);
 }
@@ -350,9 +350,9 @@ export function CampeonatoPage() {
     { id: "table", label: t("pages.championship.tabs.table") },
     { id: "calendar", label: t("pages.championship.tabs.calendar") },
   ];
-  const visibleTabs = camp ? tabs.filter((item) => tabBlock(item.id, camp) === null) : tabs;
+  const visibleTabs = camp ? tabs.filter((item) => tabBlock(item.id, camp, false) === null) : tabs;
   const sectionTab: Tab = panelTab ?? "about";
-  const sectionBlock = camp && (panel || preview) ? tabBlock(sectionTab, camp) : null;
+  const sectionBlock = camp && (panel || preview) ? tabBlock(sectionTab, camp, preview) : null;
   const shownTab: Tab = visibleTabs.some((item) => item.id === activeTab) ? activeTab : (visibleTabs[0]?.id ?? "about");
   const championshipPath = camp ? tabPath(base, camp.slug, "about") : "/campeonato";
 
@@ -485,7 +485,9 @@ export function CampeonatoPage() {
                     onClick={() => toggleRevealAll(shownTab)}
                   />
                 ) : null}
-                <PreviewLink href={tabPath(base, camp.slug, shownTab, true)} label={t("pages.championship.openPreview")} />
+                {camp.showPreviews[shownTab] ? (
+                  <PreviewLink href={tabPath(base, camp.slug, shownTab, true)} label={t("pages.championship.openPreview")} />
+                ) : null}
               </div>
             </div>
             )}

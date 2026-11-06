@@ -94,6 +94,13 @@ export type ChampionshipDetail = ChampionshipCard & {
     table: boolean;
     calendar: boolean;
   };
+  showPreviews: {
+    about: boolean;
+    brackets: boolean;
+    roster: boolean;
+    table: boolean;
+    calendar: boolean;
+  };
   players: ChampionshipPlayer[];
   fixtures: ChampionshipFixture[];
   stages: ChampionshipStage[];
@@ -101,6 +108,9 @@ export type ChampionshipDetail = ChampionshipCard & {
 };
 
 const CHAMP_SELECT =
+  "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
+
+const CHAMP_SELECT_LEGACY =
   "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
 
 export function championshipAssetUrl(path: string | null | undefined) {
@@ -177,8 +187,17 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
   if (!supabase) return null;
   let query = supabase.from("championships").select(CHAMP_SELECT).eq("slug", slug).eq("status", "approved").neq("phase", "draft");
   query = includeDev ? query.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true") : query.eq("public_page", true).eq("dev_mode", false);
-  const { data: row, error } = await query.maybeSingle();
-  if (error) throw new Error(error.message);
+  const first = await query.maybeSingle();
+  let row = first.data;
+  if (first.error) {
+    let legacy = supabase.from("championships").select(CHAMP_SELECT_LEGACY).eq("slug", slug).eq("status", "approved").neq("phase", "draft");
+    legacy = includeDev
+      ? legacy.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true")
+      : legacy.eq("public_page", true).eq("dev_mode", false);
+    const fallback = await legacy.maybeSingle();
+    if (fallback.error) throw new Error(fallback.error.message);
+    row = fallback.data;
+  }
   if (!row?.slug || !listedOnAprendendoAge(row, includeDev)) return null;
 
   const id = row.id as string;
@@ -248,6 +267,13 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
       roster: row.show_tab_roster !== false,
       table: row.show_tab_table !== false,
       calendar: row.show_tab_calendar !== false,
+    },
+    showPreviews: {
+      about: (row as { show_preview_about?: unknown }).show_preview_about !== false,
+      brackets: (row as { show_preview_brackets?: unknown }).show_preview_brackets !== false,
+      roster: (row as { show_preview_roster?: unknown }).show_preview_roster !== false,
+      table: (row as { show_preview_table?: unknown }).show_preview_table !== false,
+      calendar: (row as { show_preview_calendar?: unknown }).show_preview_calendar !== false,
     },
     prizeEnabled: Boolean(row.prize_enabled),
     prizeMode: row.prize_mode === "donations" ? "donations" : "fixed",
