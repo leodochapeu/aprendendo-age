@@ -113,6 +113,7 @@ function tabHasContent(tab: Tab, camp: ChampionshipDetail) {
 
 function tabBlock(tab: Tab, camp: ChampionshipDetail) {
   if (!camp.showTabs[tab]) return "admin" as const;
+  if (camp.devMode) return null;
   return tabHasContent(tab, camp) ? null : ("empty" as const);
 }
 
@@ -460,17 +461,17 @@ export function CampeonatoPage() {
                 />
               ) : null}
               {shownTab === "table" ? (
-                <div className="relative overflow-hidden rounded-2xl border border-white/10">
+                <div className={cn("relative rounded-2xl border border-white/10", spoilers.table.all ? "overflow-visible" : "overflow-hidden")}>
                   <table className={cn("w-full text-left text-sm", !spoilers.table.all && "pointer-events-none select-none")}>
                     <thead className="bg-black/40 text-zinc-400">
                       <tr>
                         <th className="px-3 py-2">#</th>
                         <th className="px-3 py-2">{t("pages.championship.player")}</th>
-                        <th className="px-3 py-2">J</th>
-                        <th className="px-3 py-2">V</th>
-                        <th className="px-3 py-2">E</th>
-                        <th className="px-3 py-2">D</th>
-                        <th className="px-3 py-2">Pts</th>
+                        <StatHead label={t("pages.championship.played")}><PlayedIcon /></StatHead>
+                        <StatHead label={t("pages.championship.wins")} tone="text-emerald-400"><WinsIcon /></StatHead>
+                        <StatHead label={t("pages.championship.draws")} tone="text-yellow-300"><DrawsIcon /></StatHead>
+                        <StatHead label={t("pages.championship.losses")} tone="text-red-400"><LossesIcon /></StatHead>
+                        <StatHead label={t("pages.championship.points")}><PointsIcon /></StatHead>
                       </tr>
                     </thead>
                     <tbody>
@@ -479,9 +480,9 @@ export function CampeonatoPage() {
                           <td className="px-3 py-2 text-zinc-500">{index + 1}</td>
                           <td className="px-3 py-2">{row.name}</td>
                           <td className="px-3 py-2">{row.played}</td>
-                          <td className="px-3 py-2">{row.wins}</td>
-                          <td className="px-3 py-2">{row.draws}</td>
-                          <td className="px-3 py-2">{row.losses}</td>
+                          <td className="px-3 py-2 text-emerald-400">{row.wins}</td>
+                          <td className="px-3 py-2 text-yellow-300">{row.draws}</td>
+                          <td className="px-3 py-2 text-red-400">{row.losses}</td>
                           <td className="px-3 py-2 text-amber-100">{row.points}</td>
                         </tr>
                       ))}
@@ -618,6 +619,79 @@ function PrizeBlock({ camp }: { camp: ChampionshipDetail }) {
         </div>
       </section>
     </div>
+  );
+}
+
+function StatHead({ label, tone, children }: { label: string; tone?: string; children: ReactNode }) {
+  return (
+    <th className="px-3 py-2">
+      <span className="group/stat relative inline-flex">
+        <span className={cn("inline-flex", tone)} aria-label={label}>
+          {children}
+        </span>
+        <span
+          role="tooltip"
+          className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-zinc-700/80 bg-zinc-950/95 px-2.5 py-1.5 text-xs font-normal text-zinc-200 opacity-0 shadow-xl shadow-black/40 transition duration-150 group-hover/stat:opacity-100 group-focus-within/stat:opacity-100"
+        >
+          {label}
+        </span>
+      </span>
+    </th>
+  );
+}
+
+function StatIcon({ children }: { children: ReactNode }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      {children}
+    </svg>
+  );
+}
+
+function PlayedIcon() {
+  return (
+    <StatIcon>
+      <rect x="5" y="3.5" width="14" height="17" rx="2" />
+      <path d="M9 8.5h6M9 12h6M9 15.5h4" />
+    </StatIcon>
+  );
+}
+
+function WinsIcon() {
+  return (
+    <StatIcon>
+      <path d="M8 20h8" />
+      <path d="M12 16v4" />
+      <path d="M7 3h10v6a5 5 0 0 1-10 0V3Z" />
+      <path d="M7 5.5H4.2a3 3 0 0 0 3 4.2" />
+      <path d="M17 5.5h2.8a3 3 0 0 1-3 4.2" />
+    </StatIcon>
+  );
+}
+
+function DrawsIcon() {
+  return (
+    <StatIcon>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M8 10h8M8 14h8" />
+    </StatIcon>
+  );
+}
+
+function LossesIcon() {
+  return (
+    <StatIcon>
+      <circle cx="12" cy="12" r="8" />
+      <path d="m9 9 6 6M15 9l-6 6" />
+    </StatIcon>
+  );
+}
+
+function PointsIcon() {
+  return (
+    <StatIcon>
+      <path d="m12 3 2.4 5.2 5.6.6-4.2 3.8 1.2 5.5L12 15.6 7 18.1l1.2-5.5L4 8.8l5.6-.6L12 3Z" />
+    </StatIcon>
   );
 }
 
