@@ -218,6 +218,8 @@ export const ptMessages: TranslationTree = {
       entryApproved: "Você já está no elenco.",
       entryRejected: "Sua inscrição não foi aceita.",
       revealAll: "Revelar tudo",
+      openPreview: "Abrir preview",
+      backToChampionship: "Voltar ao campeonato",
       revealThis: "Revelar isso",
       hideResults: "Ocultar resultados",
       tableHidden: "Resultados ocultos",

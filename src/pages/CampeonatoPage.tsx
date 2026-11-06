@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 import { ParticleField } from "@/components/campeonato/ParticleField";
 import { useAuth } from "@/context/AuthContext";
@@ -22,6 +22,27 @@ type SpoilerTab = "brackets" | "table" | "calendar";
 type CalendarView = "week" | "month";
 type SpoilerEntry = { all: boolean; ids: string[] };
 type SpoilerState = Record<SpoilerTab, SpoilerEntry>;
+
+const PANEL_SEGMENT: Record<Tab, { campeonato: string; championship: string }> = {
+  about: { campeonato: "apresentacao", championship: "overview" },
+  brackets: { campeonato: "chaves", championship: "brackets" },
+  roster: { campeonato: "inscritos", championship: "roster" },
+  table: { campeonato: "classificacao", championship: "standings" },
+  calendar: { campeonato: "calendario", championship: "calendar" },
+};
+
+function tabFromPanel(panel: string | undefined): Tab | null {
+  if (!panel) return null;
+  for (const [tab, segments] of Object.entries(PANEL_SEGMENT) as [Tab, (typeof PANEL_SEGMENT)[Tab]][]) {
+    if (segments.campeonato === panel || segments.championship === panel) return tab;
+  }
+  return null;
+}
+
+function previewHref(pathname: string, slug: string, tab: Tab) {
+  const base = pathname.startsWith("/championship") ? "championship" : "campeonato";
+  return `/${base}/${slug}/${PANEL_SEGMENT[tab][base]}`;
+}
 
 const PHASE_KEY: Record<ChampionshipPhase, string> = {
   registration: "pages.championship.phase.registration",
@@ -123,7 +144,10 @@ function playerName(camp: ChampionshipDetail, id: string) {
 }
 
 export function CampeonatoPage() {
-  const { slug = "" } = useParams();
+  const { slug = "", panel } = useParams();
+  const { pathname } = useLocation();
+  const panelTab = tabFromPanel(panel);
+  const preview = Boolean(panel);
   const { t, locale } = useTranslation();
   const { user, profile, profileLoadState, status } = useAuth();
   const includeDev = status === "authenticated" && profileLoadState === "ready" && profile?.role === "admin";
@@ -148,8 +172,16 @@ export function CampeonatoPage() {
     window.localStorage.setItem(spoilerKey(slug), JSON.stringify(spoilers));
   }, [slug, spoilers, spoilersSlug]);
 
+  const activeTab = panelTab ?? tab;
+
   useEffect(() => {
     if (!authReady) return;
+    if (panel && !panelTab) {
+      setCamp(null);
+      setLoading(false);
+      setError(t("pages.championship.notFound"));
+      return;
+    }
     if (!isSupabaseConfigured()) {
       setLoading(false);
       setError(t("pages.championship.unconfigured"));
@@ -172,7 +204,7 @@ export function CampeonatoPage() {
     return () => {
       cancelled = true;
     };
-  }, [authReady, includeDev, slug, t]);
+  }, [authReady, includeDev, panel, panelTab, slug, t]);
 
   useEffect(() => {
     if (!camp || !user) return;
@@ -246,7 +278,8 @@ export function CampeonatoPage() {
     <div className="relative min-h-dvh bg-[#07080c] text-zinc-100">
       <ParticleField />
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.72)_78%)]" />
-      <div className={cn("relative mx-auto px-4 py-8 sm:px-6", tab === "calendar" ? "max-w-[90rem]" : "max-w-5xl")}>
+      <div className={cn("relative mx-auto px-4 py-8 sm:px-6", activeTab === "calendar" ? "max-w-[90rem]" : "max-w-5xl", preview && "py-10")}>
+        {preview ? null : (
         <div className="mb-8 flex items-center justify-between text-sm">
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
             Aprendendo AGE
@@ -255,11 +288,30 @@ export function CampeonatoPage() {
             {t("pages.championship.backToIndex")}
           </Link>
         </div>
+        )}
 
         {loading ? <p className="text-zinc-400">{t("pages.championship.loading")}</p> : null}
         {error ? <p className="text-red-200">{error}</p> : null}
         {camp ? (
           <>
+            {preview ? (
+              <PreviewStage
+                camp={camp}
+                tabLabel={tabs.find((item) => item.id === activeTab)?.label ?? ""}
+                backTo={pathname.startsWith("/championship") ? `/championship/${camp.slug}` : `/campeonato/${camp.slug}`}
+                backLabel={t("pages.championship.backToChampionship")}
+                reveal={
+                  isSpoilerTab(activeTab) ? (
+                    <RevealAllButton
+                      revealed={isTabFullyRevealed(activeTab, camp.fixtures, spoilers[activeTab])}
+                      revealLabel={t("pages.championship.revealAll")}
+                      hideLabel={t("pages.championship.hideResults")}
+                      onClick={() => toggleRevealAll(activeTab)}
+                    />
+                  ) : null
+                }
+              />
+            ) : (
             <header className="flex flex-col gap-4 sm:flex-row sm:items-end">
               {camp.logoUrl ? (
                 <img src={camp.logoUrl} alt="" className="h-20 w-20 rounded-2xl border border-amber-900/50 bg-black/40 object-contain p-2" />
@@ -273,30 +325,36 @@ export function CampeonatoPage() {
                 {camp.description ? <p className="mt-2 max-w-2xl text-zinc-300">{camp.description}</p> : null}
               </div>
             </header>
+            )}
 
+            {preview ? null : (
             <div className="relative z-20 mt-8 flex flex-wrap items-center gap-2 border-b border-white/10 pb-3">
               {tabs.map((item) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => setTab(item.id)}
-                  className={`rounded-full px-3 py-1 text-sm ${tab === item.id ? "bg-amber-400/15 text-amber-100 ring-1 ring-amber-400/40" : "text-zinc-400 hover:text-zinc-100"}`}
+                  className={`rounded-full px-3 py-1 text-sm ${activeTab === item.id ? "bg-amber-400/15 text-amber-100 ring-1 ring-amber-400/40" : "text-zinc-400 hover:text-zinc-100"}`}
                 >
                   {item.label}
                 </button>
               ))}
-              {isSpoilerTab(tab) ? (
-                <RevealAllButton
-                  revealed={isTabFullyRevealed(tab, camp.fixtures, spoilers[tab])}
-                  revealLabel={t("pages.championship.revealAll")}
-                  hideLabel={t("pages.championship.hideResults")}
-                  onClick={() => toggleRevealAll(tab)}
-                />
-              ) : null}
+              <div className="ml-auto flex items-center gap-2">
+                {isSpoilerTab(activeTab) ? (
+                  <RevealAllButton
+                    revealed={isTabFullyRevealed(activeTab, camp.fixtures, spoilers[activeTab])}
+                    revealLabel={t("pages.championship.revealAll")}
+                    hideLabel={t("pages.championship.hideResults")}
+                    onClick={() => toggleRevealAll(activeTab)}
+                  />
+                ) : null}
+                <PreviewLink href={previewHref(pathname, camp.slug, activeTab)} label={t("pages.championship.openPreview")} />
+              </div>
             </div>
+            )}
 
             <div className="mt-6">
-              {tab === "about" ? (
+              {activeTab === "about" ? (
                 <div className="space-y-6">
                   {camp.rules ? (
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
@@ -307,7 +365,7 @@ export function CampeonatoPage() {
                   {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
                 </div>
               ) : null}
-              {tab === "brackets" ? (
+              {activeTab === "brackets" ? (
                 <BracketList
                   camp={camp}
                   revealedAll={spoilers.brackets.all}
@@ -315,7 +373,7 @@ export function CampeonatoPage() {
                   onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
                 />
               ) : null}
-              {tab === "roster" ? (
+              {activeTab === "roster" ? (
                 <Roster
                   camp={camp}
                   entryStatus={entryStatus}
@@ -344,7 +402,7 @@ export function CampeonatoPage() {
                   }}
                 />
               ) : null}
-              {tab === "table" ? (
+              {activeTab === "table" ? (
                 <div className="relative overflow-hidden rounded-2xl border border-white/10">
                   <table className={cn("w-full text-left text-sm", !spoilers.table.all && "pointer-events-none select-none")}>
                     <thead className="bg-black/40 text-zinc-400">
@@ -380,7 +438,7 @@ export function CampeonatoPage() {
                   ) : null}
                 </div>
               ) : null}
-              <div className={tab === "calendar" ? "block" : "hidden"}>
+              <div className={activeTab === "calendar" ? "block" : "hidden"}>
                 <Calendar
                   camp={camp}
                   revealedAll={spoilers.calendar.all}
@@ -489,7 +547,7 @@ function RevealAllButton({
 }) {
   const label = revealed ? hideLabel : revealLabel;
   return (
-    <div className="group/eye relative ml-auto shrink-0">
+    <div className="group/eye relative shrink-0">
       <button
         type="button"
         aria-pressed={revealed}
@@ -511,6 +569,77 @@ function RevealAllButton({
         {label}
       </div>
     </div>
+  );
+}
+
+function MonitorIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="12" rx="2" />
+      <path d="M8 20h8" />
+      <path d="M12 16v4" />
+    </svg>
+  );
+}
+
+function PreviewLink({ href, label }: { href: string; label: string }) {
+  return (
+    <div className="group/preview relative shrink-0">
+      <Link
+        to={href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={label}
+        className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-zinc-400 transition hover:border-amber-400/40 hover:text-amber-100"
+      >
+        <MonitorIcon />
+      </Link>
+      <div
+        role="tooltip"
+        className="pointer-events-none absolute top-full right-0 z-30 mt-2 whitespace-nowrap rounded-lg border border-zinc-700/80 bg-zinc-950/95 px-2.5 py-1.5 text-xs text-zinc-200 opacity-0 shadow-xl shadow-black/40 transition duration-150 group-hover/preview:opacity-100 group-focus-within/preview:opacity-100"
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function PreviewStage({
+  camp,
+  tabLabel,
+  backTo,
+  backLabel,
+  reveal,
+}: {
+  camp: ChampionshipDetail;
+  tabLabel: string;
+  backTo: string;
+  backLabel: string;
+  reveal: ReactNode;
+}) {
+  const { t } = useTranslation();
+  return (
+    <header className="relative z-20 mb-12 pt-10">
+      <Link to={backTo} className="absolute top-0 left-0 text-xs text-zinc-500 hover:text-amber-100">
+        {backLabel}
+      </Link>
+      {reveal ? <div className="absolute top-0 right-0">{reveal}</div> : null}
+      <div className="flex flex-col items-center text-center">
+        {camp.logoUrl ? (
+          <img
+            src={camp.logoUrl}
+            alt=""
+            className="h-40 w-40 rounded-[2rem] border border-amber-300/50 bg-black/50 object-contain p-4 shadow-[0_0_90px_rgba(251,191,36,0.22)] sm:h-52 sm:w-52"
+          />
+        ) : null}
+        <div className="mt-8 text-xs uppercase tracking-[0.35em] text-amber-200/75">
+          {t(PHASE_KEY[camp.phase])}
+          {camp.devMode ? " · Modo Dev" : ""}
+        </div>
+        <h1 className="mt-3 max-w-4xl font-[family-name:var(--font-display)] text-5xl text-amber-50 sm:text-6xl">{camp.name}</h1>
+        <p className="mt-4 text-sm uppercase tracking-[0.28em] text-zinc-400">{tabLabel}</p>
+      </div>
+    </header>
   );
 }
 

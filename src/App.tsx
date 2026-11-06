@@ -97,7 +97,9 @@ export default function App() {
     <BrowserRouter>
       <SiteNotificationsProvider>
       <Routes>
+        <Route path="campeonato/:slug/:panel" element={<CampeonatoPage />} />
         <Route path="campeonato/:slug" element={<CampeonatoPage />} />
+        <Route path="championship/:slug/:panel" element={<CampeonatoPage />} />
         <Route path="championship/:slug" element={<CampeonatoPage />} />
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />

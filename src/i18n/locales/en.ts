@@ -218,6 +218,8 @@ export const enMessages: TranslationTree = {
       entryApproved: "You are already on the roster.",
       entryRejected: "Your registration was not accepted.",
       revealAll: "Reveal all",
+      openPreview: "Open preview",
+      backToChampionship: "Back to championship",
       revealThis: "Reveal this",
       hideResults: "Hide results",
       tableHidden: "Results hidden",
