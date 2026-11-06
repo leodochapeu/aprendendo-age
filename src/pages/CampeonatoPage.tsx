@@ -245,7 +245,7 @@ export function CampeonatoPage() {
 
   const standings = useMemo(() => {
     if (!camp) return [];
-    const rows = new Map(camp.players.map((player) => [player.id, { name: player.name, played: 0, wins: 0, draws: 0, losses: 0, points: 0 }]));
+    const rows = new Map(camp.players.map((player) => [player.id, { name: player.name, logoUrl: player.logoUrl, played: 0, wins: 0, draws: 0, losses: 0, points: 0 }]));
     for (const fixture of camp.fixtures) {
       if (fixture.status !== "finished") continue;
       const a = rows.get(fixture.playerAId);
@@ -478,12 +478,19 @@ export function CampeonatoPage() {
                       {standings.map((row, index) => (
                         <tr key={row.name} className="border-t border-white/5">
                           <td className="px-3 py-2 text-zinc-500">{index + 1}</td>
-                          <td className="px-3 py-2">{row.name}</td>
-                          <td className="px-3 py-2">{row.played}</td>
-                          <td className="px-3 py-2 text-emerald-400">{row.wins}</td>
-                          <td className="px-3 py-2 text-yellow-300">{row.draws}</td>
-                          <td className="px-3 py-2 text-red-400">{row.losses}</td>
-                          <td className="px-3 py-2 text-amber-100">{row.points}</td>
+                          <td className="px-3 py-2">
+                            <span className="flex items-center gap-3">
+                              <span className="h-8 w-8 shrink-0 overflow-hidden rounded-full bg-zinc-900">
+                                {row.logoUrl ? <img src={row.logoUrl} alt="" className="h-full w-full object-cover" /> : null}
+                              </span>
+                              <span>{row.name}</span>
+                            </span>
+                          </td>
+                          <td className="px-3 py-2 text-center">{row.played}</td>
+                          <td className="px-3 py-2 text-center text-emerald-400">{row.wins}</td>
+                          <td className="px-3 py-2 text-center text-yellow-300">{row.draws}</td>
+                          <td className="px-3 py-2 text-center text-red-400">{row.losses}</td>
+                          <td className="px-3 py-2 text-center text-amber-100">{row.points}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -624,7 +631,7 @@ function PrizeBlock({ camp }: { camp: ChampionshipDetail }) {
 
 function StatHead({ label, tone, children }: { label: string; tone?: string; children: ReactNode }) {
   return (
-    <th className="px-3 py-2">
+    <th className="px-3 py-2 text-center">
       <span className="group/stat relative inline-flex">
         <span className={cn("inline-flex", tone)} aria-label={label}>
           {children}
@@ -649,12 +656,7 @@ function StatIcon({ children }: { children: ReactNode }) {
 }
 
 function PlayedIcon() {
-  return (
-    <StatIcon>
-      <rect x="5" y="3.5" width="14" height="17" rx="2" />
-      <path d="M9 8.5h6M9 12h6M9 15.5h4" />
-    </StatIcon>
-  );
+  return <CrossedSwords className="h-4 w-4" />;
 }
 
 function WinsIcon() {
