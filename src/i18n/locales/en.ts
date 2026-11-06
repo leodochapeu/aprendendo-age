@@ -219,6 +219,8 @@ export const enMessages: TranslationTree = {
       entryRejected: "Your registration was not accepted.",
       revealAll: "Reveal all",
       openPreview: "Open preview",
+      hiddenByAdmin: "These details were hidden by the championship admin.",
+      emptySection: "There is nothing in this section yet.",
       backToChampionship: "Back to championship",
       revealThis: "Reveal this",
       victory: "Victory ({{name}})",

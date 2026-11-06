@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useMemo, useRef, useState, type ReactNode, type UIEvent } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useParams, useSearchParams } from "react-router-dom";
 
 import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
 import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
@@ -44,9 +44,15 @@ function tabFromPanel(panel: string | undefined): Tab | null {
   return null;
 }
 
-function previewHref(pathname: string, slug: string, tab: Tab) {
-  const base = pathname.startsWith("/championship") ? "championship" : "campeonato";
-  return `/${base}/${slug}/${PANEL_SEGMENT[tab][base]}`;
+type PanelBase = "campeonato" | "championship";
+
+function panelBase(pathname: string): PanelBase {
+  return pathname.startsWith("/championship") ? "championship" : "campeonato";
+}
+
+function tabPath(base: PanelBase, slug: string, tab: Tab, preview = false) {
+  const segment = tab === "about" ? "" : `/${PANEL_SEGMENT[tab][base]}`;
+  return `/${base}/${slug}${segment}${preview ? "?preview=1" : ""}`;
 }
 
 const PHASE_KEY: Record<ChampionshipPhase, string> = {
@@ -96,6 +102,18 @@ function isSpoilerTab(tab: Tab): tab is SpoilerTab {
 
 function fixtureHasResult(fixture: ChampionshipFixture) {
   return fixture.status === "finished" || fixture.games.length > 0;
+}
+
+function tabHasContent(tab: Tab, camp: ChampionshipDetail) {
+  if (tab === "about") return Boolean(camp.rules.trim()) || camp.prizeEnabled;
+  if (tab === "roster") return camp.players.length > 0 || camp.registrationEnabled;
+  if (tab === "table") return camp.fixtures.some(fixtureHasResult);
+  return camp.fixtures.length > 0;
+}
+
+function tabBlock(tab: Tab, camp: ChampionshipDetail) {
+  if (!camp.showTabs[tab]) return "admin" as const;
+  return tabHasContent(tab, camp) ? null : ("empty" as const);
 }
 
 function isTabFullyRevealed(tab: SpoilerTab, fixtures: ChampionshipFixture[], entry: SpoilerEntry) {
@@ -150,9 +168,12 @@ function playerName(camp: ChampionshipDetail, id: string) {
 
 export function CampeonatoPage() {
   const { slug = "", panel } = useParams();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
+  const [searchParams] = useSearchParams();
   const panelTab = tabFromPanel(panel);
-  const preview = Boolean(panel);
+  const base = panelBase(pathname);
+  const preview = searchParams.get("preview") === "1";
+  const panelInvalid = Boolean(panel && !panelTab);
   const { t, locale } = useTranslation();
   const { user, profile, profileLoadState, status } = useAuth();
   const includeDev = status === "authenticated" && profileLoadState === "ready" && profile?.role === "admin";
@@ -160,7 +181,6 @@ export function CampeonatoPage() {
   const [camp, setCamp] = useState<ChampionshipDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState<Tab>("about");
   const [spoilersSlug, setSpoilersSlug] = useState(slug);
   const [spoilers, setSpoilers] = useState<SpoilerState>(() => loadSpoilers(slug));
   const [entryStatus, setEntryStatus] = useState<string | null>(null);
@@ -177,11 +197,11 @@ export function CampeonatoPage() {
     window.localStorage.setItem(spoilerKey(slug), JSON.stringify(spoilers));
   }, [slug, spoilers, spoilersSlug]);
 
-  const activeTab = panelTab ?? tab;
+  const activeTab: Tab = panelTab ?? "about";
 
   useEffect(() => {
     if (!authReady) return;
-    if (panel && !panelTab) {
+    if (panelInvalid) {
       setCamp(null);
       setLoading(false);
       setError(t("pages.championship.notFound"));
@@ -209,7 +229,7 @@ export function CampeonatoPage() {
     return () => {
       cancelled = true;
     };
-  }, [authReady, includeDev, panel, panelTab, slug, t]);
+  }, [authReady, includeDev, panelInvalid, slug, t]);
 
   useEffect(() => {
     if (!camp || !user) return;
@@ -284,13 +304,32 @@ export function CampeonatoPage() {
     { id: "table", label: t("pages.championship.tabs.table") },
     { id: "calendar", label: t("pages.championship.tabs.calendar") },
   ];
+  const visibleTabs = camp ? tabs.filter((item) => tabBlock(item.id, camp) === null) : tabs;
+  const sectionTab: Tab = panelTab ?? "about";
+  const sectionBlock = camp && (panel || preview) ? tabBlock(sectionTab, camp) : null;
+  const shownTab: Tab = visibleTabs.some((item) => item.id === activeTab) ? activeTab : (visibleTabs[0]?.id ?? "about");
+  const championshipPath = camp ? tabPath(base, camp.slug, "about") : "/campeonato";
+
+  if (camp && panel && panelTab === "about" && sectionBlock == null) {
+    return <Navigate to={tabPath(base, slug, "about", preview)} replace />;
+  }
+  if (camp && panel && !preview && sectionBlock === "empty") {
+    const next = visibleTabs[0]?.id;
+    if (next) return <Navigate to={tabPath(base, slug, next)} replace />;
+  }
+  if (camp && !preview && !sectionBlock && shownTab !== activeTab) {
+    return <Navigate to={tabPath(base, slug, shownTab)} replace />;
+  }
+  if (camp && !panel && !preview && visibleTabs.length > 0 && !visibleTabs.some((item) => item.id === activeTab)) {
+    return <Navigate to={tabPath(base, slug, shownTab)} replace />;
+  }
 
   return (
     <div className="relative min-h-dvh bg-[#07080c] text-zinc-100">
       <ParticleField />
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.72)_78%)]" />
-      <div className={cn("relative mx-auto px-4 sm:px-6", activeTab === "calendar" ? "max-w-[90rem]" : "max-w-5xl", preview ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8")}>
-        {preview ? null : (
+      <div className={cn("relative mx-auto px-4 sm:px-6", shownTab === "calendar" && !sectionBlock ? "max-w-[90rem]" : "max-w-5xl", preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8")}>
+        {preview || sectionBlock ? null : (
         <div className="mb-8 flex items-center justify-between text-sm">
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
             Aprendendo AGE
@@ -303,22 +342,29 @@ export function CampeonatoPage() {
 
         {loading ? <p className="text-zinc-400">{t("pages.championship.loading")}</p> : null}
         {error ? <p className="text-red-200">{error}</p> : null}
-        {camp ? (
+        {camp && sectionBlock ? (
+          <HiddenSection
+            camp={camp}
+            message={sectionBlock === "admin" ? t("pages.championship.hiddenByAdmin") : t("pages.championship.emptySection")}
+            backTo={championshipPath}
+            backLabel={t("pages.championship.backToChampionship")}
+          />
+        ) : camp ? (
           <>
             {preview ? (
               <PreviewStage
                 ref={previewHeaderRef}
                 camp={camp}
-                tabLabel={tabs.find((item) => item.id === activeTab)?.label ?? ""}
-                backTo={pathname.startsWith("/championship") ? `/championship/${camp.slug}` : `/campeonato/${camp.slug}`}
+                tabLabel={tabs.find((item) => item.id === shownTab)?.label ?? ""}
+                backTo={championshipPath}
                 backLabel={t("pages.championship.backToChampionship")}
                 reveal={
-                  isSpoilerTab(activeTab) ? (
+                  isSpoilerTab(shownTab) ? (
                     <RevealAllButton
-                      revealed={isTabFullyRevealed(activeTab, camp.fixtures, spoilers[activeTab])}
+                      revealed={isTabFullyRevealed(shownTab, camp.fixtures, spoilers[shownTab])}
                       revealLabel={t("pages.championship.revealAll")}
                       hideLabel={t("pages.championship.hideResults")}
-                      onClick={() => toggleRevealAll(activeTab)}
+                      onClick={() => toggleRevealAll(shownTab)}
                     />
                   ) : null
                 }
@@ -337,34 +383,35 @@ export function CampeonatoPage() {
             </header>
             )}
 
-            {preview ? null : (
+            {preview || visibleTabs.length === 0 ? null : (
             <div className="relative z-20 mt-8 flex flex-wrap items-center gap-2 border-b border-white/10 pb-3">
-              {tabs.map((item) => (
-                <button
+              {visibleTabs.map((item) => (
+                <Link
                   key={item.id}
-                  type="button"
-                  onClick={() => setTab(item.id)}
-                  className={`rounded-full px-3 py-1 text-sm ${activeTab === item.id ? "bg-amber-400/15 text-amber-100 ring-1 ring-amber-400/40" : "text-zinc-400 hover:text-zinc-100"}`}
+                  to={tabPath(base, camp.slug, item.id)}
+                  aria-current={shownTab === item.id ? "page" : undefined}
+                  className={`rounded-full px-3 py-1 text-sm ${shownTab === item.id ? "bg-amber-400/15 text-amber-100 ring-1 ring-amber-400/40" : "text-zinc-400 hover:text-zinc-100"}`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
               <div className="ml-auto flex items-center gap-2">
-                {isSpoilerTab(activeTab) ? (
+                {isSpoilerTab(shownTab) ? (
                   <RevealAllButton
-                    revealed={isTabFullyRevealed(activeTab, camp.fixtures, spoilers[activeTab])}
+                    revealed={isTabFullyRevealed(shownTab, camp.fixtures, spoilers[shownTab])}
                     revealLabel={t("pages.championship.revealAll")}
                     hideLabel={t("pages.championship.hideResults")}
-                    onClick={() => toggleRevealAll(activeTab)}
+                    onClick={() => toggleRevealAll(shownTab)}
                   />
                 ) : null}
-                <PreviewLink href={previewHref(pathname, camp.slug, activeTab)} label={t("pages.championship.openPreview")} />
+                <PreviewLink href={tabPath(base, camp.slug, shownTab, true)} label={t("pages.championship.openPreview")} />
               </div>
             </div>
             )}
 
+            {preview || visibleTabs.length > 0 ? (
             <div className={cn(preview ? "min-h-0 flex-1 overflow-y-auto pb-10" : "mt-6")} onScroll={preview ? onPreviewScroll : undefined}>
-              {activeTab === "about" ? (
+              {shownTab === "about" ? (
                 <div className="space-y-6">
                   {camp.rules ? (
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
@@ -375,7 +422,7 @@ export function CampeonatoPage() {
                   {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
                 </div>
               ) : null}
-              {activeTab === "brackets" ? (
+              {shownTab === "brackets" ? (
                 <BracketList
                   camp={camp}
                   revealedAll={spoilers.brackets.all}
@@ -383,14 +430,14 @@ export function CampeonatoPage() {
                   onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
                 />
               ) : null}
-              {activeTab === "roster" ? (
+              {shownTab === "roster" ? (
                 <Roster
                   camp={camp}
                   entryStatus={entryStatus}
                   entryMessage={entryMessage}
                   pending={entryPending}
                   loggedIn={status === "authenticated"}
-                  loginTo={`${localeAuthPath(locale, "login")}?next=${encodeURIComponent(`/campeonato/${camp.slug}`)}`}
+                  loginTo={`${localeAuthPath(locale, "login")}?next=${encodeURIComponent(`${pathname}${search}`)}`}
                   onSubmit={() => {
                     if (!user) return;
                     setEntryPending(true);
@@ -412,7 +459,7 @@ export function CampeonatoPage() {
                   }}
                 />
               ) : null}
-              {activeTab === "table" ? (
+              {shownTab === "table" ? (
                 <div className="relative overflow-hidden rounded-2xl border border-white/10">
                   <table className={cn("w-full text-left text-sm", !spoilers.table.all && "pointer-events-none select-none")}>
                     <thead className="bg-black/40 text-zinc-400">
@@ -448,7 +495,7 @@ export function CampeonatoPage() {
                   ) : null}
                 </div>
               ) : null}
-              <div className={activeTab === "calendar" ? "block" : "hidden"}>
+              <div className={shownTab === "calendar" ? "block" : "hidden"}>
                 <Calendar
                   camp={camp}
                   revealedAll={spoilers.calendar.all}
@@ -457,9 +504,22 @@ export function CampeonatoPage() {
                 />
               </div>
             </div>
+            ) : null}
           </>
         ) : null}
       </div>
+    </div>
+  );
+}
+
+function HiddenSection({ camp, message, backTo, backLabel }: { camp: ChampionshipDetail; message: string; backTo: string; backLabel: string }) {
+  return (
+    <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-4 pb-16 text-center">
+      <Link to={backTo} className="mb-10 text-xs uppercase tracking-[0.18em] text-zinc-500 hover:text-amber-100">
+        {backLabel}
+      </Link>
+      {camp.logoUrl ? <ChampionshipEmblem src={camp.logoUrl} className="h-40 w-40" burst={1.82} /> : null}
+      <p className="mt-10 max-w-md text-sm leading-6 text-zinc-300">{message}</p>
     </div>
   );
 }

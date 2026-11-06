@@ -63,13 +63,20 @@ export type ChampionshipDetail = ChampionshipCard & {
   prizeGoalCents: number | null;
   prizeRaisedCents: number | null;
   prizeUpdatedAt: string | null;
+  showTabs: {
+    about: boolean;
+    brackets: boolean;
+    roster: boolean;
+    table: boolean;
+    calendar: boolean;
+  };
   players: ChampionshipPlayer[];
   fixtures: ChampionshipFixture[];
   places: PrizePlace[];
 };
 
 const CHAMP_SELECT =
-  "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
+  "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
 
 export function championshipAssetUrl(path: string | null | undefined) {
   const value = path?.trim() ?? "";
@@ -171,6 +178,13 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
     phase: phaseOf(row.phase),
     devMode: row.dev_mode === true,
     registrationEnabled: Boolean(row.registration_enabled),
+    showTabs: {
+      about: row.show_tab_about !== false,
+      brackets: row.show_tab_brackets !== false,
+      roster: row.show_tab_roster !== false,
+      table: row.show_tab_table !== false,
+      calendar: row.show_tab_calendar !== false,
+    },
     prizeEnabled: Boolean(row.prize_enabled),
     prizeMode: row.prize_mode === "donations" ? "donations" : "fixed",
     prizeNote: (row.prize_note as string) ?? "",
