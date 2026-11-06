@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useMemo, useRef, useState, type ReactNode, type UIEvent } from "react";
+import { forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode, type TouchEvent, type UIEvent, type WheelEvent } from "react";
 import { Link, Navigate, useLocation, useParams, useSearchParams } from "react-router-dom";
 
 import { ChampionshipBracketView } from "@/components/campeonato/ChampionshipBracketView";
@@ -297,10 +297,51 @@ export function CampeonatoPage() {
   }
 
   const previewHeaderRef = useRef<HTMLElement>(null);
+  const previewScrollerRef = useRef<HTMLDivElement>(null);
+  const compactRef = useRef(0);
+  const compactLockRef = useRef(0);
+
+  function setPreviewCompact(next: number) {
+    if (next === compactRef.current) return;
+    compactRef.current = next;
+    compactLockRef.current = performance.now() + 420;
+    previewHeaderRef.current?.style.setProperty("--compact", String(next));
+  }
+
+  function syncPreviewCompact(deltaY: number) {
+    if (performance.now() < compactLockRef.current) return;
+    const scroller = previewScrollerRef.current;
+    if (!scroller) return;
+    if (deltaY > 6) setPreviewCompact(1);
+    else if (deltaY < -6 && scroller.scrollTop <= 0) setPreviewCompact(0);
+  }
+
   const onPreviewScroll = (event: UIEvent<HTMLDivElement>) => {
-    const compact = Math.min(1, Math.max(0, event.currentTarget.scrollTop / 160));
-    previewHeaderRef.current?.style.setProperty("--compact", String(compact));
+    if (event.currentTarget.scrollTop > 8) setPreviewCompact(1);
   };
+
+  const onPreviewWheel = (event: WheelEvent<HTMLDivElement>) => {
+    if (event.ctrlKey || event.metaKey) return;
+    const scroller = previewScrollerRef.current;
+    if (scroller && !scroller.contains(event.target as Node)) scroller.scrollTop += event.deltaY;
+    syncPreviewCompact(event.deltaY);
+  };
+
+  const touchYRef = useRef<number | null>(null);
+  const onPreviewTouchStart = (event: TouchEvent<HTMLDivElement>) => {
+    touchYRef.current = event.touches[0]?.clientY ?? null;
+  };
+  const onPreviewTouchMove = (event: TouchEvent<HTMLDivElement>) => {
+    const y = event.touches[0]?.clientY;
+    if (y == null || touchYRef.current == null) return;
+    const delta = touchYRef.current - y;
+    touchYRef.current = y;
+    syncPreviewCompact(delta);
+  };
+
+  useLayoutEffect(() => {
+    previewHeaderRef.current?.style.setProperty("--compact", String(compactRef.current));
+  });
 
   const tabs: { id: Tab; label: string }[] = [
     { id: "about", label: t("pages.championship.tabs.about") },
@@ -314,6 +355,12 @@ export function CampeonatoPage() {
   const sectionBlock = camp && (panel || preview) ? tabBlock(sectionTab, camp) : null;
   const shownTab: Tab = visibleTabs.some((item) => item.id === activeTab) ? activeTab : (visibleTabs[0]?.id ?? "about");
   const championshipPath = camp ? tabPath(base, camp.slug, "about") : "/campeonato";
+
+  useEffect(() => {
+    compactRef.current = 0;
+    compactLockRef.current = 0;
+    previewHeaderRef.current?.style.setProperty("--compact", "0");
+  }, [slug, preview, shownTab]);
 
   if (camp && panel && panelTab === "about" && sectionBlock == null) {
     return <Navigate to={tabPath(base, slug, "about", preview)} replace />;
@@ -333,7 +380,12 @@ export function CampeonatoPage() {
     <div className="relative min-h-dvh bg-[#07080c] text-zinc-100">
       <ParticleField />
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.72)_78%)]" />
-      <div className={cn("relative mx-auto px-4 sm:px-6", shownTab === "calendar" && !sectionBlock ? "max-w-[90rem]" : "max-w-5xl", preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8")}>
+      <div
+        className={cn("relative mx-auto px-4 sm:px-6", shownTab === "calendar" && !sectionBlock ? "max-w-[90rem]" : "max-w-5xl", preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8")}
+        onWheel={preview ? onPreviewWheel : undefined}
+        onTouchStart={preview ? onPreviewTouchStart : undefined}
+        onTouchMove={preview ? onPreviewTouchMove : undefined}
+      >
         {preview || sectionBlock ? null : (
         <div className="mb-8 flex items-center justify-between text-sm">
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
@@ -415,7 +467,7 @@ export function CampeonatoPage() {
             )}
 
             {preview || visibleTabs.length > 0 ? (
-            <div className={cn(preview ? "min-h-0 flex-1 overflow-y-auto pb-10" : "mt-6")} onScroll={preview ? onPreviewScroll : undefined}>
+            <div ref={previewScrollerRef} className={cn(preview ? "min-h-0 flex-1 overflow-y-auto overscroll-y-contain pb-10" : "mt-6")} onScroll={preview ? onPreviewScroll : undefined}>
               {shownTab === "about" ? (
                 <div className="space-y-6">
                   {camp.rules ? (
@@ -845,8 +897,7 @@ const PreviewStage = forwardRef<
   return (
     <header
       ref={ref}
-      className="z-30 shrink-0 bg-gradient-to-b from-[#07080c] via-[#07080c] to-transparent px-1 pb-2"
-      style={{ ["--compact" as string]: 0 }}
+      className="preview-stage z-30 shrink-0 bg-gradient-to-b from-[#07080c] via-[#07080c] to-transparent px-1 pb-2"
     >
       <div className="flex items-center justify-between gap-3">
         <Link to={backTo} className="text-xs text-zinc-500 hover:text-amber-100">

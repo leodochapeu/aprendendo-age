@@ -19,6 +19,22 @@
   --font-display: "Cinzel", ui-serif, Georgia, serif;
 }
 
+@property --compact {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.preview-stage {
+  transition: --compact 280ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preview-stage {
+    transition: none;
+  }
+}
+
 body {
   margin: 0;
   min-height: 100vh;
