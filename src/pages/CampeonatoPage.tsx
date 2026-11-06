@@ -457,6 +457,20 @@ export function CampeonatoPage() {
   );
 }
 
+function PrizeWind() {
+  return (
+    <div className="epic-wind" aria-hidden>
+      <span />
+      <span />
+      <span />
+      <span />
+      <span />
+      <span />
+      <span />
+    </div>
+  );
+}
+
 function PrizeBlock({ camp }: { camp: ChampionshipDetail }) {
   const { t } = useTranslation();
   const raised = camp.prizeRaisedCents ?? 0;
@@ -466,54 +480,77 @@ function PrizeBlock({ camp }: { camp: ChampionshipDetail }) {
   const podium = ordered.length === 3 ? [ordered[1], ordered[0], ordered[2]] : ordered;
 
   return (
-    <section className="rounded-2xl border border-amber-900/40 bg-black/45 p-5">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h2 className="font-[family-name:var(--font-display)] text-amber-200">
-            {camp.prizeMode === "donations" ? t("pages.championship.prizeDonations") : t("pages.championship.prizeFixed")}
-          </h2>
-          {camp.prizeNote ? <p className="mt-2 max-w-xl text-sm text-zinc-400">{camp.prizeNote}</p> : null}
-        </div>
-        {camp.prizeMode === "donations" ? (
-          <div className="text-right">
-            <div className="text-xs uppercase text-zinc-500">{t("pages.championship.raised")}</div>
-            <div className="text-2xl text-amber-50">{formatBrl(raised)}</div>
-            {goal > 0 ? <div className="text-xs text-zinc-500">{t("pages.championship.goal")} {formatBrl(goal)}</div> : null}
-          </div>
-        ) : null}
-      </div>
-      {camp.prizeMode === "donations" && goal > 0 ? (
-        <div className="mt-4">
-          <div className="h-1.5 overflow-hidden rounded-full bg-zinc-800">
-            <div className="h-full bg-amber-300" style={{ width: `${ratio * 100}%` }} />
-          </div>
-          <div className="mt-1 text-xs text-zinc-500">{Math.round(ratio * 1000) / 10}% {t("pages.championship.ofGoal")}</div>
-        </div>
-      ) : null}
-      <div className="mt-5 grid gap-3 sm:grid-cols-3">
-        {podium.map((place) => {
-          const amount =
-            camp.prizeMode === "donations"
-              ? place.sharePercent != null
-                ? Math.round(raised * (place.sharePercent / 100))
-                : null
-              : place.amountCents;
-          const highlight = place.place === 1;
-          return (
-            <div
-              key={place.place}
-              className={`rounded-xl border p-4 ${highlight ? "border-amber-400/50 bg-amber-950/30" : "border-white/10"}`}
-            >
-              <div className="text-xs text-zinc-400">
-                {place.label || `${place.place}º`}
-                {camp.prizeMode === "donations" && place.sharePercent != null ? ` (${place.sharePercent.toFixed(2)}%)` : ""}
-              </div>
-              <div className="mt-1 text-xl text-amber-50">{amount != null ? formatBrl(amount) : "—"}</div>
+    <div className="relative">
+      <div className="epic-gold-glow" aria-hidden />
+      <section className="relative overflow-hidden rounded-2xl border border-amber-200/25 bg-black/55 p-5 shadow-lg shadow-black/40">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,#3a2a12_0%,#120e09_58%,#07080c_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/80 via-black/62 to-black/75" />
+        <PrizeWind />
+        <div className="relative z-[3]">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="font-[family-name:var(--font-display)] text-amber-100">
+                {camp.prizeMode === "donations" ? t("pages.championship.prizeDonations") : t("pages.championship.prizeFixed")}
+              </h2>
+              {camp.prizeNote ? <p className="mt-2 max-w-xl text-sm text-zinc-300">{camp.prizeNote}</p> : null}
             </div>
-          );
-        })}
-      </div>
-    </section>
+            {camp.prizeMode === "donations" ? (
+              <div className="text-right">
+                <div className="text-xs uppercase text-zinc-400">{t("pages.championship.raised")}</div>
+                <div className="font-[family-name:var(--font-display)] text-2xl text-amber-50">{formatBrl(raised)}</div>
+                {goal > 0 ? <div className="text-xs text-zinc-400">{t("pages.championship.goal")} {formatBrl(goal)}</div> : null}
+              </div>
+            ) : null}
+          </div>
+          {camp.prizeMode === "donations" && goal > 0 ? (
+            <div className="mt-4">
+              <div className="h-1.5 overflow-hidden rounded-full bg-zinc-800">
+                <div className="h-full bg-amber-300" style={{ width: `${ratio * 100}%` }} />
+              </div>
+              <div className="mt-1 text-xs text-zinc-400">{Math.round(ratio * 1000) / 10}% {t("pages.championship.ofGoal")}</div>
+            </div>
+          ) : null}
+          <div className="mt-5 grid items-end gap-3 sm:grid-cols-3">
+            {podium.map((place) => {
+              const amount =
+                camp.prizeMode === "donations"
+                  ? place.sharePercent != null
+                    ? Math.round(raised * (place.sharePercent / 100))
+                    : null
+                  : place.amountCents;
+              const highlight = place.place === 1;
+              return (
+                <div
+                  key={place.place}
+                  className={cn(
+                    "relative overflow-hidden rounded-xl border",
+                    highlight
+                      ? "border-amber-200/80 bg-amber-950/50 px-4 py-6 shadow-[0_0_32px_rgba(255,196,70,0.38)] sm:-translate-y-3 sm:py-8"
+                      : "border-white/10 bg-black/35 p-4",
+                  )}
+                >
+                  {highlight ? (
+                    <>
+                      <div className="epic-gold-glow-inset" aria-hidden />
+                      <PrizeWind />
+                    </>
+                  ) : null}
+                  <div className="relative z-[3]">
+                    <div className={cn("text-xs uppercase tracking-[0.16em]", highlight ? "text-amber-200" : "text-zinc-400")}>
+                      {place.label || `${place.place}º`}
+                      {camp.prizeMode === "donations" && place.sharePercent != null ? ` (${place.sharePercent.toFixed(2)}%)` : ""}
+                    </div>
+                    <div className={cn("mt-1 text-amber-50", highlight ? "font-[family-name:var(--font-display)] text-3xl" : "text-xl")}>
+                      {amount != null ? formatBrl(amount) : "—"}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 
