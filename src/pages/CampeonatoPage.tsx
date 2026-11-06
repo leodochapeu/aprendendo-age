@@ -396,7 +396,7 @@ export function CampeonatoPage() {
         {championshipMissing ? (
           <div className="flex flex-col items-center px-4 text-center">
             <p className="font-[family-name:var(--font-display)] text-4xl leading-tight tracking-wide text-amber-50 sm:text-6xl">
-              {error}
+              {error?.replace(/\.$/, "")}
             </p>
             <ChampionshipMissingIcon />
           </div>
@@ -632,7 +632,7 @@ export function CampeonatoPage() {
 
 function ChampionshipMissingIcon() {
   return (
-    <svg viewBox="0 0 64 72" aria-hidden="true" className="mt-10 h-16 w-16 text-amber-200/75 drop-shadow-[0_0_18px_rgba(251,191,36,0.28)]">
+    <svg viewBox="0 0 64 72" aria-hidden="true" className="mt-12 h-20 w-20 text-amber-200/80 drop-shadow-[0_0_22px_rgba(251,191,36,0.35)]">
       <path
         d="M32 4 56 14.5v18.2C56 49.2 46.2 59.4 32 68 17.8 59.4 8 49.2 8 32.7V14.5L32 4Z"
         fill="none"
@@ -926,11 +926,16 @@ const PreviewStage = forwardRef<
   const { t } = useTranslation();
   const frame = "calc(12rem - var(--compact) * 7.25rem)";
   return (
-    <header
-      ref={ref}
-      className="preview-stage z-30 shrink-0 bg-gradient-to-b from-[#07080c] via-[#07080c] to-transparent px-1 pb-2"
-    >
-      <div className="flex items-center justify-between gap-3">
+    <header ref={ref} className="preview-stage relative z-30 shrink-0 px-1 pb-2">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-x-8 -top-8 -bottom-28"
+        style={{
+          background:
+            "radial-gradient(ellipse 78% 68% at 50% 34%, rgba(7,8,12,0.94) 0%, rgba(7,8,12,0.62) 42%, rgba(7,8,12,0.22) 64%, rgba(7,8,12,0) 78%)",
+        }}
+      />
+      <div className="relative flex items-center justify-between gap-3">
         <Link to={backTo} className="text-xs text-zinc-500 hover:text-amber-100">
           {backLabel}
         </Link>
