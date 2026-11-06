@@ -376,17 +376,32 @@ export function CampeonatoPage() {
     return <Navigate to={tabPath(base, slug, shownTab)} replace />;
   }
 
+  const championshipMissing = !loading && !camp && Boolean(error);
+
   return (
     <div className="relative min-h-dvh bg-[#07080c] text-zinc-100">
       <ParticleField />
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.72)_78%)]" />
       <div
-        className={cn("relative mx-auto px-4 sm:px-6", shownTab === "calendar" && !sectionBlock ? "max-w-[90rem]" : "max-w-5xl", preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8")}
+        className={cn(
+          "relative mx-auto px-4 sm:px-6",
+          championshipMissing
+            ? "flex min-h-dvh max-w-3xl items-center justify-center"
+            : cn(shownTab === "calendar" && !sectionBlock ? "max-w-[90rem]" : "max-w-5xl", preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8"),
+        )}
         onWheel={preview ? onPreviewWheel : undefined}
         onTouchStart={preview ? onPreviewTouchStart : undefined}
         onTouchMove={preview ? onPreviewTouchMove : undefined}
       >
-        {preview || sectionBlock ? null : (
+        {championshipMissing ? (
+          <div className="flex flex-col items-center px-4 text-center">
+            <p className="font-[family-name:var(--font-display)] text-4xl leading-tight tracking-wide text-amber-50 sm:text-6xl">
+              {error}
+            </p>
+            <ChampionshipMissingIcon />
+          </div>
+        ) : null}
+        {championshipMissing || preview || sectionBlock ? null : (
         <div className="mb-8 flex items-center justify-between text-sm">
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
             Aprendendo AGE
@@ -397,8 +412,8 @@ export function CampeonatoPage() {
         </div>
         )}
 
-        {loading ? <p className="text-zinc-400">{t("pages.championship.loading")}</p> : null}
-        {error ? <p className="text-red-200">{error}</p> : null}
+        {championshipMissing ? null : loading ? <p className="text-zinc-400">{t("pages.championship.loading")}</p> : null}
+        {championshipMissing ? null : error ? <p className="text-red-200">{error}</p> : null}
         {camp && sectionBlock ? (
           <HiddenSection
             camp={camp}
@@ -612,6 +627,22 @@ export function CampeonatoPage() {
         ) : null}
       </div>
     </div>
+  );
+}
+
+function ChampionshipMissingIcon() {
+  return (
+    <svg viewBox="0 0 64 72" aria-hidden="true" className="mt-10 h-16 w-16 text-amber-200/75 drop-shadow-[0_0_18px_rgba(251,191,36,0.28)]">
+      <path
+        d="M32 4 56 14.5v18.2C56 49.2 46.2 59.4 32 68 17.8 59.4 8 49.2 8 32.7V14.5L32 4Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        strokeLinejoin="round"
+      />
+      <path d="M32 24v18" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+      <circle cx="32" cy="50" r="1.4" fill="currentColor" />
+    </svg>
   );
 }
 
