@@ -609,6 +609,65 @@ body {
   .epic-wind span {
     opacity: 0;
   }
+  .roster-slide-in,
+  .roster-slide-out,
+  .roster-card-in,
+  .roster-progress {
+    animation: none;
+  }
+}
+
+@keyframes roster-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(72px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes roster-slide-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.98);
+  }
+}
+
+@keyframes roster-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes roster-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.roster-slide-in {
+  animation: roster-slide-in 0.72s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.roster-slide-out {
+  animation: roster-slide-out 0.48s ease-in both;
+}
+.roster-card-in {
+  animation: roster-card-in 0.65s 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.roster-progress {
+  animation-name: roster-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 .entity-card-ranked::after {

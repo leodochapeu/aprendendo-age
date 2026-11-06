@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
 import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
+import { RosterPresentation } from "@/components/campeonato/RosterPresentation";
 import { ParticleField } from "@/components/campeonato/ParticleField";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -16,6 +17,7 @@ import {
   type ChampionshipFixture,
   type ChampionshipPhase,
 } from "@/lib/championshipsApi";
+import { fetchAomRacePlayersByIds, type AomRacePlayer } from "@/lib/playersApi";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 type Tab = "about" | "brackets" | "roster" | "table" | "calendar";
@@ -1036,8 +1038,47 @@ function Roster({
   onSubmit: () => void;
 }) {
   const { t } = useTranslation();
+  const [mode, setMode] = useState<"list" | "show">("list");
+  const [stats, setStats] = useState<AomRacePlayer[]>([]);
+  const profileKey = camp.players.map((player) => player.profileId).join("|");
+
+  useEffect(() => {
+    let cancelled = false;
+    void fetchAomRacePlayersByIds(profileKey.split("|")).then((rows) => {
+      if (!cancelled) setStats(rows);
+    }).catch(() => {
+      if (!cancelled) setStats([]);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [profileKey]);
+
   return (
     <div>
+      {camp.players.length > 0 ? (
+        <div className="mb-4 flex justify-end">
+          <div role="group" aria-label={t("pages.championship.rosterView")} className="inline-flex rounded-lg border border-white/10 bg-zinc-900/50 p-0.5">
+            {(["list", "show"] as const).map((option) => (
+              <button
+                key={option}
+                type="button"
+                aria-pressed={mode === option}
+                onClick={() => setMode(option)}
+                className={cn(
+                  "rounded-md px-2.5 py-1 text-xs font-medium transition",
+                  mode === option ? "bg-amber-500/20 text-amber-100" : "text-zinc-400 hover:text-zinc-200",
+                )}
+              >
+                {option === "list" ? t("pages.championship.rosterList") : t("pages.championship.rosterShow")}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
+      {mode === "show" ? (
+        <RosterPresentation players={camp.players} stats={stats} />
+      ) : (
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {camp.players.map((player) => (
           <div key={player.id} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/35 p-3">
@@ -1048,6 +1089,7 @@ function Roster({
           </div>
         ))}
       </div>
+      )}
       {camp.registrationEnabled ? (
         <div className="mt-6 rounded-2xl border border-amber-900/40 bg-black/40 p-4">
           <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.signup")}</h2>

@@ -107,6 +107,22 @@ export async function fetchClanPlayers(clanId: string): Promise<AomRacePlayer[]>
     .filter((p): p is AomRacePlayer => p != null);
 }
 
+/** Snapshots da Corrida AoM para os perfis informados. Quem não tem RR fica de fora. */
+export async function fetchAomRacePlayersByIds(ids: string[]): Promise<AomRacePlayer[]> {
+  const unique = [...new Set(ids.map((id) => id.trim()).filter(Boolean))];
+  if (!isSupabaseConfigured() || unique.length === 0) return [];
+
+  const supabase = createSupabasePublicClient();
+  if (!supabase) return [];
+
+  const { data, error } = await supabase.from("profiles").select(PUBLIC_PLAYER_SELECT).in("id", unique);
+  if (error) throw new Error(error.message);
+
+  return (data ?? [])
+    .map((row) => mapRow(row as Parameters<typeof mapRow>[0]))
+    .filter((player): player is AomRacePlayer => player != null);
+}
+
 /** Lista jogadores com snapshot AoM Stats para a Corrida AoM. */
 export async function fetchAomRacePlayers(): Promise<AomRacePlayer[]> {
   if (!isSupabaseConfigured()) return [];

@@ -15,6 +15,7 @@ export type ChampionshipCard = {
 
 export type ChampionshipPlayer = {
   id: string;
+  profileId: string;
   name: string;
   logoUrl: string;
 };
@@ -130,7 +131,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
   const [{ data: entries }, { data: fixtures }, { data: places }] = await Promise.all([
     supabase
       .from("championship_entries")
-      .select("id, display_name, logo_path")
+      .select("id, profile_id, display_name, logo_path")
       .eq("championship_id", id)
       .eq("status", "approved")
       .order("display_name"),
@@ -178,6 +179,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
     prizeUpdatedAt: (row.prize_updated_at as string | null) ?? null,
     players: (entries ?? []).map((entry) => ({
       id: entry.id as string,
+      profileId: (entry.profile_id as string) || "",
       name: (entry.display_name as string) || "Jogador",
       logoUrl: championshipAssetUrl(entry.logo_path as string | null),
     })),
