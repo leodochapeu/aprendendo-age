@@ -34,17 +34,40 @@ export type ChampionshipLink = {
   url: string;
 };
 
+export type ChampionshipStageFormat = "groups" | "single_elim" | "double_elim";
+export type ChampionshipFixtureSection = "group" | "winners" | "losers" | "grand_final";
+
+export type ChampionshipStage = {
+  id: string;
+  position: number;
+  name: string;
+  format: ChampionshipStageFormat;
+  seriesLength: 3 | 5 | 7;
+  groupSize: number | null;
+  advanceCount: number | null;
+};
+
 export type ChampionshipFixture = {
   id: string;
   roundLabel: string;
-  scheduledAt: string;
+  scheduledAt: string | null;
   status: "scheduled" | "finished" | "cancelled";
-  playerAId: string;
-  playerBId: string;
+  playerAId: string | null;
+  playerBId: string | null;
   scoreA: number;
   scoreB: number;
   links: ChampionshipLink[];
   games: ChampionshipGame[];
+  stageId: string | null;
+  section: ChampionshipFixtureSection | null;
+  roundIndex: number | null;
+  slotIndex: number | null;
+  groupIndex: number | null;
+  seriesLength: number | null;
+  feederA: string | null;
+  feederB: string | null;
+  isBye: boolean;
+  isHidden: boolean;
 };
 
 export type PrizePlace = {
@@ -72,6 +95,7 @@ export type ChampionshipDetail = ChampionshipCard & {
   };
   players: ChampionshipPlayer[];
   fixtures: ChampionshipFixture[];
+  stages: ChampionshipStage[];
   places: PrizePlace[];
 };
 
@@ -135,18 +159,28 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
   if (!row?.slug || !listedOnAprendendoAge(row, includeDev)) return null;
 
   const id = row.id as string;
-  const [{ data: entries }, { data: fixtures }, { data: places }] = await Promise.all([
+  const fixturesFull = await supabase
+    .from("championship_fixtures")
+    .select(
+      "id, round_label, scheduled_at, status, player_a_entry_id, player_b_entry_id, score_a, score_b, stage_id, section, round_index, slot_index, group_index, series_length, feeder_a, feeder_b, is_bye, is_hidden",
+    )
+    .eq("championship_id", id)
+    .order("scheduled_at", { ascending: true });
+  const fixturesQuery = fixturesFull.error
+    ? await supabase
+        .from("championship_fixtures")
+        .select("id, round_label, scheduled_at, status, player_a_entry_id, player_b_entry_id, score_a, score_b")
+        .eq("championship_id", id)
+        .order("scheduled_at", { ascending: true })
+    : fixturesFull;
+
+  const [{ data: entries }, { data: places }, stagesResult] = await Promise.all([
     supabase
       .from("championship_entries")
       .select("id, profile_id, display_name, logo_path")
       .eq("championship_id", id)
       .eq("status", "approved")
       .order("display_name"),
-    supabase
-      .from("championship_fixtures")
-      .select("id, round_label, scheduled_at, status, player_a_entry_id, player_b_entry_id, score_a, score_b")
-      .eq("championship_id", id)
-      .order("scheduled_at", { ascending: true }),
     row.prize_enabled
       ? supabase
           .from("championship_prize_places")
@@ -154,7 +188,14 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
           .eq("championship_id", id)
           .order("place")
       : Promise.resolve({ data: [] }),
+    supabase
+      .from("championship_stages")
+      .select("id, position, name, format, series_length, group_size, advance_count")
+      .eq("championship_id", id)
+      .order("position", { ascending: true }),
   ]);
+  const fixtures = fixturesQuery.data;
+  const stages = stagesResult.error ? [] : (stagesResult.data ?? []);
 
   const fixtureIds = (fixtures ?? []).map((fixture) => fixture.id as string);
   const [{ data: links }, { data: games }] = fixtureIds.length
@@ -200,10 +241,10 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
     fixtures: (fixtures ?? []).map((fixture) => ({
       id: fixture.id as string,
       roundLabel: fixture.round_label as string,
-      scheduledAt: fixture.scheduled_at as string,
+      scheduledAt: (fixture.scheduled_at as string | null) ?? null,
       status: fixture.status === "finished" || fixture.status === "cancelled" ? fixture.status : "scheduled",
-      playerAId: fixture.player_a_entry_id as string,
-      playerBId: fixture.player_b_entry_id as string,
+      playerAId: (fixture.player_a_entry_id as string | null) ?? null,
+      playerBId: (fixture.player_b_entry_id as string | null) ?? null,
       scoreA: fixture.score_a as number,
       scoreB: fixture.score_b as number,
       links: (links ?? [])
@@ -218,6 +259,34 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
           godA: (game.god_a as string) || "",
           godB: (game.god_b as string) || "",
         })),
+      stageId: (fixture.stage_id as string | null) ?? null,
+      section:
+        fixture.section === "group" ||
+        fixture.section === "winners" ||
+        fixture.section === "losers" ||
+        fixture.section === "grand_final"
+          ? fixture.section
+          : null,
+      roundIndex: typeof fixture.round_index === "number" ? fixture.round_index : null,
+      slotIndex: typeof fixture.slot_index === "number" ? fixture.slot_index : null,
+      groupIndex: typeof fixture.group_index === "number" ? fixture.group_index : null,
+      seriesLength: typeof fixture.series_length === "number" ? fixture.series_length : null,
+      feederA: (fixture.feeder_a as string | null) ?? null,
+      feederB: (fixture.feeder_b as string | null) ?? null,
+      isBye: Boolean(fixture.is_bye),
+      isHidden: Boolean(fixture.is_hidden),
+    })),
+    stages: stages.map((stage) => ({
+      id: stage.id as string,
+      position: stage.position as number,
+      name: (stage.name as string) || "Fase",
+      format:
+        stage.format === "groups" || stage.format === "double_elim"
+          ? (stage.format as ChampionshipStageFormat)
+          : "single_elim",
+      seriesLength: (stage.series_length === 5 || stage.series_length === 7 ? stage.series_length : 3) as 3 | 5 | 7,
+      groupSize: typeof stage.group_size === "number" ? stage.group_size : null,
+      advanceCount: typeof stage.advance_count === "number" ? stage.advance_count : null,
     })),
     places: (places ?? []).map((place) => ({
       place: place.place as number,

@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useMemo, useRef, useState, type ReactNode, type UIEvent } from "react";
 import { Link, Navigate, useLocation, useParams, useSearchParams } from "react-router-dom";
 
+import { ChampionshipBracketView } from "@/components/campeonato/ChampionshipBracketView";
 import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
 import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
 import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
@@ -133,7 +134,8 @@ function dayKeyFromDate(date: Date) {
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 }
 
-function dayKeyFromIso(iso: string) {
+function dayKeyFromIso(iso: string | null | undefined) {
+  if (!iso) return "";
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) return "";
   return dayKeyFromDate(date);
@@ -163,7 +165,8 @@ function formatBrl(cents: number) {
   return (cents / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
-function playerName(camp: ChampionshipDetail, id: string) {
+function playerName(camp: ChampionshipDetail, id: string | null | undefined) {
+  if (!id) return "—";
   return camp.players.find((player) => player.id === id)?.name || "—";
 }
 
@@ -187,6 +190,7 @@ export function CampeonatoPage() {
   const [entryStatus, setEntryStatus] = useState<string | null>(null);
   const [entryMessage, setEntryMessage] = useState<string | null>(null);
   const [entryPending, setEntryPending] = useState(false);
+  const [bracketsView, setBracketsView] = useState<"list" | "bracket">("list");
 
   if (spoilersSlug !== slug) {
     setSpoilersSlug(slug);
@@ -247,7 +251,7 @@ export function CampeonatoPage() {
     if (!camp) return [];
     const rows = new Map(camp.players.map((player) => [player.id, { name: player.name, logoUrl: player.logoUrl, played: 0, wins: 0, draws: 0, losses: 0, points: 0 }]));
     for (const fixture of camp.fixtures) {
-      if (fixture.status !== "finished") continue;
+      if (fixture.status !== "finished" || fixture.isBye || !fixture.playerAId || !fixture.playerBId) continue;
       const a = rows.get(fixture.playerAId);
       const b = rows.get(fixture.playerBId);
       if (!a || !b) continue;
@@ -424,12 +428,51 @@ export function CampeonatoPage() {
                 </div>
               ) : null}
               {shownTab === "brackets" ? (
-                <BracketList
-                  camp={camp}
-                  revealedAll={spoilers.brackets.all}
-                  revealedIds={spoilers.brackets.ids}
-                  onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
-                />
+                <div className="space-y-4">
+                  {camp.stages.length > 0 ? (
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setBracketsView("list")}
+                        className={cn(
+                          "rounded-full px-3 py-1 text-sm",
+                          bracketsView === "list"
+                            ? "bg-amber-400/15 text-amber-100 ring-1 ring-amber-400/40"
+                            : "text-zinc-400 hover:text-zinc-100",
+                        )}
+                      >
+                        Lista
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setBracketsView("bracket")}
+                        className={cn(
+                          "rounded-full px-3 py-1 text-sm",
+                          bracketsView === "bracket"
+                            ? "bg-amber-400/15 text-amber-100 ring-1 ring-amber-400/40"
+                            : "text-zinc-400 hover:text-zinc-100",
+                        )}
+                      >
+                        Chave
+                      </button>
+                    </div>
+                  ) : null}
+                  {bracketsView === "bracket" && camp.stages.length > 0 ? (
+                    <ChampionshipBracketView
+                      camp={camp}
+                      revealedAll={spoilers.brackets.all}
+                      revealedIds={spoilers.brackets.ids}
+                      onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
+                    />
+                  ) : (
+                    <BracketList
+                      camp={camp}
+                      revealedAll={spoilers.brackets.all}
+                      revealedIds={spoilers.brackets.ids}
+                      onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
+                    />
+                  )}
+                </div>
               ) : null}
               {shownTab === "roster" ? (
                 <Roster
@@ -881,20 +924,27 @@ function FixtureCard({
 }) {
   const { t, locale } = useTranslation();
   const dateLocale = dateLocaleOf(locale);
-  const when = new Date(fixture.scheduledAt);
+  const when = fixture.scheduledAt ? new Date(fixture.scheduledAt) : null;
   const hasResult = fixtureHasResult(fixture);
   const visible = revealed && hasResult;
-  const whenLabel = Number.isNaN(when.getTime())
-    ? ""
-    : when.toLocaleString(dateLocale, {
-        day: "2-digit",
-        month: "short",
-        ...(layout === "stack" ? {} : { year: "numeric" as const }),
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-  const playerA = camp.players.find((player) => player.id === fixture.playerAId) ?? { name: playerName(camp, fixture.playerAId), logoUrl: "" };
-  const playerB = camp.players.find((player) => player.id === fixture.playerBId) ?? { name: playerName(camp, fixture.playerBId), logoUrl: "" };
+  const whenLabel =
+    !when || Number.isNaN(when.getTime())
+      ? ""
+      : when.toLocaleString(dateLocale, {
+          day: "2-digit",
+          month: "short",
+          ...(layout === "stack" ? {} : { year: "numeric" as const }),
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+  const playerA = camp.players.find((player) => player.id === fixture.playerAId) ?? {
+    name: fixture.feederA || playerName(camp, fixture.playerAId),
+    logoUrl: "",
+  };
+  const playerB = camp.players.find((player) => player.id === fixture.playerBId) ?? {
+    name: fixture.feederB || playerName(camp, fixture.playerBId),
+    logoUrl: "",
+  };
   const games = visible && fixture.games.length > 0 ? fixture.games : [null];
   const compact = layout === "stack";
 
@@ -914,7 +964,15 @@ function FixtureCard({
           godB={game?.godB ?? ""}
           winner={visible ? (game ? game.winnerSide : fixture.scoreA === fixture.scoreB ? null : fixture.scoreA > fixture.scoreB ? "A" : "B") : null}
           whenLabel={whenLabel}
-          roundLabel={fixture.roundLabel}
+          roundLabel={
+            fixture.seriesLength === 5
+              ? `${fixture.roundLabel} · MD5`
+              : fixture.seriesLength === 7
+                ? `${fixture.roundLabel} · MD7`
+                : fixture.seriesLength === 3
+                  ? `${fixture.roundLabel} · MD3`
+                  : fixture.roundLabel
+          }
           links={visible ? fixture.links : []}
           revealed={visible}
           compact={compact}
@@ -939,7 +997,8 @@ function BracketList({
   revealedIds: string[];
   onReveal: (fixtureId: string) => void;
 }) {
-  const rounds = [...new Set(camp.fixtures.map((fixture) => fixture.roundLabel))];
+  const listFixtures = camp.fixtures.filter((fixture) => !fixture.isBye && !fixture.isHidden);
+  const rounds = [...new Set(listFixtures.map((fixture) => fixture.roundLabel))];
   if (rounds.length === 0) return <p className="text-sm text-zinc-500">—</p>;
   return (
     <div className="space-y-6">
@@ -947,7 +1006,7 @@ function BracketList({
         <section key={round}>
           <h2 className="mb-3 font-[family-name:var(--font-display)] text-amber-100">{round}</h2>
           <div className="grid gap-3">
-            {camp.fixtures
+            {listFixtures
               .filter((fixture) => fixture.roundLabel === round)
               .map((fixture) => (
                 <FixtureCard
@@ -1175,7 +1234,13 @@ function Calendar({
   }
 
   const markedDays = useMemo(
-    () => new Set(camp.fixtures.map((fixture) => dayKeyFromIso(fixture.scheduledAt)).filter(Boolean)),
+    () =>
+      new Set(
+        camp.fixtures
+          .filter((fixture) => !fixture.isBye && !fixture.isHidden)
+          .map((fixture) => dayKeyFromIso(fixture.scheduledAt))
+          .filter(Boolean),
+      ),
     [camp.fixtures],
   );
   const finishedDays = useMemo(() => {
