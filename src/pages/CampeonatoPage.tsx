@@ -376,7 +376,9 @@ export function CampeonatoPage() {
     return <Navigate to={tabPath(base, slug, shownTab)} replace />;
   }
 
+  const championshipLoading = loading && !camp;
   const championshipMissing = !loading && !camp && Boolean(error);
+  const centeredNotice = championshipLoading || championshipMissing;
 
   return (
     <div className="relative min-h-dvh bg-[#07080c] text-zinc-100">
@@ -385,7 +387,7 @@ export function CampeonatoPage() {
       <div
         className={cn(
           "relative mx-auto px-4 sm:px-6",
-          championshipMissing
+          centeredNotice
             ? "flex min-h-dvh max-w-3xl items-center justify-center"
             : cn(shownTab === "calendar" && !sectionBlock ? "max-w-[90rem]" : "max-w-5xl", preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8"),
         )}
@@ -393,7 +395,14 @@ export function CampeonatoPage() {
         onTouchStart={preview ? onPreviewTouchStart : undefined}
         onTouchMove={preview ? onPreviewTouchMove : undefined}
       >
-        {championshipMissing ? (
+        {championshipLoading ? (
+          <div className="flex flex-col items-center px-4 text-center">
+            <p className="font-[family-name:var(--font-display)] text-4xl leading-tight tracking-wide text-amber-50 sm:text-6xl">
+              {t("pages.championship.loading").replace(/[.…]+$/, "")}
+            </p>
+            <ChampionshipLoadingSpinner />
+          </div>
+        ) : championshipMissing ? (
           <div className="flex flex-col items-center px-4 text-center">
             <p className="font-[family-name:var(--font-display)] text-4xl leading-tight tracking-wide text-amber-50 sm:text-6xl">
               {error?.replace(/\.$/, "")}
@@ -401,7 +410,7 @@ export function CampeonatoPage() {
             <ChampionshipMissingIcon />
           </div>
         ) : null}
-        {championshipMissing || preview || sectionBlock ? null : (
+        {centeredNotice || preview || sectionBlock ? null : (
         <div className="mb-8 flex items-center justify-between text-sm">
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
             Aprendendo AGE
@@ -412,8 +421,8 @@ export function CampeonatoPage() {
         </div>
         )}
 
-        {championshipMissing ? null : loading ? <p className="text-zinc-400">{t("pages.championship.loading")}</p> : null}
-        {championshipMissing ? null : error ? <p className="text-red-200">{error}</p> : null}
+        {centeredNotice || !loading ? null : <p className="text-zinc-400">{t("pages.championship.loading")}</p>}
+        {centeredNotice || !error ? null : <p className="text-red-200">{error}</p>}
         {camp && sectionBlock ? (
           <HiddenSection
             camp={camp}
@@ -627,6 +636,15 @@ export function CampeonatoPage() {
         ) : null}
       </div>
     </div>
+  );
+}
+
+function ChampionshipLoadingSpinner() {
+  return (
+    <span className="relative mt-12 inline-flex h-20 w-20 items-center justify-center text-amber-200/80" aria-hidden>
+      <span className="absolute inset-0 animate-spin rounded-full border border-amber-200/20 border-t-amber-100 drop-shadow-[0_0_22px_rgba(251,191,36,0.35)]" />
+      <span className="h-10 w-10 animate-spin rounded-full border border-amber-200/45 border-b-transparent [animation-duration:1.6s] [animation-direction:reverse]" />
+    </span>
   );
 }
 
