@@ -1010,12 +1010,34 @@ function CalendarViewToggle({ view, onChange }: { view: CalendarView; onChange: 
   );
 }
 
+function CrossedSwords({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden>
+      <path fill="currentColor" d="M3.2 18.9 12.6 9.5l1.6 1.6-9.4 9.4c-.45.45-1.15.45-1.6 0s-.45-1.15 0-1.6Z" />
+      <path fill="currentColor" d="M13.7 6.8 17.4 3.1c.35-.35.9-.35 1.25 0l1.25 1.25c.35.35.35.9 0 1.25L16.2 9.2 13.7 6.8Z" />
+      <path fill="currentColor" d="M20.8 18.9 11.4 9.5 9.8 11.1l9.4 9.4c.45.45 1.15.45 1.6 0s.45-1.15 0-1.6Z" />
+      <path fill="currentColor" d="M10.3 6.8 6.6 3.1c-.35-.35-.9-.35-1.25 0L4.1 4.35c-.35.35-.35.9 0 1.25L7.8 9.2l2.5-2.4Z" />
+      <circle cx="12" cy="13.4" r="1.15" fill="currentColor" />
+    </svg>
+  );
+}
+
+function CheckMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden fill="none">
+      <path d="m6 12.5 4 4 8-9" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function FixtureMonthCalendar({
   markedDays,
+  finishedDays,
   selectedKey,
   onSelect,
 }: {
   markedDays: Set<string>;
+  finishedDays: Set<string>;
   selectedKey: string;
   onSelect: (key: string) => void;
 }) {
@@ -1026,6 +1048,12 @@ function FixtureMonthCalendar({
     const base = parseDayKey(selectedKey) ?? new Date();
     return { year: base.getFullYear(), month: base.getMonth() };
   });
+
+  useEffect(() => {
+    const base = parseDayKey(selectedKey);
+    if (!base) return;
+    setCursor({ year: base.getFullYear(), month: base.getMonth() });
+  }, [selectedKey]);
 
   const firstWeekday = new Date(cursor.year, cursor.month, 1).getDay();
   const daysInMonth = new Date(cursor.year, cursor.month + 1, 0).getDate();
@@ -1068,6 +1096,7 @@ function FixtureMonthCalendar({
           const selected = key === selectedKey;
           const today = key === todayKey;
           const marked = markedDays.has(key);
+          const finished = finishedDays.has(key);
           return (
             <button
               key={key}
@@ -1075,24 +1104,42 @@ function FixtureMonthCalendar({
               onClick={() => onSelect(key)}
               className={cn(
                 "relative inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition",
-                selected ? "bg-amber-400 text-zinc-950" : "bg-emerald-950/80 text-emerald-200 hover:bg-emerald-900",
+                selected
+                  ? "bg-amber-400 text-zinc-950"
+                  : finished
+                    ? "bg-emerald-600 text-white hover:bg-emerald-500"
+                    : marked
+                      ? "bg-blue-600 text-white hover:bg-blue-500"
+                      : "bg-amber-300/15 text-amber-100/75 hover:bg-amber-300/25",
                 !selected && today && "ring-2 ring-amber-300/80",
               )}
             >
-              {day}
-              {marked ? <span className={cn("absolute bottom-1.5 h-1 w-1 rounded-full", selected ? "bg-zinc-950" : "bg-amber-300")} /> : null}
+              <span className={cn("leading-none", marked && "-translate-y-1")}>{day}</span>
+              {finished ? (
+                <CheckMark className={cn("absolute bottom-0.5 h-3 w-3", selected ? "text-zinc-900" : "text-emerald-50")} />
+              ) : marked ? (
+                <CrossedSwords className={cn("absolute bottom-0.5 h-3 w-3", selected ? "text-zinc-900" : "text-sky-100")} />
+              ) : null}
             </button>
           );
         })}
       </div>
       <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-t border-white/10 pt-3 text-xs text-zinc-400">
         <span className="inline-flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-emerald-800" />
+          <span className="h-2.5 w-2.5 rounded-full bg-amber-300/40" />
           {t("pages.championship.legendOpen")}
         </span>
         <span className="inline-flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-sky-100">
+            <CrossedSwords className="h-3 w-3" />
+          </span>
           {t("pages.championship.legendMatch")}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-emerald-50">
+            <CheckMark className="h-3 w-3" />
+          </span>
+          {t("pages.championship.legendFinished")}
         </span>
         <span className="inline-flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
@@ -1129,6 +1176,14 @@ function Calendar({
     () => new Set(camp.fixtures.map((fixture) => dayKeyFromIso(fixture.scheduledAt)).filter(Boolean)),
     [camp.fixtures],
   );
+  const finishedDays = useMemo(() => {
+    return new Set(
+      [...markedDays].filter((key) => {
+        const dayFixtures = camp.fixtures.filter((fixture) => dayKeyFromIso(fixture.scheduledAt) === key && fixture.status !== "cancelled");
+        return dayFixtures.length > 0 && dayFixtures.every((fixture) => fixture.status === "finished");
+      }),
+    );
+  }, [camp.fixtures, markedDays]);
   const selectedDate = parseDayKey(selectedKey) ?? new Date();
   const weekStart = startOfWeek(selectedDate);
   const todayKey = dayKeyFromDate(new Date());
@@ -1204,7 +1259,7 @@ function Calendar({
         </div>
       ) : (
         <div>
-          <FixtureMonthCalendar markedDays={markedDays} selectedKey={selectedKey} onSelect={setSelectedKey} />
+          <FixtureMonthCalendar markedDays={markedDays} finishedDays={finishedDays} selectedKey={selectedKey} onSelect={setSelectedKey} />
           <div className="mt-6 grid gap-3">
             {dayFixtures.length > 0 ? (
               dayFixtures.map((fixture) => (

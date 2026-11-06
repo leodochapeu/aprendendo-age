@@ -238,6 +238,7 @@ export const ptMessages: TranslationTree = {
       nextMonth: "Próximo mês",
       legendOpen: "Sem partida",
       legendMatch: "Com partida",
+      legendFinished: "Concluída",
       legendSelected: "Dia selecionado",
       player: "Jogador",
       played: "Jogos realizados",

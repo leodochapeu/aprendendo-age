@@ -238,6 +238,7 @@ export const enMessages: TranslationTree = {
       nextMonth: "Next month",
       legendOpen: "No match",
       legendMatch: "Has a match",
+      legendFinished: "Finished",
       legendSelected: "Selected day",
       player: "Player",
       played: "Matches played",

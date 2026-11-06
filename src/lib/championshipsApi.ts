@@ -201,7 +201,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
       id: fixture.id as string,
       roundLabel: fixture.round_label as string,
       scheduledAt: fixture.scheduled_at as string,
-      status: fixture.status === "finished" ? "finished" : "scheduled",
+      status: fixture.status === "finished" || fixture.status === "cancelled" ? fixture.status : "scheduled",
       playerAId: fixture.player_a_entry_id as string,
       playerBId: fixture.player_b_entry_id as string,
       scoreA: fixture.score_a as number,
