@@ -6,6 +6,7 @@ import {
   type ProfileStatRow,
 } from "@/lib/formRetoldApi";
 import { resolveClanIdByAomstatsTag } from "@/lib/clansApi";
+import { steamAvatarLogoPath, upgradeSteamStaticAvatarUrl } from "@/lib/steamAvatarUrl";
 
 export type AomStatsSnapshotFields = {
   aomstatsId: string | null;
@@ -55,7 +56,7 @@ export function buildAomStatsSyncPayload(stats: PlayerStatsResponse): AomStatsPr
   return {
     aomstatsId: String(stats.profileId),
     aomstatsAlias: stats.profileName.trim() || String(stats.profileId),
-    logoPath: stats.playerAvatarUrl?.trim() || null,
+    logoPath: steamAvatarLogoPath(stats.playerAvatarUrl),
     aomstatsClan: extractAomstatsClan(stats),
     rr,
     wins: row1v1.wins,
@@ -146,7 +147,7 @@ export function profileRowToAomStatsFields(row: {
 }) {
   return {
     aomstatsId: row.aomstats_id?.trim() || null,
-    logoPath: row.logo_path?.trim() || null,
+    logoPath: row.logo_path?.trim() ? upgradeSteamStaticAvatarUrl(row.logo_path.trim()) : null,
     logoPathLocked: row.logo_path_locked === true,
     aomstatsAlias: row.aomstats_alias?.trim() || null,
     aomstatsRr: row.aomstats_rr,
@@ -176,7 +177,7 @@ export function aomStatsSyncPayloadToDbUpdate(
   };
 
   if (!options?.skipLogoPath) {
-    update.logo_path = payload.logoPath;
+    update.logo_path = steamAvatarLogoPath(payload.logoPath);
   }
 
   return update;

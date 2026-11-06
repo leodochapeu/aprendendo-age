@@ -1,4 +1,5 @@
 import { getClanLogoUrl } from "@/lib/clanAssetUrl";
+import { upgradeSteamStaticAvatarUrl } from "@/lib/steamAvatarUrl";
 import { clanSlugFromTag } from "@/lib/clanSlug";
 import { createSupabasePublicClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -46,7 +47,7 @@ function mapRow(row: {
     id: row.id,
     displayName: row.display_name,
     aomstatsAlias: row.aomstats_alias,
-    logoPath: row.logo_path,
+    logoPath: row.logo_path?.trim() ? upgradeSteamStaticAvatarUrl(row.logo_path.trim()) : null,
     aomstatsId: row.aomstats_id,
     aomstatsClan: row.aomstats_clan?.trim() || null,
     clanLinkedTag: clanRow?.tag?.trim() || null,

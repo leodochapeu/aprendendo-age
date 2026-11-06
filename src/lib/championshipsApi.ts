@@ -1,3 +1,4 @@
+import { steamAvatarLogoPath, upgradeSteamStaticAvatarUrl } from "@/lib/steamAvatarUrl";
 import { createSupabaseClient, createSupabasePublicClient } from "@/lib/supabase/client";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 
@@ -105,7 +106,7 @@ const CHAMP_SELECT =
 export function championshipAssetUrl(path: string | null | undefined) {
   const value = path?.trim() ?? "";
   if (!value) return "";
-  if (/^https?:\/\//i.test(value) || value.startsWith("data:")) return value;
+  if (/^https?:\/\//i.test(value) || value.startsWith("data:")) return upgradeSteamStaticAvatarUrl(value);
   const env = getSupabaseEnv();
   if (!env) return value;
   return `${env.url.replace(/\/$/, "")}/storage/v1/object/public/${value.replace(/^\//, "")}`;
@@ -345,7 +346,7 @@ export async function submitChampionshipEntry(input: {
     profile_id: input.profileId,
     status: "pending",
     display_name: input.displayName || "Jogador",
-    logo_path: input.logoPath,
+    logo_path: steamAvatarLogoPath(input.logoPath),
   });
   if (error) return { ok: false as const, message: error.message };
   return { ok: true as const };
