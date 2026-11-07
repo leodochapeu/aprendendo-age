@@ -15,8 +15,9 @@ const PHASE_KEY: Record<ChampionshipPhase, string> = {
 
 export function CampeonatosPage() {
   const { t } = useTranslation();
-  const { status, profile, profileLoadState } = useAuth();
-  const includeDev = status === "authenticated" && profileLoadState === "ready" && profile?.role === "admin";
+  const { status, profileLoadState } = useAuth();
+  // Qualquer logado: RLS libera Modo Dev só para admin, dono ou quem pode lançar.
+  const includeDev = status === "authenticated" && profileLoadState === "ready";
   const authReady = status !== "loading" && (status !== "authenticated" || profileLoadState === "ready");
   const [rows, setRows] = useState<ChampionshipCard[]>([]);
   const [error, setError] = useState<string | null>(null);

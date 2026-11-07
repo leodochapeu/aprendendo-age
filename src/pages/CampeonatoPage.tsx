@@ -180,7 +180,8 @@ export function CampeonatoPage() {
   const panelInvalid = Boolean(panel && !panelTab);
   const { t, locale } = useTranslation();
   const { user, profile, profileLoadState, status } = useAuth();
-  const includeDev = status === "authenticated" && profileLoadState === "ready" && profile?.role === "admin";
+  // Qualquer logado: RLS libera Modo Dev só para admin, dono ou quem pode lançar.
+  const includeDev = status === "authenticated" && profileLoadState === "ready";
   const authReady = status !== "loading" && (status !== "authenticated" || profileLoadState === "ready");
   const [camp, setCamp] = useState<ChampionshipDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
