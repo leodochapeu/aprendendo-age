@@ -196,7 +196,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
       : legacy.eq("public_page", true).eq("dev_mode", false);
     const fallback = await legacy.maybeSingle();
     if (fallback.error) throw new Error(fallback.error.message);
-    row = fallback.data;
+    row = fallback.data as typeof first.data;
   }
   if (!row?.slug || !listedOnAprendendoAge(row, includeDev)) return null;
 

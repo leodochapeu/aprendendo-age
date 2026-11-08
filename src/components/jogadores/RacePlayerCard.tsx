@@ -62,7 +62,7 @@ export const RacePlayerCard = forwardRef<
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: GRID_SCRIM }} aria-hidden />
 
-      <div className={cn("relative flex items-start gap-3 p-4", flagIso && "pt-5")}>
+      <div className={cn("relative flex items-start gap-3 p-4", flagIso ? "pt-5" : false)}>
         {flagIso ? <FlagPennant country={player.country} /> : null}
         <div className="min-w-0 flex-1">
         <div className="flex items-start gap-3">
