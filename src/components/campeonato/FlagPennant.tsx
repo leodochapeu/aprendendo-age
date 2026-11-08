@@ -17,7 +17,12 @@ export function FlagPennant({
     <div className={cn("flag-pennant", className)} role="img" aria-label={label} title={label}>
       <div className="flag-pennant__rod" aria-hidden />
       <div className="flag-pennant__cloth" aria-hidden>
-        <img src={`/assets/flags/${iso}.svg`} alt="" draggable={false} />
+        <img
+          src={`/assets/flags/${iso}.svg`}
+          alt=""
+          draggable={false}
+          className={iso === "us" ? "flag-pennant__cloth-img--hoist" : undefined}
+        />
         <div className="flag-pennant__folds" />
       </div>
     </div>

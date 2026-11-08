@@ -4,6 +4,12 @@ import { getSupabaseEnv } from "@/lib/supabase/env";
 
 export type ChampionshipPhase = "registration" | "ongoing" | "finished";
 
+function entryAlias(value: unknown): string {
+  const raw = typeof value === "string" ? value : "";
+  const cleaned = raw.replace(/<color\b[^>]*>/gi, "").replace(/<\/color>/gi, "").trim();
+  return cleaned || "Jogador";
+}
+
 export type ChampionshipCard = {
   id: string;
   slug: string;
@@ -284,7 +290,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
     players: (entries ?? []).map((entry) => ({
       id: entry.id as string,
       profileId: (entry.profile_id as string) || "",
-      name: (entry.display_name as string) || "Jogador",
+      name: entryAlias(entry.display_name),
       logoUrl: championshipAssetUrl(entry.logo_path as string | null),
     })),
     fixtures: (fixtures ?? []).map((fixture) => ({

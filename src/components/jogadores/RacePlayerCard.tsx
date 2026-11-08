@@ -34,12 +34,14 @@ export const RacePlayerCard = forwardRef<
     style?: CSSProperties;
     role?: string;
     showFlag?: boolean;
+    /** Sobrescreve o nome (ex.: alias do campeonato em vez do aomstats). */
+    labelOverride?: string;
   }
->(function RacePlayerCard({ player, onNavigate, className, style, role, showFlag = false }, ref) {
+>(function RacePlayerCard({ player, onNavigate, className, style, role, showFlag = false, labelOverride }, ref) {
   const { t } = useTranslation();
   const cls = getRankClassification(player.rr);
   const theme = TIER_ACHIEVEMENT_THEME[cls.tierId];
-  const label = playerDisplayLabel(player);
+  const label = labelOverride?.trim() || playerDisplayLabel(player);
   const tierPortrait = getFormRankPortraitPath(cls.tierId);
   const roman = rankRomanStepFromRr(player.rr);
   const clanLogoUrl = playerClanLogoUrl(player);

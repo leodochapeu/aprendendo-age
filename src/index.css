@@ -715,10 +715,10 @@ body {
   right: -8%;
   height: 7.5%;
   border-radius: 999px;
-  background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 38%, #f8f8f8 54%, #b7b7b7 100%);
+  background: linear-gradient(180deg, #e4c57a 0%, #a67c2d 40%, #c9a24d 55%, #6e5018 100%);
   box-shadow:
-    inset 0 1px 0 #fff,
-    0 1px 2px rgba(0, 0, 0, 0.35);
+    inset 0 1px 0 rgba(255, 228, 170, 0.55),
+    0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .flag-pennant__rod::before,
@@ -730,8 +730,8 @@ body {
   height: 0.62rem;
   border-radius: 999px;
   transform: translateY(-50%);
-  background: radial-gradient(circle at 35% 32%, #ffffff, #d5d5d5 58%, #9c9c9c);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: radial-gradient(circle at 35% 32%, #f0dc9a, #b8892e 58%, #6b4e16);
+  box-shadow: inset 0 1px 0 rgba(255, 232, 180, 0.65);
 }
 
 .flag-pennant__rod::before {
@@ -762,6 +762,10 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
+}
+
+.flag-pennant__cloth img.flag-pennant__cloth-img--hoist {
+  object-position: left center;
 }
 
 .flag-pennant__folds {

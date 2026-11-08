@@ -568,7 +568,11 @@ export function CampeonatoPage() {
                     void submitChampionshipEntry({
                       championshipId: camp.id,
                       profileId: user.id,
-                      displayName: profile?.aomstatsAlias || profile?.displayName || "Jogador",
+                      displayName:
+                        (profile?.displayName || profile?.aomstatsAlias || "Jogador")
+                          .replace(/<color\b[^>]*>/gi, "")
+                          .replace(/<\/color>/gi, "")
+                          .trim() || "Jogador",
                       logoPath: profile?.logoPath ?? null,
                     }).then((res) => {
                       setEntryPending(false);
