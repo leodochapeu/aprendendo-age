@@ -701,9 +701,11 @@ body {
 
 .flag-pennant {
   position: relative;
-  width: 4.15rem;
-  aspect-ratio: 86 / 138;
-  transform-origin: 50% 0;
+  flex: none;
+  width: 3.55rem;
+  aspect-ratio: 86 / 124;
+  margin-top: -1.15rem;
+  transform-origin: 50% 0.6rem;
   animation: flag-pennant-sway 5.6s ease-in-out infinite;
 }
 

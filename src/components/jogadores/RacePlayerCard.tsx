@@ -62,9 +62,10 @@ export const RacePlayerCard = forwardRef<
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: GRID_SCRIM }} aria-hidden />
 
-      <div className="relative p-4">
-        {flagIso ? <FlagPennant country={player.country} className="absolute -top-3 right-2 z-20" /> : null}
-        <div className={cn("flex items-start gap-3", flagIso && "pr-16")}>
+      <div className={cn("relative flex items-start gap-3 p-4", flagIso && "pt-5")}>
+        {flagIso ? <FlagPennant country={player.country} /> : null}
+        <div className="min-w-0 flex-1">
+        <div className="flex items-start gap-3">
           <PlayerProfileLink player={player} onNavigate={onNavigate} className="block shrink-0">
             <div className={cn("relative h-12 w-12 overflow-hidden rounded-full border-2 bg-zinc-950 p-0.5 shadow-md transition hover:brightness-110", theme.stepRing)}>
               {player.logoPath ? (
@@ -135,6 +136,7 @@ export const RacePlayerCard = forwardRef<
               <span className={cn("text-sm font-semibold leading-none", theme.titleRankClass)}>{cls.subcategoryLabel}</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
