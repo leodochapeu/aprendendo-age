@@ -640,7 +640,8 @@ body {
   .roster-slide-in,
   .roster-slide-out,
   .roster-card-in,
-  .roster-progress {
+  .roster-progress,
+  .flag-pennant {
     animation: none;
   }
 }
@@ -696,6 +697,98 @@ body {
   animation-name: roster-progress;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+}
+
+.flag-pennant {
+  position: relative;
+  width: 4.15rem;
+  aspect-ratio: 86 / 138;
+  transform-origin: 50% 0;
+  animation: flag-pennant-sway 5.6s ease-in-out infinite;
+}
+
+.flag-pennant__rod {
+  position: absolute;
+  z-index: 2;
+  top: 1.5%;
+  left: -8%;
+  right: -8%;
+  height: 7.5%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 38%, #f8f8f8 54%, #b7b7b7 100%);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.flag-pennant__rod::before,
+.flag-pennant__rod::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle at 35% 32%, #ffffff, #d5d5d5 58%, #9c9c9c);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.flag-pennant__rod::before {
+  left: -0.08rem;
+}
+
+.flag-pennant__rod::after {
+  right: -0.08rem;
+}
+
+.flag-pennant__cloth {
+  position: absolute;
+  top: 8%;
+  right: 7%;
+  bottom: 0;
+  left: 7%;
+  overflow: hidden;
+  background: #123;
+  clip-path: polygon(0 0, 100% 0, 100% 73%, 50% 100%, 0 73%);
+  filter: drop-shadow(0 7px 4px rgba(0, 0, 0, 0.42));
+}
+
+.flag-pennant__cloth img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.flag-pennant__folds {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(255, 255, 255, 0.28) 14%,
+      rgba(0, 0, 0, 0.14) 32%,
+      rgba(255, 255, 255, 0.38) 50%,
+      rgba(0, 0, 0, 0.14) 68%,
+      rgba(255, 255, 255, 0.24) 84%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.32), transparent 24%, transparent 72%, rgba(0, 0, 0, 0.28));
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+@keyframes flag-pennant-sway {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.7deg);
+  }
 }
 
 .entity-card-ranked::after {

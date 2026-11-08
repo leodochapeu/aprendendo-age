@@ -142,6 +142,7 @@ export function RosterPresentation({ players, stats }: { players: ChampionshipPl
               <div className="roster-card-in mt-2">
                 <RacePlayerCard
                   player={{ ...ranked, logoPath: portrait }}
+                  showFlag
                   className="shadow-[0_24px_60px_-24px_rgba(0,0,0,0.9)]"
                 />
               </div>

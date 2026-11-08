@@ -19,10 +19,11 @@ export type AomRacePlayer = {
   winRate: string | null;
   rank: string | null;
   snapshotAt: string | null;
+  country: string | null;
 };
 
 const PUBLIC_PLAYER_SELECT =
-  "id, display_name, aomstats_alias, logo_path, aomstats_id, aomstats_clan, aomstats_rr, aomstats_wins, aomstats_losses, aomstats_win_rate, aomstats_rank, aomstats_snapshot_at, clans(logo_path, tag)";
+  "id, display_name, aomstats_alias, logo_path, aomstats_id, aomstats_clan, aomstats_rr, aomstats_wins, aomstats_losses, aomstats_win_rate, aomstats_rank, aomstats_snapshot_at, country, clans(logo_path, tag)";
 
 function mapRow(row: {
   id: string;
@@ -37,6 +38,7 @@ function mapRow(row: {
   aomstats_win_rate: string | null;
   aomstats_rank: string | null;
   aomstats_snapshot_at: string | null;
+  country?: string | null;
   clans: { logo_path: string | null; tag: string | null } | { logo_path: string | null; tag: string | null }[] | null;
 }): AomRacePlayer | null {
   if (row.aomstats_rr == null || !row.aomstats_id) return null;
@@ -58,6 +60,7 @@ function mapRow(row: {
     winRate: row.aomstats_win_rate,
     rank: row.aomstats_rank,
     snapshotAt: row.aomstats_snapshot_at,
+    country: row.country?.trim() || null,
   };
 }
 

@@ -1,6 +1,7 @@
 import { forwardRef, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 
+import { FlagPennant } from "@/components/campeonato/FlagPennant";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
@@ -13,6 +14,7 @@ import {
   playerClanTag,
   playerDisplayLabel,
 } from "@/lib/playersApi";
+import { flagIsoFromStoredCountry } from "@/lib/playerCountry";
 import {
   TIER_ACHIEVEMENT_THEME,
   getRankClassification,
@@ -31,8 +33,9 @@ export const RacePlayerCard = forwardRef<
     className?: string;
     style?: CSSProperties;
     role?: string;
+    showFlag?: boolean;
   }
->(function RacePlayerCard({ player, onNavigate, className, style, role }, ref) {
+>(function RacePlayerCard({ player, onNavigate, className, style, role, showFlag = false }, ref) {
   const { t } = useTranslation();
   const cls = getRankClassification(player.rr);
   const theme = TIER_ACHIEVEMENT_THEME[cls.tierId];
@@ -42,6 +45,7 @@ export const RacePlayerCard = forwardRef<
   const clanLogoUrl = playerClanLogoUrl(player);
   const clanTag = playerClanTag(player);
   const clanPath = playerClanPagePath(player);
+  const flagIso = showFlag ? flagIsoFromStoredCountry(player.country) : null;
 
   return (
     <div
@@ -59,7 +63,8 @@ export const RacePlayerCard = forwardRef<
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: GRID_SCRIM }} aria-hidden />
 
       <div className="relative p-4">
-        <div className="flex items-start gap-3">
+        {flagIso ? <FlagPennant country={player.country} className="absolute -top-3 right-2 z-20" /> : null}
+        <div className={cn("flex items-start gap-3", flagIso && "pr-16")}>
           <PlayerProfileLink player={player} onNavigate={onNavigate} className="block shrink-0">
             <div className={cn("relative h-12 w-12 overflow-hidden rounded-full border-2 bg-zinc-950 p-0.5 shadow-md transition hover:brightness-110", theme.stepRing)}>
               {player.logoPath ? (
