@@ -641,7 +641,7 @@ body {
   .roster-slide-out,
   .roster-card-in,
   .roster-progress,
-  .flag-pennant {
+  .flag-pennant__cloth {
     animation: none;
   }
 }
@@ -705,8 +705,6 @@ body {
   width: 3.55rem;
   aspect-ratio: 86 / 124;
   margin-top: -1.15rem;
-  transform-origin: 50% 0.6rem;
-  animation: flag-pennant-sway 5.6s ease-in-out infinite;
 }
 
 .flag-pennant__rod {
@@ -753,7 +751,9 @@ body {
   overflow: hidden;
   background: #123;
   clip-path: polygon(0 0, 100% 0, 100% 73%, 50% 100%, 0 73%);
+  transform-origin: 50% 0;
   filter: drop-shadow(0 7px 4px rgba(0, 0, 0, 0.42));
+  animation: flag-pennant-sway 5.6s ease-in-out infinite;
 }
 
 .flag-pennant__cloth img {
