@@ -96,6 +96,19 @@ export function rankRomanStepFromRr(rr: number): RankRomanStep {
 }
 
 /** Superfície do selo romano (gradiente + borda) — alinhado ao overlay HUD Meta. */
+/** Fundo do retrato quando o avatar é o ícone padrão (PNG transparente). */
+const RANK_AVATAR_DISC: Record<RankTierId, string> = {
+  bronze: "radial-gradient(circle at 38% 32%, #e8b07a 0%, #a15c28 42%, #4a2812 78%, #1c100a 100%)",
+  prata: "radial-gradient(circle at 38% 32%, #f4f4f5 0%, #a1a1aa 40%, #3f3f46 78%, #18181b 100%)",
+  ouro: "radial-gradient(circle at 38% 32%, #fde68a 0%, #d4a017 40%, #7c4a10 76%, #2a1a06 100%)",
+  esmeralda: "radial-gradient(circle at 38% 32%, #6ee7b7 0%, #059669 42%, #064e3b 78%, #022c22 100%)",
+  diamante: "radial-gradient(circle at 38% 32%, #bae6fd 0%, #38bdf8 36%, #0369a1 74%, #082f49 100%)",
+};
+
+export function rankAvatarDiscBackground(tierId: RankTierId): string {
+  return RANK_AVATAR_DISC[tierId];
+}
+
 export function rankRomanMedallionClass(tierId: RankTierId): string {
   const map: Record<RankTierId, string> = {
     bronze:

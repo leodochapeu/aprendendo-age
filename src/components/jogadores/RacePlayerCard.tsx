@@ -2,6 +2,7 @@ import { forwardRef, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 
 import { FlagPennant } from "@/components/campeonato/FlagPennant";
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
@@ -70,11 +71,7 @@ export const RacePlayerCard = forwardRef<
         <div className="flex items-start gap-3">
           <PlayerProfileLink player={player} onNavigate={onNavigate} className="block shrink-0">
             <div className={cn("relative h-12 w-12 overflow-hidden rounded-full border-2 bg-zinc-950 p-0.5 shadow-md transition hover:brightness-110", theme.stepRing)}>
-              {player.logoPath ? (
-                <img src={player.logoPath} alt="" className="h-full w-full rounded-full object-cover" width={44} height={44} />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-800 text-sm text-zinc-500">?</div>
-              )}
+              <PlayerAvatarMark src={player.logoPath} tierId={cls.tierId} width={44} height={44} className="rounded-full" />
             </div>
           </PlayerProfileLink>
 

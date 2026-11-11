@@ -1,3 +1,4 @@
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { getFormRankPortraitPath, MolduraAgeAvatar } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -84,11 +85,7 @@ function ClanMemberCard({
               frameImageSrc={tierPortrait}
               portraitUrl={player.logoPath}
               size={avatarSize}
-              emptyFallback={
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-800 text-sm text-zinc-500">
-                  ?
-                </div>
-              }
+              emptyFallback={<PlayerAvatarMark src="" tierId={cls.tierId} className="rounded-full" />}
             />
           </div>
 

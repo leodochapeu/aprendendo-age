@@ -20,6 +20,7 @@ import {
   rankRomanStepFromRr,
 } from "@/lib/rankClassification";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 
 const GRID_SCRIM =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23fff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M40 0L40 80M0 40L80 40'/%3E%3C/g%3E%3C/svg%3E\")";
@@ -342,11 +343,11 @@ export function MolduraAgeAvatar({
             theme.stepRing,
           )}
         >
-          {portraitUrl ? (
-            <img
+          {portraitUrl?.trim() ? (
+            <PlayerAvatarMark
               src={portraitUrl}
-              alt=""
-              className="h-full w-full rounded-full object-cover"
+              tierId={tierId}
+              className="rounded-full"
               width={compact ? 36 : 96}
               height={compact ? 36 : 96}
             />
@@ -402,7 +403,7 @@ export function RankProfileHero({
       ageToken={classification.ageToken}
       frameImageSrc={getFormRankPortraitPath(classification.tierId)}
       portraitUrl={player.playerAvatarUrl}
-      emptyFallback={<div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-800 text-2xl text-zinc-500">?</div>}
+      emptyFallback={<PlayerAvatarMark src="" tierId={classification.tierId} className="rounded-full" />}
       romanBadge={{ step: romanStep, medallionClass: romanMedallion }}
       t={t}
     />

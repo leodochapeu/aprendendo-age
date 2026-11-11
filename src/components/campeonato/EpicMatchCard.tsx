@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import type { Locale } from "@/i18n/types";
 import { cn } from "@/lib/cn";
 
@@ -16,7 +17,7 @@ function PlayerMark({ player, size }: { player: EpicPlayer; size: "xs" | "sm" | 
   return (
     <div className={cn("relative shrink-0 overflow-hidden rounded-full border-2 border-amber-200/70 bg-zinc-950 shadow-[0_0_18px_rgba(255,196,70,0.35)]", box)}>
       {player.logoUrl && !failed ? (
-        <img src={player.logoUrl} alt="" className="h-full w-full object-cover" onError={() => setFailed(true)} />
+        <PlayerAvatarMark src={player.logoUrl} className="h-full w-full" onError={() => setFailed(true)} />
       ) : (
         <span className="flex h-full w-full items-center justify-center font-[family-name:var(--font-display)] text-amber-100">{letter}</span>
       )}

@@ -1,5 +1,9 @@
 import { getClanLogoUrl } from "@/lib/clanAssetUrl";
-import { upgradeSteamStaticAvatarUrl } from "@/lib/steamAvatarUrl";
+import {
+  DEFAULT_PLAYER_AVATAR_SRC,
+  isSteamPlaceholderAvatar,
+  upgradeSteamStaticAvatarUrl,
+} from "@/lib/steamAvatarUrl";
 import { clanSlugFromTag } from "@/lib/clanSlug";
 import { createSupabasePublicClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
@@ -25,6 +29,13 @@ export type AomRacePlayer = {
 const PUBLIC_PLAYER_SELECT =
   "id, display_name, aomstats_alias, logo_path, aomstats_id, aomstats_clan, aomstats_rr, aomstats_wins, aomstats_losses, aomstats_win_rate, aomstats_rank, aomstats_snapshot_at, country, clans(logo_path, tag)";
 
+function playerLogoSrc(path: string | null | undefined): string | null {
+  const raw = path?.trim() ?? "";
+  if (!raw) return null;
+  if (isSteamPlaceholderAvatar(raw)) return DEFAULT_PLAYER_AVATAR_SRC;
+  return upgradeSteamStaticAvatarUrl(raw);
+}
+
 function mapRow(row: {
   id: string;
   display_name: string | null;
@@ -49,7 +60,7 @@ function mapRow(row: {
     id: row.id,
     displayName: row.display_name,
     aomstatsAlias: row.aomstats_alias,
-    logoPath: row.logo_path?.trim() ? upgradeSteamStaticAvatarUrl(row.logo_path.trim()) : null,
+    logoPath: playerLogoSrc(row.logo_path),
     aomstatsId: row.aomstats_id,
     aomstatsClan: row.aomstats_clan?.trim() || null,
     clanLinkedTag: clanRow?.tag?.trim() || null,

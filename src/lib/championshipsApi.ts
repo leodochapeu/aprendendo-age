@@ -1,4 +1,9 @@
-import { steamAvatarLogoPath, upgradeSteamStaticAvatarUrl } from "@/lib/steamAvatarUrl";
+import {
+  DEFAULT_PLAYER_AVATAR_SRC,
+  isSteamPlaceholderAvatar,
+  steamAvatarLogoPath,
+  upgradeSteamStaticAvatarUrl,
+} from "@/lib/steamAvatarUrl";
 import { createSupabaseClient, createSupabasePublicClient } from "@/lib/supabase/client";
 import { getSupabaseEnv } from "@/lib/supabase/env";
 
@@ -123,6 +128,9 @@ const CHAMP_SELECT_LEGACY =
 export function championshipAssetUrl(path: string | null | undefined) {
   const value = path?.trim() ?? "";
   if (!value) return "";
+  if (isSteamPlaceholderAvatar(value) || value.endsWith("/campeonatos/sem_avatar.png")) {
+    return DEFAULT_PLAYER_AVATAR_SRC;
+  }
   if (/^https?:\/\//i.test(value) || value.startsWith("data:")) return upgradeSteamStaticAvatarUrl(value);
   const env = getSupabaseEnv();
   if (!env) return value;

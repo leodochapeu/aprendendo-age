@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerClanLink } from "@/components/jogadores/PlayerClanLink";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
@@ -19,9 +20,11 @@ import {
 function PlayerAvatar({
   player,
   ringClass,
+  tierId,
 }: {
   player: AomRacePlayer;
   ringClass: string;
+  tierId: RankTierId;
 }) {
   const avatar = (
     <div
@@ -30,20 +33,7 @@ function PlayerAvatar({
         ringClass,
       )}
     >
-      {player.logoPath ? (
-        <img
-          src={player.logoPath}
-          alt=""
-          className="h-full w-full rounded-full object-cover"
-          width={40}
-          height={40}
-          loading="lazy"
-        />
-      ) : (
-        <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-800 text-xs text-zinc-500">
-          ?
-        </div>
-      )}
+      <PlayerAvatarMark src={player.logoPath} tierId={tierId} width={40} height={40} className="rounded-full" />
     </div>
   );
 
@@ -178,7 +168,7 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
                     >
                       <td className="px-3 py-3 text-center tabular-nums text-zinc-500">{i + 1}</td>
                       <td className="px-2 py-3">
-                        <PlayerAvatar player={player} ringClass={theme.stepRing} />
+                        <PlayerAvatar player={player} ringClass={theme.stepRing} tierId={cls.tierId} />
                       </td>
                       <td className="px-3 py-3">
                         <PlayerProfileLink player={player} className="inline-block">
@@ -237,7 +227,7 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
                 >
                   <div className="flex items-start gap-3">
                     <span className="mt-2 w-5 shrink-0 text-center text-xs tabular-nums text-zinc-500">{i + 1}</span>
-                    <PlayerAvatar player={player} ringClass={theme.stepRing} />
+                    <PlayerAvatar player={player} ringClass={theme.stepRing} tierId={cls.tierId} />
                     <div className="min-w-0 flex-1">
                       <PlayerProfileLink player={player} className="inline-block max-w-full">
                         <p className="truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-zinc-100 transition hover:text-amber-100">

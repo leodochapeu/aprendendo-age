@@ -8,6 +8,7 @@ import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
 import { RosterList } from "@/components/campeonato/RosterList";
 import { RosterPresentation } from "@/components/campeonato/RosterPresentation";
 import { ParticleField } from "@/components/campeonato/ParticleField";
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { Locale } from "@/i18n/types";
@@ -621,7 +622,7 @@ export function CampeonatoPage() {
                           <td className="px-3 py-2">
                             <span className="flex items-center gap-3">
                               <span className="h-8 w-8 shrink-0 overflow-hidden rounded-full bg-zinc-900">
-                                {row.logoUrl ? <img src={row.logoUrl} alt="" className="h-full w-full object-cover" /> : null}
+                                <PlayerAvatarMark src={row.logoUrl} className="h-full w-full" width={32} height={32} />
                               </span>
                               <span>{row.name}</span>
                             </span>

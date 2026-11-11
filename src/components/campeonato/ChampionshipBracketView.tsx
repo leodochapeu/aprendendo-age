@@ -3,6 +3,7 @@ import type {
   ChampionshipFixture,
   ChampionshipStage,
 } from "@/lib/championshipsApi";
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { cn } from "@/lib/cn";
 
 function seriesLabel(length: number | null | undefined) {
@@ -128,7 +129,7 @@ function SlotRow({
       )}
     >
       <div className="h-6 w-6 shrink-0 overflow-hidden rounded-full border border-amber-200/40 bg-zinc-900">
-        {logoUrl ? <img src={logoUrl} alt="" className="h-full w-full object-cover" /> : null}
+        <PlayerAvatarMark src={logoUrl} className="h-full w-full" width={24} height={24} />
       </div>
       <span
         className={cn(

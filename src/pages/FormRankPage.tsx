@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { GodAchievementCard, RankProfileHero } from "@/components/rank/rankProfileUi";
 import { ModalApp } from "@/components/ui/ModalApp";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -260,11 +261,7 @@ export function FormRankPage() {
                     active && "border-amber-500/60 ring-2 ring-amber-500/25",
                   )}
                 >
-                  {p.avatar_link ? (
-                    <img src={p.avatar_link} alt="" className="h-11 w-11 shrink-0 rounded-full object-cover" width={44} height={44} />
-                  ) : (
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-zinc-800 text-sm text-zinc-500">?</div>
-                  )}
+                  <PlayerAvatarMark src={p.avatar_link} className="h-11 w-11 shrink-0 rounded-full" width={44} height={44} />
                   <div className="min-w-0 flex-1">
                     <div className="text-sm text-zinc-200">
                       {(p.clan_name ?? "").trim() ? (

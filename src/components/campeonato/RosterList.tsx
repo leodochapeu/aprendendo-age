@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerClanLink } from "@/components/jogadores/PlayerClanLink";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
@@ -13,6 +14,7 @@ import {
   getRankClassification,
   rankRomanMedallionClass,
   rankRomanStepFromRr,
+  type RankTierId,
 } from "@/lib/rankClassification";
 
 type Row = {
@@ -34,7 +36,15 @@ function sortRoster(players: ChampionshipPlayer[], stats: AomRacePlayer[]): Row[
     });
 }
 
-function RosterAvatar({ src, ringClass }: { src: string; ringClass: string }) {
+function RosterAvatar({
+  src,
+  ringClass,
+  tierId,
+}: {
+  src: string;
+  ringClass: string;
+  tierId?: RankTierId | null;
+}) {
   return (
     <div
       className={cn(
@@ -42,11 +52,7 @@ function RosterAvatar({ src, ringClass }: { src: string; ringClass: string }) {
         ringClass,
       )}
     >
-      {src ? (
-        <img src={src} alt="" className="h-full w-full rounded-full object-cover" width={40} height={40} loading="lazy" />
-      ) : (
-        <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-900 text-xs text-zinc-500">?</div>
-      )}
+      <PlayerAvatarMark src={src} tierId={tierId} width={40} height={40} className="rounded-full" />
     </div>
   );
 }
@@ -137,7 +143,7 @@ export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; 
                   <td className="px-2 py-3">
                     {ranked ? (
                       <PlayerProfileLink player={ranked} className="inline-block">
-                        <RosterAvatar src={portrait} ringClass={cn("border-transparent", theme?.stepRing)} />
+                        <RosterAvatar src={portrait} tierId={cls?.tierId} ringClass={cn("border-transparent", theme?.stepRing)} />
                       </PlayerProfileLink>
                     ) : (
                       <RosterAvatar src={portrait} ringClass="border-white/20" />
@@ -198,7 +204,13 @@ export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; 
           const theme = cls ? TIER_ACHIEVEMENT_THEME[cls.tierId] : null;
           const portrait = ranked?.logoPath || row.entry.logoUrl;
           const roman = ranked ? rankRomanStepFromRr(ranked.rr) : null;
-          const avatar = <RosterAvatar src={portrait} ringClass={theme ? cn("border-transparent", theme.stepRing) : "border-white/20"} />;
+          const avatar = (
+            <RosterAvatar
+              src={portrait}
+              tierId={cls?.tierId}
+              ringClass={theme ? cn("border-transparent", theme.stepRing) : "border-white/20"}
+            />
+          );
 
           return (
             <li key={row.entry.id} className={cn("px-4 py-4", i % 2 === 0 ? "bg-transparent" : "bg-white/[0.025]")}>

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { RacePlayerMiniCard } from "@/components/jogadores/RacePlayerMiniCard";
 import { RacePlayerPopover } from "@/components/jogadores/RacePlayerPopover";
 import { getFormRankPortraitPath, MolduraAgeAvatar } from "@/components/rank/rankProfileUi";
@@ -110,11 +111,7 @@ function RaceAvatar({
             frameImageSrc={getFormRankPortraitPath(cls.tierId)}
             portraitUrl={player.logoPath}
             size="compact"
-            emptyFallback={
-              <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-800 text-[10px] text-zinc-500">
-                ?
-              </div>
-            }
+            emptyFallback={<PlayerAvatarMark src="" tierId={cls.tierId} className="rounded-full" />}
           />
         </button>
 
