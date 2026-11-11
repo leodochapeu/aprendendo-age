@@ -5,7 +5,7 @@ import { getFormRankPortraitPath, MolduraAgeAvatar } from "@/components/rank/ran
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/cn";
 import type { ChampionshipPlayer } from "@/lib/championshipsApi";
-import { type AomRacePlayer } from "@/lib/playersApi";
+import { playerClanLogoUrl, type AomRacePlayer } from "@/lib/playersApi";
 import { getRankClassification } from "@/lib/rankClassification";
 
 const HOLD_MS = 6200;
@@ -98,6 +98,7 @@ export function RosterPresentation({ players, stats }: { players: ChampionshipPl
   const ranked = byId.get(player.profileId) ?? null;
   const cls = ranked ? getRankClassification(ranked.rr) : null;
   const portrait = ranked?.logoPath || player.logoUrl || null;
+  const clanMark = ranked ? playerClanLogoUrl(ranked) : undefined;
 
   return (
     <div
@@ -117,6 +118,11 @@ export function RosterPresentation({ players, stats }: { players: ChampionshipPl
           <div className="epic-wind" aria-hidden>
             <span /><span /><span /><span /><span /><span /><span />
           </div>
+          {clanMark ? (
+            <div className="roster-clan-mark" aria-hidden>
+              <img src={clanMark} alt="" draggable={false} />
+            </div>
+          ) : null}
           <div className="relative z-[3] flex flex-col items-center px-4 pb-8 pt-10 sm:px-8">
             <div className={cn("race-avatar-hop", visible && "is-hopping")}>
               {cls ? (
