@@ -34,7 +34,7 @@ export function ClansPage() {
       setLoading(true);
       setError(null);
       try {
-        const list = await fetchClans();
+        const list = await fetchClans({ origin: "br" });
         if (cancelled) return;
         window.clearTimeout(timeoutId);
         setClans(list);
