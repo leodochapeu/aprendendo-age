@@ -68,7 +68,7 @@ export async function fetchClans(options?: { origin?: string }): Promise<Clan[]>
 
   const filtered = await selectClans(supabase, CLAN_SELECT, options?.origin);
   if (!filtered.error) {
-    return (filtered.data ?? []).map((row) => mapRow(row as Parameters<typeof mapRow>[0]));
+    return (filtered.data ?? []).map((row) => mapRow(row as unknown as Parameters<typeof mapRow>[0]));
   }
 
   const missingOrigin = /origin/i.test(filtered.error.message);
@@ -76,7 +76,7 @@ export async function fetchClans(options?: { origin?: string }): Promise<Clan[]>
 
   const legacy = await selectClans(supabase, CLAN_SELECT_LEGACY);
   if (legacy.error) throw new Error(legacy.error.message);
-  return (legacy.data ?? []).map((row) => mapRow(row as Parameters<typeof mapRow>[0]));
+  return (legacy.data ?? []).map((row) => mapRow(row as unknown as Parameters<typeof mapRow>[0]));
 }
 
 export function matchClanIdByAomstatsTag(clans: Clan[], tag: string | null | undefined): string | null {
