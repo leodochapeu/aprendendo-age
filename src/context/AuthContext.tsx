@@ -231,7 +231,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       } = await supabase.auth.getUser();
       if (!u) return { ok: false, message: "Sessão inválida." };
 
-      const clanFields = await buildAomStatsClanDbUpdate(payload, profile?.aomstatsClan);
+      const clanFields = await buildAomStatsClanDbUpdate(payload, profile?.aomstatsClan, profile?.clanId);
       const { error } = await supabase
         .from("profiles")
         .update({
@@ -258,7 +258,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await loadProfileForUser(u);
       return { ok: true };
     },
-    [loadProfileForUser, profile?.aomstatsClan, profile?.logoPathLocked, supabase],
+    [loadProfileForUser, profile?.aomstatsClan, profile?.clanId, profile?.logoPathLocked, supabase],
   );
 
   const unsyncAomStats = useCallback(async (): Promise<AuthResult> => {

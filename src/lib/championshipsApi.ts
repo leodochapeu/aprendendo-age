@@ -85,6 +85,7 @@ export type PrizePlace = {
 };
 
 export type ChampionshipDetail = ChampionshipCard & {
+  subtitle: string;
   rules: string;
   registrationEnabled: boolean;
   prizeEnabled: boolean;
@@ -114,7 +115,7 @@ export type ChampionshipDetail = ChampionshipCard & {
 };
 
 const CHAMP_SELECT =
-  "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
+  "id, slug, name, subtitle, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
 
 const CHAMP_SELECT_LEGACY =
   "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
@@ -261,6 +262,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
     id,
     slug: row.slug as string,
     name: row.name as string,
+    subtitle: typeof (row as { subtitle?: unknown }).subtitle === "string" ? ((row as { subtitle: string }).subtitle ?? "") : "",
     description: (row.description as string) ?? "",
     rules: (row.rules as string) ?? "",
     logoUrl: championshipAssetUrl(row.logo_path as string | null),

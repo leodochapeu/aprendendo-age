@@ -209,6 +209,7 @@ export const enMessages: TranslationTree = {
       loadError: "Could not load the championship.",
       notFound: "Championship not found.",
       backToIndex: "Schedule",
+      description: "Description",
       rules: "Rules",
       signup: "Sign up",
       signupCta: "I want to join",

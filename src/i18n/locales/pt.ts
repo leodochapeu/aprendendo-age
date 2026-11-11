@@ -209,6 +209,7 @@ export const ptMessages: TranslationTree = {
       loadError: "Não foi possível carregar o campeonato.",
       notFound: "Campeonato não encontrado.",
       backToIndex: "Agenda",
+      description: "Descrição",
       rules: "Regras",
       signup: "Inscrição",
       signupCta: "Quero participar",

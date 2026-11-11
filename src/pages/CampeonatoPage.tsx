@@ -5,6 +5,7 @@ import { ChampionshipBracketView } from "@/components/campeonato/ChampionshipBra
 import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
 import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
 import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
+import { RosterList } from "@/components/campeonato/RosterList";
 import { RosterPresentation } from "@/components/campeonato/RosterPresentation";
 import { ParticleField } from "@/components/campeonato/ParticleField";
 import { useAuth } from "@/context/AuthContext";
@@ -106,7 +107,7 @@ function fixtureHasResult(fixture: ChampionshipFixture) {
 }
 
 function tabHasContent(tab: Tab, camp: ChampionshipDetail) {
-  if (tab === "about") return Boolean(camp.rules.trim()) || camp.prizeEnabled;
+  if (tab === "about") return Boolean(camp.description.trim()) || Boolean(camp.rules.trim()) || camp.prizeEnabled;
   if (tab === "roster") return camp.players.length > 0 || camp.registrationEnabled;
   if (tab === "table") return camp.fixtures.some(fixtureHasResult);
   return camp.fixtures.length > 0;
@@ -390,7 +391,14 @@ export function CampeonatoPage() {
           "relative mx-auto px-4 sm:px-6",
           centeredNotice
             ? "flex min-h-dvh max-w-3xl items-center justify-center"
-            : cn(shownTab === "calendar" && !sectionBlock ? "max-w-[90rem]" : "max-w-5xl", preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8"),
+            : cn(
+                shownTab === "calendar" && !sectionBlock
+                  ? "max-w-[90rem]"
+                  : shownTab === "roster" && !sectionBlock
+                    ? "max-w-6xl"
+                    : "max-w-5xl",
+                preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8",
+              ),
         )}
         onWheel={preview ? onPreviewWheel : undefined}
         onTouchStart={preview ? onPreviewTouchStart : undefined}
@@ -460,7 +468,7 @@ export function CampeonatoPage() {
                   {camp.devMode ? " · Modo Dev" : ""}
                 </div>
                 <h1 className="font-[family-name:var(--font-display)] text-4xl text-amber-50">{camp.name}</h1>
-                {camp.description ? <ChampionshipMarkdown source={camp.description} className="mt-2 max-w-2xl" /> : null}
+                {camp.subtitle ? <ChampionshipMarkdown source={camp.subtitle} className="mt-2 max-w-2xl text-base text-zinc-100 sm:text-lg" /> : null}
               </div>
             </header>
             )}
@@ -497,6 +505,12 @@ export function CampeonatoPage() {
             <div ref={previewScrollerRef} className={cn(preview ? "min-h-0 flex-1 overflow-y-auto overscroll-y-contain pb-10" : "mt-6")} onScroll={preview ? onPreviewScroll : undefined}>
               {shownTab === "about" ? (
                 <div className="space-y-6">
+                  {camp.description ? (
+                    <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
+                      <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.description")}</h2>
+                      <ChampionshipMarkdown source={camp.description} className="mt-3" />
+                    </section>
+                  ) : null}
                   {camp.rules ? (
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
                       <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.rules")}</h2>
@@ -1519,16 +1533,7 @@ function Roster({
       {mode === "show" ? (
         <RosterPresentation players={camp.players} stats={stats} />
       ) : (
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {camp.players.map((player) => (
-          <div key={player.id} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/35 p-3">
-            <div className="h-12 w-12 overflow-hidden rounded-full bg-zinc-900">
-              {player.logoUrl ? <img src={player.logoUrl} alt="" className="h-full w-full object-cover" /> : null}
-            </div>
-            <div className="font-medium">{player.name}</div>
-          </div>
-        ))}
-      </div>
+        <RosterList players={camp.players} stats={stats} />
       )}
       {camp.registrationEnabled ? (
         <div className="mt-6 rounded-2xl border border-amber-900/40 bg-black/40 p-4">

@@ -186,15 +186,25 @@ export function aomStatsSyncPayloadToDbUpdate(
 export async function buildAomStatsClanDbUpdate(
   payload: AomStatsProfileSyncPayload,
   previousAomstatsClan: string | null | undefined,
+  previousClanId?: string | null,
 ): Promise<{ aomstats_clan: string | null; clan_id: string | null } | null> {
   const previousNorm = normalizeAomstatsClanTag(previousAomstatsClan);
   const newNorm = normalizeAomstatsClanTag(payload.aomstatsClan);
+  const resolvedClanId = await resolveClanIdByAomstatsTag(payload.aomstatsClan);
 
-  if (previousNorm === newNorm) return null;
+  if (previousNorm === newNorm) {
+    if (newNorm && !previousClanId && resolvedClanId) {
+      return {
+        aomstats_clan: payload.aomstatsClan ?? previousAomstatsClan ?? null,
+        clan_id: resolvedClanId,
+      };
+    }
+    return null;
+  }
 
   return {
     aomstats_clan: payload.aomstatsClan,
-    clan_id: await resolveClanIdByAomstatsTag(payload.aomstatsClan),
+    clan_id: resolvedClanId,
   };
 }
 

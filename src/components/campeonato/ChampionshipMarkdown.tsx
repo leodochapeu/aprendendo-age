@@ -9,6 +9,34 @@ type Block =
   | { type: "ol"; items: string[] }
   | { type: "p"; lines: string[] };
 
+const NAMED_COLORS: Record<string, string> = {
+  verde: "#22c55e",
+  vermelho: "#ef4444",
+  amarelo: "#eab308",
+  azul: "#38bdf8",
+  ciano: "#22d3ee",
+  laranja: "#f97316",
+  roxo: "#a855f7",
+  rosa: "#f472b6",
+  dourado: "#fbbf24",
+  branco: "#f8fafc",
+  cinza: "#a1a1aa",
+  preto: "#18181b",
+};
+
+const NAMED_COLOR_ALT = Object.keys(NAMED_COLORS).join("|");
+const COLOR_TAG_RE = new RegExp(
+  `<(${NAMED_COLOR_ALT}|#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6}))>([\\s\\S]*?)<\\/\\1>`,
+  "i",
+);
+
+function resolveColor(token: string): string | null {
+  const key = token.trim().toLowerCase();
+  if (NAMED_COLORS[key]) return NAMED_COLORS[key];
+  if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(token.trim())) return token.trim();
+  return null;
+}
+
 function isStructural(line: string) {
   const trimmed = line.trimStart();
   if (trimmed.startsWith("/#")) return false;
@@ -76,7 +104,7 @@ function parseMarkdown(source: string): Block[] {
   return blocks;
 }
 
-function renderInline(text: string, key: string): ReactNode[] {
+function renderMarks(text: string, key: string): ReactNode[] {
   const pattern = /\[([^\]\n]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+)\)|\*\*([^*\n]+)\*\*|\*([^*\n]+)\*/g;
   const nodes: ReactNode[] = [];
   let last = 0;
@@ -108,6 +136,36 @@ function renderInline(text: string, key: string): ReactNode[] {
     match = pattern.exec(text);
   }
   if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
+
+function renderInline(text: string, key: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  let rest = text;
+  let part = 0;
+  while (rest.length > 0) {
+    const match = COLOR_TAG_RE.exec(rest);
+    if (!match || match.index == null) {
+      nodes.push(...renderMarks(rest, `${key}-m-${part}`));
+      break;
+    }
+    if (match.index > 0) {
+      nodes.push(...renderMarks(rest.slice(0, match.index), `${key}-m-${part}`));
+    }
+    const color = resolveColor(match[1] ?? "");
+    const inner = match[2] ?? "";
+    if (color) {
+      nodes.push(
+        <span key={`${key}-c-${part}`} style={{ color }} className="font-medium">
+          {renderInline(inner, `${key}-c-${part}-i`)}
+        </span>,
+      );
+    } else {
+      nodes.push(...renderMarks(match[0], `${key}-m-${part}`));
+    }
+    rest = rest.slice(match.index + match[0].length);
+    part += 1;
+  }
   return nodes;
 }
 
