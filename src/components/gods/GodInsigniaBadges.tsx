@@ -64,7 +64,7 @@ function InsigniaFireIcon({ className }: { className?: string }) {
 function InsigniaMuscleIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
-      <path d="M9 4.5c-.8 1.6-.3 3.5 1 4.8L7.2 12l-2.5-1.2c-1-.5-2.2.2-2.4 1.3l-.6 3.4c-.2 1.2.8 2.3 2 2.3h3.1l1.2 3.6c.3.9 1.2 1.4 2.1 1.1l2.9-.9c.9-.3 1.4-1.2 1.1-2.1l-1.2-3.6h2.4c1.2 0 2.2-1.1 2-2.3l-.6-3.4c-.2-1.1-1.4-1.8-2.4-1.3L16.8 12l-2.8-2.7c1.3-1.3 1.8-3.2 1-4.8-.6-1.2-2.2-1.5-3.2-.6l-1.3 1.1-1.3-1.1c-1-.9-2.6-.6-3.2.6z" />
+      <path d="M3 18.34S4 7.09 7 3l5 1-1 3.09H9v7.16h1c2-3.07 6.14-4.19 8.64-3.07 3.3 1.53 3 6.14 0 8.18C16.24 21 9 22.43 3 18.34z" />
     </svg>
   );
 }
