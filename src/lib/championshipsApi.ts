@@ -113,6 +113,8 @@ export type ChampionshipDetail = ChampionshipCard & {
     table: boolean;
     calendar: boolean;
   };
+  /** Mostrar RR Ponderado ao lado do RR atual na lista/apresentação. */
+  showWeightedRr: boolean;
   players: ChampionshipPlayer[];
   fixtures: ChampionshipFixture[];
   stages: ChampionshipStage[];
@@ -120,7 +122,7 @@ export type ChampionshipDetail = ChampionshipCard & {
 };
 
 const CHAMP_SELECT =
-  "id, slug, name, subtitle, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
+  "id, slug, name, subtitle, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, show_weighted_rr, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
 
 const CHAMP_SELECT_LEGACY =
   "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
@@ -291,6 +293,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
       table: (row as { show_preview_table?: unknown }).show_preview_table !== false,
       calendar: (row as { show_preview_calendar?: unknown }).show_preview_calendar !== false,
     },
+    showWeightedRr: (row as { show_weighted_rr?: unknown }).show_weighted_rr === true,
     prizeEnabled: Boolean(row.prize_enabled),
     prizeMode: row.prize_mode === "donations" ? "donations" : "fixed",
     prizeNote: (row.prize_note as string) ?? "",

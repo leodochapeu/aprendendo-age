@@ -13,6 +13,7 @@ function player(overrides: Partial<AomRacePlayer>): AomRacePlayer {
     clanLinkedTag: null,
     clanLogoPath: null,
     rr: 1000,
+    rrBest: null,
     wins: null,
     losses: null,
     winRate: null,

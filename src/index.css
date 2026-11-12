@@ -481,6 +481,91 @@ body {
   animation: race-avatar-hop 0.65s ease-out;
 }
 
+/* Corrida AoM — portais de passagem de elo */
+@keyframes race-gate-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes race-gate-sheen {
+  0%,
+  42% {
+    transform: translateX(-130%) skewX(-16deg);
+  }
+  68%,
+  100% {
+    transform: translateX(230%) skewX(-16deg);
+  }
+}
+
+@keyframes race-gate-ring {
+  0% {
+    transform: scale(0.82);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+@keyframes race-gate-arrive {
+  0% {
+    filter: brightness(1) saturate(1);
+  }
+  28% {
+    filter: brightness(1.7) saturate(1.35);
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+}
+
+.race-gate-beam {
+  background: linear-gradient(90deg, transparent, var(--race-gate), transparent);
+  box-shadow:
+    0 0 12px var(--race-gate),
+    0 0 28px color-mix(in srgb, var(--race-gate) 70%, transparent);
+  animation: race-gate-pulse 2.6s ease-in-out infinite;
+}
+
+.race-gate-sheen {
+  background: linear-gradient(105deg, transparent 32%, rgba(255, 255, 255, 0.22), transparent 68%);
+  animation: race-gate-sheen 4.8s ease-in-out infinite;
+}
+
+.race-gate-ring {
+  border-color: var(--race-gate);
+  box-shadow: 0 0 16px var(--race-gate);
+  animation: race-gate-ring 2.5s ease-out infinite;
+}
+
+.race-gate.is-arrived {
+  animation: race-gate-arrive 1.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .race-gate-beam,
+  .race-gate-sheen,
+  .race-gate-ring,
+  .race-gate.is-arrived {
+    animation: none;
+  }
+
+  .race-gate-beam {
+    opacity: 0.9;
+  }
+
+  .race-gate-sheen {
+    opacity: 0;
+  }
+}
+
 /* Mapas ranqueados — brilho ocasional na borda dourada do EntityCard */
 @keyframes entity-card-ranked-shine {
   0%,

@@ -16,6 +16,7 @@ import {
   rankRomanStepFromRr,
   type RankTierId,
 } from "@/lib/rankClassification";
+import { computeWeightedRr } from "@/lib/weightedRr";
 
 type Row = {
   entry: ChampionshipPlayer;
@@ -84,7 +85,15 @@ function RankLabel({
   );
 }
 
-export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; stats: AomRacePlayer[] }) {
+export function RosterList({
+  players,
+  stats,
+  showWeightedRr = false,
+}: {
+  players: ChampionshipPlayer[];
+  stats: AomRacePlayer[];
+  showWeightedRr?: boolean;
+}) {
   const { t } = useTranslation();
   const rows = useMemo(() => sortRoster(players, stats), [players, stats]);
 
@@ -118,6 +127,11 @@ export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; 
               <th scope="col" className="w-24 whitespace-nowrap px-3 py-3 font-medium">
                 {t("pages.players.racePopoverRr")}
               </th>
+              {showWeightedRr ? (
+                <th scope="col" className="w-28 whitespace-nowrap px-3 py-3 font-medium">
+                  {t("pages.players.racePopoverWeightedRr")}
+                </th>
+              ) : null}
               <th scope="col" className="min-w-[8rem] px-3 py-3 font-medium">
                 {t("pages.players.racePopoverRank")}
               </th>
@@ -130,6 +144,7 @@ export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; 
               const theme = cls ? TIER_ACHIEVEMENT_THEME[cls.tierId] : null;
               const portrait = ranked?.logoPath || row.entry.logoUrl;
               const roman = ranked ? rankRomanStepFromRr(ranked.rr) : null;
+              const weighted = ranked && showWeightedRr ? computeWeightedRr(ranked.rr, ranked.rrBest) : null;
 
               return (
                 <tr
@@ -183,6 +198,11 @@ export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; 
                   <td className={cn("px-3 py-3 font-semibold tabular-nums", theme?.stepAccent ?? "text-zinc-500")}>
                     {ranked ? ranked.rr : "—"}
                   </td>
+                  {showWeightedRr ? (
+                    <td className={cn("px-3 py-3 font-semibold tabular-nums", theme?.stepAccent ?? "text-zinc-500")}>
+                      {weighted ?? "—"}
+                    </td>
+                  ) : null}
                   <td className="px-3 py-3">
                     {cls && roman && theme ? (
                       <RankLabel roman={roman} tierId={cls.tierId} label={cls.subcategoryLabel} className={theme.titleRankClass} />
@@ -204,6 +224,7 @@ export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; 
           const theme = cls ? TIER_ACHIEVEMENT_THEME[cls.tierId] : null;
           const portrait = ranked?.logoPath || row.entry.logoUrl;
           const roman = ranked ? rankRomanStepFromRr(ranked.rr) : null;
+          const weighted = ranked && showWeightedRr ? computeWeightedRr(ranked.rr, ranked.rrBest) : null;
           const avatar = (
             <RosterAvatar
               src={portrait}
@@ -253,6 +274,12 @@ export function RosterList({ players, stats }: { players: ChampionshipPlayer[]; 
                     <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRr")}</p>
                     <p className={cn("mt-1 text-lg font-semibold tabular-nums leading-none", theme.stepAccent)}>{ranked.rr}</p>
                   </div>
+                  {showWeightedRr ? (
+                    <div className={cn("w-[7.25rem] shrink-0 rounded-xl border border-white/10 bg-black/50 px-3 py-2 text-center ring-1 ring-inset", theme.stepRing)}>
+                      <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
+                      <p className={cn("mt-1 text-lg font-semibold tabular-nums leading-none", theme.stepAccent)}>{weighted ?? "—"}</p>
+                    </div>
+                  ) : null}
                   <div className={cn("flex min-w-0 flex-1 items-center gap-2 rounded-xl border border-white/10 bg-black/50 px-3 py-2 ring-1 ring-inset", theme.stepRing)}>
                     <span
                       className={cn(

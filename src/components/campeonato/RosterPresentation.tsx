@@ -34,7 +34,15 @@ function byRating(players: ChampionshipPlayer[], stats: Map<string, AomRacePlaye
   });
 }
 
-export function RosterPresentation({ players, stats }: { players: ChampionshipPlayer[]; stats: AomRacePlayer[] }) {
+export function RosterPresentation({
+  players,
+  stats,
+  showWeightedRr = false,
+}: {
+  players: ChampionshipPlayer[];
+  stats: AomRacePlayer[];
+  showWeightedRr?: boolean;
+}) {
   const { t } = useTranslation();
   const reduced = useReducedMotion();
   const byId = useMemo(() => new Map(stats.map((player) => [player.id, player])), [stats]);
@@ -150,6 +158,7 @@ export function RosterPresentation({ players, stats }: { players: ChampionshipPl
                   player={{ ...ranked, logoPath: portrait }}
                   labelOverride={player.name}
                   showFlag
+                  showWeightedRr={showWeightedRr}
                   className="shadow-[0_24px_60px_-24px_rgba(0,0,0,0.9)]"
                 />
               </div>

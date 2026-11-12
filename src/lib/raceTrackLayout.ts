@@ -11,14 +11,14 @@ export const RACE_AVATAR_RENDER_PX = 64;
 /** Avatar na pista em viewport lg+. */
 export const RACE_AVATAR_RENDER_PX_LG = 88;
 
-/** Desconto top/bottom da faixa (mobile top-12 + bottom-8). */
-export const RACE_TRACK_LANE_INSET_PX = 80;
+/** Desconto top/bottom da faixa (top-16 + bottom-32) para o portal de elo não ser cortado. */
+export const RACE_TRACK_LANE_INSET_PX = 192;
 
 /** Espaço extra no topo/base para o brilho da moldura não ser cortado. */
 export const RACE_AVATAR_GLOW_PAD_PX = 28;
 
-/** Classe Tailwind da faixa útil da pista (alinha com a linha vertical tracejada). */
-export const RACE_TRACK_LANE_CLASS = "absolute inset-x-0 bottom-8 top-12 sm:top-8";
+/** Classe Tailwind da faixa útil da pista (alinha com a linha vertical). */
+export const RACE_TRACK_LANE_CLASS = "absolute inset-x-0 bottom-32 top-16";
 
 export type RaceTierBand = {
   tierId: RankTierId;
@@ -101,12 +101,15 @@ function bandPlayerCounts(players: Array<{ rr: number }>): number[] {
  * Altura (px) de cada faixa de elo na pista.
  * Faixas com mais jogadores crescem para caber todos sem sobreposição.
  */
-function bandHeightsPx(players: Array<{ rr: number }>, avatarMinGapPx: number): number[] {
+function bandHeightsPx(
+  players: Array<{ rr: number }>,
+  avatarMinGapPx: number,
+  edgeClearancePx: number,
+): number[] {
   const counts = bandPlayerCounts(players);
   return counts.map((count) => {
-    if (count <= 1) return RACE_BAND_MIN_HEIGHT_PX;
-    const needed = count * avatarMinGapPx + RACE_BAND_PADDING_PX;
-    return Math.max(RACE_BAND_MIN_HEIGHT_PX, needed);
+    const body = Math.max(count, 1) * avatarMinGapPx + RACE_BAND_PADDING_PX;
+    return Math.max(RACE_BAND_MIN_HEIGHT_PX, body + edgeClearancePx * 2);
   });
 }
 
@@ -170,6 +173,8 @@ export type RaceTrackLayout = {
 export type RaceTrackLayoutOptions = {
   avatarRenderPx?: number;
   avatarGlowPadPx?: number;
+  /** Metade da altura do portal de elo (px). Avatares ficam fora dessa faixa. */
+  gateClearancePx?: number;
 };
 
 export function computeRaceTrackLayout(
@@ -178,9 +183,11 @@ export function computeRaceTrackLayout(
 ): RaceTrackLayout {
   const avatarRenderPx = options?.avatarRenderPx ?? RACE_AVATAR_RENDER_PX;
   const avatarGlowPadPx = options?.avatarGlowPadPx ?? RACE_AVATAR_GLOW_PAD_PX;
+  const gateClearancePx = options?.gateClearancePx ?? 0;
+  const edgeClearancePx = avatarRenderPx / 2 + avatarGlowPadPx + gateClearancePx;
   const avatarMinGapPx = avatarRenderPx * 1.5;
 
-  const heights = bandHeightsPx(players, avatarMinGapPx);
+  const heights = bandHeightsPx(players, avatarMinGapPx, edgeClearancePx);
   const laneHeightPx = Math.max(
     heights.reduce((sum, h) => sum + h, 0),
     RACE_BAND_MIN_HEIGHT_PX * RACE_TIER_BANDS.length,
@@ -213,9 +220,7 @@ export function computeRaceTrackLayout(
 
   const maxRr = Math.max(...players.map((p) => p.rr));
   const minGap = (avatarMinGapPx / laneHeightPx) * 100;
-  const halfAvatarPct = (avatarRenderPx / 2 / laneHeightPx) * 100;
-  const glowPct = (avatarGlowPadPx / laneHeightPx) * 100;
-  const edgeInset = halfAvatarPct + glowPct;
+  const edgeInset = (edgeClearancePx / laneHeightPx) * 100;
 
   const positions = new Map<string, number>();
 

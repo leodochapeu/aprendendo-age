@@ -22,6 +22,7 @@ import {
   rankRomanMedallionClass,
   rankRomanStepFromRr,
 } from "@/lib/rankClassification";
+import { computeWeightedRr } from "@/lib/weightedRr";
 
 const GRID_SCRIM =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23fff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M40 0L40 80M0 40L80 40'/%3E%3C/g%3E%3C/svg%3E\")";
@@ -35,10 +36,12 @@ export const RacePlayerCard = forwardRef<
     style?: CSSProperties;
     role?: string;
     showFlag?: boolean;
+    /** Exibe RR Ponderado ao lado do RR atual. */
+    showWeightedRr?: boolean;
     /** Sobrescreve o nome (ex.: alias do campeonato em vez do aomstats). */
     labelOverride?: string;
   }
->(function RacePlayerCard({ player, onNavigate, className, style, role, showFlag = false, labelOverride }, ref) {
+>(function RacePlayerCard({ player, onNavigate, className, style, role, showFlag = false, showWeightedRr = false, labelOverride }, ref) {
   const { t } = useTranslation();
   const cls = getRankClassification(player.rr);
   const theme = TIER_ACHIEVEMENT_THEME[cls.tierId];
@@ -49,6 +52,7 @@ export const RacePlayerCard = forwardRef<
   const clanTag = playerClanTag(player);
   const clanPath = playerClanPagePath(player);
   const flagIso = showFlag ? flagIsoFromStoredCountry(player.country) : null;
+  const weightedRr = showWeightedRr ? computeWeightedRr(player.rr, player.rrBest) : null;
 
   return (
     <div
@@ -121,11 +125,17 @@ export const RacePlayerCard = forwardRef<
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-[1fr_auto] gap-2.5">
+        <div className={cn("mt-4 grid gap-2.5", showWeightedRr ? "grid-cols-[1fr_1fr_auto]" : "grid-cols-[1fr_auto]")}>
           <div className={cn("min-w-[5.5rem] rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 text-center ring-1 ring-inset", theme.stepRing)}>
             <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRr")}</p>
             <p className={cn("mt-1 text-xl font-semibold tabular-nums leading-none", theme.stepAccent)}>{player.rr}</p>
           </div>
+          {showWeightedRr ? (
+            <div className={cn("min-w-[5.5rem] rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 text-center ring-1 ring-inset", theme.stepRing)}>
+              <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
+              <p className={cn("mt-1 text-xl font-semibold tabular-nums leading-none", theme.stepAccent)}>{weightedRr ?? "—"}</p>
+            </div>
+          ) : null}
           <div className={cn("flex min-w-[5.5rem] flex-col items-center justify-center rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 ring-1 ring-inset", theme.stepRing)}>
             <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRank")}</p>
             <div className="mt-1.5 flex items-center gap-2 whitespace-nowrap">

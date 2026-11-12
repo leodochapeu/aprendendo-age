@@ -18,6 +18,8 @@ export type AomRacePlayer = {
   clanLinkedTag: string | null;
   clanLogoPath: string | null;
   rr: number;
+  /** Melhor RR (highest rating) do AoM Stats; null se ainda não sincronizado. */
+  rrBest: number | null;
   wins: number | null;
   losses: number | null;
   winRate: string | null;
@@ -27,7 +29,23 @@ export type AomRacePlayer = {
 };
 
 const PUBLIC_PLAYER_SELECT =
+  "id, display_name, aomstats_alias, logo_path, aomstats_id, aomstats_clan, aomstats_rr, aomstats_rr_best, aomstats_wins, aomstats_losses, aomstats_win_rate, aomstats_rank, aomstats_snapshot_at, country, clans(logo_path, tag)";
+
+const PUBLIC_PLAYER_SELECT_LEGACY =
   "id, display_name, aomstats_alias, logo_path, aomstats_id, aomstats_clan, aomstats_rr, aomstats_wins, aomstats_losses, aomstats_win_rate, aomstats_rank, aomstats_snapshot_at, country, clans(logo_path, tag)";
+
+async function selectPublicPlayers(
+  run: (columns: string) => PromiseLike<{ data: unknown[] | null; error: { message: string } | null }>,
+): Promise<unknown[]> {
+  const first = await run(PUBLIC_PLAYER_SELECT);
+  if (!first.error) return first.data ?? [];
+  if (/aomstats_rr_best/i.test(first.error.message)) {
+    const legacy = await run(PUBLIC_PLAYER_SELECT_LEGACY);
+    if (legacy.error) throw new Error(legacy.error.message);
+    return legacy.data ?? [];
+  }
+  throw new Error(first.error.message);
+}
 
 function playerLogoSrc(path: string | null | undefined): string | null {
   const raw = path?.trim() ?? "";
@@ -44,6 +62,7 @@ function mapRow(row: {
   aomstats_id: string | null;
   aomstats_clan: string | null;
   aomstats_rr: number | null;
+  aomstats_rr_best?: number | null;
   aomstats_wins: number | null;
   aomstats_losses: number | null;
   aomstats_win_rate: string | null;
@@ -55,6 +74,7 @@ function mapRow(row: {
   if (row.aomstats_rr == null || !row.aomstats_id) return null;
 
   const clanRow = Array.isArray(row.clans) ? (row.clans[0] ?? null) : row.clans;
+  const rrBestRaw = row.aomstats_rr_best;
 
   return {
     id: row.id,
@@ -66,6 +86,7 @@ function mapRow(row: {
     clanLinkedTag: clanRow?.tag?.trim() || null,
     clanLogoPath: clanRow?.logo_path?.trim() || null,
     rr: row.aomstats_rr,
+    rrBest: typeof rrBestRaw === "number" && Number.isFinite(rrBestRaw) && rrBestRaw > 0 ? Math.trunc(rrBestRaw) : null,
     wins: row.aomstats_wins,
     losses: row.aomstats_losses,
     winRate: row.aomstats_win_rate,
@@ -114,17 +135,17 @@ export async function fetchClanPlayers(clanId: string): Promise<AomRacePlayer[]>
   const supabase = createSupabasePublicClient();
   if (!supabase) return [];
 
-  const { data, error } = await supabase
-    .from("profiles")
-    .select(PUBLIC_PLAYER_SELECT)
-    .eq("clan_id", clanId)
-    .not("aomstats_rr", "is", null)
-    .not("aomstats_id", "is", null)
-    .order("aomstats_rr", { ascending: false });
+  const data = await selectPublicPlayers((columns) =>
+    supabase
+      .from("profiles")
+      .select(columns)
+      .eq("clan_id", clanId)
+      .not("aomstats_rr", "is", null)
+      .not("aomstats_id", "is", null)
+      .order("aomstats_rr", { ascending: false }),
+  );
 
-  if (error) throw new Error(error.message);
-
-  return (data ?? [])
+  return data
     .map((row) => mapRow(row as Parameters<typeof mapRow>[0]))
     .filter((p): p is AomRacePlayer => p != null);
 }
@@ -137,10 +158,11 @@ export async function fetchAomRacePlayersByIds(ids: string[]): Promise<AomRacePl
   const supabase = createSupabasePublicClient();
   if (!supabase) return [];
 
-  const { data, error } = await supabase.from("profiles").select(PUBLIC_PLAYER_SELECT).in("id", unique);
-  if (error) throw new Error(error.message);
+  const data = await selectPublicPlayers((columns) =>
+    supabase.from("profiles").select(columns).in("id", unique),
+  );
 
-  return (data ?? [])
+  return data
     .map((row) => mapRow(row as Parameters<typeof mapRow>[0]))
     .filter((player): player is AomRacePlayer => player != null);
 }
@@ -152,16 +174,16 @@ export async function fetchAomRacePlayers(): Promise<AomRacePlayer[]> {
   const supabase = createSupabasePublicClient();
   if (!supabase) return [];
 
-  const { data, error } = await supabase
-    .from("profiles")
-    .select(PUBLIC_PLAYER_SELECT)
-    .not("aomstats_rr", "is", null)
-    .not("aomstats_id", "is", null)
-    .order("aomstats_rr", { ascending: false });
+  const data = await selectPublicPlayers((columns) =>
+    supabase
+      .from("profiles")
+      .select(columns)
+      .not("aomstats_rr", "is", null)
+      .not("aomstats_id", "is", null)
+      .order("aomstats_rr", { ascending: false }),
+  );
 
-  if (error) throw new Error(error.message);
-
-  return (data ?? [])
+  return data
     .map((row) => mapRow(row as Parameters<typeof mapRow>[0]))
     .filter((p): p is AomRacePlayer => p != null);
 }
@@ -173,16 +195,18 @@ export async function fetchAomRacePlayerById(profileId: string): Promise<AomRace
   const supabase = createSupabasePublicClient();
   if (!supabase) return null;
 
-  const { data, error } = await supabase
-    .from("profiles")
-    .select(PUBLIC_PLAYER_SELECT)
-    .eq("id", profileId)
-    .not("aomstats_rr", "is", null)
-    .not("aomstats_id", "is", null)
-    .maybeSingle();
+  const rows = await selectPublicPlayers(async (columns) => {
+    const res = await supabase
+      .from("profiles")
+      .select(columns)
+      .eq("id", profileId)
+      .not("aomstats_rr", "is", null)
+      .not("aomstats_id", "is", null)
+      .maybeSingle();
+    return { data: res.data ? [res.data] : [], error: res.error };
+  });
 
-  if (error) throw new Error(error.message);
+  const data = rows[0];
   if (!data) return null;
-
   return mapRow(data as Parameters<typeof mapRow>[0]);
 }

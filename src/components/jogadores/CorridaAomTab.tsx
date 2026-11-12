@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { RacePlayerMiniCard } from "@/components/jogadores/RacePlayerMiniCard";
@@ -12,9 +12,14 @@ import {
   RACE_AVATAR_RENDER_PX,
   RACE_AVATAR_RENDER_PX_LG,
   RACE_TRACK_LANE_CLASS,
+  type RaceTierMarker,
 } from "@/lib/raceTrackLayout";
-import { getRankGuideTiers } from "@/lib/rankGuideTiers";
-import { getRankClassification, TIER_ACHIEVEMENT_THEME } from "@/lib/rankClassification";
+import { getRankGuideTiers, type RankGuideTier } from "@/lib/rankGuideTiers";
+import {
+  getRankClassification,
+  TIER_ACHIEVEMENT_THEME,
+  type RankTierId,
+} from "@/lib/rankClassification";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 
 type PlacedPlayer = AomRacePlayer & {
@@ -127,6 +132,203 @@ function RaceAvatar({
   );
 }
 
+const TIER_GATE_COLOR: Record<RankTierId, string> = {
+  bronze: "#d97706",
+  prata: "#d4d4d8",
+  ouro: "#fbbf24",
+  esmeralda: "#34d399",
+  diamante: "#38bdf8",
+};
+
+const GATE_CLEARANCE_PX = 76;
+const GATE_CLEARANCE_PX_LG = 112;
+
+function hexWithAlpha(hex: string, alpha: number): string {
+  const clamped = Math.round(Math.min(1, Math.max(0, alpha)) * 255)
+    .toString(16)
+    .padStart(2, "0");
+  return `${hex}${clamped}`;
+}
+
+function RaceTierJump({
+  tiers,
+  activeTier,
+  onJump,
+  onOverview,
+}: {
+  tiers: RankGuideTier[];
+  activeTier: RankTierId | null;
+  onJump: (tierId: RankTierId) => void;
+  onOverview: () => void;
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <nav
+      aria-label={t("pages.players.raceJumpLabel")}
+      className="mb-6 flex flex-wrap justify-center gap-2 rounded-2xl border border-zinc-800/80 bg-zinc-950/90 px-3 py-3 shadow-lg shadow-black/40"
+    >
+      <button
+        type="button"
+        aria-pressed={activeTier === null}
+        onClick={onOverview}
+        className={cn(
+          "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition",
+          activeTier === null
+            ? "border-amber-500/55 bg-amber-950/35 text-amber-100 ring-1 ring-amber-500/25"
+            : "border-aom-border/60 bg-zinc-900/80 text-zinc-300 hover:border-amber-500/40 hover:text-amber-100",
+        )}
+      >
+        {t("pages.players.tierFilterAll")}
+      </button>
+      {tiers.map((tier) => {
+        const tierId = tier.id as RankTierId;
+        const active = activeTier === tierId;
+        return (
+          <button
+            key={tier.id}
+            type="button"
+            aria-pressed={active}
+            onClick={() => onJump(tierId)}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition",
+              active
+                ? "border-amber-500/55 bg-amber-950/35 text-amber-100 ring-1 ring-amber-500/25"
+                : "border-aom-border/60 bg-zinc-900/80 text-zinc-300 hover:border-amber-500/40 hover:text-amber-100",
+            )}
+          >
+            <img
+              src={getFormRankPortraitPath(tierId)}
+              alt=""
+              className="h-[1.125rem] w-[1.125rem] shrink-0 object-contain opacity-95 sm:h-5 sm:w-5"
+              width={20}
+              height={20}
+            />
+            <span>{tier.rankName}</span>
+          </button>
+        );
+      })}
+    </nav>
+  );
+}
+
+function RaceTierGate({
+  marker,
+  tier,
+  arrived,
+  delayMs,
+}: {
+  marker: RaceTierMarker;
+  tier: RankGuideTier;
+  arrived: boolean;
+  delayMs: number;
+}) {
+  const color = TIER_GATE_COLOR[marker.tierId];
+  const theme = TIER_ACHIEVEMENT_THEME[marker.tierId];
+  const iconSrc = getTokenAssetUrl(tier.token);
+  const portraitSrc = getFormRankPortraitPath(marker.tierId);
+
+  return (
+    <div
+      id={`race-gate-${marker.tierId}`}
+      data-race-gate={marker.tierId}
+      className={cn("race-gate pointer-events-none absolute inset-x-0 z-20 translate-y-1/2", arrived && "is-arrived")}
+      style={{
+        bottom: `${marker.percent}%`,
+        ["--race-gate" as string]: color,
+      }}
+    >
+      <div
+        className="pointer-events-none absolute inset-x-[6%] top-1/2 h-16 -translate-y-1/2 rounded-full blur-2xl sm:h-20"
+        style={{ background: color, opacity: 0.28 }}
+        aria-hidden
+      />
+      <div
+        className="race-gate-beam pointer-events-none absolute inset-x-0 top-1/2 h-[3px] -translate-y-1/2"
+        style={{ animationDelay: `${delayMs}ms` }}
+        aria-hidden
+      />
+
+      <div className="relative grid grid-cols-[minmax(0,1fr)_3.25rem_minmax(0,1fr)] items-center gap-1.5 px-1 sm:grid-cols-[minmax(0,1fr)_4.75rem_minmax(0,1fr)] sm:gap-3 sm:px-2 lg:grid-cols-[minmax(0,1fr)_6.5rem_minmax(0,1fr)] lg:gap-6">
+        <article
+          className={cn(
+            "relative h-[6.5rem] w-full max-w-[11rem] justify-self-start overflow-hidden rounded-2xl border px-2.5 py-2 shadow-lg sm:h-[8.5rem] sm:max-w-[16rem] sm:rounded-3xl sm:px-4 sm:py-3 lg:h-[11.25rem] lg:max-w-[22rem] lg:px-5",
+            theme.surfaceClass,
+          )}
+          style={{
+            borderColor: hexWithAlpha(color, 0.55),
+            boxShadow: `0 0 28px ${hexWithAlpha(color, 0.28)}, 0 16px 40px rgba(0,0,0,0.45)`,
+          }}
+        >
+          <span className="race-gate-sheen pointer-events-none absolute inset-y-0 w-1/2" style={{ animationDelay: `${delayMs}ms` }} aria-hidden />
+          <div className="relative flex h-full flex-col items-center justify-center text-center">
+            {iconSrc ? (
+              <img
+                src={iconSrc}
+                alt=""
+                className="h-10 w-10 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+                style={{ filter: `drop-shadow(0 0 10px ${color})` }}
+                width={64}
+                height={64}
+              />
+            ) : null}
+            <p
+              className={cn(
+                "mt-1 font-[family-name:var(--font-display)] text-sm font-semibold leading-none sm:mt-2 sm:text-lg lg:text-2xl",
+                tier.titleClass,
+              )}
+            >
+              {tier.rankName}
+            </p>
+            <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-zinc-400 sm:text-[11px]">{tier.eraName}</p>
+            <p className={cn("mt-0.5 font-mono text-[10px] sm:text-xs", theme.stepAccent)}>{tier.rrBand}</p>
+          </div>
+        </article>
+
+        <div className="relative mx-auto flex h-12 w-12 items-center justify-center sm:h-[4.75rem] sm:w-[4.75rem] lg:h-24 lg:w-24" aria-hidden>
+          <span className="race-gate-ring absolute inset-0 rounded-full border-2" style={{ animationDelay: `${delayMs}ms` }} />
+          <span
+            className="race-gate-ring absolute inset-1 rounded-full border"
+            style={{ animationDelay: `${delayMs + 700}ms` }}
+          />
+          <span
+            className="absolute inset-1.5 rounded-full border bg-zinc-950/90 sm:inset-2"
+            style={{ borderColor: color, boxShadow: `inset 0 0 16px ${hexWithAlpha(color, 0.45)}` }}
+          />
+          <img src={portraitSrc} alt="" className="relative h-7 w-7 object-contain sm:h-10 sm:w-10 lg:h-14 lg:w-14" />
+        </div>
+
+        <article
+          className={cn(
+            "relative h-[6.5rem] w-full max-w-[11rem] justify-self-end overflow-hidden rounded-2xl border px-2 py-2 text-center shadow-lg sm:h-[8.5rem] sm:max-w-[16rem] sm:rounded-3xl sm:px-4 lg:h-[11.25rem] lg:max-w-[22rem]",
+            theme.surfaceClass,
+          )}
+          style={{
+            borderColor: hexWithAlpha(color, 0.55),
+            boxShadow: `0 0 28px ${hexWithAlpha(color, 0.28)}, 0 16px 40px rgba(0,0,0,0.45)`,
+          }}
+        >
+          <span
+            className="race-gate-sheen pointer-events-none absolute inset-y-0 w-1/2"
+            style={{ animationDelay: `${delayMs + 400}ms` }}
+            aria-hidden
+          />
+          <div className="relative flex h-full flex-col items-center justify-center">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-zinc-400 sm:text-[11px]">RR</p>
+            <p
+              className="font-[family-name:var(--font-display)] text-3xl font-semibold leading-none tabular-nums sm:text-5xl lg:text-7xl"
+              style={{ color, textShadow: `0 0 18px ${hexWithAlpha(color, 0.75)}` }}
+            >
+              {marker.rrStart}
+            </p>
+            <p className={cn("mt-1 text-[10px] uppercase tracking-[0.14em] sm:text-xs", theme.stepAccent)}>{tier.eraName}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  );
+}
+
 export function CorridaAomTab({ players }: { players: AomRacePlayer[] }) {
   const { t } = useTranslation();
   const tiers = useMemo(() => getRankGuideTiers(t), [t]);
@@ -136,6 +338,7 @@ export function CorridaAomTab({ players }: { players: AomRacePlayer[] }) {
     () =>
       computeRaceTrackLayout(players, {
         avatarRenderPx: isLg ? RACE_AVATAR_RENDER_PX_LG : RACE_AVATAR_RENDER_PX,
+        gateClearancePx: isLg ? GATE_CLEARANCE_PX_LG : GATE_CLEARANCE_PX,
       }),
     [players, isLg],
   );
@@ -160,6 +363,57 @@ export function CorridaAomTab({ players }: { players: AomRacePlayer[] }) {
   const hoppingIds = useRandomHopPlayerIds(placed.map((p) => p.id));
 
   const [popover, setPopover] = useState<{ player: PlacedPlayer; anchor: HTMLElement } | null>(null);
+  const [activeTier, setActiveTier] = useState<RankTierId | null>(null);
+  const [arrivedTier, setArrivedTier] = useState<RankTierId | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = trackRef.current;
+    if (!root) return;
+    const nodes = [...root.querySelectorAll<HTMLElement>("[data-race-gate]")];
+    if (nodes.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const hit = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!hit) return;
+        const id = hit.target.getAttribute("data-race-gate");
+        if (id === "bronze" || id === "prata" || id === "ouro" || id === "esmeralda" || id === "diamante") {
+          setActiveTier(id);
+        }
+      },
+      { root: null, rootMargin: "-32% 0px -38% 0px", threshold: [0.35, 0.6, 0.85] },
+    );
+
+    for (const node of nodes) observer.observe(node);
+    return () => observer.disconnect();
+  }, [layout.markers]);
+
+  useEffect(() => {
+    if (!arrivedTier) return;
+    const timeoutId = window.setTimeout(() => setArrivedTier(null), 1200);
+    return () => window.clearTimeout(timeoutId);
+  }, [arrivedTier]);
+
+  const scrollToTier = (tierId: RankTierId) => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setActiveTier(tierId);
+    setArrivedTier(null);
+    document.getElementById(`race-gate-${tierId}`)?.scrollIntoView({
+      behavior: reduce ? "auto" : "smooth",
+      block: "center",
+    });
+    window.requestAnimationFrame(() => setArrivedTier(tierId));
+  };
+
+  const scrollToOverview = () => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setActiveTier(null);
+    setArrivedTier(null);
+    trackRef.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  };
 
   const handleAvatarSelect = (player: PlacedPlayer, anchor: HTMLElement) => {
     setPopover((prev) => (prev?.player.id === player.id ? null : { player, anchor }));
@@ -174,88 +428,50 @@ export function CorridaAomTab({ players }: { players: AomRacePlayer[] }) {
   }
 
   return (
-    <div className="relative z-0 mx-auto w-full max-w-2xl lg:max-w-5xl">
-      <p className="mb-6 text-center text-sm text-zinc-400 sm:mb-8">{t("pages.players.raceDesc")}</p>
+    <div className="relative z-0 mx-auto w-full">
+      <p className="mb-4 text-center text-sm text-zinc-400 sm:mb-5">{t("pages.players.raceDesc")}</p>
+      <RaceTierJump tiers={tiers} activeTier={activeTier} onJump={scrollToTier} onOverview={scrollToOverview} />
 
-      <div
-        className="relative mx-auto w-full max-w-md overflow-visible px-4 pb-8 pt-4 sm:px-8 sm:pt-6 lg:max-w-3xl lg:px-12 lg:pb-10 lg:pt-8"
-        style={{ minHeight: `${trackMinHeight}px` }}
-      >
+      <div ref={trackRef} className="relative mx-auto w-full scroll-mt-28 overflow-visible" style={{ minHeight: `${trackMinHeight}px` }}>
         <div className={cn(RACE_TRACK_LANE_CLASS)}>
-          <div
-            className="pointer-events-none absolute inset-y-0 left-1/2 w-[3px] -translate-x-1/2 rounded-full lg:w-1"
-            aria-hidden
-            style={{
-              background:
-                "repeating-linear-gradient(to top, rgba(250,204,21,0.35) 0 12px, rgba(39,39,42,0.9) 12px 24px)",
-              boxShadow: "0 0 20px rgba(250,204,21,0.15)",
-            }}
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 left-1/2 w-16 -translate-x-1/2 rounded-full border border-dashed border-zinc-700/40 lg:w-28"
-            aria-hidden
-          />
-
-          {layout.markers.map((marker) => {
-            const tier = tiers.find((x) => x.id === marker.tierId);
-            if (!tier) return null;
-            const iconSrc = getTokenAssetUrl(tier.token);
-            const theme = TIER_ACHIEVEMENT_THEME[marker.tierId];
-
+          {layout.markers.map((marker, index) => {
+            const next = layout.markers[index + 1]?.percent ?? 100;
+            const color = TIER_GATE_COLOR[marker.tierId];
             return (
-              <div
-                key={marker.tierId}
-                className="pointer-events-none absolute left-0 right-0 z-20"
-                style={{ bottom: `${marker.percent}%`, transform: "translateY(0)" }}
-              >
-                <div className="relative flex items-end pb-0">
-                  <div
-                    className={cn(
-                      "flex w-[7.5rem] shrink-0 flex-col items-center rounded-2xl border border-aom-border/50 bg-zinc-950/90 px-2 py-2.5 shadow-lg sm:w-[8.25rem] sm:px-2.5 lg:w-44 lg:rounded-2xl lg:px-3.5 lg:py-3.5",
-                      theme.surfaceClass,
-                    )}
-                  >
-                    {iconSrc ? (
-                      <img
-                        src={iconSrc}
-                        alt=""
-                        className="h-9 w-9 object-contain sm:h-10 sm:w-10 lg:h-14 lg:w-14"
-                        width={56}
-                        height={56}
-                      />
-                    ) : null}
-                    <p
-                      className={cn(
-                        "mt-1.5 text-center font-[family-name:var(--font-display)] text-[11px] font-semibold leading-tight sm:text-xs lg:mt-2 lg:text-sm",
-                        tier.titleClass,
-                      )}
-                    >
-                      {tier.rankName}
-                      <span className="mt-0.5 block text-[9px] font-normal normal-case tracking-normal text-zinc-400 lg:text-[10px]">
-                        {tier.eraName}
-                      </span>
-                    </p>
-                    <p className="mt-0.5 font-mono text-[9px] text-zinc-500 lg:text-[11px]">{tier.rrBand}</p>
-                  </div>
-
-                  <div className="absolute bottom-0 left-[7.5rem] right-0 flex items-center gap-2 sm:left-[8.25rem] lg:left-44 lg:gap-3">
-                    <div
-                      className="h-px min-w-0 flex-1 bg-gradient-to-r from-amber-500/40 to-transparent"
-                      aria-hidden
-                    />
-                    <div
-                      className={cn(
-                        "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 bg-zinc-950 text-[10px] font-bold tabular-nums shadow-md sm:h-9 sm:w-9 lg:h-12 lg:w-12 lg:text-sm",
-                        theme.stepRing,
-                        theme.stepAccent,
-                      )}
-                      aria-hidden
-                    >
-                      {marker.rrStart}
-                    </div>
-                  </div>
-                </div>
+              <div key={`${marker.tierId}-session`} className="pointer-events-none absolute inset-x-0" style={{ bottom: `${marker.percent}%`, height: `${next - marker.percent}%` }} aria-hidden>
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `linear-gradient(90deg, ${hexWithAlpha(color, 0.2)} 0%, transparent 34%, transparent 66%, ${hexWithAlpha(color, 0.2)} 100%)`,
+                  }}
+                />
+                <div
+                  className="absolute bottom-0 left-1/2 top-0 w-1 -translate-x-1/2 rounded-full"
+                  style={{
+                    background: `linear-gradient(to top, ${color}, ${hexWithAlpha(color, 0.25)})`,
+                    boxShadow: `0 0 16px ${hexWithAlpha(color, 0.65)}`,
+                  }}
+                />
               </div>
+            );
+          })}
+
+          <div
+            className="pointer-events-none absolute inset-y-0 left-1/2 w-14 -translate-x-1/2 rounded-full border border-dashed border-zinc-700/35 sm:w-20 lg:w-28"
+            aria-hidden
+          />
+
+          {layout.markers.map((marker, index) => {
+            const tier = tiers.find((item) => item.id === marker.tierId);
+            if (!tier) return null;
+            return (
+              <RaceTierGate
+                key={marker.tierId}
+                marker={marker}
+                tier={tier}
+                arrived={arrivedTier === marker.tierId}
+                delayMs={index * 280}
+              />
             );
           })}
 

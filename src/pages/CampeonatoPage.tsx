@@ -1494,8 +1494,13 @@ function Roster({
 }) {
   const { t } = useTranslation();
   const [mode, setMode] = useState<"list" | "show">("list");
+  const [showWeightedRr, setShowWeightedRr] = useState(camp.showWeightedRr);
   const [stats, setStats] = useState<AomRacePlayer[]>([]);
   const profileKey = camp.players.map((player) => player.profileId).join("|");
+
+  useEffect(() => {
+    setShowWeightedRr(camp.showWeightedRr);
+  }, [camp.showWeightedRr]);
 
   useEffect(() => {
     let cancelled = false;
@@ -1512,7 +1517,16 @@ function Roster({
   return (
     <div>
       {camp.players.length > 0 ? (
-        <div className="mb-4 flex justify-end">
+        <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
+          <label className="inline-flex cursor-pointer items-center gap-2 text-xs text-zinc-300">
+            <input
+              type="checkbox"
+              checked={showWeightedRr}
+              onChange={(event) => setShowWeightedRr(event.target.checked)}
+              className="size-3.5 rounded border-white/20 bg-zinc-950 text-amber-400 focus:ring-amber-400/40"
+            />
+            <span>{t("pages.championship.showWeightedRr")}</span>
+          </label>
           <div role="group" aria-label={t("pages.championship.rosterView")} className="inline-flex rounded-lg border border-white/10 bg-zinc-900/50 p-0.5">
             {(["list", "show"] as const).map((option) => (
               <button
@@ -1532,9 +1546,9 @@ function Roster({
         </div>
       ) : null}
       {mode === "show" ? (
-        <RosterPresentation players={camp.players} stats={stats} />
+        <RosterPresentation players={camp.players} stats={stats} showWeightedRr={showWeightedRr} />
       ) : (
-        <RosterList players={camp.players} stats={stats} />
+        <RosterList players={camp.players} stats={stats} showWeightedRr={showWeightedRr} />
       )}
       {camp.registrationEnabled ? (
         <div className="mt-6 rounded-2xl border border-amber-900/40 bg-black/40 p-4">
