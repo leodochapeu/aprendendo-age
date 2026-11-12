@@ -75,8 +75,15 @@ function mapRow(row: {
   };
 }
 
+function stripGameColorTags(value: string): string {
+  return value.replace(/<color\b[^>]*>/gi, "").replace(/<\/color>/gi, "").trim();
+}
+
+/** Alias do perfil (`display_name`); o nome do AoM Stats só entra quando não há alias. */
 export function playerDisplayLabel(player: AomRacePlayer): string {
-  return player.aomstatsAlias?.trim() || player.displayName?.trim() || "?";
+  const alias = stripGameColorTags(player.displayName ?? "");
+  const aomstatsName = stripGameColorTags(player.aomstatsAlias ?? "");
+  return alias || aomstatsName || "?";
 }
 
 export function playerClanLogoUrl(player: AomRacePlayer): string | undefined {
