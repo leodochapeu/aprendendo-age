@@ -275,8 +275,8 @@ export function RosterList({
                     <p className={cn("mt-1 text-lg font-semibold tabular-nums leading-none", theme.stepAccent)}>{ranked.rr}</p>
                   </div>
                   {showWeightedRr ? (
-                    <div className={cn("w-[7.25rem] shrink-0 rounded-xl border border-white/10 bg-black/50 px-3 py-2 text-center ring-1 ring-inset", theme.stepRing)}>
-                      <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
+                    <div className={cn("w-max shrink-0 rounded-xl border border-white/10 bg-black/50 px-3 py-2 text-center ring-1 ring-inset", theme.stepRing)}>
+                      <p className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
                       <p className={cn("mt-1 text-lg font-semibold tabular-nums leading-none", theme.stepAccent)}>{weighted ?? "—"}</p>
                     </div>
                   ) : null}

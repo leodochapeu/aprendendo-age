@@ -60,7 +60,8 @@ export const RacePlayerCard = forwardRef<
       role={role}
       aria-label={label}
       className={cn(
-        "relative w-fit min-w-[17rem] max-w-[min(calc(100vw-1.25rem),28rem)]",
+        "relative w-fit min-w-[17rem]",
+        showWeightedRr ? "max-w-[min(calc(100vw-1.25rem),34rem)]" : "max-w-[min(calc(100vw-1.25rem),28rem)]",
         "overflow-visible rounded-2xl border border-aom-border/60 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.9)]",
         theme.surfaceClass,
         className,
@@ -125,14 +126,14 @@ export const RacePlayerCard = forwardRef<
           </div>
         </div>
 
-        <div className={cn("mt-4 grid gap-2.5", showWeightedRr ? "grid-cols-[1fr_1fr_auto]" : "grid-cols-[1fr_auto]")}>
+        <div className={cn("mt-4 grid gap-2.5", showWeightedRr ? "grid-cols-[minmax(5.5rem,1fr)_max-content_auto]" : "grid-cols-[1fr_auto]")}>
           <div className={cn("min-w-[5.5rem] rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 text-center ring-1 ring-inset", theme.stepRing)}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRr")}</p>
+            <p className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRr")}</p>
             <p className={cn("mt-1 text-xl font-semibold tabular-nums leading-none", theme.stepAccent)}>{player.rr}</p>
           </div>
           {showWeightedRr ? (
-            <div className={cn("min-w-[5.5rem] rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 text-center ring-1 ring-inset", theme.stepRing)}>
-              <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
+            <div className={cn("rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 text-center ring-1 ring-inset", theme.stepRing)}>
+              <p className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
               <p className={cn("mt-1 text-xl font-semibold tabular-nums leading-none", theme.stepAccent)}>{weightedRr ?? "—"}</p>
             </div>
           ) : null}
