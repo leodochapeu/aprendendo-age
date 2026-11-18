@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { RacePlayerCard } from "@/components/jogadores/RacePlayerCard";
 import { getFormRankPortraitPath, MolduraAgeAvatar } from "@/components/rank/rankProfileUi";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -7,6 +8,7 @@ import { cn } from "@/lib/cn";
 import type { ChampionshipPlayer } from "@/lib/championshipsApi";
 import { playerClanLogoUrl, type AomRacePlayer } from "@/lib/playersApi";
 import { getRankClassification } from "@/lib/rankClassification";
+import { resolvePlayerAvatarSrc } from "@/lib/steamAvatarUrl";
 
 const HOLD_MS = 6200;
 const EXIT_MS = 500;
@@ -105,7 +107,7 @@ export function RosterPresentation({
   const player = slides[Math.min(cursor, slides.length - 1)];
   const ranked = byId.get(player.profileId) ?? null;
   const cls = ranked ? getRankClassification(ranked.rr) : null;
-  const portrait = ranked?.logoPath || player.logoUrl || null;
+  const portrait = resolvePlayerAvatarSrc(ranked?.logoPath || player.logoUrl);
   const clanMark = ranked ? playerClanLogoUrl(ranked) : undefined;
 
   return (
@@ -140,15 +142,11 @@ export function RosterPresentation({
                   frameImageSrc={getFormRankPortraitPath(cls.tierId)}
                   portraitUrl={portrait}
                   size="hero"
-                  emptyFallback={<span className="flex h-full w-full items-center justify-center font-[family-name:var(--font-display)] text-2xl text-amber-100">{player.name.slice(0, 1).toUpperCase()}</span>}
+                  emptyFallback={<PlayerAvatarMark src="" tierId={cls.tierId} className="rounded-full" />}
                 />
               ) : (
                 <div className="relative h-36 w-36 overflow-hidden rounded-full border-2 border-amber-200/70 bg-zinc-950 shadow-[0_0_28px_rgba(255,196,70,0.4)] sm:h-44 sm:w-44">
-                  {portrait ? (
-                    <img src={portrait} alt="" className="h-full w-full object-cover" />
-                  ) : (
-                    <span className="flex h-full w-full items-center justify-center font-[family-name:var(--font-display)] text-4xl text-amber-100">{player.name.slice(0, 1).toUpperCase()}</span>
-                  )}
+                  <PlayerAvatarMark src={portrait} className="rounded-full" />
                 </div>
               )}
             </div>
