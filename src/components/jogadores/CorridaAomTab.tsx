@@ -103,7 +103,7 @@ function RaceAvatar({
           onClick={(e) => onSelect(player, e.currentTarget)}
           className={cn(
             "race-avatar-hop absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 touch-manipulation rounded-full bg-transparent p-0 transition",
-            "h-14 w-14 sm:h-16 sm:w-16 lg:h-[5.5rem] lg:w-[5.5rem]",
+            "h-20 w-20 sm:h-24 sm:w-24 lg:h-[8.25rem] lg:w-[8.25rem]",
             "cursor-pointer overflow-visible",
             "hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
             selected && "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-zinc-950",
@@ -122,7 +122,7 @@ function RaceAvatar({
 
         <RacePlayerMiniCard
           player={player}
-          className="absolute top-0 left-[2rem] z-[15] -translate-y-1/2 sm:left-[2.35rem] lg:left-[3.75rem]"
+          className="absolute top-0 left-[2.85rem] z-[15] -translate-y-1/2 sm:left-[3.4rem] lg:left-[4.7rem]"
         />
       </div>
       <span className="sr-only">

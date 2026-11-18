@@ -5,17 +5,17 @@ export const RACE_TRACK_MAX_RR = 2100;
 
 export const RACE_TRACK_MIN_RR = 0;
 
-/** Tamanho do avatar renderizado (px) — moldura compacta mobile/tablet. */
-export const RACE_AVATAR_RENDER_PX = 64;
+/** Tamanho do avatar renderizado (px) — moldura mobile/tablet. */
+export const RACE_AVATAR_RENDER_PX = 96;
 
 /** Avatar na pista em viewport lg+. */
-export const RACE_AVATAR_RENDER_PX_LG = 88;
+export const RACE_AVATAR_RENDER_PX_LG = 132;
 
 /** Desconto top/bottom da faixa (top-16 + bottom-32) para o portal de elo não ser cortado. */
 export const RACE_TRACK_LANE_INSET_PX = 192;
 
 /** Espaço extra no topo/base para o brilho da moldura não ser cortado. */
-export const RACE_AVATAR_GLOW_PAD_PX = 28;
+export const RACE_AVATAR_GLOW_PAD_PX = 36;
 
 /** Classe Tailwind da faixa útil da pista (alinha com a linha vertical). */
 export const RACE_TRACK_LANE_CLASS = "absolute inset-x-0 bottom-32 top-16";

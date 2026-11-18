@@ -36,14 +36,14 @@ describe("playerDisplayLabel", () => {
     ).toBe("Lipolessa");
   });
 
-  it("cai no nome do AoM Stats quando não há alias", () => {
+  it("cai no nick normal quando não há alias e tira a tag de cor", () => {
     expect(
       playerDisplayLabel(
         player({
           displayName: "  ",
-          aomstatsAlias: "<COLOR=0,1,1,0,0.,4>LIPOLESSA",
+          aomstatsAlias: "<COLOR|0,2,0,6>MAKISE_KURIS",
         }),
       ),
-    ).toBe("LIPOLESSA");
+    ).toBe("MAKISE_KURIS");
   });
 });

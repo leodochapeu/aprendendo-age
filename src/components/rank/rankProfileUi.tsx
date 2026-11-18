@@ -332,7 +332,7 @@ export function MolduraAgeAvatar({
           className={cn(
             "shrink-0 rounded-full bg-zinc-950/90 shadow-lg ring-inset",
             compact
-              ? "h-[58%] w-[58%] border-[2px] p-[2px] ring-1"
+              ? "h-[68%] w-[68%] border-[2px] p-[2px] ring-1"
               : hero
                 ? "h-[7.5rem] w-[7.5rem] border-[2.5px] p-[3px] ring-2 sm:h-[8.5rem] sm:w-[8.5rem] md:h-[9rem] md:w-[9rem]"
                 : large
@@ -348,8 +348,8 @@ export function MolduraAgeAvatar({
               src={portraitUrl}
               tierId={tierId}
               className="rounded-full"
-              width={compact ? 36 : 96}
-              height={compact ? 36 : 96}
+              width={compact ? 72 : 96}
+              height={compact ? 72 : 96}
             />
           ) : (
             emptyFallback

@@ -97,14 +97,17 @@ function mapRow(row: {
 }
 
 function stripGameColorTags(value: string): string {
-  return value.replace(/<color\b[^>]*>/gi, "").replace(/<\/color>/gi, "").trim();
+  return value
+    .replace(/<\/?color\b[^>]*>/gi, "")
+    .replace(/<[^>]*color[^>]*>/gi, "")
+    .trim();
 }
 
-/** Alias do perfil (`display_name`); o nome do AoM Stats só entra quando não há alias. */
+/** Alias do perfil (`display_name`). Sem alias, usa o nick do AoM Stats, já sem tag de cor. */
 export function playerDisplayLabel(player: AomRacePlayer): string {
   const alias = stripGameColorTags(player.displayName ?? "");
-  const aomstatsName = stripGameColorTags(player.aomstatsAlias ?? "");
-  return alias || aomstatsName || "?";
+  const nick = stripGameColorTags(player.aomstatsAlias ?? "");
+  return alias || nick || "?";
 }
 
 export function playerClanLogoUrl(player: AomRacePlayer): string | undefined {
