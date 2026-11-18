@@ -19,6 +19,7 @@ export type ChampionshipCard = {
   id: string;
   slug: string;
   name: string;
+  subtitle: string;
   description: string;
   logoUrl: string;
   phase: ChampionshipPhase;
@@ -90,7 +91,6 @@ export type PrizePlace = {
 };
 
 export type ChampionshipDetail = ChampionshipCard & {
-  subtitle: string;
   rules: string;
   registrationEnabled: boolean;
   prizeEnabled: boolean;
@@ -172,26 +172,36 @@ function listedOnAprendendoAge(row: { phase?: unknown; public_page?: unknown; de
   return row.public_page === true;
 }
 
+const PUBLIC_LIST_SELECT = "id, slug, name, subtitle, description, logo_path, phase, public_page, dev_mode";
+const PUBLIC_LIST_SELECT_LEGACY = "id, slug, name, description, logo_path, phase, public_page, dev_mode";
+
 export async function fetchPublicChampionships(includeDev = false): Promise<ChampionshipCard[]> {
   const supabase = includeDev ? createSupabaseClient() : createSupabasePublicClient();
   if (!supabase) return [];
-  let query = supabase
-    .from("championships")
-    .select("id, slug, name, description, logo_path, phase, public_page, dev_mode")
-    .eq("status", "approved")
-    .neq("phase", "draft")
-    .order("name");
-  query = includeDev
-    ? query.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true")
-    : query.eq("public_page", true).eq("dev_mode", false);
-  const { data, error } = await query;
-  if (error) throw new Error(error.message);
+  const listed = () => {
+    let query = supabase.from("championships").select(PUBLIC_LIST_SELECT).eq("status", "approved").neq("phase", "draft").order("name");
+    return includeDev
+      ? query.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true")
+      : query.eq("public_page", true).eq("dev_mode", false);
+  };
+  const first = await listed();
+  let data = first.data;
+  if (first.error) {
+    let legacy = supabase.from("championships").select(PUBLIC_LIST_SELECT_LEGACY).eq("status", "approved").neq("phase", "draft").order("name");
+    legacy = includeDev
+      ? legacy.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true")
+      : legacy.eq("public_page", true).eq("dev_mode", false);
+    const fallback = await legacy;
+    if (fallback.error) throw new Error(fallback.error.message);
+    data = fallback.data;
+  }
   return (data ?? [])
     .filter((row) => listedOnAprendendoAge(row, includeDev) && typeof row.slug === "string" && row.slug)
     .map((row) => ({
       id: row.id as string,
       slug: row.slug as string,
       name: row.name as string,
+      subtitle: typeof (row as { subtitle?: unknown }).subtitle === "string" ? (row as { subtitle: string }).subtitle : "",
       description: (row.description as string) ?? "",
       logoUrl: championshipAssetUrl(row.logo_path as string | null),
       phase: phaseOf(row.phase),

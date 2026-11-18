@@ -234,7 +234,7 @@ export function RosterList({
           );
 
           return (
-            <li key={row.entry.id} className={cn("px-4 py-4", i % 2 === 0 ? "bg-transparent" : "bg-white/[0.025]")}>
+            <li key={row.entry.id} className={cn("min-w-0 px-3 py-4 sm:px-4", i % 2 === 0 ? "bg-transparent" : "bg-white/[0.025]")}>
               <div className="flex items-start gap-3">
                 <span className="mt-2 w-5 shrink-0 text-center text-xs tabular-nums text-zinc-500">{i + 1}</span>
                 {ranked ? (
@@ -269,31 +269,29 @@ export function RosterList({
               </div>
 
               {cls && ranked && roman && theme ? (
-                <div className="mt-3 flex items-stretch gap-2 pl-8">
-                  <div className={cn("w-[7.25rem] shrink-0 rounded-xl border border-white/10 bg-black/50 px-3 py-2 text-center ring-1 ring-inset", theme.stepRing)}>
-                    <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRr")}</p>
-                    <p className={cn("mt-1 text-lg font-semibold tabular-nums leading-none", theme.stepAccent)}>{ranked.rr}</p>
+                <div className={cn("mt-3 grid min-w-0 gap-1.5", showWeightedRr ? "grid-cols-3" : "grid-cols-2")}>
+                  <div className={cn("min-w-0 rounded-xl border border-white/10 bg-black/50 px-1 py-2 text-center ring-1 ring-inset sm:px-2", theme.stepRing)}>
+                    <p className="whitespace-nowrap text-[8px] font-medium uppercase tracking-normal text-zinc-500 sm:text-[10px] sm:tracking-[0.08em]">{t("pages.players.racePopoverRr")}</p>
+                    <p className={cn("mt-1 text-base font-semibold tabular-nums leading-none", theme.stepAccent)}>{ranked.rr}</p>
                   </div>
                   {showWeightedRr ? (
-                    <div className={cn("w-max shrink-0 rounded-xl border border-white/10 bg-black/50 px-3 py-2 text-center ring-1 ring-inset", theme.stepRing)}>
-                      <p className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
-                      <p className={cn("mt-1 text-lg font-semibold tabular-nums leading-none", theme.stepAccent)}>{weighted ?? "—"}</p>
+                    <div className={cn("min-w-0 rounded-xl border border-white/10 bg-black/50 px-1 py-2 text-center ring-1 ring-inset sm:px-2", theme.stepRing)}>
+                      <p className="whitespace-nowrap text-[8px] font-medium uppercase tracking-normal text-zinc-500 sm:text-[10px] sm:tracking-[0.06em]">{t("pages.players.racePopoverWeightedRr")}</p>
+                      <p className={cn("mt-1 text-base font-semibold tabular-nums leading-none", theme.stepAccent)}>{weighted ?? "—"}</p>
                     </div>
                   ) : null}
-                  <div className={cn("flex min-w-0 flex-1 items-center gap-2 rounded-xl border border-white/10 bg-black/50 px-3 py-2 ring-1 ring-inset", theme.stepRing)}>
+                  <div className={cn("flex min-w-0 flex-col items-center justify-center rounded-xl border border-white/10 bg-black/50 px-1 py-2 text-center ring-1 ring-inset sm:px-2", theme.stepRing)}>
+                    <p className="whitespace-nowrap text-[8px] font-medium uppercase tracking-normal text-zinc-500 sm:text-[10px] sm:tracking-[0.08em]">{t("pages.players.racePopoverRank")}</p>
                     <span
                       className={cn(
-                        "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold shadow-inner",
+                        "mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold shadow-inner",
                         rankRomanMedallionClass(cls.tierId),
                       )}
                       aria-hidden
                     >
                       {roman}
                     </span>
-                    <span className="min-w-0">
-                      <span className="block text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRank")}</span>
-                      <span className={cn("block truncate text-sm font-semibold leading-tight", theme.titleRankClass)}>{cls.subcategoryLabel}</span>
-                    </span>
+                    <span className={cn("mt-1 max-w-full truncate text-[10px] font-semibold leading-none sm:text-[11px]", theme.titleRankClass)}>{cls.subcategoryLabel}</span>
                   </div>
                 </div>
               ) : null}

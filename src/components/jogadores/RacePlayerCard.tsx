@@ -60,8 +60,8 @@ export const RacePlayerCard = forwardRef<
       role={role}
       aria-label={label}
       className={cn(
-        "relative w-fit min-w-[17rem]",
-        showWeightedRr ? "max-w-[min(calc(100vw-1.25rem),34rem)]" : "max-w-[min(calc(100vw-1.25rem),28rem)]",
+        "relative w-full min-w-0 max-w-full sm:w-fit",
+        showWeightedRr ? "sm:max-w-[34rem]" : "sm:min-w-[17rem] sm:max-w-[28rem]",
         "overflow-visible rounded-2xl border border-aom-border/60 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.9)]",
         theme.surfaceClass,
         className,
@@ -70,10 +70,11 @@ export const RacePlayerCard = forwardRef<
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: GRID_SCRIM }} aria-hidden />
 
-      <div className={cn("relative flex items-start gap-3 p-4", flagIso ? "pt-5" : false)}>
+      <div className={cn("relative p-3 sm:p-4", flagIso ? "pt-4 sm:pt-5" : false)}>
+        <div className="flex min-w-0 items-start gap-2 sm:gap-3">
         {flagIso ? <FlagPennant country={player.country} tier={cls.tierId} /> : null}
         <div className="min-w-0 flex-1">
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-2 sm:gap-3">
           <PlayerProfileLink player={player} onNavigate={onNavigate} className="block shrink-0">
             <div className={cn("relative h-12 w-12 overflow-hidden rounded-full border-2 bg-zinc-950 p-0.5 shadow-md transition hover:brightness-110", theme.stepRing)}>
               <PlayerAvatarMark src={player.logoPath} tierId={cls.tierId} width={44} height={44} className="rounded-full" />
@@ -125,28 +126,29 @@ export const RacePlayerCard = forwardRef<
             <TierPortraitBadge cls={cls} tierPortrait={tierPortrait} rr={player.rr} tooltipPlacement="above" tooltipAlign="end" />
           </div>
         </div>
+        </div>
+        </div>
 
-        <div className={cn("mt-4 grid gap-2.5", showWeightedRr ? "grid-cols-[minmax(5.5rem,1fr)_max-content_auto]" : "grid-cols-[1fr_auto]")}>
-          <div className={cn("min-w-[5.5rem] rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 text-center ring-1 ring-inset", theme.stepRing)}>
-            <p className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRr")}</p>
-            <p className={cn("mt-1 text-xl font-semibold tabular-nums leading-none", theme.stepAccent)}>{player.rr}</p>
+        <div className={cn("mt-3 grid min-w-0 gap-1.5 sm:mt-4 sm:gap-2.5", showWeightedRr ? "grid-cols-3" : "grid-cols-[minmax(0,1fr)_auto]")}>
+          <div className={cn("min-w-0 rounded-xl border border-aom-border/45 bg-zinc-950/60 px-1.5 py-2 text-center ring-1 ring-inset sm:px-3 sm:py-2.5", theme.stepRing)}>
+            <p className="whitespace-nowrap text-[8px] font-medium uppercase tracking-normal text-zinc-500 sm:text-[10px] sm:tracking-[0.16em]">{t("pages.players.racePopoverRr")}</p>
+            <p className={cn("mt-1 text-base font-semibold tabular-nums leading-none sm:text-xl", theme.stepAccent)}>{player.rr}</p>
           </div>
           {showWeightedRr ? (
-            <div className={cn("rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 text-center ring-1 ring-inset", theme.stepRing)}>
-              <p className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverWeightedRr")}</p>
-              <p className={cn("mt-1 text-xl font-semibold tabular-nums leading-none", theme.stepAccent)}>{weightedRr ?? "—"}</p>
+            <div className={cn("min-w-0 rounded-xl border border-aom-border/45 bg-zinc-950/60 px-1.5 py-2 text-center ring-1 ring-inset sm:px-3 sm:py-2.5", theme.stepRing)}>
+              <p className="whitespace-nowrap text-[8px] font-medium uppercase tracking-normal text-zinc-500 sm:text-[10px] sm:tracking-[0.12em]">{t("pages.players.racePopoverWeightedRr")}</p>
+              <p className={cn("mt-1 text-base font-semibold tabular-nums leading-none sm:text-xl", theme.stepAccent)}>{weightedRr ?? "—"}</p>
             </div>
           ) : null}
-          <div className={cn("flex min-w-[5.5rem] flex-col items-center justify-center rounded-xl border border-aom-border/45 bg-zinc-950/60 px-3 py-2.5 ring-1 ring-inset", theme.stepRing)}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-zinc-500">{t("pages.players.racePopoverRank")}</p>
-            <div className="mt-1.5 flex items-center gap-2 whitespace-nowrap">
-              <span className={cn("flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-[11px] font-bold shadow-inner", rankRomanMedallionClass(cls.tierId))} aria-hidden>
+          <div className={cn("flex min-w-0 flex-col items-center justify-center rounded-xl border border-aom-border/45 bg-zinc-950/60 px-1.5 py-2 text-center ring-1 ring-inset sm:px-3 sm:py-2.5", theme.stepRing)}>
+            <p className="whitespace-nowrap text-[8px] font-medium uppercase tracking-normal text-zinc-500 sm:text-[10px] sm:tracking-[0.16em]">{t("pages.players.racePopoverRank")}</p>
+            <div className="mt-1 flex flex-col items-center gap-1 sm:mt-1.5 sm:flex-row sm:gap-2">
+              <span className={cn("flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold shadow-inner sm:h-7 sm:w-7 sm:text-[11px]", rankRomanMedallionClass(cls.tierId))} aria-hidden>
                 {roman}
               </span>
-              <span className={cn("text-sm font-semibold leading-none", theme.titleRankClass)}>{cls.subcategoryLabel}</span>
+              <span className={cn("max-w-full truncate text-[10px] font-semibold leading-none sm:text-sm", theme.titleRankClass)}>{cls.subcategoryLabel}</span>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </div>

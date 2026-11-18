@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
+import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { fetchPublicChampionships, type ChampionshipCard, type ChampionshipPhase } from "@/lib/championshipsApi";
@@ -72,7 +73,9 @@ export function CampeonatosPage() {
                   {t(PHASE_KEY[camp.phase])}
                   {camp.devMode ? " · Modo Dev" : ""}
                 </div>
-                {camp.description ? <p className="mt-2 line-clamp-3 text-sm text-zinc-400">{camp.description}</p> : null}
+                {camp.subtitle ? (
+                  <ChampionshipMarkdown source={camp.subtitle} className="mt-2 line-clamp-3 text-sm text-zinc-400" />
+                ) : null}
               </div>
             </div>
           </Link>
