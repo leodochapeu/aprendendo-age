@@ -8,8 +8,9 @@ describe("computeWeightedRr", () => {
     expect(computeWeightedRr(1089, 1408)).toBe(1302);
   });
 
-  it("retorna null sem melhor RR", () => {
-    expect(computeWeightedRr(1500, null)).toBeNull();
-    expect(computeWeightedRr(1500, 0)).toBeNull();
+  it("sem melhor RR usa o atual como piso", () => {
+    expect(computeWeightedRr(1500, null)).toBe(1500);
+    expect(computeWeightedRr(1500, 0)).toBe(1500);
   });
 });
+
