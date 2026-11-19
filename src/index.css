@@ -791,7 +791,6 @@ body {
   left: 1rem;
   display: flex;
   gap: 0.35rem;
-  animation: player-stream-float 3.6s ease-in-out infinite;
 }
 
 .player-stream-badges__link {
@@ -814,6 +813,25 @@ body {
   color: #9146ff;
 }
 
+.player-stream-badges__breath {
+  display: block;
+  transform-origin: center;
+}
+
+.player-stream-badges__breath--lift {
+  animation-name: player-stream-breathe-lift;
+  animation-duration: 3.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.player-stream-badges__breath--deep {
+  animation-name: player-stream-breathe-deep;
+  animation-duration: 4.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 .player-stream-badges--inline {
   position: static;
   top: auto;
@@ -821,21 +839,39 @@ body {
   z-index: auto;
   align-items: center;
   gap: 0.15rem;
-  animation: none;
 }
 
-@keyframes player-stream-float {
+@keyframes player-stream-breathe-lift {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    opacity: 0.86;
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-5px) scale(1.07);
+    opacity: 1;
+  }
+}
+
+@keyframes player-stream-breathe-deep {
+  0%,
+  100% {
+    transform: translateY(1px) scale(0.94);
+    opacity: 0.8;
+  }
+  38% {
+    transform: translateY(-2px) scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(-6px) scale(1.02);
+    opacity: 0.9;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .player-stream-badges {
+  .player-stream-badges__breath--lift,
+  .player-stream-badges__breath--deep {
     animation: none;
   }
 }

@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { cn } from "@/lib/cn";
 import type { PlayerStreamLinks } from "@/lib/playersApi";
 
 const ICON = "h-7 w-7 drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]";
 const INLINE_ICON = "h-9 w-9 drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]";
 const COMPACT_ICON = "h-8 w-8 drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]";
+
+function breathTiming(minSec: number, maxSec: number) {
+  const duration = minSec + Math.random() * (maxSec - minSec);
+  return {
+    animationDuration: `${duration.toFixed(2)}s`,
+    animationDelay: `${(-Math.random() * duration).toFixed(2)}s`,
+  };
+}
 
 export function PlayerStreamBadges({
   streams,
@@ -13,12 +22,22 @@ export function PlayerStreamBadges({
   /** `inline` fica na linha do nome. `compact` fica ao lado do ícone do clã. */
   placement?: "floating" | "inline" | "compact";
 }) {
+  const floating = placement === "floating";
+  const [breath] = useState(() =>
+    floating
+      ? {
+          youtube: breathTiming(2.6, 4.1),
+          twitch: breathTiming(3.4, 5.6),
+        }
+      : null,
+  );
+
   if (!streams.youtube && !streams.twitch) return null;
 
   const iconClass = placement === "inline" ? INLINE_ICON : placement === "compact" ? COMPACT_ICON : ICON;
 
   return (
-    <div className={cn("player-stream-badges", placement !== "floating" && "player-stream-badges--inline")}>
+    <div className={cn("player-stream-badges", !floating && "player-stream-badges--inline")}>
       {streams.youtube ? (
         <a
           href={streams.youtube}
@@ -28,6 +47,10 @@ export function PlayerStreamBadges({
           title="YouTube"
           className="player-stream-badges__link player-stream-badges__link--youtube"
         >
+          <span
+            className={cn("player-stream-badges__breath", floating && "player-stream-badges__breath--lift")}
+            style={breath?.youtube}
+          >
           <svg viewBox="0 0 24 24" aria-hidden className={iconClass}>
             <path
               fill="currentColor"
@@ -35,6 +58,7 @@ export function PlayerStreamBadges({
             />
             <path fill="#fff" d="M9.8 15.5V8.9l6 3.3-6 3.3z" />
           </svg>
+          </span>
         </a>
       ) : null}
       {streams.twitch ? (
@@ -46,6 +70,10 @@ export function PlayerStreamBadges({
           title="Twitch"
           className="player-stream-badges__link player-stream-badges__link--twitch"
         >
+          <span
+            className={cn("player-stream-badges__breath", floating && "player-stream-badges__breath--deep")}
+            style={breath?.twitch}
+          >
           <svg viewBox="0 0 24 24" aria-hidden className={iconClass}>
             <path
               fill="currentColor"
@@ -53,6 +81,7 @@ export function PlayerStreamBadges({
             />
             <path fill="#fff" d="M15.5 6.2h1.6v4.7h-1.6V6.2zm-4.3 0h1.6v4.7h-1.6V6.2z" />
           </svg>
+          </span>
         </a>
       ) : null}
     </div>
