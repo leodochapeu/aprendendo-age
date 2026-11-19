@@ -7,6 +7,7 @@ import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { cn } from "@/lib/cn";
 
 function seriesLabel(length: number | null | undefined) {
+  if (length === 1) return "MD1";
   if (length === 5) return "MD5";
   if (length === 7) return "MD7";
   if (length === 3) return "MD3";

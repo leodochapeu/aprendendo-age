@@ -74,7 +74,7 @@ export type ChampionshipStage = {
   position: number;
   name: string;
   format: ChampionshipStageFormat;
-  seriesLength: 3 | 5 | 7;
+  seriesLength: 1 | 3 | 5 | 7;
   groupSize: number | null;
   advanceCount: number | null;
   flowNodes: ChampionshipFlowNode[];
@@ -417,7 +417,11 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
         position: stage.position as number,
         name: (stage.name as string) || "Fase",
         format,
-        seriesLength: (stage.series_length === 5 || stage.series_length === 7 ? stage.series_length : 3) as 3 | 5 | 7,
+        seriesLength: (
+          stage.series_length === 1 || stage.series_length === 5 || stage.series_length === 7
+            ? stage.series_length
+            : 3
+        ) as 1 | 3 | 5 | 7,
         groupSize: typeof stage.group_size === "number" ? stage.group_size : null,
         advanceCount: typeof stage.advance_count === "number" ? stage.advance_count : null,
         flowNodes: flowNodes
