@@ -1101,3 +1101,207 @@ body {
   );
   animation: entity-card-ranked-shine 7.5s ease-in-out infinite;
 }
+
+/* —— Championship custom flow (space orbit) —— */
+.flow-space-board {
+  position: relative;
+  overflow: auto;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(251, 191, 36, 0.22);
+  background:
+    radial-gradient(ellipse 80% 55% at 20% 15%, rgba(56, 189, 248, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 80%, rgba(52, 211, 153, 0.1), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 40%, rgba(251, 191, 36, 0.08), transparent 60%),
+    linear-gradient(180deg, #05060c 0%, #0a0d18 45%, #070912 100%);
+  box-shadow:
+    inset 0 0 80px rgba(0, 0, 0, 0.55),
+    0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.flow-space-board__stars {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 28% 62%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1.5px 1.5px at 44% 28%, rgba(255, 236, 170, 0.55), transparent),
+    radial-gradient(1px 1px at 61% 74%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 73% 22%, rgba(186, 230, 253, 0.65), transparent),
+    radial-gradient(1.5px 1.5px at 88% 48%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 16% 88%, rgba(167, 243, 208, 0.45), transparent),
+    radial-gradient(1px 1px at 52% 12%, rgba(255, 255, 255, 0.35), transparent);
+  opacity: 0.85;
+}
+
+.flow-edge-glow {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 6;
+  opacity: 0.22;
+  filter: blur(2px);
+}
+
+.flow-edge-wire {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1.6;
+  opacity: 0.55;
+}
+
+.flow-edge-dash {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 2;
+  stroke-dasharray: 6 14;
+  animation: flow-edge-dash-run 1.8s linear infinite;
+  opacity: 0.85;
+}
+
+.flow-edge-spark {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.flow-card-orbit {
+  --tilt: 0deg;
+  position: absolute;
+  transform-origin: center center;
+  animation-name: flow-card-drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.flow-card-orbit--match {
+  animation-name: flow-card-drift-match;
+}
+
+.flow-card-orbit--initializer {
+  animation-name: flow-card-drift-init;
+}
+
+.flow-card-orbit--finalizer {
+  animation-name: flow-card-drift-final;
+}
+
+.flow-card-shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
+.flow-card-shell::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.14), transparent 45%);
+  z-index: 1;
+}
+
+.flow-card-shell::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -40% -20%;
+  background: radial-gradient(circle, rgba(255, 236, 170, 0.12), transparent 55%);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.flow-card-shell--match {
+  border: 1px solid rgba(251, 191, 36, 0.45);
+  background:
+    linear-gradient(165deg, rgba(40, 28, 8, 0.92), rgba(12, 12, 18, 0.94)),
+    rgba(10, 10, 14, 0.9);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(251, 191, 36, 0.12),
+    0 0 0 1px rgba(255, 214, 120, 0.08) inset;
+}
+
+.flow-card-shell--initializer {
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  background:
+    linear-gradient(165deg, rgba(8, 32, 48, 0.95), rgba(10, 14, 24, 0.94));
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(56, 189, 248, 0.16),
+    0 0 0 1px rgba(125, 211, 252, 0.1) inset;
+}
+
+.flow-card-shell--finalizer {
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  background:
+    linear-gradient(165deg, rgba(8, 36, 28, 0.95), rgba(10, 14, 20, 0.94));
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(52, 211, 153, 0.16),
+    0 0 0 1px rgba(167, 243, 208, 0.1) inset;
+}
+
+.flow-card-body {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes flow-card-drift-match {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt)) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) rotate(calc(var(--tilt) * -0.85)) scale(1.025);
+  }
+}
+
+@keyframes flow-card-drift-init {
+  0%,
+  100% {
+    transform: translateY(1px) rotate(var(--tilt)) scale(0.985);
+  }
+  40% {
+    transform: translateY(-5px) rotate(calc(var(--tilt) * 1.15)) scale(1.04);
+  }
+  72% {
+    transform: translateY(-3px) rotate(calc(var(--tilt) * -0.6)) scale(1.01);
+  }
+}
+
+@keyframes flow-card-drift-final {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt)) scale(1);
+  }
+  35% {
+    transform: translateY(-8px) rotate(calc(var(--tilt) * -1.1)) scale(1.035);
+  }
+  68% {
+    transform: translateY(-2px) rotate(calc(var(--tilt) * 0.7)) scale(1.01);
+  }
+}
+
+@keyframes flow-edge-dash-run {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-card-orbit,
+  .flow-card-orbit--match,
+  .flow-card-orbit--initializer,
+  .flow-card-orbit--finalizer,
+  .flow-edge-dash {
+    animation: none !important;
+  }
+
+  .flow-card-orbit {
+    transform: rotate(var(--tilt));
+  }
+}

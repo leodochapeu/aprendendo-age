@@ -1,3 +1,4 @@
+import type { CSSProperties, ReactNode } from "react";
 import type {
   ChampionshipDetail,
   ChampionshipFixture,
@@ -300,6 +301,167 @@ function GroupsStageView({
   );
 }
 
+function hashSeed(value: string) {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) hash = (hash * 31 + value.charCodeAt(i)) | 0;
+  return Math.abs(hash);
+}
+
+function orbitMotion(id: string, kind: "match" | "initializer" | "finalizer") {
+  const seed = hashSeed(id);
+  const tilt = ((seed % 900) / 100) - 4.5;
+  const ranges =
+    kind === "match"
+      ? { min: 2.8, max: 4.2 }
+      : kind === "initializer"
+        ? { min: 3.2, max: 5.1 }
+        : { min: 3.6, max: 5.8 };
+  const duration = ranges.min + ((seed % 1000) / 1000) * (ranges.max - ranges.min);
+  const delay = -(((seed >> 4) % 1000) / 1000) * duration;
+  return {
+    "--tilt": `${tilt.toFixed(2)}deg`,
+    animationDuration: `${duration.toFixed(2)}s`,
+    animationDelay: `${delay.toFixed(2)}s`,
+  } as CSSProperties;
+}
+
+function edgeStroke(fromType: ChampionshipStage["flowNodes"][number]["type"]) {
+  if (fromType === "initializer") return { glow: "rgba(56,189,248,0.55)", wire: "#7dd3fc", spark: "#e0f2fe" };
+  if (fromType === "finalizer") return { glow: "rgba(52,211,153,0.5)", wire: "#6ee7b7", spark: "#d1fae5" };
+  return { glow: "rgba(251,191,36,0.55)", wire: "#fbbf24", spark: "#fef3c7" };
+}
+
+function FlowOrbitShell({
+  id,
+  kind,
+  left,
+  top,
+  width,
+  children,
+}: {
+  id: string;
+  kind: "match" | "initializer" | "finalizer";
+  left: number;
+  top: number;
+  width: number;
+  children: ReactNode;
+}) {
+  return (
+    <div
+      className={cn("flow-card-orbit", `flow-card-orbit--${kind}`)}
+      style={{ left, top, width, ...orbitMotion(id, kind) }}
+    >
+      <div className={cn("flow-card-shell", `flow-card-shell--${kind}`)}>
+        <div className="flow-card-body">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+function FlowMatchCard({
+  camp,
+  fixture,
+  label,
+  revealed,
+  onReveal,
+}: {
+  camp: ChampionshipDetail;
+  fixture: ChampionshipFixture;
+  label: string;
+  revealed: boolean;
+  onReveal: () => void;
+}) {
+  const showScore = revealed || fixture.status === "finished";
+  const winner =
+    showScore && fixture.scoreA !== fixture.scoreB ? (fixture.scoreA > fixture.scoreB ? "A" : "B") : null;
+  const md = seriesLabel(fixture.seriesLength);
+  const nameA = playerName(camp, fixture.playerAId, fixture.feederA);
+  const nameB = playerName(camp, fixture.playerBId, fixture.feederB);
+
+  return (
+    <div className={cn("relative min-w-0", fixture.isBye && "opacity-45")}>
+      <div className="relative flex items-center justify-between gap-2 border-b border-white/10 px-3 py-1.5">
+        <div className="min-w-0">
+          <p className="text-[9px] tracking-[0.22em] text-amber-200/70 uppercase">Confronto</p>
+          <p className="truncate font-[family-name:var(--font-display)] text-sm text-amber-50">{label || fixture.roundLabel}</p>
+        </div>
+        {md ? (
+          <span className="rounded-md border border-amber-300/40 bg-amber-400/15 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-amber-100 shadow-[0_0_12px_rgba(251,191,36,0.25)]">
+            {md}
+          </span>
+        ) : null}
+      </div>
+      <SlotRow
+        name={nameA}
+        logoUrl={playerLogo(camp, fixture.playerAId)}
+        score={showScore ? fixture.scoreA : null}
+        state={winner === "A" ? "winner" : winner === "B" ? "loser" : "open"}
+      />
+      <SlotRow
+        name={nameB}
+        logoUrl={playerLogo(camp, fixture.playerBId)}
+        score={showScore ? fixture.scoreB : null}
+        state={winner === "B" ? "winner" : winner === "A" ? "loser" : "open"}
+      />
+      {!showScore && fixture.status === "scheduled" && (fixture.scoreA > 0 || fixture.scoreB > 0 || fixture.games.length > 0) ? (
+        <button
+          type="button"
+          onClick={onReveal}
+          className="relative w-full border-t border-white/10 py-1.5 text-[10px] tracking-wide text-amber-100/90 hover:bg-amber-400/10"
+        >
+          Revelar placar
+        </button>
+      ) : null}
+      {showScore && fixture.games.length > 0 ? (
+        <div className="relative flex flex-wrap justify-center gap-1 border-t border-white/10 px-2 py-1.5">
+          {fixture.games.map((game) => (
+            <span
+              key={game.id}
+              className={cn("h-1.5 w-1.5 rounded-full shadow-[0_0_6px_currentColor]", game.winnerSide === "A" ? "bg-amber-300 text-amber-300" : "bg-sky-300 text-sky-300")}
+              title={`${game.mapName || "Mapa"} · ${game.winnerSide === "A" ? nameA : nameB}`}
+            />
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function FlowPortalCard({
+  kind,
+  label,
+  entryName,
+  logoUrl,
+}: {
+  kind: "initializer" | "finalizer";
+  label: string;
+  entryName: string;
+  logoUrl: string;
+}) {
+  const isInit = kind === "initializer";
+  return (
+    <div className="px-3 py-2.5">
+      <p className={cn("text-[9px] tracking-[0.24em] uppercase", isInit ? "text-sky-300/80" : "text-emerald-300/80")}>
+        {isInit ? "Inicializador" : "Finalizador"}
+      </p>
+      <p className={cn("mt-0.5 truncate font-[family-name:var(--font-display)] text-base", isInit ? "text-sky-50" : "text-emerald-50")}>
+        {label}
+      </p>
+      <div className="mt-2 flex items-center gap-2">
+        <div
+          className={cn(
+            "h-7 w-7 shrink-0 overflow-hidden rounded-full border bg-zinc-950 shadow-[0_0_14px_rgba(255,255,255,0.12)]",
+            isInit ? "border-sky-300/50" : "border-emerald-300/50",
+          )}
+        >
+          <PlayerAvatarMark src={logoUrl} className="h-full w-full" width={28} height={28} />
+        </div>
+        <p className="min-w-0 truncate text-xs text-zinc-300">{entryName}</p>
+      </div>
+    </div>
+  );
+}
+
 function CustomFlowStageView({
   camp,
   stage,
@@ -313,19 +475,20 @@ function CustomFlowStageView({
   revealedIds: string[];
   onReveal: (fixtureId: string) => void;
 }) {
-  const CARD_W = 200;
-  const CARD_H = 104;
-  const width = Math.max(720, ...stage.flowNodes.map((node) => node.x + CARD_W + 48), 720);
-  const height = Math.max(360, ...stage.flowNodes.map((node) => node.y + CARD_H + 48), 360);
+  const CARD_W = 212;
+  const CARD_H = 118;
+  const PAD = 28;
+  const width = Math.max(760, ...stage.flowNodes.map((node) => node.x + CARD_W + PAD * 2), 760);
+  const height = Math.max(420, ...stage.flowNodes.map((node) => node.y + CARD_H + PAD * 2), 420);
 
   function edgePath(edge: (typeof stage.flowEdges)[number]) {
     const from = stage.flowNodes.find((node) => node.id === edge.fromNodeId);
     const to = stage.flowNodes.find((node) => node.id === edge.toNodeId);
     if (!from || !to) return null;
-    const x1 = from.x + CARD_W;
-    const y1 = from.y + CARD_H / 2;
-    const x2 = to.x;
-    const y2 = to.y + (edge.toSlot === "B" ? CARD_H * 0.72 : edge.toSlot === "A" ? CARD_H * 0.28 : CARD_H / 2);
+    const x1 = from.x + PAD + CARD_W;
+    const y1 = from.y + PAD + CARD_H / 2;
+    const x2 = to.x + PAD;
+    const y2 = to.y + PAD + (edge.toSlot === "B" ? CARD_H * 0.72 : edge.toSlot === "A" ? CARD_H * 0.28 : CARD_H / 2);
     const mid = (x1 + x2) / 2;
     return `M ${x1} ${y1} C ${mid} ${y1}, ${mid} ${y2}, ${x2} ${y2}`;
   }
@@ -336,51 +499,70 @@ function CustomFlowStageView({
         <h2 className="font-[family-name:var(--font-display)] text-xl text-amber-100">{stage.name}</h2>
         <p className="text-xs text-zinc-500">Personalizada · {seriesLabel(stage.seriesLength)}</p>
       </div>
-      <div className="overflow-auto rounded-2xl border border-amber-500/20 bg-black/30">
+      <div className="flow-space-board">
+        <div className="flow-space-board__stars" />
         <div className="relative" style={{ width, height }}>
-          <svg className="pointer-events-none absolute inset-0" width={width} height={height}>
-            {stage.flowEdges.map((edge) => {
+          <svg className="pointer-events-none absolute inset-0 overflow-visible" width={width} height={height}>
+            {stage.flowEdges.map((edge, index) => {
+              const from = stage.flowNodes.find((node) => node.id === edge.fromNodeId);
               const d = edgePath(edge);
-              if (!d) return null;
-              return <path key={edge.id} d={d} fill="none" stroke="rgba(247,183,51,0.45)" strokeWidth="2" />;
+              if (!from || !d) return null;
+              const stroke = edgeStroke(from.type);
+              const sparkDur = `${(1.8 + (hashSeed(edge.id) % 120) / 100).toFixed(2)}s`;
+              const sparkDelay = `${((hashSeed(edge.id) % 80) / 100).toFixed(2)}s`;
+              return (
+                <g key={edge.id}>
+                  <path d={d} className="flow-edge-glow" stroke={stroke.glow} />
+                  <path d={d} className="flow-edge-wire" stroke={stroke.wire} />
+                  <path d={d} className="flow-edge-dash" stroke={stroke.spark} style={{ animationDelay: `${index * 0.12}s` }} />
+                  <circle r="3.2" fill={stroke.spark} className="flow-edge-spark" style={{ color: stroke.spark }}>
+                    <animateMotion dur={sparkDur} begin={sparkDelay} repeatCount="indefinite" path={d} />
+                  </circle>
+                  <circle r="1.6" fill="#fff" opacity="0.9">
+                    <animateMotion dur={sparkDur} begin={sparkDelay} repeatCount="indefinite" path={d} />
+                  </circle>
+                </g>
+              );
             })}
           </svg>
           {stage.flowNodes.map((node) => {
             const fixture = node.fixtureId ? camp.fixtures.find((item) => item.id === node.fixtureId) : null;
             if (node.type === "match" && fixture) {
               return (
-                <div key={node.id} className="absolute" style={{ left: node.x, top: node.y, width: CARD_W }}>
-                  <BracketMatchCard
+                <FlowOrbitShell key={node.id} id={node.id} kind="match" left={node.x + PAD} top={node.y + PAD} width={CARD_W}>
+                  <FlowMatchCard
                     camp={camp}
                     fixture={fixture}
+                    label={node.label || fixture.roundLabel}
                     revealed={revealedAll || revealedIds.includes(fixture.id)}
                     onReveal={() => onReveal(fixture.id)}
                   />
-                </div>
+                </FlowOrbitShell>
               );
             }
             const entryName = node.entryId
               ? camp.players.find((player) => player.id === node.entryId)?.name || "Jogador"
               : node.type === "initializer"
-                ? "Entrada"
-                : "Saída";
+                ? "Aguardando entrada"
+                : "Aguardando finalista";
+            const kind = node.type === "initializer" || node.type === "finalizer" ? node.type : "match";
             return (
-              <div
-                key={node.id}
-                className={cn(
-                  "absolute rounded-lg border px-3 py-2",
-                  node.type === "initializer" && "border-sky-400/40 bg-sky-950/70",
-                  node.type === "finalizer" && "border-emerald-400/40 bg-emerald-950/70",
-                  node.type === "match" && "border-amber-500/30 bg-zinc-950/90",
+              <FlowOrbitShell key={node.id} id={node.id} kind={kind} left={node.x + PAD} top={node.y + PAD} width={CARD_W}>
+                {kind === "match" ? (
+                  <div className="px-3 py-2.5">
+                    <p className="text-[9px] tracking-[0.22em] text-amber-200/70 uppercase">Confronto</p>
+                    <p className="truncate font-[family-name:var(--font-display)] text-sm text-amber-50">{node.label || "Confronto"}</p>
+                    <p className="mt-1 text-xs text-zinc-500">Sem partida vinculada</p>
+                  </div>
+                ) : (
+                  <FlowPortalCard
+                    kind={kind}
+                    label={node.label || (kind === "initializer" ? "Inicializador" : "Finalizador")}
+                    entryName={entryName}
+                    logoUrl={playerLogo(camp, node.entryId)}
+                  />
                 )}
-                style={{ left: node.x, top: node.y, width: CARD_W, minHeight: 72 }}
-              >
-                <p className="text-[10px] tracking-wider text-zinc-500 uppercase">
-                  {node.type === "initializer" ? "Inicializador" : node.type === "finalizer" ? "Finalizador" : "Confronto"}
-                </p>
-                <p className="truncate text-sm text-zinc-100">{node.label || entryName}</p>
-                <p className="mt-1 truncate text-xs text-zinc-400">{entryName}</p>
-              </div>
+              </FlowOrbitShell>
             );
           })}
         </div>
