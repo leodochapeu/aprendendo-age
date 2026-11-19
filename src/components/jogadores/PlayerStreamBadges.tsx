@@ -3,21 +3,22 @@ import type { PlayerStreamLinks } from "@/lib/playersApi";
 
 const ICON = "h-7 w-7 drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]";
 const INLINE_ICON = "h-9 w-9 drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]";
+const COMPACT_ICON = "h-8 w-8 drop-shadow-[0_6px_10px_rgba(0,0,0,0.45)]";
 
 export function PlayerStreamBadges({
   streams,
   placement = "floating",
 }: {
   streams: PlayerStreamLinks;
-  /** `inline` fica na linha do nome, ao lado do botão do AoM Stats. */
-  placement?: "floating" | "inline";
+  /** `inline` fica na linha do nome. `compact` fica ao lado do ícone do clã. */
+  placement?: "floating" | "inline" | "compact";
 }) {
   if (!streams.youtube && !streams.twitch) return null;
 
-  const iconClass = placement === "inline" ? INLINE_ICON : ICON;
+  const iconClass = placement === "inline" ? INLINE_ICON : placement === "compact" ? COMPACT_ICON : ICON;
 
   return (
-    <div className={cn("player-stream-badges", placement === "inline" && "player-stream-badges--inline")}>
+    <div className={cn("player-stream-badges", placement !== "floating" && "player-stream-badges--inline")}>
       {streams.youtube ? (
         <a
           href={streams.youtube}

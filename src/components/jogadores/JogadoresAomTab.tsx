@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerClanLink } from "@/components/jogadores/PlayerClanLink";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
+import { PlayerStreamBadges } from "@/components/jogadores/PlayerStreamBadges";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -134,7 +135,7 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
                   <th scope="col" className="min-w-[8rem] px-3 py-3 font-medium">
                     {t("common.name")}
                   </th>
-                  <th scope="col" className="w-16 px-2 py-3 text-center font-medium">
+                  <th scope="col" className="px-2 py-3 text-center font-medium">
                     {t("pages.players.colClan")}
                   </th>
                   <th scope="col" className="min-w-[7rem] px-3 py-3 font-medium">
@@ -177,8 +178,11 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
                           </span>
                         </PlayerProfileLink>
                       </td>
-                      <td className="px-2 py-3 text-center">
-                        <PlayerClanLink player={player} size="sm" className="justify-center" />
+                      <td className="px-2 py-3">
+                        <div className="flex items-center justify-center gap-1.5">
+                          <PlayerStreamBadges streams={player.streams} placement="compact" />
+                          <PlayerClanLink player={player} size="sm" className="justify-center" />
+                        </div>
                       </td>
                       <td className="px-3 py-3 text-zinc-400">{cls.categoryLabel}</td>
                       <td className="relative overflow-visible px-2 py-3 text-center">
@@ -236,7 +240,10 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
                       </PlayerProfileLink>
                       <p className="mt-0.5 truncate text-xs text-zinc-400">{cls.categoryLabel}</p>
                     </div>
-                    <PlayerClanLink player={player} size="sm" />
+                    <div className="flex shrink-0 items-center gap-1.5">
+                      <PlayerStreamBadges streams={player.streams} placement="compact" />
+                      <PlayerClanLink player={player} size="sm" />
+                    </div>
                     <TierPortraitBadge
                       cls={cls}
                       tierPortrait={getFormRankPortraitPath(cls.tierId)}
