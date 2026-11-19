@@ -135,11 +135,31 @@ export function PublicPlayerProfilePage() {
 
       <header className="rounded-2xl border border-aom-border bg-zinc-950/80 p-5 sm:p-6">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">{t("pages.players.publicProfileLabel")}</p>
-        <div className="mt-3 flex flex-wrap items-center gap-3">
-          <h1 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-wide text-amber-200">
-            {label}
-          </h1>
-          {clanTag ? <PlayerClanLink player={player} size="sm" showTag /> : null}
+        <div className="mt-3 flex items-center gap-3">
+          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3">
+            <h1 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-wide text-amber-200">
+              {label}
+            </h1>
+            {clanTag ? <PlayerClanLink player={player} size="sm" showTag /> : null}
+          </div>
+          {rankHero.player.profileUrl ? (
+            <a
+              href={rankHero.player.profileUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              title={t("pages.rank.openProfile", { name: label })}
+              aria-label={t("pages.rank.openProfile", { name: label })}
+              className="ml-6 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400/70"
+            >
+              <img
+                src="/assets/aomstats-icon.png"
+                alt=""
+                className="h-9 w-9 object-contain"
+                width={36}
+                height={36}
+              />
+            </a>
+          ) : null}
         </div>
         {player.snapshotAt ? (
           <p className="mt-3 text-sm text-zinc-500">
