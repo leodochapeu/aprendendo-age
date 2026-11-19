@@ -299,6 +299,95 @@ function GroupsStageView({
   );
 }
 
+function CustomFlowStageView({
+  camp,
+  stage,
+  revealedAll,
+  revealedIds,
+  onReveal,
+}: {
+  camp: ChampionshipDetail;
+  stage: ChampionshipStage;
+  revealedAll: boolean;
+  revealedIds: string[];
+  onReveal: (fixtureId: string) => void;
+}) {
+  const CARD_W = 200;
+  const CARD_H = 104;
+  const width = Math.max(720, ...stage.flowNodes.map((node) => node.x + CARD_W + 48), 720);
+  const height = Math.max(360, ...stage.flowNodes.map((node) => node.y + CARD_H + 48), 360);
+
+  function edgePath(edge: (typeof stage.flowEdges)[number]) {
+    const from = stage.flowNodes.find((node) => node.id === edge.fromNodeId);
+    const to = stage.flowNodes.find((node) => node.id === edge.toNodeId);
+    if (!from || !to) return null;
+    const x1 = from.x + CARD_W;
+    const y1 = from.y + CARD_H / 2;
+    const x2 = to.x;
+    const y2 = to.y + (edge.toSlot === "B" ? CARD_H * 0.72 : edge.toSlot === "A" ? CARD_H * 0.28 : CARD_H / 2);
+    const mid = (x1 + x2) / 2;
+    return `M ${x1} ${y1} C ${mid} ${y1}, ${mid} ${y2}, ${x2} ${y2}`;
+  }
+
+  return (
+    <section className="space-y-3">
+      <div>
+        <h2 className="font-[family-name:var(--font-display)] text-xl text-amber-100">{stage.name}</h2>
+        <p className="text-xs text-zinc-500">Personalizada · {seriesLabel(stage.seriesLength)}</p>
+      </div>
+      <div className="overflow-auto rounded-2xl border border-amber-500/20 bg-black/30">
+        <div className="relative" style={{ width, height }}>
+          <svg className="pointer-events-none absolute inset-0" width={width} height={height}>
+            {stage.flowEdges.map((edge) => {
+              const d = edgePath(edge);
+              if (!d) return null;
+              return <path key={edge.id} d={d} fill="none" stroke="rgba(247,183,51,0.45)" strokeWidth="2" />;
+            })}
+          </svg>
+          {stage.flowNodes.map((node) => {
+            const fixture = node.fixtureId ? camp.fixtures.find((item) => item.id === node.fixtureId) : null;
+            if (node.type === "match" && fixture) {
+              return (
+                <div key={node.id} className="absolute" style={{ left: node.x, top: node.y, width: CARD_W }}>
+                  <BracketMatchCard
+                    camp={camp}
+                    fixture={fixture}
+                    revealed={revealedAll || revealedIds.includes(fixture.id)}
+                    onReveal={() => onReveal(fixture.id)}
+                  />
+                </div>
+              );
+            }
+            const entryName = node.entryId
+              ? camp.players.find((player) => player.id === node.entryId)?.name || "Jogador"
+              : node.type === "initializer"
+                ? "Entrada"
+                : "Saída";
+            return (
+              <div
+                key={node.id}
+                className={cn(
+                  "absolute rounded-lg border px-3 py-2",
+                  node.type === "initializer" && "border-sky-400/40 bg-sky-950/70",
+                  node.type === "finalizer" && "border-emerald-400/40 bg-emerald-950/70",
+                  node.type === "match" && "border-amber-500/30 bg-zinc-950/90",
+                )}
+                style={{ left: node.x, top: node.y, width: CARD_W, minHeight: 72 }}
+              >
+                <p className="text-[10px] tracking-wider text-zinc-500 uppercase">
+                  {node.type === "initializer" ? "Inicializador" : node.type === "finalizer" ? "Finalizador" : "Confronto"}
+                </p>
+                <p className="truncate text-sm text-zinc-100">{node.label || entryName}</p>
+                <p className="mt-1 truncate text-xs text-zinc-400">{entryName}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ChampionshipBracketView({
   camp,
   revealedAll,
@@ -317,6 +406,26 @@ export function ChampionshipBracketView({
   return (
     <div className="space-y-10">
       {camp.stages.map((stage) => {
+        if (stage.format === "custom") {
+          if (stage.flowNodes.length === 0) {
+            return (
+              <section key={stage.id}>
+                <h2 className="mb-2 font-[family-name:var(--font-display)] text-xl text-amber-100">{stage.name}</h2>
+                <p className="text-sm text-zinc-500">Quadro ainda não configurado.</p>
+              </section>
+            );
+          }
+          return (
+            <CustomFlowStageView
+              key={stage.id}
+              camp={camp}
+              stage={stage}
+              revealedAll={revealedAll}
+              revealedIds={revealedIds}
+              onReveal={onReveal}
+            />
+          );
+        }
         const stageFixtures = camp.fixtures.filter((fixture) => fixture.stageId === stage.id && !fixture.isHidden);
         if (stageFixtures.length === 0) {
           return (
