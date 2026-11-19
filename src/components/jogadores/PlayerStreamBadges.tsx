@@ -19,7 +19,7 @@ export function PlayerStreamBadges({
   placement = "floating",
 }: {
   streams: PlayerStreamLinks;
-  /** `inline` fica na linha do nome. `compact` fica ao lado do ícone do clã. */
+  /** `inline` fica na linha do nome do perfil. `compact` fica no fim da coluna do nome. */
   placement?: "floating" | "inline" | "compact";
 }) {
   const floating = placement === "floating";

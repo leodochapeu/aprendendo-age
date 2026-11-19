@@ -153,7 +153,7 @@ export function RosterPresentation({
               )}
             </div>
             {ranked ? (
-              <div className="roster-card-in mt-2">
+              <div className="roster-card-in relative z-20 mt-2">
                 <RacePlayerCard
                   player={{ ...ranked, logoPath: portrait }}
                   labelOverride={player.name}
