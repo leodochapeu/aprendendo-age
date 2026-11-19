@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
+import { PlayerStreamBadges } from "@/components/jogadores/PlayerStreamBadges";
 import { RacePlayerCard } from "@/components/jogadores/RacePlayerCard";
 import { getFormRankPortraitPath, MolduraAgeAvatar } from "@/components/rank/rankProfileUi";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -134,6 +135,7 @@ export function RosterPresentation({
             </div>
           ) : null}
           <div className="relative z-[3] flex flex-col items-center px-4 pb-8 pt-10 sm:px-8">
+            {ranked ? <PlayerStreamBadges streams={ranked.streams} /> : null}
             <div className={cn("race-avatar-hop", visible && "is-hopping")}>
               {cls ? (
                 <MolduraAgeAvatar
