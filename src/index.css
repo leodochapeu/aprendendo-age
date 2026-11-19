@@ -784,6 +784,52 @@ body {
   animation-fill-mode: forwards;
 }
 
+.player-stream-badges {
+  position: absolute;
+  z-index: 6;
+  top: -0.7rem;
+  left: 0.7rem;
+  display: flex;
+  gap: 0.35rem;
+  animation: player-stream-float 3.6s ease-in-out infinite;
+}
+
+.player-stream-badges__link {
+  display: block;
+  line-height: 0;
+  border-radius: 999px;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.player-stream-badges__link:hover {
+  transform: translateY(-2px) scale(1.06);
+  filter: brightness(1.08);
+}
+
+.player-stream-badges__link--youtube {
+  color: #ff0033;
+}
+
+.player-stream-badges__link--twitch {
+  color: #9146ff;
+}
+
+@keyframes player-stream-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-stream-badges {
+    animation: none;
+  }
+}
+
 .roster-clan-mark {
   position: absolute;
   z-index: 1;

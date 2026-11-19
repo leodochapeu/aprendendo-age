@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { FlagPennant } from "@/components/campeonato/FlagPennant";
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
+import { PlayerStreamBadges } from "@/components/jogadores/PlayerStreamBadges";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
@@ -69,6 +70,7 @@ export const RacePlayerCard = forwardRef<
       style={style}
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: GRID_SCRIM }} aria-hidden />
+      <PlayerStreamBadges streams={player.streams} />
 
       <div className={cn("relative p-3 sm:p-4", flagIso ? "pt-4 sm:pt-5" : false)}>
         <div className="flex min-w-0 items-start gap-2 sm:gap-3">
