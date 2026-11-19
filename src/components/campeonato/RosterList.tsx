@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerClanLink } from "@/components/jogadores/PlayerClanLink";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
+import { PlayerStreamBadges } from "@/components/jogadores/PlayerStreamBadges";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -115,7 +116,7 @@ export function RosterList({
               <th scope="col" className="min-w-[8rem] px-3 py-3 font-medium">
                 {t("common.name")}
               </th>
-              <th scope="col" className="w-16 px-2 py-3 text-center font-medium">
+              <th scope="col" className="px-2 py-3 text-center font-medium">
                 {t("pages.players.colClan")}
               </th>
               <th scope="col" className="min-w-[6.5rem] px-3 py-3 font-medium">
@@ -177,8 +178,15 @@ export function RosterList({
                       </span>
                     )}
                   </td>
-                  <td className="px-2 py-3 text-center">
-                    {ranked ? <PlayerClanLink player={ranked} size="sm" className="justify-center" /> : <span className="text-zinc-600">—</span>}
+                  <td className="px-2 py-3">
+                    {ranked ? (
+                      <div className="flex items-center justify-center gap-1.5">
+                        <PlayerStreamBadges streams={ranked.streams} placement="compact" />
+                        <PlayerClanLink player={ranked} size="sm" className="justify-center" />
+                      </div>
+                    ) : (
+                      <span className="text-zinc-600">—</span>
+                    )}
                   </td>
                   <td className="px-3 py-3 text-zinc-400">{cls?.categoryLabel ?? "—"}</td>
                   <td className="relative overflow-visible px-2 py-3 text-center">
@@ -256,7 +264,12 @@ export function RosterList({
                   )}
                   <p className="mt-0.5 truncate text-xs text-zinc-400">{cls?.categoryLabel ?? "—"}</p>
                 </div>
-                {ranked ? <PlayerClanLink player={ranked} size="sm" /> : null}
+                {ranked ? (
+                  <div className="flex shrink-0 items-center gap-1.5">
+                    <PlayerStreamBadges streams={ranked.streams} placement="compact" />
+                    <PlayerClanLink player={ranked} size="sm" />
+                  </div>
+                ) : null}
                 {cls && ranked ? (
                   <TierPortraitBadge
                     cls={cls}
