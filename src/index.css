@@ -814,6 +814,16 @@ body {
   color: #9146ff;
 }
 
+.player-stream-badges--inline {
+  position: static;
+  top: auto;
+  left: auto;
+  z-index: auto;
+  align-items: center;
+  gap: 0.15rem;
+  animation: none;
+}
+
 @keyframes player-stream-float {
   0%,
   100% {
