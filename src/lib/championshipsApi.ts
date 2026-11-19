@@ -185,7 +185,8 @@ export async function fetchPublicChampionships(includeDev = false): Promise<Cham
       : query.eq("public_page", true).eq("dev_mode", false);
   };
   const first = await listed();
-  let data = first.data;
+  // O select legado não tem `subtitle`. Os dois resultados não são atribuíveis entre si.
+  let raw: unknown = first.data;
   if (first.error) {
     let legacy = supabase.from("championships").select(PUBLIC_LIST_SELECT_LEGACY).eq("status", "approved").neq("phase", "draft").order("name");
     legacy = includeDev
@@ -193,15 +194,26 @@ export async function fetchPublicChampionships(includeDev = false): Promise<Cham
       : legacy.eq("public_page", true).eq("dev_mode", false);
     const fallback = await legacy;
     if (fallback.error) throw new Error(fallback.error.message);
-    data = fallback.data;
+    raw = fallback.data;
   }
-  return (data ?? [])
+  const data = (Array.isArray(raw) ? raw : []) as Array<{
+    id: unknown;
+    slug: unknown;
+    name: unknown;
+    subtitle?: unknown;
+    description: unknown;
+    logo_path: unknown;
+    phase: unknown;
+    public_page: unknown;
+    dev_mode: unknown;
+  }>;
+  return data
     .filter((row) => listedOnAprendendoAge(row, includeDev) && typeof row.slug === "string" && row.slug)
     .map((row) => ({
       id: row.id as string,
       slug: row.slug as string,
       name: row.name as string,
-      subtitle: typeof (row as { subtitle?: unknown }).subtitle === "string" ? (row as { subtitle: string }).subtitle : "",
+      subtitle: typeof row.subtitle === "string" ? row.subtitle : "",
       description: (row.description as string) ?? "",
       logoUrl: championshipAssetUrl(row.logo_path as string | null),
       phase: phaseOf(row.phase),
