@@ -281,7 +281,7 @@ export function MolduraAgeAvatar({
   return (
     <div
       className={cn(
-        "relative mx-auto aspect-square overflow-visible",
+        "relative isolate mx-auto aspect-square overflow-visible",
         compact
           ? "h-full w-full"
           : hero

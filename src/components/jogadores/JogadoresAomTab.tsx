@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerClanLink } from "@/components/jogadores/PlayerClanLink";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
+import { PlayerStreamBadges } from "@/components/jogadores/PlayerStreamBadges";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -171,11 +172,18 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
                         <PlayerAvatar player={player} ringClass={theme.stepRing} tierId={cls.tierId} />
                       </td>
                       <td className="px-3 py-3">
-                        <PlayerProfileLink player={player} className="inline-block">
-                          <span className="font-[family-name:var(--font-display)] font-semibold tracking-wide text-zinc-100 transition hover:text-amber-100">
-                            {label}
-                          </span>
-                        </PlayerProfileLink>
+                        <div className="flex min-w-0 items-center gap-4">
+                          <PlayerProfileLink player={player} className="min-w-0">
+                            <span className="block truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-zinc-100 transition hover:text-amber-100">
+                              {label}
+                            </span>
+                          </PlayerProfileLink>
+                          {player.streams.youtube || player.streams.twitch ? (
+                            <div className="ml-auto shrink-0">
+                              <PlayerStreamBadges streams={player.streams} placement="compact" />
+                            </div>
+                          ) : null}
+                        </div>
                       </td>
                       <td className="px-2 py-3 text-center">
                         <PlayerClanLink player={player} size="sm" className="justify-center" />
@@ -229,11 +237,18 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
                     <span className="mt-2 w-5 shrink-0 text-center text-xs tabular-nums text-zinc-500">{i + 1}</span>
                     <PlayerAvatar player={player} ringClass={theme.stepRing} tierId={cls.tierId} />
                     <div className="min-w-0 flex-1">
-                      <PlayerProfileLink player={player} className="inline-block max-w-full">
-                        <p className="truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-zinc-100 transition hover:text-amber-100">
-                          {label}
-                        </p>
-                      </PlayerProfileLink>
+                      <div className="flex min-w-0 items-center gap-3">
+                        <PlayerProfileLink player={player} className="min-w-0">
+                          <p className="truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-zinc-100 transition hover:text-amber-100">
+                            {label}
+                          </p>
+                        </PlayerProfileLink>
+                        {player.streams.youtube || player.streams.twitch ? (
+                          <div className="ml-auto shrink-0">
+                            <PlayerStreamBadges streams={player.streams} placement="compact" />
+                          </div>
+                        ) : null}
+                      </div>
                       <p className="mt-0.5 truncate text-xs text-zinc-400">{cls.categoryLabel}</p>
                     </div>
                     <PlayerClanLink player={player} size="sm" />

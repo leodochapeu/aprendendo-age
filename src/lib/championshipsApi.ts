@@ -47,17 +47,38 @@ export type ChampionshipLink = {
   url: string;
 };
 
-export type ChampionshipStageFormat = "groups" | "single_elim" | "double_elim";
+export type ChampionshipStageFormat = "groups" | "single_elim" | "double_elim" | "custom";
 export type ChampionshipFixtureSection = "group" | "winners" | "losers" | "grand_final";
+export type ChampionshipFlowNodeType = "match" | "initializer" | "finalizer";
+
+export type ChampionshipFlowNode = {
+  id: string;
+  type: ChampionshipFlowNodeType;
+  fixtureId: string | null;
+  entryId: string | null;
+  label: string;
+  x: number;
+  y: number;
+  sortIndex: number;
+};
+
+export type ChampionshipFlowEdge = {
+  id: string;
+  fromNodeId: string;
+  toNodeId: string;
+  toSlot: "A" | "B" | null;
+};
 
 export type ChampionshipStage = {
   id: string;
   position: number;
   name: string;
   format: ChampionshipStageFormat;
-  seriesLength: 3 | 5 | 7;
+  seriesLength: 1 | 3 | 5 | 7;
   groupSize: number | null;
   advanceCount: number | null;
+  flowNodes: ChampionshipFlowNode[];
+  flowEdges: ChampionshipFlowEdge[];
 };
 
 export type ChampionshipFixture = {
@@ -179,7 +200,7 @@ export async function fetchPublicChampionships(includeDev = false): Promise<Cham
   const supabase = includeDev ? createSupabaseClient() : createSupabasePublicClient();
   if (!supabase) return [];
   const listed = () => {
-    let query = supabase.from("championships").select(PUBLIC_LIST_SELECT).eq("status", "approved").neq("phase", "draft").order("name");
+    const query = supabase.from("championships").select(PUBLIC_LIST_SELECT).eq("status", "approved").neq("phase", "draft").order("name");
     return includeDev
       ? query.or("and(public_page.eq.true,dev_mode.eq.false),dev_mode.eq.true")
       : query.eq("public_page", true).eq("dev_mode", false);
@@ -277,18 +298,38 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
   ]);
   const fixtures = (fixturesQuery.data ?? []) as ChampionshipFixtureRow[];
   const stages = stagesResult.error ? [] : (stagesResult.data ?? []);
+  const stageIds = stages.map((stage) => stage.id as string);
 
   const fixtureIds = (fixtures ?? []).map((fixture) => fixture.id as string);
-  const [{ data: links }, { data: games }] = fixtureIds.length
-    ? await Promise.all([
-        supabase.from("championship_fixture_links").select("id, fixture_id, label, url").in("fixture_id", fixtureIds),
-        supabase
+  const [{ data: links }, { data: games }, flowNodesResult, flowEdgesResult] = await Promise.all([
+    fixtureIds.length
+      ? supabase.from("championship_fixture_links").select("id, fixture_id, label, url").in("fixture_id", fixtureIds)
+      : Promise.resolve({ data: [] as Array<{ id: string; fixture_id: string; label: string; url: string }> }),
+    fixtureIds.length
+      ? supabase
           .from("championship_fixture_games")
           .select("id, fixture_id, winner_side, map_name, god_a, god_b, played_at")
           .in("fixture_id", fixtureIds)
-          .order("played_at", { ascending: true }),
-      ])
-    : [{ data: [] }, { data: [] }];
+          .order("played_at", { ascending: true })
+      : Promise.resolve({ data: [] as Array<Record<string, unknown>> }),
+    stageIds.length
+      ? supabase
+          .from("championship_flow_nodes")
+          .select("id, stage_id, node_type, fixture_id, entry_id, label, pos_x, pos_y, sort_index")
+          .eq("championship_id", id)
+          .in("stage_id", stageIds)
+          .order("sort_index", { ascending: true })
+      : Promise.resolve({ data: [] as Array<Record<string, unknown>>, error: null }),
+    stageIds.length
+      ? supabase
+          .from("championship_flow_edges")
+          .select("id, stage_id, from_node_id, to_node_id, to_slot")
+          .eq("championship_id", id)
+          .in("stage_id", stageIds)
+      : Promise.resolve({ data: [] as Array<Record<string, unknown>>, error: null }),
+  ]);
+  const flowNodes = flowNodesResult.error ? [] : (flowNodesResult.data ?? []);
+  const flowEdges = flowEdgesResult.error ? [] : (flowEdgesResult.data ?? []);
 
   return {
     id,
@@ -366,18 +407,48 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
       isBye: Boolean(fixture.is_bye),
       isHidden: Boolean(fixture.is_hidden),
     })),
-    stages: stages.map((stage) => ({
-      id: stage.id as string,
-      position: stage.position as number,
-      name: (stage.name as string) || "Fase",
-      format:
-        stage.format === "groups" || stage.format === "double_elim"
-          ? (stage.format as ChampionshipStageFormat)
-          : "single_elim",
-      seriesLength: (stage.series_length === 5 || stage.series_length === 7 ? stage.series_length : 3) as 3 | 5 | 7,
-      groupSize: typeof stage.group_size === "number" ? stage.group_size : null,
-      advanceCount: typeof stage.advance_count === "number" ? stage.advance_count : null,
-    })),
+    stages: stages.map((stage) => {
+      const format: ChampionshipStageFormat =
+        stage.format === "groups" || stage.format === "double_elim" || stage.format === "custom"
+          ? stage.format
+          : "single_elim";
+      return {
+        id: stage.id as string,
+        position: stage.position as number,
+        name: (stage.name as string) || "Fase",
+        format,
+        seriesLength: (
+          stage.series_length === 1 || stage.series_length === 5 || stage.series_length === 7
+            ? stage.series_length
+            : 3
+        ) as 1 | 3 | 5 | 7,
+        groupSize: typeof stage.group_size === "number" ? stage.group_size : null,
+        advanceCount: typeof stage.advance_count === "number" ? stage.advance_count : null,
+        flowNodes: flowNodes
+          .filter((node) => node.stage_id === stage.id)
+          .map((node) => ({
+            id: node.id as string,
+            type:
+              node.node_type === "initializer" || node.node_type === "finalizer" || node.node_type === "match"
+                ? (node.node_type as ChampionshipFlowNodeType)
+                : ("match" as const),
+            fixtureId: (node.fixture_id as string | null) ?? null,
+            entryId: (node.entry_id as string | null) ?? null,
+            label: (node.label as string) || "",
+            x: Number(node.pos_x) || 0,
+            y: Number(node.pos_y) || 0,
+            sortIndex: typeof node.sort_index === "number" ? node.sort_index : 0,
+          })),
+        flowEdges: flowEdges
+          .filter((edge) => edge.stage_id === stage.id)
+          .map((edge) => ({
+            id: edge.id as string,
+            fromNodeId: edge.from_node_id as string,
+            toNodeId: edge.to_node_id as string,
+            toSlot: edge.to_slot === "A" || edge.to_slot === "B" ? edge.to_slot : null,
+          })),
+      };
+    }),
     places: (places ?? []).map((place) => ({
       place: place.place as number,
       label: (place.label as string) || `${place.place}º`,

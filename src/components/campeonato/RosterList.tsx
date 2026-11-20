@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerClanLink } from "@/components/jogadores/PlayerClanLink";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
+import { PlayerStreamBadges } from "@/components/jogadores/PlayerStreamBadges";
 import { getFormRankPortraitPath } from "@/components/rank/rankProfileUi";
 import { TierPortraitBadge } from "@/components/rank/TierPortraitBadge";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -165,17 +166,24 @@ export function RosterList({
                     )}
                   </td>
                   <td className="px-3 py-3">
-                    {ranked ? (
-                      <PlayerProfileLink player={ranked} className="inline-block max-w-full">
-                        <span className="font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50 transition hover:text-amber-100">
+                    <div className="flex min-w-0 items-center gap-4">
+                      {ranked ? (
+                        <PlayerProfileLink player={ranked} className="min-w-0">
+                          <span className="block truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50 transition hover:text-amber-100">
+                            {row.entry.name}
+                          </span>
+                        </PlayerProfileLink>
+                      ) : (
+                        <span className="min-w-0 truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50">
                           {row.entry.name}
                         </span>
-                      </PlayerProfileLink>
-                    ) : (
-                      <span className="font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50">
-                        {row.entry.name}
-                      </span>
-                    )}
+                      )}
+                      {ranked && (ranked.streams.youtube || ranked.streams.twitch) ? (
+                        <div className="ml-auto shrink-0">
+                          <PlayerStreamBadges streams={ranked.streams} placement="compact" />
+                        </div>
+                      ) : null}
+                    </div>
                   </td>
                   <td className="px-2 py-3 text-center">
                     {ranked ? <PlayerClanLink player={ranked} size="sm" className="justify-center" /> : <span className="text-zinc-600">—</span>}
@@ -245,15 +253,22 @@ export function RosterList({
                   avatar
                 )}
                 <div className="min-w-0 flex-1">
-                  {ranked ? (
-                    <PlayerProfileLink player={ranked} className="inline-block max-w-full">
-                      <p className="truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50 transition hover:text-amber-100">
-                        {row.entry.name}
-                      </p>
-                    </PlayerProfileLink>
-                  ) : (
-                    <p className="truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50">{row.entry.name}</p>
-                  )}
+                  <div className="flex min-w-0 items-center gap-3">
+                    {ranked ? (
+                      <PlayerProfileLink player={ranked} className="min-w-0">
+                        <p className="truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50 transition hover:text-amber-100">
+                          {row.entry.name}
+                        </p>
+                      </PlayerProfileLink>
+                    ) : (
+                      <p className="min-w-0 truncate font-[family-name:var(--font-display)] font-semibold tracking-wide text-amber-50">{row.entry.name}</p>
+                    )}
+                    {ranked && (ranked.streams.youtube || ranked.streams.twitch) ? (
+                      <div className="ml-auto shrink-0">
+                        <PlayerStreamBadges streams={ranked.streams} placement="compact" />
+                      </div>
+                    ) : null}
+                  </div>
                   <p className="mt-0.5 truncate text-xs text-zinc-400">{cls?.categoryLabel ?? "—"}</p>
                 </div>
                 {ranked ? <PlayerClanLink player={ranked} size="sm" /> : null}

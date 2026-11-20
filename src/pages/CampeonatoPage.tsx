@@ -1092,13 +1092,15 @@ function FixtureCard({
           winner={visible ? (game ? game.winnerSide : fixture.scoreA === fixture.scoreB ? null : fixture.scoreA > fixture.scoreB ? "A" : "B") : null}
           whenLabel={whenLabel}
           roundLabel={
-            fixture.seriesLength === 5
-              ? `${fixture.roundLabel} · MD5`
-              : fixture.seriesLength === 7
-                ? `${fixture.roundLabel} · MD7`
-                : fixture.seriesLength === 3
-                  ? `${fixture.roundLabel} · MD3`
-                  : fixture.roundLabel
+            fixture.seriesLength === 1
+              ? `${fixture.roundLabel} · MD1`
+              : fixture.seriesLength === 5
+                ? `${fixture.roundLabel} · MD5`
+                : fixture.seriesLength === 7
+                  ? `${fixture.roundLabel} · MD7`
+                  : fixture.seriesLength === 3
+                    ? `${fixture.roundLabel} · MD3`
+                    : fixture.roundLabel
           }
           links={visible ? fixture.links : []}
           revealed={visible}

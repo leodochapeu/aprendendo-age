@@ -20,6 +20,7 @@ function player(overrides: Partial<AomRacePlayer>): AomRacePlayer {
     rank: null,
     snapshotAt: null,
     country: null,
+    streams: { youtube: null, twitch: null },
     ...overrides,
   };
 }
