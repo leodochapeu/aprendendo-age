@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 
+import { cn } from "@/lib/cn";
+
 type Mote = { x: number; y: number; r: number; v: number; a: number };
 
-export function ParticleField() {
+export function ParticleField({ className }: { className?: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -55,5 +57,11 @@ export function ParticleField() {
     };
   }, []);
 
-  return <canvas ref={ref} className="pointer-events-none fixed inset-0 h-full w-full" aria-hidden />;
+  return (
+    <canvas
+      ref={ref}
+      className={cn("pointer-events-none fixed inset-0 z-0 h-full w-full", className)}
+      aria-hidden
+    />
+  );
 }

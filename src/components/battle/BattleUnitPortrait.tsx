@@ -56,11 +56,11 @@ export function BattleUnitPortrait({
         disabled={disabled}
         onClick={onClick}
         className={cn(
-          "relative shrink-0 overflow-hidden rounded-xl border bg-zinc-900/80 shadow-md shadow-black/40 transition",
+          "relative shrink-0 overflow-hidden rounded-xl border bg-black/55 shadow-md shadow-black/40 transition",
           SIZE[size],
           selected
-            ? "border-amber-400 ring-2 ring-amber-400/40"
-            : "border-aom-border hover:border-amber-400/60 hover:bg-zinc-900",
+            ? "border-amber-200 shadow-[0_0_18px_rgba(255,196,70,0.45)] ring-2 ring-amber-200/50"
+            : "border-amber-200/25 hover:border-amber-200/70 hover:bg-black/40",
           disabled && !locked && "cursor-not-allowed opacity-40 hover:border-aom-border",
           locked &&
             "cursor-not-allowed border-zinc-700 bg-zinc-950 hover:border-zinc-700",
@@ -94,7 +94,7 @@ export function BattleUnitPortrait({
     <div
       title={nome}
       className={cn(
-        "relative shrink-0 overflow-hidden rounded-xl border border-aom-border bg-zinc-900/80 shadow-md shadow-black/40",
+        "relative shrink-0 overflow-hidden rounded-xl border border-amber-200/30 bg-black/55 shadow-[0_0_18px_rgba(255,196,70,0.28)]",
         SIZE[size],
         className,
       )}

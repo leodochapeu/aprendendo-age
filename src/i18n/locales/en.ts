@@ -17,6 +17,8 @@ export const enMessages: TranslationTree = {
     overview: "Overview",
     new: "New",
     newTooltip: "Recent / new content",
+    beta: "Beta",
+    betaTooltip: "Mode still in testing",
     englishName: "English: {{name}}",
     switchLanguage: "Switch language",
     openMenu: "Open menu",
@@ -176,6 +178,7 @@ export const enMessages: TranslationTree = {
     home: "Home",
     starts: "Starts (Build Orders)",
     trilha: "Learning Path",
+    battle: "Battle",
     communityTopics: "Topics",
     communityVideos: "Community Videos",
     modules: {

@@ -34,14 +34,16 @@ export function BattlePantheonCard({
   const tint = pantheonCardTint(pantheonName);
 
   return (
-    <Link
-      to={to}
-      className={cn(
-        "group relative block min-h-44 overflow-hidden rounded-2xl border border-aom-border bg-zinc-950",
-        "shadow-lg shadow-black/40 transition duration-300",
-        "hover:border-amber-400/55 hover:shadow-amber-900/30 focus:outline-none focus:ring-2 focus:ring-amber-500/40",
-      )}
-    >
+    <div className="relative h-full">
+      <div className="epic-gold-glow" aria-hidden />
+      <Link
+        to={to}
+        className={cn(
+          "group relative block min-h-44 overflow-hidden rounded-2xl border border-amber-200/25 bg-zinc-950",
+          "shadow-lg shadow-black/40 transition duration-300",
+          "hover:border-amber-200/55 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/70",
+        )}
+      >
       {cover ? (
         <div
           aria-hidden
@@ -71,6 +73,16 @@ export function BattlePantheonCard({
         />
       ) : null}
 
+      <div className="epic-wind" aria-hidden>
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
+
       <div className="relative z-10 flex h-full min-h-44 flex-col justify-end p-5">
         <p className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-wide text-amber-50 drop-shadow">
           {title}
@@ -80,10 +92,11 @@ export function BattlePantheonCard({
             {subtitle}
           </p>
         ) : null}
-        <span className="mt-3 inline-flex w-fit rounded-full border border-amber-400/40 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-200 opacity-80 transition group-hover:opacity-100">
+        <span className="mt-3 inline-flex w-fit rounded-full border border-amber-200/40 bg-black/40 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-100 opacity-90 transition group-hover:opacity-100">
           {t("pages.battle.selectPantheon")}
         </span>
       </div>
-    </Link>
+      </Link>
+    </div>
   );
 }

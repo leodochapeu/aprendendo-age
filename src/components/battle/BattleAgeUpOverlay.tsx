@@ -26,8 +26,10 @@ export function BattleAgeUpOverlay({ open, eraName, eraIcon, onDone }: Props) {
   if (!open) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4">
-      <div className="animate-[battleAgePulse_1.8s_ease-out] text-center">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/75 px-4">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,196,70,0.22),transparent_58%)]" aria-hidden />
+      <div className="epic-gold-glow" aria-hidden />
+      <div className="relative animate-[battleAgePulse_1.8s_ease-out] text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-300/80">
           {t("pages.battle.ageUpLabel")}
         </p>

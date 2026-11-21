@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
+import { BattleAtmosphere } from "@/components/battle/BattleAtmosphere";
 import { AppShell } from "@/components/layout/AppShell";
 import { SiteNotificationsProvider } from "@/context/SiteNotificationsContext";
 import { useCatalog } from "@/hooks/useCatalog";
@@ -84,10 +85,13 @@ function LegacySuggestionsRedirect() {
 }
 
 function BattleRandomFallback() {
+  const { t } = useTranslation();
   return (
-    <div className="flex min-h-48 items-center justify-center text-sm text-zinc-400">
-      Carregando…
-    </div>
+    <BattleAtmosphere className="flex min-h-[50vh] items-center justify-center">
+      <p className="font-[family-name:var(--font-display)] text-3xl tracking-wide text-amber-50 sm:text-5xl">
+        {t("pages.battle.loading").replace(/[.…]+$/, "")}
+      </p>
+    </BattleAtmosphere>
   );
 }
 

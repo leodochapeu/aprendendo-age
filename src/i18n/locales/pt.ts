@@ -17,6 +17,8 @@ export const ptMessages: TranslationTree = {
     overview: "Visão geral",
     new: "Novo",
     newTooltip: "Conteúdo recente / novo",
+    beta: "Beta",
+    betaTooltip: "Modo em testes",
     englishName: "Inglês: {{name}}",
     switchLanguage: "Trocar idioma",
     openMenu: "Abrir menu",
@@ -176,6 +178,7 @@ export const ptMessages: TranslationTree = {
     home: "Início",
     starts: "Starts (Build Orders)",
     trilha: "Trilha de Aprendizado",
+    battle: "Batalha",
     communityTopics: "Tópicos",
     communityVideos: "Vídeos da Comunidade",
     modules: {

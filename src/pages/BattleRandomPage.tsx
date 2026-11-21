@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 
 import { BattleAgeUpOverlay } from "@/components/battle/BattleAgeUpOverlay";
+import { BattleAtmosphere, BattleEpicFrame } from "@/components/battle/BattleAtmosphere";
 import { BattleConfirmModal } from "@/components/battle/BattleConfirmModal";
 import { BattleFavorModal } from "@/components/battle/BattleFavorModal";
 import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
@@ -93,17 +94,21 @@ export function BattleRandomPage() {
 
   if (loadError) {
     return (
-      <div className="rounded-2xl border border-rose-500/40 bg-rose-950/30 p-6 text-rose-100">
-        {t("pages.battle.loadError")}
-      </div>
+      <BattleAtmosphere>
+        <BattleEpicFrame wash="rose" bodyClassName="p-6 text-rose-100">
+          {t("pages.battle.loadError")}
+        </BattleEpicFrame>
+      </BattleAtmosphere>
     );
   }
 
   if (!index) {
     return (
-      <div className="flex min-h-48 items-center justify-center text-sm text-zinc-400">
-        {t("pages.battle.loading")}
-      </div>
+      <BattleAtmosphere className="flex min-h-[50vh] items-center justify-center">
+        <p className="font-[family-name:var(--font-display)] text-3xl tracking-wide text-amber-50 sm:text-5xl">
+          {t("pages.battle.loading").replace(/[.…]+$/, "")}
+        </p>
+      </BattleAtmosphere>
     );
   }
 
@@ -300,20 +305,24 @@ function BattleRandomSession({
 
   if (defenderId == null) {
     return (
-      <div className="rounded-2xl border border-rose-500/40 bg-rose-950/30 p-6 text-rose-100">
-        {t("pages.battle.noDefender")}
-      </div>
+      <BattleAtmosphere>
+        <BattleEpicFrame wash="rose" bodyClassName="p-6 text-rose-100">
+          {t("pages.battle.noDefender")}
+        </BattleEpicFrame>
+      </BattleAtmosphere>
     );
   }
 
   if (phase === "summary") {
     const summary = summarizeRun(history);
     return (
+      <BattleAtmosphere>
       <div className="mx-auto max-w-3xl">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-wide text-amber-100">
+        <p className="text-xs uppercase tracking-[0.22em] text-pink-300">{t("common.beta")}</p>
+        <h1 className="mt-2 font-[family-name:var(--font-display)] text-4xl tracking-wide text-amber-50">
           {t("pages.battle.summaryTitle")}
         </h1>
-        <p className="mt-2 text-sm text-zinc-400">{t("pages.battle.summaryDescription")}</p>
+        <p className="mt-3 max-w-2xl text-base text-zinc-200">{t("pages.battle.summaryDescription")}</p>
 
         <div className="mt-6 grid grid-cols-3 gap-3">
           <StatCard label={t("pages.battle.wins")} value={summary.wins} tone="win" />
@@ -326,18 +335,18 @@ function BattleRandomSession({
             const era = eraById.get(eraId);
             const stats = summary.byEra[eraId];
             return (
-              <div key={eraId} className="rounded-xl border border-aom-border bg-zinc-950/70 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+              <BattleEpicFrame key={eraId} bodyClassName="p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200/80">
                   {era?.nome ?? `Era ${eraId}`}
                 </p>
-                <p className="mt-2 text-sm text-zinc-300">
+                <p className="mt-2 text-sm text-zinc-100">
                   {t("pages.battle.eraStats", {
                     wins: String(stats.wins),
                     losses: String(stats.losses),
                     draws: String(stats.draws),
                   })}
                 </p>
-              </div>
+              </BattleEpicFrame>
             );
           })}
         </div>
@@ -378,26 +387,31 @@ function BattleRandomSession({
           </button>
           <Link
             to="/battle"
-            className="rounded-xl border border-aom-border bg-zinc-900/60 px-4 py-2.5 text-center text-sm font-medium text-zinc-200 transition hover:border-zinc-500"
+            className="rounded-xl border border-amber-200/25 bg-black/40 px-4 py-2.5 text-center text-sm font-medium text-amber-50 transition hover:border-amber-200/55"
           >
             {t("pages.battle.backToMenu")}
           </Link>
         </div>
       </div>
+      </BattleAtmosphere>
     );
   }
 
   return (
+    <BattleAtmosphere>
     <div className="mx-auto max-w-5xl">
       <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/80">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink-300">
+            {t("common.beta")}
+          </p>
+          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-amber-200/80">
             {t("pages.battle.randomBattle")}
           </p>
-          <h1 className="mt-1 font-[family-name:var(--font-display)] text-2xl font-semibold text-amber-50 sm:text-3xl">
+          <h1 className="mt-1 font-[family-name:var(--font-display)] text-3xl tracking-wide text-amber-50 sm:text-4xl">
             {pantheon.nome}
           </h1>
-          <p className="mt-1 text-sm text-zinc-400">
+          <p className="mt-1 text-sm text-zinc-300">
             {t("pages.battle.roundProgress", {
               current: String(roundIndex + 1),
               total: String(plan.length),
@@ -430,7 +444,7 @@ function BattleRandomSession({
         </div>
       </header>
 
-      <div className="mb-6 flex items-center gap-3 rounded-xl border border-aom-border bg-zinc-950/70 px-4 py-3">
+      <BattleEpicFrame glow={false} className="mb-6" bodyClassName="flex items-center gap-3 px-4 py-3">
         {currentEra?.icon ? (
           <img
             src={getIconFieldUrl(currentEra.icon)}
@@ -440,7 +454,7 @@ function BattleRandomSession({
           />
         ) : null}
         <div>
-          <p className="text-xs uppercase tracking-wider text-zinc-500">{t("pages.battle.currentAge")}</p>
+          <p className="text-xs uppercase tracking-[0.16em] text-amber-200/70">{t("pages.battle.currentAge")}</p>
           <p className="font-semibold text-amber-100">{currentEra?.nome ?? `Era ${currentEraId}`}</p>
         </div>
         <div className="ml-auto flex gap-1">
@@ -459,14 +473,14 @@ function BattleRandomSession({
             />
           ))}
         </div>
-      </div>
+      </BattleEpicFrame>
 
       <section className="grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-start">
-        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-emerald-300/90">
+        <BattleEpicFrame wash="emerald" bodyClassName="p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">
             {t("pages.battle.yourDeck")}
           </p>
-          <p className="mt-1 text-sm text-zinc-400">{t("pages.battle.pickUnitHint")}</p>
+          <p className="mt-1 text-sm text-zinc-300">{t("pages.battle.pickUnitHint")}</p>
           <ul className="mt-4 grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6">
             {attackerPool.map((u) => {
               const locked =
@@ -488,18 +502,18 @@ function BattleRandomSession({
             })}
           </ul>
           {attackerPool.length === 0 ? (
-            <p className="mt-4 text-sm text-rose-300">{t("pages.battle.emptyDeck")}</p>
+            <p className="mt-4 text-sm text-rose-200">{t("pages.battle.emptyDeck")}</p>
           ) : null}
-        </div>
+        </BattleEpicFrame>
 
         <div className="hidden items-center justify-center lg:flex">
-          <span className="font-[family-name:var(--font-display)] text-3xl font-bold text-amber-400">
+          <span className="font-[family-name:var(--font-display)] text-4xl font-bold text-amber-100 drop-shadow-[0_0_18px_rgba(255,196,70,0.45)]">
             VS
           </span>
         </div>
 
-        <div className="rounded-2xl border border-rose-500/30 bg-rose-950/20 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-rose-300/90">
+        <BattleEpicFrame wash="rose" bodyClassName="p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose-200">
             {t("pages.battle.enemy")}
           </p>
           {defender ? (
@@ -514,15 +528,15 @@ function BattleRandomSession({
                 />
               ) : null}
               {firstNome(defender.panteao) ? (
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-zinc-300">
                   <NotionText text={firstNome(defender.panteao)!} />
                 </p>
               ) : null}
             </div>
           ) : (
-            <p className="mt-4 text-sm text-zinc-400">{t("pages.battle.noDefender")}</p>
+            <p className="mt-4 text-sm text-zinc-300">{t("pages.battle.noDefender")}</p>
           )}
-        </div>
+        </BattleEpicFrame>
       </section>
 
       {phase === "result" && lastResult ? (
@@ -584,6 +598,7 @@ function BattleRandomSession({
         onDone={finishAgeUp}
       />
     </div>
+    </BattleAtmosphere>
   );
 }
 

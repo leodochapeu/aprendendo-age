@@ -34,8 +34,8 @@ function isCatalogListIndex(pathname: string): boolean {
 }
 
 type NavLinkItem =
-  | { to: string; labelKey: string; end?: boolean; navNovo?: boolean; icon?: string }
-  | { to: string; labelKey: string; match: (pathname: string) => boolean; navNovo?: boolean; icon?: string };
+  | { to: string; labelKey: string; end?: boolean; navNovo?: boolean; navBeta?: boolean; icon?: string }
+  | { to: string; labelKey: string; match: (pathname: string) => boolean; navNovo?: boolean; navBeta?: boolean; icon?: string };
 
 type NavModule = {
   id: string;
@@ -61,6 +61,12 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
       to: "/trilha-de-aprendizado",
       labelKey: "nav.trilha",
       match: (p: string) => p === "/trilha-de-aprendizado" || p.startsWith("/trilha-de-aprendizado/"),
+    },
+    {
+      to: "/battle",
+      labelKey: "nav.battle",
+      navBeta: true,
+      match: (p: string) => p === "/battle" || p.startsWith("/battle/"),
     },
     {
       id: "conhecimento-age",
@@ -128,6 +134,9 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
   ];
 }
 
+const navBetaTagClass =
+  "inline-flex shrink-0 items-center rounded border border-pink-400/70 bg-pink-500/20 px-1 py-px text-[0.6rem] font-semibold leading-tight text-pink-200";
+
 function navClass(active: boolean) {
   return cn(
     "flex min-w-0 items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm transition-colors",
@@ -172,6 +181,11 @@ function NavLinkRow({
       {item.navNovo ? (
         <span className={startNovoTagClassNav} title={t("common.newTooltip")}>
           {t("common.new")}
+        </span>
+      ) : null}
+      {item.navBeta ? (
+        <span className={navBetaTagClass} title={t("common.betaTooltip")}>
+          {t("common.beta")}
         </span>
       ) : null}
     </NavLink>
