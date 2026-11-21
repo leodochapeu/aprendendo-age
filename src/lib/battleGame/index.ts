@@ -16,6 +16,7 @@ export {
 } from "./plan";
 
 export {
+  CATEGORY_EXAMPLE_UNIT_ID,
   categoriesForEra,
   categoryBeats,
   categoryById,

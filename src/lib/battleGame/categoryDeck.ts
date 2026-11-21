@@ -30,6 +30,19 @@ const MYTH_TRIANGLE: readonly BattleCategory[] = [
   { id: "heroi", icon: "aomr_type_hero_icon", labelKey: "pages.battle.categories.heroi" },
 ];
 
+/** Exemplo grego de cada categoria, usado no hover do modo Categoria. */
+export const CATEGORY_EXAMPLE_UNIT_ID: Record<BattleCategoryId, number> = {
+  infantaria: 10,
+  cavalaria: 11,
+  artilharia: 12,
+  soldado_humano: 10,
+  unidade_mitica: 22,
+  heroi: 4,
+  navio_flecheiro: 250,
+  navio_corpo: 251,
+  navio_cerco: 252,
+};
+
 const SHIPS: readonly BattleCategory[] = [
   { id: "navio_flecheiro", icon: "aomr_type_archer_ship_icon", labelKey: "pages.battle.categories.navio_flecheiro" },
   { id: "navio_corpo", icon: "aomr_type_close_combat_ship_icon", labelKey: "pages.battle.categories.navio_corpo" },

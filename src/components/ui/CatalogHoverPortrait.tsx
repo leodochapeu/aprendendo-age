@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { UnidadeModelViewer } from "@/components/unidade/UnidadeModelViewer";
 import { EntityCardPreviewStats, type EntityCardPreviewStat } from "@/components/ui/EntityCardPreview";
 import { cn } from "@/lib/cn";
+import type { IdleVfxAnchor } from "@/lib/unitIdleVfx";
 
 type Props = {
   modelUrl?: string;
@@ -11,6 +12,9 @@ type Props = {
   portraitSrc?: string;
   /** Inclinação da câmera. Construções usam uma vista mais alta. */
   pitch?: number;
+  /** Aura e brilho usados nos heróis. */
+  hero?: boolean;
+  vfx?: IdleVfxAnchor[];
 };
 
 function portraitUrls(modelUrl: string | undefined, modelUrls: string[] | undefined): string[] {
@@ -20,10 +24,10 @@ function portraitUrls(modelUrl: string | undefined, modelUrls: string[] | undefi
 }
 
 /** Retrato grande do hover: projeção 3D quando existe modelo, senão a arte da unidade. */
-export function CatalogHoverPortrait({ modelUrl, modelUrls, portraitSrc, pitch }: Props) {
+export function CatalogHoverPortrait({ modelUrl, modelUrls, portraitSrc, pitch, hero = false, vfx }: Props) {
   const urls = portraitUrls(modelUrl, modelUrls);
   if (urls.length) {
-    return <UnidadeModelViewer urls={urls} compact spin pitch={pitch} />;
+    return <UnidadeModelViewer urls={urls} compact spin pitch={pitch} hero={hero} vfx={vfx} />;
   }
   if (portraitSrc) {
     return <img src={portraitSrc} alt="" className="mx-auto h-52 w-full object-contain" />;

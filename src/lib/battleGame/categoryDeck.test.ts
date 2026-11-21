@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  CATEGORY_EXAMPLE_UNIT_ID,
   categoriesForEra,
   categoryBeats,
   resolveCategoryChoice,
@@ -21,6 +22,20 @@ describe("categoryDeck", () => {
       "navio_corpo",
       "navio_cerco",
     ]);
+  });
+
+  it("cada categoria tem um exemplo grego", () => {
+    expect(CATEGORY_EXAMPLE_UNIT_ID).toEqual({
+      infantaria: 10,
+      cavalaria: 11,
+      artilharia: 12,
+      soldado_humano: 10,
+      unidade_mitica: 22,
+      heroi: 4,
+      navio_flecheiro: 250,
+      navio_corpo: 251,
+      navio_cerco: 252,
+    });
   });
 
   it("cada categoria vence a próxima do ciclo e empata consigo", () => {

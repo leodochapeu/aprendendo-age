@@ -1,14 +1,16 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type FocusEvent } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
 import { BattleAgeUpOverlay } from "@/components/battle/BattleAgeUpOverlay";
 import { BattleAtmosphere, BattleEpicFrame } from "@/components/battle/BattleAtmosphere";
 import { BattleConfirmSheet } from "@/components/battle/BattleConfirmSheet";
+import { BattleUnitHoverCard } from "@/components/battle/BattleUnitPortrait";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import {
   buildRoundPlan,
+  CATEGORY_EXAMPLE_UNIT_ID,
   categoryBeats,
   categoryById,
   categoryGroupsForEra,
@@ -22,7 +24,9 @@ import {
   type RoundOutcome,
 } from "@/lib/battleGame";
 import { cn } from "@/lib/cn";
+import { getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { getIconFieldUrl } from "@/lib/notionTokenAssets";
+import { unitIdleVfx } from "@/lib/unitIdleVfx";
 
 type CategoryRound = {
   index: number;
@@ -46,10 +50,24 @@ function CategoryIcon({
   size?: "md" | "lg";
 }) {
   const { t } = useTranslation();
+  const { unidadeById } = useCatalog();
+  const example = unidadeById.get(CATEGORY_EXAMPLE_UNIT_ID[category.id]);
+  const hero = category.id === "heroi";
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const anchorRef = useRef<HTMLSpanElement>(null);
   const src = getIconFieldUrl(category.icon);
   const label = t(category.labelKey);
   return (
-    <span className={cn("flex flex-col items-center gap-2 text-center", size === "md" && "w-full")}>
+    <span
+      ref={anchorRef}
+      className={cn("flex flex-col items-center gap-2 text-center", size === "md" && "w-full")}
+      onMouseEnter={() => setPreviewOpen(true)}
+      onMouseLeave={() => setPreviewOpen(false)}
+      onFocus={() => setPreviewOpen(true)}
+      onBlur={(event: FocusEvent<HTMLSpanElement>) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setPreviewOpen(false);
+      }}
+    >
       <span
         className={cn(
           "flex items-center justify-center rounded-2xl border border-white/10 bg-[#1a1612]",
@@ -66,6 +84,16 @@ function CategoryIcon({
       >
         {label}
       </span>
+      {previewOpen && example ? (
+        <BattleUnitHoverCard
+          nome={example.nome}
+          unitId={example.id}
+          portraitSrc={getUnidadeAssetUrl({ icon: example.icon })}
+          anchorRef={anchorRef}
+          hero={hero}
+          vfx={hero ? unitIdleVfx(example.id) : undefined}
+        />
+      ) : null}
     </span>
   );
 }

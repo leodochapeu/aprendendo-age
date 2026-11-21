@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { CatalogHoverPortrait } from "@/components/ui/CatalogHoverPortrait";
 import { cn } from "@/lib/cn";
 import { getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
+import type { IdleVfxAnchor } from "@/lib/unitIdleVfx";
 import { idleModelUrls } from "@/lib/unitModelUrl";
 
 type Props = {
@@ -100,7 +101,7 @@ export function BattleUnitPortrait({
     >
       {face}
       {previewOpen ? (
-        <BattleUnitHover nome={nome} unitId={unitId} portraitSrc={src} anchorRef={anchorRef} />
+        <BattleUnitHoverCard nome={nome} unitId={unitId} portraitSrc={src} anchorRef={anchorRef} />
       ) : null}
     </span>
   );
@@ -117,16 +118,20 @@ function LockMark() {
   );
 }
 
-function BattleUnitHover({
+export function BattleUnitHoverCard({
   nome,
   unitId,
   portraitSrc,
   anchorRef,
+  hero = false,
+  vfx,
 }: {
   nome: string;
   unitId?: number;
   portraitSrc?: string;
   anchorRef: RefObject<HTMLSpanElement | null>;
+  hero?: boolean;
+  vfx?: IdleVfxAnchor[];
 }) {
   const previewRef = useRef<HTMLDivElement>(null);
   const previewId = useId();
@@ -176,7 +181,7 @@ function BattleUnitHover({
         <p className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide text-amber-100">{nome}</p>
       </div>
       <div className="p-3">
-        <CatalogHoverPortrait modelUrls={modelUrls} portraitSrc={portraitSrc} />
+        <CatalogHoverPortrait modelUrls={modelUrls} portraitSrc={portraitSrc} hero={hero} vfx={vfx} />
       </div>
     </div>,
     document.body,
