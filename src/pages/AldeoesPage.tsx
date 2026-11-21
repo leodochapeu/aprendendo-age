@@ -17,7 +17,7 @@ import { getAldeaoAssetUrl } from "@/lib/entityWatermarkUrls";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
 import { pantheonCardTint } from "@/lib/pantheonCardTint";
 import { unitIdMatchingAldeao } from "@/lib/unidadeAldeao";
-import { unitModelUrl } from "@/lib/unitModelUrl";
+import { idleModelUrls } from "@/lib/unitModelUrl";
 
 function matches(a: LocaleCatalog["aldeoes"][number], q: string) {
   if (!q.trim()) return true;
@@ -135,7 +135,7 @@ export function AldeoesPage() {
                 hoverPreviewWide
                 hoverPreview={
                   <CatalogHoverFrame
-                    modelUrl={matchedUnitId != null ? unitModelUrl(matchedUnitId) : undefined}
+                    modelUrls={matchedUnitId != null ? idleModelUrls(matchedUnitId) : undefined}
                     portraitSrc={getAldeaoAssetUrl(a)}
                   >
                     <CatalogHoverStats

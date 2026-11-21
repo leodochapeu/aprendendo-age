@@ -28,7 +28,7 @@ import type { ResolvedEntityLink } from "@/lib/entityResolve";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
 import { cn } from "@/lib/cn";
 import { pantheonCardTint } from "@/lib/pantheonCardTint";
-import { unitModelUrl } from "@/lib/unitModelUrl";
+import { idleModelUrls } from "@/lib/unitModelUrl";
 import { LIST_VIEW_MODE_PARAM, listViewModeFromSearch, type ListViewMode } from "@/lib/listViewMode";
 import { countActiveUnitFilters, unidadeMatchesFilters } from "@/lib/unidadeFilters";
 import {
@@ -293,7 +293,7 @@ export function UnidadesPage() {
                   hoverPreviewWide
                   hoverPreview={
                     <CatalogHoverFrame
-                      modelUrl={unitModelUrl(u.id)}
+                      modelUrls={idleModelUrls(u.id)}
                       portraitSrc={getUnidadeAssetUrl(u)}
                       footer={<UnidadeMultiplierDamagePreview unidade={u} />}
                     >

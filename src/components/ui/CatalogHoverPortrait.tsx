@@ -6,15 +6,24 @@ import { cn } from "@/lib/cn";
 
 type Props = {
   modelUrl?: string;
+  /** Peças do modelo parado. Substitui `modelUrl` quando a unidade troca de arma. */
+  modelUrls?: string[];
   portraitSrc?: string;
   /** Inclinação da câmera. Construções usam uma vista mais alta. */
   pitch?: number;
 };
 
+function portraitUrls(modelUrl: string | undefined, modelUrls: string[] | undefined): string[] {
+  const urls = modelUrls?.filter(Boolean) ?? [];
+  if (urls.length) return urls;
+  return modelUrl ? [modelUrl] : [];
+}
+
 /** Retrato grande do hover: projeção 3D quando existe modelo, senão a arte da unidade. */
-export function CatalogHoverPortrait({ modelUrl, portraitSrc, pitch }: Props) {
-  if (modelUrl) {
-    return <UnidadeModelViewer urls={[modelUrl]} compact spin pitch={pitch} />;
+export function CatalogHoverPortrait({ modelUrl, modelUrls, portraitSrc, pitch }: Props) {
+  const urls = portraitUrls(modelUrl, modelUrls);
+  if (urls.length) {
+    return <UnidadeModelViewer urls={urls} compact spin pitch={pitch} />;
   }
   if (portraitSrc) {
     return <img src={portraitSrc} alt="" className="mx-auto h-52 w-full object-contain" />;
@@ -30,7 +39,7 @@ type FrameProps = Props & {
 };
 
 /** Retrato à esquerda e atributos à direita. No celular, um embaixo do outro. */
-export function CatalogHoverFrame({ modelUrl, portraitSrc, pitch, children, footer }: FrameProps) {
+export function CatalogHoverFrame({ modelUrl, modelUrls, portraitSrc, pitch, children, footer }: FrameProps) {
   return (
     <div className="space-y-3">
       <div
@@ -41,7 +50,7 @@ export function CatalogHoverFrame({ modelUrl, portraitSrc, pitch, children, foot
             : "sm:grid-cols-[13.5rem_minmax(0,1fr)]",
         )}
       >
-        <CatalogHoverPortrait modelUrl={modelUrl} portraitSrc={portraitSrc} pitch={pitch} />
+        <CatalogHoverPortrait modelUrl={modelUrl} modelUrls={modelUrls} portraitSrc={portraitSrc} pitch={pitch} />
         <div className="min-w-0">{children}</div>
       </div>
       {footer}

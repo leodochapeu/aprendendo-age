@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { CatalogHoverPortrait } from "@/components/ui/CatalogHoverPortrait";
 import { cn } from "@/lib/cn";
 import { getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
-import { unitModelUrl } from "@/lib/unitModelUrl";
+import { idleModelUrls } from "@/lib/unitModelUrl";
 
 type Props = {
   nome: string;
@@ -131,7 +131,7 @@ function BattleUnitHover({
   const previewRef = useRef<HTMLDivElement>(null);
   const previewId = useId();
   const [position, setPosition] = useState({ top: 0, left: 0 });
-  const modelUrl = unitId != null ? unitModelUrl(unitId) : undefined;
+  const modelUrls = unitId != null ? idleModelUrls(unitId) : undefined;
 
   useLayoutEffect(() => {
     const updatePosition = () => {
@@ -176,7 +176,7 @@ function BattleUnitHover({
         <p className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide text-amber-100">{nome}</p>
       </div>
       <div className="p-3">
-        <CatalogHoverPortrait modelUrl={modelUrl} portraitSrc={portraitSrc} />
+        <CatalogHoverPortrait modelUrls={modelUrls} portraitSrc={portraitSrc} />
       </div>
     </div>,
     document.body,
