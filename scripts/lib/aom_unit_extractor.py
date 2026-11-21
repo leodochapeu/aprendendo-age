@@ -47,13 +47,14 @@ PRIMARY_ROLE_TYPES = [
     ("Villager", "Aldeão"),
     ("AbstractInfantry", "Infantaria"),
     ("LogicalTypeMeleeInfantry", "Infantaria"),
-    # Navais antes de Ranged/Artilharia — barcos flecheiros carregam Ranged no proto.
+    # Navais antes de AbstractArcher — barcos flecheiros não devem virar Artilharia.
     ("AbstractArcherShip", "Flecheiro"),
     ("AbstractCloseCombatShip", "Combate curto-alcance"),
     ("AbstractSiegeShip", "Navio-cerco"),
     ("AbstractShip", "Navio"),
+    # Artilharia = soldado de longo alcance (`AbstractArcher`). `Ranged` sozinho
+    # não basta — aldeões, míticas, heróis e cercos também são Ranged no proto.
     ("AbstractArcher", "Artilharia"),
-    ("Ranged", "Artilharia"),
     ("AbstractCavalry", "Cavalaria"),
     ("AbstractSiegeWeapon", "Cerco"),
     ("AbstractMythUnit", "Unidade mítica"),
@@ -69,13 +70,12 @@ HERO_UNIT_TYPE = "Herói"
 SIEGE_UNIT_TYPE = "Cerco"
 ANTI_BUILDING_UNIT_TYPE = "Anti-construção"
 
-# Tipos do proto que definem uma unidade mítica. No jogo, uma unidade mítica de
-# ataque à distância também carrega `Ranged`/`AbstractArcher`, então o papel de
-# combate (Artilharia) precisa conviver com a classificação "Unidade mítica".
+# Tipos do proto que definem uma unidade mítica. Se também for `AbstractArcher`
+# (soldado de longo alcance), mantém Artilharia + Unidade mítica.
 MYTH_UNIT_TOKENS = ("AbstractMythUnit", "MythUnit")
 
-# Idem para heróis: Hersir, Godi e conversões atlantes `(Herói)` também têm
-# Infantaria/Artilharia/Cavalaria no proto e precisam manter ambas as tags.
+# Idem para heróis: Hersir, Godi e conversões atlantes `(Herói)` com
+# Infantaria/Artilharia/Cavalaria no proto mantêm combate + Herói.
 HERO_UNIT_TOKENS = ("Hero", "AbstractHero")
 
 # Cerco humano (`AbstractSiegeWeapon`) e mítico (`MythUnitSiege`, ex.: Ciclope,
@@ -263,18 +263,9 @@ def detect_roles(unit_types: set[str], unit: ET.Element | None = None) -> list[s
     if is_anti_building and ANTI_BUILDING_UNIT_TYPE not in roles:
         roles.append(ANTI_BUILDING_UNIT_TYPE)
 
-    # Armas de cerco também têm Ranged/AbstractArcher no proto → Artilharia vem
-    # como primary. Prioriza Cerco (Petrobolo, Catapulta, Balista…). Quirobalista
-    # é híbrido e permanece Artilharia-primeiro.
-    if (
-        SIEGE_UNIT_TYPE in roles
-        and "Artilharia" in roles
-        and roles.index("Artilharia") < roles.index(SIEGE_UNIT_TYPE)
-    ):
-        proto = ((unit.get("name") if unit is not None else None) or "").casefold()
-        if not proto.startswith("cheiroballista"):
-            roles.remove(SIEGE_UNIT_TYPE)
-            roles.insert(roles.index("Artilharia"), SIEGE_UNIT_TYPE)
+    # Híbrido AbstractArcher+cerco (Quirobalista): primary já é Artilharia e Cerco
+    # entra em seguida. Cerco puro (só AbstractSiegeWeapon) fica só Cerco — o
+    # token Ranged do proto não gera mais Artilharia.
 
     return roles
 

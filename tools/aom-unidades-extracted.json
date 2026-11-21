@@ -6,8 +6,8 @@
     "displaynameid": "STR_UNIT_ABE_NO_SEIMEI_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -1678,6 +1678,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -2166,8 +2170,12 @@
     "displaynameid": "STR_UNIT_ARROW_CANOE_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -2341,12 +2349,7 @@
     "nome": "AsuraFireBallLeft",
     "ingles": "AsuraFireBallLeft",
     "displaynameid": "",
-    "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      }
-    ],
+    "tipo": [],
     "panteao": [],
     "era": [],
     "multiplicador": [
@@ -2395,12 +2398,7 @@
     "nome": "AsuraFireBallRight",
     "ingles": "AsuraFireBallRight",
     "displaynameid": "",
-    "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      }
-    ],
+    "tipo": [],
     "panteao": [],
     "era": [],
     "multiplicador": [
@@ -2623,8 +2621,12 @@
     "displaynameid": "STR_UNIT_ATLATL_SIEGE_CANOE_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Navio-cerco",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -3065,7 +3067,7 @@
     "displaynameid": "STR_UNIT_AXE_CART_NAME",
     "tipo": [
       {
-        "type": "Arma de cerco",
+        "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
       }
     ],
@@ -3441,6 +3443,10 @@
     "displaynameid": "STR_UNIT_AYOTOCHTLI_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -3533,8 +3539,8 @@
     "displaynameid": "STR_UNIT_AZUSA_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -3787,8 +3793,8 @@
     "displaynameid": "STR_UNIT_BALLISTA_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -3878,6 +3884,10 @@
     "ingles": "Battle Boar",
     "displaynameid": "STR_UNIT_BATTLE_BOAR_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -4050,6 +4060,10 @@
     "ingles": "Behemoth",
     "displaynameid": "STR_UNIT_BEHEMOTH_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -4418,8 +4432,12 @@
     "displaynameid": "STR_UNIT_BIREME_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -4664,8 +4682,8 @@
     "displaynameid": "STR_UNIT_BLOOD_MASTER_QIANKUNQUAN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -4863,6 +4881,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -5430,8 +5452,8 @@
     "displaynameid": "STR_UNIT_CARCINOS_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -5748,8 +5770,8 @@
     "displaynameid": "STR_UNIT_CATAPULT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -5837,8 +5859,8 @@
     "displaynameid": "STR_UNIT_CENTAUR_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -6373,8 +6395,12 @@
     "displaynameid": "STR_UNIT_CHARON_FERRY_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -6772,6 +6798,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -6871,6 +6901,14 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -7475,8 +7513,8 @@
     "displaynameid": "STR_UNIT_CHIRON_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -7580,8 +7618,8 @@
     "displaynameid": "STR_UNIT_CHIRON_SPC_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -7764,8 +7802,8 @@
     "displaynameid": "STR_UNIT_CIRCE_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [],
@@ -8062,6 +8100,10 @@
     "displaynameid": "STR_UNIT_COLOSSUS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -8254,6 +8296,10 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -8755,6 +8801,10 @@
     "displaynameid": "STR_UNIT_CYCLOPS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -8854,6 +8904,10 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -9195,6 +9249,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Anti-construção",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -9288,6 +9346,14 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Anti-construção",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -9374,8 +9440,12 @@
     "displaynameid": "STR_UNIT_DOUJIAN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -9458,8 +9528,12 @@
     "displaynameid": "STR_UNIT_DRAGON_SHIP_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Navio-cerco",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -9551,8 +9625,8 @@
     "displaynameid": "STR_UNIT_DRAUGR_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -9643,7 +9717,16 @@
     "nome": "Dreki",
     "ingles": "Dreki",
     "displaynameid": "STR_UNIT_DREKI_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Combate curto-alcance",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 3,
@@ -10376,6 +10459,10 @@
     "displaynameid": "STR_UNIT_FAFNIR_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -10645,6 +10732,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -11162,6 +11253,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Anti-construção",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -11264,8 +11359,8 @@
     "displaynameid": "STR_UNIT_FIRE_GIANT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -11508,8 +11603,12 @@
     "displaynameid": "STR_UNIT_FIRE_SHIP_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Combate curto-alcance",
+        "icon": "aomr_type_close_combat_ship_icon"
       }
     ],
     "panteao": [
@@ -11595,8 +11694,8 @@
     "displaynameid": "STR_UNIT_FIRE_SIPHON_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -12237,6 +12336,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Anti-construção",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -12669,6 +12772,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -13140,6 +13247,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13222,6 +13333,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13304,6 +13419,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13386,6 +13505,10 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -13601,8 +13724,8 @@
     "displaynameid": "STR_UNIT_HAMADRYAD_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -14066,8 +14189,8 @@
     "displaynameid": "STR_UNIT_HELEPOLIS_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -14255,6 +14378,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -14338,6 +14465,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -14421,6 +14552,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -14917,8 +15052,8 @@
     "displaynameid": "STR_UNIT_HIPPOLYTA_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -15454,8 +15589,8 @@
     "displaynameid": "STR_UNIT_HOUYI_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -15533,8 +15668,8 @@
     "displaynameid": "STR_UNIT_HOUYI_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -15685,6 +15820,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -16288,8 +16427,8 @@
     "displaynameid": "STR_UNIT_ICARUS_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -17316,8 +17455,8 @@
     "displaynameid": "STR_UNIT_JIANGZIYA_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -17408,8 +17547,8 @@
     "displaynameid": "STR_UNIT_JORMUN_ELVER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -17603,8 +17742,12 @@
     "displaynameid": "STR_UNIT_JUGGERNAUT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Navio-cerco",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -17696,8 +17839,12 @@
     "displaynameid": "STR_UNIT_JUNKOZOSEN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Navio-cerco",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -18727,6 +18874,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -18885,8 +19036,12 @@
     "displaynameid": "STR_UNIT_KEBENIT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -19585,8 +19740,8 @@
     "displaynameid": "STR_UNIT_LAMPADES_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -19775,8 +19930,8 @@
     "displaynameid": "STR_UNIT_LAZER_BEAR_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [],
@@ -19942,8 +20097,8 @@
     "displaynameid": "STR_UNIT_LIJING_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -20169,8 +20324,12 @@
     "displaynameid": "STR_UNIT_LONGBOAT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -20257,8 +20416,8 @@
     "displaynameid": "STR_UNIT_LOST_SHIP_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -20329,8 +20488,12 @@
     "displaynameid": "STR_UNIT_LOUCHUAN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Navio-cerco",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -20760,8 +20923,8 @@
     "displaynameid": "STR_UNIT_MAN_O_WAR_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -20850,8 +21013,8 @@
     "displaynameid": "STR_UNIT_MANTICORE_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -20949,8 +21112,8 @@
     "displaynameid": "STR_UNIT_MAQUIZCOATL_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -21119,8 +21282,8 @@
     "displaynameid": "STR_UNIT_MEDUSA_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -21216,7 +21379,16 @@
     "nome": "Mengchong",
     "ingles": "Mengchong",
     "displaynameid": "STR_UNIT_MENGCHONG_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Combate curto-alcance",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 5,
@@ -22182,6 +22354,10 @@
     "displaynameid": "STR_UNIT_MOUNTAIN_GIANT_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -22340,8 +22516,8 @@
     "displaynameid": "STR_UNIT_MUMMY_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -22523,6 +22699,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -23154,8 +23334,8 @@
     "displaynameid": "STR_UNIT_NEZHA_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -23246,6 +23426,10 @@
     "ingles": "Nidhogg",
     "displaynameid": "STR_UNIT_NIDHOGG_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -23566,8 +23750,8 @@
     "displaynameid": "STR_UNIT_ODYSSEUS_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -23671,8 +23855,8 @@
     "displaynameid": "STR_UNIT_ODYSSEUS_SPC_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -23803,6 +23987,10 @@
     "ingles": "Oni",
     "displaynameid": "STR_UNIT_ONI_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -23979,8 +24167,8 @@
     "displaynameid": "STR_UNIT_ONMYOJI_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -24074,6 +24262,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -24499,12 +24691,7 @@
     "nome": "Osíris (Herói)",
     "ingles": "Osiris (Hero)",
     "displaynameid": "STR_UNIT_OSIRIS_NAME",
-    "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      }
-    ],
+    "tipo": [],
     "panteao": [],
     "era": [],
     "multiplicador": [],
@@ -24561,6 +24748,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Anti-construção",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -24651,8 +24842,8 @@
     "displaynameid": "STR_UNIT_OYUMI_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -25029,7 +25220,16 @@
     "nome": "Penteconter",
     "ingles": "Pentekonter",
     "displaynameid": "STR_UNIT_PENTEKONTER_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Combate curto-alcance",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 1,
@@ -25216,8 +25416,8 @@
     "displaynameid": "STR_UNIT_PETROBOLOS_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -25305,8 +25505,8 @@
     "displaynameid": "STR_UNIT_PETSUCHOS_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -25387,8 +25587,8 @@
     "displaynameid": "STR_UNIT_PHARAOH_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -25471,8 +25671,8 @@
     "displaynameid": "STR_UNIT_NEW_KINGDOM_PHARAOH_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -25854,6 +26054,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -25949,8 +26153,12 @@
     "displaynameid": "STR_UNIT_PIRATE_SHIP_EGYPTIAN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -26028,8 +26236,12 @@
     "displaynameid": "STR_UNIT_PIRATE_SHIP_NORSE_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -26600,7 +26812,7 @@
     "displaynameid": "STR_UNIT_PORTABLE_RAM_NAME",
     "tipo": [
       {
-        "type": "Arma de cerco",
+        "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
       }
     ],
@@ -26687,8 +26899,8 @@
     "displaynameid": "STR_UNIT_PRIEST_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -27140,8 +27352,8 @@
     "displaynameid": "STR_UNIT_QILIN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -27232,8 +27444,8 @@
     "displaynameid": "STR_UNIT_QIANKUNQUAN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -27819,8 +28031,12 @@
     "displaynameid": "STR_UNIT_QUINAMETZIN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Anti-construção",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -28189,7 +28405,16 @@
     "nome": "Galé com Aríete",
     "ingles": "Ramming Galley",
     "displaynameid": "STR_UNIT_RAMMING_GALLEY_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Combate curto-alcance",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 2,
@@ -28270,7 +28495,16 @@
     "nome": "Wasen Aríete",
     "ingles": "Ramming Wasen",
     "displaynameid": "STR_UNIT_RAMMING_WASEN_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Combate curto-alcance",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 6,
@@ -28559,8 +28793,8 @@
     "displaynameid": "STR_UNIT_REGINLEIF_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [],
@@ -28977,6 +29211,10 @@
     "ingles": "Rock Giant",
     "displaynameid": "STR_UNIT_ROCK_GIANT_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -29411,8 +29649,8 @@
     "displaynameid": "STR_UNIT_SATYR_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -29512,6 +29750,10 @@
     "ingles": "Scarab",
     "displaynameid": "STR_UNIT_SCARAB_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -30281,8 +30523,8 @@
     "displaynameid": "STR_UNIT_SETNA_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [],
@@ -30508,8 +30750,8 @@
     "displaynameid": "STR_UNIT_SHIJI_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -30587,8 +30829,8 @@
     "displaynameid": "STR_UNIT_SHINIGAMI_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -30669,8 +30911,8 @@
     "displaynameid": "STR_UNIT_SHINIGAMI_REVENANT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -30744,8 +30986,8 @@
     "displaynameid": "STR_UNIT_SHINIGAMI_VENGEFUL_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -30821,6 +31063,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Anti-construção",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -31222,8 +31468,12 @@
     "displaynameid": "STR_UNIT_SIEGE_BIREME_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Navio-cerco",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -31315,8 +31565,8 @@
     "displaynameid": "STR_UNIT_SIEGE_CROSSBOW_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -31411,8 +31661,8 @@
     "displaynameid": "STR_UNIT_SIEGE_CROSSBOW_SPC_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -31480,8 +31730,8 @@
     "displaynameid": "STR_UNIT_SIEGE_TOWER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -31563,8 +31813,8 @@
     "displaynameid": "STR_UNIT_SIREN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -31970,8 +32220,8 @@
     "displaynameid": "STR_UNIT_SON_OF_OSIRIS_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -33826,7 +34076,16 @@
     "nome": "Canoa Tepoztli",
     "ingles": "Tepoztli Canoe",
     "displaynameid": "STR_UNIT_TEPOZTLI_CANOE_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Combate curto-alcance",
+        "icon": "aomr_type_close_combat_ship_icon"
+      }
+    ],
     "panteao": [
       {
         "id": 7,
@@ -34375,8 +34634,16 @@
     "displaynameid": "STR_UNIT_THE_ARGO_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -36424,8 +36691,12 @@
     "displaynameid": "STR_UNIT_TRIREME_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -36512,8 +36783,12 @@
     "displaynameid": "STR_UNIT_TRIREME_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [
@@ -36590,8 +36865,8 @@
     "displaynameid": "STR_UNIT_TROLL_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -36872,6 +37147,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -37049,12 +37328,7 @@
     "nome": "OVNI",
     "ingles": "UFO",
     "displaynameid": "STR_UNIT_UFO_NAME",
-    "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      }
-    ],
+    "tipo": [],
     "panteao": [],
     "era": [],
     "multiplicador": [],
@@ -38512,8 +38786,8 @@
     "displaynameid": "STR_UNIT_WADJET_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -38606,6 +38880,10 @@
     "displaynameid": "STR_UNIT_WALKING_BERRY_BUSH_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -38677,6 +38955,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -38760,6 +39042,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -38841,6 +39127,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -38924,6 +39214,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -39005,6 +39299,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -39088,6 +39386,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -39169,6 +39471,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -39252,6 +39558,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -39333,6 +39643,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -39416,6 +39730,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -39497,6 +39815,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -39580,6 +39902,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -39661,6 +39987,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -39744,6 +40074,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -39825,6 +40159,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -39908,6 +40246,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -39989,6 +40331,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -40072,6 +40418,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -40153,6 +40503,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -40236,6 +40590,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -40317,6 +40675,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -40400,6 +40762,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -40481,6 +40847,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -40564,6 +40934,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -40645,6 +41019,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -40728,6 +41106,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -40809,6 +41191,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -40892,6 +41278,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -40973,6 +41363,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -41056,6 +41450,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -41137,6 +41535,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -41220,6 +41622,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -41301,6 +41707,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -41384,6 +41794,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -41465,6 +41879,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -41548,6 +41966,10 @@
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -41629,6 +42051,10 @@
     "ingles": "Walking Woods",
     "displaynameid": "STR_UNIT_WALKING_WOODS_NAME",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -41790,8 +42216,8 @@
     "displaynameid": "STR_UNIT_WANYUDO_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Unidade mítica",
+        "icon": "aomr_type_myth_unit_icon"
       }
     ],
     "panteao": [
@@ -41884,8 +42310,12 @@
     "displaynameid": "STR_UNIT_WAR_BARGE_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Navio-cerco",
+        "icon": "aomr_type_siege_ship_icon"
       }
     ],
     "panteao": [
@@ -42339,8 +42769,12 @@
     "displaynameid": "STR_UNIT_WASEN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Navio",
+        "icon": "aomr_type_ship_icon"
+      },
+      {
+        "type": "Flecheiro",
+        "icon": "aomr_type_archer_ship_icon"
       }
     ],
     "panteao": [

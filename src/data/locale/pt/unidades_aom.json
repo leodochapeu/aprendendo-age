@@ -1137,10 +1137,6 @@
     "ingles": "Centaur",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -1752,10 +1748,6 @@
     "ingles": "Chiron (Hero)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
       }
@@ -1844,10 +1836,6 @@
     "ingles": "Hippolyta (Hero)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
       }
@@ -1930,10 +1918,6 @@
     "nome": "Ícaro (Herói)",
     "ingles": "Icarus (Hero)",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
@@ -2022,10 +2006,6 @@
     "ingles": "Odysseus (Hero)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
       }
@@ -2113,10 +2093,6 @@
     "nome": "Hamadríade",
     "ingles": "Hamadryad",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -2275,10 +2251,6 @@
     "nome": "Mantícora",
     "ingles": "Manticore",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -3050,10 +3022,6 @@
     "ingles": "Carcinos",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -3348,10 +3316,6 @@
     "ingles": "Medusa",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -3427,10 +3391,6 @@
     "nome": "Sirênico",
     "ingles": "Siren",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -3627,10 +3587,6 @@
     "ingles": "Pharaoh (Hero)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
       }
@@ -3695,10 +3651,6 @@
     "nome": "Sacerdote (Herói)",
     "ingles": "Priest (Hero)",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
@@ -4180,10 +4132,6 @@
     "ingles": "Wadjet",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -4585,10 +4533,6 @@
     "ingles": "Petsuchos",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -4952,10 +4896,6 @@
     "nome": "Múmia",
     "ingles": "Mummy",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -5915,10 +5855,6 @@
     "ingles": "Draugr",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -6072,10 +6008,6 @@
     "nome": "Troll",
     "ingles": "Troll",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -6582,10 +6514,6 @@
     "nome": "Jormun Elver",
     "ingles": "Jormun Elver",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -7192,10 +7120,6 @@
     "nome": "Gigante de Fogo",
     "ingles": "Fire Giant",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -9211,10 +9135,6 @@
     "ingles": "Satyr",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -9673,10 +9593,6 @@
     "ingles": "Lampades",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -9761,10 +9677,6 @@
     "nome": "Caravela",
     "ingles": "Man O' War",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -10502,10 +10414,6 @@
     "ingles": "Qilin",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -10978,10 +10886,6 @@
     "ingles": "Jiang Ziya (Hero)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
       }
@@ -11046,10 +10950,6 @@
     "nome": "Nezha (Jovem)",
     "ingles": "Nezha (Youth)",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
@@ -11627,10 +11527,6 @@
     "nome": "Li Jing (Herói)",
     "ingles": "Li Jing (Hero)",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
@@ -13180,10 +13076,6 @@
     "ingles": "Wanyūdō",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -13816,10 +13708,6 @@
     "ingles": "Onmyōji (Hero)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
       }
@@ -14106,10 +13994,6 @@
     "nome": "Shinigami",
     "ingles": "Shinigami",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
@@ -15238,10 +15122,6 @@
     "ingles": "Maquizcoatl",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -16016,10 +15896,6 @@
     "ingles": "Quinametzin",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
       },
@@ -16383,10 +16259,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16442,10 +16314,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16496,10 +16364,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16550,10 +16414,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16663,10 +16523,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16727,10 +16583,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16831,10 +16683,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16891,10 +16739,6 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
