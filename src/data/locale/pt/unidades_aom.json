@@ -4617,6 +4617,10 @@
         "icon": "aomr_type_archer_icon"
       },
       {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      },
+      {
         "type": "Ranged",
         "icon": "rangeicon",
         "hidden": true
@@ -5846,6 +5850,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       },
       {
         "type": "Ranged",
@@ -7957,6 +7965,10 @@
         "icon": "aomr_type_archer_icon"
       },
       {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      },
+      {
         "type": "Soldados humanos",
         "icon": "aomr_type_human_soldier_icon",
         "hidden": true
@@ -8162,6 +8174,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
       },
       {
         "type": "Herói",
@@ -11264,6 +11280,10 @@
         "icon": "aomr_type_archer_icon"
       },
       {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      },
+      {
         "type": "Ranged",
         "icon": "rangeicon",
         "hidden": true
@@ -13821,6 +13841,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
       },
       {
         "type": "Ranged",

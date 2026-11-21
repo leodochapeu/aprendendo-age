@@ -167,6 +167,15 @@ SHIP_SUBTYPE_ROLES = frozenset(
     {"Flecheiro", "Combate curto-alcance", "Navio-cerco"}
 )
 
+# Combate terrestre adicional quando o proto carrega mais de uma classe
+# (ex.: Turma AbstractArcher+AbstractCavalry → Artilharia + Cavalaria).
+LAND_COMBAT_ROLE_TYPES = [
+    ("AbstractInfantry", "Infantaria"),
+    ("LogicalTypeMeleeInfantry", "Infantaria"),
+    ("AbstractArcher", "Artilharia"),
+    ("AbstractCavalry", "Cavalaria"),
+]
+
 
 def unit_has_damaging_attack(unit: ET.Element) -> bool:
     for action in unit.findall("protoaction"):
@@ -245,6 +254,11 @@ def detect_roles(unit_types: set[str], unit: ET.Element | None = None) -> list[s
         roles.append(primary)
     elif primary:
         roles.append(primary)
+        # Classes terrestres extras do proto (Turma, Chariot Archer, Throwing Axeman…).
+        if primary != "Aldeão":
+            for token, label in LAND_COMBAT_ROLE_TYPES:
+                if token in unit_types and label not in roles:
+                    roles.append(label)
 
     is_myth = any(token in unit_types for token in MYTH_UNIT_TOKENS)
     is_siege = False

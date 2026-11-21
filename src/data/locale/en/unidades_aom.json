@@ -4538,6 +4538,10 @@
         "icon": "aomr_type_archer_icon"
       },
       {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      },
+      {
         "type": "Ranged",
         "icon": "rangeicon",
         "hidden": true
@@ -4546,10 +4550,6 @@
         "type": "Human Soldiers",
         "icon": "aomr_type_human_soldier_icon",
         "hidden": true
-      },
-      {
-        "type": "Cavalaria",
-        "icon": "aomr_type_cavalry_icon"
       }
     ],
     "panteao": [
@@ -5749,6 +5749,10 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       },
       {
         "type": "Ranged",
@@ -7831,13 +7835,13 @@
         "icon": "aomr_type_archer_icon"
       },
       {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      },
+      {
         "type": "Human Soldiers",
         "icon": "aomr_type_human_soldier_icon",
         "hidden": true
-      },
-      {
-        "type": "Cavalaria",
-        "icon": "aomr_type_cavalry_icon"
       }
     ],
     "panteao": [
@@ -8041,12 +8045,12 @@
         "icon": "aomr_type_archer_icon"
       },
       {
-        "type": "Hero",
-        "icon": "aomr_type_hero_icon"
-      },
-      {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Hero",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -11125,6 +11129,10 @@
         "icon": "aomr_type_archer_icon"
       },
       {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      },
+      {
         "type": "Ranged",
         "icon": "rangeicon",
         "hidden": true
@@ -13666,6 +13674,10 @@
         "icon": "aomr_type_archer_icon"
       },
       {
+        "type": "Cavalaria",
+        "icon": "aomr_type_cavalry_icon"
+      },
+      {
         "type": "Ranged",
         "icon": "rangeicon",
         "hidden": true
@@ -13674,10 +13686,6 @@
         "type": "Human Soldiers",
         "icon": "aomr_type_human_soldier_icon",
         "hidden": true
-      },
-      {
-        "type": "Cavalaria",
-        "icon": "aomr_type_cavalry_icon"
       }
     ],
     "panteao": [
