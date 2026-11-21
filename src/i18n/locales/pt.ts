@@ -1135,6 +1135,9 @@ export const ptMessages: TranslationTree = {
       categoryLocked: "Categoria bloqueada.",
       categoryLockedHint:
         "A mesma categoria não pode ser escolhida contra o defensor, porque elas empatariam.",
+      unitLocked: "Unidade bloqueada.",
+      unitLockedHint:
+        "Conforme o jogo avança, unidades de eras passadas ficam bloqueadas, a não ser que você use Favor.",
       pickCategoryHint: "Escolha a categoria que vence o defensor.",
       yourChoice: "Sua escolha",
       categorySame: "Mesma categoria — empate.",

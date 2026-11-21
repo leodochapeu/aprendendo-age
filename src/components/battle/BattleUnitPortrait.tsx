@@ -1,4 +1,4 @@
-import { useId, useLayoutEffect, useRef, useState, type FocusEvent, type RefObject } from "react";
+import { useId, useLayoutEffect, useRef, useState, type FocusEvent, type MouseEvent, type RefObject } from "react";
 import { createPortal } from "react-dom";
 
 import { CatalogHoverPortrait } from "@/components/ui/CatalogHoverPortrait";
@@ -14,8 +14,9 @@ type Props = {
   selected?: boolean;
   disabled?: boolean;
   locked?: boolean;
+  previewSuppressed?: boolean;
   size?: "sm" | "md" | "lg";
-  onClick?: () => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   className?: string;
 };
 
@@ -32,6 +33,7 @@ export function BattleUnitPortrait({
   selected,
   disabled,
   locked,
+  previewSuppressed = false,
   size = "md",
   onClick,
   className,
@@ -75,7 +77,7 @@ export function BattleUnitPortrait({
           ? "border-amber-200 shadow-[0_0_18px_rgba(255,196,70,0.45)] ring-2 ring-amber-200/50"
           : "border-amber-200/25 hover:border-amber-200/70 hover:bg-black/40",
         disabled && !locked && "cursor-not-allowed opacity-40 hover:border-aom-border",
-        locked && "cursor-not-allowed border-zinc-700 bg-zinc-950 hover:border-zinc-700",
+        locked && "cursor-pointer border-zinc-700 bg-zinc-950 hover:border-amber-200/40",
       )}
     >
       {body}
@@ -100,7 +102,7 @@ export function BattleUnitPortrait({
       }}
     >
       {face}
-      {previewOpen ? (
+      {previewOpen && !previewSuppressed ? (
         <BattleUnitHoverCard nome={nome} unitId={unitId} portraitSrc={src} anchorRef={anchorRef} />
       ) : null}
     </span>

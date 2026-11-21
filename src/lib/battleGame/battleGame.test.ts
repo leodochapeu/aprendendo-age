@@ -9,6 +9,7 @@ import {
   createRng,
   filterAttackerPool,
   filterDefenderPool,
+  isAttackerUnitLocked,
   FAVOR_EFFECT_COSTS,
   INITIAL_FAVOR,
   isHeroUnit,
@@ -110,6 +111,17 @@ describe("battleGame filters", () => {
       ),
     ).toBe(false);
   });
+
+  it("na mítica libera a era heróica inteira e mantém a clássica cadeada", () => {
+    const deck = filterAttackerPool(units, 1, 4);
+    const heroic = deck.filter((unit) => unit.era?.[0]?.id === 3);
+    const classical = deck.filter((unit) => unit.era?.[0]?.id === 2);
+
+    expect(heroic.length).toBeGreaterThan(0);
+    expect(heroic.every((unit) => !isAttackerUnitLocked(unit, 4, new Set()))).toBe(true);
+    expect(classical.length).toBeGreaterThan(0);
+    expect(classical.every((unit) => isAttackerUnitLocked(unit, 4, new Set()))).toBe(true);
+  });
 });
 
 describe("battleGame lookup", () => {
@@ -169,6 +181,19 @@ describe("battleGame run", () => {
     const a = pickDefender(units, 2, [], createRng(42));
     const b = pickDefender(units, 2, [], createRng(42));
     expect(a?.id).toBe(b?.id);
+  });
+
+  it("prioriza defensor da mesma era sem excluir as outras", () => {
+    const rng = createRng(3);
+    let sameEra = 0;
+    let otherEra = 0;
+    for (let i = 0; i < 200; i += 1) {
+      const unit = pickDefender(units, 4, [], rng);
+      if (unit?.era?.[0]?.id === 4) sameEra += 1;
+      else otherEra += 1;
+    }
+    expect(sameEra).toBeGreaterThan(otherEra);
+    expect(otherEra).toBeGreaterThan(0);
   });
 
   it("derrota e empate contabilizam e o resumo agrega por Era", () => {

@@ -1131,6 +1131,8 @@ export const enMessages: TranslationTree = {
       modeCategoryHint: "Pick the category icon that wins. The defender's category stays locked.",
       categoryLocked: "Category locked.",
       categoryLockedHint: "You can't choose the same category against the defender, because they would draw.",
+      unitLocked: "Unit locked.",
+      unitLockedHint: "As the match advances, units from past ages stay locked unless you spend Favor.",
       pickCategoryHint: "Pick the category that beats the defender.",
       yourChoice: "Your choice",
       categorySame: "Same category — draw.",

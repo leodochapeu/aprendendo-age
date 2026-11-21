@@ -33,6 +33,8 @@ export {
   isHeroUnit,
   isHumanSoldierUnit,
   isMythUnit,
+  isAttackerUnitLocked,
+  isPreviousEraGranted,
   isUnitFromPreviousEra,
   isUnitEligibleForCurrentEra,
 } from "./filters";

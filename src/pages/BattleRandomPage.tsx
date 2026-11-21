@@ -1,10 +1,11 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 
 import { BattleAgeUpOverlay } from "@/components/battle/BattleAgeUpOverlay";
 import { BattleCategorySession } from "@/components/battle/BattleCategorySession";
 import { BattleAtmosphere, BattleEpicFrame } from "@/components/battle/BattleAtmosphere";
 import { BattleConfirmModal } from "@/components/battle/BattleConfirmModal";
+import { BattleHintPopover } from "@/components/battle/BattleHintPopover";
 import { BattleResultModal } from "@/components/battle/BattleResultModal";
 import { BattleFavorModal } from "@/components/battle/BattleFavorModal";
 import { BattleRevealConfirmModal, RevealEyeButton } from "@/components/battle/BattleRevealConfirmModal";
@@ -16,7 +17,7 @@ import {
   buildRoundPlan,
   filterAttackerPool,
   INITIAL_FAVOR,
-  isUnitFromPreviousEra,
+  isAttackerUnitLocked,
   pickRandomUniqueIds,
   canPurchaseFavorEffect,
   FAVOR_EFFECT_COSTS,
@@ -131,6 +132,7 @@ function BattleRandomSession({
   const [unlockedPreviousAgeUnitIds, setUnlockedPreviousAgeUnitIds] = useState<
     number[]
   >([]);
+  const [lockedHint, setLockedHint] = useState<{ id: number; el: HTMLButtonElement } | null>(null);
 
   const currentEraId = (plan[roundIndex]?.eraId ?? 2) as PlayableEraId;
   const currentEra = eraById.get(currentEraId);
@@ -142,7 +144,7 @@ function BattleRandomSession({
   const previousAgeUnitIds = useMemo(
     () =>
       attackerPool
-        .filter((unit) => isUnitFromPreviousEra(unit, currentEraId))
+        .filter((unit) => isAttackerUnitLocked(unit, currentEraId, new Set()))
         .map((unit) => unit.id),
     [attackerPool, currentEraId],
   );
@@ -164,7 +166,12 @@ function BattleRandomSession({
   const deckUnitRevealPurchased =
     revealDeckUnitArmed || revealedAttackerId != null;
 
+  useEffect(() => {
+    if (phase !== "playing") setLockedHint(null);
+  }, [phase]);
+
   const selectAttacker = (attackerId: number) => {
+    setLockedHint(null);
     setPendingAttackerId(attackerId);
     if (revealDeckUnitArmed && revealedAttackerId == null) {
       setRevealedAttackerId(attackerId);
@@ -474,9 +481,7 @@ function BattleRandomSession({
             )}
           >
             {attackerPool.map((u) => {
-              const locked =
-                isUnitFromPreviousEra(u, currentEraId) &&
-                !unlockedPreviousAgeUnitIdSet.has(u.id);
+              const locked = isAttackerUnitLocked(u, currentEraId, unlockedPreviousAgeUnitIdSet);
               return (
                 <li key={u.id} className="flex flex-col items-center gap-1.5">
                   <BattleUnitPortrait
@@ -485,15 +490,31 @@ function BattleRandomSession({
                     unitId={u.id}
                     size="sm"
                     locked={locked}
-                    disabled={phase !== "playing" || locked}
+                    previewSuppressed={lockedHint?.id === u.id}
+                    disabled={phase !== "playing"}
                     selected={pendingAttackerId === u.id}
-                    onClick={() => selectAttacker(u.id)}
+                    onClick={(event) => {
+                      if (locked) {
+                        const el = event.currentTarget;
+                        setLockedHint((current) => (current?.id === u.id ? null : { id: u.id, el }));
+                        return;
+                      }
+                      selectAttacker(u.id);
+                    }}
                   />
                   {u.id === revealedAttackerId ? <RevealedTipoIcons tipo={u.tipo} /> : null}
                 </li>
               );
             })}
           </ul>
+          {lockedHint && phase === "playing" ? (
+            <BattleHintPopover
+              anchorEl={lockedHint.el}
+              title={t("pages.battle.unitLocked")}
+              hint={t("pages.battle.unitLockedHint")}
+              onClose={() => setLockedHint(null)}
+            />
+          ) : null}
           {attackerPool.length === 0 ? (
             <p className="mt-4 text-sm text-rose-200">{t("pages.battle.emptyDeck")}</p>
           ) : null}

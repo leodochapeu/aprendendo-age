@@ -27,6 +27,21 @@ export function isUnitFromPreviousEra(
   return eraId >= 2 && eraId < currentEraId;
 }
 
+/** Na Mítica, a Era imediatamente anterior entra inteira, sem cadeado. */
+export function isPreviousEraGranted(unit: Unidade, currentEraId: PlayableEraId): boolean {
+  return currentEraId === 4 && firstNumId(unit.era) === 3;
+}
+
+/** Cadeado do deck: eras anteriores, exceto a Heróica quando a partida já está na Mítica. */
+export function isAttackerUnitLocked(
+  unit: Unidade,
+  currentEraId: PlayableEraId,
+  unlockedIds: ReadonlySet<number>,
+): boolean {
+  if (!isUnitFromPreviousEra(unit, currentEraId) || isPreviousEraGranted(unit, currentEraId)) return false;
+  return !unlockedIds.has(unit.id);
+}
+
 export function isMythUnit(unit: Unidade): boolean {
   return getDefenderTypeIds(unit).has("unidade_mitica");
 }

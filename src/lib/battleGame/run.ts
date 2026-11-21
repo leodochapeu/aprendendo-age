@@ -1,4 +1,5 @@
 import type { Unidade } from "@/data/catalog";
+import { firstNumId } from "@/lib/entityRefs";
 import type { PrecomputedBattleResult } from "@/lib/battleSimulator/precompute";
 import { filterDefenderPool } from "./filters";
 import { lookupBattleResult, mapPlayerOutcome, type BattleResultIndex } from "./lookup";
@@ -24,13 +25,22 @@ export function pickRandomUnit(
   return pool[idx] ?? null;
 }
 
+/** Chance de o defensor sair da mesma Era. O restante vem das outras Eras já liberadas. */
+const SAME_ERA_DEFENDER_CHANCE = 0.7;
+
 export function pickDefender(
   units: readonly Unidade[],
   currentEraId: PlayableEraId,
   usedDefenderIds: readonly number[],
   rng: () => number = Math.random,
 ): Unidade | null {
-  return pickRandomUnit(filterDefenderPool(units, currentEraId, usedDefenderIds), rng);
+  const pool = filterDefenderPool(units, currentEraId, usedDefenderIds);
+  if (pool.length === 0) return null;
+  const sameEra = pool.filter((unit) => firstNumId(unit.era) === currentEraId);
+  const otherEras = pool.filter((unit) => firstNumId(unit.era) !== currentEraId);
+  if (sameEra.length === 0) return pickRandomUnit(otherEras, rng);
+  if (otherEras.length === 0 || rng() < SAME_ERA_DEFENDER_CHANCE) return pickRandomUnit(sameEra, rng);
+  return pickRandomUnit(otherEras, rng);
 }
 
 export function resolvePlayerChoice(
