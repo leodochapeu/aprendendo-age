@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
@@ -46,6 +46,7 @@ function SideIdentity({
       <BattleUnitPortrait
         nome={unit.nome}
         icon={unit.icon}
+        unitId={unit.id}
         size="sm"
         className={cn(
           "rounded-2xl",
@@ -100,6 +101,34 @@ function StatIcon({ token }: { token?: string | null }) {
   return <img src={src} alt="" aria-hidden className="inline size-4 shrink-0 object-contain align-[-2px]" />;
 }
 
+const CHANNEL_HINT: Record<DamageChannel, string> = {
+  cortante: "pages.battle.hintHack",
+  perfurante: "pages.battle.hintPierce",
+  contundente: "pages.battle.hintCrush",
+  divino: "pages.battle.hintDivine",
+  area: "pages.battle.hintArea",
+};
+
+const ARMOR_HINT: Partial<Record<DamageChannel, string>> = {
+  cortante: "pages.battle.hintHackArmor",
+  perfurante: "pages.battle.hintPierceArmor",
+  contundente: "pages.battle.hintCrushArmor",
+};
+
+function Hint({ text, children }: { text: string; children: ReactNode }) {
+  return (
+    <span tabIndex={0} className="group/hint relative inline-flex items-center gap-1 outline-none">
+      {children}
+      <span
+        role="tooltip"
+        className="pointer-events-none absolute bottom-[calc(100%+6px)] left-0 z-40 w-max max-w-52 rounded-lg border border-amber-200/35 bg-[#1a1612] px-2 py-1 text-left text-[11px] font-medium leading-snug text-amber-50 opacity-0 shadow-[0_8px_24px_rgba(0,0,0,0.45)] transition-opacity group-hover/hint:opacity-100 group-focus-within/hint:opacity-100"
+      >
+        {text}
+      </span>
+    </span>
+  );
+}
+
 function formatNum(value: number, locale: string): string {
   return value.toLocaleString(locale === "en" ? "en-US" : "pt-BR", { maximumFractionDigits: 2 });
 }
@@ -125,12 +154,15 @@ function ApproachLine({
   neverReaches: string;
   bothInRange: string;
 }) {
+  const { t } = useTranslation();
   const opponentWalks = opponent.attackDelay != null && opponent.attackDelay > 0;
   if (side.attackDelay === 0 && opponentWalks) {
     return (
       <p className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-amber-50">
-        <StatIcon token="rangeicon" />
-        <span>{fill(opensAtRange, { range: num(side.range) })}</span>
+        <Hint text={t("pages.battle.hintRange")}>
+          <StatIcon token="rangeicon" />
+          <span>{fill(opensAtRange, { range: num(side.range) })}</span>
+        </Hint>
       </p>
     );
   }
@@ -141,11 +173,15 @@ function ApproachLine({
     const distance = Math.max(0, opponent.range - side.range);
     return (
       <p className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-zinc-100">
-        <StatIcon token="rangeicon" />
-        <span>{num(distance)}</span>
+        <Hint text={t("pages.battle.hintRange")}>
+          <StatIcon token="rangeicon" />
+          <span>{num(distance)}</span>
+        </Hint>
         <span className="text-zinc-400">÷</span>
-        <StatIcon token="aomr_speed_icon" />
-        <span>{num(side.moveSpeed)}</span>
+        <Hint text={t("pages.battle.hintMoveSpeed")}>
+          <StatIcon token="aomr_speed_icon" />
+          <span>{num(side.moveSpeed)}</span>
+        </Hint>
         <span className="text-zinc-400">=</span>
         <span className="font-semibold text-amber-50">{fill(secondsToReach, { seconds: num(side.attackDelay) })}</span>
       </p>
@@ -196,6 +232,7 @@ function RealSideCalc({
   neverReaches: string;
   bothInRange: string;
 }) {
+  const { t } = useTranslation();
   const num = (value: number) => formatNum(value, locale);
   const walkedFirst = side.attackDelay != null && side.attackDelay > 0 && side.secondsToKill != null;
   return (
@@ -223,22 +260,34 @@ function RealSideCalc({
         ))}
       </ul>
       <p className="mt-3 flex flex-wrap items-center gap-1.5 text-sm text-zinc-100">
-        <span>{num(side.damagePerHit)}</span>
+        <Hint text={t("pages.battle.hintPerHit")}>
+          <span>{num(side.damagePerHit)}</span>
+        </Hint>
         <span className="text-zinc-400">×</span>
-        <StatIcon token="aomr_rate_of_fire_icon" />
-        <span>{num(side.attacksPerSecond)}</span>
+        <Hint text={t("pages.battle.hintAttackSpeed")}>
+          <StatIcon token="aomr_rate_of_fire_icon" />
+          <span>{num(side.attacksPerSecond)}</span>
+        </Hint>
         <span className="text-zinc-400">=</span>
-        <span>{num(side.dps)}</span>
+        <Hint text={t("pages.battle.hintDps")}>
+          <span>{num(side.dps)}</span>
+        </Hint>
       </p>
       <p className="mt-1 flex flex-wrap items-center gap-1.5 text-sm text-zinc-100">
-        <StatIcon token="aomr_hit_points_icon" />
-        <span>{num(targetHp)}</span>
+        <Hint text={t("pages.battle.hintHitPoints")}>
+          <StatIcon token="aomr_hit_points_icon" />
+          <span>{num(targetHp)}</span>
+        </Hint>
         <span className="text-zinc-400">÷</span>
-        <span>{num(side.dps)}</span>
+        <Hint text={t("pages.battle.hintDps")}>
+          <span>{num(side.dps)}</span>
+        </Hint>
         <span className="text-zinc-400">=</span>
-        <span className="font-semibold text-amber-50">
-          {side.secondsToKill == null ? noDamage : secondsLabel.replace("{{seconds}}", num(side.secondsToKill))}
-        </span>
+        <Hint text={t("pages.battle.hintTimeToFall")}>
+          <span className="font-semibold text-amber-50">
+            {side.secondsToKill == null ? noDamage : secondsLabel.replace("{{seconds}}", num(side.secondsToKill))}
+          </span>
+        </Hint>
       </p>
       {walkedFirst ? (
         <p className="mt-1 text-sm font-semibold text-amber-50">
@@ -249,7 +298,9 @@ function RealSideCalc({
           })}
         </p>
       ) : null}
-      <p className="mt-1 text-xs text-zinc-300">{hpLeftLabel.replace("{{hp}}", num(side.hpRemaining))}</p>
+      <p className="mt-1 text-xs text-zinc-300">
+        <Hint text={t("pages.battle.hintHpLeft")}>{hpLeftLabel.replace("{{hp}}", num(side.hpRemaining))}</Hint>
+      </p>
     </div>
   );
 }
@@ -265,18 +316,25 @@ function ChannelRow({
   ignoresArmor: string;
   perHit: string;
 }) {
+  const { t } = useTranslation();
   const armorIcon = ARMOR_ICON[channel.channel];
+  const armorHint = ARMOR_HINT[channel.channel];
   const typeIcon = channel.matchedType ? TYPE_ICON[channel.matchedType] : undefined;
+  const typeLabel = channel.matchedType ? t(`pages.battle.hintType.${channel.matchedType}`) : "";
   return (
     <li className="text-sm text-zinc-100">
       <p className="flex flex-wrap items-center gap-1.5">
-        <StatIcon token={CHANNEL_ICON[channel.channel]} />
-        <span>{num(channel.baseDamage)}</span>
+        <Hint text={t(CHANNEL_HINT[channel.channel])}>
+          <StatIcon token={CHANNEL_ICON[channel.channel]} />
+          <span>{num(channel.baseDamage)}</span>
+        </Hint>
         {channel.multiplier !== 1 ? (
           <>
             <span className="text-zinc-400">×</span>
-            <StatIcon token={typeIcon} />
-            <span>{num(channel.multiplier)}</span>
+            <Hint text={t("pages.battle.hintMultiplier", { type: typeLabel })}>
+              <StatIcon token={typeIcon} />
+              <span>{num(channel.multiplier)}</span>
+            </Hint>
             <span className="text-zinc-400">=</span>
             <span>{num(channel.boostedDamage)}</span>
           </>
@@ -286,15 +344,17 @@ function ChannelRow({
         {channel.armorPercent == null ? (
           <span>{ignoresArmor}</span>
         ) : (
-          <>
+          <Hint text={armorHint ? t(armorHint) : t("pages.battle.ignoresArmor")}>
             <StatIcon token={armorIcon} />
             <span>{num(channel.armorPercent)}%</span>
-          </>
+          </Hint>
         )}
         <span className="text-zinc-500">→</span>
-        <span className="font-semibold text-amber-50">
-          {num(channel.damagePerHit)} {perHit}
-        </span>
+        <Hint text={t("pages.battle.hintPerHit")}>
+          <span className="font-semibold text-amber-50">
+            {num(channel.damagePerHit)} {perHit}
+          </span>
+        </Hint>
       </p>
     </li>
   );

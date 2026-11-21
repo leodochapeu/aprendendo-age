@@ -15,6 +15,10 @@ type UnidadeModelViewerProps = {
   vfx?: IdleVfxAnchor[];
   /** Graus acima da horizontal. Sem o valor, a câmera fica quase frontal, como nas unidades. */
   pitch?: number;
+  /** Cartão curto, sem os botões de giro. */
+  compact?: boolean;
+  /** Gira sozinho. Usado no cartão de passagem do mouse. */
+  spin?: boolean;
 };
 
 type Stage = {
@@ -275,7 +279,15 @@ function clearPivot(pivot: THREE.Group) {
   }
 }
 
-export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = [], pitch }: UnidadeModelViewerProps) {
+export function UnidadeModelViewer({
+  urls,
+  hero = false,
+  hover = false,
+  vfx = [],
+  pitch,
+  compact = false,
+  spin = false,
+}: UnidadeModelViewerProps) {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const yawRef = useRef(0.45);
@@ -287,6 +299,7 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
   const heroRef = useRef(hero);
   const hoverRef = useRef(hover);
   const vfxRef = useRef(vfx);
+  const spinRef = useRef(spin);
   const sourcesKey = urls.join("|");
   const [loadState, setLoadState] = useState<{ key: string; status: "ready" | "error" } | null>(null);
   const status: "loading" | "ready" | "error" = !sourcesKey
@@ -300,7 +313,8 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
     hoverRef.current = hover;
     vfxRef.current = vfx;
     pitchRef.current = pitch;
-  }, [hero, hover, vfx, pitch]);
+    spinRef.current = spin;
+  }, [hero, hover, vfx, pitch, spin]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -365,6 +379,7 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
 
     const tick = () => {
       if (disposed) return;
+      if (spinRef.current && !dragRef.current.active) yawRef.current += 0.006;
       placeCamera();
       auraRef.current?.update(performance.now() / 1000, camera);
       idleRef.current?.update(performance.now() / 1000);
@@ -472,7 +487,7 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
   return (
     <div
       className="outline-none"
-      tabIndex={0}
+      tabIndex={compact ? -1 : 0}
       onKeyDown={(event) => {
         if (event.key === "ArrowLeft") {
           event.preventDefault();
@@ -483,7 +498,7 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
         }
       }}
     >
-      <div className="relative h-[26rem] overflow-hidden rounded-xl bg-[#12141b]">
+      <div className={compact ? "relative h-52 overflow-hidden rounded-xl bg-[#12141b]" : "relative h-[26rem] overflow-hidden rounded-xl bg-[#12141b]"}>
         <canvas
           ref={canvasRef}
           className="h-full w-full cursor-grab touch-none active:cursor-grabbing"
@@ -516,27 +531,29 @@ export function UnidadeModelViewer({ urls, hero = false, hover = false, vfx = []
           </p>
         ) : null}
       </div>
-      <div className="mt-3 flex items-center justify-between gap-3">
-        <p className="text-xs text-zinc-500">{t("common.dragToRotate")}</p>
-        <div className="flex shrink-0 gap-2">
-          <button
-            type="button"
-            aria-label={t("common.rotateLeft")}
-            className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-aom-border bg-black/25 text-lg text-amber-100/90 transition hover:border-amber-400/40 hover:bg-amber-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40"
-            onClick={() => turn(YAW_STEP)}
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            aria-label={t("common.rotateRight")}
-            className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-aom-border bg-black/25 text-lg text-amber-100/90 transition hover:border-amber-400/40 hover:bg-amber-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40"
-            onClick={() => turn(-YAW_STEP)}
-          >
-            ›
-          </button>
+      {compact ? null : (
+        <div className="mt-3 flex items-center justify-between gap-3">
+          <p className="text-xs text-zinc-500">{t("common.dragToRotate")}</p>
+          <div className="flex shrink-0 gap-2">
+            <button
+              type="button"
+              aria-label={t("common.rotateLeft")}
+              className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-aom-border bg-black/25 text-lg text-amber-100/90 transition hover:border-amber-400/40 hover:bg-amber-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40"
+              onClick={() => turn(YAW_STEP)}
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              aria-label={t("common.rotateRight")}
+              className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-aom-border bg-black/25 text-lg text-amber-100/90 transition hover:border-amber-400/40 hover:bg-amber-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/40"
+              onClick={() => turn(-YAW_STEP)}
+            >
+              ›
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
