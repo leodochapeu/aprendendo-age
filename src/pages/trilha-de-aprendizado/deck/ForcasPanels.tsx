@@ -4,6 +4,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { localeSectionPath } from "@/lib/localeRoutes";
 import { withListViewMode } from "@/lib/listViewMode";
 
+import { CategoriasBoard } from "./CategoriasBoard";
 import { chapterKicker } from "./chapters";
 import { BigToken, InlineToken, LessonSection, PullQuote, Shot, VideoFrame } from "./ui";
 import { tiposImg, trilhaShared } from "../trilhaAssets";
@@ -349,11 +350,7 @@ export function ForcasDamagePanel() {
         <h3 className="font-[family-name:var(--font-display)] text-3xl text-zinc-50 md:text-4xl">
           {t("pages.trilha.multipliers.categoriesTitle")}
         </h3>
-        <Shot
-          src={tiposImg("image 4.webp")}
-          alt={t("pages.trilha.multipliers.categoriesAlt")}
-          className="mt-6"
-        />
+        <CategoriasBoard />
       </div>
 
       <div className="mt-10 max-w-4xl">
