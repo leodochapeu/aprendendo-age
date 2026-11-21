@@ -16,6 +16,19 @@ function sideMark(winner: "a" | "b" | "draw", side: "a" | "b"): SideMark {
   return winner === side ? "crown" : "skull";
 }
 
+function ResultPhrase({ hp, text }: { hp: number; text: string }) {
+  const { t } = useTranslation();
+  const fallen = Number(hp.toFixed(2)) === 0;
+  return (
+    <span className={cn("inline-flex items-center gap-1 font-semibold", fallen ? "text-rose-300" : "text-emerald-300")}>
+      <span role="img" aria-label={fallen ? t("pages.battle.loserMark") : t("pages.battle.winnerMark")} className="text-base leading-none">
+        {fallen ? "💀" : "👑"}
+      </span>
+      {text}
+    </span>
+  );
+}
+
 function ResultMark({ mark }: { mark: SideMark }) {
   const { t } = useTranslation();
   if (!mark) return null;
@@ -321,7 +334,7 @@ function RealSideCalc({
         ) : null}
         <CalcLine label={t("pages.battle.calcResult")}>
           <Hint text={t("pages.battle.hintHpLeft")}>
-            <span className="font-semibold text-amber-50">{hpLeftLabel.replace("{{hp}}", num(side.hpRemaining))}</span>
+            <ResultPhrase hp={side.hpRemaining} text={hpLeftLabel.replace("{{hp}}", num(side.hpRemaining))} />
           </Hint>
         </CalcLine>
       </div>
