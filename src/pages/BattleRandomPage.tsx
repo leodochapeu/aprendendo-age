@@ -457,7 +457,8 @@ function BattleRandomSession({
             <RevealEyeButton
               label={t("pages.battle.revealDeckUnitCategory")}
               active={deckUnitRevealPurchased}
-              disabled={phase !== "playing" || !canPurchaseFavorEffect(favor, "revealDeckUnitCategory")}
+              disabled={phase !== "playing"}
+              locked={!canPurchaseFavorEffect(favor, "revealDeckUnitCategory")}
               onClick={() => setPendingReveal("deck")}
             />
           </div>
@@ -506,7 +507,8 @@ function BattleRandomSession({
             <RevealEyeButton
               label={t("pages.battle.revealDefenderCategory")}
               active={revealDefenderCategory}
-              disabled={phase !== "playing" || !canPurchaseFavorEffect(favor, "revealDefenderCategory")}
+              disabled={phase !== "playing"}
+              locked={!canPurchaseFavorEffect(favor, "revealDefenderCategory")}
               onClick={() => setPendingReveal("defender")}
             />
           </div>
