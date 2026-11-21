@@ -1029,6 +1029,7 @@ export const ptMessages: TranslationTree = {
         siegeTitle: "Cerco",
         siegeDesc:
           "Unidades terrestres contra construções, lentas e com pouquíssimo dano vs. unidades — em geral disponíveis na Era Heróica.",
+        siegeImageAlt: "Armas de cerco: torres, catapultas, aríetes e bestas",
         categoriesTitle: "Categorias (UI)",
         categoriesAlt: "Categorias no jogo",
         videoTitle: "Vídeo explicativo",

@@ -256,6 +256,8 @@ export function ForcasRolesPanel() {
           token="aomr_type_siege_weapon_icon"
           title={t("pages.trilha.multipliers.siegeTitle")}
           body={t("pages.trilha.multipliers.siegeDesc")}
+          image={tiposImg("Armas_de_Cerco.webp")}
+          imageAlt={t("pages.trilha.multipliers.siegeImageAlt")}
         />
       </div>
     </LessonSection>

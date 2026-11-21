@@ -1028,6 +1028,7 @@ export const enMessages: TranslationTree = {
         siegeTitle: "Siege",
         siegeDesc:
           "Land units vs buildings, slow with very little damage vs units — usually available in Heroic Age.",
+        siegeImageAlt: "Siege weapons: towers, catapults, rams, and ballistae",
         categoriesTitle: "Categories (UI)",
         categoriesAlt: "In-game categories",
         videoTitle: "Explainer video",
