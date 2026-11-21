@@ -56,6 +56,7 @@ TIPO_LABEL_EN = {
     "Unidade mítica": "Mythic",
     "Arma de cerco": "Cerco",
     "Cerco": "Cerco",
+    "Anti-construção": "Anti-building",
     "Herói": "Hero",
     "Batedor": "Scout",
     "Aldeão": "Villager",
@@ -74,6 +75,8 @@ EXTRACTED_TIPO_LABELS = frozenset(
         "Cavalaria",
         "Arma de cerco",
         "Cerco",
+        "Anti-construção",
+        "Anti-building",
         "Navio",
         "Ship",
         "Flecheiro",
@@ -106,6 +109,11 @@ COMBAT_TIPO_LABELS = frozenset(
         "Navio-cerco",
         "Siege Ship",
     }
+)
+
+# Cerco / anti-construção vêm do proto. Não preservar tag editorial antiga.
+SIEGE_TIPO_LABELS = frozenset(
+    {"Cerco", "Arma de cerco", "Anti-construção", "Anti-building"}
 )
 
 BUILDING_PROTO_ALIASES = {
@@ -399,8 +407,10 @@ def merge_tipo(
             seen.add(label)
             continue
         # Combate secundário já curado (ex.: Turma Artilharia+Cavalaria).
+        # Cerco é autoritativo no proto — não reaproveitar tag antiga.
         if (
             label in COMBAT_TIPO_LABELS
+            and label not in SIEGE_TIPO_LABELS
             and extracted_combat
             and extracted_combat <= existing_labels
         ):

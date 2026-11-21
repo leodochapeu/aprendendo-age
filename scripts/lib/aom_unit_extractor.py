@@ -62,6 +62,8 @@ PRIMARY_ROLE_TYPES = [
 
 MYTH_UNIT_TYPE = "Unidade mítica"
 HERO_UNIT_TYPE = "Herói"
+SIEGE_UNIT_TYPE = "Cerco"
+ANTI_BUILDING_UNIT_TYPE = "Anti-construção"
 
 # Tipos do proto que definem uma unidade mítica. No jogo, uma unidade mítica de
 # ataque à distância também carrega `Ranged`/`AbstractArcher`, então o papel de
@@ -71,6 +73,30 @@ MYTH_UNIT_TOKENS = ("AbstractMythUnit", "MythUnit")
 # Idem para heróis: Hersir, Godi e conversões atlantes `(Herói)` também têm
 # Infantaria/Artilharia/Cavalaria no proto e precisam manter ambas as tags.
 HERO_UNIT_TOKENS = ("Hero", "AbstractHero")
+
+# Cerco humano (`AbstractSiegeWeapon`) e mítico (`MythUnitSiege`, ex.: Ciclope,
+# Escaravelho, Beemote, Oni). O segundo NÃO entra em PRIMARY_ROLE_TYPES — senão
+# a unidade perderia a tag e ficaria só como "Unidade mítica".
+# Nota: `MythUnitSiege` sozinho não basta (ex.: Raven scout sem ataque).
+SIEGE_WEAPON_TOKEN = "AbstractSiegeWeapon"
+MYTH_SIEGE_TOKEN = "MythUnitSiege"
+
+# Bônus vs Building a partir deste valor → tag Anti-construção (aldeão ~4 fica de fora).
+ANTI_BUILDING_BONUS_MIN = 5.0
+ANTI_BUILDING_ACTIONS = frozenset(
+    {"BuildingAttack", "AntiWallAttack", "SiegeAttack"}
+)
+DAMAGING_ATTACK_ACTIONS = frozenset(
+    {
+        "HandAttack",
+        "RangedAttack",
+        "SiegeAttack",
+        "BuildingAttack",
+        "AntiWallAttack",
+        "ChargedHandAttack",
+        "ChargedRangedAttack",
+    }
+)
 
 
 def _text(node: ET.Element | None, tag: str, default: str = "") -> str:
@@ -120,12 +146,73 @@ SHIP_SUBTYPE_ROLES = frozenset(
 )
 
 
-def detect_roles(unit_types: set[str]) -> list[str]:
-    """Papel de combate principal + classificações mítica/herói quando aplicável.
+def unit_has_damaging_attack(unit: ET.Element) -> bool:
+    for action in unit.findall("protoaction"):
+        name = (action.findtext("name") or "").strip()
+        if name not in DAMAGING_ATTACK_ACTIONS:
+            continue
+        for damage in action.findall("damage"):
+            if _float(damage.text) > 0:
+                return True
+    return False
+
+
+def unit_building_bonus_max(unit: ET.Element) -> float:
+    best = 0.0
+    for action in unit.findall("protoaction"):
+        for bonus in action.findall("damagebonus"):
+            target = (bonus.get("type") or "").strip()
+            if target in {"Building", "AbstractBuilding", "AbstractWall", "AbstractTower"}:
+                best = max(best, _float(bonus.text))
+    return best
+
+
+def unit_has_anti_building_action(unit: ET.Element) -> bool:
+    for action in unit.findall("protoaction"):
+        name = (action.findtext("name") or "").strip()
+        if name not in ANTI_BUILDING_ACTIONS:
+            continue
+        for damage in action.findall("damage"):
+            if _float(damage.text) > 0:
+                return True
+    return False
+
+
+def unit_is_siege(unit_types: set[str], unit: ET.Element) -> bool:
+    if SIEGE_WEAPON_TOKEN in unit_types:
+        return True
+    # MythUnitSiege sem ataque real (Raven) ou scout puro não é cerco.
+    if MYTH_SIEGE_TOKEN not in unit_types:
+        return False
+    if "AbstractScout" in unit_types:
+        return False
+    return unit_has_damaging_attack(unit)
+
+
+def unit_is_anti_building(unit_types: set[str], unit: ET.Element) -> bool:
+    """Infantaria/míticas com foco em prédio, sem serem armas de cerco."""
+    if "Villager" in unit_types or "AbstractTitan" in unit_types:
+        return False
+    if unit_is_siege(unit_types, unit):
+        return False
+    if unit_has_anti_building_action(unit):
+        return True
+    return unit_building_bonus_max(unit) >= ANTI_BUILDING_BONUS_MIN
+
+
+def detect_roles(unit_types: set[str], unit: ET.Element | None = None) -> list[str]:
+    """Papel de combate principal + classificações mítica/herói/cerco quando aplicável.
 
     Unidades míticas de ataque à distância (ex.: Centauro, Qilin, Troll, Draugr,
     Wadjet) e heróis com papel humano (ex.: Hersir, Godi, Murmilo (Herói))
     mantêm o papel de combate e ganham também a classificação secundária.
+
+    Míticas de cerco (`MythUnitSiege` + ataque) ganham **Cerco** além de Unidade
+    mítica (ex.: Ciclope, Colosso, Escaravelho, Beemote, Oni). Raven (scout sem
+    ataque) não recebe Cerco.
+
+    Anti-construção: bônus alto vs Building ou ação BuildingAttack/AntiWallAttack
+    (ex.: Destruidor, Otontin, Shinobi, Quinametzin).
 
     Navios militares: Navio + subtipo (Flecheiro / Combate curto-alcance / Navio-cerco).
     """
@@ -138,12 +225,39 @@ def detect_roles(unit_types: set[str]) -> list[str]:
         roles.append(primary)
 
     is_myth = any(token in unit_types for token in MYTH_UNIT_TOKENS)
+    is_siege = False
+    is_anti_building = False
+    if unit is not None:
+        is_siege = unit_is_siege(unit_types, unit)
+        is_anti_building = unit_is_anti_building(unit_types, unit)
+    else:
+        # Fallback só com tipos (testes / callers antigos).
+        is_siege = SIEGE_WEAPON_TOKEN in unit_types or (
+            MYTH_SIEGE_TOKEN in unit_types and "AbstractScout" not in unit_types
+        )
+
+    # Cerco antes de Unidade mítica quando ambos existem (ex.: Ciclope).
+    if is_siege and SIEGE_UNIT_TYPE not in roles and "Arma de cerco" not in roles:
+        roles.append(SIEGE_UNIT_TYPE)
+
     if is_myth and MYTH_UNIT_TYPE not in roles:
         roles.append(MYTH_UNIT_TYPE)
+
+    if (
+        is_siege
+        and SIEGE_UNIT_TYPE in roles
+        and MYTH_UNIT_TYPE in roles
+        and roles.index(SIEGE_UNIT_TYPE) > roles.index(MYTH_UNIT_TYPE)
+    ):
+        roles.remove(SIEGE_UNIT_TYPE)
+        roles.insert(roles.index(MYTH_UNIT_TYPE), SIEGE_UNIT_TYPE)
 
     is_hero = any(token in unit_types for token in HERO_UNIT_TOKENS)
     if is_hero and HERO_UNIT_TYPE not in roles:
         roles.append(HERO_UNIT_TYPE)
+
+    if is_anti_building and ANTI_BUILDING_UNIT_TYPE not in roles:
+        roles.append(ANTI_BUILDING_UNIT_TYPE)
 
     return roles
 
@@ -399,7 +513,7 @@ def extract_unit_record(
 ) -> dict[str, Any]:
     unit_types = {node.text.strip() for node in unit.findall("unittype") if node.text}
     pantheon = detect_pantheon(unit)
-    roles = detect_roles(unit_types)
+    roles = detect_roles(unit_types, unit)
     attack = parse_attack(unit)
     costs = parse_costs(unit)
     armor = parse_armor(unit)

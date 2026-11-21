@@ -5,6 +5,10 @@
     "ingles": "Villager",
     "tipo": [
       {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -506,12 +510,12 @@
     "ingles": "Pegasus",
     "tipo": [
       {
-        "type": "Scout",
-        "icon": "aomr_type_scout_icon"
-      },
-      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Scout",
+        "icon": "aomr_type_scout_icon"
       },
       {
         "type": "Voador",
@@ -1350,8 +1354,8 @@
     "ingles": "Lykaon (Villager)",
     "tipo": [
       {
-        "type": "Mythic",
-        "icon": "aomr_type_myth_unit_icon"
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       },
       {
         "type": "Villager",
@@ -2619,6 +2623,10 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Anti-building",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -3149,6 +3157,10 @@
     "ingles": "Colossus",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -3471,6 +3483,10 @@
     "nome": "Laborer",
     "ingles": "Laborer",
     "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -5251,6 +5267,10 @@
     "ingles": "Dwarf",
     "tipo": [
       {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -5304,6 +5324,10 @@
     "nome": "Gatherer",
     "ingles": "Gatherer",
     "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -5422,12 +5446,12 @@
     "ingles": "Raven",
     "tipo": [
       {
-        "type": "Batedor",
-        "icon": "aomr_type_scout_icon"
-      },
-      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Batedor",
+        "icon": "aomr_type_scout_icon"
       },
       {
         "type": "Voador",
@@ -5548,12 +5572,12 @@
     "ingles": "Throwing Axeman",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -5681,6 +5705,10 @@
       {
         "type": "Hero",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
       }
     ],
     "panteao": [
@@ -6058,12 +6086,12 @@
     "ingles": "Valkyrie",
     "tipo": [
       {
-        "type": "Curandeiro✨",
-        "icon": ""
-      },
-      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Curandeiro✨",
+        "icon": ""
       }
     ],
     "panteao": [
@@ -6886,6 +6914,10 @@
     "ingles": "Fafnir",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
       }
@@ -7144,6 +7176,10 @@
     "ingles": "Nidhogg",
     "tipo": [
       {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
       },
@@ -7276,6 +7312,10 @@
     "ingles": "Citizen",
     "tipo": [
       {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -7380,12 +7420,12 @@
     "ingles": "Oracle (Hero)",
     "tipo": [
       {
-        "type": "Scout",
-        "icon": "aomr_type_scout_icon"
-      },
-      {
         "type": "Hero",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Scout",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -7835,6 +7875,162 @@
   },
   {
     "id": 113,
+    "nome": "Cheiroballista",
+    "ingles": "Cheiroballista",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlantean :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "counter_de": "Hard-Counter Infantaria :aomr_type_infantry_icon:",
+    "multiplicador": [
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon",
+        "value": "5"
+      },
+      {
+        "type": "Texto",
+        "icon": "",
+        "value": "🚢3x"
+      }
+    ],
+    "pontos_de_vida": 105,
+    "dano_perfurante": 3,
+    "alcance": 16,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 6,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 50,
+    "construcao": [
+      {
+        "id": 42,
+        "nome": "Contralquartel"
+      }
+    ],
+    "comida": 0,
+    "madeira": 115,
+    "ouro": 100,
+    "custo_total": 215,
+    "populacao": 4,
+    "tempo_treinamento": 24,
+    "velocidade_movimento": 3.8,
+    "forca_atributos": 94.8,
+    "categoria": [
+      {
+        "type": "Hard-Counter Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "forte_contra": "Infantaria :aomr_type_infantry_icon:",
+    "fraco_contra": "Cavalaria :aomr_type_cavalry_icon:",
+    "icon": "aomr_cheiroballista_icon",
+    "descricao_resumida": "Ranged soldier-siege hybrid. Only good vs. infantry and ships.",
+    "descricao_avancada": "Ranged Soldier, Siege Weapon. Fragile, but very powerful against infantry and ships.",
+    "historia": "The light and relatively fast Cheiroballista is a deadly anti-infantry unit, but is weak against everything else, especially cavalry.\n\nThe cheiroballista was the most advanced arrow-throwing ballista devised in ancient times. Its metal arms were short and provided great torque, but also allowed the ballista to either be mounted in a drawn cart or put on wheels."
+  },
+  {
+    "id": 114,
+    "nome": "Cheiroballista (Hero)",
+    "ingles": "Cheiroballista (Hero)",
+    "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Hero",
+        "icon": "aomr_type_hero_icon"
+      }
+    ],
+    "panteao": [
+      {
+        "id": 4,
+        "nome": "Atlantean :aomr_pantheon_atlanteans_icon:"
+      }
+    ],
+    "era": [
+      {
+        "id": 2,
+        "nome": "Classical :aomr_classical_age_icon:"
+      }
+    ],
+    "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:, Hard-Counter Infantry :aomr_type_infantry_icon:",
+    "multiplicador": [
+      {
+        "type": "Unidade myth",
+        "icon": "aomr_type_myth_unit_icon",
+        "value": "8"
+      },
+      {
+        "type": "Infantaria",
+        "icon": "aomr_type_infantry_icon",
+        "value": "5"
+      },
+      {
+        "type": "Texto",
+        "icon": "",
+        "value": "🚢3x"
+      }
+    ],
+    "pontos_de_vida": 120,
+    "dano_perfurante": 4,
+    "alcance": 16,
+    "velocidade_de_ataque_atk_s": 2,
+    "dps": 8,
+    "armadura_anticorte": 20,
+    "armadura_antiperfurante": 50,
+    "comida": 0,
+    "madeira": 200,
+    "ouro": 175,
+    "favor": 4,
+    "custo_total": 379,
+    "populacao": 4,
+    "tempo_treinamento": 0,
+    "velocidade_movimento": 4.1,
+    "forca_atributos": 51.3,
+    "forte_contra": "Mythical Creature :aomr_type_myth_unit_icon:",
+    "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
+    "categoria": [
+      {
+        "type": "Hard-Counter Infantaria",
+        "icon": "aomr_type_infantry_icon"
+      }
+    ],
+    "icon": "aomr_cheiroballista_hero_icon",
+    "descricao_avancada": "Ranged Soldier, Siege Weapon, Hero. Fragile, but very powerful against infantry, ships, and myth units.",
+    "historia": "This Cheiroballista has become a hero. Like a regular Cheiroballista, it is strong against infantry and weak against most other units; but as a hero, it is much more effective against myth units. All heroes may pick up Relics.\n\nThe cheiroballista was the most advanced arrow-throwing ballista devised in ancient times. Its metal arms were short and provided great torque, but also allowed the ballista to either be mounted in a drawn cart or put on wheels.",
+    "habilidades": [
+      {
+        "nome": "Sacred Hands (Passive)",
+        "descricao": "Can pick up Relics and drop them off at a Temple.",
+        "icon": "aomr_sacred_hands_ability_icon"
+      }
+    ]
+  },
+  {
+    "id": 115,
     "nome": "Automaton",
     "ingles": "Automaton",
     "tipo": [
@@ -7910,17 +8106,17 @@
     "historia": "Scientific name -- None (artificial construct)\nSize -- over 7' tall\nDiet -- doesn't eat\n\nSpecial ability -- can repair other Automatons\n\nAutomatons are tough, especially in groups, because they can repair each other. If you face Atlantean Automatons, use heroes against them and try to destroy them all, or they will be back.\n\nThe Atlanteans placed a high value on personal freedom. They never practiced slavery, so they created automatons to perform the tasks for which many other cultures used slaves. As the sophistication of these automatons grew, some in Atlantis wanted them to become citizens. Others opposed that notion. A civil war erupted and plunged the Atlantean Empire into a dark age that lasted thousands of years. During this time, many Atlantean colonies regressed or revolted and became independent nations. Automatons were never inducted into Atlantean society and Atlantis, though vastly more advanced than other nations, never again reached the heights of its Golden Age."
   },
   {
-    "id": 114,
+    "id": 116,
     "nome": "Caladria",
     "ingles": "Caladria",
     "tipo": [
       {
-        "type": "Curandeiro✨",
-        "icon": ""
-      },
-      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Curandeiro✨",
+        "icon": ""
       },
       {
         "type": "Voador",
@@ -7987,7 +8183,7 @@
     "historia": "Scientific name -- Homo asclepii\nSize -- human-sized\nDiet -- omnivorous, but mostly herbivorous\n\nCaladriae are flying healers. They make decent scouts, but will fall easily to enemy towers and missiles. Multiple Caladriae can heal each other so that they can continue healing Atlantean armies. They can also turn their powers towards enemy units to slow them down.\n\n\"...Caladria died and was entombed. Theocrat Osphoru built a temple of healing over her tomb. Many thought his decision blasphemous, but all who suffered and were sick grew strong and whole again under the care of the temple's healers. Blessed were the armies accompanied by these followers of Caladria, for they were healed, inspired and protected.\"\n\n-- Voices of the Oracle, The Lay of Ioleta"
   },
   {
-    "id": 115,
+    "id": 117,
     "nome": "Carnivora",
     "ingles": "Carnivora",
     "tipo": [
@@ -8055,7 +8251,7 @@
     "historia": "Scientific name -- Aldrovanda ampelos subsp. xera\nSize -- about 9' tall\nDiet -- rodents, fish, occasionally humans\n\nCarnivorae catch and kill quickly, but must wait to digest before snaring more prey. Heroes and ranged units can avoid a Carnivora's vines.\n\nThe Titan Oceanus gave several of his sacred carnivorae to Gaia as a gift. Carnivorae on land were easy to avoid if seen, but blended in well with surrounding vegetation. Unsuspecting prey often blundered into them and were ensnared to be digested gruesomely over the course of a week or more."
   },
   {
-    "id": 116,
+    "id": 118,
     "nome": "Promethean",
     "ingles": "Promethean",
     "tipo": [
@@ -8132,7 +8328,7 @@
     "historia": "Scientific name -- Homo protos\nSize -- 7' tall\nDiet -- fire, coals, eagles\n\nPrometheans are slow but have decent armor and attack values. When they are destroyed, several smaller Prometheans rise from the clay of the first.\n\nPrometheus was one of the few Titans who sided with the Olympians in the Titanomachy. He and his brother Epimetheus were tasked with the creation of humanity, and shaped the first people from clay. Pitying the frail mortals, he gave his creations the gift of fire so that they could become strong. This angered Zeus, who bound Prometheus to the side of a mountain where an eagle devoured his liver every day."
   },
   {
-    "id": 117,
+    "id": 119,
     "nome": "Promethean Offspring",
     "ingles": "Promethean Offspring",
     "tipo": [
@@ -8188,7 +8384,7 @@
     "historia": "Scientific name -- Homo protos\nSize -- child-sized\nDiet -- fire, coals, eaglets\n\nPromethean Offspring are not as tough as Prometheans, but their small size makes them harder to hit with missiles. They make decent scouts, but are very vulnerable to heroes.\n\nPrometheus was one of the few Titans who sided with the Olympians in the Titanomachy. He and his brother Epimetheus were tasked with the creation of humanity, and shaped the first people from clay. Pitying the frail mortals, he gave his creations the gift of fire so that they could become strong. This angered Zeus, who bound Prometheus to the side of a mountain where an eagle devoured his liver every day."
   },
   {
-    "id": 118,
+    "id": 120,
     "nome": "Servant",
     "ingles": "Servant",
     "tipo": [
@@ -8250,7 +8446,7 @@
     "historia": "Scientific name -- None (artificial construct)\nSize -- human-sized\nDiet -- none\n\nServants of Oceanus are aquatic healers. They heal nearby units, even those on shore. They are weak combatants, especially against heroes.\n\nA creature of water and will, the servant of Oceanus was the embodiment of the nurturing aspects of the ocean. Servants of Oceanus appeared as human torsos atop a column of water. They were summoned by the theocrats of Atlantis in times of sickness or war to aid the Atlantean people."
   },
   {
-    "id": 119,
+    "id": 121,
     "nome": "Water Carnivora",
     "ingles": "Water Carnivora",
     "tipo": [
@@ -8313,13 +8509,17 @@
     "historia": "Scientific name -- Aldrovanda ampelos subsp. thalassa\nSize -- about 9' tall\nDiet -- Carnivore, fish, occasionally sailors\n\nCarnivorae catch and kill quickly, but must wait to digest before snaring more prey. Heroes and ranged units can avoid a Carnivora's vines.\n\nSacred to the Titan Oceanus, these carnivorous aquatic plants guarded his palace. Also called the Fangs of Charybdis, they were responsible for the disappearance of more vessels than the sirens and Charybdis combined. Many aquatic carnivorae were cultivated in the bays of Atlantis and along shipping channels to protect Atlantean trade. It was a punishable offense to sail into one of these sacred plants, although very few who ventured that close to a carnivora survived to face punishment."
   },
   {
-    "id": 120,
+    "id": 122,
     "nome": "Destroyer",
     "ingles": "Destroyer",
     "tipo": [
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Anti-building",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -8369,7 +8569,7 @@
     "historia": "The Destroyer is a slow, powerful unit that excels at leveling buildings. It is weak against most units, however, especially those which can outrun its methodical march.\n\nArmies attacking Atlantean colonies found their inhabitants far from defenseless - most notably the trident-wielding shore fishermen. These fishermen organized defensive militias, which eventually became an elite royal guard. The destroyers have a long-standing rivalry with the standard Atlantean infantry - the murmillo - over who has better served Atlantis."
   },
   {
-    "id": 121,
+    "id": 123,
     "nome": "Contarius",
     "ingles": "Contarius",
     "tipo": [
@@ -8432,7 +8632,7 @@
     "historia": "The Contarius is expensive and powerful. It is well armored against most attacks and has the speed to be strong against ranged units. Contarii are weaker against infantry.\n\nEarly Atlantean soldiers tamed and rode the wild horses that roamed across their island. These mounted soldiers were very successful in Atlantis' early conquests, but farmland overtook wilderness and grazing pastures became scarce as Atlantis grew. Subsequently, cavalry all but disappeared from Atlantean tactics, and only an elite few rode horses into combat. Defeated Atlantean generals surrender their precious horses in submission to the victor."
   },
   {
-    "id": 122,
+    "id": 124,
     "nome": "Arcus",
     "ingles": "Arcus",
     "tipo": [
@@ -8496,7 +8696,7 @@
     "historia": "The Atlantean Arcus is strong against infantry, but weak against fast units such as cavalry. Like all ranged soldiers, they are more effective when fighting in groups.\n\nAll Atlantean citizens were versed in the use of at least one weapon. Those who showed skill with ranged weapons - slings, bows, javelins - were called into the ranks of the arci. The Atlantean arci were the first effective military use of ranged foot soldiers. Slings eventually fell into disuse and javelins became more feasibly wielded from horseback. The focused and deadly arcus that emerged over time was a master of the bow and any number of arci fielded in battle intimidated their opposition."
   },
   {
-    "id": 123,
+    "id": 125,
     "nome": "Arcus (Hero)",
     "ingles": "Arcus (Hero)",
     "tipo": [
@@ -8570,7 +8770,7 @@
     ]
   },
   {
-    "id": 124,
+    "id": 126,
     "nome": "Contarius (Hero)",
     "ingles": "Contarius (Hero)",
     "tipo": [
@@ -8644,7 +8844,7 @@
     ]
   },
   {
-    "id": 125,
+    "id": 127,
     "nome": "Destroyer (Hero)",
     "ingles": "Destroyer (Hero)",
     "tipo": [
@@ -8655,6 +8855,10 @@
       {
         "type": "Hero",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Anti-building",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -8710,7 +8914,7 @@
     ]
   },
   {
-    "id": 126,
+    "id": 128,
     "nome": "Behemoth",
     "ingles": "Behemoth",
     "tipo": [
@@ -8796,7 +9000,7 @@
     "historia": "Scientific name -- Glyptodon coelodonta\nSize -- about 18' long\nDiet -- Stones and snow\n\nBehemoths are living siege weapons. They regenerate, making them even tougher to kill than Sekhmet's Scarabs. Use them against buildings, but keep them away from enemy heroes.\n\n\"The Titans languished in Tartarus. The Olympians who trapped them there wished to punish us, worshipers of the Titans. They hunted us, but we hid in the shadow of Behemoth, who was as tall as the mountains and twice as long. He protected us, bellowing as Zeus' lightning struck his thick armor. Caladria blessed Behemoth and healed him after every lightning strike. The Olympians could not break tireless Behemoth and returned to Olympus. We were safe.\"\n\n-- Oaths of the Oracles, The Lay of Ioleta"
   },
   {
-    "id": 127,
+    "id": 129,
     "nome": "Dryad",
     "ingles": "Dryad",
     "tipo": [
@@ -8853,7 +9057,7 @@
     "historia": "Scientific name -- Nympha dasous\nSize -- about 12' tall\nDiet -- water, sunlight\n\nDryads may only be summoned by the player in control of their tree. They train quickly, but you may not field more than a handful in battle at once. They are good against human units and buildings, but weak against heroes.\n\nThese shy, beautiful tree nymphs were the caretakers and guardians of wild groves and forests. Normally peaceful, they could become quite fierce when their trees were threatened. The satyrs courted, protected, and entertained the dryads."
   },
   {
-    "id": 128,
+    "id": 130,
     "nome": "Nereid",
     "ingles": "Nereid",
     "tipo": [
@@ -8922,7 +9126,7 @@
     "historia": "Scientific name -- Nympha thalassi\nSize -- human-sized\nDiet -- fish, seaweed\n\nNereids are trained at the Dock. These powerful myth units are capable of devastating attacks against ships, but excel against other myth units.\n\nThe nereids were the fifty nymphs of the sea. Many of them had important roles in mythology, and like most nymphs were gentle and beautiful creatures. The nereids were often accompanied by hosts of sea creatures in their roving, but in battle chose to ride fierce sharks who carried their mistresses tirelessly."
   },
   {
-    "id": 129,
+    "id": 131,
     "nome": "Satyr",
     "ingles": "Satyr",
     "tipo": [
@@ -9003,7 +9207,7 @@
     "historia": "Scientific name -- Homo silenus\nSize -- human-sized\nDiet -- grapes, cheese, wine, and song\n\nSatyrs are a ranged myth unit with reasonable speed and range. They are strong against human units, but are weak against heroes.\n\nSatyrs were among the many creatures in the entourage of the god Dionysus. Goat-legged and horned, they are notoriously fond of revelry in every possible form with a special weakness for nymphs. Silenus, the oldest satyr, was the instructor of the god Dionysus. Another satyr, Marsyas, was slain by Apollo for daring to challenge the god in a contest of musical skill."
   },
   {
-    "id": 130,
+    "id": 132,
     "nome": "Stymphalian Bird",
     "ingles": "Stymphalian Bird",
     "tipo": [
@@ -9084,7 +9288,7 @@
     "historia": "Scientific name -- Threskiornis terribilis\nSize -- 18' wingspan\nDiet -- carnivore, favors livestock\n\nThe Stymphalian Bird is a formidable myth unit. Only ranged units and buildings can attack it - ranged heroes are the strongest against the birds of Stymphalos.\n\nFor his sixth labor, Heracles slew the Stymphalian Birds. These birds were aggressive and hunted in flocks, much like lions or wolves. They ravaged the countryside around their lakeside nesting grounds, killing and carrying off livestock and occasionally children. Their senses - especially their hearing - were very keen. Heracles used this against them when, instead of venturing into their dangerous nesting grounds, he stood on a mountaintop and clashed a pair of god-crafted brass krotala (castanet-like noise makers). The din was such that the birds could not bear to stay near, and Heracles shot them with his bow as they flew away."
   },
   {
-    "id": 131,
+    "id": 133,
     "nome": "Fanatic",
     "ingles": "Fanatic",
     "tipo": [
@@ -9156,7 +9360,7 @@
     "historia": "The Fanatic is an expensive Mythic Age unit that is good against most other human soldiers, but is vulnerable to anti-infantry units like Toxotai or Throwing Axemen.\n\nWar cultists devoted to one Titan or another presented a great threat to the ruling priestly class of early Atlantis - they were powerful, destructive, and obeyed no law but their own. After the Titans were imprisoned, some groups of cultists - still eager for blood but aware of their sudden vulnerability - organized under the banners of Atlantis. These fanatics fought with two swords, disdaining the protection of a shield."
   },
   {
-    "id": 132,
+    "id": 134,
     "nome": "Fanatic (Hero)",
     "ingles": "Fanatic (Hero)",
     "tipo": [
@@ -9239,7 +9443,7 @@
     ]
   },
   {
-    "id": 133,
+    "id": 135,
     "nome": "Argus",
     "ingles": "Argus",
     "tipo": [
@@ -9302,7 +9506,7 @@
     "historia": "Scientific name -- Amoeba maxima\nSize -- variable\nDiet -- scenic vistas, dissolved mortal flesh\n\nArgus is an amorphous creature covered with bulbous eyes. When threatened, the Argus forcefully excretes a sticky blob of acid from its many specialized tear ducts. Creatures trapped in this acid have little hope of survival. Argus also uses this acid to partially pre-digest its food.\n\nHera's Argus served her faithfully until the god Hermes slew him. Zeus had commanded Hermes to trick Argus and slay him so that the philandering god could recapture one of his lovers, Io, from his jealous wife. Hera honored Argus' sacrifice by placing his eyes on the tail of her sacred peacock. Io, who had endured all this in the form of a pure white cow, was saved only to plunge into what is now called the Ionian Sea."
   },
   {
-    "id": 134,
+    "id": 136,
     "nome": "Centimanus",
     "ingles": "Centimanus",
     "tipo": [
@@ -9365,7 +9569,7 @@
     "historia": "Scientific name -- Gigans centimanus\nSize -- 15' tall\nDiet -- carnivore, mostly humans\n\nCentimani are strong against human soldiers, sending them flying with their many-handed strikes. They are weak against heroes.\n\nOne hundred arms and fifty heads grew out of the shoulders of the centimani - or hekatonkheires, as they were known in Greek. They were the sons of Oranos and Gaia and were so imposing that Oranos ordered them imprisoned in Tartarus. This incurred the wrath of Gaia, who incited her son Kronos to overthrow his father and take his place as ruler of the cosmos."
   },
   {
-    "id": 135,
+    "id": 137,
     "nome": "Lampades",
     "ingles": "Lampades",
     "tipo": [
@@ -9442,7 +9646,7 @@
     "historia": "Scientific name -- Nympha hekates\nSize -- Human-sized\nDiet -- Pomegranate seeds, asphodel petals\n\nThese nymphs were the attendants of Hekate, an unbound Titaness, gifts from Zeus for her allegiance in the Titanomachy. The Lampades served their mistress unflinchingly, bearing torches for her through the dark places of the earth and Underworld. The light of their torches brought visions to mortals and often the visions brought madness. The Lampades defended Hekate with their torches just as the Titaness herself fought in the wars of the gods."
   },
   {
-    "id": 136,
+    "id": 138,
     "nome": "Man O' War",
     "ingles": "Man O' War",
     "tipo": [
@@ -9495,7 +9699,7 @@
     "historia": "Scientific name -- Physalia maxima\nSize -- tentacles up to 100' long!\nDiet -- omnivore, mostly fish\n\nThis monstrous siphonophore was actually a collection of creatures that cooperated to move and feed and fight. The 100 foot long tentacles produced a toxin that is almost as potent as cobra venom, which the organism used to stun prey. For defense, the creature could generate and direct an electric bolt, like a stroke of lightning. Physalia maxima propelled itself by raising and lowering its crest to catch wind like a sail."
   },
   {
-    "id": 137,
+    "id": 139,
     "nome": "Tartarian Spawn",
     "ingles": "Tartarian Spawn",
     "tipo": [
@@ -9558,7 +9762,7 @@
     "historia": "Scientific name -- Canis terribilis\nSize -- 10' long\nDiet -- carnivore, favors humans\n\nThese frighteningly destructive creatures are the offspring of Nyx and Cerberus. Nyx was a very ancient god of Night and the daughter of Chaos. Cerberus was the three-headed dog, a guardian of the Underworld. Oranos banished these creatures to Tartarus to rid himself of their ghastly presence, but also because he could not control them. They came when he called, but obeyed no commands thereafter."
   },
   {
-    "id": 138,
+    "id": 140,
     "nome": "Titan (Atlantean)",
     "ingles": "Titan (Atlantean)",
     "tipo": [
@@ -9624,10 +9828,14 @@
     "historia": "Scientific name -- Deity defies classification\nSize -- 100' tall\nDiet -- Worship and dominance\n\nTitans emerge from Tartarus to wreak havoc upon the earth. They are very dangerous to anything near them: soldiers, civilians, and buildings – they are the creative and destructive forces of nature and thought.\n\nThe Titans ruled over the cosmos before the rise of the Olympians and other newer gods. They were forerunners, the first great ones, overcome by their offspring and cast into the remoteness of Tartarus.\n\nThey governed phenomena and concepts like time, daring, and the unseen, as well as forces of nature like the Sun, Earth and Sky. Other cultures had their progenitor gods – Titans after a fashion – such as Ymir, the primordial being of Norse mythology, or Geb and Nunut, early Egyptian gods who represented Earth and Sky."
   },
   {
-    "id": 139,
+    "id": 141,
     "nome": "Peasant",
     "ingles": "Peasant",
     "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -9678,7 +9886,7 @@
     "historia": "Farming and laboring peasants formed the vast majority of ancient China’s population. According to legend, Shennong, the divine farmer, first taught them how to till the soil, setting Chinese peasants apart from the 'barbarians' in surrounding regions.\n\nEarly Chinese villages clustered in the highlands near the Yellow and Wei Rivers, where the imperial bureaucracy worked to keep farmers informed about the latest agricultural techniques and technologies, ensuring their productivity kept pace with rapid population growth. However, these villages were vulnerable to natural disasters like droughts and river floods, and farmers were often conscripted for large-scale projects to build or improve irrigation canals and dams."
   },
   {
-    "id": 140,
+    "id": 142,
     "nome": "Kuafu",
     "ingles": "Kuafu",
     "tipo": [
@@ -9738,7 +9946,7 @@
     "historia": "Scientific name – Gigans sinensis\nSize – 2100 lbs\nDiet – massive bodies of water\n\nKuafu is a giant in Chinese mythology known for his immense size and incredible speed. He is most famous for his feat of chasing the sun. Overconfident in his own strength and speed, he attempted to catch the sun but grew thirsty in the process. He drank entire rivers and marshes, yet could not quench his thirst. Ultimately, he died from dehydration.\n\nAccording to some scholars, Kuafu may have been an ancient tribe in China from which the mythological giant received his name."
   },
   {
-    "id": 141,
+    "id": 143,
     "nome": "Pioneer (Hero)",
     "ingles": "Pioneer (Hero)",
     "tipo": [
@@ -9815,7 +10023,7 @@
     ]
   },
   {
-    "id": 142,
+    "id": 144,
     "nome": "Dao Swordsman",
     "ingles": "Dao Swordsman",
     "tipo": [
@@ -9866,7 +10074,7 @@
     "historia": "The Chinese Dao Swordsman is an inexpensive, fast-training unit whose armor makes it thrive in combined arms forces.\n\nHistorically, these infantrymen were predominately conscripted soliders between the ages of 23 and 56. Chinese armies were famous for their size – commanders could swiftly mobilize and logistically support vast numbers of men to carry out military campaigns. On one occasion, Wang Mang levied 300,000 men to suppress a rebellion against his new regime in 9 CE, and the Chinese also deployed several hundred thousand infantrymen (alongside 50,000 cavalrymen) against the Xiongnu in 119 BCE."
   },
   {
-    "id": 143,
+    "id": 145,
     "nome": "Ge Halberdier",
     "ingles": "Ge Halberdier",
     "tipo": [
@@ -9929,13 +10137,17 @@
     "historia": "Chinese halberds called 'ge' evolved from the dagger-axe, a weaponized version of a harvesting scythe. They were a cheap means to outfit a massive army very quickly, usually drawn from peasant conscripts. However, these troops were by no means unskilled; Chinese polearm warfare was among the most effective on earth, as the long blades of these weapons allowed for effective slashing attacks which could not be achieved with typical spears or pikes."
   },
   {
-    "id": 144,
+    "id": 146,
     "nome": "Fire Archer",
     "ingles": "Fire Archer",
     "tipo": [
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Anti-building",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -9998,7 +10210,7 @@
     "historia": "The Chinese were the first to invent gunpowder; however, at first the inventors were unsure of how to implement the substance in warfare. Evidence suggests that fire arrows, along with firebombs, were among the first ever gunpowder weapons used in battle.\n\nEven before the invention of fire arrows, the Chinese were renowned archers, and they placed significant emphasis on the practice. For example, archery was one of the Six Noble Arts of the Zhou dynasty. The mythological hero Houyi was also a renowned archer, famous for shooting nine of the ten suns of Chinese mythology. Archery remained a relevant skill in Chinese culture for centuries."
   },
   {
-    "id": 145,
+    "id": 147,
     "nome": "Wuzu Javelineer",
     "ingles": "Wuzu Javelineer",
     "tipo": [
@@ -10062,7 +10274,7 @@
     "historia": "The Wuzu Guards were renowned elite infantry units of the Wei state during China’s Warring States period. At this time, China was divided into several powerful states, with Wei located in the central region. Due to the strength of the Wuzu Guards, the Wei state was able to maintain its dominance for multiple generations of rulers.\n\nAccording to an ancient Chinese source:\n\n“The Wuzu of the Wei clan were selected based on their stature. They wore triple-layered armor, wielded crossbows capable of shooting twelve-stone arrows, carried fifty arrows on their backs, and mounted a ge on top. They wore helmets, carried swords, and bore three days' worth of food. By midday, they could march a hundred li (approximately 50 kilometers).”"
   },
   {
-    "id": 146,
+    "id": 148,
     "nome": "Nezha (Child)",
     "ingles": "Nezha (Child)",
     "tipo": [
@@ -10129,7 +10341,7 @@
     ]
   },
   {
-    "id": 147,
+    "id": 149,
     "nome": "Pixiu",
     "ingles": "Pixiu",
     "tipo": [
@@ -10178,7 +10390,7 @@
     "historia": "Scientific name: Vorator auri\nSize: 10' long, 600 lbs\nDiet: precious metals and stones.\n\nPixiu is a famous, auspicious, winged mythical creature in Chinese culture. It is widely believed that Pixiu can attract wealth and bring prosperity, helping people become wealthy."
   },
   {
-    "id": 148,
+    "id": 150,
     "nome": "Qilin",
     "ingles": "Qilin",
     "tipo": [
@@ -10265,7 +10477,7 @@
     "historia": "Scientific name: Chimera sinensis\nSize: 12' long, 1000 lbs\nDiet: Herbivorous\n\nQilin is a mythical creature with a body resembling that of a horse with a horn on its head. It is said that its appearance heralds a golden age or the arrival of a sage, making it a symbol of good fortune in China.\n\nAlthough the Qilin's description may resemble that of unicorns in other mythologies, the giraffes from Africa presented to Chinese emperors were referred to as Qilin. In fact, in Japanese, both giraffes and Qilin are still called 'Kirin' to this day."
   },
   {
-    "id": 149,
+    "id": 151,
     "nome": "Qiongqi",
     "ingles": "Qiongqi",
     "tipo": [
@@ -10349,7 +10561,7 @@
     "historia": "Scientific name: Bestia raritatis\nSize: 18' long, 2000 lbs\nDiet: Carnivorous, especially human flesh\n\nOne of the 'Four Perils' or 'Four Great Malevolent Beasts' in Chinese legend, Qiongqi has the appearance of a winged tiger and understands human language. The Qiongqi is known for its appetite for human flesh.\n\nQiongqi's sense of justice is opposite to that of humans. It enjoys arbitrating human disputes by devouring the righteous party and rewarding the wicked. To punish trustworthy individuals, the Qiongqi is known to eat their noses."
   },
   {
-    "id": 150,
+    "id": 152,
     "nome": "Yazi",
     "ingles": "Yazi",
     "tipo": [
@@ -10424,7 +10636,7 @@
     "historia": "Scientific name: Draco vindictus sinensis\nSize: 450 lbs, 17' long\nDiet: Carnivorous\n\nYazi is a mythical creature with a body that combines features of a wolf, leopard, and dragon. It holds a sharp blade in its mouth and is often depicted with a fierce, angry glare, creating a terrifying image.\n\nIn Chinese folk legends, Yazi symbolizes a vengeful nature and a readiness to repay any slight. It also serves as a protective talisman against evil. Because of these attributes, Yazi is widely used in the decoration of weapons and buildings as a guardian beast to ward off evil spirits."
   },
   {
-    "id": 152,
+    "id": 154,
     "nome": "Terracotta Rider",
     "ingles": "Terracotta Rider",
     "tipo": [
@@ -10479,7 +10691,7 @@
     "historia": "The Terracotta Rider is a member of the Terracotta Army, sworn to protect Emperor Qin Shi Huang. These figures were buried alongside the emperor in his tomb in 221 BCE and remained undiscovered for over 2,000 years. Legend holds that the tomb was equipped with a variety of booby traps which, along with the imposing army, were designed to dissuade prospective looters and grave-robbers.\n\nTerracotta Riders are extremely protective of Favored Land and are an effective defense force against raiders who threaten a Chinese town."
   },
   {
-    "id": 153,
+    "id": 155,
     "nome": "White Horse Cavalry",
     "ingles": "White Horse Cavalry",
     "tipo": [
@@ -10548,7 +10760,7 @@
     "historia": "The White Horse Cavalry was an elite light cavalry unit in China during the end of the Han dynasty. Known for exclusively riding white horses, it was organized by Gongsun Zan and initially served as his elite bodyguard.\n\nEventually, the force grew from a few hundred soldiers to thousands. They were then deployed in northern China against the nomadic tribes, terrifying the nomads with their discipline and skill. The soldiers were trained in both mounted archery and close combat charges."
   },
   {
-    "id": 154,
+    "id": 156,
     "nome": "Bow Cavalry",
     "ingles": "Bow Cavalry",
     "tipo": [
@@ -10603,7 +10815,7 @@
     "historia": "The Chinese first experienced the power and mobility of Bow Cavalry while fighting normadic northern tribes. These Bow Cavalry were able to inflict casualties on slower-moving infantry while remaining out of range of Chinese attacks. After such experiences, a northern Chinese king decided to develop his own force of Bow Cavalry nearly two thousand years ago. He ordered his men to discard their wide, flowing robes and adopt the tighter-fitting clothing of the nomadic tribes. Partially as a result of his use of these Bow Cavalry, his kingdom became one of the most powerful states in China."
   },
   {
-    "id": 155,
+    "id": 157,
     "nome": "Chu Ko Nu",
     "ingles": "Chu Ko Nu",
     "tipo": [
@@ -10655,7 +10867,7 @@
     "historia": "The crossbow has a history of several thousand years in China. The Chu Ko Nu (or Zhuge Nu) repeating crossbow was known for its simple design and incredible rate of fire. It held a magazine of roughly 10 bolts which it shot in succession, and was operated by grasping the stock in the left hand and working the lever with the right. In that swift movement, a bolt would drop into place, the string would be drawn, and then the bolt would be fired, with another bolt dropping in to take its place. The weapon was specifically designed to fire rapidly into groups of enemy troops at relatively close range, and did not have the power to be effective over longer distances. It was especially useful against cavalry, as horses provided large targets for the generally inaccurate Chu Ko Nu. Wounded animals usually lost control and sowed pandemonium in the surrounding ranks. Chu Ko Nu operators often compensated for a lack of power by smearing the bolts with poison.\n\nThe Chu Ko Nu is first attested in the 4th century BCE, when it was used in combat during the Warring States Period. However, legend holds that it was invented by the renowned ancient Chinese military strategist Zhuge Liang. Regardless of the weapon's actual provenance, an army equipped with them could be a nightmare for enemies."
   },
   {
-    "id": 156,
+    "id": 158,
     "nome": "Jiang Ziya (Hero)",
     "ingles": "Jiang Ziya (Hero)",
     "tipo": [
@@ -10724,7 +10936,7 @@
     ]
   },
   {
-    "id": 157,
+    "id": 159,
     "nome": "Nezha (Youth)",
     "ingles": "Nezha (Youth)",
     "tipo": [
@@ -10799,7 +11011,7 @@
     "historia": "Age: 16 years\nHomeland: Chentang Pass, Mythical China\nOccupation: warrior and protector\n\nNezha is a famous protection deity in Chinese folk religion, often depicted as a flying youth standing on Wind Fire Wheels, wielding a red-tasseled spear, and adorned with a celestial scarf known as the Red Armillary Sash.\n\nIn the 16th-century Chinese novel “The Investiture of the Gods”, Nezha is the son of Li Jing, another protection deity. After a confrontation with the Eastern Sea Dragon King, Nezha sacrifices himself. Later, a deity revives him using lotus flowers to create a new body and grants him numerous divine weapons.\n\nAlthough Nezha experiences conflicts with his father, Li Jing, in folk legends, they are often portrayed fighting side by side to vanquish the enemies of the heavens."
   },
   {
-    "id": 158,
+    "id": 160,
     "nome": "Sage (Hero)",
     "ingles": "Sage (Hero)",
     "tipo": [
@@ -10864,7 +11076,7 @@
     ]
   },
   {
-    "id": 159,
+    "id": 161,
     "nome": "Baihu",
     "ingles": "Baihu",
     "tipo": [
@@ -10934,7 +11146,7 @@
     "historia": "Scientific name – Tigris albus sinensis\nSize – 950 lbs 11' long\nDiet – carnivorous\n\nBaihu is a white tiger beast representing the direction of the West and the autumn season in ancient Chinese mythology. Baihu also symbolizes loyalty and righteousness; he is known as a god of war who oversees weapons and battles. In legends, Baihu often appears as a bringer of justice, punishing evil and promoting goodness and order."
   },
   {
-    "id": 160,
+    "id": 162,
     "nome": "Chiwen",
     "ingles": "Chiwen",
     "tipo": [
@@ -11003,7 +11215,7 @@
     "historia": "Scientific name – Draco sinensis piscis\nSize – 360 lbs 18' long\nDiet – seaweed and small fish\n\nChiwen is one of the nine offspring of the dragon. It is a dragon-headed, fish-like creature said to spew water from its wide mouth. Because of this, the Chinese often carve Chiwen's likeness on the roofs of buildings to protect them against fires."
   },
   {
-    "id": 161,
+    "id": 163,
     "nome": "Fei",
     "ingles": "Fei",
     "tipo": [
@@ -11071,7 +11283,7 @@
     "historia": "Scientific name – Bestia pestis\nSize – 2200 lbs\nDiet – livestock\n\nThe Fei is a beast that causes droughts; additionally, wherever it goes, plants wither and water sources dry up. It has the appearance of an ox with a white head, only one eye, and the tail of a snake. The Fei Beast is also a harbinger of plague when it is seen in the world."
   },
   {
-    "id": 162,
+    "id": 164,
     "nome": "Taotie",
     "ingles": "Taotie",
     "tipo": [
@@ -11151,7 +11363,7 @@
     "historia": "Scientific name: Bestia vorax sinensis\nSize: 20' long, 2500 lbs\nDiet: everything\n\nOne of the 'Four Perils' or 'Four Great Malevolent Beasts' in Chinese legend, Taotie has an appearance similar to that of a sheep and symbolizes unending greed.\n\nTaotie's insatiable appetite makes it a symbol of war and slaughter."
   },
   {
-    "id": 163,
+    "id": 165,
     "nome": "Taowu",
     "ingles": "Taowu",
     "tipo": [
@@ -11227,7 +11439,7 @@
     "historia": "Scientific name: Gigans daemon sylvestris\nSize: 15' tall, 780 lbs\nDiet: trees and minerals.\n\nOne of the 'Four Perils' or 'Four Great Malevolent Beasts' in Chinese legend, the Taowu is similar in size to a tiger, covered in dog fur, and has sharp fangs.\n\nIn Chinese mythology, Taowu is extremely proud, stubborn, and refuses to listen to any advice, making it a symbol of obstinacy."
   },
   {
-    "id": 164,
+    "id": 166,
     "nome": "Tiger Cavalry",
     "ingles": "Tiger Cavalry",
     "tipo": [
@@ -11305,7 +11517,7 @@
     "historia": "The Tiger Cavalry (sometimes also called Tiger-Leopard Cavalry) were the most formidable cavalry unit during the Three Kingdoms period in China (220-280 CE) and the years of strife leading up to it.\n\nThis unit was established by the powerful warlord Cao Cao, whose son would later go on to establish the Wei kingdom. Cao Cao selected the best warriors from his family and his most loyal subordinates to form this elite unit.\n\nThe Tiger Cavalry served not only as bodyguards and shock troops in battle but also as special forces for long-range raids. When required, these troops could dismount and operate as elite infantry, particularly in roles such as bodyguards or during siege warfare."
   },
   {
-    "id": 165,
+    "id": 167,
     "nome": "Li Jing (Hero)",
     "ingles": "Li Jing (Hero)",
     "tipo": [
@@ -11384,7 +11596,7 @@
     "historia": "Age: Immortal\nHomeland: Kunlun Mountains, Mythical Realm\nOccupation: protection deity\n\nLi Jing, a well-known protection deity in China, is famous for holding a pagoda in his hand.\n\nA famous story involving Li Jing appears in the 16th century Chinese novel “The Investiture of the Gods”. In this story, Li Jing had a son named Nezha. After Nezha sacrificed himself and was later resurrected, Nezha sought revenge against Li Jing. However, a deity granted Li Jing a pagoda inside which to trap Nezha. Eventually, the two reconciled and joined forces in the war against the Shang dynasty."
   },
   {
-    "id": 166,
+    "id": 168,
     "nome": "Nezha (Hero)",
     "ingles": "Nezha (Hero)",
     "tipo": [
@@ -11462,7 +11674,7 @@
     "historia": "Age: 28 years\nHomeland: Chentang Pass, Mythical China\nOccupation: heavenly general and guardian\n\nNezha is a famous protection deity in Chinese folk religion, often depicted as a flying youth standing on Wind Fire Wheels, wielding a red-tasseled spear, and adorned with a celestial scarf known as the Red Armillary Sash.\n\nIn the 16th-century Chinese novel “The Investiture of the Gods”, Nezha is the son of Li Jing, another protection deity. After a confrontation with the Eastern Sea Dragon King, Nezha sacrifices himself. Later, a deity revives him using lotus flowers to create a new body and grants him numerous divine weapons.\n\nAlthough Nezha experiences conflicts with his father, Li Jing, in folk legends, they are often portrayed fighting side by side to vanquish the enemies of the heavens."
   },
   {
-    "id": 167,
+    "id": 169,
     "nome": "Wen Zhong (Hero)",
     "ingles": "Wen Zhong (Hero)",
     "tipo": [
@@ -11533,7 +11745,7 @@
     ]
   },
   {
-    "id": 168,
+    "id": 170,
     "nome": "Yang Jian (Hero)",
     "ingles": "Yang Jian (Hero)",
     "tipo": [
@@ -11607,7 +11819,7 @@
     "historia": "Age: 1500 years\nHomeland: Kunlun Mountains, Mythical Realms\nOccupation: heavenly general and guardian\n\nYang Jian, also known as Erlang Shen, is a famous protection deity in Chinese legends. He is often depicted as a young general with a third eye on his forehead. He wields a three-pronged spear, and is usually accompanied by his loyal hunting dog.\n\nYang Jian appears in many Chinese legends. According to one story, his mother was a fairy who was punished and imprisoned under Mount Tao for marrying a mortal. Yang Jian grew up and eventually split open Mount Tao to rescue his mother.\n\nIn the novel 'The Investiture of the Gods,' Yang Jian, as a powerful deity, participated in the battles to overthrow the Shang dynasty."
   },
   {
-    "id": 169,
+    "id": 171,
     "nome": "Hundun",
     "ingles": "Hundun",
     "tipo": [
@@ -11673,7 +11885,7 @@
     "historia": "Scientific name – Porcus chai\nSize – 5700 lbs\nDiet – humans\n\nOne of the 'Four Perils' or 'Four Great Malevolent Beasts' in Chinese legend, the Hundun is a chaotic, faceless being. It has four wings and six feet, but is typically a slow moving beast. The creature shares similarities with the Dijiang from the Classic of Mountains and Seas.\n\nThe Hundun is said to understand human nature, avoiding virtuous people while befriending the vicious."
   },
   {
-    "id": 170,
+    "id": 172,
     "nome": "Qinglong",
     "ingles": "Qinglong",
     "tipo": [
@@ -11732,7 +11944,7 @@
     "historia": "Scientific name: Draco aquae\nSize: 25' long, 1800 lbs\nDiet: Omnivorous\n\nThe Azure Dragon, known as Qinglong in Chinese mythology, represents the direction of the East and the spring season. Alongside Baihu, Qinglong is also considered one of the protection deities in Chinese mythology.\n\nBecause spring symbolizes the beginning of a new year, Qinglong is also associated with good fortune and prosperity."
   },
   {
-    "id": 171,
+    "id": 173,
     "nome": "Xuanwu",
     "ingles": "Xuanwu",
     "tipo": [
@@ -11801,7 +12013,7 @@
     "historia": "Scientific name: Testudo serpens sinensis\nSize: 1200 lbs, 15' long\nDiet: Omnivorous\n\nIn Chinese tradition, the Xuanwu is one of the Animals of the Four Directions. Xuanwu represents the direction North and is associated with winter and the element of water. It is depicted as a giant tortoise entwined with a serpent. Due to the tortoise's long lifespan and the serpent's regular shedding of its skin, Xuanwu is considered a symbol of longevity."
   },
   {
-    "id": 172,
+    "id": 174,
     "nome": "Yinglong",
     "ingles": "Yinglong",
     "tipo": [
@@ -11848,7 +12060,7 @@
     "historia": "Scientific name: Serpens maximus aquae\nSize: 28' wingspan\nDiet: Omnivorous\n\nYinglong is a yellow dragon that appears multiple times in Chinese mythology.\n\nHe assisted Fuxi in creating the core philosophical concept of the Bagua (Eight Trigrams) and helped Nüwa repair the heavens. During the great battle between Huangdi and Chiyou, Yinglong supported Huangdi, contributing to his victory.\n\nYinglong is also believed to have assisted in the creation of the world. It is said that the longest river in China, the Yangtze River, was drawn by Yinglong using his tail."
   },
   {
-    "id": 173,
+    "id": 175,
     "nome": "Zhuque",
     "ingles": "Zhuque",
     "tipo": [
@@ -11922,7 +12134,7 @@
     "historia": "Scientific name: Aquila minii sinensis\nSize: 18' wingspan\nDiet: flames\n\nZhuque, also known as the Vermilion Bird, is a mythical creature in Chinese mythology that represents the South and the summer season. In many legends, it is also a symbol of the sun."
   },
   {
-    "id": 174,
+    "id": 176,
     "nome": "Titan (Xing Tian)",
     "ingles": "Titan (Xing Tian)",
     "tipo": [
@@ -11988,10 +12200,14 @@
     "historia": "Scientific name -- Deity defies classification\nSize -- 100' tall\nDiet -- Worship and dominance\n\nTitans emerge from Tartarus to wreak havoc upon the earth. They are very dangerous to anything near them: soldiers, civilians, and buildings – they are the creative and destructive forces of nature and thought.\n\nThe Titans ruled over the cosmos before the rise of the Olympians and other newer gods. They were forerunners, the first great ones, overcome by their offspring and cast into the remoteness of Tartarus.\n\nThey governed phenomena and concepts like time, daring, and the unseen, as well as forces of nature like the Sun, Earth and Sky. Other cultures had their progenitor gods – Titans after a fashion – such as Ymir, the primordial being of Norse mythology, or Geb and Nunut, early Egyptian gods who represented Earth and Sky."
   },
   {
-    "id": 175,
+    "id": 177,
     "nome": "Commoner",
     "ingles": "Commoner",
     "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -12042,17 +12258,17 @@
     "historia": "The commoner class in feudal Japan comprised roughly 90% of the population. At the top of this class were farmers and fishermen, as they provided food for the rest of the country. Next came the artisans – craftspeople who created tools, weapons, and everyday items essential to both the upper and lower classes. Finally, the lowest tier was occupied by merchants and traders. Although markets were integral to society, the Japanese viewed traders as inferior because they did not produce anything themselves."
   },
   {
-    "id": 176,
+    "id": 178,
     "nome": "Miko (Hero)",
     "ingles": "Miko (Hero)",
     "tipo": [
       {
-        "type": "Curandeiro✨",
-        "icon": ""
-      },
-      {
         "type": "Hero",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Curandeiro✨",
+        "icon": ""
       }
     ],
     "panteao": [
@@ -12123,17 +12339,17 @@
     "historia": "A miko is a female shaman in the Shinto religion. In earlier periods, mikos were believed to serve as vessels through which the kami could communicate – the spirit of a kami could possess the miko and deliver oracles or prophecies through her. Miko either served as shamans at shrines, conducting sacred rites, or traveled from shrine to shrine, demonstrating their magical and religious powers through fortune-telling. In modern times, mikos typically work at Shinto shrines, where they perform sacred cleansings and a ritual dance known as kagura."
   },
   {
-    "id": 177,
+    "id": 179,
     "nome": "Kitsune",
     "ingles": "Kitsune",
     "tipo": [
       {
-        "type": "Scout",
-        "icon": "aomr_type_scout_icon"
-      },
-      {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Scout",
+        "icon": "aomr_type_scout_icon"
       }
     ],
     "panteao": [
@@ -12211,105 +12427,7 @@
     "historia": "Scientific name – Vulpes dolosa\nSize – 12 lbs\nDiet – small mammals and insects\n\nThe Kitsune, which literally means “fox” in Japanese, is a yōkai that serves as a trickster figure in Japanese mythology. While Kitsunes have many mythical powers, one of their most impressive is transfiguration: there are legends of Kitsunes transforming into beautiful women to seduce men. These so-called “fox-wives” were not necessarily dangerous, but sometimes humans would fall victim to fox possession, a very serious condition. Affected individuals might bark like dogs, eat off the floor, and develop an intense fear of dogs. This often led to social ostracism, demonstrating that Kitsunes could be harmful tricksters.\n\nHowever, not all Kitsunes are mischievous. Some are considered benevolent and are associated with the god Inari Ōkami, serving as guardians of her shrines. They also act as Inari Ōkami's messengers, and sightings of these Kitsunes are believed to symbolize good luck and a bountiful harvest. Kitsunes are also associated with long life – they are said to live for thousands of years."
   },
   {
-    "id": 178,
-    "nome": "Bushi Yari",
-    "ingles": "Bushi Yari",
-    "tipo": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 2,
-        "nome": "Classical :aomr_classical_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Cavalaria",
-        "icon": "aomr_type_cavalry_icon",
-        "value": "1.5"
-      }
-    ],
-    "pontos_de_vida": 145,
-    "velocidade_de_ataque_atk_s": 1,
-    "dps": 10,
-    "armadura_anticorte": 45,
-    "armadura_antiperfurante": 10,
-    "comida": 75,
-    "madeira": 0,
-    "ouro": 50,
-    "favor": 0,
-    "custo_total": 125,
-    "populacao": 3,
-    "tempo_treinamento": 14,
-    "velocidade_movimento": 4.3,
-    "icon": "aomr_bushi_yari_icon",
-    "armadura_anticontusao": 99,
-    "dano_cortante": 10,
-    "alcance": 0.75,
-    "descricao_resumida": "Infantry. Good vs. cavalry.",
-    "descricao_avancada": "Infantry. Good against cavalry."
-  },
-  {
-    "id": 179,
-    "nome": "Sakimori",
-    "ingles": "Sakimori",
-    "tipo": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 6,
-        "nome": "Japonês :aomr_pantheon_japanese_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 2,
-        "nome": "Classical :aomr_classical_age_icon:"
-      }
-    ],
-    "multiplicador": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon",
-        "value": "4.5"
-      }
-    ],
-    "pontos_de_vida": 90,
-    "velocidade_de_ataque_atk_s": 1.3,
-    "dps": 7.8,
-    "armadura_anticorte": 35,
-    "armadura_antiperfurante": 5,
-    "comida": 30,
-    "madeira": 0,
-    "ouro": 50,
-    "favor": 0,
-    "custo_total": 80,
-    "populacao": 2,
-    "tempo_treinamento": 9,
-    "velocidade_movimento": 4.3,
-    "icon": "aomr_sakimori_icon",
-    "armadura_anticontusao": 99,
-    "dano_cortante": 6,
-    "alcance": 0.5,
-    "descricao_resumida": "Infantry. Good vs. infantry.",
-    "descricao_avancada": "Counter infantry. Infantry only good against other infantry."
-  },
-  {
-    "id": 180,
+    "id": 182,
     "nome": "Samurai",
     "ingles": "Samurai",
     "tipo": [
@@ -12378,7 +12496,7 @@
     "historia": "Perhaps the most iconic military figures in Japanese history, the samurai were a powerful warrior class in feudal Japan. Governed by a strict code of honor – bushidō, or “the way of the warrior” – these elite fighters aspired to live disciplined, moral lives. The samurai first emerged during the Heian period but rose to prominence in the 12th century, as political power shifted away from the emperor and toward powerful regional clans.\n\nAmong the many legendary samurai, the most famous is likely Miyamoto Musashi, who lived during the late 16th and early 17th centuries. Renowned for his unmatched swordsmanship, Musashi famously dueled his rival Sasaki Kojirō in 1612, defeating him with a wooden sword he had made from an oar."
   },
   {
-    "id": 181,
+    "id": 183,
     "nome": "Yari Spearman",
     "ingles": "Yari Spearman",
     "tipo": [
@@ -12441,7 +12559,7 @@
     "historia": "The yari is a distinctive Japanese spear primarily used by infantry soldiers, though it was occasionally carried by cavalry as well. Its length varied depending on the individual clan, each of which had specific preferences – some yari measured over eight feet long. The spearhead was typically made of steel and featured a triangular cross-section near the base with a long, sharp point.\n\nThe yari was never thrown in battle; it was used exclusively for hand-to-hand combat. A few legendary warriors are remembered for their exceptional skill with the yari, including Watanabe Hanzō, known as “Hanzō of the Yari,” and Fukube Koheita, who killed Imagawa Yoshimoto with a yari in 1560 CE."
   },
   {
-    "id": 182,
+    "id": 184,
     "nome": "Naginata Rider",
     "ingles": "Naginata Rider",
     "tipo": [
@@ -12508,7 +12626,7 @@
     "historia": "Wielding the fearsome and iconic naginata, this rider pays tribute to one of Japan’s most distinctive weapons, highly valued by the samurai class. Sometimes mistakenly referred to as a halberd, the naginata features a wickedly sharp, three-foot-long curved blade affixed to a wooden shaft. Because it could be used for both cutting and thrusting – and offered the warrior a wide range of attack – the naginata was favored by both cavalry and infantry. It became so effective in combat that some scholars believe Japanese armor evolved in response, incorporating stronger protection for the lower body and legs to defend against its sweeping strikes."
   },
   {
-    "id": 183,
+    "id": 185,
     "nome": "Yumi Archer",
     "ingles": "Yumi Archer",
     "tipo": [
@@ -12572,7 +12690,7 @@
     "historia": "The yumi, a Japanese longbow, was typically seven to nine feet in length and could be used both on foot and on horseback. What makes the yumi particularly distinctive is its asymmetrical design – the grip is positioned off-center, closer to the lower half of the bow. Constructed with a wooden core and strips of bamboo laminated together, this unique design made the yumi an exceptionally powerful and deadly weapon for samurai, onna-musha, and other warriors to wield in battle. In Japan, the art of archery was known as Kyūdō, and it was regarded with great seriousness and discipline.\n\nThe term yumi also has mythological significance. One of the famous legendary weapons in Japanese mythology is Ikuyumiya, or “the life bow-and-arrows.” It originally belonged to the god Susanoo, but was stolen by his son-in-law, Ōkuninushi, who later returned the legendary weapon."
   },
   {
-    "id": 184,
+    "id": 186,
     "nome": "Bushi (Hero)",
     "ingles": "Bushi (Hero)",
     "tipo": [
@@ -12641,7 +12759,7 @@
     ]
   },
   {
-    "id": 185,
+    "id": 187,
     "nome": "Honengyo",
     "ingles": "Honengyo",
     "tipo": [
@@ -12710,7 +12828,7 @@
     "historia": "Scientific name – Monstrum fluminis faustum\nSize – 165 lbs\nDiet – small river fish and seaweed\n\nThe Honengyo is an amphibious, water-dwelling yōkai that lives in the rivers of Japan. Although this beast has a fearsome appearance – measuring over two meters in length, with dark scales, razor-sharp black dorsal fins and mirror-like eyes – the Honengyo is typically interpreted as a good sign for the Japanese people, especially for fisherman. When a Honengyo washes up on shore, it serves as an omen for a prosperous fishing season.\n\nOne of the most famous Honengyo sightings occurred in 1866 CE, when one washed up the shore of the Yodo River. The artistic depictions of the creature that were drawn after this sighting are sometimes rumored to be the inspiration for the appearance of the pop culture monster Godzilla."
   },
   {
-    "id": 186,
+    "id": 188,
     "nome": "Jorogumo",
     "ingles": "Jorogumo",
     "tipo": [
@@ -12790,7 +12908,7 @@
     "historia": "Scientific name – Maga aranea\nSize – 110 lbs\nDiet –  human flesh\n\nThe Jorogumo is a yōkai that is a spider-human hybrid: sometimes she appears as a beautiful woman, and sometimes she can transform into a spider. Jorogumos can command webs and smaller spiders to do their bidding. They typically appear in Japanese mythology as temptress figures: one such example is the Jorogumo who was mistress of the Jōren Falls of Izu. Legends about her tell of a beautiful woman that would try to ensnare men with webs at Jōren Falls and drag them to their doom."
   },
   {
-    "id": 187,
+    "id": 189,
     "nome": "Kamaitachi",
     "ingles": "Kamaitachi",
     "tipo": [
@@ -12873,7 +12991,7 @@
     "historia": "Scientific name – Mustela venti cultellifera\nSize – 10 lbs\nDiet – small animals\n\nKnown as the “sickle-weasel” in Japanese mythology, the Kamaitachi is a vicious Mustelidae creature with knife-like claws and spiny fur. Perhaps most fascinating is that Kamaitachi attack in groups of three: they ride the wind and strike humans from the air.\n\nAlthough the three Kamaitachi cause serious damage in these whirlwind assaults, they simultaneously heal some of their victims’ wounds. A Kamaitachi attack is never fatal, despite their ability to inflict precise injuries with their deadly blades."
   },
   {
-    "id": 188,
+    "id": 190,
     "nome": "Kappa",
     "ingles": "Kappa",
     "tipo": [
@@ -12936,7 +13054,7 @@
     "historia": "Scientific name – Daemon aquarius\nSize – 85 lbs\nDiet – horse meat and cucumbers\n\nThe Kappa, a water sprite, is a particularly infamous yōkai. With the head of a monkey and a tortoise shell on its back, this violent and demonic creature is known for luring unsuspecting people into bodies of water to drown them. It often targets women and children but is also known to harm or kill horses. However, not everything about the Kappa is negative. It is an expert in setting bones, and some doctors have even sought its help to learn these medical practices. Despite its violent tendencies, the Kappa is relatively easy to outwit. Humans can bribe it with a cucumber or trick it into bowing. Atop the Kappa's head is an indentation filled with water – if this water spills when the Kappa bows, it becomes powerless and can no longer attack."
   },
   {
-    "id": 190,
+    "id": 192,
     "nome": "Wanyūdō",
     "ingles": "Wanyūdō",
     "tipo": [
@@ -13018,17 +13136,17 @@
     "historia": "Scientific name – Ignivolvens daemonium\nSize – 600 lbs\nDiet – the legs of small children\n\nThe Wanyūdō is a hellish, unnatural being: it appears as a giant, flaming wheel with a man's head in the center, the spokes of the wheel piercing through his skull. As a servant of hell, the Wanyūdō roams Japan in search of wicked souls to drag back to the underworld, where they can atone for their sins.\n\nTypically, a Wanyūdō is seen rolling through town along the road – villagers flee in terror, as simply being noticed by the creature can bring a terrible fate, regardless of one's innocence or guilt."
   },
   {
-    "id": 191,
+    "id": 193,
     "nome": "Shinobi",
     "ingles": "Shinobi",
     "tipo": [
       {
-        "type": "Cerco",
-        "icon": "aomr_type_siege_weapon_icon"
-      },
-      {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Anti-building",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -13098,7 +13216,7 @@
     "historia": "Shinobi no mono, or “those who sneak,” were Japanese spies who emerged during the Sengoku Period. More commonly known as ninja in popular culture, shinobi were masters of concealment and deception. They would disguise themselves to gather intelligence, taking on the appearance of anything from a common villager to a komusō (a wandering flute-playing monk), or even something as unexpected as a pile of firewood.\n\nAlthough espionage was typically their primary role, shinobi also served as ruthless assassins. Operating under the cover of night and clad in dark clothing, they were tasked with eliminating the political enemies of those they served. In combat, they often wielded a katana, the iconic single-edged, two-handed sword, but are also famed for improvised weapons and projectiles such as the kusarigama and shuriken."
   },
   {
-    "id": 192,
+    "id": 194,
     "nome": "Yumi Horse Archer",
     "ingles": "Yumi Horse Archer",
     "tipo": [
@@ -13154,7 +13272,7 @@
     "historia": "The yumi, a Japanese longbow, was typically seven to nine feet in length and could be used both on foot and on horseback. What makes the yumi particularly distinctive is its asymmetrical design – the grip is positioned off-center, closer to the lower half of the bow. Constructed with a wooden core and strips of bamboo laminated together, this unique design made the yumi an exceptionally powerful and deadly weapon for samurai, onna-musha, and other warriors to wield in battle. Horse archers using the yumi enjoyed an uncanny combination of immense firepower, agility, and mobility. In Japan, the art of archery was known as Kyūdō, and it was regarded with great seriousness and discipline.\n\nThe term yumi also has mythological significance. One of the famous legendary weapons in Japanese mythology is Ikuyumiya, or “the life bow-and-arrows.” It originally belonged to the god Susanoo, but was stolen by his son-in-law, Ōkuninushi, who later returned the legendary weapon."
   },
   {
-    "id": 193,
+    "id": 195,
     "nome": "Daimyo (Hero)",
     "ingles": "Daimyo (Hero)",
     "tipo": [
@@ -13223,7 +13341,7 @@
     ]
   },
   {
-    "id": 194,
+    "id": 196,
     "nome": "Onna-musha (Hero)",
     "ingles": "Onna-musha (Hero)",
     "tipo": [
@@ -13294,7 +13412,7 @@
     "historia": "The onna-musha were an elite class of warrior women in feudal Japan. They were skilled in archery, horseback riding, and martial arts. One of the most famous onna-musha in history was Tomoe Gozen, who was born in 1157 CE and, according to some rumors, lived to be ninety years old. Stories tell of her fearlessness, ability to lead others on the battlefield, and her significant role in the Genpei War. In one particularly famous battle, when her leader Yoshinaka was mortally wounded, Tomoe rode out and beheaded Onda no Hachiro Morishige before escaping the battlefield."
   },
   {
-    "id": 196,
+    "id": 198,
     "nome": "Oni",
     "ingles": "Oni",
     "tipo": [
@@ -13375,7 +13493,7 @@
     "historia": "Scientific name – Rubrum monstrum\nSize – 800 lbs\nDiet – human flesh and sake\n\nOnis are gigantic, demonic, ogre-like beasts with red skin and horns. They are typically depicted wearing tiger-print loincloths, symbolizing their wild nature. In their clawed hands, Onis often wield a tetsubō – a heavy, spiked club – which they use to batter and punish sinners sent to hell.\n\nOnis are not confined to hell; they are also believed to inhabit the earth. However, they can be banished from earth on the second day of the second month during Setsubun, a traditional Japanese festival. This day features a ritual called mamemaki, in which people throw beans to ward off Onis and bad luck."
   },
   {
-    "id": 197,
+    "id": 199,
     "nome": "Raiju",
     "ingles": "Raiju",
     "tipo": [
@@ -13451,7 +13569,7 @@
     "historia": "Scientific name – Lupus fulminis\nSize – 180 lbs\nDiet – Lightning bolts\n\nThe Raiju is a yōkai associated with thunderstorms and lightning – its name translates to “thunder beast.” This wolf-like creature, with long and deadly claws, is said to leave lightning burns on trees with its paws. Raijus are also believed to summon lightning, and some myths even claim they ride lightning bolts. Closely linked to Raijin, the Japanese god of thunder, the Raiju features in various legends. Some myths state that Raijus like to curl up inside human navels, which leads some superstitious people to protect their navels during storms."
   },
   {
-    "id": 198,
+    "id": 200,
     "nome": "Tengu",
     "ingles": "Tengu",
     "tipo": [
@@ -13527,7 +13645,7 @@
     "historia": "Scientific name – Viravis ruber\nSize – 150 lbs\nDiet – fruit, grains, and sake\n\nThe Tengu is a bird-like humanoid creature with red skin and wings. These beings dwell deep in the mountains of Japan and have long been associated with peculiar occurrences, such as unexpected falling rocks and mysterious laughter echoing in the distance. Tengus sometimes deliberately confuse travelers, causing them to lose their way.\n\nHowever, if a Tengu deems a human worthy, they may impart valuable skills, the most notable being swordsmanship. Tengu are renowned swordsmen, and many myths tell of them training legendary figures in Japanese folklore. They are also proficient in magic and, on occasion, may share their mystical knowledge with humans."
   },
   {
-    "id": 199,
+    "id": 201,
     "nome": "Wretch",
     "ingles": "Wretch",
     "tipo": [
@@ -13578,7 +13696,7 @@
     "historia": "Scientific Name – Telum cadavericum\nSize – 115 lbs\nDiet – nothing\n\nA wretch is a corpse that the Onmoraki uses as a projectile to hurl at enemies. Similar to the Western concept of a zombie, the wretch is a dead body that can be reanimated for a short period of time to fight for an army."
   },
   {
-    "id": 201,
+    "id": 203,
     "nome": "Onmyōji (Hero)",
     "ingles": "Onmyōji (Hero)",
     "tipo": [
@@ -13653,7 +13771,7 @@
     ]
   },
   {
-    "id": 202,
+    "id": 204,
     "nome": "Shogun (Hero)",
     "ingles": "Shogun (Hero)",
     "tipo": [
@@ -13715,14 +13833,10 @@
     "historia": "The shoguns were elite military rulers in feudal Japan. The term, which means 'commander of the army,' was first applied at the end of the Heian period. The first shogunate was formed by Minamoto no Yoritomo in 1192 CE, establishing the position of shogun as a hereditary military dictatorship until 1867 CE. The shoguns were only one step below the emperor, making them among the most powerful individuals in Japan. However, the shoguns eventually gained so much power that the emperor became merely a symbolic figurehead, while the true power rested with the shoguns."
   },
   {
-    "id": 203,
+    "id": 205,
     "nome": "Asura",
     "ingles": "Asura",
     "tipo": [
-      {
-        "type": "Cerco",
-        "icon": "aomr_type_siege_weapon_icon"
-      },
       {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
@@ -13797,7 +13911,7 @@
     "historia": "Scientific name – Semideus rubrovultus ignijactor\nSize – 300 lbs\nDiet – charred meat from ritiual offerings\n\nThe Asura is a three-faced, red skinned warrior demigod that originates from Buddhist traditions but was later incorporated into the Japanese mythological world through religious syncretism. Along with having three faces, the Asura also possesses six arms, each wielding six different weapons.\n\nAsuras are known to have chaotic emotions, and they are typically driven by their base instincts: pride, violence, and greed. As beings of chaos and war, it is fitting that they are associated with fire – they hurl fireballs with several of their many arms to incinerate their enemies when provoked."
   },
   {
-    "id": 204,
+    "id": 206,
     "nome": "Onmoraki",
     "ingles": "Onmoraki",
     "tipo": [
@@ -13877,7 +13991,7 @@
     "historia": "Scientific name – Avis spiritus terribilis\nSize – 33 lbs\nDiet – fear and regret from humans\n\nThe Onmoraki is a grim, monstrous winged creature with a humanoid face and a sharp beak. With a haunting, shrill voice, the Onmoraki is known to plague neglectful religious officials outside of shrines and temples. One of its most chilling talents is the ability to imitate the voice of the person that it is harassing, taunting them about their failures.\n\nSome Japanese legends suggest that Onmorakis originate from recently deceased people with unsettled spirits – if a human dies without the correct burial practice, their spirit transforms into an Onmoraki."
   },
   {
-    "id": 205,
+    "id": 207,
     "nome": "Shinigami",
     "ingles": "Shinigami",
     "tipo": [
@@ -13962,7 +14076,7 @@
     "historia": "Scientific name – Spiritus mortis pallidus\nSize – 160 lbs\nDiet – death and despair\n\nA haunting spirit of the dead, the Shinigami is a vengeful ghost with gray hair and a translucent appearance. Although Shinigamis appear human-like, their sunken, sallow skin and eerie features make it clear that these beings are demons from the afterlife. These death spirits haunt areas where people have recently died. Local legends across Japan suggest that acts of violence invite more violence – explaining the appearance of the Shinigami. Some stories claim that the Shinigami can possess people and drive them to commit violent acts."
   },
   {
-    "id": 206,
+    "id": 208,
     "nome": "Umibōzu",
     "ingles": "Umibōzu",
     "tipo": [
@@ -14030,7 +14144,7 @@
     "historia": "Scientific name – Magnaniger maris globus\nSize – Immeasurable\nDiet – unlucky sailors\n\nA mysterious aquatic giant, the Umibōzu is a calamitous presence that haunts the seas and attacks ships. Most Umibōzu sightings begin on a calm night – then, out of nowhere, the waves begin to crash and the wind starts to blow. To the horror of Japanese sailors, the Umibōzu rises from the sea; however, due to its enormous size, they have only ever seen its head.\n\nThe Umibōzu will then sink the ship unless the sailors offer it a bottomless barrel. The creature tries to fill the barrel and use it to sink the ship but cannot understand why the barrel never fills. Amidst the Umibōzu’s confusion, the sailors have a chance to escape.\n\nAccording to legend, the Umibōzu is the vengeful spirit of a drowned monk, now haunting the same villagers who once sacrificed monks to the sea."
   },
   {
-    "id": 207,
+    "id": 209,
     "nome": "Titan (Yamata no Orochi)",
     "ingles": "Titan (Yamata no Orochi)",
     "tipo": [
@@ -14096,10 +14210,14 @@
     "historia": "Scientific name – Draco octocephalus caeruleus\nSize –500,000 lbs\nDiet – human beings\n\nYamata-no-Orochi is one of the most physically imposing figures in Japanese mythology: its massive blue-black body is said to span over eight valleys and eight hills. Furthermore, it has blood-red eyes, eight heads, and eight tails.\n\nThe Yamata-no-Orochi once terrorized a family with eight daughters: every year, the great beast would come and devour one of the girls. The kami Susanoo was wandering the earth and came upon the family before their final daughter was set to be eaten by the Yamata-no-Orochi. Susanoo was able to trick the beast into drinking eight barrels of sake, until it became so intoxicated that it fell asleep. Susanoo then killed the beast, and in one of the tails of the great dragon, he found a sword named Kusanagi."
   },
   {
-    "id": 208,
+    "id": 210,
     "nome": "Settler",
     "ingles": "Settler",
     "tipo": [
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
+      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -14145,7 +14263,7 @@
     "historia": "Settlers form the basis of your economy. They gather resources in a typical fashion and deposit them at upgradable Calpullis when they reach their carry capacity.\n\nMake sure you have enough Settlers to maintain a steady flow of resources, but remember, they are weak in combat. Aztec Settlers can be expended to generate Favor through Devotion. To help the Aztecs keep pace with the expanding economies of other civilizations, Settlers are slightly cheaper than other villagers. The Chinampas Farm upgrade increases their Food production speed."
   },
   {
-    "id": 209,
+    "id": 211,
     "nome": "Quimichin Spy",
     "ingles": "Quimichin Spy",
     "tipo": [
@@ -14222,7 +14340,7 @@
     "historia": "Drawing from ancient traditions of stealth and subterfuge, these spies rely on their speed and cunning.\n\nQuimichin Spies are agile scout units that can enter stealth within range of a treeline. But be careful. Other scout types and towers can see their silhouettes at a distance."
   },
   {
-    "id": 210,
+    "id": 212,
     "nome": "Warrior Priest (Hero)",
     "ingles": "Warrior Priest (Hero)",
     "tipo": [
@@ -14287,7 +14405,7 @@
     ]
   },
   {
-    "id": 211,
+    "id": 213,
     "nome": "Coyote Warrior",
     "ingles": "Coyote Warrior",
     "tipo": [
@@ -14351,7 +14469,7 @@
     "historia": "The Aztecs lack traditional cavalry, but Coyote Warriors help fill this role as swift infantry units that excel against ranged enemies.\n\nAvailable early on, Coyote Warriors can become significantly more effective with the right upgrades and myth technologies. Specializing in them supports aggressive playstyles during the early and mid-game, but they begin to fall off in the late game, struggling against fortified positions and heavier enemy units."
   },
   {
-    "id": 212,
+    "id": 214,
     "nome": "Ocelotl Warrior",
     "ingles": "Ocelotl Warrior",
     "tipo": [
@@ -14403,7 +14521,7 @@
     "historia": "Ocelotl Warriors were revered as elite Aztec fighters, embodying the fierce spirit and agility of the jaguar itself.\n\nOcelotl Warriors are versatile mid-game infantry known for their high damage, mobility, and stealth. Furthermore, they can leap at enemies, dealing bonus damage and on-hit effects.\n\nOcelotl Warriors automatically hide when close to trees, allowing them to excel at flanking. Ambushing opponents by leaping from stealth causes them to unleash a flurry of fast attacks as they take their opponents by surprise. But be careful. Scout types and towers can see their silhouettes at a distance."
   },
   {
-    "id": 213,
+    "id": 215,
     "nome": "Tlamanih Spearman",
     "ingles": "Tlamanih Spearman",
     "tipo": [
@@ -14467,7 +14585,7 @@
     "historia": "Armed with spears and courage, Tlamanih carried out the will of the empire, often forming the first wave of any Aztec assault.\n\nTlamanih are fast, cost-effective spearmen who form the backbone of the Aztecs’ early military. Their mobility and early availability make them ideal for raids and early skirmishes."
   },
   {
-    "id": 214,
+    "id": 216,
     "nome": "Eagle Warrior",
     "ingles": "Eagle Warrior",
     "tipo": [
@@ -14526,7 +14644,7 @@
     "historia": "In Aztec warfare, Eagle Warriors embodied both nobility and lethality; warriors who struck before the enemy could even prepare.\n\nEagle Warriors are powerful, mobile ranged generalists effective against most human units. With high attack range, speed, and mobility, they excel at kiting. Unlike more specialized units, they perform well without strict counter-matchup planning, and upgrades further boost their speed and damage."
   },
   {
-    "id": 215,
+    "id": 217,
     "nome": "Tequihua Archer",
     "ingles": "Tequihua Archer",
     "tipo": [
@@ -14591,7 +14709,7 @@
     "historia": "Tequihua Archers are young warriors still proving themselves in battle, often given the role of harassing enemy lines with ranged attacks while the main force closed in.\n\nTequihua Archers are a cheap early ranged unit used to counter enemy infantry. To help them keep up with the Tlamanih's movements, they have above average mobility. Their attack range can also make them a decent defensive option when strategically positioned behind terrain or buildings."
   },
   {
-    "id": 216,
+    "id": 218,
     "nome": "Teixiptla (Huitzilopochtli)",
     "ingles": "Teixiptla (Huitzilopochtli)",
     "tipo": [
@@ -14664,7 +14782,7 @@
     "historia": "Huitzilopochtli is the Aztec god of war, the sun, and conquest. He embodies martial strength and divine leadership, guiding the Aztecs through battle and expansion.\n\nEach Major God can temporarily possess one Warrior Priest at a time as their Teixiptla, granting them immense power. The Teixiptla’s abilities and appearance depend on which Major God is being played. The Teixiptla deals significant damage with special attacks, making them a potent tool but also a prime target for enemies. As a Hero, the Teixiptla deals bonus damage to myth units and gains bonus stats with each Age.\n\nAfter a short time, the Teixiptla’s mortal frame can no longer contain the power of the god possessing them, and the unit is lost. Players will have to choose when to invoke this power decisively."
   },
   {
-    "id": 217,
+    "id": 219,
     "nome": "Teixiptla (Quetzalcoatl)",
     "ingles": "Teixiptla (Quetzalcoatl)",
     "tipo": [
@@ -14725,7 +14843,7 @@
     ]
   },
   {
-    "id": 218,
+    "id": 220,
     "nome": "Teixiptla (Tezcatlipoca)",
     "ingles": "Teixiptla (Tezcatlipoca)",
     "tipo": [
@@ -14794,7 +14912,7 @@
     ]
   },
   {
-    "id": 219,
+    "id": 221,
     "nome": "Centzon Totochtin",
     "ingles": "Centzon Totochtin",
     "tipo": [
@@ -14871,7 +14989,7 @@
     "historia": "Scientific name -- Rabidus maximus\nSize -- Small\nDiet -- Pulque\n\nThe Centzon Totochtin are a group of divine rabbit spirits in Aztec mythology associated with pulque and the effects of intoxication. Said to number four hundred, they represent the many different and unpredictable outcomes. Rather than symbols of pleasure alone, they reflect Aztec concerns about excess and imbalance."
   },
   {
-    "id": 220,
+    "id": 222,
     "nome": "Chaneque",
     "ingles": "Chaneque",
     "tipo": [
@@ -14944,7 +15062,7 @@
     "historia": "Scientific name -- Statuae diabolus\nSize -- Small\nDiet -- Herbivore\n\nChaneque are small, mischievous spirit beings. They are often described as forest or household spirits who play tricks on people, hide belongings, and sometimes lead travelers astray.\n\nDespite their prankster nature, Chaneque are also considered protectors of nature and sacred places, embodying the mysterious and playful aspects of the natural world."
   },
   {
-    "id": 221,
+    "id": 223,
     "nome": "Large Scorpion",
     "ingles": "Large Scorpion",
     "tipo": [
@@ -15009,7 +15127,7 @@
     "descricao_avancada": "Myth Unit. Weak, but lethal poisonous scorpions summoned by the Infested Den. Good against human soldiers."
   },
   {
-    "id": 222,
+    "id": 224,
     "nome": "Maquizcoatl",
     "ingles": "Maquizcoatl",
     "tipo": [
@@ -15097,7 +15215,7 @@
     "historia": "Scientific name -- Serpens duplici\nSize -- Up to 6' feet\nDiet -- Humans\n\nThe double-headed Maquizcoatl is associated with the balance of opposing forces, but also with bad omens, gossip and death.\n\nMaquizcoatl, which translates to ‘2-headed serpent’ or ‘bracelet snake’ is also one of the names of Huitzilopochtli. Maquizcoatl adornments served as insignias, indicating elite status, and may have held ceremonial significance, being worn by Huitzilopochtli’s leaders and impersonators."
   },
   {
-    "id": 223,
+    "id": 225,
     "nome": "Pochtecatl Caravan",
     "ingles": "Pochtecatl Caravan",
     "tipo": [
@@ -15144,7 +15262,7 @@
     "historia": "Trade was vital to the strength and stability of the Aztec Empire. While the central valleys were rich in agricultural products, other goods, like obsidian, cacao, feathers, and cotton were imported from distant regions.\n\nWhat makes this system remarkable is that it functioned without beasts of burden or wheeled transport. Human porters carried goods across vast distances, allowing trade networks to span much of Mesoamerica. Luxury items like cacao traveled hundreds of miles, demonstrating the efficiency and reach of Aztec trade.\n\nAztec merchants, known as Pochtecatl, traveled vast distances to exchange goods and gather intelligence. Markets, such as Tlatelolco, bustled with activity, drawing thousands of traders daily. Trade not only sustained the empire’s economy but also helped extend its influence far beyond the Valley of Mexico."
   },
   {
-    "id": 224,
+    "id": 226,
     "nome": "Otontin Smasher",
     "ingles": "Otontin Smasher",
     "tipo": [
@@ -15153,8 +15271,8 @@
         "icon": "aomr_type_infantry_icon"
       },
       {
-        "type": "Cerco",
-        "icon": "aomr_type_siege_weapon_icon"
+        "type": "Anti-building",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -15207,7 +15325,7 @@
     "historia": "Wielding heavy weapons and clad in sturdy armor, the Otontin Smasher embodies the might needed to breach even the toughest defenses.\n\nWith a bonus to damage against buildings, the Otontin Smasher helps compensate for the Aztecs' limited siege capabilities. Although they are costly to train, this investment allows the Aztecs to reduce their dependence on Myth units for sieging.\n\nOtontin Smashers are still effective against other units as a high durability infantry option. However, like most siege-oriented infantry, they move slower than other Aztec units. Their bulkiness allows them to push through enemy lines and survive sustained attacks from buildings while breaking down fortifications."
   },
   {
-    "id": 225,
+    "id": 227,
     "nome": "Shorn One",
     "ingles": "Shorn One",
     "tipo": [
@@ -15278,7 +15396,7 @@
     "historia": "The Shorn Ones are the highest ranking warriors of the Aztecs. They are good against most enemies, but especially strong at taking out enemy infantry.\n\nShorn Ones excel at spearheading late game assaults, tearing through enemy front lines, and holding defensive positions. Their prestige as the ultimate Aztec warrior comes with a high resource cost, population cost, and training time. They are few on the battlefield but pose a threat the enemy cannot afford to ignore."
   },
   {
-    "id": 226,
+    "id": 228,
     "nome": "Anaconda",
     "ingles": "Anaconda",
     "tipo": [
@@ -15327,7 +15445,7 @@
     "descricao_avancada": "Villagers can hunt wild animals for Food. Anaconda will attack any nearby enemy units. Has a lifespan."
   },
   {
-    "id": 227,
+    "id": 229,
     "nome": "Axolotl",
     "ingles": "Axolotl",
     "tipo": [
@@ -15417,10 +15535,14 @@
     "historia": "Scientific name -- Ambystoma mexicanum\nSize -- Large\nDiet -- Carnivore\n\nThe Axolotl are legendary creatures, often associated with water, regeneration, and transformation. It is a type of aquatic salamander native to the lakes around Tenochtitlan and is linked to the god Xolotl, the deity of lightning, death, mutation and twins."
   },
   {
-    "id": 228,
+    "id": 230,
     "nome": "Ayotochtli",
     "ingles": "Ayotochtli",
     "tipo": [
+      {
+        "type": "Cerco",
+        "icon": "aomr_type_siege_weapon_icon"
+      },
       {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
@@ -15490,7 +15612,7 @@
     "historia": "Scientific name -- Dasypus mexicanus\nSize -- Gigantic\nDiet -- Walls\n\nAyotochtli is the Nahuatl word for Armadillo, which literally translates to 'turtle-rabbit'. Strongly associated with the earth and protection, Coatlicue transforms these small, gentle creatures into towering, armored beasts, that curl into wrecking balls and tear down the walls of their enemies."
   },
   {
-    "id": 229,
+    "id": 231,
     "nome": "Obsidian Butterfly",
     "ingles": "Obsidian Butterfly",
     "tipo": [
@@ -15563,7 +15685,7 @@
     "historia": "Scientific name -- Papilio infensus\nSize -- Humanoid Size\nDiet -- Humans\n\nItzpapalotl, translated to 'Obsidian Butterfly', is a fierce and powerful goddess. She is associated with war, death, and the night sky. Itzpapalotl is often depicted as a skeletal or butterfly-winged warrior adorned with obsidian blades.\n\nItzpapalotl is one of the Tzitzimimeh, star demons feared for their destructive power during eclipses. As a protector of women who die from childbirth, Itzpapalotl embodies both beauty and terror, representing transformation sacrifice, and the deadly forces of the cosmos."
   },
   {
-    "id": 230,
+    "id": 232,
     "nome": "Tzitzimitl",
     "ingles": "Tzitzimitl",
     "tipo": [
@@ -15636,7 +15758,7 @@
     "historia": "Scientific name -- Daemonium stella\nSize -- Humanoid Size\nDiet -- Solar energy and children\n\nTzitzimitl are fearsome star demons associated with darkness, chaos, and cosmic destruction.\n\nThey are believed to descend from the sky during solar eclipses, threatening to devour the sun and bring about the end of the world. Often depicted as skeletal, monstrous female figures adorned with stars, they dwelled in the heavens and were seen as both protectors and destroyers. They guard the cosmos while threatening an apocalypse if balance is lost."
   },
   {
-    "id": 231,
+    "id": 233,
     "nome": "Jaguar Rider",
     "ingles": "Jaguar Rider",
     "tipo": [
@@ -15706,7 +15828,7 @@
     "historia": "Jaguar Riders are the sole cavalry-class unit in the Aztec roster. With strong combat stats, they perform well against most human units.\n\nLike Ocelotl Warriors, they can enter stealth, making them the fastest and most mobile stealth units available. Their ambush attacks allow them to leap from the shadows, unleashing a flurry of fast attacks as they take their enemies by surprise. But be careful. Scout types and towers can see their silhouettes at a distance."
   },
   {
-    "id": 232,
+    "id": 234,
     "nome": "Ahuizotl",
     "ingles": "Ahuizotl",
     "tipo": [
@@ -15784,7 +15906,7 @@
     "historia": "Scientific name -- Didelphis tenax\nSize -- 50 -- 150 lbs\nDiet -- Humans\n\nAhuizotl is a fierce, water-dwelling monster with the body of a dog and a hand on the end of its tail.\n\nFeared by fishermen and travelers near lakes and rivers, the Ahuizotl was said to drag people underwater to their deaths. It was associated with the gods of water and death, particularly Tlaloc, and was believed to claim victims whose bodies were considered sacred offerings to the gods."
   },
   {
-    "id": 233,
+    "id": 235,
     "nome": "Quinametzin",
     "ingles": "Quinametzin",
     "tipo": [
@@ -15795,6 +15917,10 @@
       {
         "type": "Mythic",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Anti-building",
+        "icon": "crushdamage"
       }
     ],
     "panteao": [
@@ -15853,7 +15979,7 @@
     "historia": "Scientific name -- Magnus pluvia homo\nSize -- Gigantic\nDiet -- Omnivore\n\nQuinametzin are giants from a previous cosmic era in Aztec mythology, known for their great strength and size. Once builders of ancient cities, they were destroyed by the gods for their transgressions, serving as a symbol of past civilizations lost to divine wrath."
   },
   {
-    "id": 234,
+    "id": 236,
     "nome": "Soul Guide",
     "ingles": "Soul Guide",
     "tipo": [
@@ -15934,7 +16060,7 @@
     "historia": "Scientific name -- Canem inferna\nSize -- Humanoid Size\nDiet -- Adopts the diet of whatever form it takes\n\nXolotl is the Aztec god of lightning, death, and twins, often depicted as a dog-headed deity. He is the twin brother of Quetzalcoatl and serves as a guide for souls in the underworld, helping them navigate the dangers of the afterlife.\n\nXolotl is also associated with transformation and shape-shifting, famously transforming into the axolotl to evade sacrifice."
   },
   {
-    "id": 235,
+    "id": 237,
     "nome": "Tlacanexquimilli",
     "ingles": "Tlacanexquimilli",
     "tipo": [
@@ -16001,7 +16127,7 @@
     "historia": "Scientific name -- Daemonium Pila\nSize -- 50 - 150 lbs\nDiet -- Carnivore\n\nA Tlacanexquimilli is a ghost or phantom, often associated with misfortune and trickery. Sometimes, when the city is covered by fog, a Tlacanexquimilli appears, offering gifts that nobody wants, such as a bundle of cactus spines. If one refuses its gift, it leaves, heartbroken."
   },
   {
-    "id": 236,
+    "id": 238,
     "nome": "Tunkuluchu",
     "ingles": "Tunkuluchu",
     "tipo": [
@@ -16080,7 +16206,7 @@
     "historia": "Scientific name -- Asio stygius\nSize -- Large\nDiet -- Carnivore\nThe Tunkuluchu was feared by the Mesoamerican people as a herald of death. When the Tunkuluchu sang, it was said that somebody nearby was soon to die.\n\nTunkuluchu are sometimes connected to the sound of drums and other forms of communication."
   },
   {
-    "id": 237,
+    "id": 239,
     "nome": "Titan (Cipactli)",
     "ingles": "Titan (Cipactli)",
     "tipo": [
@@ -16145,7 +16271,7 @@
     "historia": "Scientific name -- Deity defies classification\nSize -- 100' tall\nDiet -- Worship and dominance\n\nIn a dark ritual, Tezcatlipoca offers his own foot as a sacrifice to summon the primordial being Cipactli, the Aztec Titan, a colossal manifestation of divine power. The creature embodies the raw, primal forces that shaped the world before human memory.\n\nAn unstoppable force that tramples armies, razes cities, and warps the battlefield with its presence. Like the Titans of other cultures, it is a being from an age before time, linked to the Aztec cycles of death, rebirth, and celestial struggle."
   },
   {
-    "id": 238,
+    "id": 240,
     "nome": "Petrobolos",
     "ingles": "Petrobolos",
     "tipo": [
@@ -16205,7 +16331,7 @@
     "historia": "Siege weapons can destroy buildings, but are weak against other units, especially cavalry. Greeks can also use Petroboloi to defeat enemy ships.\n\nThe ancient Greeks developed a catapult called a petrobolos (literally 'stone thrower'). The power of the arm was generated by traction, usually by pulling or winding down a balanced throwing arm. The best petrobolos of the age threw stones weighing around 175 pounds. Rocks of this weight hurtling towards walls, buildings, and ships were capable of inflicting devastating damage."
   },
   {
-    "id": 239,
+    "id": 241,
     "nome": "Helepolis",
     "ingles": "Helepolis",
     "tipo": [
@@ -16259,7 +16385,7 @@
     "historia": "Siege weapons can destroy buildings, but are weak against other units, especially cavalry.\n\nThe name of this siege machine translates as \"taker of cities.\" The name was first applied to a mobile tower constructed by Greeks to attack a city on Cyprus. This large movable tower mounted stone throwers and ballistae of different sizes, with the smallest at the top. Two hundred men pushed the tower up to the enemy walls using parallel beams extending out from its bottom. The larger weapons in the machine battered the walls while the smaller ones swept defenders off the walls in preparation for an assault."
   },
   {
-    "id": 240,
+    "id": 242,
     "nome": "Siege Tower",
     "ingles": "Siege Tower",
     "tipo": [
@@ -16313,7 +16439,7 @@
     "historia": "Siege weapons can destroy buildings, but are weak against other units, especially cavalry.\n\nOne of the machines developed to attack walled towns was the siege tower on wheels. This large wooden tower was covered with wet hides to minimize its vulnerability to fire. A battering ram was suspended inside for use against the wall that the tower was moved against. The tower protected the men working the ram and archers shooting arrows into the town. When the ram knocked the wall down, the attacking army could enter the city."
   },
   {
-    "id": 241,
+    "id": 243,
     "nome": "Catapult",
     "ingles": "Catapult",
     "tipo": [
@@ -16373,7 +16499,7 @@
     "historia": "Siege weapons can destroy buildings, but are weak against other units, especially cavalry. Egyptians can also use Catapults to defeat enemy ships.\n\nThe Greeks invented catapults for use as artillery on the battlefield or during a siege. Pulling back large bow-like arms or twisting cordage made of hides or hair created enough tension to produce a great throwing force. A catapult could throw a stone weighing over 10 pounds a range of nearly 1,500 feet."
   },
   {
-    "id": 242,
+    "id": 244,
     "nome": "Portable Ram",
     "ingles": "Portable Ram",
     "tipo": [
@@ -16427,7 +16553,7 @@
     "historia": "Siege weapons can destroy buildings, but are weak against other units, especially cavalry.\n\nWhen an army wanted to quickly take an enemy town, one simple, expedient solution was to cut down a strong tree, trim the trunk, attach some handholds, and use the tree to batter down a gate or wall section. Although the men holding the ram were at great risk, this weapon could be put into action within hours of laying a siege. Portable rams were particularly effective in surprise attacks and against weak fortifications. They were popular among raiding armies and forces that could not linger outside of a city for a protracted siege."
   },
   {
-    "id": 243,
+    "id": 245,
     "nome": "Ballista",
     "ingles": "Ballista",
     "tipo": [
@@ -16489,162 +16615,6 @@
     "descricao_resumida": "Ranged siege weapon. Good vs. units and ships.",
     "descricao_avancada": "Ranged siege weapon. Strong against units and ships, decent against buildings.",
     "historia": "Siege weapons can destroy buildings, but are weak against other units, especially cavalry. The Norse can also use Ballistas to defeat ships and slower units.\n\nThe ballista was an ancient artillery piece that was mainly used against men in formation. It was a large bow mounted sideways that used a winch and ratchet to create tension. The missile was usually a large metal, or metal-headed, bolt. Fired into a mass of men at ranges up to 1,000 feet, bolts could disable several enemies. Ballistas could be mounted on walls or ships, or wheeled out for battlefield use. They were not particularly effective against fortified buildings or walls."
-  },
-  {
-    "id": 244,
-    "nome": "Cheiroballista",
-    "ingles": "Cheiroballista",
-    "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
-        "type": "Cerco",
-        "icon": "aomr_type_siege_weapon_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 4,
-        "nome": "Atlantean :aomr_pantheon_atlanteans_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 2,
-        "nome": "Classical :aomr_classical_age_icon:"
-      }
-    ],
-    "counter_de": "Hard-Counter Infantaria :aomr_type_infantry_icon:",
-    "multiplicador": [
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon",
-        "value": "5"
-      },
-      {
-        "type": "Texto",
-        "icon": "",
-        "value": "🚢3x"
-      }
-    ],
-    "pontos_de_vida": 105,
-    "dano_perfurante": 3,
-    "alcance": 16,
-    "velocidade_de_ataque_atk_s": 2,
-    "dps": 6,
-    "armadura_anticorte": 20,
-    "armadura_antiperfurante": 50,
-    "construcao": [
-      {
-        "id": 42,
-        "nome": "Contralquartel"
-      }
-    ],
-    "comida": 0,
-    "madeira": 115,
-    "ouro": 100,
-    "custo_total": 215,
-    "populacao": 4,
-    "tempo_treinamento": 24,
-    "velocidade_movimento": 3.8,
-    "forca_atributos": 94.8,
-    "categoria": [
-      {
-        "type": "Hard-Counter Infantaria",
-        "icon": "aomr_type_infantry_icon"
-      }
-    ],
-    "forte_contra": "Infantaria :aomr_type_infantry_icon:",
-    "fraco_contra": "Cavalaria :aomr_type_cavalry_icon:",
-    "icon": "aomr_cheiroballista_icon",
-    "descricao_resumida": "Ranged soldier-siege hybrid. Only good vs. infantry and ships.",
-    "descricao_avancada": "Ranged Soldier, Siege Weapon. Fragile, but very powerful against infantry and ships.",
-    "historia": "The light and relatively fast Cheiroballista is a deadly anti-infantry unit, but is weak against everything else, especially cavalry.\n\nThe cheiroballista was the most advanced arrow-throwing ballista devised in ancient times. Its metal arms were short and provided great torque, but also allowed the ballista to either be mounted in a drawn cart or put on wheels."
-  },
-  {
-    "id": 245,
-    "nome": "Cheiroballista (Hero)",
-    "ingles": "Cheiroballista (Hero)",
-    "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
-        "type": "Hero",
-        "icon": "aomr_type_hero_icon"
-      },
-      {
-        "type": "Cerco",
-        "icon": "aomr_type_siege_weapon_icon"
-      }
-    ],
-    "panteao": [
-      {
-        "id": 4,
-        "nome": "Atlantean :aomr_pantheon_atlanteans_icon:"
-      }
-    ],
-    "era": [
-      {
-        "id": 2,
-        "nome": "Classical :aomr_classical_age_icon:"
-      }
-    ],
-    "counter_de": "Mythical Creature :aomr_type_myth_unit_icon:, Hard-Counter Infantry :aomr_type_infantry_icon:",
-    "multiplicador": [
-      {
-        "type": "Unidade myth",
-        "icon": "aomr_type_myth_unit_icon",
-        "value": "8"
-      },
-      {
-        "type": "Infantaria",
-        "icon": "aomr_type_infantry_icon",
-        "value": "5"
-      },
-      {
-        "type": "Texto",
-        "icon": "",
-        "value": "🚢3x"
-      }
-    ],
-    "pontos_de_vida": 120,
-    "dano_perfurante": 4,
-    "alcance": 16,
-    "velocidade_de_ataque_atk_s": 2,
-    "dps": 8,
-    "armadura_anticorte": 20,
-    "armadura_antiperfurante": 50,
-    "comida": 0,
-    "madeira": 200,
-    "ouro": 175,
-    "favor": 4,
-    "custo_total": 379,
-    "populacao": 4,
-    "tempo_treinamento": 0,
-    "velocidade_movimento": 4.1,
-    "forca_atributos": 51.3,
-    "forte_contra": "Mythical Creature :aomr_type_myth_unit_icon:",
-    "fraco_contra": "Soldados humanos :aomr_type_human_soldier_icon:",
-    "categoria": [
-      {
-        "type": "Hard-Counter Infantaria",
-        "icon": "aomr_type_infantry_icon"
-      }
-    ],
-    "icon": "aomr_cheiroballista_hero_icon",
-    "descricao_avancada": "Ranged Soldier, Siege Weapon, Hero. Fragile, but very powerful against infantry, ships, and myth units.",
-    "historia": "This Cheiroballista has become a hero. Like a regular Cheiroballista, it is strong against infantry and weak against most other units; but as a hero, it is much more effective against myth units. All heroes may pick up Relics.\n\nThe cheiroballista was the most advanced arrow-throwing ballista devised in ancient times. Its metal arms were short and provided great torque, but also allowed the ballista to either be mounted in a drawn cart or put on wheels.",
-    "habilidades": [
-      {
-        "nome": "Sacred Hands (Passive)",
-        "descricao": "Can pick up Relics and drop them off at a Temple.",
-        "icon": "aomr_sacred_hands_ability_icon"
-      }
-    ]
   },
   {
     "id": 246,

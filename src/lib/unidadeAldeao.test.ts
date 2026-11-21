@@ -10,10 +10,10 @@ const UNIT_TO_ALDEAO = new Map<number, number>([
   [75, 2],
   [76, 6],
   [104, 4],
-  [139, 3],
-  [140, 7],
-  [175, 9],
-  [208, 11],
+  [141, 3],
+  [142, 7],
+  [177, 9],
+  [210, 11],
 ]);
 
 describe("aldeaoIdMatchingUnit", () => {
@@ -24,8 +24,8 @@ describe("aldeaoIdMatchingUnit", () => {
   });
 
   it("o Colono asteca não cai no Plebeu japonês, apesar do nome em português", () => {
-    const settler = unidades.find((unit) => unit.id === 208);
-    const commoner = unidades.find((unit) => unit.id === 175);
+    const settler = unidades.find((unit) => unit.id === 210);
+    const commoner = unidades.find((unit) => unit.id === 177);
     expect(aldeaoIdMatchingUnit(settler!, aldeoes)).toBe(11);
     expect(aldeaoIdMatchingUnit(commoner!, aldeoes)).toBe(9);
   });
@@ -48,8 +48,8 @@ describe("unitIdMatchingAldeao", () => {
   it("o Colono asteca volta para o Plebeu asteca, e o Plebeu japonês para a unidade japonesa", () => {
     const colono = aldeoes.find((aldeao) => aldeao.id === 11);
     const plebeu = aldeoes.find((aldeao) => aldeao.id === 9);
-    expect(unitIdMatchingAldeao(colono!, unidades)).toBe(208);
-    expect(unitIdMatchingAldeao(plebeu!, unidades)).toBe(175);
+    expect(unitIdMatchingAldeao(colono!, unidades)).toBe(210);
+    expect(unitIdMatchingAldeao(plebeu!, unidades)).toBe(177);
   });
 
   it("Cidadão herói e Kuafu herói não apontam para uma unidade", () => {

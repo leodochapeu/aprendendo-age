@@ -46,9 +46,9 @@
       96,
       97,
       95,
-      157,
-      158,
-      155
+      159,
+      160,
+      157
     ],
     "panteao_id": 1,
     "icon": "aomr_town_center_greek_icon",
@@ -297,7 +297,7 @@
       "29500f30e21180888b25f958d43e6616"
     ],
     "unidades_ids": [
-      160
+      162
     ],
     "panteao_id": 7,
     "icon": "aomr_town_center_icon",
@@ -733,13 +733,13 @@
       96,
       97,
       95,
-      138,
+      140,
       98,
       99,
       100,
-      154,
-      153,
-      152
+      156,
+      155,
+      154
     ],
     "panteao_id": 1,
     "icon": "aomr_temple_icon",
@@ -864,7 +864,7 @@
       73,
       63,
       72,
-      113,
+      115,
       104,
       105,
       106
@@ -1050,16 +1050,16 @@
       "2b800f30e211800e87dcd2ea80e6b985"
     ],
     "unidades_ids": [
-      130,
-      134,
-      127,
-      129,
-      128,
-      135,
-      136,
       132,
+      136,
+      129,
       131,
-      126
+      130,
+      137,
+      138,
+      134,
+      133,
+      128
     ],
     "panteao_id": 6,
     "icon": "aomr_temple_icon",
@@ -1098,7 +1098,7 @@
     "era_id": 1,
     "tecnologias_ids": [],
     "unidades_ids": [
-      161
+      163
     ],
     "panteao_id": 7,
     "icon": "aomr_temple_icon",
@@ -1839,13 +1839,13 @@
     "unidades_ids": [
       65,
       94,
-      118,
-      119,
-      121,
       120,
-      124,
-      125,
-      117
+      121,
+      123,
+      122,
+      126,
+      127,
+      119
     ],
     "panteao_id": 5,
     "icon": "aomr_imperial_academy",
@@ -1923,8 +1923,8 @@
     "unidades": "Tlamanih Spearman, Tequihua Archer",
     "era_id": 2,
     "unidades_ids": [
-      162,
-      163
+      164,
+      165
     ],
     "panteao_id": 7,
     "icon": "aomr_war_hut_icon",
@@ -1958,9 +1958,9 @@
     "unidades": "Coyote Warrior, Ocelotl Warrior, Eagle Warrior",
     "era_id": 2,
     "unidades_ids": [
-      164,
-      165,
-      167
+      166,
+      167,
+      169
     ],
     "panteao_id": 7,
     "icon": "aomr_noble_hut_icon",
@@ -2470,7 +2470,7 @@
       96,
       97,
       95,
-      151
+      153
     ],
     "panteao_id": 1,
     "icon": "aomr_fortress_icon",
@@ -2738,10 +2738,10 @@
       "29500f30e21180998804e464501be2e0"
     ],
     "unidades_ids": [
-      168,
-      169,
       170,
-      171
+      171,
+      172,
+      173
     ],
     "panteao_id": 7,
     "icon": "aomr_great_temple_icon",
@@ -2908,9 +2908,9 @@
       "2b200f30e211804da5dee4e799e4ddd6"
     ],
     "unidades_ids": [
-      140,
-      141,
-      142
+      142,
+      143,
+      144
     ],
     "panteao_id": 6,
     "icon": "aomr_guardhouse_icon",
@@ -2950,9 +2950,9 @@
       "2b800f30e21180e090a2da68a3892f45"
     ],
     "unidades_ids": [
-      144,
-      145,
-      147
+      146,
+      147,
+      149
     ],
     "panteao_id": 6,
     "icon": "aomr_stable_icon",
@@ -4059,8 +4059,8 @@
     ],
     "unidades": "Camponês, Kuafu",
     "unidades_ids": [
-      139,
-      140
+      141,
+      142
     ],
     "descricao_resumida": "Treina Aldeões.",
     "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
@@ -4104,8 +4104,8 @@
     ],
     "unidades": "Plebeu, Miko (Heroína)",
     "unidades_ids": [
-      175,
-      176
+      177,
+      178
     ],
     "descricao_resumida": "Treina Aldeões.",
     "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
@@ -4150,7 +4150,7 @@
     ],
     "unidades": "Espião Quimichin",
     "unidades_ids": [
-      209
+      211
     ],
     "descricao_resumida": "Treina Aldeões.",
     "descricao_avancada": "Treina Aldeões e é local de entrega de todos os recursos. Os Centros de Aldeia podem ser construídos em qualquer lugar do mapa.",
@@ -4438,7 +4438,7 @@
     ],
     "unidades": "Miko (Heroína)",
     "unidades_ids": [
-      176
+      178
     ],
     "descricao_resumida": "Centro Urbano fortemente fortificado.",
     "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
@@ -4484,7 +4484,7 @@
     ],
     "unidades": "Espião Quimichin",
     "unidades_ids": [
-      209
+      211
     ],
     "descricao_resumida": "Centro Urbano fortemente fortificado.",
     "descricao_avancada": "Um Centro Urbano muito fortificado que treina unidades e pesquisa tecnologias mais rapidamente.",
@@ -4543,8 +4543,8 @@
     "unidades": "Huscarl, Aríete Portátil, Balista",
     "unidades_ids": [
       88,
-      242,
-      243
+      244,
+      245
     ],
     "descricao_resumida": "Fortificação de Ullr. Treina unidades de elite e de cerco.",
     "descricao_avancada": "Forte de Colina gerada por Ullr para defender o reino dos homens. Guarnece unidades e treina unidades de elite e armas de cerco.",
@@ -4575,7 +4575,7 @@
     "guarnicao": 5,
     "unidades": "Dríade",
     "unidades_ids": [
-      127
+      129
     ],
     "nome": "Árvore de Hespérides",
     "descricao_resumida": "Treina Dríades.",

@@ -46,8 +46,10 @@ CAT_RANK = {
     "archer": 3,
     "scout": 4,
     "hero": 5,
-    "myth": 6,
-    "other": 7,
+    # Quirobalista: híbrido artilharia/cerco, após heróis humanos e antes das míticas
+    "archer_siege": 6,
+    "myth": 7,
+    "other": 8,
 }
 
 # Subtipos de barco
@@ -75,12 +77,19 @@ def is_ship(tipos: set[str]) -> bool:
     return bool(tipos & SHIP_TYPES)
 
 
-def is_land_siege(tipos: set[str]) -> bool:
+def is_cheiroballista(ingles: str) -> bool:
+    """Quirobalista é cerco no proto, mas ordena como artilharia atlante."""
+    return family_key(ingles) == "cheiroballista"
+
+
+def is_land_siege(tipos: set[str], ingles: str = "") -> bool:
+    if is_cheiroballista(ingles):
+        return False
     return bool(tipos & SIEGE_TYPES) and not is_ship(tipos)
 
 
-def section(tipos: set[str]) -> int:
-    if is_land_siege(tipos):
+def section(tipos: set[str], ingles: str = "") -> int:
+    if is_land_siege(tipos, ingles):
         return 1
     if is_ship(tipos):
         return 2
@@ -95,9 +104,13 @@ def category(u: dict, tipos: set[str]) -> str:
     if ingles == "Oracle":
         return "hero"
 
-    if section(tipos) == 1:
+    # Quirobalista (+ herói): depois dos heróis humanos, antes das míticas
+    if is_cheiroballista(ingles):
+        return "archer_siege"
+
+    if section(tipos, ingles) == 1:
         return "siege"
-    if section(tipos) == 2:
+    if section(tipos, ingles) == 2:
         if "Flecheiro" in tipos or "Arrow Ship" in tipos:
             return "flecheiro"
         if "Combate curto-alcance" in tipos or "Close-combat Ship" in tipos:
@@ -158,9 +171,9 @@ def form_order(ingles: str) -> int:
 
 def sort_key(u: dict):
     tipos = tipos_set(u)
-    sec = section(tipos)
-    cat = category(u, tipos)
     ingles = (u.get("ingles") or "").strip()
+    sec = section(tipos, ingles)
+    cat = category(u, tipos)
     return (
         sec,
         pant_id(u),

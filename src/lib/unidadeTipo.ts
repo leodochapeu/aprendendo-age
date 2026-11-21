@@ -65,6 +65,7 @@ function tipoTypeToneTextClass(typeLabel: string): string {
     return "text-pink-300";
   }
   if (t.startsWith("Cerco") || t.startsWith("Arma de cerco")) return "text-amber-300";
+  if (t.startsWith("Anti-construção") || t.startsWith("Anti-building")) return "text-orange-300";
   if (t.startsWith("Voador")) return "text-zinc-200";
 
   return "text-zinc-200";
@@ -118,6 +119,9 @@ export function tipoTypeTagShellClass(typeLabel: string): string {
   }
   if (t.startsWith("Cerco") || t.startsWith("Arma de cerco")) {
     return `border-amber-700/55 bg-amber-950/50 ${text}`;
+  }
+  if (t.startsWith("Anti-construção") || t.startsWith("Anti-building")) {
+    return `border-orange-500/50 bg-orange-950/45 ${text}`;
   }
   if (t.startsWith("Voador")) {
     return `border-zinc-500/50 bg-zinc-800/55 ${text}`;

@@ -54,6 +54,9 @@ const LABEL_ALIASES: Record<string, BattleUnitTypeId> = {
   siege: "cerco",
   "arma de cerco": "cerco",
   "siege weapon": "cerco",
+  "anti-construcao": "cerco",
+  "anti-construção": "cerco",
+  "anti-building": "cerco",
   tita: "tita",
   titã: "tita",
   titan: "tita",
@@ -75,6 +78,7 @@ const ICON_TO_TYPE: Record<string, BattleUnitTypeId> = {
   aomr_type_close_combat_ship_icon: "barco",
   aomr_type_archer_ship_icon: "barco",
   aomr_type_siege_weapon_icon: "cerco",
+  crushdamage: "cerco",
   aomr_type_titan_icon: "tita",
 };
 

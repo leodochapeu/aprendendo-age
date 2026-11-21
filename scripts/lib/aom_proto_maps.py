@@ -44,6 +44,8 @@ UNIT_TYPE_ICON = {
     "Herói": "aomr_type_hero_icon",
     "Arma de cerco": "aomr_type_siege_weapon_icon",
     "Cerco": "aomr_type_siege_weapon_icon",
+    "Anti-construção": "crushdamage",
+    "Anti-building": "crushdamage",
     "Aldeão": "aomr_type_villager_icon",
     "Batedor": "aomr_type_scout_icon",
     "Scout": "aomr_type_scout_icon",

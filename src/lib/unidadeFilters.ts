@@ -79,6 +79,7 @@ const TIPO_ICON_ORDER = [
   "aomr_type_cavalry_icon",
   "aomr_type_archer_icon",
   "aomr_type_siege_weapon_icon",
+  "crushdamage",
   "aomr_type_hero_icon",
   "aomr_type_myth_unit_icon",
   "aomr_type_flying_unit_icon",
