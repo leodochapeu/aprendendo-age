@@ -1128,7 +1128,8 @@ export const enMessages: TranslationTree = {
       modeSelectTitle: "Choose the training",
       modeSelectDescription: "Before the pantheon, choose whether to train category only or the real fight.",
       modeCategoryTitle: "Category",
-      modeCategoryHint: "Trains unit type only. The same type is a draw.",
+      modeCategoryHint:
+        "Trains the category only (Infantry, Cavalry, and Archers). The same category is a draw.",
       modeRealTitle: "Real mode",
       modeRealHint: "Beyond category: attack with multiplier, armor mitigating damage, and hit points.",
       comingSoon: "Coming soon",

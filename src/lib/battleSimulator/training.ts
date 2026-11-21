@@ -159,7 +159,12 @@ function armorMitigation(armorPercent: number | null): number {
   return 1 - Math.min(100, Math.max(0, armorPercent)) / 100;
 }
 
-function buildRealSide(attacker: Unidade, defender: Unidade): Omit<RealSide, "hpRemaining"> {
+type RealSideCombat = Omit<
+  RealSide,
+  "hpRemaining" | "ranged" | "range" | "moveSpeed" | "attackDelay" | "secondsFromStart"
+>;
+
+function buildRealSide(attacker: Unidade, defender: Unidade): RealSideCombat {
   const multiplier = resolveBestMultiplier(attacker, defender);
   const attacksPerSecond = Math.max(0, attacker.velocidade_de_ataque_atk_s ?? 0);
   const channels: RealHitChannel[] = listDamageChannels(attacker, defender).map((spec) => {
@@ -182,11 +187,7 @@ function buildRealSide(attacker: Unidade, defender: Unidade): Omit<RealSide, "hp
   return { hp: unitHp(attacker), attacksPerSecond, channels, damagePerHit, dps, secondsToKill };
 }
 
-function withApproach(
-  side: Omit<RealSide, "hpRemaining" | "ranged" | "range" | "moveSpeed" | "attackDelay" | "secondsFromStart">,
-  unit: Unidade,
-  delay: number | null,
-): Omit<RealSide, "hpRemaining"> {
+function withApproach(side: RealSideCombat, unit: Unidade, delay: number | null): Omit<RealSide, "hpRemaining"> {
   const secondsFromStart = delay == null || side.secondsToKill == null ? null : delay + side.secondsToKill;
   return {
     ...side,

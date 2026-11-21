@@ -1130,7 +1130,8 @@ export const ptMessages: TranslationTree = {
       modeSelectTitle: "Escolha o treino",
       modeSelectDescription: "Antes do panteão, escolha se quer treinar só a categoria ou o combate real.",
       modeCategoryTitle: "Categoria",
-      modeCategoryHint: "Treina só o tipo. Se os dois forem do mesmo tipo, a rodada empata.",
+      modeCategoryHint:
+        "Treina só a categoria (Infantaria, Cavalaria e Artilharia). Se os dois forem da mesma categoria, a rodada empata.",
       modeRealTitle: "Modo real",
       modeRealHint: "Além da categoria: ataque com multiplicador, armadura mitigando o dano e vida.",
       comingSoon: "Em breve",
