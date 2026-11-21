@@ -1159,6 +1159,7 @@ export const enMessages: TranslationTree = {
       unlockPreviousAgeUnits: "Unlock 2 Previous-Age Units",
       unlockPreviousAgeUnitsHint:
         "Randomly unlocks up to 2 units from previous Ages during this round.",
+      revealConfirm: "Reveal",
       effectActive: "Active",
       wins: "Wins",
       losses: "Losses",

@@ -6,8 +6,8 @@ import { BattleAtmosphere, BattleEpicFrame } from "@/components/battle/BattleAtm
 import { BattleConfirmModal } from "@/components/battle/BattleConfirmModal";
 import { BattleResultModal } from "@/components/battle/BattleResultModal";
 import { BattleFavorModal } from "@/components/battle/BattleFavorModal";
+import { BattleRevealConfirmModal, RevealEyeButton } from "@/components/battle/BattleRevealConfirmModal";
 import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
-import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
 import type { Unidade } from "@/data/catalog";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -17,6 +17,8 @@ import {
   INITIAL_FAVOR,
   isUnitFromPreviousEra,
   pickRandomUniqueIds,
+  canPurchaseFavorEffect,
+  FAVOR_EFFECT_COSTS,
   pickDefender,
   purchaseFavorEffect,
   rewardFavor,
@@ -33,6 +35,7 @@ import { cn } from "@/lib/cn";
 import { firstNome } from "@/lib/entityRefs";
 import { getIconFieldUrl } from "@/lib/notionTokenAssets";
 import { NotionText } from "@/components/ui/NotionText";
+import { visibleTipoItems } from "@/lib/unidadeTipo";
 
 type LastResult = {
   outcome: RoundOutcome;
@@ -114,6 +117,7 @@ function BattleRandomSession({
   const [ageUpEraId, setAgeUpEraId] = useState<PlayableEraId | null>(null);
   const [favor, setFavor] = useState(INITIAL_FAVOR);
   const [favorModalOpen, setFavorModalOpen] = useState(false);
+  const [pendingReveal, setPendingReveal] = useState<"defender" | "deck" | null>(null);
   const [revealDefenderCategory, setRevealDefenderCategory] = useState(false);
   const [revealDeckUnitArmed, setRevealDeckUnitArmed] = useState(false);
   const [revealedAttackerId, setRevealedAttackerId] = useState<number | null>(
@@ -232,6 +236,7 @@ function BattleRandomSession({
     setRevealedAttackerId(null);
     setUnlockedPreviousAgeUnitIds([]);
     setFavorModalOpen(false);
+    setPendingReveal(null);
 
     if (willAgeUp(plan, roundIndex)) {
       setAgeUpEraId(plan[nextIndex]!.eraId);
@@ -442,17 +447,32 @@ function BattleRandomSession({
 
       <section className="grid gap-6 lg:grid-cols-[1fr_auto_1fr] lg:items-start">
         <BattleEpicFrame wash="emerald" bodyClassName="p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">
-            {t("pages.battle.yourDeck")}
-          </p>
-          <p className="mt-1 text-sm text-zinc-300">{t("pages.battle.pickUnitHint")}</p>
-          <ul className="mt-4 grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6">
+          <div className="flex items-start justify-between gap-8">
+            <div className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">
+                {t("pages.battle.yourDeck")}
+              </p>
+              <p className="mt-1 text-sm text-zinc-300">{t("pages.battle.pickUnitHint")}</p>
+            </div>
+            <RevealEyeButton
+              label={t("pages.battle.revealDeckUnitCategory")}
+              active={deckUnitRevealPurchased}
+              disabled={phase !== "playing" || !canPurchaseFavorEffect(favor, "revealDeckUnitCategory")}
+              onClick={() => setPendingReveal("deck")}
+            />
+          </div>
+          <ul
+            className={cn(
+              "mt-4 grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6",
+              revealedAttackerId != null && "pb-8",
+            )}
+          >
             {attackerPool.map((u) => {
               const locked =
                 isUnitFromPreviousEra(u, currentEraId) &&
                 !unlockedPreviousAgeUnitIdSet.has(u.id);
               return (
-                <li key={u.id} className="flex justify-center">
+                <li key={u.id} className="flex flex-col items-center gap-1.5">
                   <BattleUnitPortrait
                     nome={u.nome}
                     icon={u.icon}
@@ -462,6 +482,7 @@ function BattleRandomSession({
                     selected={pendingAttackerId === u.id}
                     onClick={() => selectAttacker(u.id)}
                   />
+                  {u.id === revealedAttackerId ? <RevealedTipoIcons tipo={u.tipo} /> : null}
                 </li>
               );
             })}
@@ -478,20 +499,22 @@ function BattleRandomSession({
         </div>
 
         <BattleEpicFrame wash="rose" bodyClassName="p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose-200">
-            {t("pages.battle.enemy")}
-          </p>
+          <div className="flex items-start justify-between gap-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose-200">
+              {t("pages.battle.enemy")}
+            </p>
+            <RevealEyeButton
+              label={t("pages.battle.revealDefenderCategory")}
+              active={revealDefenderCategory}
+              disabled={phase !== "playing" || !canPurchaseFavorEffect(favor, "revealDefenderCategory")}
+              onClick={() => setPendingReveal("defender")}
+            />
+          </div>
           {defender ? (
             <div className="mt-4 flex flex-col items-center gap-3 text-center">
               <BattleUnitPortrait nome={defender.nome} icon={defender.icon} size="lg" />
+              {revealDefenderCategory ? <RevealedTipoIcons tipo={defender.tipo} /> : null}
               <p className="font-semibold text-amber-50">{defender.nome}</p>
-              {revealDefenderCategory ? (
-                <UnidadeTipoLine
-                  tipo={defender.tipo}
-                  colored
-                  className="justify-center"
-                />
-              ) : null}
               {firstNome(defender.panteao) ? (
                 <p className="text-xs text-zinc-300">
                   <NotionText text={firstNome(defender.panteao)!} />
@@ -531,6 +554,31 @@ function BattleRandomSession({
         onConfirm={confirmAttack}
       />
 
+      <BattleRevealConfirmModal
+        open={pendingReveal != null && phase === "playing"}
+        title={
+          pendingReveal === "defender"
+            ? t("pages.battle.revealDefenderCategory")
+            : t("pages.battle.revealDeckUnitCategory")
+        }
+        description={
+          pendingReveal === "defender"
+            ? t("pages.battle.revealDefenderCategoryHint")
+            : t("pages.battle.revealDeckUnitCategoryHint")
+        }
+        cost={
+          pendingReveal === "defender"
+            ? FAVOR_EFFECT_COSTS.revealDefenderCategory
+            : FAVOR_EFFECT_COSTS.revealDeckUnitCategory
+        }
+        onClose={() => setPendingReveal(null)}
+        onConfirm={() => {
+          if (pendingReveal === "defender") buyDefenderReveal();
+          if (pendingReveal === "deck") buyDeckUnitReveal();
+          setPendingReveal(null);
+        }}
+      />
+
       <BattleFavorModal
         open={favorModalOpen && phase === "playing"}
         favor={favor}
@@ -553,6 +601,39 @@ function BattleRandomSession({
       />
     </div>
     </BattleAtmosphere>
+  );
+}
+
+function RevealedTipoIcons({ tipo }: { tipo: Unidade["tipo"] }) {
+  const items = visibleTipoItems(tipo);
+  if (!items.length) return null;
+
+  return (
+    <div className="flex items-center justify-center gap-1">
+      {items.map((item, index) => {
+        const src = getIconFieldUrl(item.icon);
+        const label = item.type?.trim() || "";
+        return (
+          <span key={`${label}-${item.icon ?? ""}-${index}`} className="group relative inline-flex">
+            <span
+              tabIndex={0}
+              aria-label={label}
+              className="flex size-6 items-center justify-center rounded-md border border-amber-200/25 bg-black/55 shadow-sm shadow-black/40 outline-none ring-amber-200/40 focus-visible:ring-2"
+            >
+              {src ? <img src={src} alt="" aria-hidden className="size-4 object-contain" /> : null}
+            </span>
+            {label ? (
+              <span
+                role="tooltip"
+                className="pointer-events-none absolute left-1/2 top-[calc(100%+8px)] z-30 -translate-x-1/2 whitespace-nowrap rounded-lg border border-amber-200/35 bg-[#1a1612] px-2.5 py-1 text-xs font-medium text-amber-50 opacity-0 shadow-[0_8px_24px_rgba(0,0,0,0.45)] transition group-hover:opacity-100 group-focus-within:opacity-100"
+              >
+                {label}
+              </span>
+            ) : null}
+          </span>
+        );
+      })}
+    </div>
   );
 }
 

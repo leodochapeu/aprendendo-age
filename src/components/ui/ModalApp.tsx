@@ -63,7 +63,7 @@ export function ModalApp({ open, onClose, title, description, children, classNam
             <div className="min-w-0 pr-2">
               <h2
                 id={titleId}
-                className="truncate font-[family-name:var(--font-display)] text-xl font-semibold tracking-wide text-amber-100"
+                className="font-[family-name:var(--font-display)] text-xl font-semibold leading-snug tracking-wide text-amber-100"
               >
                 {title}
               </h2>

@@ -1161,6 +1161,7 @@ export const ptMessages: TranslationTree = {
       unlockPreviousAgeUnits: "Desbloquear 2 Unidades de Eras Anteriores",
       unlockPreviousAgeUnitsHint:
         "Libera aleatoriamente até 2 unidades bloqueadas de Eras anteriores durante esta rodada.",
+      revealConfirm: "Revelar",
       effectActive: "Ativo",
       wins: "Vitórias",
       losses: "Derrotas",
