@@ -10,6 +10,8 @@ import {
   precomputeBattleResult,
   resolveBestMultiplier,
   resolveBattleTypeId,
+  resolveCategoryDuel,
+  resolveRealDuel,
   simulateBattle,
 } from "@/lib/battleSimulator";
 
@@ -374,6 +376,71 @@ describe("precomputed battle results", () => {
     expect(result.mode).toBe("attributes_fallback");
     expect(result.winner).toBe("attacker");
     expect(result.winner_name).toBe("forte");
+  });
+
+  it("modo categoria empata quando o tipo é o mesmo, mesmo com multiplicador", () => {
+    const bonus = unit({
+      id: 9401,
+      nome: "Bonus",
+      icon: "a",
+      tipo: [{ type: "Infantaria", icon: "aomr_type_infantry_icon" }],
+      multiplicador: [{ type: "Infantaria", icon: "aomr_type_infantry_icon", value: "3" }],
+    });
+    const plain = unit({
+      id: 9402,
+      nome: "Plain",
+      icon: "b",
+      tipo: [{ type: "Infantaria", icon: "aomr_type_infantry_icon" }],
+    });
+    const duel = resolveCategoryDuel(bonus, plain);
+    expect(duel.sameType).toBe(true);
+    expect(duel.winner).toBe("draw");
+  });
+
+  it("modo categoria usa o multiplicador quando os tipos diferem", () => {
+    const duel = resolveCategoryDuel(byIngles(pt, "Toxotes"), byIngles(pt, "Hoplite"));
+    expect(duel.sameType).toBe(false);
+    expect(duel.winner).toBe("a");
+    expect(duel.sideA.factor).toBe(1.25);
+  });
+
+  it("modo real aplica multiplicador, armadura e vida — Hoplita derruba Toxotes antes", () => {
+    const duel = resolveRealDuel(byIngles(pt, "Hoplite"), byIngles(pt, "Toxotes"));
+    expect(duel.winner).toBe("a");
+    // 8 × 1 × (1 − 0,15) = 6,8 por golpe; 65 / 6,8 s
+    expect(duel.sideA.damagePerHit).toBeCloseTo(6.8, 5);
+    expect(duel.sideA.secondsToKill).toBeCloseTo(65 / 6.8, 5);
+    // 6 × 1,25 × (1 − 0,10) = 6,75; 115 / 6,75 s
+    expect(duel.sideB.damagePerHit).toBeCloseTo(6.75, 5);
+    expect(duel.sideB.secondsToKill).toBeCloseTo(115 / 6.75, 5);
+    expect(duel.sideA.hpRemaining).toBeGreaterThan(0);
+    expect(duel.sideB.hpRemaining).toBeCloseTo(0, 5);
+  });
+
+  it("modo real mitiga dano contundente com armadura anticontusão", () => {
+    const siege = unit({
+      id: 9403,
+      nome: "Cerco",
+      icon: "c",
+      tipo: [{ type: "Arma de cerco", icon: "aomr_type_siege_weapon_icon" }],
+      dano_contundente: 20,
+      velocidade_de_ataque_atk_s: 1,
+      pontos_de_vida: 100,
+    });
+    const wall = unit({
+      id: 9404,
+      nome: "Muro",
+      icon: "d",
+      tipo: [{ type: "Infantaria", icon: "aomr_type_infantry_icon" }],
+      pontos_de_vida: 100,
+      armadura_anticontusao: 50,
+      velocidade_de_ataque_atk_s: 0,
+    });
+    const duel = resolveRealDuel(siege, wall);
+    expect(duel.sideA.channels[0]?.armorPercent).toBe(50);
+    expect(duel.sideA.damagePerHit).toBeCloseTo(10, 5);
+    expect(duel.sideA.secondsToKill).toBeCloseTo(10, 5);
+    expect(duel.winner).toBe("a");
   });
 
   it("gera confrontos ordenados e omite confronto próprio", () => {

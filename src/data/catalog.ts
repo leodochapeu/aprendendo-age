@@ -233,6 +233,8 @@ export type Unidade = {
   dps?: number;
   armadura_anticorte?: number;
   armadura_antiperfurante?: number;
+  /** Armadura contra dano contundente. Ausente = 0. */
+  armadura_anticontusao?: number;
   comida?: number;
   madeira?: number;
   ouro?: number;

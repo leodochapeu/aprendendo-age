@@ -43,11 +43,12 @@ export function listDamageChannels(
       armorPercent: clampArmorPercent(defender.armadura_antiperfurante),
     });
   }
+  const crushArmor = clampArmorPercent(defender.armadura_anticontusao);
   if (attacker.dano_contundente != null && attacker.dano_contundente > 0) {
     channels.push({
       channel: "contundente",
       baseDamage: attacker.dano_contundente,
-      armorPercent: null,
+      armorPercent: crushArmor,
     });
   }
   // Alias legado no JSON (ex.: Escaravelho) — só se contundente não estiver presente.
@@ -59,7 +60,7 @@ export function listDamageChannels(
     channels.push({
       channel: "contundente",
       baseDamage: attacker.dano_contusao,
-      armorPercent: null,
+      armorPercent: crushArmor,
     });
   }
   if (attacker.dano_divino != null && attacker.dano_divino > 0) {

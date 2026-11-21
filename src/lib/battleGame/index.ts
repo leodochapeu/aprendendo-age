@@ -1,5 +1,6 @@
 export type {
   BattlePhase,
+  BattleTrainingMode,
   PlayableEraId,
   RoundOutcome,
   RoundPlan,

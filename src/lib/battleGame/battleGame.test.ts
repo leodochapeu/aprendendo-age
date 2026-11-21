@@ -179,7 +179,7 @@ describe("battleGame run", () => {
         defenderId: 2,
         attackerId: 1,
         outcome: "win",
-        mode: "mode_category_battle",
+        mode: "category",
       },
       {
         index: 1,
@@ -187,7 +187,7 @@ describe("battleGame run", () => {
         defenderId: 3,
         attackerId: 1,
         outcome: "loss",
-        mode: "mode_category_battle",
+        mode: "category",
       },
       {
         index: 4,
@@ -195,7 +195,7 @@ describe("battleGame run", () => {
         defenderId: byId(40).id,
         attackerId: 1,
         outcome: "draw",
-        mode: "attributes_fallback",
+        mode: "real",
       },
     ];
     const summary = summarizeRun(history);

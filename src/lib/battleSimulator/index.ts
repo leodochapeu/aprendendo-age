@@ -33,6 +33,17 @@ export {
 
 export { aliveFromHp, simulateBattle } from "./simulateBattle";
 export {
+  combatTypeIds,
+  modeFromSlug,
+  modeToSlug,
+  resolveCategoryDuel,
+  resolveRealDuel,
+  resolveTrainingDuel,
+  sameCombatType,
+  trainingOutcome,
+} from "./training";
+export type { CategoryDuel, RealDuel, RealHitChannel, RealSide, TrainingDuel } from "./training";
+export {
   precomputeAllBattleResults,
   precomputeBattleResult,
 } from "./precompute";

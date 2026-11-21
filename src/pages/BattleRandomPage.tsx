@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 
 import { BattleAgeUpOverlay } from "@/components/battle/BattleAgeUpOverlay";
 import { BattleAtmosphere, BattleEpicFrame } from "@/components/battle/BattleAtmosphere";
 import { BattleConfirmModal } from "@/components/battle/BattleConfirmModal";
+import { BattleResultModal } from "@/components/battle/BattleResultModal";
 import { BattleFavorModal } from "@/components/battle/BattleFavorModal";
 import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
@@ -11,7 +12,6 @@ import type { Unidade } from "@/data/catalog";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import {
-  buildBattleResultIndex,
   buildRoundPlan,
   filterAttackerPool,
   INITIAL_FAVOR,
@@ -19,17 +19,16 @@ import {
   pickRandomUniqueIds,
   pickDefender,
   purchaseFavorEffect,
-  resolvePlayerChoice,
   rewardFavor,
   summarizeRun,
   willAgeUp,
   type BattlePhase,
-  type BattleResultIndex,
+  type BattleTrainingMode,
   type PlayableEraId,
   type RoundOutcome,
   type RoundRecord,
 } from "@/lib/battleGame";
-import type { PrecomputedBattleResult } from "@/lib/battleSimulator/precompute";
+import { modeFromSlug, modeToSlug, resolveTrainingDuel, trainingOutcome, type TrainingDuel } from "@/lib/battleSimulator";
 import { cn } from "@/lib/cn";
 import { firstNome } from "@/lib/entityRefs";
 import { getIconFieldUrl } from "@/lib/notionTokenAssets";
@@ -37,9 +36,10 @@ import { NotionText } from "@/components/ui/NotionText";
 
 type LastResult = {
   outcome: RoundOutcome;
-  mode: PrecomputedBattleResult["mode"];
+  mode: BattleTrainingMode;
   attacker: Unidade;
   defender: Unidade;
+  duel: TrainingDuel;
 };
 
 type CatalogSlice = ReturnType<typeof useCatalog>;
@@ -62,61 +62,25 @@ function initialDefender(
 }
 
 export function BattleRandomPage() {
-  const { pantheonSlug } = useParams<{ pantheonSlug: string }>();
-  const { t } = useTranslation();
+  const { pantheonSlug, mode: modeSlug } = useParams<{ pantheonSlug: string; mode: string }>();
+  const mode = modeFromSlug(modeSlug);
   const catalog = useCatalog();
   const { panteaoBySlug } = catalog;
-
-  const pantheon = pantheonSlug ? panteaoBySlug.get(pantheonSlug) : undefined;
-  const [index, setIndex] = useState<BattleResultIndex | null>(null);
-  const [loadError, setLoadError] = useState(false);
   const [bootKey, setBootKey] = useState(0);
 
-  useEffect(() => {
-    let cancelled = false;
-    void import("@/data/unidades_aom_battle_results.json")
-      .then((mod) => {
-        if (cancelled) return;
-        const rows = (mod.default ?? mod) as PrecomputedBattleResult[];
-        setIndex(buildBattleResultIndex(rows));
-      })
-      .catch(() => {
-        if (!cancelled) setLoadError(true);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  const pantheon = pantheonSlug ? panteaoBySlug.get(pantheonSlug) : undefined;
+
+  if (!mode) return <Navigate to="/battle/random" replace />;
 
   if (!pantheonSlug || !pantheon) {
-    return <Navigate to="/battle/random" replace />;
-  }
-
-  if (loadError) {
-    return (
-      <BattleAtmosphere>
-        <BattleEpicFrame wash="rose" bodyClassName="p-6 text-rose-100">
-          {t("pages.battle.loadError")}
-        </BattleEpicFrame>
-      </BattleAtmosphere>
-    );
-  }
-
-  if (!index) {
-    return (
-      <BattleAtmosphere className="flex min-h-[50vh] items-center justify-center">
-        <p className="font-[family-name:var(--font-display)] text-3xl tracking-wide text-amber-50 sm:text-5xl">
-          {t("pages.battle.loading").replace(/[.…]+$/, "")}
-        </p>
-      </BattleAtmosphere>
-    );
+    return <Navigate to={`/battle/random/${modeToSlug(mode)}`} replace />;
   }
 
   return (
     <BattleRandomSession
-      key={`${pantheon.id}-${bootKey}`}
+      key={`${pantheon.id}-${mode}-${bootKey}`}
+      mode={mode}
       pantheon={pantheon}
-      index={index}
       catalog={catalog}
       onRestart={() => setBootKey((k) => k + 1)}
     />
@@ -124,13 +88,13 @@ export function BattleRandomPage() {
 }
 
 function BattleRandomSession({
+  mode,
   pantheon,
-  index,
   catalog,
   onRestart,
 }: {
+  mode: BattleTrainingMode;
   pantheon: CatalogSlice["panteoes"][number];
-  index: BattleResultIndex;
   catalog: CatalogSlice;
   onRestart: () => void;
 }) {
@@ -231,29 +195,30 @@ function BattleRandomSession({
 
   const confirmAttack = useCallback(() => {
     if (!pendingAttacker || !defender || phase !== "playing") return;
-    const resolved = resolvePlayerChoice(index, pendingAttacker.id, defender.id);
-    if (!resolved) return;
+    const duel = resolveTrainingDuel(pendingAttacker, defender, mode);
+    const outcome = trainingOutcome(duel);
 
     const record: RoundRecord = {
       index: roundIndex,
       eraId: currentEraId,
       defenderId: defender.id,
       attackerId: pendingAttacker.id,
-      outcome: resolved.outcome,
-      mode: resolved.result.mode,
+      outcome,
+      mode,
     };
 
     setHistory((prev) => [...prev, record]);
     setLastResult({
-      outcome: resolved.outcome,
-      mode: resolved.result.mode,
+      outcome,
+      mode,
       attacker: pendingAttacker,
       defender,
+      duel,
     });
-    setFavor((current) => rewardFavor(current, resolved.outcome));
+    setFavor((current) => rewardFavor(current, outcome));
     setPendingAttackerId(null);
     setPhase("result");
-  }, [pendingAttacker, defender, phase, index, roundIndex, currentEraId]);
+  }, [pendingAttacker, defender, phase, mode, roundIndex, currentEraId]);
 
   const continueAfterResult = useCallback(() => {
     const nextIndex = roundIndex + 1;
@@ -406,7 +371,7 @@ function BattleRandomSession({
             {t("common.beta")}
           </p>
           <p className="mt-2 text-xs font-semibold uppercase tracking-[0.25em] text-amber-200/80">
-            {t("pages.battle.randomBattle")}
+            {mode === "category" ? t("pages.battle.modeCategoryTitle") : t("pages.battle.modeRealTitle")}
           </p>
           <h1 className="mt-1 font-[family-name:var(--font-display)] text-3xl tracking-wide text-amber-50 sm:text-4xl">
             {pantheon.nome}
@@ -539,29 +504,18 @@ function BattleRandomSession({
         </BattleEpicFrame>
       </section>
 
-      {phase === "result" && lastResult ? (
-        <div className={cn("mt-6 rounded-2xl border p-5", outcomeClass(lastResult.outcome))}>
-          <p className="font-[family-name:var(--font-display)] text-2xl font-semibold">
-            {t(`pages.battle.outcome.${lastResult.outcome}`)}
-          </p>
-          <p className="mt-1 text-sm opacity-90">
-            {lastResult.attacker.nome} vs {lastResult.defender.nome}
-          </p>
-          <p className="mt-2 text-xs uppercase tracking-wider opacity-70">
-            {lastResult.mode === "mode_category_battle"
-              ? t("pages.battle.modeCategory")
-              : t("pages.battle.modeAttributes")}
-          </p>
-          <button
-            type="button"
-            onClick={continueAfterResult}
-            className="mt-4 rounded-xl border border-white/20 bg-black/25 px-4 py-2.5 text-sm font-semibold transition hover:bg-black/40"
-          >
-            {roundIndex + 1 >= plan.length
-              ? t("pages.battle.seeSummary")
-              : t("pages.battle.continue")}
-          </button>
-        </div>
+      {lastResult ? (
+        <BattleResultModal
+          open={phase === "result"}
+          outcome={lastResult.outcome}
+          attacker={lastResult.attacker}
+          defender={lastResult.defender}
+          duel={lastResult.duel}
+          continueLabel={
+            roundIndex + 1 >= plan.length ? t("pages.battle.seeSummary") : t("pages.battle.continue")
+          }
+          onContinue={continueAfterResult}
+        />
       ) : null}
 
       <BattleConfirmModal

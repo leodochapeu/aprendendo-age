@@ -14,6 +14,7 @@ import { AldeaoComparePage } from "@/pages/AldeaoComparePage";
 import { AldeaoDetailPage } from "@/pages/AldeaoDetailPage";
 import { AldeoesPage } from "@/pages/AldeoesPage";
 import { PanteaoFullPage } from "@/pages/PanteaoFullPage";
+import { BattleModePage } from "@/pages/BattleModePage";
 import { BattlePage } from "@/pages/BattlePage";
 import { BattlePantheonPage } from "@/pages/BattlePantheonPage";
 import { CampeonatoPage } from "@/pages/CampeonatoPage";
@@ -159,9 +160,10 @@ export default function App() {
           <Route path="starts/:slug" element={<StartDetailPage />} />
           <Route path="admin/novo-start" element={<SecretStartBuilderPage />} />
           <Route path="battle" element={<BattlePage />} />
-          <Route path="battle/random" element={<BattlePantheonPage />} />
+          <Route path="battle/random" element={<BattleModePage />} />
+          <Route path="battle/random/:mode" element={<BattlePantheonPage />} />
           <Route
-            path="battle/random/:pantheonSlug"
+            path="battle/random/:mode/:pantheonSlug"
             element={
               <Suspense fallback={<BattleRandomFallback />}>
                 <BattleRandomPage />

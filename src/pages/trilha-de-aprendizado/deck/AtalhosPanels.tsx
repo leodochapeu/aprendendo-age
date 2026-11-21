@@ -271,7 +271,12 @@ export function AtalhosCombatPanel() {
       <div className="flex flex-wrap items-center gap-3">
         <Keycap>{t("pages.trilha.deck.keySpace")}</Keycap>
         <KeyPlus />
-        <span className="text-2xl font-semibold text-zinc-50">{t("pages.trilha.deck.rightClick")}</span>
+        <img
+          src={atalhosImg("Icon_MouseButton2.png")}
+          alt={t("pages.trilha.deck.rightClick")}
+          title={t("pages.trilha.deck.rightClick")}
+          className="h-12 w-12 object-contain"
+        />
       </div>
       <video
         className="mt-8 max-h-[50vh] w-full max-w-xl rounded-3xl border border-white/10 bg-black"

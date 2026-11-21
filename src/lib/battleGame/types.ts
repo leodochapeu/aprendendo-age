@@ -1,6 +1,7 @@
-import type { PrecomputedBattleMode } from "@/lib/battleSimulator/precompute";
-
 export type PlayableEraId = 2 | 3 | 4;
+
+/** Treino escolhido antes do panteão. */
+export type BattleTrainingMode = "category" | "real";
 
 export type RoundPlan = {
   index: number;
@@ -15,7 +16,7 @@ export type RoundRecord = {
   defenderId: number;
   attackerId: number;
   outcome: RoundOutcome;
-  mode: PrecomputedBattleMode;
+  mode: BattleTrainingMode;
 };
 
 export type RunSummary = {
