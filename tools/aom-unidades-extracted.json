@@ -13540,8 +13540,8 @@
     "displaynameid": "STR_UNIT_HALLGERD_FORKBEARD_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [],
@@ -19396,8 +19396,8 @@
     "displaynameid": "STR_UNIT_KUAFU_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -19495,8 +19495,12 @@
     "displaynameid": "STR_UNIT_KUAFU_HERO_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -20414,8 +20418,8 @@
     "displaynameid": "STR_UNIT_LYKAON_VILLAGER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -37373,8 +37377,8 @@
     "displaynameid": "STR_UNIT_CITIZEN_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -37475,8 +37479,12 @@
     "displaynameid": "STR_UNIT_CITIZEN_HERO_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Herói",
+        "icon": "aomr_type_hero_icon"
       }
     ],
     "panteao": [
@@ -37552,8 +37560,8 @@
     "displaynameid": "STR_UNIT_SETTLER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -37646,8 +37654,8 @@
     "displaynameid": "STR_UNIT_SETTLER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -37721,8 +37729,8 @@
     "displaynameid": "STR_UNIT_SETTLER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -37796,8 +37804,8 @@
     "displaynameid": "STR_UNIT_PEASANT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -37889,8 +37897,8 @@
     "displaynameid": "STR_UNIT_PEASANT_CLAY_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -37963,8 +37971,8 @@
     "displaynameid": "STR_UNIT_PEASANT_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -38036,8 +38044,8 @@
     "displaynameid": "STR_UNIT_DWARF_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -38131,8 +38139,8 @@
     "displaynameid": "STR_UNIT_LABORER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -38224,8 +38232,8 @@
     "displaynameid": "STR_UNIT_VILLAGER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -38318,8 +38326,8 @@
     "displaynameid": "STR_UNIT_COMMONER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -38410,8 +38418,8 @@
     "displaynameid": "STR_UNIT_GATHERER_NAME",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [

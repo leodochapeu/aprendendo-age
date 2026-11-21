@@ -5,8 +5,8 @@
     "ingles": "Villager",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -1346,8 +1346,8 @@
     "ingles": "Lykaon (Villager)",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -3573,8 +3573,8 @@
     "ingles": "Laborer",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -5360,8 +5360,8 @@
     "ingles": "Dwarf",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -5414,8 +5414,8 @@
     "ingles": "Gatherer",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -7413,8 +7413,8 @@
     "ingles": "Citizen",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -9944,8 +9944,8 @@
     "ingles": "Peasant",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -9998,8 +9998,8 @@
     "ingles": "Kuafu",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -12336,8 +12336,8 @@
     "ingles": "Commoner",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -14326,8 +14326,8 @@
     "ingles": "Settler",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Aldeão",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [

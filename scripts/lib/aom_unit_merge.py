@@ -90,6 +90,7 @@ EXTRACTED_TIPO_LABELS = frozenset(
         "Herói",
         "Hero",
         "Aldeão",
+        "Villager",
     }
 )
 

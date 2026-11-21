@@ -47,6 +47,7 @@ UNIT_TYPE_ICON = {
     "Anti-construção": "crushdamage",
     "Anti-building": "crushdamage",
     "Aldeão": "aomr_type_villager_icon",
+    "Villager": "aomr_type_villager_icon",
     "Batedor": "aomr_type_scout_icon",
     "Scout": "aomr_type_scout_icon",
     "Navio": "aomr_type_ship_icon",

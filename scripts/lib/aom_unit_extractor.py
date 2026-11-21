@@ -42,6 +42,9 @@ MILITARY_UNIT_TYPES = {
 }
 
 PRIMARY_ROLE_TYPES = [
+    # Aldeões têm Ranged no proto (arco), mas não são Artilharia.
+    ("AbstractVillager", "Aldeão"),
+    ("Villager", "Aldeão"),
     ("AbstractInfantry", "Infantaria"),
     ("LogicalTypeMeleeInfantry", "Infantaria"),
     # Navais antes de Ranged/Artilharia — barcos flecheiros carregam Ranged no proto.
@@ -57,8 +60,9 @@ PRIMARY_ROLE_TYPES = [
     ("MythUnit", "Unidade mítica"),
     ("Hero", "Herói"),
     ("AbstractHero", "Herói"),
-    ("Villager", "Aldeão"),
 ]
+
+VILLAGER_UNIT_TOKENS = frozenset({"AbstractVillager", "Villager"})
 
 MYTH_UNIT_TYPE = "Unidade mítica"
 HERO_UNIT_TYPE = "Herói"
@@ -191,7 +195,7 @@ def unit_is_siege(unit_types: set[str], unit: ET.Element) -> bool:
 
 def unit_is_anti_building(unit_types: set[str], unit: ET.Element) -> bool:
     """Infantaria/míticas com foco em prédio, sem serem armas de cerco."""
-    if "Villager" in unit_types or "AbstractTitan" in unit_types:
+    if unit_types & VILLAGER_UNIT_TOKENS or "AbstractTitan" in unit_types:
         return False
     if unit_is_siege(unit_types, unit):
         return False
@@ -462,7 +466,7 @@ def is_exportable_unit(unit: ET.Element) -> bool:
         return False
     if unit_types & MILITARY_UNIT_TYPES:
         return True
-    if "Villager" in unit_types and _float(_text(unit, "maxhitpoints")) > 0:
+    if unit_types & VILLAGER_UNIT_TOKENS and _float(_text(unit, "maxhitpoints")) > 0:
         return True
     return False
 

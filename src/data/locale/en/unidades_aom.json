@@ -5,10 +5,6 @@
     "ingles": "Villager",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -1353,10 +1349,6 @@
     "nome": "Lykaon (Villager)",
     "ingles": "Lykaon (Villager)",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -3484,10 +3476,6 @@
     "ingles": "Laborer",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -5267,10 +5255,6 @@
     "ingles": "Dwarf",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -5324,10 +5308,6 @@
     "nome": "Gatherer",
     "ingles": "Gatherer",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -7311,10 +7291,6 @@
     "nome": "Citizen",
     "ingles": "Citizen",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
@@ -9833,10 +9809,6 @@
     "ingles": "Peasant",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -9891,8 +9863,8 @@
     "ingles": "Kuafu",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
+        "type": "Villager",
+        "icon": "aomr_type_villager_icon"
       }
     ],
     "panteao": [
@@ -12205,10 +12177,6 @@
     "ingles": "Commoner",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
       }
@@ -14214,10 +14182,6 @@
     "nome": "Settler",
     "ingles": "Settler",
     "tipo": [
-      {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
       {
         "type": "Villager",
         "icon": "aomr_type_villager_icon"
