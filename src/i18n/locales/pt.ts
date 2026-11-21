@@ -1131,7 +1131,10 @@ export const ptMessages: TranslationTree = {
       modeSelectDescription: "Antes do panteão, escolha se quer treinar só a categoria ou o combate real.",
       modeCategoryTitle: "Categoria",
       modeCategoryHint:
-        "Escolha o ícone da categoria que vence. A mesma categoria empata.",
+        "Escolha o ícone da categoria que vence. A categoria do defensor fica bloqueada.",
+      categoryLocked: "Categoria bloqueada.",
+      categoryLockedHint:
+        "A mesma categoria não pode ser escolhida contra o defensor, porque elas empatariam.",
       pickCategoryHint: "Escolha a categoria que vence o defensor.",
       yourChoice: "Sua escolha",
       categorySame: "Mesma categoria — empate.",
@@ -1256,6 +1259,7 @@ export const ptMessages: TranslationTree = {
       summaryTitle: "Resultado da partida",
       summaryDescription: "Resumo das 10 rodadas — acertos, erros e desempenho por Era.",
       eraStats: "{{wins}}V · {{losses}}D · {{draws}}E",
+      eraStatsRecord: "{{wins}}V · {{losses}}D",
       playAgain: "Jogar novamente",
       backToMenu: "Voltar ao menu",
     },

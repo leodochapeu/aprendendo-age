@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
@@ -49,7 +49,7 @@ function CategoryIcon({
   const src = getIconFieldUrl(category.icon);
   const label = t(category.labelKey);
   return (
-    <span className="flex flex-col items-center gap-2 text-center">
+    <span className={cn("flex flex-col items-center gap-2 text-center", size === "md" && "w-full")}>
       <span
         className={cn(
           "flex items-center justify-center rounded-2xl border border-white/10 bg-[#1a1612]",
@@ -58,7 +58,14 @@ function CategoryIcon({
       >
         {src ? <img src={src} alt="" className={size === "lg" ? "size-20 object-contain" : "size-12 object-contain"} /> : null}
       </span>
-      <span className={cn("font-semibold text-amber-50", size === "lg" ? "text-base" : "max-w-28 text-sm")}>{label}</span>
+      <span
+        className={cn(
+          "font-semibold leading-tight text-amber-50",
+          size === "lg" ? "text-base" : "flex h-10 w-full items-center justify-center text-center text-sm",
+        )}
+      >
+        {label}
+      </span>
     </span>
   );
 }
@@ -78,6 +85,8 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
   const [history, setHistory] = useState<CategoryRound[]>([]);
   const [lastRound, setLastRound] = useState<CategoryRound | null>(null);
   const [ageUpEraId, setAgeUpEraId] = useState<PlayableEraId | null>(null);
+  const [lockedHintOpen, setLockedHintOpen] = useState(false);
+  const lockedButtonRef = useRef<HTMLButtonElement>(null);
 
   const currentEraId = (plan[roundIndex]?.eraId ?? 2) as PlayableEraId;
   const currentEra = eraById.get(currentEraId);
@@ -87,7 +96,10 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
 
   const wins = history.filter((row) => row.outcome === "win").length;
   const losses = history.filter((row) => row.outcome === "loss").length;
-  const draws = history.filter((row) => row.outcome === "draw").length;
+
+  useEffect(() => {
+    setLockedHintOpen(false);
+  }, [defenderId]);
 
   const advanceDefender = useCallback(
     (eraId: PlayableEraId, previousId: BattleCategoryId | null) => {
@@ -98,7 +110,7 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
   );
 
   const confirmChoice = () => {
-    if (!pendingId || !defenderId || phase !== "playing") return;
+    if (!pendingId || !defenderId || phase !== "playing" || pendingId === defenderId) return;
     const outcome = resolveCategoryChoice(pendingId, defenderId);
     const record: CategoryRound = {
       index: roundIndex,
@@ -177,10 +189,9 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
             {t("pages.battle.summaryTitle")}
           </h1>
           <p className="mt-3 max-w-2xl text-base text-zinc-200">{t("pages.battle.summaryDescription")}</p>
-          <div className="mt-6 grid grid-cols-3 gap-3">
+          <div className="mt-6 grid max-w-lg grid-cols-2 gap-3">
             <SummaryStat label={t("pages.battle.wins")} value={wins} tone="win" />
             <SummaryStat label={t("pages.battle.losses")} value={losses} tone="loss" />
-            <SummaryStat label={t("pages.battle.draws")} value={draws} tone="draw" />
           </div>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             {([2, 3, 4] as const).map((eraId) => (
@@ -189,10 +200,9 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
                   {eraById.get(eraId)?.nome ?? `Era ${eraId}`}
                 </p>
                 <p className="mt-2 text-sm text-zinc-100">
-                  {t("pages.battle.eraStats", {
+                  {t("pages.battle.eraStatsRecord", {
                     wins: String(byEra[eraId].wins),
                     losses: String(byEra[eraId].losses),
-                    draws: String(byEra[eraId].draws),
                   })}
                 </p>
               </BattleEpicFrame>
@@ -258,7 +268,6 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
           <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
             <ScorePill label={t("pages.battle.wins")} value={wins} tone="win" />
             <ScorePill label={t("pages.battle.losses")} value={losses} tone="loss" />
-            <ScorePill label={t("pages.battle.draws")} value={draws} tone="draw" />
           </div>
         </header>
 
@@ -295,29 +304,55 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
             <p className="mt-1 text-sm text-zinc-300">{t("pages.battle.pickCategoryHint")}</p>
             <div className="mt-4 flex flex-col gap-4">
               {groups.map((group) => (
-                <ul key={group.map((item) => item.id).join("-")} className="flex flex-wrap justify-center gap-3">
+                <ul key={group.map((item) => item.id).join("-")} className="flex flex-wrap items-stretch justify-center gap-3">
                   {group.map((category) => {
+                    const locked = category.id === defender.id;
                     const selected = pendingId === category.id;
                     return (
-                      <li key={category.id}>
+                      <li key={category.id} className="flex">
                         <button
                           type="button"
+                          ref={locked ? lockedButtonRef : undefined}
                           disabled={phase !== "playing"}
-                          onClick={() => setPendingId(category.id)}
+                          aria-expanded={locked ? lockedHintOpen : undefined}
+                          onClick={() => {
+                            if (locked) {
+                              setLockedHintOpen((open) => !open);
+                              return;
+                            }
+                            setLockedHintOpen(false);
+                            setPendingId(category.id);
+                          }}
                           className={cn(
-                            "rounded-2xl border px-3 py-3 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/70 disabled:cursor-not-allowed disabled:opacity-50",
-                            selected
-                              ? "border-amber-200 bg-amber-500/15 shadow-[0_0_18px_rgba(251,191,36,0.25)]"
-                              : "border-white/10 bg-black/25 hover:border-amber-200/45",
+                            "relative flex h-[8.5rem] w-[8.5rem] flex-col items-center justify-center rounded-2xl border px-2 py-3 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/70",
+                            locked
+                              ? "border-white/10 bg-black/50 text-zinc-500 grayscale hover:border-amber-200/40"
+                              : selected
+                                ? "border-amber-200 bg-amber-500/15 shadow-[0_0_18px_rgba(251,191,36,0.25)]"
+                                : "border-white/10 bg-black/25 hover:border-amber-200/45",
+                            phase !== "playing" && "cursor-not-allowed opacity-50",
                           )}
                         >
                           <CategoryIcon category={category} />
+                          {locked ? (
+                            <span className="absolute right-2 top-2 text-sm leading-none" aria-hidden>
+                              🔒
+                            </span>
+                          ) : null}
                         </button>
                       </li>
                     );
                   })}
                 </ul>
               ))}
+              {lockedHintOpen && lockedButtonRef.current ? (
+                <LockedCategoryPopover
+                  anchorEl={lockedButtonRef.current}
+                  title={t("pages.battle.categoryLocked")}
+                  hint={t("pages.battle.categoryLockedHint")}
+                  onClose={() => setLockedHintOpen(false)}
+                />
+              ) : null}
             </div>
           </BattleEpicFrame>
 
@@ -397,6 +432,90 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
         />
       </div>
     </BattleAtmosphere>
+  );
+}
+
+function LockedCategoryPopover({
+  anchorEl,
+  title,
+  hint,
+  onClose,
+}: {
+  anchorEl: HTMLElement;
+  title: string;
+  hint: string;
+  onClose: () => void;
+}) {
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ top: 0, left: 0, arrow: 120, place: "above" as "above" | "below" });
+
+  useLayoutEffect(() => {
+    const update = () => {
+      const pad = 12;
+      const gap = 10;
+      const rect = anchorEl.getBoundingClientRect();
+      const width = popoverRef.current?.offsetWidth ?? 240;
+      const height = popoverRef.current?.offsetHeight ?? 88;
+      let left = rect.left + rect.width / 2 - width / 2;
+      left = Math.max(pad, Math.min(left, window.innerWidth - width - pad));
+      const above = rect.top - gap - height;
+      const place = above >= pad ? "above" : "below";
+      const top = place === "above" ? above : rect.bottom + gap;
+      const arrow = Math.max(16, Math.min(width - 16, rect.left + rect.width / 2 - left));
+      setPosition({ top, left, arrow, place });
+    };
+    update();
+    const el = popoverRef.current;
+    const observer = el ? new ResizeObserver(update) : null;
+    if (el && observer) observer.observe(el);
+    window.addEventListener("resize", update);
+    window.addEventListener("scroll", update, true);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("resize", update);
+      window.removeEventListener("scroll", update, true);
+    };
+  }, [anchorEl, title, hint]);
+
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    const onPointerDown = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node;
+      if (popoverRef.current?.contains(target)) return;
+      if (anchorEl.contains(target)) return;
+      onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+    };
+  }, [anchorEl, onClose]);
+
+  return createPortal(
+    <div
+      ref={popoverRef}
+      role="status"
+      className="fixed z-[80] w-60 rounded-xl border border-amber-200/40 bg-[#1a1612] px-3 py-2.5 text-left shadow-[0_16px_40px_rgba(0,0,0,0.55)]"
+      style={{ top: position.top, left: position.left }}
+    >
+      <p className="text-sm font-semibold text-amber-50">{title}</p>
+      <p className="mt-1 text-xs leading-relaxed text-zinc-300">{hint}</p>
+      <span
+        aria-hidden
+        className={cn(
+          "absolute size-2.5 -translate-x-1/2 rotate-45 border-amber-200/40 bg-[#1a1612]",
+          position.place === "above" ? "-bottom-1.5 border-b border-r" : "-top-1.5 border-l border-t",
+        )}
+        style={{ left: position.arrow }}
+      />
+    </div>,
+    document.body,
   );
 }
 
