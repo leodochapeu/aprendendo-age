@@ -10,10 +10,11 @@ type Props = {
   eraId: PlayableEraId;
   eraName: string;
   eraIcon?: string | null;
+  hint?: string;
   onDone: () => void;
 };
 
-export function BattleAgeUpOverlay({ open, eraName, eraIcon, onDone }: Props) {
+export function BattleAgeUpOverlay({ open, eraName, eraIcon, hint, onDone }: Props) {
   const { t } = useTranslation();
   const iconSrc = getIconFieldUrl(eraIcon);
 
@@ -44,7 +45,7 @@ export function BattleAgeUpOverlay({ open, eraName, eraIcon, onDone }: Props) {
         <p className="mt-4 font-[family-name:var(--font-display)] text-4xl font-semibold tracking-wide text-amber-50 sm:text-5xl">
           {eraName}
         </p>
-        <p className="mt-2 text-sm text-zinc-400">{t("pages.battle.ageUpHint")}</p>
+        <p className="mt-2 text-sm text-zinc-400">{hint ?? t("pages.battle.ageUpHint")}</p>
       </div>
       <style>{`
         @keyframes battleAgePulse {

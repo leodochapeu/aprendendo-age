@@ -16,6 +16,17 @@ export {
 } from "./plan";
 
 export {
+  categoriesForEra,
+  categoryBeats,
+  categoryById,
+  categoryGroupsForEra,
+  pickCategoryDefender,
+  resolveCategoryChoice,
+  type BattleCategory,
+  type BattleCategoryId,
+} from "./categoryDeck";
+
+export {
   filterAttackerPool,
   filterDefenderPool,
   isHeroUnit,

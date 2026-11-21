@@ -13,6 +13,9 @@ export function BattlePantheonPage() {
   const { panteoes, panteaoSlugById } = useCatalog();
 
   if (!mode) return <Navigate to="/battle/random" replace />;
+  if (mode === "category") {
+    return <Navigate to={`/battle/random/${modeToSlug("category")}/jogar`} replace />;
+  }
 
   return (
     <BattleAtmosphere>
@@ -25,7 +28,7 @@ export function BattlePantheonPage() {
         </Link>
         <p className="mt-6 text-xs uppercase tracking-[0.22em] text-pink-300">{t("common.beta")}</p>
         <p className="mt-3 text-xs uppercase tracking-[0.22em] text-amber-200/80">
-          {mode === "category" ? t("pages.battle.modeCategoryTitle") : t("pages.battle.modeRealTitle")}
+          {t("pages.battle.modeRealTitle")}
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-4xl tracking-wide text-amber-50 sm:text-5xl">
           {t("pages.battle.pantheonTitle")}

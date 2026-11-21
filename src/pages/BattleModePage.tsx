@@ -24,7 +24,7 @@ export function BattleModePage() {
 
         <div className="mt-10 grid gap-6">
           <Link
-            to={`/battle/random/${modeToSlug("category")}`}
+            to={`/battle/random/${modeToSlug("category")}/jogar`}
             className="group block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/70"
           >
             <BattleEpicFrame bodyClassName="px-6 py-10 text-center transition group-hover:bg-black/10">

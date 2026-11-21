@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 
 import { BattleAgeUpOverlay } from "@/components/battle/BattleAgeUpOverlay";
+import { BattleCategorySession } from "@/components/battle/BattleCategorySession";
 import { BattleAtmosphere, BattleEpicFrame } from "@/components/battle/BattleAtmosphere";
 import { BattleConfirmModal } from "@/components/battle/BattleConfirmModal";
 import { BattleResultModal } from "@/components/battle/BattleResultModal";
@@ -74,6 +75,10 @@ export function BattleRandomPage() {
   const pantheon = pantheonSlug ? panteaoBySlug.get(pantheonSlug) : undefined;
 
   if (!mode) return <Navigate to="/battle/random" replace />;
+
+  if (mode === "category") {
+    return <BattleCategorySession key={bootKey} onRestart={() => setBootKey((k) => k + 1)} />;
+  }
 
   if (!pantheonSlug || !pantheon) {
     return <Navigate to={`/battle/random/${modeToSlug(mode)}`} replace />;
