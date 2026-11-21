@@ -36,8 +36,20 @@ export type RealSide = {
   channels: RealHitChannel[];
   damagePerHit: number;
   dps: number;
-  /** Segundos até derrubar o outro. `null` = não causa dano útil. */
+  /** Segundos de tiro até derrubar o outro, contados depois que este lado começa a atacar. */
   secondsToKill: number | null;
+  /** Atributo oculto Ranged: ataca à distância. */
+  ranged: boolean;
+  /** Alcance em que começa a atacar. Corpo a corpo sem o campo fica em 0. */
+  range: number;
+  moveSpeed: number;
+  /**
+   * Segundos andando até entrar no próprio alcance.
+   * `0` = já ataca. `null` = a distância existe, mas a unidade não anda.
+   */
+  attackDelay: number | null;
+  /** `attackDelay` + `secondsToKill`, desde o instante em que alguém já pode atacar. */
+  secondsFromStart: number | null;
   /** Vida que sobra quando o confronto termina. */
   hpRemaining: number;
 };
@@ -107,6 +119,41 @@ function unitHp(unit: Unidade): number {
   return Number.isFinite(hp) ? Math.max(0, hp) : 0;
 }
 
+function finiteNonNegative(value: number | undefined): number {
+  return value != null && Number.isFinite(value) ? Math.max(0, value) : 0;
+}
+
+/** Atributo oculto `Ranged` (`rangeicon`). É quem atira antes do corpo a corpo chegar. */
+export function isRangedUnit(unit: Unidade): boolean {
+  return (unit.tipo ?? []).some((item) => {
+    const icon = (item.icon ?? "").trim().toLowerCase();
+    const type = (item.type ?? "").trim().toLowerCase();
+    return icon === "rangeicon" || type === "ranged";
+  });
+}
+
+function attackRange(unit: Unidade): number {
+  return finiteNonNegative(unit.alcance);
+}
+
+function moveSpeed(unit: Unidade): number {
+  return finiteNonNegative(unit.velocidade_movimento);
+}
+
+/**
+ * Tempo até `self` poder bater.
+ * Só existe quando o outro é Ranged e o alcance dele ainda não cobre esta unidade.
+ * Quem está fora anda sozinho: o que já enxerga fica atirando.
+ */
+function approachDelay(self: Unidade, other: Unidade): number | null {
+  if (!isRangedUnit(other)) return 0;
+  const gap = attackRange(other) - attackRange(self);
+  if (gap <= EPS) return 0;
+  const speed = moveSpeed(self);
+  if (speed <= EPS) return null;
+  return gap / speed;
+}
+
 function armorMitigation(armorPercent: number | null): number {
   if (armorPercent == null) return 1;
   return 1 - Math.min(100, Math.max(0, armorPercent)) / 100;
@@ -135,23 +182,40 @@ function buildRealSide(attacker: Unidade, defender: Unidade): Omit<RealSide, "hp
   return { hp: unitHp(attacker), attacksPerSecond, channels, damagePerHit, dps, secondsToKill };
 }
 
+function withApproach(
+  side: Omit<RealSide, "hpRemaining" | "ranged" | "range" | "moveSpeed" | "attackDelay" | "secondsFromStart">,
+  unit: Unidade,
+  delay: number | null,
+): Omit<RealSide, "hpRemaining"> {
+  const secondsFromStart = delay == null || side.secondsToKill == null ? null : delay + side.secondsToKill;
+  return {
+    ...side,
+    ranged: isRangedUnit(unit),
+    range: attackRange(unit),
+    moveSpeed: moveSpeed(unit),
+    attackDelay: delay,
+    secondsFromStart,
+  };
+}
+
 function fightDuration(sideA: Omit<RealSide, "hpRemaining">, sideB: Omit<RealSide, "hpRemaining">): number | null {
-  const a = sideA.secondsToKill;
-  const b = sideB.secondsToKill;
+  const a = sideA.secondsFromStart;
+  const b = sideB.secondsFromStart;
   if (a == null && b == null) return null;
   if (a == null) return b;
   if (b == null) return a;
   return Math.min(a, b);
 }
 
-function hpLeft(hp: number, incomingDps: number, duration: number | null): number {
-  if (duration == null) return hp;
-  return Math.max(0, hp - incomingDps * duration);
+function hpLeft(hp: number, incomingDps: number, incomingDelay: number | null, duration: number | null): number {
+  if (duration == null || incomingDelay == null) return hp;
+  const shooting = Math.max(0, duration - incomingDelay);
+  return Math.max(0, hp - incomingDps * shooting);
 }
 
 function realWinner(sideA: Omit<RealSide, "hpRemaining">, sideB: Omit<RealSide, "hpRemaining">): RealDuel["winner"] {
-  const a = sideA.secondsToKill;
-  const b = sideB.secondsToKill;
+  const a = sideA.secondsFromStart;
+  const b = sideB.secondsFromStart;
   if (a == null && b == null) return "draw";
   if (a == null) return "b";
   if (b == null) return "a";
@@ -162,17 +226,18 @@ function realWinner(sideA: Omit<RealSide, "hpRemaining">, sideB: Omit<RealSide, 
 
 /**
  * Modo real: dano por golpe = ataque × multiplicador × (1 − armadura),
- * aplicado na vida do outro. Quem derruba primeiro vence.
+ * aplicado na vida do outro. Unidade Ranged atira no próprio alcance;
+ * o corpo a corpo só começa depois de andar essa distância. Quem derruba primeiro vence.
  */
 export function resolveRealDuel(attacker: Unidade, defender: Unidade): RealDuel {
-  const rawA = buildRealSide(attacker, defender);
-  const rawB = buildRealSide(defender, attacker);
+  const rawA = withApproach(buildRealSide(attacker, defender), attacker, approachDelay(attacker, defender));
+  const rawB = withApproach(buildRealSide(defender, attacker), defender, approachDelay(defender, attacker));
   const duration = fightDuration(rawA, rawB);
   return {
     mode: "real",
     winner: realWinner(rawA, rawB),
-    sideA: { ...rawA, hpRemaining: hpLeft(rawA.hp, rawB.dps, duration) },
-    sideB: { ...rawB, hpRemaining: hpLeft(rawB.hp, rawA.dps, duration) },
+    sideA: { ...rawA, hpRemaining: hpLeft(rawA.hp, rawB.dps, rawB.attackDelay, duration) },
+    sideB: { ...rawB, hpRemaining: hpLeft(rawB.hp, rawA.dps, rawA.attackDelay, duration) },
   };
 }
 

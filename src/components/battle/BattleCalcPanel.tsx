@@ -104,6 +104,59 @@ function formatNum(value: number, locale: string): string {
   return value.toLocaleString(locale === "en" ? "en-US" : "pt-BR", { maximumFractionDigits: 2 });
 }
 
+function fill(template: string, values: Record<string, string>): string {
+  return Object.entries(values).reduce((text, [key, value]) => text.replaceAll(`{{${key}}}`, value), template);
+}
+
+function ApproachLine({
+  side,
+  opponent,
+  num,
+  opensAtRange,
+  secondsToReach,
+  neverReaches,
+  bothInRange,
+}: {
+  side: RealSide;
+  opponent: RealSide;
+  num: (value: number) => string;
+  opensAtRange: string;
+  secondsToReach: string;
+  neverReaches: string;
+  bothInRange: string;
+}) {
+  const opponentWalks = opponent.attackDelay != null && opponent.attackDelay > 0;
+  if (side.attackDelay === 0 && opponentWalks) {
+    return (
+      <p className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-amber-50">
+        <StatIcon token="rangeicon" />
+        <span>{fill(opensAtRange, { range: num(side.range) })}</span>
+      </p>
+    );
+  }
+  if (side.attackDelay == null) {
+    return <p className="mt-2 text-sm text-zinc-300">{neverReaches}</p>;
+  }
+  if (side.attackDelay > 0) {
+    const distance = Math.max(0, opponent.range - side.range);
+    return (
+      <p className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-zinc-100">
+        <StatIcon token="rangeicon" />
+        <span>{num(distance)}</span>
+        <span className="text-zinc-400">÷</span>
+        <StatIcon token="aomr_speed_icon" />
+        <span>{num(side.moveSpeed)}</span>
+        <span className="text-zinc-400">=</span>
+        <span className="font-semibold text-amber-50">{fill(secondsToReach, { seconds: num(side.attackDelay) })}</span>
+      </p>
+    );
+  }
+  if (side.ranged && opponent.ranged) {
+    return <p className="mt-2 text-sm text-zinc-300">{bothInRange}</p>;
+  }
+  return null;
+}
+
 function RealSideCalc({
   unit,
   title,
@@ -111,12 +164,18 @@ function RealSideCalc({
   mark,
   targetHp,
   side,
+  opponent,
   locale,
   ignoresArmor,
   perHit,
   noDamage,
   secondsLabel,
+  approachSecondsLabel,
   hpLeftLabel,
+  opensAtRange,
+  secondsToReach,
+  neverReaches,
+  bothInRange,
 }: {
   unit: Unidade;
   title: string;
@@ -124,17 +183,33 @@ function RealSideCalc({
   mark: SideMark;
   targetHp: number;
   side: RealSide;
+  opponent: RealSide;
   locale: string;
   ignoresArmor: string;
   perHit: string;
   noDamage: string;
   secondsLabel: string;
+  approachSecondsLabel: string;
   hpLeftLabel: string;
+  opensAtRange: string;
+  secondsToReach: string;
+  neverReaches: string;
+  bothInRange: string;
 }) {
   const num = (value: number) => formatNum(value, locale);
+  const walkedFirst = side.attackDelay != null && side.attackDelay > 0 && side.secondsToKill != null;
   return (
     <div className="rounded-xl border border-white/15 bg-zinc-900/90 p-3">
       <SideIdentity unit={unit} title={title} titleClass={titleClass} mark={mark} />
+      <ApproachLine
+        side={side}
+        opponent={opponent}
+        num={num}
+        opensAtRange={opensAtRange}
+        secondsToReach={secondsToReach}
+        neverReaches={neverReaches}
+        bothInRange={bothInRange}
+      />
       {side.channels.length === 0 ? <p className="mt-2 text-sm text-zinc-300">{noDamage}</p> : null}
       <ul className="mt-2 space-y-2">
         {side.channels.map((channel) => (
@@ -165,6 +240,15 @@ function RealSideCalc({
           {side.secondsToKill == null ? noDamage : secondsLabel.replace("{{seconds}}", num(side.secondsToKill))}
         </span>
       </p>
+      {walkedFirst ? (
+        <p className="mt-1 text-sm font-semibold text-amber-50">
+          {fill(approachSecondsLabel, {
+            delay: num(side.attackDelay ?? 0),
+            seconds: num(side.secondsToKill ?? 0),
+            total: num(side.secondsFromStart ?? side.secondsToKill ?? 0),
+          })}
+        </p>
+      ) : null}
       <p className="mt-1 text-xs text-zinc-300">{hpLeftLabel.replace("{{hp}}", num(side.hpRemaining))}</p>
     </div>
   );
@@ -285,12 +369,18 @@ export function BattleCalcPanel({
                 mark={sideMark(duel.winner, "a")}
                 targetHp={duel.sideB.hp}
                 side={duel.sideA}
+                opponent={duel.sideB}
                 locale={locale}
                 ignoresArmor={t("pages.battle.ignoresArmor")}
                 perHit={t("pages.battle.perHit")}
                 noDamage={t("pages.battle.noDamage")}
                 secondsLabel={t("pages.battle.secondsToFall")}
+                approachSecondsLabel={t("pages.battle.secondsWithApproach")}
                 hpLeftLabel={t("pages.battle.hpLeft")}
+                opensAtRange={t("pages.battle.opensAtRange")}
+                secondsToReach={t("pages.battle.secondsToReach")}
+                neverReaches={t("pages.battle.neverReaches")}
+                bothInRange={t("pages.battle.bothInRange")}
               />
               <RealSideCalc
                 unit={defender}
@@ -299,12 +389,18 @@ export function BattleCalcPanel({
                 mark={sideMark(duel.winner, "b")}
                 targetHp={duel.sideA.hp}
                 side={duel.sideB}
+                opponent={duel.sideA}
                 locale={locale}
                 ignoresArmor={t("pages.battle.ignoresArmor")}
                 perHit={t("pages.battle.perHit")}
                 noDamage={t("pages.battle.noDamage")}
                 secondsLabel={t("pages.battle.secondsToFall")}
+                approachSecondsLabel={t("pages.battle.secondsWithApproach")}
                 hpLeftLabel={t("pages.battle.hpLeft")}
+                opensAtRange={t("pages.battle.opensAtRange")}
+                secondsToReach={t("pages.battle.secondsToReach")}
+                neverReaches={t("pages.battle.neverReaches")}
+                bothInRange={t("pages.battle.bothInRange")}
               />
             </div>
           )}

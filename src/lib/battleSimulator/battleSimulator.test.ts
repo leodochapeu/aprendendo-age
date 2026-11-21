@@ -415,6 +415,103 @@ describe("precomputed battle results", () => {
     expect(duel.sideB.secondsToKill).toBeCloseTo(115 / 6.75, 5);
     expect(duel.sideA.hpRemaining).toBeGreaterThan(0);
     expect(duel.sideB.hpRemaining).toBeCloseTo(0, 5);
+    // Toxotes é Ranged (alcance 15). O Hoplita anda 15 a 4,3 antes de bater.
+    expect(duel.sideB.ranged).toBe(true);
+    expect(duel.sideB.attackDelay).toBe(0);
+    expect(duel.sideA.attackDelay).toBeCloseTo(15 / 4.3, 5);
+    expect(duel.sideA.secondsFromStart).toBeCloseTo(15 / 4.3 + 65 / 6.8, 5);
+    expect(duel.sideA.hpRemaining).toBeCloseTo(115 - 6.75 * (15 / 4.3 + 65 / 6.8), 4);
+  });
+
+  it("Ranged mata o corpo a corpo antes dele chegar", () => {
+    const archer = unit({
+      id: 9501,
+      nome: "Arco",
+      icon: "arco",
+      tipo: [
+        { type: "Artilharia", icon: "aomr_type_archer_icon" },
+        { type: "Ranged", icon: "rangeicon", hidden: true },
+      ],
+      dano_perfurante: 10,
+      alcance: 20,
+      velocidade_de_ataque_atk_s: 1,
+      velocidade_movimento: 4,
+      pontos_de_vida: 40,
+    });
+    const melee = unit({
+      id: 9502,
+      nome: "Lento",
+      icon: "lento",
+      tipo: [{ type: "Infantaria", icon: "aomr_type_infantry_icon" }],
+      dano_cortante: 20,
+      velocidade_de_ataque_atk_s: 1,
+      velocidade_movimento: 1,
+      pontos_de_vida: 10,
+    });
+    const duel = resolveRealDuel(archer, melee);
+    expect(duel.sideA.attackDelay).toBe(0);
+    expect(duel.sideB.attackDelay).toBeCloseTo(20, 5);
+    expect(duel.sideA.secondsToKill).toBeCloseTo(1, 5);
+    expect(duel.winner).toBe("a");
+    expect(duel.sideA.hpRemaining).toBe(40);
+    expect(duel.sideB.hpRemaining).toBeCloseTo(0, 5);
+  });
+
+  it("dois Ranged no mesmo alcance atacam juntos", () => {
+    const left = unit({
+      id: 9503,
+      nome: "Arco A",
+      icon: "a",
+      tipo: [{ type: "Ranged", icon: "rangeicon", hidden: true }],
+      dano_perfurante: 5,
+      alcance: 12,
+      velocidade_de_ataque_atk_s: 1,
+      velocidade_movimento: 4,
+      pontos_de_vida: 50,
+    });
+    const right = unit({
+      id: 9504,
+      nome: "Arco B",
+      icon: "b",
+      tipo: [{ type: "Ranged", icon: "rangeicon", hidden: true }],
+      dano_perfurante: 5,
+      alcance: 12,
+      velocidade_de_ataque_atk_s: 1,
+      velocidade_movimento: 4,
+      pontos_de_vida: 50,
+    });
+    const duel = resolveRealDuel(left, right);
+    expect(duel.sideA.attackDelay).toBe(0);
+    expect(duel.sideB.attackDelay).toBe(0);
+    expect(duel.winner).toBe("draw");
+  });
+
+  it("o Ranged de maior alcance atira enquanto o outro se aproxima", () => {
+    const long = unit({
+      id: 9505,
+      nome: "Longo",
+      icon: "a",
+      tipo: [{ type: "Ranged", icon: "rangeicon", hidden: true }],
+      dano_perfurante: 4,
+      alcance: 16,
+      velocidade_de_ataque_atk_s: 1,
+      velocidade_movimento: 4,
+      pontos_de_vida: 40,
+    });
+    const short = unit({
+      id: 9506,
+      nome: "Curto",
+      icon: "b",
+      tipo: [{ type: "Ranged", icon: "rangeicon", hidden: true }],
+      dano_perfurante: 4,
+      alcance: 8,
+      velocidade_de_ataque_atk_s: 1,
+      velocidade_movimento: 4,
+      pontos_de_vida: 40,
+    });
+    const duel = resolveRealDuel(long, short);
+    expect(duel.sideA.attackDelay).toBe(0);
+    expect(duel.sideB.attackDelay).toBeCloseTo((16 - 8) / 4, 5);
   });
 
   it("modo real mitiga dano contundente com armadura anticontusão", () => {
