@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 import { AldeaoBonusBody, AldeaoColetaBody, AldeaoGeralBody } from "@/components/aldeao/AldeaoSectionBodies";
 import { PageComments } from "@/components/comments/MapComments";
@@ -11,6 +11,7 @@ import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { getAldeaoAssetUrl } from "@/lib/entityWatermarkUrls";
 import { localeSectionPath } from "@/lib/localeRoutes";
+import { unitIdMatchingAldeao } from "@/lib/unidadeAldeao";
 import {
   listIndexLinkStateFromLocation,
   listIndexReturnTo,
@@ -19,7 +20,7 @@ import {
 
 export function AldeaoDetailPage() {
   const { t, locale } = useTranslation();
-  const { aldeaoBySlug } = useCatalog();
+  const { aldeaoBySlug, unidades, unidadeSlugById } = useCatalog();
   const { pathname, search: locSearch, state: navState } = useLocation();
   const linkState = listIndexLinkStateFromLocation(pathname, locSearch);
   const villagersList = localeSectionPath(locale, "aldeoes");
@@ -38,6 +39,9 @@ export function AldeaoDetailPage() {
   }
 
   const aldeaoIcon = getAldeaoAssetUrl(a);
+  const unitId = unitIdMatchingAldeao(a, unidades);
+  const unitSlug = unitId != null ? unidadeSlugById.get(unitId) : undefined;
+  const unitPath = unitSlug ? localeSectionPath(locale, "unidades", unitSlug) : undefined;
 
   return (
     <div>
@@ -48,6 +52,18 @@ export function AldeaoDetailPage() {
         headerIconSrc={aldeaoIcon}
         siblingNav={<CatalogRecordNav section="aldeoes" currentId={a.id} />}
       />
+
+      {unitPath ? (
+        <div className="mb-6">
+          <Link
+            to={unitPath}
+            aria-label={t("pages.aldeoes.openUnitAria")}
+            className="inline-flex items-center gap-2 rounded-xl border border-amber-500/40 bg-amber-500/15 px-3.5 py-2 text-sm font-medium text-amber-100 transition hover:bg-amber-500/25 focus:outline-none focus:ring-2 focus:ring-amber-500/25"
+          >
+            {t("pages.aldeoes.openUnit")}
+          </Link>
+        </div>
+      ) : null}
 
       <div className="grid gap-6 lg:grid-cols-2">
         <Section title={t("common.general")} className="h-full">

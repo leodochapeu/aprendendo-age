@@ -14,3 +14,14 @@ export function aldeaoIdMatchingUnit(unit: { ingles?: string }, aldeoes: readonl
   if (!key) return undefined;
   return aldeoes.find((aldeao) => englishKey(aldeao.ingles) === key)?.id;
 }
+
+/**
+ * Unidade que corresponde a este aldeão.
+ * O casamento é o inverso de `aldeaoIdMatchingUnit`: mesmo nome em inglês.
+ * Cidadão (Herói) e Kuafu (Herói) não têm unidade.
+ */
+export function unitIdMatchingAldeao(aldeao: { ingles?: string }, unidades: readonly Named[]): number | undefined {
+  const key = englishKey(aldeao.ingles);
+  if (!key) return undefined;
+  return unidades.find((unit) => englishKey(unit.ingles) === key)?.id;
+}

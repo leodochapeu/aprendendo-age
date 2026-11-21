@@ -367,6 +367,8 @@ export const enMessages: TranslationTree = {
     aldeoes: {
       title: "Villagers and workers",
       description: "Base gathering and civilization variants — filter by name or pantheon.",
+      openUnit: "View unit sheet",
+      openUnitAria: "Open this unit's sheet",
     },
     deuses: {
       title: "Gods",

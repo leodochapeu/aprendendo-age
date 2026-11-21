@@ -367,6 +367,8 @@ export const ptMessages: TranslationTree = {
     aldeoes: {
       title: "Aldeões e trabalhadores",
       description: "Coleta base e variações por civilização — filtros por nome ou panteão.",
+      openUnit: "Ver ficha de unidade",
+      openUnitAria: "Abrir a ficha desta unidade",
     },
     deuses: {
       title: "Deuses",
