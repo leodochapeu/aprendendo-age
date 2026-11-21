@@ -49,17 +49,10 @@ const BEATS: Record<BattleCategoryId, BattleCategoryId> = {
   navio_cerco: "navio_flecheiro",
 };
 
-/**
- * Clássica: infantaria, cavalaria e artilharia.
- * Heróica: o mesmo triângulo, e ao sair da Clássica entram unidade mítica, soldados humanos e herói.
- * Mítica: o ciclo dos barcos.
- */
+/** Cada era troca o ciclo. Clássica mítica, Heróica soldados, Mítica barcos. */
 export function categoryGroupsForEra(eraId: PlayableEraId): BattleCategory[][] {
-  if (eraId === 2) return [SOLDIERS.map((item) => ({ ...item }))];
-  if (eraId === 3) {
-    return [SOLDIERS.map((item) => ({ ...item })), MYTH_TRIANGLE.map((item) => ({ ...item }))];
-  }
-  return [SHIPS.map((item) => ({ ...item }))];
+  const cycle = eraId === 2 ? MYTH_TRIANGLE : eraId === 3 ? SOLDIERS : SHIPS;
+  return [cycle.map((item) => ({ ...item }))];
 }
 
 export function categoriesForEra(eraId: PlayableEraId): BattleCategory[] {

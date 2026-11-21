@@ -7,19 +7,12 @@ import {
 } from "./categoryDeck";
 
 describe("categoryDeck", () => {
-  it("clássica só tem o triângulo de soldados", () => {
-    expect(categoriesForEra(2).map((item) => item.id)).toEqual(["infantaria", "cavalaria", "artilharia"]);
+  it("clássica é o triângulo mítico", () => {
+    expect(categoriesForEra(2).map((item) => item.id)).toEqual(["unidade_mitica", "soldado_humano", "heroi"]);
   });
 
-  it("heróica mantém os soldados e acrescenta o triângulo mítico", () => {
-    expect(categoriesForEra(3).map((item) => item.id)).toEqual([
-      "infantaria",
-      "cavalaria",
-      "artilharia",
-      "unidade_mitica",
-      "soldado_humano",
-      "heroi",
-    ]);
+  it("heróica troca para infantaria, cavalaria e artilharia", () => {
+    expect(categoriesForEra(3).map((item) => item.id)).toEqual(["infantaria", "cavalaria", "artilharia"]);
   });
 
   it("mítica é o ciclo dos barcos", () => {
