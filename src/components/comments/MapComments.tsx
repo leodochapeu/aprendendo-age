@@ -17,6 +17,7 @@ import {
   type CommentSpan,
 } from "@/lib/commentMarkup";
 import { cn } from "@/lib/cn";
+import { COMMENTS_ENABLED } from "@/lib/commentsFeature";
 import { localeToHtmlLang } from "@/lib/locale";
 import { localeAuthPath } from "@/lib/localeRoutes";
 import { PAGE_COMMENT_PAGE_SIZE, type CommentErrorCode, type PageComment } from "@/lib/pageComments";
@@ -45,17 +46,19 @@ export function MapComments({ slug, mapName }: { slug: string; mapName: string }
   return <PageComments key={slug} pageKind="mapas" pageKey={slug} itemName={mapName} kindLabel={t("comments.kinds.map")} />;
 }
 
-export function PageComments({
-  pageKind,
-  pageKey,
-  itemName,
-  kindLabel,
-}: {
+type PageCommentsProps = {
   pageKind: string;
   pageKey: string;
   itemName: string;
   kindLabel: string;
-}) {
+};
+
+export function PageComments(props: PageCommentsProps) {
+  if (!COMMENTS_ENABLED) return null;
+  return <PageCommentsPanel {...props} />;
+}
+
+function PageCommentsPanel({ pageKind, pageKey, itemName, kindLabel }: PageCommentsProps) {
   const { t, locale } = useTranslation();
   const { showToast } = useToast();
   const { status, user, profile } = useAuth();

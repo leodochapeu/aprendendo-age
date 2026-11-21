@@ -6,10 +6,40 @@ export type UnidadeTipoItem = {
   type: string;
   /** Nome do token sem `:`; omitido ou vazio = só texto (sem ícone ao lado). */
   icon?: string;
+  /**
+   * Flag de proto só nos dados (Ranged, Mar, Soldados humanos…).
+   * Não entra em badges nem no filtro de categoria.
+   */
+  hidden?: boolean;
 };
 
+/** Rótulos tratados como ocultos mesmo sem `hidden: true` (legado / EN). */
+const HIDDEN_TIPO_LABELS = new Set(
+  [
+    "Ranged",
+    "Soldados humanos",
+    "Human Soldiers",
+    "Mar",
+    "Sea",
+  ].map((label) => label.toLowerCase()),
+);
+
+export function isHiddenTipoItem(item: UnidadeTipoItem | null | undefined): boolean {
+  if (!item) return false;
+  if (item.hidden) return true;
+  return HIDDEN_TIPO_LABELS.has((item.type ?? "").trim().toLowerCase());
+}
+
+/** Itens de `tipo` visíveis em badges / filtros. */
+export function visibleTipoItems(
+  items: UnidadeTipoItem[] | null | undefined,
+): UnidadeTipoItem[] {
+  if (!items?.length) return [];
+  return items.filter((item) => !isHiddenTipoItem(item));
+}
+
 export function hasTipoContent(t: UnidadeTipoItem[] | null | undefined): boolean {
-  return Array.isArray(t) && t.length > 0;
+  return visibleTipoItems(t).length > 0;
 }
 
 /** Mesma forma que `tipo`: array `{ type, icon }` em `categoria`. */
@@ -32,8 +62,9 @@ export function tipoItemToNotionText(it: UnidadeTipoItem): string {
 }
 
 export function tipoItemsToNotionText(items: UnidadeTipoItem[] | null | undefined): string {
-  if (!items?.length) return "";
-  return items.map(tipoItemToNotionText).join(", ");
+  const visible = visibleTipoItems(items);
+  if (!visible.length) return "";
+  return visible.map(tipoItemToNotionText).join(", ");
 }
 
 /** Junta entradas de `categoria` como texto Notion (igual a {@link tipoItemsToNotionText}). */

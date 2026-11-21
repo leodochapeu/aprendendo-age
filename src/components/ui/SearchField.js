@@ -1,0 +1,4 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export function SearchField({ value, onChange, placeholder, id = "search", className }) {
+    return (_jsxs("div", { className: className ?? "relative max-w-md", children: [_jsx("label", { htmlFor: id, className: "sr-only", children: "Buscar" }), _jsx("input", { id: id, type: "search", value: value, onChange: (e) => onChange(e.target.value), placeholder: placeholder ?? "Buscar…", className: "w-full rounded-xl border border-aom-border bg-aom-card px-4 py-2.5 pl-10 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-amber-500/50 focus:outline-none focus:ring-2 focus:ring-amber-500/25" }), _jsx("span", { className: "pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500", "aria-hidden": true, children: "\u2315" })] }));
+}

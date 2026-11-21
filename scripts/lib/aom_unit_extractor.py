@@ -69,6 +69,24 @@ MYTH_UNIT_TYPE = "Unidade mítica"
 HERO_UNIT_TYPE = "Herói"
 SIEGE_UNIT_TYPE = "Cerco"
 ANTI_BUILDING_UNIT_TYPE = "Anti-construção"
+RANGED_HIDDEN_TYPE = "Ranged"
+HUMAN_SOLDIER_HIDDEN_TYPE = "Soldados humanos"
+SEA_HIDDEN_TYPE = "Mar"
+
+# Tokens de proto → categorias ocultas (dados only; fora de badges/filtros).
+SEA_UNIT_TOKENS = frozenset(
+    {
+        "NavalUnit",
+        "Ship",
+        "AbstractShip",
+        "AbstractWarship",
+        "AbstractArcherShip",
+        "AbstractCloseCombatShip",
+        "AbstractSiegeShip",
+        "LogicalTypeNavalMythUnit",
+        "LogicalTypeNavalMilitary",
+    }
+)
 
 # Tipos do proto que definem uma unidade mítica. Se também for `AbstractArcher`
 # (soldado de longo alcance), mantém Artilharia + Unidade mítica.
@@ -267,6 +285,18 @@ def detect_roles(unit_types: set[str], unit: ET.Element | None = None) -> list[s
     # entra em seguida. Cerco puro (só AbstractSiegeWeapon) fica só Cerco — o
     # token Ranged do proto não gera mais Artilharia.
 
+    return roles
+
+
+def detect_hidden_roles(unit_types: set[str]) -> list[str]:
+    """Flags de proto úteis nos dados, sem aparecer em badges/filtros."""
+    roles: list[str] = []
+    if "Ranged" in unit_types:
+        roles.append(RANGED_HIDDEN_TYPE)
+    if "HumanSoldier" in unit_types:
+        roles.append(HUMAN_SOLDIER_HIDDEN_TYPE)
+    if unit_types & SEA_UNIT_TOKENS:
+        roles.append(SEA_HIDDEN_TYPE)
     return roles
 
 
@@ -475,16 +505,24 @@ def format_pantheon(meta: dict[str, Any]) -> list[dict[str, Any]]:
     return [{"id": meta["id"], "nome": f"{meta['nome']} :{meta['icon']}:"}]
 
 
-def format_tipo(roles: str | list[str] | None) -> list[dict[str, str]]:
+def format_tipo(
+    roles: str | list[str] | None,
+    *,
+    hidden: bool = False,
+) -> list[dict[str, Any]]:
     if not roles:
         return []
     if isinstance(roles, str):
         roles = [roles]
-    return [
-        {"type": role, "icon": UNIT_TYPE_ICON.get(role, "")}
-        for role in roles
-        if role
-    ]
+    out: list[dict[str, Any]] = []
+    for role in roles:
+        if not role:
+            continue
+        item: dict[str, Any] = {"type": role, "icon": UNIT_TYPE_ICON.get(role, "")}
+        if hidden:
+            item["hidden"] = True
+        out.append(item)
+    return out
 
 
 def format_multiplicador(bonuses: list[dict[str, Any]]) -> list[dict[str, str]]:
@@ -522,6 +560,7 @@ def extract_unit_record(
     unit_types = {node.text.strip() for node in unit.findall("unittype") if node.text}
     pantheon = detect_pantheon(unit)
     roles = detect_roles(unit_types, unit)
+    hidden_roles = detect_hidden_roles(unit_types)
     attack = parse_attack(unit)
     costs = parse_costs(unit)
     armor = parse_armor(unit)
@@ -559,7 +598,7 @@ def extract_unit_record(
         "nome": nome_pt,
         "ingles": nome_en,
         "displaynameid": display_id,
-        "tipo": format_tipo(roles),
+        "tipo": format_tipo(roles) + format_tipo(hidden_roles, hidden=True),
         "panteao": format_pantheon(pantheon) if pantheon else [],
         "era": [era] if era else [],
         "multiplicador": format_multiplicador(attack.get("bonuses", [])),

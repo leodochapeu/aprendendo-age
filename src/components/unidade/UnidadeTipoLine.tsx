@@ -8,6 +8,7 @@ import {
   tipoItemsToNotionText,
   tipoTypeTagShellClass,
   tipoTypeTextClass,
+  visibleTipoItems,
   type UnidadeTipoItem,
 } from "@/lib/unidadeTipo";
 
@@ -35,12 +36,11 @@ export function UnidadeTipoLine({
   shell = "auto",
   className,
 }: UnidadeTipoLineProps) {
-  if (!hasTipoContent(tipo)) return null;
-
-  const items = tipo!;
+  const items = visibleTipoItems(tipo);
+  if (!hasTipoContent(items)) return null;
 
   if (!colored) {
-    return <NotionText text={tipoItemsToNotionText(tipo)} className={cn("inline", className)} />;
+    return <NotionText text={tipoItemsToNotionText(items)} className={cn("inline", className)} />;
   }
 
   if (shell === "auto") {

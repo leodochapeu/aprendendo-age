@@ -9,6 +9,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useToast } from "@/context/ToastContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { canSuggestPageChange } from "@/lib/auth/constants";
+import { COMMENTS_ENABLED } from "@/lib/commentsFeature";
 import { commentExcerpt } from "@/lib/commentMarkup";
 import { cn } from "@/lib/cn";
 import { deleteTopicPost, dismissTopicReport, fetchTopicReports, type TopicReport } from "@/lib/communityTopicsApi";
@@ -46,8 +47,12 @@ export function CommentModerationPage() {
   const authPending = status === "loading" || (status === "authenticated" && profileLoadState !== "ready");
   const isAdmin = profile?.role === "admin";
   const requested = searchParams.get("tab");
-  const tab: ModerationTab =
-    requested === "suggestions" || requested === "comments" || requested === "videos" ? requested : "reports";
+  const visibleTabs = TABS.filter((item) => COMMENTS_ENABLED || (item !== "reports" && item !== "comments"));
+  const tab: ModerationTab = (() => {
+    if (requested === "suggestions" || requested === "videos") return requested;
+    if (COMMENTS_ENABLED && requested === "comments") return "comments";
+    return COMMENTS_ENABLED ? "reports" : "suggestions";
+  })();
   const description = !allowed
     ? undefined
     : tab === "suggestions"
@@ -125,7 +130,7 @@ export function CommentModerationPage() {
       {configured && !authPending && !allowed ? <p className="text-sm text-zinc-400">{t("comments.moderationForbidden")}</p> : null}
       {allowed ? (
         <div role="tablist" aria-label={t("comments.moderationTabsLabel")} className="mb-6 flex flex-wrap gap-2 border-b border-aom-border/60 pb-3">
-          {TABS.map((item) => {
+          {visibleTabs.map((item) => {
             const active = tab === item;
             return (
               <button

@@ -1,5 +1,5 @@
 import type { Unidade } from "@/data/catalog";
-import type { UnidadeTipoItem } from "@/lib/unidadeTipo";
+import { isHiddenTipoItem, type UnidadeTipoItem } from "@/lib/unidadeTipo";
 
 /** Operadores da condição numérica. O valor digitado só filtra depois de escolher um destes. */
 export type CompareOp = "gt" | "gte" | "eq" | "lt" | "lte";
@@ -160,6 +160,7 @@ export function collectTipoOptions(units: readonly Unidade[]): TipoFilterOption[
   const map = new Map<string, TipoFilterOption>();
   for (const unit of units) {
     for (const item of unit.tipo ?? []) {
+      if (isHiddenTipoItem(item)) continue;
       const key = tipoFilterKey(item);
       if (!key || map.has(key)) continue;
       const label = item.type.trim();
@@ -215,7 +216,13 @@ export function unidadeMatchesFilters(unit: Unidade, filters: UnitListFilters): 
   if (!matchesIdSelection(unit.era, filters.eraIds)) return false;
   if (filters.tipoKeys.length > 0) {
     const keys = new Set(filters.tipoKeys);
-    if (!unit.tipo?.some((item) => keys.has(tipoFilterKey(item)))) return false;
+    if (
+      !unit.tipo?.some(
+        (item) => !isHiddenTipoItem(item) && keys.has(tipoFilterKey(item)),
+      )
+    ) {
+      return false;
+    }
   }
   for (const rule of filters.advanced) {
     if (!rule.field) continue;

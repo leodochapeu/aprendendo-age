@@ -64,6 +64,9 @@ TIPO_LABEL_EN = {
     "Flecheiro": "Archer Ship",
     "Combate curto-alcance": "Close Combat Ship",
     "Navio-cerco": "Siege Ship",
+    "Soldados humanos": "Human Soldiers",
+    "Mar": "Sea",
+    # Ranged permanece igual nos dois idiomas.
 }
 
 # Classes geridas pelo extrator. Qualquer outro rótulo em `tipo` é editorial
@@ -91,6 +94,11 @@ EXTRACTED_TIPO_LABELS = frozenset(
         "Hero",
         "Aldeão",
         "Villager",
+        "Ranged",
+        "Soldados humanos",
+        "Human Soldiers",
+        "Mar",
+        "Sea",
     }
 )
 

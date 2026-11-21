@@ -9,6 +9,7 @@ import { MusicProvider } from "@/context/MusicContext";
 import { useSiteNotifications } from "@/context/SiteNotificationsContext";
 import { cn } from "@/lib/cn";
 import { useTranslation } from "@/hooks/useTranslation";
+import { COMMENTS_ENABLED } from "@/lib/commentsFeature";
 import { localeCommunityTopicsPath, localeSectionPath, sectionFromPathSegment, type LocaleSection } from "@/lib/localeRoutes";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 import { startNovoTagClassNav } from "@/components/start/startNovoTag";
@@ -81,13 +82,17 @@ function buildNavStructure(locale: import("@/i18n/types").Locale): NavEntry[] {
       id: "comunidade",
       labelKey: "nav.modules.comunidade",
       items: [
-        {
-          to: localeCommunityTopicsPath(locale),
-          labelKey: "nav.communityTopics",
-          icon: "aomr_wonder_age_icon",
-          match: (p: string) =>
-            p === "/comunidade" || p.startsWith("/comunidade/") || p === "/community" || p.startsWith("/community/"),
-        },
+        ...(COMMENTS_ENABLED
+          ? [
+              {
+                to: localeCommunityTopicsPath(locale),
+                labelKey: "nav.communityTopics",
+                icon: "aomr_wonder_age_icon",
+                match: (p: string) =>
+                  p === "/comunidade" || p.startsWith("/comunidade/") || p === "/community" || p.startsWith("/community/"),
+              },
+            ]
+          : []),
         {
           to: "/videos-comunidade",
           labelKey: "nav.communityVideos",

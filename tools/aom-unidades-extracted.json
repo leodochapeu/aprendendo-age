@@ -8,6 +8,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -1123,6 +1128,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -1585,6 +1600,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -1682,6 +1707,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -2176,6 +2206,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -2349,7 +2389,13 @@
     "nome": "AsuraFireBallLeft",
     "ingles": "AsuraFireBallLeft",
     "displaynameid": "",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      }
+    ],
     "panteao": [],
     "era": [],
     "multiplicador": [
@@ -2398,7 +2444,13 @@
     "nome": "AsuraFireBallRight",
     "ingles": "AsuraFireBallRight",
     "displaynameid": "",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      }
+    ],
     "panteao": [],
     "era": [],
     "multiplicador": [
@@ -2627,6 +2679,16 @@
       {
         "type": "Navio-cerco",
         "icon": "aomr_type_siege_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -3159,6 +3221,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -3250,6 +3317,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -3346,6 +3418,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -3541,6 +3618,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -3795,6 +3877,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -4337,6 +4424,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -4438,6 +4530,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -4684,6 +4786,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -4885,6 +4992,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -4978,6 +5090,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -5137,6 +5254,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -5454,6 +5576,16 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -5772,6 +5904,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -5861,6 +5998,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -6304,6 +6446,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -6401,6 +6553,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -6481,6 +6643,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -6802,6 +6974,16 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -6909,6 +7091,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -7002,6 +7189,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -7515,6 +7707,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -7620,6 +7817,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -7711,6 +7913,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -7804,6 +8016,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [],
@@ -7871,6 +8088,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -7951,6 +8173,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -8023,6 +8250,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -8203,6 +8435,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -8550,6 +8787,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -9078,6 +9320,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -9253,6 +9500,11 @@
       {
         "type": "Anti-construção",
         "icon": "crushdamage"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -9446,6 +9698,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -9534,6 +9796,16 @@
       {
         "type": "Navio-cerco",
         "icon": "aomr_type_siege_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -9627,6 +9899,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -9725,6 +10002,11 @@
       {
         "type": "Combate curto-alcance",
         "icon": "aomr_type_close_combat_ship_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -9908,6 +10190,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -10634,6 +10926,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -11257,6 +11554,16 @@
       {
         "type": "Anti-construção",
         "icon": "crushdamage"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -11361,6 +11668,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -11609,6 +11921,16 @@
       {
         "type": "Combate curto-alcance",
         "icon": "aomr_type_close_combat_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -11696,6 +12018,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -11942,6 +12269,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [],
@@ -12340,6 +12672,16 @@
       {
         "type": "Anti-construção",
         "icon": "crushdamage"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -12516,6 +12858,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -12776,6 +13123,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -12948,6 +13300,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -13665,6 +14027,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [],
@@ -13726,6 +14093,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -14191,6 +14563,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -14655,6 +15032,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -14746,6 +15128,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -14837,6 +15224,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -14908,6 +15300,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -14979,6 +15376,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -15054,6 +15456,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -15242,6 +15649,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -15334,6 +15746,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -15429,6 +15846,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -15520,6 +15942,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -15591,6 +16018,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -15670,6 +16102,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -16063,6 +16500,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -16338,6 +16780,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -16429,6 +16876,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -17105,6 +17557,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -17274,6 +17731,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -17457,6 +17919,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -17549,6 +18016,16 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -17748,6 +18225,16 @@
       {
         "type": "Navio-cerco",
         "icon": "aomr_type_siege_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -17845,6 +18332,16 @@
       {
         "type": "Navio-cerco",
         "icon": "aomr_type_siege_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -18464,6 +18961,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -18781,6 +19283,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -18966,6 +19473,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -19042,6 +19554,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -19379,6 +19901,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -19553,6 +20080,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -19656,6 +20188,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -19742,6 +20279,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -19932,6 +20474,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [],
@@ -19999,6 +20546,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -20099,6 +20651,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -20330,6 +20887,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -20418,6 +20985,16 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -20494,6 +21071,16 @@
       {
         "type": "Navio-cerco",
         "icon": "aomr_type_siege_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -20583,6 +21170,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -20925,6 +21517,16 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -21015,6 +21617,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -21114,6 +21721,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -21284,6 +21896,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -21387,6 +22004,11 @@
       {
         "type": "Combate curto-alcance",
         "icon": "aomr_type_close_combat_ship_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -21469,6 +22091,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -21561,6 +22188,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -21933,6 +22565,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -22518,6 +23155,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -22612,6 +23254,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -22786,6 +23433,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -22871,6 +23523,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -23057,6 +23714,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -23336,6 +23998,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -23666,6 +24333,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -23752,6 +24424,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -23857,6 +24534,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -24169,6 +24851,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -24354,7 +25041,13 @@
     "nome": "Oráculo",
     "ingles": "Oracle",
     "displaynameid": "STR_UNIT_ORACLE_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
+      }
+    ],
     "panteao": [
       {
         "id": 4,
@@ -24691,7 +25384,13 @@
     "nome": "Osíris (Herói)",
     "ingles": "Osiris (Hero)",
     "displaynameid": "STR_UNIT_OSIRIS_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      }
+    ],
     "panteao": [],
     "era": [],
     "multiplicador": [],
@@ -24752,6 +25451,11 @@
       {
         "type": "Anti-construção",
         "icon": "crushdamage"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -24844,6 +25548,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -25132,6 +25841,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -25228,6 +25947,11 @@
       {
         "type": "Combate curto-alcance",
         "icon": "aomr_type_close_combat_ship_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -25418,6 +26142,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -25507,6 +26236,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -25589,6 +26323,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -25673,6 +26412,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -26058,6 +26802,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -26159,6 +26908,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -26242,6 +27001,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -26901,6 +27670,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -27078,6 +27852,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -27354,6 +28133,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -27446,6 +28230,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -27571,6 +28360,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -27944,6 +28738,11 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -28037,6 +28836,11 @@
       {
         "type": "Anti-construção",
         "icon": "crushdamage"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -28226,6 +29030,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -28413,6 +29222,11 @@
       {
         "type": "Combate curto-alcance",
         "icon": "aomr_type_close_combat_ship_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -28503,6 +29317,11 @@
       {
         "type": "Combate curto-alcance",
         "icon": "aomr_type_close_combat_ship_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -28795,6 +29614,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [],
@@ -29398,6 +30222,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -29478,6 +30307,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -29570,6 +30404,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -29651,6 +30490,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -29941,6 +30785,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -30037,7 +30886,13 @@
     "nome": "Cobra do Mar",
     "ingles": "Sea Snake",
     "displaynameid": "STR_UNIT_SEA_SNAKE_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
+      }
+    ],
     "panteao": [
       {
         "id": 2,
@@ -30319,6 +31174,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -30525,6 +31385,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [],
@@ -30752,6 +31617,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -30831,6 +31701,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -30913,6 +31788,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -30988,6 +31868,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31067,6 +31952,11 @@
       {
         "type": "Anti-construção",
         "icon": "crushdamage"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31300,6 +32190,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31474,6 +32369,16 @@
       {
         "type": "Navio-cerco",
         "icon": "aomr_type_siege_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31567,6 +32472,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31663,6 +32573,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31732,6 +32647,11 @@
       {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31815,6 +32735,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -31973,6 +32898,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -32222,6 +33157,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -32385,6 +33325,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -34084,6 +35029,11 @@
       {
         "type": "Combate curto-alcance",
         "icon": "aomr_type_close_combat_ship_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -34166,6 +35116,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -34258,6 +35218,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -34341,6 +35306,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -34644,6 +35614,16 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -35077,6 +36057,16 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -35170,6 +36160,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -35266,6 +36261,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -36510,6 +37510,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -36601,6 +37606,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -36697,6 +37712,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -36789,6 +37814,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -36867,6 +37902,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -37053,6 +38093,11 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -37328,7 +38373,13 @@
     "nome": "OVNI",
     "ingles": "UFO",
     "displaynameid": "STR_UNIT_UFO_NAME",
-    "tipo": [],
+    "tipo": [
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      }
+    ],
     "panteao": [],
     "era": [],
     "multiplicador": [],
@@ -37384,6 +38435,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -37653,6 +38709,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -37759,6 +38820,11 @@
       {
         "type": "Herói",
         "icon": "aomr_type_hero_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -37836,6 +38902,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -37930,6 +39001,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38005,6 +39081,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38080,6 +39161,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38173,6 +39259,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38247,6 +39338,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38320,6 +39416,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38415,6 +39516,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38508,6 +39614,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38602,6 +39713,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38694,6 +39810,11 @@
       {
         "type": "Aldeão",
         "icon": "aomr_type_villager_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -38788,6 +39909,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -42218,6 +43344,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -42316,6 +43447,16 @@
       {
         "type": "Navio-cerco",
         "icon": "aomr_type_siege_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -42409,6 +43550,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -42505,6 +43651,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -42775,6 +43926,16 @@
       {
         "type": "Flecheiro",
         "icon": "aomr_type_archer_ship_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -42937,6 +44098,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -43111,6 +44277,11 @@
       {
         "type": "Cavalaria",
         "icon": "aomr_type_cavalry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -43439,6 +44610,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -43538,6 +44719,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -43619,6 +44805,11 @@
       {
         "type": "Unidade mítica",
         "icon": "aomr_type_myth_unit_icon"
+      },
+      {
+        "type": "Mar",
+        "icon": "aomr_type_ship_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -44102,6 +45293,11 @@
       {
         "type": "Infantaria",
         "icon": "aomr_type_infantry_icon"
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -44621,6 +45817,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [
@@ -44713,6 +45919,16 @@
       {
         "type": "Artilharia",
         "icon": "aomr_type_archer_icon"
+      },
+      {
+        "type": "Ranged",
+        "icon": "rangeicon",
+        "hidden": true
+      },
+      {
+        "type": "Soldados humanos",
+        "icon": "aomr_type_human_soldier_icon",
+        "hidden": true
       }
     ],
     "panteao": [

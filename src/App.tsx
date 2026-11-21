@@ -7,6 +7,7 @@ import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { startAppUpdateWatcher } from "@/lib/appUpdateWatcher";
 import { AZTEC_PANTEON_ID } from "@/lib/astecasCatalog";
+import { COMMENTS_ENABLED } from "@/lib/commentsFeature";
 import { localeModerationPath, localePantheonIndexPath, localePlayersPath } from "@/lib/localeRoutes";
 import { AldeaoComparePage } from "@/pages/AldeaoComparePage";
 import { AldeaoDetailPage } from "@/pages/AldeaoDetailPage";
@@ -174,10 +175,10 @@ export default function App() {
           <Route path="links-streamers" element={<LinksStreamersPage />} />
           <Route path="streamer-links" element={<LinksStreamersPage />} />
           <Route path="trilha-de-aprendizado" element={<TrilhaDeAprendizadoPage />} />
-          <Route path="comunidade" element={<CommunityTopicsPage />} />
-          <Route path="comunidade/:slug" element={<CommunityTopicPage />} />
-          <Route path="community" element={<CommunityTopicsPage />} />
-          <Route path="community/:slug" element={<CommunityTopicPage />} />
+          <Route path="comunidade" element={COMMENTS_ENABLED ? <CommunityTopicsPage /> : <Navigate to="/" replace />} />
+          <Route path="comunidade/:slug" element={COMMENTS_ENABLED ? <CommunityTopicPage /> : <Navigate to="/" replace />} />
+          <Route path="community" element={COMMENTS_ENABLED ? <CommunityTopicsPage /> : <Navigate to="/" replace />} />
+          <Route path="community/:slug" element={COMMENTS_ENABLED ? <CommunityTopicPage /> : <Navigate to="/" replace />} />
           <Route path="videos-comunidade" element={<CommunityVideosPage />} />
           <Route path="videos-comunidade/:id" element={<CommunityVideoDetailPage />} />
           <Route
