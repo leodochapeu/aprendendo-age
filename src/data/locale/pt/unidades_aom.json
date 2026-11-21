@@ -16381,12 +16381,12 @@
     "ingles": "Petrobolos",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16440,12 +16440,12 @@
     "ingles": "Helepolis",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16494,12 +16494,12 @@
     "ingles": "Siege Tower",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16548,12 +16548,12 @@
     "ingles": "Catapult",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16661,12 +16661,12 @@
     "ingles": "Ballista",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16725,12 +16725,12 @@
     "ingles": "Fire Siphon",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16829,12 +16829,12 @@
     "ingles": "Siege Crossbow",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [
@@ -16889,12 +16889,12 @@
     "ingles": "Oyumi",
     "tipo": [
       {
-        "type": "Artilharia",
-        "icon": "aomr_type_archer_icon"
-      },
-      {
         "type": "Cerco",
         "icon": "aomr_type_siege_weapon_icon"
+      },
+      {
+        "type": "Artilharia",
+        "icon": "aomr_type_archer_icon"
       }
     ],
     "panteao": [

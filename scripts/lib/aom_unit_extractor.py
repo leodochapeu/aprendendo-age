@@ -259,6 +259,19 @@ def detect_roles(unit_types: set[str], unit: ET.Element | None = None) -> list[s
     if is_anti_building and ANTI_BUILDING_UNIT_TYPE not in roles:
         roles.append(ANTI_BUILDING_UNIT_TYPE)
 
+    # Armas de cerco também têm Ranged/AbstractArcher no proto → Artilharia vem
+    # como primary. Prioriza Cerco (Petrobolo, Catapulta, Balista…). Quirobalista
+    # é híbrido e permanece Artilharia-primeiro.
+    if (
+        SIEGE_UNIT_TYPE in roles
+        and "Artilharia" in roles
+        and roles.index("Artilharia") < roles.index(SIEGE_UNIT_TYPE)
+    ):
+        proto = ((unit.get("name") if unit is not None else None) or "").casefold()
+        if not proto.startswith("cheiroballista"):
+            roles.remove(SIEGE_UNIT_TYPE)
+            roles.insert(roles.index("Artilharia"), SIEGE_UNIT_TYPE)
+
     return roles
 
 
