@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { BattleAgeUpOverlay } from "@/components/battle/BattleAgeUpOverlay";
 import { BattleAtmosphere, BattleEpicFrame } from "@/components/battle/BattleAtmosphere";
-import { ModalApp } from "@/components/ui/ModalApp";
+import { BattleConfirmSheet } from "@/components/battle/BattleConfirmSheet";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import {
@@ -248,7 +248,7 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
 
   return (
     <BattleAtmosphere>
-      <div className="mx-auto max-w-5xl">
+      <div className={pending ? "mx-auto max-w-5xl pb-44" : "mx-auto max-w-5xl"}>
         <header className="mb-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink-300">{t("common.beta")}</p>
@@ -370,47 +370,48 @@ export function BattleCategorySession({ onRestart }: { onRestart: () => void }) 
           </BattleEpicFrame>
         </section>
 
-        <ModalApp
+        <BattleConfirmSheet
           open={pending != null && phase === "playing"}
           onClose={() => setPendingId(null)}
           title={t("pages.battle.confirmTitle")}
           description={t("pages.battle.confirmCategory")}
-          className="max-w-lg"
         >
           {pending ? (
-            <div className="flex items-center justify-center gap-6">
-              <div className="text-center">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-emerald-300/90">
-                  {t("pages.battle.you")}
-                </p>
-                <CategoryIcon category={pending} size="lg" />
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center justify-center gap-4">
+                <div className="text-center">
+                  <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-300/90">
+                    {t("pages.battle.you")}
+                  </p>
+                  <CategoryIcon category={pending} />
+                </div>
+                <p className="font-[family-name:var(--font-display)] text-xl font-bold text-amber-400">VS</p>
+                <div className="text-center">
+                  <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-rose-300/90">
+                    {t("pages.battle.enemy")}
+                  </p>
+                  <CategoryIcon category={defender} />
+                </div>
               </div>
-              <p className="font-[family-name:var(--font-display)] text-2xl font-bold text-amber-400">VS</p>
-              <div className="text-center">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-rose-300/90">
-                  {t("pages.battle.enemy")}
-                </p>
-                <CategoryIcon category={defender} size="lg" />
+              <div className="flex gap-2 sm:shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setPendingId(null)}
+                  className="flex-1 rounded-xl border border-aom-border bg-zinc-900/60 px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-500 sm:flex-none"
+                >
+                  {t("pages.battle.cancel")}
+                </button>
+                <button
+                  type="button"
+                  onClick={confirmChoice}
+                  className="flex-1 rounded-xl border border-amber-500/50 bg-amber-500/20 px-4 py-2.5 text-sm font-semibold text-amber-100 transition hover:bg-amber-500/30 sm:flex-none"
+                >
+                  {t("pages.battle.confirmAttack")}
+                </button>
               </div>
             </div>
           ) : null}
-          <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
-            <button
-              type="button"
-              onClick={() => setPendingId(null)}
-              className="rounded-xl border border-aom-border bg-zinc-900/60 px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-500"
-            >
-              {t("pages.battle.cancel")}
-            </button>
-            <button
-              type="button"
-              onClick={confirmChoice}
-              className="rounded-xl border border-amber-500/50 bg-amber-500/20 px-4 py-2.5 text-sm font-semibold text-amber-100 transition hover:bg-amber-500/30"
-            >
-              {t("pages.battle.confirmAttack")}
-            </button>
-          </div>
-        </ModalApp>
+        </BattleConfirmSheet>
 
         {lastRound ? (
           <CategoryResultModal

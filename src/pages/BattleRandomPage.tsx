@@ -374,7 +374,7 @@ function BattleRandomSession({
 
   return (
     <BattleAtmosphere>
-    <div className="mx-auto max-w-5xl">
+    <div className={pendingAttackerId != null && phase === "playing" ? "mx-auto max-w-5xl pb-40" : "mx-auto max-w-5xl"}>
       <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink-300">
