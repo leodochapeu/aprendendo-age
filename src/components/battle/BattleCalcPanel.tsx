@@ -1,11 +1,68 @@
 import { useState } from "react";
 
+import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
 import type { Unidade } from "@/data/catalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { RealHitChannel, RealSide, TrainingDuel } from "@/lib/battleSimulator";
 import { getIconFieldUrl } from "@/lib/notionTokenAssets";
+import { cn } from "@/lib/cn";
 import type { BattleUnitTypeId, DamageChannel, MultiplierMatch } from "@/lib/battleSimulator/types";
+
+type SideMark = "crown" | "skull" | null;
+
+function sideMark(winner: "a" | "b" | "draw", side: "a" | "b"): SideMark {
+  if (winner === "draw") return null;
+  return winner === side ? "crown" : "skull";
+}
+
+function ResultMark({ mark }: { mark: SideMark }) {
+  const { t } = useTranslation();
+  if (!mark) return null;
+  return (
+    <span
+      role="img"
+      aria-label={mark === "crown" ? t("pages.battle.winnerMark") : t("pages.battle.loserMark")}
+      className="text-base leading-none"
+    >
+      {mark === "crown" ? "👑" : "💀"}
+    </span>
+  );
+}
+
+function SideIdentity({
+  unit,
+  title,
+  titleClass,
+  mark,
+}: {
+  unit: Unidade;
+  title: string;
+  titleClass: string;
+  mark: SideMark;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      <BattleUnitPortrait
+        nome={unit.nome}
+        icon={unit.icon}
+        size="sm"
+        className={cn(
+          "rounded-2xl",
+          mark === "crown" && "border-amber-200 shadow-[0_0_16px_rgba(251,191,36,0.45)]",
+          mark === "skull" && "border-zinc-600 opacity-75 grayscale-[0.25]",
+        )}
+      />
+      <div className="min-w-0">
+        <p className={cn("flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em]", titleClass)}>
+          {title}
+          <ResultMark mark={mark} />
+        </p>
+        <p className="truncate text-sm font-medium text-amber-50">{unit.nome}</p>
+      </div>
+    </div>
+  );
+}
 
 const CHANNEL_ICON: Record<DamageChannel, string> = {
   cortante: "hackdamage",
@@ -48,7 +105,10 @@ function formatNum(value: number, locale: string): string {
 }
 
 function RealSideCalc({
+  unit,
   title,
+  titleClass,
+  mark,
   targetHp,
   side,
   locale,
@@ -58,7 +118,10 @@ function RealSideCalc({
   secondsLabel,
   hpLeftLabel,
 }: {
+  unit: Unidade;
   title: string;
+  titleClass: string;
+  mark: SideMark;
   targetHp: number;
   side: RealSide;
   locale: string;
@@ -71,7 +134,7 @@ function RealSideCalc({
   const num = (value: number) => formatNum(value, locale);
   return (
     <div className="rounded-xl border border-white/15 bg-zinc-900/90 p-3">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-100">{title}</p>
+      <SideIdentity unit={unit} title={title} titleClass={titleClass} mark={mark} />
       {side.channels.length === 0 ? <p className="mt-2 text-sm text-zinc-300">{noDamage}</p> : null}
       <ul className="mt-2 space-y-2">
         {side.channels.map((channel) => (
@@ -182,7 +245,12 @@ export function BattleCalcPanel({
           {duel.mode === "category" ? (
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl border border-white/15 bg-zinc-900/90 p-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">{t("pages.battle.you")}</p>
+                <SideIdentity
+                  unit={attacker}
+                  title={t("pages.battle.you")}
+                  titleClass="text-emerald-200"
+                  mark={sideMark(duel.winner, "a")}
+                />
                 <div className="mt-2">
                   <UnidadeTipoLine tipo={attacker.tipo} colored />
                 </div>
@@ -191,7 +259,12 @@ export function BattleCalcPanel({
                 )}
               </div>
               <div className="rounded-xl border border-white/15 bg-zinc-900/90 p-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose-200">{t("pages.battle.enemy")}</p>
+                <SideIdentity
+                  unit={defender}
+                  title={t("pages.battle.enemy")}
+                  titleClass="text-rose-200"
+                  mark={sideMark(duel.winner, "b")}
+                />
                 <div className="mt-2">
                   <UnidadeTipoLine tipo={defender.tipo} colored />
                 </div>
@@ -206,7 +279,10 @@ export function BattleCalcPanel({
           ) : (
             <div className="grid gap-3 lg:grid-cols-2">
               <RealSideCalc
+                unit={attacker}
                 title={t("pages.battle.you")}
+                titleClass="text-emerald-200"
+                mark={sideMark(duel.winner, "a")}
                 targetHp={duel.sideB.hp}
                 side={duel.sideA}
                 locale={locale}
@@ -217,7 +293,10 @@ export function BattleCalcPanel({
                 hpLeftLabel={t("pages.battle.hpLeft")}
               />
               <RealSideCalc
+                unit={defender}
                 title={t("pages.battle.enemy")}
+                titleClass="text-rose-200"
+                mark={sideMark(duel.winner, "b")}
                 targetHp={duel.sideA.hp}
                 side={duel.sideB}
                 locale={locale}

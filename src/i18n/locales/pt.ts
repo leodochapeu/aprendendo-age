@@ -1185,6 +1185,8 @@ export const ptMessages: TranslationTree = {
       noDamage: "não causa dano",
       secondsToFall: "{{seconds}} s para derrubar",
       hpLeft: "{{hp}} de vida restante",
+      winnerMark: "Vencedor",
+      loserMark: "Derrota",
       outcome: {
         win: "Vitória",
         loss: "Derrota",

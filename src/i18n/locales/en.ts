@@ -1183,6 +1183,8 @@ export const enMessages: TranslationTree = {
       noDamage: "deals no damage",
       secondsToFall: "{{seconds}} s to defeat",
       hpLeft: "{{hp}} hit points left",
+      winnerMark: "Winner",
+      loserMark: "Defeat",
       outcome: {
         win: "Win",
         loss: "Loss",
