@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { BattleCalcPanel } from "@/components/battle/BattleCalcPanel";
 import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { RoundOutcome } from "@/lib/battleGame";
-import type { TrainingDuel } from "@/lib/battleSimulator";
+import { resolveRealDuel, trainingOutcome, type TrainingDuel } from "@/lib/battleSimulator";
 import { cn } from "@/lib/cn";
 import type { Unidade } from "@/data/catalog";
 
@@ -119,6 +119,17 @@ export function BattleResultModal({
   onContinue,
 }: Props) {
   const { t } = useTranslation();
+  const categoryDraw = duel.mode === "category" && duel.winner === "draw";
+  const [realRevealed, setRealRevealed] = useState(false);
+  const realDuel = useMemo(
+    () => (realRevealed && categoryDraw ? resolveRealDuel(attacker, defender) : null),
+    [attacker, defender, realRevealed, categoryDraw],
+  );
+  const realOutcome = realDuel ? trainingOutcome(realDuel) : null;
+
+  useEffect(() => {
+    setRealRevealed(false);
+  }, [open, attacker.id, defender.id]);
 
   useEffect(() => {
     if (!open) return;
@@ -176,6 +187,38 @@ export function BattleResultModal({
           </div>
           <div className="mt-8 animate-[battleResultRise_0.7s_ease-out_0.7s_both] motion-reduce:animate-none">
             <BattleCalcPanel duel={duel} attacker={attacker} defender={defender} defaultOpen />
+            {categoryDraw ? (
+              realDuel && realOutcome ? (
+                <div className="mt-4 rounded-2xl border border-rose-200/35 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.16),transparent_55%)] p-4">
+                  <p className="text-center text-xs font-semibold uppercase tracking-[0.28em] text-rose-200">
+                    {t("pages.battle.modeAttributes")}
+                  </p>
+                  <p
+                    className={cn(
+                      "mt-2 text-center font-[family-name:var(--font-display)] text-3xl font-semibold tracking-[0.14em] sm:text-4xl",
+                      TITLE_CLASS[realOutcome],
+                    )}
+                  >
+                    {t(`pages.battle.outcome.${realOutcome}`)}
+                  </p>
+                  <p className="mx-auto mt-2 max-w-md text-center text-sm text-zinc-300">
+                    {t("pages.battle.realResultKeepsDraw")}
+                  </p>
+                  <BattleCalcPanel duel={realDuel} attacker={attacker} defender={defender} defaultOpen />
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setRealRevealed(true)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") event.stopPropagation();
+                  }}
+                  className="mt-4 w-full rounded-xl border border-rose-200/40 bg-rose-500/10 px-4 py-3 text-sm font-semibold text-rose-50 transition hover:border-rose-200/70 hover:bg-rose-500/20"
+                >
+                  {t("pages.battle.revealRealResult")}
+                </button>
+              )
+            ) : null}
           </div>
         </div>
         <div className="shrink-0 border-t border-white/10 px-5 py-4 sm:px-8">
