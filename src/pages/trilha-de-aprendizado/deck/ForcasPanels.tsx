@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { useTranslation } from "@/hooks/useTranslation";
 import { localeSectionPath } from "@/lib/localeRoutes";
+import { withListViewMode } from "@/lib/listViewMode";
 
 import { chapterKicker } from "./chapters";
 import { BigToken, InlineToken, LessonSection, PullQuote, Shot, VideoFrame } from "./ui";
@@ -363,7 +364,7 @@ export function ForcasDamagePanel() {
         <p className="mt-6 text-lg text-zinc-200">
           {t("pages.trilha.multipliers.spreadsheetLinkBefore")}
           <Link
-            to={localeSectionPath(locale, "unidades")}
+            to={withListViewMode(localeSectionPath(locale, "unidades"), "planilha")}
             className="font-semibold text-amber-200 underline decoration-amber-400/50 underline-offset-4 hover:text-amber-50"
           >
             {t("pages.trilha.index.step3CardTitle")}

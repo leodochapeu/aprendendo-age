@@ -1,6 +1,7 @@
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 import { useTranslation } from "@/hooks/useTranslation";
 import { localeSectionPath } from "@/lib/localeRoutes";
+import { withListViewMode } from "@/lib/listViewMode";
 
 import { trilhaShared } from "../trilhaAssets";
 import { TRILHA_CHAPTERS, chapterKicker } from "./chapters";
@@ -118,7 +119,9 @@ export function UnidadesPanel() {
       title={t("pages.trilha.index.step3")}
       lede={t("pages.trilha.index.step3Body")}
     >
-      <PillLink to={localeSectionPath(locale, "unidades")}>{t("pages.trilha.deck.openUnits")}</PillLink>
+      <PillLink to={withListViewMode(localeSectionPath(locale, "unidades"), "planilha")}>
+        {t("pages.trilha.deck.openUnits")}
+      </PillLink>
     </LessonSection>
   );
 }

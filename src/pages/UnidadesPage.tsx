@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 import { ListHeaderCollapseMark, ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
 import { ListViewModeToggle } from "@/components/list/ListViewModeToggle";
@@ -28,6 +28,7 @@ import type { ResolvedEntityLink } from "@/lib/entityResolve";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
 import { cn } from "@/lib/cn";
 import { pantheonCardTint } from "@/lib/pantheonCardTint";
+import { LIST_VIEW_MODE_PARAM, listViewModeFromSearch, type ListViewMode } from "@/lib/listViewMode";
 import { countActiveUnitFilters, unidadeMatchesFilters } from "@/lib/unidadeFilters";
 import {
   hasTipoContent,
@@ -127,12 +128,31 @@ export function UnidadesPage() {
   const { panteaoById, unidadeSlugById, unidades, panteoes, eras } = useCatalog();
   const navigate = useNavigate();
   const { pathname, search: locSearch } = useLocation();
+  const [, setSearchParams] = useSearchParams();
   const listIndexState = useMemo(
     () => listIndexLinkStateFromLocation(pathname, locSearch),
     [pathname, locSearch],
   );
   const [q, setQ] = useListPageSearchQuery();
-  const [viewMode, setViewMode] = useListViewMode("unidades");
+  const [viewMode, setStoredViewMode] = useListViewMode("unidades", locSearch);
+  const urlViewMode = listViewModeFromSearch(locSearch);
+
+  useEffect(() => {
+    if (urlViewMode) setStoredViewMode(urlViewMode);
+  }, [urlViewMode, setStoredViewMode]);
+
+  function setViewMode(mode: ListViewMode) {
+    setStoredViewMode(mode);
+    setSearchParams(
+      (prev) => {
+        if (!prev.has(LIST_VIEW_MODE_PARAM)) return prev;
+        const next = new URLSearchParams(prev);
+        next.set(LIST_VIEW_MODE_PARAM, mode);
+        return next;
+      },
+      { replace: true },
+    );
+  }
   const [spreadsheetPreview, setSpreadsheetPreview] = useState<ResolvedEntityLink | null>(null);
   const [compareMode, setCompareMode] = useState(false);
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
