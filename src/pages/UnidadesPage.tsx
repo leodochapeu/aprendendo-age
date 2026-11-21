@@ -7,7 +7,9 @@ import { SpreadsheetHoverPreview } from "@/components/spreadsheet/SpreadsheetHov
 import { SpreadsheetPageWidth } from "@/components/spreadsheet/SpreadsheetPageWidth";
 import { UnidadeFiltersModal } from "@/components/unidade/UnidadeFiltersModal";
 import { UnidadeHoverSummary } from "@/components/unidade/UnidadeHoverSummary";
+import { UnidadeMultiplierDamagePreview } from "@/components/unidade/UnidadeMultiplierDamagePreview";
 import { UnidadesSpreadsheet } from "@/components/unidade/UnidadesSpreadsheet";
+import { CatalogHoverFrame } from "@/components/ui/CatalogHoverPortrait";
 import { EntityCard } from "@/components/ui/EntityCard";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
 import { MetaNotionLine } from "@/components/ui/MetaNotionLine";
@@ -26,6 +28,7 @@ import type { ResolvedEntityLink } from "@/lib/entityResolve";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
 import { cn } from "@/lib/cn";
 import { pantheonCardTint } from "@/lib/pantheonCardTint";
+import { unitModelUrl } from "@/lib/unitModelUrl";
 import { LIST_VIEW_MODE_PARAM, listViewModeFromSearch, type ListViewMode } from "@/lib/listViewMode";
 import { countActiveUnitFilters, unidadeMatchesFilters } from "@/lib/unidadeFilters";
 import {
@@ -287,7 +290,16 @@ export function UnidadesPage() {
                   meta={
                     <MetaNotionLine parts={[joinRefNomes(u.panteao), joinRefNomes(u.era), categoriaText]} />
                   }
-                  hoverPreview={<UnidadeHoverSummary unidade={u} />}
+                  hoverPreviewWide
+                  hoverPreview={
+                    <CatalogHoverFrame
+                      modelUrl={unitModelUrl(u.id)}
+                      portraitSrc={getUnidadeAssetUrl(u)}
+                      footer={<UnidadeMultiplierDamagePreview unidade={u} />}
+                    >
+                      <UnidadeHoverSummary unidade={u} />
+                    </CatalogHoverFrame>
+                  }
                   watermarkSrc={getUnidadeAssetUrl(u)}
                   compareMode={compareMode}
                   selected={selected}

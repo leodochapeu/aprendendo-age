@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
+import { CatalogHoverFrame, CatalogHoverStats } from "@/components/ui/CatalogHoverPortrait";
 import { EntityCard } from "@/components/ui/EntityCard";
-import { EntityCardPreviewStats } from "@/components/ui/EntityCardPreview";
 import { MetaNotionLine } from "@/components/ui/MetaNotionLine";
 import { NotionText } from "@/components/ui/NotionText";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -16,6 +16,8 @@ import { firstNome, firstNumId, joinRefNomes } from "@/lib/entityRefs";
 import { getAldeaoAssetUrl } from "@/lib/entityWatermarkUrls";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
 import { pantheonCardTint } from "@/lib/pantheonCardTint";
+import { unitIdMatchingAldeao } from "@/lib/unidadeAldeao";
+import { unitModelUrl } from "@/lib/unitModelUrl";
 
 function matches(a: LocaleCatalog["aldeoes"][number], q: string) {
   if (!q.trim()) return true;
@@ -41,7 +43,7 @@ const toolbarBtn =
 
 export function AldeoesPage() {
   const { t } = useTranslation();
-  const { aldeoes, aldeaoSlugById, panteaoById } = useCatalog();
+  const { aldeoes, aldeaoSlugById, panteaoById, unidades } = useCatalog();
   const navigate = useNavigate();
   const { pathname, search: locSearch } = useLocation();
   const listIndexState = useMemo(
@@ -119,6 +121,7 @@ export function AldeoesPage() {
           const selectDisabled = compareMode && selectedSlugs.length >= 2 && !selected;
           const panteaoId = firstNumId(a.panteao);
           const tintNome = panteaoId != null ? (panteaoById.get(panteaoId)?.nome ?? "") : "";
+          const matchedUnitId = unitIdMatchingAldeao(a, unidades);
 
           return (
             <li key={a.id}>
@@ -129,74 +132,80 @@ export function AldeoesPage() {
                 cardTint={pantheonCardTint(tintNome)}
                 subtitle={firstNome(a.panteao) ? <NotionText text={firstNome(a.panteao)!} /> : undefined}
                 meta={<MetaNotionLine parts={[a.ingles]} />}
+                hoverPreviewWide
                 hoverPreview={
-                  <EntityCardPreviewStats
-                    items={[
-                      {
-                        icon: "aomr_hit_points_icon",
-                        label: t("spreadsheet.unidades.hitPoints"),
-                        value: a.vida,
-                        valueClassName: zeroValueClass(a.vida),
-                      },
-                      {
-                        icon: "aomr_population_provision_icon",
-                        label: t("spreadsheet.unidades.population"),
-                        value: a.populacao,
-                        valueClassName: zeroValueClass(a.populacao),
-                      },
-                      {
-                        icon: "aomr_time_icon",
-                        label: t("spreadsheet.aldeoes.trainTime"),
-                        value: a.tempo_de_treinamento,
-                        valueClassName: zeroValueClass(a.tempo_de_treinamento),
-                      },
-                      {
-                        icon: "aomr_caribou_icon",
-                        label: t("spreadsheet.aldeoes.hunt"),
-                        value: a.cacar,
-                        valueClassName: gatherBonusValueClass(a.cacar, a.cacar_porcento),
-                      },
-                      {
-                        icon: "aomr_cow_icon",
-                        label: t("spreadsheet.aldeoes.livestock"),
-                        value: a.gado_galinhas,
-                        valueClassName: gatherBonusValueClass(a.gado_galinhas, a.gado_porcento),
-                      },
-                      {
-                        icon: "aomr_berry_bush_icon",
-                        label: t("spreadsheet.aldeoes.berries"),
-                        value: a.frutinhas,
-                        valueClassName: gatherBonusValueClass(a.frutinhas, a.frutinhas_porcento),
-                      },
-                      {
-                        icon: "aomr_farm_icon",
-                        label: t("spreadsheet.aldeoes.farm"),
-                        value: a.fazenda,
-                        valueClassName: gatherBonusValueClass(a.fazenda, a.fazenda_porcento),
-                      },
-                      {
-                        icon: "aomr_tree_oak_icon",
-                        label: t("spreadsheet.aldeoes.tree"),
-                        value: a.arvore,
-                        valueClassName: gatherBonusValueClass(a.arvore, a.arvore_porcento),
-                      },
-                      {
-                        icon: "aomr_gold_mine_icon",
-                        label: t("spreadsheet.aldeoes.mine"),
-                        value: a.mina,
-                        valueClassName: gatherBonusValueClass(a.mina, a.mina_porcento),
-                      },
-                      {
-                        icon: "aomr_type_building_icon",
-                        label: t("spreadsheet.aldeoes.buildSpeed"),
-                        value: a.velocidade_construcao,
-                        valueClassName: gatherBonusValueClass(
-                          a.velocidade_construcao,
-                          a.velocidade_construcao_porcento,
-                        ),
-                      },
-                    ]}
-                  />
+                  <CatalogHoverFrame
+                    modelUrl={matchedUnitId != null ? unitModelUrl(matchedUnitId) : undefined}
+                    portraitSrc={getAldeaoAssetUrl(a)}
+                  >
+                    <CatalogHoverStats
+                      items={[
+                        {
+                          icon: "aomr_hit_points_icon",
+                          label: t("spreadsheet.unidades.hitPoints"),
+                          value: a.vida,
+                          valueClassName: zeroValueClass(a.vida),
+                        },
+                        {
+                          icon: "aomr_caribou_icon",
+                          label: t("spreadsheet.aldeoes.hunt"),
+                          value: a.cacar,
+                          valueClassName: gatherBonusValueClass(a.cacar, a.cacar_porcento),
+                        },
+                        {
+                          icon: "aomr_population_provision_icon",
+                          label: t("spreadsheet.unidades.population"),
+                          value: a.populacao,
+                          valueClassName: zeroValueClass(a.populacao),
+                        },
+                        {
+                          icon: "aomr_cow_icon",
+                          label: t("spreadsheet.aldeoes.livestock"),
+                          value: a.gado_galinhas,
+                          valueClassName: gatherBonusValueClass(a.gado_galinhas, a.gado_porcento),
+                        },
+                        {
+                          icon: "aomr_time_icon",
+                          label: t("spreadsheet.aldeoes.trainTime"),
+                          value: a.tempo_de_treinamento,
+                          valueClassName: zeroValueClass(a.tempo_de_treinamento),
+                        },
+                        {
+                          icon: "aomr_berry_bush_icon",
+                          label: t("spreadsheet.aldeoes.berries"),
+                          value: a.frutinhas,
+                          valueClassName: gatherBonusValueClass(a.frutinhas, a.frutinhas_porcento),
+                        },
+                        {
+                          icon: "aomr_farm_icon",
+                          label: t("spreadsheet.aldeoes.farm"),
+                          value: a.fazenda,
+                          valueClassName: gatherBonusValueClass(a.fazenda, a.fazenda_porcento),
+                        },
+                        {
+                          icon: "aomr_tree_oak_icon",
+                          label: t("spreadsheet.aldeoes.tree"),
+                          value: a.arvore,
+                          valueClassName: gatherBonusValueClass(a.arvore, a.arvore_porcento),
+                        },
+                        {
+                          icon: "aomr_gold_mine_icon",
+                          label: t("spreadsheet.aldeoes.mine"),
+                          value: a.mina,
+                          valueClassName: gatherBonusValueClass(a.mina, a.mina_porcento),
+                        },
+                        {
+                          icon: "aomr_type_building_icon",
+                          label: t("spreadsheet.aldeoes.buildSpeed"),
+                          value: a.velocidade_construcao,
+                          valueClassName: gatherBonusValueClass(
+                            a.velocidade_construcao,
+                            a.velocidade_construcao_porcento,
+                          ),
+                        },
+                      ]}
+                    />
+                  </CatalogHoverFrame>
                 }
                 watermarkSrc={getAldeaoAssetUrl(a)}
                 compareMode={compareMode}

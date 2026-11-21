@@ -1,5 +1,4 @@
-import { EntityCardPreviewStats } from "@/components/ui/EntityCardPreview";
-import { UnidadeMultiplierDamagePreview } from "@/components/unidade/UnidadeMultiplierDamagePreview";
+import { CatalogHoverStats } from "@/components/ui/CatalogHoverPortrait";
 import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useTranslation } from "@/hooks/useTranslation";
 import { formatArmorPercent } from "@/lib/armorDisplay";
@@ -64,72 +63,69 @@ export function UnidadeHoverSummary({ unidade }: { unidade: Unidade }) {
   const benchmarks = unitBenchmarksFor(unidade);
 
   return (
-    <div className="space-y-2">
-      <EntityCardPreviewStats
-        items={[
-          {
-            label: t("common.totalCost"),
-            value: unidade.custo_total,
-            valueClassName: unitBenchmarkValueClass(unidade.custo_total, benchmarks.totalCost, true),
-          },
-          {
-            icon: "aomr_population_provision_icon",
-            label: t("spreadsheet.unidades.population"),
-            value: unidade.populacao,
-            valueClassName: unitBenchmarkValueClass(unidade.populacao, benchmarks.population, true),
-          },
-          {
-            icon: "aomr_time_icon",
-            label: t("spreadsheet.unidades.trainTime"),
-            value: unidade.tempo_treinamento,
-            valueClassName: unitBenchmarkValueClass(unidade.tempo_treinamento, benchmarks.trainTime, true),
-          },
-          {
-            icon: "aomr_rate_of_fire_icon",
-            label: t("spreadsheet.unidades.attackSpeed"),
-            value: unidade.velocidade_de_ataque_atk_s,
-            valueClassName: unitBenchmarkValueClass(unidade.velocidade_de_ataque_atk_s, benchmarks.attackSpeed, true),
-          },
-          { icon: "rangeicon", label: t("spreadsheet.unidades.range"), value: unidade.alcance },
-          {
-            icon: "aomr_hit_points_icon",
-            label: t("spreadsheet.unidades.hitPoints"),
-            value: unidade.pontos_de_vida,
-            valueClassName: unitBenchmarkValueClass(unidade.pontos_de_vida, benchmarks.hitPoints, false),
-          },
-          {
-            icon: "hackarmor",
-            label: t("spreadsheet.unidades.hackArmor"),
-            value: unidade.armadura_anticorte != null ? formatArmorPercent(unidade.armadura_anticorte) : null,
-            valueClassName: unitBenchmarkValueClass(unidade.armadura_anticorte, benchmarks.hackArmor, false),
-          },
-          {
-            icon: "piercearmor",
-            label: t("spreadsheet.unidades.pierceArmor"),
-            value: unidade.armadura_antiperfurante != null ? formatArmorPercent(unidade.armadura_antiperfurante) : null,
-            valueClassName: unitBenchmarkValueClass(unidade.armadura_antiperfurante, benchmarks.pierceArmor, false),
-          },
-          {
-            icon: "hackdamage",
-            label: t("spreadsheet.unidades.hackDamage"),
-            value: unidade.dano_cortante,
-            valueClassName: unitBenchmarkValueClass(unidade.dano_cortante, benchmarks.hackDamage, false),
-          },
-          {
-            icon: "piercedamage",
-            label: t("spreadsheet.unidades.pierceDamage"),
-            value: unidade.dano_perfurante,
-            valueClassName: unitBenchmarkValueClass(unidade.dano_perfurante, benchmarks.pierceDamage, false),
-          },
-          {
-            icon: "aomr_speed_icon",
-            label: t("spreadsheet.unidades.moveSpeed"),
-            value: unidade.velocidade_movimento,
-            valueClassName: unitBenchmarkValueClass(unidade.velocidade_movimento, benchmarks.moveSpeed, false),
-          },
-        ]}
-      />
-      <UnidadeMultiplierDamagePreview unidade={unidade} />
-    </div>
+    <CatalogHoverStats
+      items={[
+        {
+          icon: "aomr_hit_points_icon",
+          label: t("spreadsheet.unidades.hitPoints"),
+          value: unidade.pontos_de_vida,
+          valueClassName: unitBenchmarkValueClass(unidade.pontos_de_vida, benchmarks.hitPoints, false),
+        },
+        {
+          label: t("common.totalCost"),
+          value: unidade.custo_total,
+          valueClassName: unitBenchmarkValueClass(unidade.custo_total, benchmarks.totalCost, true),
+        },
+        {
+          icon: "hackdamage",
+          label: t("spreadsheet.unidades.hackDamage"),
+          value: unidade.dano_cortante,
+          valueClassName: unitBenchmarkValueClass(unidade.dano_cortante, benchmarks.hackDamage, false),
+        },
+        {
+          icon: "aomr_population_provision_icon",
+          label: t("spreadsheet.unidades.population"),
+          value: unidade.populacao,
+          valueClassName: unitBenchmarkValueClass(unidade.populacao, benchmarks.population, true),
+        },
+        {
+          icon: "piercedamage",
+          label: t("spreadsheet.unidades.pierceDamage"),
+          value: unidade.dano_perfurante,
+          valueClassName: unitBenchmarkValueClass(unidade.dano_perfurante, benchmarks.pierceDamage, false),
+        },
+        {
+          icon: "aomr_time_icon",
+          label: t("spreadsheet.unidades.trainTime"),
+          value: unidade.tempo_treinamento,
+          valueClassName: unitBenchmarkValueClass(unidade.tempo_treinamento, benchmarks.trainTime, true),
+        },
+        {
+          icon: "aomr_rate_of_fire_icon",
+          label: t("spreadsheet.unidades.attackSpeed"),
+          value: unidade.velocidade_de_ataque_atk_s,
+          valueClassName: unitBenchmarkValueClass(unidade.velocidade_de_ataque_atk_s, benchmarks.attackSpeed, true),
+        },
+        {
+          icon: "hackarmor",
+          label: t("spreadsheet.unidades.hackArmor"),
+          value: unidade.armadura_anticorte != null ? formatArmorPercent(unidade.armadura_anticorte) : null,
+          valueClassName: unitBenchmarkValueClass(unidade.armadura_anticorte, benchmarks.hackArmor, false),
+        },
+        { icon: "rangeicon", label: t("spreadsheet.unidades.range"), value: unidade.alcance },
+        {
+          icon: "piercearmor",
+          label: t("spreadsheet.unidades.pierceArmor"),
+          value: unidade.armadura_antiperfurante != null ? formatArmorPercent(unidade.armadura_antiperfurante) : null,
+          valueClassName: unitBenchmarkValueClass(unidade.armadura_antiperfurante, benchmarks.pierceArmor, false),
+        },
+        {
+          icon: "aomr_speed_icon",
+          label: t("spreadsheet.unidades.moveSpeed"),
+          value: unidade.velocidade_movimento,
+          valueClassName: unitBenchmarkValueClass(unidade.velocidade_movimento, benchmarks.moveSpeed, false),
+        },
+      ]}
+    />
   );
 }

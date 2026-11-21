@@ -2,9 +2,10 @@ import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 
 import { ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
+import { BUILDING_PITCH } from "@/components/construcao/BuildingProjection";
 import { UnidadeTipoLine } from "@/components/unidade/UnidadeTipoLine";
+import { CatalogHoverFrame, CatalogHoverStats } from "@/components/ui/CatalogHoverPortrait";
 import { EntityCard } from "@/components/ui/EntityCard";
-import { EntityCardPreviewStats } from "@/components/ui/EntityCardPreview";
 import { MetaNotionLine } from "@/components/ui/MetaNotionLine";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SearchField } from "@/components/ui/SearchField";
@@ -13,6 +14,7 @@ import { useCatalog } from "@/hooks/useCatalog";
 import { useListPageSearchQuery } from "@/hooks/useListPageSearchQuery";
 import { useTranslation } from "@/hooks/useTranslation";
 import { buildingFamilyOf, familyListedAsGeneral, isHiddenFamilyMember, variantButtonLabel } from "@/lib/buildingFamilies";
+import { buildingModelUrl } from "@/lib/buildingModelUrl";
 import { getConstrucaoAssetUrl } from "@/lib/entityWatermarkUrls";
 import { panteaoFieldHasMultiplePantheons, pantheonCardTint } from "@/lib/pantheonCardTint";
 import { listIndexLinkStateFromLocation } from "@/lib/listIndexReturnState";
@@ -88,20 +90,27 @@ export function ConstrucoesPage() {
                 ) : undefined
               }
               meta={<MetaNotionLine parts={[familyListedAsGeneral(c.id) ? t("common.general") : c.panteao, c.era]} />}
+              hoverPreviewWide
               hoverPreview={
-                <EntityCardPreviewStats
-                  items={[
-                    { label: t("common.totalCost"), value: c.custo },
-                    { icon: "woodaom", label: t("common.wood"), value: c.madeira },
-                    { icon: "goldaom", label: t("common.gold"), value: c.ouro },
-                    {
-                      icon: "aomr_time_icon",
-                      label: t("common.buildTime"),
-                      value: c.tempo_construir_segundos,
-                    },
-                    { icon: "aom_garrison_icon", label: t("common.garrison"), value: c.guarnicao },
-                  ]}
-                />
+                <CatalogHoverFrame
+                  modelUrl={buildingModelUrl(c.id)}
+                  portraitSrc={getConstrucaoAssetUrl(c)}
+                  pitch={BUILDING_PITCH}
+                >
+                  <CatalogHoverStats
+                    items={[
+                      { label: t("common.totalCost"), value: c.custo },
+                      { icon: "woodaom", label: t("common.wood"), value: c.madeira },
+                      { icon: "goldaom", label: t("common.gold"), value: c.ouro },
+                      {
+                        icon: "aomr_time_icon",
+                        label: t("common.buildTime"),
+                        value: c.tempo_construir_segundos,
+                      },
+                      { icon: "aom_garrison_icon", label: t("common.garrison"), value: c.guarnicao },
+                    ]}
+                  />
+                </CatalogHoverFrame>
               }
               watermarkSrc={getConstrucaoAssetUrl(c)}
             />

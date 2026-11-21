@@ -27,7 +27,7 @@ type BuildingProjectionProps = {
 };
 
 /** Graus acima da horizontal. Perto de 30° lê como isométrica sem virar vista de cima. */
-const BUILDING_PITCH = 28;
+export const BUILDING_PITCH = 28;
 
 const EMPTY_PANTHEONS: number[] = [];
 

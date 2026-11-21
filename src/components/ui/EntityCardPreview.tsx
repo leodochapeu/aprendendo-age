@@ -12,9 +12,48 @@ export type EntityCardPreviewStat = {
   valueClassName?: string;
 };
 
-export function EntityCardPreviewStats({ items }: { items: EntityCardPreviewStat[] }) {
+export function EntityCardPreviewStats({
+  items,
+  columns = 3,
+}: {
+  items: EntityCardPreviewStat[];
+  /** 1 ou 2: linhas com ícone, nome e valor. 3: os chips compactos de ícone e número. */
+  columns?: 1 | 2 | 3;
+}) {
   const visibleItems = items.filter((item) => item.value != null && item.value !== "");
   if (!visibleItems.length) return null;
+
+  if (columns === 1 || columns === 2) {
+    return (
+      <div className={cn("grid gap-x-4", columns === 2 ? "grid-cols-2" : "grid-cols-1")}>
+        {visibleItems.map((item, index) => {
+          const iconSrc = item.icon ? resolveTokenIconSrc(item.icon) : undefined;
+          return (
+            <div
+              key={`${item.label}-${index}`}
+              title={item.label}
+              className="flex min-w-0 items-center gap-1.5 border-b border-zinc-800/80 py-1.5"
+            >
+              {iconSrc ? (
+                <img src={iconSrc} alt="" aria-hidden className="size-4 shrink-0 object-contain" />
+              ) : (
+                <span className="size-4 shrink-0" />
+              )}
+              <span className="min-w-0 flex-1 truncate text-[11px] text-zinc-400">{item.label}</span>
+              <span
+                className={cn(
+                  "shrink-0 text-xs font-semibold tabular-nums",
+                  item.valueClassName ?? "text-zinc-100",
+                )}
+              >
+                {item.value}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">

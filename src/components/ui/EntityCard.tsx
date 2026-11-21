@@ -52,6 +52,8 @@ type EntityCardProps = {
   rankedHighlight?: boolean;
   /** Resumo exibido ao passar o mouse ou focar o card. O nome do card é incluído automaticamente no topo. */
   hoverPreview?: ReactNode;
+  /** Tooltip mais largo, para o retrato 3D ao lado dos atributos. */
+  hoverPreviewWide?: boolean;
 };
 
 export function EntityCard({
@@ -75,6 +77,7 @@ export function EntityCard({
   titleIcons,
   rankedHighlight = false,
   hoverPreview,
+  hoverPreviewWide = false,
 }: EntityCardProps) {
   const [coverSrc, setCoverSrc] = useState(backgroundCoverSrc);
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -96,7 +99,7 @@ export function EntityCard({
       const pad = 10;
       const gap = 10;
       const anchorRect = anchor.getBoundingClientRect();
-      const previewWidth = previewRef.current?.offsetWidth ?? 416;
+      const previewWidth = previewRef.current?.offsetWidth ?? (hoverPreviewWide ? 704 : 416);
       const previewHeight = previewRef.current?.offsetHeight ?? 180;
       const left = Math.max(
         pad,
@@ -125,7 +128,7 @@ export function EntityCard({
       window.removeEventListener("resize", updatePosition);
       window.removeEventListener("scroll", updatePosition, true);
     };
-  }, [hoverPreview, previewOpen]);
+  }, [hoverPreview, hoverPreviewWide, previewOpen]);
 
   useEffect(() => {
     if (!previewOpen) return;
@@ -315,7 +318,12 @@ export function EntityCard({
             ref={previewRef}
             id={previewId}
             role="tooltip"
-            className="pointer-events-none fixed z-[300] w-[min(26rem,calc(100vw-1.25rem))] overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-950/95 text-left shadow-xl shadow-black/60 backdrop-blur-sm"
+            className={cn(
+              "pointer-events-none fixed z-[300] overflow-hidden rounded-xl border border-zinc-700/80 bg-zinc-950/95 text-left shadow-xl shadow-black/60 backdrop-blur-sm",
+              hoverPreviewWide
+                ? "w-[min(44rem,calc(100vw-1.25rem))]"
+                : "w-[min(26rem,calc(100vw-1.25rem))]",
+            )}
             style={{ top: previewPosition.top, left: previewPosition.left }}
           >
             <div className="border-b border-zinc-800/90 px-3.5 py-2.5">

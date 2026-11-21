@@ -49,7 +49,7 @@ export function UnidadeMultiplierDamagePreview({ unidade }: { unidade: Unidade }
   const worseIcon = resolveTokenIconSrc("aomr_worse_icon");
 
   return (
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+    <div className="grid grid-cols-2 gap-2 border-t border-zinc-800/80 pt-3 sm:grid-cols-3">
       {rows.map(({ key, damage, multiplier, factor, calculatedDamage }) => {
         const damageIcon = resolveTokenIconSrc(damage.icon);
         const targetToken = resolveMultiplicadorIcon(multiplier);

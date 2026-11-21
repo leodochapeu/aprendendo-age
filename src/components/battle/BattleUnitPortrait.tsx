@@ -1,7 +1,7 @@
 import { useId, useLayoutEffect, useRef, useState, type FocusEvent, type RefObject } from "react";
 import { createPortal } from "react-dom";
 
-import { UnidadeModelViewer } from "@/components/unidade/UnidadeModelViewer";
+import { CatalogHoverPortrait } from "@/components/ui/CatalogHoverPortrait";
 import { cn } from "@/lib/cn";
 import { getUnidadeAssetUrl } from "@/lib/entityWatermarkUrls";
 import { unitModelUrl } from "@/lib/unitModelUrl";
@@ -100,7 +100,7 @@ export function BattleUnitPortrait({
     >
       {face}
       {previewOpen ? (
-        <BattleUnitHover nome={nome} icon={icon} unitId={unitId} portraitSrc={src} anchorRef={anchorRef} />
+        <BattleUnitHover nome={nome} unitId={unitId} portraitSrc={src} anchorRef={anchorRef} />
       ) : null}
     </span>
   );
@@ -119,13 +119,11 @@ function LockMark() {
 
 function BattleUnitHover({
   nome,
-  icon,
   unitId,
   portraitSrc,
   anchorRef,
 }: {
   nome: string;
-  icon?: string | null;
   unitId?: number;
   portraitSrc?: string;
   anchorRef: RefObject<HTMLSpanElement | null>;
@@ -178,13 +176,7 @@ function BattleUnitHover({
         <p className="font-[family-name:var(--font-display)] text-base font-semibold tracking-wide text-amber-100">{nome}</p>
       </div>
       <div className="p-3">
-        {modelUrl ? (
-          <UnidadeModelViewer urls={[modelUrl]} compact spin />
-        ) : portraitSrc ? (
-          <img src={portraitSrc} alt="" className="mx-auto h-52 w-full object-contain" />
-        ) : (
-          <p className="py-8 text-center text-sm text-zinc-400">{icon ?? nome}</p>
-        )}
+        <CatalogHoverPortrait modelUrl={modelUrl} portraitSrc={portraitSrc} />
       </div>
     </div>,
     document.body,
