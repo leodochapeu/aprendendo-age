@@ -135,7 +135,18 @@ export function AtalhosCommandsPanel() {
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <ShortcutCard
           title={t("pages.trilha.shortcuts.tableGarrisonEnter")}
-          keys={<p className="text-2xl font-semibold text-zinc-50">{t("pages.trilha.shortcuts.tableGarrisonEnterHint")}</p>}
+          keys={
+            <>
+              <Keycap>Alt</Keycap>
+              <KeyPlus />
+              <img
+                src={atalhosImg("Icon_MouseButton2.png")}
+                alt={t("pages.trilha.shortcuts.tableGarrisonEnterHint")}
+                title={t("pages.trilha.shortcuts.tableGarrisonEnterHint")}
+                className="h-12 w-12 object-contain"
+              />
+            </>
+          }
         />
         <ShortcutCard
           title={t("pages.trilha.shortcuts.tableGarrisonEmpty")}

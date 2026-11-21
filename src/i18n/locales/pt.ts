@@ -996,7 +996,7 @@ export const ptMessages: TranslationTree = {
         tableCancelLast: "Cancelar último item",
         tableCancelQueue: "Cancelar fila inteira",
         tableGarrisonEmptyHint: "Com prédio selecionado:",
-        tableGarrisonEnterHint: "Alt + clique direito na construção",
+        tableGarrisonEnterHint: "clique direito na construção",
       },
       multipliers: {
         title: "Tipos de Unidades e Multiplicadores",

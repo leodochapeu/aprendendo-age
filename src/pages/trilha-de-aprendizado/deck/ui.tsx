@@ -82,8 +82,8 @@ export function ShortcutCard({ title, keys, hint }: { title: ReactNode; keys: Re
     <article className="flex min-h-40 flex-col justify-between gap-6 rounded-3xl border border-white/10 bg-white/[0.045] p-6 md:p-7">
       <h3 className="text-lg font-medium leading-snug text-zinc-50 md:text-xl">{title}</h3>
       <div>
+        {hint ? <p className="mb-3 text-base leading-relaxed text-zinc-300">{hint}</p> : null}
         <div className="flex flex-wrap items-center gap-2">{keys}</div>
-        {hint ? <p className="mt-3 text-base leading-relaxed text-zinc-300">{hint}</p> : null}
       </div>
     </article>
   );

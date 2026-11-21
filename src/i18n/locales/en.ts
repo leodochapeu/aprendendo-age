@@ -995,7 +995,7 @@ export const enMessages: TranslationTree = {
         tableCancelLast: "Cancel last item",
         tableCancelQueue: "Cancel entire queue",
         tableGarrisonEmptyHint: "With building selected:",
-        tableGarrisonEnterHint: "Alt + right-click on building",
+        tableGarrisonEnterHint: "right-click on building",
       },
       multipliers: {
         title: "Unit Types and Multipliers",
