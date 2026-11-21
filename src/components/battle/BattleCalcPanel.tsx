@@ -129,6 +129,15 @@ function Hint({ text, children }: { text: string; children: ReactNode }) {
   );
 }
 
+function CalcLine({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm leading-relaxed text-zinc-100">
+      <span className="font-semibold text-amber-50">• {label}</span>
+      {children}
+    </p>
+  );
+}
+
 function formatNum(value: number, locale: string): string {
   return value.toLocaleString(locale === "en" ? "en-US" : "pt-BR", { maximumFractionDigits: 2 });
 }
@@ -155,24 +164,29 @@ function ApproachLine({
   bothInRange: string;
 }) {
   const { t } = useTranslation();
+  const label = t("pages.battle.calcRange");
   const opponentWalks = opponent.attackDelay != null && opponent.attackDelay > 0;
   if (side.attackDelay === 0 && opponentWalks) {
     return (
-      <p className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-amber-50">
+      <CalcLine label={label}>
         <Hint text={t("pages.battle.hintRange")}>
           <StatIcon token="rangeicon" />
           <span>{fill(opensAtRange, { range: num(side.range) })}</span>
         </Hint>
-      </p>
+      </CalcLine>
     );
   }
   if (side.attackDelay == null) {
-    return <p className="mt-2 text-sm text-zinc-300">{neverReaches}</p>;
+    return (
+      <CalcLine label={label}>
+        <span>{neverReaches}</span>
+      </CalcLine>
+    );
   }
   if (side.attackDelay > 0) {
     const distance = Math.max(0, opponent.range - side.range);
     return (
-      <p className="mt-2 flex flex-wrap items-center gap-1.5 text-sm text-zinc-100">
+      <CalcLine label={label}>
         <Hint text={t("pages.battle.hintRange")}>
           <StatIcon token="rangeicon" />
           <span>{num(distance)}</span>
@@ -184,11 +198,15 @@ function ApproachLine({
         </Hint>
         <span className="text-zinc-400">=</span>
         <span className="font-semibold text-amber-50">{fill(secondsToReach, { seconds: num(side.attackDelay) })}</span>
-      </p>
+      </CalcLine>
     );
   }
   if (side.ranged && opponent.ranged) {
-    return <p className="mt-2 text-sm text-zinc-300">{bothInRange}</p>;
+    return (
+      <CalcLine label={label}>
+        <span>{bothInRange}</span>
+      </CalcLine>
+    );
   }
   return null;
 }
@@ -238,17 +256,17 @@ function RealSideCalc({
   return (
     <div className="rounded-xl border border-white/15 bg-zinc-900/90 p-3">
       <SideIdentity unit={unit} title={title} titleClass={titleClass} mark={mark} />
-      <ApproachLine
-        side={side}
-        opponent={opponent}
-        num={num}
-        opensAtRange={opensAtRange}
-        secondsToReach={secondsToReach}
-        neverReaches={neverReaches}
-        bothInRange={bothInRange}
-      />
       {side.channels.length === 0 ? <p className="mt-2 text-sm text-zinc-300">{noDamage}</p> : null}
-      <ul className="mt-2 space-y-2">
+      <div className="mt-2 space-y-1.5">
+        <ApproachLine
+          side={side}
+          opponent={opponent}
+          num={num}
+          opensAtRange={opensAtRange}
+          secondsToReach={secondsToReach}
+          neverReaches={neverReaches}
+          bothInRange={bothInRange}
+        />
         {side.channels.map((channel) => (
           <ChannelRow
             key={channel.channel}
@@ -256,51 +274,57 @@ function RealSideCalc({
             num={num}
             ignoresArmor={ignoresArmor}
             perHit={perHit}
+            damageLabel={t("pages.battle.calcDamage")}
+            defenseLabel={t("pages.battle.calcDefense")}
           />
         ))}
-      </ul>
-      <p className="mt-3 flex flex-wrap items-center gap-1.5 text-sm text-zinc-100">
-        <Hint text={t("pages.battle.hintPerHit")}>
-          <span>{num(side.damagePerHit)}</span>
-        </Hint>
-        <span className="text-zinc-400">×</span>
-        <Hint text={t("pages.battle.hintAttackSpeed")}>
-          <StatIcon token="aomr_rate_of_fire_icon" />
-          <span>{num(side.attacksPerSecond)}</span>
-        </Hint>
-        <span className="text-zinc-400">=</span>
-        <Hint text={t("pages.battle.hintDps")}>
-          <span>{num(side.dps)}</span>
-        </Hint>
-      </p>
-      <p className="mt-1 flex flex-wrap items-center gap-1.5 text-sm text-zinc-100">
-        <Hint text={t("pages.battle.hintHitPoints")}>
-          <StatIcon token="aomr_hit_points_icon" />
-          <span>{num(targetHp)}</span>
-        </Hint>
-        <span className="text-zinc-400">÷</span>
-        <Hint text={t("pages.battle.hintDps")}>
-          <span>{num(side.dps)}</span>
-        </Hint>
-        <span className="text-zinc-400">=</span>
-        <Hint text={t("pages.battle.hintTimeToFall")}>
-          <span className="font-semibold text-amber-50">
-            {side.secondsToKill == null ? noDamage : secondsLabel.replace("{{seconds}}", num(side.secondsToKill))}
-          </span>
-        </Hint>
-      </p>
-      {walkedFirst ? (
-        <p className="mt-1 text-sm font-semibold text-amber-50">
-          {fill(approachSecondsLabel, {
-            delay: num(side.attackDelay ?? 0),
-            seconds: num(side.secondsToKill ?? 0),
-            total: num(side.secondsFromStart ?? side.secondsToKill ?? 0),
-          })}
-        </p>
-      ) : null}
-      <p className="mt-1 text-xs text-zinc-300">
-        <Hint text={t("pages.battle.hintHpLeft")}>{hpLeftLabel.replace("{{hp}}", num(side.hpRemaining))}</Hint>
-      </p>
+        <CalcLine label={t("pages.battle.calcSpeed")}>
+          <Hint text={t("pages.battle.hintPerHit")}>
+            <span>{num(side.damagePerHit)}</span>
+          </Hint>
+          <span className="text-zinc-400">×</span>
+          <Hint text={t("pages.battle.hintAttackSpeed")}>
+            <StatIcon token="aomr_rate_of_fire_icon" />
+            <span>{num(side.attacksPerSecond)}</span>
+          </Hint>
+          <span className="text-zinc-400">=</span>
+          <Hint text={t("pages.battle.hintDps")}>
+            <span>{num(side.dps)}</span>
+          </Hint>
+        </CalcLine>
+        <CalcLine label={t("pages.battle.calcTime")}>
+          <Hint text={t("pages.battle.hintHitPoints")}>
+            <StatIcon token="aomr_hit_points_icon" />
+            <span>{num(targetHp)}</span>
+          </Hint>
+          <span className="text-zinc-400">÷</span>
+          <Hint text={t("pages.battle.hintDps")}>
+            <span>{num(side.dps)}</span>
+          </Hint>
+          <span className="text-zinc-400">=</span>
+          <Hint text={t("pages.battle.hintTimeToFall")}>
+            <span className="font-semibold text-amber-50">
+              {side.secondsToKill == null ? noDamage : secondsLabel.replace("{{seconds}}", num(side.secondsToKill))}
+            </span>
+          </Hint>
+        </CalcLine>
+        {walkedFirst ? (
+          <CalcLine label={t("pages.battle.calcTime")}>
+            <span className="font-semibold text-amber-50">
+              {fill(approachSecondsLabel, {
+                delay: num(side.attackDelay ?? 0),
+                seconds: num(side.secondsToKill ?? 0),
+                total: num(side.secondsFromStart ?? side.secondsToKill ?? 0),
+              })}
+            </span>
+          </CalcLine>
+        ) : null}
+        <CalcLine label={t("pages.battle.calcResult")}>
+          <Hint text={t("pages.battle.hintHpLeft")}>
+            <span className="font-semibold text-amber-50">{hpLeftLabel.replace("{{hp}}", num(side.hpRemaining))}</span>
+          </Hint>
+        </CalcLine>
+      </div>
     </div>
   );
 }
@@ -310,11 +334,15 @@ function ChannelRow({
   num,
   ignoresArmor,
   perHit,
+  damageLabel,
+  defenseLabel,
 }: {
   channel: RealHitChannel;
   num: (value: number) => string;
   ignoresArmor: string;
   perHit: string;
+  damageLabel: string;
+  defenseLabel: string;
 }) {
   const { t } = useTranslation();
   const armorIcon = ARMOR_ICON[channel.channel];
@@ -322,8 +350,8 @@ function ChannelRow({
   const typeIcon = channel.matchedType ? TYPE_ICON[channel.matchedType] : undefined;
   const typeLabel = channel.matchedType ? t(`pages.battle.hintType.${channel.matchedType}`) : "";
   return (
-    <li className="text-sm text-zinc-100">
-      <p className="flex flex-wrap items-center gap-1.5">
+    <>
+      <CalcLine label={damageLabel}>
         <Hint text={t(CHANNEL_HINT[channel.channel])}>
           <StatIcon token={CHANNEL_ICON[channel.channel]} />
           <span>{num(channel.baseDamage)}</span>
@@ -339,8 +367,8 @@ function ChannelRow({
             <span>{num(channel.boostedDamage)}</span>
           </>
         ) : null}
-      </p>
-      <p className="mt-1 flex flex-wrap items-center gap-1.5 text-zinc-300">
+      </CalcLine>
+      <CalcLine label={defenseLabel}>
         {channel.armorPercent == null ? (
           <span>{ignoresArmor}</span>
         ) : (
@@ -355,8 +383,8 @@ function ChannelRow({
             {num(channel.damagePerHit)} {perHit}
           </span>
         </Hint>
-      </p>
-    </li>
+      </CalcLine>
+    </>
   );
 }
 
