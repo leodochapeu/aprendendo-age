@@ -477,6 +477,7 @@ function BattleRandomSession({
                   <BattleUnitPortrait
                     nome={u.nome}
                     icon={u.icon}
+                    unitId={u.id}
                     size="sm"
                     locked={locked}
                     disabled={phase !== "playing" || locked}
@@ -514,7 +515,7 @@ function BattleRandomSession({
           </div>
           {defender ? (
             <div className="mt-4 flex flex-col items-center gap-3 text-center">
-              <BattleUnitPortrait nome={defender.nome} icon={defender.icon} size="lg" />
+              <BattleUnitPortrait nome={defender.nome} icon={defender.icon} unitId={defender.id} size="lg" />
               {revealDefenderCategory ? <RevealedTipoIcons tipo={defender.tipo} /> : null}
               <p className="font-semibold text-amber-50">{defender.nome}</p>
               {firstNome(defender.panteao) ? (

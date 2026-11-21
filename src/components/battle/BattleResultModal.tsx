@@ -72,6 +72,7 @@ function FighterPortrait({
         <BattleUnitPortrait
           nome={unit.nome}
           icon={unit.icon}
+          unitId={unit.id}
           size="lg"
           className={cn(
             "relative rounded-2xl bg-[#1a1612]",

@@ -39,7 +39,7 @@ export function BattleConfirmModal({
           <p className="text-xs font-semibold uppercase tracking-wider text-emerald-300/90">
             {t("pages.battle.you")}
           </p>
-          <BattleUnitPortrait nome={attacker.nome} icon={attacker.icon} size="lg" />
+          <BattleUnitPortrait nome={attacker.nome} icon={attacker.icon} unitId={attacker.id} size="lg" />
           <p className="max-w-28 text-sm font-medium text-amber-50">{attacker.nome}</p>
           {revealAttackerCategory ? (
             <UnidadeTipoLine tipo={attacker.tipo} colored className="justify-center" />
@@ -50,7 +50,7 @@ export function BattleConfirmModal({
           <p className="text-xs font-semibold uppercase tracking-wider text-rose-300/90">
             {t("pages.battle.enemy")}
           </p>
-          <BattleUnitPortrait nome={defender.nome} icon={defender.icon} size="lg" />
+          <BattleUnitPortrait nome={defender.nome} icon={defender.icon} unitId={defender.id} size="lg" />
           <p className="max-w-28 text-sm font-medium text-amber-50">{defender.nome}</p>
           {revealDefenderCategory ? (
             <UnidadeTipoLine tipo={defender.tipo} colored className="justify-center" />
