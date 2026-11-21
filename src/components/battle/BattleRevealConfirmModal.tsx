@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
+import { BattleConfirmSheet } from "@/components/battle/BattleConfirmSheet";
+import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
 import { ModalApp } from "@/components/ui/ModalApp";
+import type { Unidade } from "@/data/catalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { FAVOR_PER_WIN } from "@/lib/battleGame";
 import { cn } from "@/lib/cn";
@@ -46,15 +49,84 @@ export function BattleRevealConfirmModal({ open, title, description, cost, onClo
   );
 }
 
+export function BattleRevealUnitSheet({
+  open,
+  unit,
+  cost,
+  onChooseAnother,
+  onCancel,
+  onConfirm,
+}: {
+  open: boolean;
+  unit: Unidade | null;
+  cost: number;
+  onChooseAnother: () => void;
+  onCancel: () => void;
+  onConfirm: () => void;
+}) {
+  const { t } = useTranslation();
+  const favorIcon = getIconFieldUrl("favoraom");
+
+  return (
+    <BattleConfirmSheet
+      open={open && unit != null}
+      title={t("pages.battle.revealDeckUnitTitle")}
+      description={t("pages.battle.revealDeckUnitConfirm")}
+      onClose={onCancel}
+    >
+      {unit ? (
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center justify-center gap-3 sm:justify-start">
+            <BattleUnitPortrait nome={unit.nome} icon={unit.icon} unitId={unit.id} size="md" />
+            <div className="min-w-0">
+              <p className="max-w-40 truncate text-sm font-medium text-amber-50">{unit.nome}</p>
+              <p className="mt-1 flex items-center gap-1.5 text-sm text-blue-100">
+                {favorIcon ? <img src={favorIcon} alt="" aria-hidden className="size-4 object-contain" /> : null}
+                <span className="font-bold tabular-nums">{cost}</span>
+                <span className="text-blue-200/70">{t("pages.battle.favor")}</span>
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2 sm:shrink-0 sm:flex-row">
+            <button
+              type="button"
+              onClick={onCancel}
+              className="rounded-xl border border-aom-border bg-zinc-900/60 px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-500"
+            >
+              {t("pages.battle.cancel")}
+            </button>
+            <button
+              type="button"
+              onClick={onChooseAnother}
+              className="rounded-xl border border-aom-border bg-zinc-900/60 px-4 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-500"
+            >
+              {t("pages.battle.revealDeckChooseAnother")}
+            </button>
+            <button
+              type="button"
+              onClick={onConfirm}
+              className="rounded-xl border border-amber-500/50 bg-amber-500/20 px-4 py-2.5 text-sm font-semibold text-amber-100 transition hover:bg-amber-500/30 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+            >
+              {t("pages.battle.revealConfirm")}
+            </button>
+          </div>
+        </div>
+      ) : null}
+    </BattleConfirmSheet>
+  );
+}
+
 export function RevealEyeButton({
   label,
   active,
+  pending = false,
   disabled,
   locked,
   onClick,
 }: {
   label: string;
   active: boolean;
+  pending?: boolean;
   disabled: boolean;
   locked: boolean;
   onClick: () => void;
@@ -102,7 +174,9 @@ export function RevealEyeButton({
           "flex size-10 items-center justify-center rounded-full border transition",
           active
             ? "border-amber-200/80 bg-amber-500/20 text-amber-100 shadow-[0_0_16px_rgba(251,191,36,0.4)]"
-            : "border-white/20 bg-black/45 text-zinc-100 hover:border-amber-200/60 hover:text-amber-50",
+            : pending
+              ? "border-amber-200/80 bg-amber-500/15 text-amber-100 ring-2 ring-amber-300/50"
+              : "border-white/20 bg-black/45 text-zinc-100 hover:border-amber-200/60 hover:text-amber-50",
           blocked && "opacity-40",
           disabled && !active && "cursor-not-allowed opacity-40 hover:border-white/20 hover:text-zinc-100",
         )}

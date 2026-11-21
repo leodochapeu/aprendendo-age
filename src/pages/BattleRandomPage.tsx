@@ -8,7 +8,7 @@ import { BattleConfirmModal } from "@/components/battle/BattleConfirmModal";
 import { BattleHintPopover } from "@/components/battle/BattleHintPopover";
 import { BattleResultModal } from "@/components/battle/BattleResultModal";
 import { BattleFavorModal } from "@/components/battle/BattleFavorModal";
-import { BattleRevealConfirmModal, RevealEyeButton } from "@/components/battle/BattleRevealConfirmModal";
+import { BattleRevealConfirmModal, BattleRevealUnitSheet, RevealEyeButton } from "@/components/battle/BattleRevealConfirmModal";
 import { BattleUnitPortrait } from "@/components/battle/BattleUnitPortrait";
 import type { Unidade } from "@/data/catalog";
 import { useCatalog } from "@/hooks/useCatalog";
@@ -126,6 +126,7 @@ function BattleRandomSession({
   const [pendingReveal, setPendingReveal] = useState<"defender" | "deck" | null>(null);
   const [revealDefenderCategory, setRevealDefenderCategory] = useState(false);
   const [revealDeckUnitArmed, setRevealDeckUnitArmed] = useState(false);
+  const [pendingRevealUnitId, setPendingRevealUnitId] = useState<number | null>(null);
   const [revealedAttackerId, setRevealedAttackerId] = useState<number | null>(
     null,
   );
@@ -163,8 +164,9 @@ function BattleRandomSession({
   const wins = history.filter((h) => h.outcome === "win").length;
   const losses = history.filter((h) => h.outcome === "loss").length;
   const draws = history.filter((h) => h.outcome === "draw").length;
-  const deckUnitRevealPurchased =
-    revealDeckUnitArmed || revealedAttackerId != null;
+  const deckUnitRevealPurchased = revealedAttackerId != null;
+  const pendingRevealUnit =
+    pendingRevealUnitId != null ? unidadeById.get(pendingRevealUnitId) : undefined;
 
   useEffect(() => {
     if (phase !== "playing") setLockedHint(null);
@@ -172,11 +174,32 @@ function BattleRandomSession({
 
   const selectAttacker = (attackerId: number) => {
     setLockedHint(null);
+    setPendingRevealUnitId(null);
     setPendingAttackerId(attackerId);
-    if (revealDeckUnitArmed && revealedAttackerId == null) {
-      setRevealedAttackerId(attackerId);
-      setRevealDeckUnitArmed(false);
-    }
+  };
+
+  const armDeckUnitReveal = () => {
+    if (deckUnitRevealPurchased || !canPurchaseFavorEffect(favor, "revealDeckUnitCategory")) return;
+    setPendingAttackerId(null);
+    setLockedHint(null);
+    setPendingReveal(null);
+    setFavorModalOpen(false);
+    setRevealDeckUnitArmed(true);
+  };
+
+  const cancelDeckUnitReveal = () => {
+    setRevealDeckUnitArmed(false);
+    setPendingRevealUnitId(null);
+  };
+
+  const confirmDeckUnitReveal = () => {
+    if (pendingRevealUnitId == null || deckUnitRevealPurchased) return;
+    const nextFavor = purchaseFavorEffect(favor, "revealDeckUnitCategory");
+    if (nextFavor == null) return;
+    setFavor(nextFavor);
+    setRevealedAttackerId(pendingRevealUnitId);
+    setRevealDeckUnitArmed(false);
+    setPendingRevealUnitId(null);
   };
 
   const buyDefenderReveal = () => {
@@ -184,14 +207,6 @@ function BattleRandomSession({
     if (nextFavor == null || revealDefenderCategory) return;
     setFavor(nextFavor);
     setRevealDefenderCategory(true);
-  };
-
-  const buyDeckUnitReveal = () => {
-    const nextFavor = purchaseFavorEffect(favor, "revealDeckUnitCategory");
-    if (nextFavor == null || deckUnitRevealPurchased) return;
-    setFavor(nextFavor);
-    setRevealDeckUnitArmed(true);
-    setFavorModalOpen(false);
   };
 
   const buyPreviousAgeUnlock = () => {
@@ -245,6 +260,7 @@ function BattleRandomSession({
 
     setRevealDefenderCategory(false);
     setRevealDeckUnitArmed(false);
+    setPendingRevealUnitId(null);
     setRevealedAttackerId(null);
     setUnlockedPreviousAgeUnitIds([]);
     setFavorModalOpen(false);
@@ -381,7 +397,7 @@ function BattleRandomSession({
 
   return (
     <BattleAtmosphere>
-    <div className={pendingAttackerId != null && phase === "playing" ? "mx-auto max-w-5xl pb-40" : "mx-auto max-w-5xl"}>
+    <div className={(pendingAttackerId != null || pendingRevealUnitId != null) && phase === "playing" ? "mx-auto max-w-5xl pb-40" : "mx-auto max-w-5xl"}>
       <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink-300">
@@ -464,14 +480,20 @@ function BattleRandomSession({
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-200">
                 {t("pages.battle.yourDeck")}
               </p>
-              <p className="mt-1 text-sm text-zinc-300">{t("pages.battle.pickUnitHint")}</p>
+              <p className={cn("mt-1 text-sm", revealDeckUnitArmed ? "text-amber-100" : "text-zinc-300")}>
+                {revealDeckUnitArmed ? t("pages.battle.revealDeckPickHint") : t("pages.battle.pickUnitHint")}
+              </p>
             </div>
             <RevealEyeButton
               label={t("pages.battle.revealDeckUnitCategory")}
               active={deckUnitRevealPurchased}
+              pending={revealDeckUnitArmed}
               disabled={phase !== "playing"}
               locked={!canPurchaseFavorEffect(favor, "revealDeckUnitCategory")}
-              onClick={() => setPendingReveal("deck")}
+              onClick={() => {
+                if (revealDeckUnitArmed) cancelDeckUnitReveal();
+                else armDeckUnitReveal();
+              }}
             />
           </div>
           <ul
@@ -492,8 +514,14 @@ function BattleRandomSession({
                     locked={locked}
                     previewSuppressed={lockedHint?.id === u.id}
                     disabled={phase !== "playing"}
-                    selected={pendingAttackerId === u.id}
+                    selected={pendingAttackerId === u.id || pendingRevealUnitId === u.id}
                     onClick={(event) => {
+                      if (revealDeckUnitArmed && !deckUnitRevealPurchased) {
+                        setLockedHint(null);
+                        setPendingAttackerId(null);
+                        setPendingRevealUnitId(u.id);
+                        return;
+                      }
                       if (locked) {
                         const el = event.currentTarget;
                         setLockedHint((current) => (current?.id === u.id ? null : { id: u.id, el }));
@@ -570,6 +598,15 @@ function BattleRandomSession({
         />
       ) : null}
 
+      <BattleRevealUnitSheet
+        open={revealDeckUnitArmed && pendingRevealUnitId != null && phase === "playing"}
+        unit={pendingRevealUnit ?? null}
+        cost={FAVOR_EFFECT_COSTS.revealDeckUnitCategory}
+        onChooseAnother={() => setPendingRevealUnitId(null)}
+        onCancel={cancelDeckUnitReveal}
+        onConfirm={confirmDeckUnitReveal}
+      />
+
       <BattleConfirmModal
         open={pendingAttackerId != null && phase === "playing"}
         attacker={pendingAttacker ?? null}
@@ -584,26 +621,13 @@ function BattleRandomSession({
       />
 
       <BattleRevealConfirmModal
-        open={pendingReveal != null && phase === "playing"}
-        title={
-          pendingReveal === "defender"
-            ? t("pages.battle.revealDefenderCategory")
-            : t("pages.battle.revealDeckUnitCategory")
-        }
-        description={
-          pendingReveal === "defender"
-            ? t("pages.battle.revealDefenderCategoryHint")
-            : t("pages.battle.revealDeckUnitCategoryHint")
-        }
-        cost={
-          pendingReveal === "defender"
-            ? FAVOR_EFFECT_COSTS.revealDefenderCategory
-            : FAVOR_EFFECT_COSTS.revealDeckUnitCategory
-        }
+        open={pendingReveal === "defender" && phase === "playing"}
+        title={t("pages.battle.revealDefenderCategory")}
+        description={t("pages.battle.revealDefenderCategoryHint")}
+        cost={FAVOR_EFFECT_COSTS.revealDefenderCategory}
         onClose={() => setPendingReveal(null)}
         onConfirm={() => {
-          if (pendingReveal === "defender") buyDefenderReveal();
-          if (pendingReveal === "deck") buyDeckUnitReveal();
+          buyDefenderReveal();
           setPendingReveal(null);
         }}
       />
@@ -617,7 +641,7 @@ function BattleRandomSession({
         previousAgeUnitsUnlocked={unlockedPreviousAgeUnitIds.length > 0}
         onClose={() => setFavorModalOpen(false)}
         onRevealDefender={buyDefenderReveal}
-        onRevealDeckUnit={buyDeckUnitReveal}
+        onRevealDeckUnit={armDeckUnitReveal}
         onUnlockPreviousAgeUnits={buyPreviousAgeUnlock}
       />
 

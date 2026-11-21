@@ -1176,7 +1176,11 @@ export const enMessages: TranslationTree = {
         "Shows the defender category on the field and confirmation modal during this round.",
       revealDeckUnitCategory: "Reveal 1 Deck Unit Category",
       revealDeckUnitCategoryHint:
-        "After purchasing, click a unit. Its category appears in the modal for this round only.",
+        "Click a unit and confirm. Favor is spent only when its category is revealed this round.",
+      revealDeckPickHint: "Click the unit whose category you want to reveal.",
+      revealDeckUnitTitle: "Reveal category",
+      revealDeckUnitConfirm: "Reveal this unit's category, or pick another.",
+      revealDeckChooseAnother: "Pick another",
       unlockPreviousAgeUnits: "Unlock 2 Previous-Age Units",
       unlockPreviousAgeUnitsHint:
         "Randomly unlocks up to 2 units from previous Ages during this round.",
