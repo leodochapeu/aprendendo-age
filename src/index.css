@@ -355,6 +355,27 @@ body {
   background: rgba(248, 113, 113, 0.12);
 }
 
+.start-structured .start-structured-table td.start-res-up,
+.start-structured .start-structured-table td.start-res-down {
+  color: #fff;
+  font-weight: 600;
+}
+
+.start-structured .start-structured-table td.start-res-up {
+  background-color: #166534;
+}
+
+.start-structured .start-structured-table td.start-res-down {
+  background-color: #991b1b;
+}
+
+.start-structured .start-structured-table td.start-res-up span,
+.start-structured .start-structured-table td.start-res-up strong,
+.start-structured .start-structured-table td.start-res-down span,
+.start-structured .start-structured-table td.start-res-down strong {
+  color: #fff;
+}
+
 .start-structured .highlight-red {
   color: #fca5a5;
 }

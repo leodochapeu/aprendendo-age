@@ -466,6 +466,9 @@ export const ptMessages: TranslationTree = {
       filterEmpty: "Nenhum start corresponde aos filtros selecionados.",
       newBadge: "🔷 Novo !",
       createStart: "Criar start",
+      disableResourceColors: "Desativar cores de adição e remoção",
+      resourceAdded: "Aldeões a mais",
+      resourceRemoved: "Aldeões a menos",
     },
     eras: {
       title: "Eras",

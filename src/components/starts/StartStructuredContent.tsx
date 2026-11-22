@@ -1,8 +1,12 @@
+import { useMemo } from "react";
+
 import { StartMiniMarkup } from "@/lib/startMiniMarkup";
 import type { StartBuildSegment, StartFooterBlock, StartLeadBlock, StartTableRow } from "@/data/catalog";
 import { cn } from "@/lib/cn";
+import { useTranslation } from "@/hooks/useTranslation";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 import { getTokenLabel } from "@/lib/notionTokenLabels";
+import { resourceDeltasForRows, type ResourceDelta } from "@/lib/startResourceDelta";
 
 function ResourceColumnHeader({
   label,
@@ -43,8 +47,25 @@ function rowTypeClass(type: string | null): string | undefined {
   return map[type];
 }
 
-function StartTable({ rows }: { rows: StartTableRow[] }) {
+function deltaClass(delta: ResourceDelta | null | undefined): string | undefined {
+  if (delta === "up") return "start-res-up";
+  if (delta === "down") return "start-res-down";
+  return undefined;
+}
+
+function StartTable({ rows, highlightResourceChanges }: { rows: StartTableRow[]; highlightResourceChanges: boolean }) {
+  const { t } = useTranslation();
   const showFavor = rows.some((r) => r.favor != null && r.favor !== "");
+  const deltas = useMemo(
+    () => (highlightResourceChanges ? resourceDeltasForRows(rows) : null),
+    [highlightResourceChanges, rows],
+  );
+
+  const deltaTitle = (delta: ResourceDelta | null | undefined) => {
+    if (delta === "up") return t("pages.starts.resourceAdded");
+    if (delta === "down") return t("pages.starts.resourceRemoved");
+    return undefined;
+  };
 
   return (
     <div className="start-table-wrap mt-4 overflow-x-auto">
@@ -77,13 +98,13 @@ function StartTable({ rows }: { rows: StartTableRow[] }) {
               <td className="start-col-desc">
                 <StartMiniMarkup text={r.description} expandResources />
               </td>
-              <td className="start-col-res">
+              <td className={cn("start-col-res", deltaClass(deltas?.[i].food))} title={deltaTitle(deltas?.[i].food)}>
                 {r.food != null && r.food !== "" ? <StartMiniMarkup text={r.food} expandResources /> : null}
               </td>
-              <td className="start-col-res">
+              <td className={cn("start-col-res", deltaClass(deltas?.[i].wood))} title={deltaTitle(deltas?.[i].wood)}>
                 {r.wood != null && r.wood !== "" ? <StartMiniMarkup text={r.wood} expandResources /> : null}
               </td>
-              <td className="start-col-res">
+              <td className={cn("start-col-res", deltaClass(deltas?.[i].gold))} title={deltaTitle(deltas?.[i].gold)}>
                 {r.gold != null && r.gold !== "" ? <StartMiniMarkup text={r.gold} expandResources /> : null}
               </td>
               {showFavor ? (
@@ -170,13 +191,22 @@ function FooterBlocks({ blocks }: { blocks: StartFooterBlock[] }) {
   );
 }
 
-export function StartStructuredContent({ segments }: { segments: StartBuildSegment[] }) {
+export function StartStructuredContent({
+  segments,
+  highlightResourceChanges = true,
+}: {
+  segments: StartBuildSegment[];
+  /** Pinta comida, madeira e ouro quando a quantidade muda em relação à distribuição anterior. */
+  highlightResourceChanges?: boolean;
+}) {
   return (
     <div className="start-notion-content start-structured mt-8">
       {segments.map((seg, si) => (
         <section key={si} className={si > 0 ? "mt-10 border-t border-aom-border/60 pt-10" : undefined}>
           {seg.lead?.length ? <LeadBlocks blocks={seg.lead} /> : null}
-          {seg.table?.length ? <StartTable rows={seg.table} /> : null}
+          {seg.table?.length ? (
+            <StartTable rows={seg.table} highlightResourceChanges={highlightResourceChanges} />
+          ) : null}
           {seg.footer?.length ? <FooterBlocks blocks={seg.footer} /> : null}
         </section>
       ))}

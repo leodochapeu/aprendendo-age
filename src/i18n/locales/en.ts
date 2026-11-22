@@ -466,6 +466,9 @@ export const enMessages: TranslationTree = {
       filterEmpty: "No starts match the selected filters.",
       newBadge: "🔷 New!",
       createStart: "Create start",
+      disableResourceColors: "Turn off addition and removal colors",
+      resourceAdded: "More villagers",
+      resourceRemoved: "Fewer villagers",
     },
     eras: {
       title: "Ages",

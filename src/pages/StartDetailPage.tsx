@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 
 import { PageComments } from "@/components/comments/MapComments";
@@ -12,6 +13,16 @@ import { useCatalog } from "@/hooks/useCatalog";
 import { useTranslation } from "@/hooks/useTranslation";
 import { listIndexBackLinkLabel, listIndexLinkStateFromLocation, listIndexReturnTo } from "@/lib/listIndexReturnState";
 
+const RESOURCE_COLORS_OFF_KEY = "aprendendo-age.startResourceColorsOff";
+
+function readResourceColorsOff(): boolean {
+  try {
+    return window.localStorage.getItem(RESOURCE_COLORS_OFF_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
 export function StartDetailPage() {
   const { t } = useTranslation();
   const { startBySlug } = useCatalog();
@@ -22,6 +33,7 @@ export function StartDetailPage() {
   const deusLinkFromStartState = listIndexLinkStateFromLocation(pathname, locSearch);
   const { slug } = useParams();
   const s = slug ? startBySlug.get(slug) : undefined;
+  const [resourceColorsOff, setResourceColorsOff] = useState(readResourceColorsOff);
 
   if (!s) {
     return (
@@ -35,6 +47,7 @@ export function StartDetailPage() {
   const hasStructured = s.structured?.segments?.some(
     (seg) => (seg.lead?.length ?? 0) > 0 || (seg.table?.length ?? 0) > 0 || (seg.footer?.length ?? 0) > 0,
   );
+  const hasTable = s.structured?.segments?.some((seg) => (seg.table?.length ?? 0) > 0) ?? false;
 
   return (
     <div>
@@ -47,9 +60,35 @@ export function StartDetailPage() {
           ) : undefined
         }
         actions={<StartGodPortraits names={s.god} linkState={deusLinkFromStartState} />}
+        className={hasTable ? "!mb-3" : undefined}
       />
 
-      {hasStructured ? <StartStructuredContent segments={s.structured.segments} /> : null}
+      {hasTable ? (
+        <label className="inline-flex cursor-pointer items-center gap-2 text-sm text-zinc-300">
+          <input
+            type="checkbox"
+            className="h-4 w-4 accent-amber-500"
+            checked={resourceColorsOff}
+            onChange={(event) => {
+              const off = event.target.checked;
+              setResourceColorsOff(off);
+              try {
+                window.localStorage.setItem(RESOURCE_COLORS_OFF_KEY, off ? "1" : "0");
+              } catch {
+                /* preferência fica só nesta visita */
+              }
+            }}
+          />
+          {t("pages.starts.disableResourceColors")}
+        </label>
+      ) : null}
+
+      {hasStructured ? (
+        <StartStructuredContent
+          segments={s.structured.segments}
+          highlightResourceChanges={!resourceColorsOff}
+        />
+      ) : null}
 
       <StartVideosSection title={s.titulo} urls={s.youtube} />
 
