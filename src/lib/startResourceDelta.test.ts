@@ -27,7 +27,7 @@ describe("resourceDeltasForRows", () => {
       row("5", "6", "4"),
     ]);
 
-    expect(deltas[0]).toEqual({ food: null, wood: null, gold: null });
+    expect(deltas[0]).toEqual({ food: "up", wood: null, gold: null });
     expect(deltas[1]).toEqual({ food: null, wood: null, gold: "up" });
     expect(deltas[2]).toEqual({ food: null, wood: "up", gold: null });
     expect(deltas[3]).toEqual({ food: "up", wood: null, gold: null });

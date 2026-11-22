@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 import { startAuthorsSearchText } from "@/components/start/StartAuthorsMeta";
 import { StartStructuredContent } from "@/components/starts/StartStructuredContent";
@@ -35,6 +35,38 @@ const inputClass =
 
 function uid(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function duplicateEditorRow(row: EditorRow): EditorRow {
+  return { ...row, id: uid() };
+}
+
+/** Cartão quadrado que o navegador mostra preso ao cursor enquanto a linha é arrastada. */
+function mountRowDragGhost(label: string): HTMLElement {
+  const ghost = document.createElement("div");
+  ghost.textContent = label;
+  Object.assign(ghost.style, {
+    position: "fixed",
+    top: "-240px",
+    left: "-240px",
+    width: "96px",
+    height: "96px",
+    boxSizing: "border-box",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "8px",
+    borderRadius: "12px",
+    border: "2px solid rgb(251 191 36)",
+    background: "rgb(24 24 27)",
+    color: "rgb(254 243 199)",
+    font: "600 12px/1.3 system-ui, sans-serif",
+    textAlign: "center",
+    overflow: "hidden",
+    boxShadow: "0 10px 24px rgb(0 0 0 / 0.45)",
+  });
+  document.body.appendChild(ghost);
+  return ghost;
 }
 
 function normalizeCell(v: string): string | null {
@@ -286,6 +318,8 @@ export function SecretStartBuilderPage() {
   const [pantheon, setPantheon] = useState("");
   const [slugOverride, setSlugOverride] = useState("");
   const [segments, setSegments] = useState<EditorSegment[]>([emptySegment()]);
+  const [rowDrag, setRowDrag] = useState<{ si: number; from: number; over: number } | null>(null);
+  const rowDragGhost = useRef<HTMLElement | null>(null);
   const [copyState, setCopyState] = useState<"idle" | "ok" | "err">("idle");
   const [importText, setImportText] = useState("");
   const [importMessage, setImportMessage] = useState<{ kind: "ok" | "err"; text: string } | null>(null);
@@ -360,6 +394,12 @@ export function SecretStartBuilderPage() {
       next.splice(to, 0, m);
       return next;
     });
+  }, []);
+
+  const clearRowDrag = useCallback(() => {
+    rowDragGhost.current?.remove();
+    rowDragGhost.current = null;
+    setRowDrag(null);
   }, []);
 
   const reorderRows = useCallback((segmentIndex: number, from: number, to: number) => {
@@ -754,11 +794,16 @@ export function SecretStartBuilderPage() {
                         onDragOver={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
+                          setRowDrag((current) => {
+                            if (!current || current.si !== si || current.over === ri) return current;
+                            return { ...current, over: ri };
+                          });
                         }}
                         onDrop={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
                           const raw = e.dataTransfer.getData("text/plain");
+                          clearRowDrag();
                           if (!raw.startsWith("row:")) return;
                           const [, segPart, rowPart] = raw.split(":");
                           const fromSi = Number.parseInt(segPart ?? "", 10);
@@ -766,8 +811,18 @@ export function SecretStartBuilderPage() {
                           if (fromSi !== si || Number.isNaN(fromRi) || fromRi === ri) return;
                           reorderRows(si, fromRi, ri);
                         }}
-                        className="rounded-lg border border-aom-border/60 bg-aom-card/30 p-2"
+                        className={`relative rounded-lg border bg-aom-card/30 p-2 ${
+                          rowDrag?.si === si && rowDrag.over === ri && rowDrag.from !== ri
+                            ? "border-dashed border-amber-400/90"
+                            : "border-aom-border/60"
+                        } ${rowDrag?.si === si && rowDrag.from === ri ? "opacity-40" : ""}`}
                       >
+                        {rowDrag?.si === si && rowDrag.over === ri && rowDrag.from !== ri ? (
+                          <div
+                            className="pointer-events-none absolute -top-3 left-3 z-10 h-16 w-16 rounded-xl border-2 border-dashed border-amber-300 bg-zinc-950/95 shadow-lg shadow-black/40"
+                            aria-hidden
+                          />
+                        ) : null}
                         <div className="mb-2 flex flex-wrap items-center gap-2">
                           <span
                             draggable
@@ -775,7 +830,14 @@ export function SecretStartBuilderPage() {
                               e.stopPropagation();
                               e.dataTransfer.effectAllowed = "move";
                               e.dataTransfer.setData("text/plain", `row:${si}:${ri}`);
+                              clearRowDrag();
+                              const label = row.description.trim() || `Linha ${ri + 1}`;
+                              const ghost = mountRowDragGhost(label);
+                              rowDragGhost.current = ghost;
+                              e.dataTransfer.setDragImage(ghost, 48, 48);
+                              setRowDrag({ si, from: ri, over: ri });
                             }}
+                            onDragEnd={clearRowDrag}
                             className="cursor-grab select-none px-1 text-zinc-500 active:cursor-grabbing"
                             title="Arrastar para reordenar linha"
                             role="button"
@@ -810,6 +872,24 @@ export function SecretStartBuilderPage() {
                               ))}
                             </select>
                           </label>
+                          <button
+                            type="button"
+                            className="rounded border border-amber-600/50 px-2 py-0.5 text-xs text-amber-100 hover:bg-amber-500/10"
+                            onClick={() =>
+                              setSegments((prev) =>
+                                prev.map((s, j) => {
+                                  if (j !== si) return s;
+                                  const source = s.rows[ri];
+                                  if (!source) return s;
+                                  const rows = [...s.rows];
+                                  rows.splice(ri + 1, 0, duplicateEditorRow(source));
+                                  return { ...s, rows };
+                                }),
+                              )
+                            }
+                          >
+                            Duplicar linha
+                          </button>
                           {canShowRemoveButton(editorRowHasContent(row), seg.rows.length) ? (
                             <button
                               type="button"

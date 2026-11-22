@@ -35,8 +35,8 @@ export function emptyResourceDeltas(): RowResourceDeltas {
 
 /**
  * Compara comida, madeira e ouro com a última linha que tinha quantidades.
- * A primeira distribuição não pinta. Traço na referência vale 0.
- * Número maior pinta verde; menor, vermelho; igual, nada.
+ * A primeira distribuição compara com zero, então os aldeões iniciais ficam verdes.
+ * Traço na referência vale 0. Número maior pinta verde; menor, vermelho; igual, nada.
  */
 export function resourceDeltasForRows(rows: StartTableRow[]): RowResourceDeltas[] {
   const out = rows.map(() => emptyResourceDeltas());
@@ -44,15 +44,13 @@ export function resourceDeltasForRows(rows: StartTableRow[]): RowResourceDeltas[
 
   rows.forEach((row, index) => {
     if (!isSnapshot(row)) return;
-    if (previous) {
-      for (const field of FIELDS) {
-        const current = readCell(row[field]);
-        if (typeof current !== "number") continue;
-        const prev = baseline(readCell(previous[field]));
-        if (prev == null) continue;
-        if (current > prev) out[index][field] = "up";
-        else if (current < prev) out[index][field] = "down";
-      }
+    for (const field of FIELDS) {
+      const current = readCell(row[field]);
+      if (typeof current !== "number") continue;
+      const prev = previous ? baseline(readCell(previous[field])) : 0;
+      if (prev == null) continue;
+      if (current > prev) out[index][field] = "up";
+      else if (current < prev) out[index][field] = "down";
     }
     previous = row;
   });
