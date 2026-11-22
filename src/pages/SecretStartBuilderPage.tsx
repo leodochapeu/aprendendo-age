@@ -18,6 +18,7 @@ import {
 } from "@/data/catalog";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 import { resolveStartImageToken } from "@/lib/resolveStartImageToken";
+import { nextPopulation, populationSumMismatch } from "@/lib/startPopulation";
 import { startAuthorFromString } from "@/lib/startAuthor";
 import { buildStartSlug } from "@/lib/startSlug";
 
@@ -111,6 +112,12 @@ function emptySegment(): EditorSegment {
     footer: "",
     rows: [emptyRow()],
   };
+}
+
+function populationSumWarning(row: EditorRow): string | null {
+  const expected = populationSumMismatch(row);
+  if (expected == null) return null;
+  return `O primeiro número deveria ser ${expected} (soma de comida, madeira, ouro e favor). O número depois da barra é o limite de casas e não entra nessa conta.`;
 }
 
 function editorRowHasContent(row: EditorRow): boolean {
@@ -840,6 +847,7 @@ export function SecretStartBuilderPage() {
                         <div className="grid grid-cols-2 gap-1 sm:grid-cols-5">
                           {(["food", "wood", "gold", "favor", "pop"] as const).map((field) => {
                             const iconSrc = getTokenAssetUrl(RESOURCE_FIELD_ICONS[field]);
+                            const sumWarning = field === "pop" ? populationSumWarning(row) : null;
                             return (
                               <div key={field} className="flex min-w-0 items-center gap-1">
                                 {iconSrc ? (
@@ -858,13 +866,37 @@ export function SecretStartBuilderPage() {
                                     setSegments((prev) =>
                                       prev.map((s, j) =>
                                         j === si
-                                          ? { ...s, rows: s.rows.map((r, k) => (k === ri ? { ...r, [field]: v } : r)) }
+                                          ? {
+                                              ...s,
+                                              rows: s.rows.map((r, k) => {
+                                                if (k !== ri) return r;
+                                                if (field === "pop") return { ...r, pop: v };
+                                                const next = { ...r, [field]: v };
+                                                return { ...next, pop: nextPopulation(r, next) };
+                                              }),
+                                            }
                                           : s,
                                       ),
                                     );
                                   }}
                                   placeholder={field}
                                 />
+                                {sumWarning ? (
+                                  <span className="group relative shrink-0">
+                                    <span
+                                      className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-amber-500/20 text-[11px] font-bold leading-none text-amber-300"
+                                      aria-label={sumWarning}
+                                    >
+                                      !
+                                    </span>
+                                    <span
+                                      role="tooltip"
+                                      className="pointer-events-none absolute bottom-full right-0 z-30 mb-1 hidden w-56 rounded-lg border border-amber-500/40 bg-zinc-950 px-2 py-1.5 text-left text-[11px] font-normal leading-snug text-amber-50 shadow-lg shadow-black/40 group-hover:block"
+                                    >
+                                      {sumWarning}
+                                    </span>
+                                  </span>
+                                ) : null}
                               </div>
                             );
                           })}

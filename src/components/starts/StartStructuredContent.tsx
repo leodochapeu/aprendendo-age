@@ -6,6 +6,7 @@ import { cn } from "@/lib/cn";
 import { useTranslation } from "@/hooks/useTranslation";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 import { getTokenLabel } from "@/lib/notionTokenLabels";
+import { isHousedPopulation } from "@/lib/startPopulation";
 import { resourceDeltasForRows, type ResourceDelta } from "@/lib/startResourceDelta";
 
 function ResourceColumnHeader({
@@ -112,7 +113,10 @@ function StartTable({ rows, highlightResourceChanges }: { rows: StartTableRow[];
                   {r.favor != null && r.favor !== "" ? <StartMiniMarkup text={r.favor} expandResources /> : null}
                 </td>
               ) : null}
-              <td className="start-col-pop">
+              <td
+                className={cn("start-col-pop", isHousedPopulation(r.pop) && "start-pop-housed")}
+                title={isHousedPopulation(r.pop) ? t("pages.starts.housed") : undefined}
+              >
                 {r.pop != null && r.pop !== "" ? <StartMiniMarkup text={r.pop} expandResources /> : null}
               </td>
             </tr>

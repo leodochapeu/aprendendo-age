@@ -469,6 +469,7 @@ export const enMessages: TranslationTree = {
       disableResourceColors: "Turn off addition and removal colors",
       resourceAdded: "More villagers",
       resourceRemoved: "Fewer villagers",
+      housed: "Population capped (Housed)",
     },
     eras: {
       title: "Ages",

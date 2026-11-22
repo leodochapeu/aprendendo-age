@@ -376,6 +376,13 @@ body {
   color: #fff;
 }
 
+.start-structured .start-structured-table td.start-pop-housed,
+.start-structured .start-structured-table td.start-pop-housed span,
+.start-structured .start-structured-table td.start-pop-housed strong {
+  color: #f87171;
+  font-weight: 700;
+}
+
 .start-structured .highlight-red {
   color: #fca5a5;
 }

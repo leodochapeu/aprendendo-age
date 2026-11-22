@@ -469,6 +469,7 @@ export const ptMessages: TranslationTree = {
       disableResourceColors: "Desativar cores de adição e remoção",
       resourceAdded: "Aldeões a mais",
       resourceRemoved: "Aldeões a menos",
+      housed: "População cheia (Housed)",
     },
     eras: {
       title: "Eras",
