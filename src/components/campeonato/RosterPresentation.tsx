@@ -10,6 +10,7 @@ import type { ChampionshipPlayer } from "@/lib/championshipsApi";
 import { playerClanLogoUrl, type AomRacePlayer } from "@/lib/playersApi";
 import { getRankClassification } from "@/lib/rankClassification";
 import { resolvePlayerAvatarSrc } from "@/lib/steamAvatarUrl";
+import { computeWeightedRr } from "@/lib/weightedRr";
 
 const HOLD_MS = 6200;
 const EXIT_MS = 500;
@@ -26,10 +27,16 @@ function useReducedMotion() {
   return reduced;
 }
 
-function byRating(players: ChampionshipPlayer[], stats: Map<string, AomRacePlayer>) {
+function presentationRating(player: AomRacePlayer | undefined, showWeightedRr: boolean): number | null {
+  if (!player || !Number.isFinite(player.rr) || player.rr <= 0) return null;
+  if (!showWeightedRr) return player.rr;
+  return computeWeightedRr(player.rr, player.rrBest);
+}
+
+function byRating(players: ChampionshipPlayer[], stats: Map<string, AomRacePlayer>, showWeightedRr: boolean) {
   return [...players].sort((a, b) => {
-    const left = stats.get(a.profileId)?.rr;
-    const right = stats.get(b.profileId)?.rr;
+    const left = presentationRating(stats.get(a.profileId), showWeightedRr);
+    const right = presentationRating(stats.get(b.profileId), showWeightedRr);
     if (left != null && right != null && left !== right) return right - left;
     if (left != null) return -1;
     if (right != null) return 1;
@@ -49,7 +56,7 @@ export function RosterPresentation({
   const { t } = useTranslation();
   const reduced = useReducedMotion();
   const byId = useMemo(() => new Map(stats.map((player) => [player.id, player])), [stats]);
-  const slides = useMemo(() => byRating(players, byId), [players, byId]);
+  const slides = useMemo(() => byRating(players, byId, showWeightedRr), [players, byId, showWeightedRr]);
   const orderKey = slides.map((player) => player.id).join("|");
   const [orderSeen, setOrderSeen] = useState(orderKey);
   const [cursor, setCursor] = useState(0);
