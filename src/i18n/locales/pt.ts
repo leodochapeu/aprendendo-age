@@ -465,6 +465,7 @@ export const ptMessages: TranslationTree = {
       filtersActive: "Filtros ativos",
       filterEmpty: "Nenhum start corresponde aos filtros selecionados.",
       newBadge: "🔷 Novo !",
+      createStart: "Criar start",
     },
     eras: {
       title: "Eras",

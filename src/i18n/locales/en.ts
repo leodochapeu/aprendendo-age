@@ -465,6 +465,7 @@ export const enMessages: TranslationTree = {
       filtersActive: "Filters active",
       filterEmpty: "No starts match the selected filters.",
       newBadge: "🔷 New!",
+      createStart: "Create start",
     },
     eras: {
       title: "Ages",

@@ -1,7 +1,10 @@
 import { useCallback, useMemo, useState } from "react";
 
+import { startAuthorsSearchText } from "@/components/start/StartAuthorsMeta";
 import { StartStructuredContent } from "@/components/starts/StartStructuredContent";
 import { BackLink } from "@/components/ui/BackLink";
+import { ModalApp } from "@/components/ui/ModalApp";
+import { NotionText } from "@/components/ui/NotionText";
 import { PageHeader } from "@/components/ui/PageHeader";
 import {
   START_TABLE_ROW_TYPE_OPTIONS,
@@ -135,6 +138,27 @@ function editorSegmentHasContent(seg: EditorSegment): boolean {
   );
 }
 
+function editorFormHasContent(input: {
+  nome: string;
+  titulo: string;
+  youtubeText: string;
+  authors: string[];
+  pantheon: string;
+  slugOverride: string;
+  godsChecked: Record<number, boolean>;
+  segments: EditorSegment[];
+}): boolean {
+  if (input.nome.trim() || input.titulo.trim() || input.youtubeText.trim()) return true;
+  if (input.pantheon.trim() || input.slugOverride.trim()) return true;
+  if (input.authors.some((author) => author.trim())) return true;
+  if (Object.values(input.godsChecked).some(Boolean)) return true;
+  return input.segments.some(editorSegmentHasContent);
+}
+
+type PendingReplace =
+  | { source: "import"; raw: string; successLabel?: string; fileName?: string }
+  | { source: "template"; start: StartBuildOrder };
+
 /** Botão remover: visível se o item tem conteúdo ou há mais de um no grupo. */
 function canShowRemoveButton(hasContent: boolean, count: number): boolean {
   return hasContent || count > 1;
@@ -258,6 +282,9 @@ export function SecretStartBuilderPage() {
   const [copyState, setCopyState] = useState<"idle" | "ok" | "err">("idle");
   const [importText, setImportText] = useState("");
   const [importMessage, setImportMessage] = useState<{ kind: "ok" | "err"; text: string } | null>(null);
+  const [templateQuery, setTemplateQuery] = useState("");
+  const [templateNotice, setTemplateNotice] = useState<string | null>(null);
+  const [pendingReplace, setPendingReplace] = useState<PendingReplace | null>(null);
 
   const maxStartId = useMemo(() => Math.max(0, ...startsBuildOrder.map((s) => s.id)), []);
 
@@ -364,6 +391,7 @@ export function SecretStartBuilderPage() {
         const parsed = parseImportJson(raw);
         applyImportedStart(parsed);
         setImportText(JSON.stringify(parsed, null, 2));
+        setTemplateNotice(null);
         setImportMessage({
           kind: "ok",
           text: successLabel ?? "Importado — revise os campos e exporte quando estiver pronto.",
@@ -377,6 +405,64 @@ export function SecretStartBuilderPage() {
     },
     [applyImportedStart],
   );
+
+  const formDirty = useMemo(
+    () =>
+      editorFormHasContent({
+        nome,
+        titulo,
+        youtubeText,
+        authors,
+        pantheon,
+        slugOverride,
+        godsChecked,
+        segments,
+      }),
+    [nome, titulo, youtubeText, authors, pantheon, slugOverride, godsChecked, segments],
+  );
+
+  const templateStarts = useMemo(() => {
+    const q = templateQuery.trim().toLowerCase();
+    const list = [...startsBuildOrder].sort((a, b) => a.titulo.localeCompare(b.titulo, "pt"));
+    if (!q) return list;
+    return list.filter((start) => {
+      const hay = [start.titulo, startAuthorsSearchText(start.author), start.pantheon ?? "", ...start.god]
+        .join(" ")
+        .toLowerCase();
+      return hay.includes(q);
+    });
+  }, [templateQuery]);
+
+  const requestImport = useCallback((raw: string, meta?: { successLabel?: string; fileName?: string }) => {
+    try {
+      parseImportJson(raw);
+      setImportMessage(null);
+      setPendingReplace({
+        source: "import",
+        raw,
+        successLabel: meta?.successLabel,
+        fileName: meta?.fileName,
+      });
+    } catch (err) {
+      setImportMessage({
+        kind: "err",
+        text: err instanceof Error ? err.message : "Não foi possível importar.",
+      });
+    }
+  }, []);
+
+  const confirmReplace = useCallback(() => {
+    if (!pendingReplace) return;
+    if (pendingReplace.source === "import") {
+      runImport(pendingReplace.raw, pendingReplace.successLabel);
+    } else {
+      applyImportedStart(pendingReplace.start);
+      setImportMessage(null);
+      setTemplateNotice("Template carregado — revise os campos e exporte quando estiver pronto.");
+    }
+    setPendingReplace(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pendingReplace, runImport, applyImportedStart]);
 
   const copyJson = useCallback(async () => {
     if (!jsonText) return;
@@ -820,10 +906,49 @@ export function SecretStartBuilderPage() {
           </section>
 
           <section className="rounded-xl border border-aom-border bg-aom-card/40 p-4 sm:p-5">
+            <h2 className="mb-2 font-[family-name:var(--font-display)] text-base font-semibold text-amber-100/95">
+              Usar template
+            </h2>
+            <p className="mb-3 text-sm text-zinc-400">
+              Escolha um start já cadastrado. Uma cópia preenche o formulário inteiro (metadados, deuses e segmentos). O{" "}
+              <code className="text-zinc-500">id</code> do JSON exportado continua sendo o próximo livre.
+            </p>
+            <input
+              className={`${inputClass} mb-3`}
+              value={templateQuery}
+              onChange={(e) => setTemplateQuery(e.target.value)}
+              placeholder="Buscar por título, autor, deus ou panteão…"
+            />
+            <ul className="max-h-72 space-y-1 overflow-y-auto rounded-lg border border-aom-border/80 p-1">
+              {templateStarts.map((start) => {
+                const meta = [startAuthorsSearchText(start.author), start.pantheon, start.god.join(", ")].filter(Boolean);
+                return (
+                  <li key={start.slug}>
+                    <button
+                      type="button"
+                      className="flex w-full flex-col items-start gap-0.5 rounded-lg px-2 py-2 text-left hover:bg-zinc-900/70"
+                      onClick={() => setPendingReplace({ source: "template", start })}
+                    >
+                      <span className="text-sm text-zinc-100">
+                        <NotionText text={start.titulo} />
+                      </span>
+                      {meta.length ? <span className="text-xs text-zinc-500">{meta.join(" · ")}</span> : null}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+            {templateStarts.length === 0 ? (
+              <p className="mt-2 text-sm text-zinc-500">Nenhum start corresponde à busca.</p>
+            ) : null}
+            {templateNotice ? <p className="mt-2 text-sm text-emerald-400">{templateNotice}</p> : null}
+          </section>
+
+          <section className="rounded-xl border border-aom-border bg-aom-card/40 p-4 sm:p-5">
             <h2 className="mb-2 font-[family-name:var(--font-display)] text-base font-semibold text-amber-100/95">Importar</h2>
             <p className="mb-3 text-sm text-zinc-400">
               Cole o JSON exportado desta página (ou de <code className="text-zinc-500">starts_build_order.json</code>) ou escolha um arquivo{" "}
-              <code className="text-zinc-500">.json</code>. Metadados e segmentos substituem o formulário atual.
+              <code className="text-zinc-500">.json</code>. A importação pede confirmação antes de substituir o formulário.
             </p>
             <textarea
               className={cnTextarea()}
@@ -836,7 +961,7 @@ export function SecretStartBuilderPage() {
               <button
                 type="button"
                 className="rounded-lg border border-amber-600/50 bg-amber-500/10 px-4 py-2 text-sm text-amber-100 hover:bg-amber-500/20"
-                onClick={() => runImport(importText)}
+                onClick={() => requestImport(importText)}
               >
                 Importar do texto
               </button>
@@ -853,7 +978,10 @@ export function SecretStartBuilderPage() {
                     const reader = new FileReader();
                     reader.onload = () => {
                       const text = String(reader.result ?? "");
-                      runImport(text, `Arquivo «${file.name}» importado.`);
+                      requestImport(text, {
+                        successLabel: `Arquivo «${file.name}» importado.`,
+                        fileName: file.name,
+                      });
                     };
                     reader.onerror = () =>
                       setImportMessage({ kind: "err", text: "Não foi possível ler o arquivo." });
@@ -913,6 +1041,48 @@ export function SecretStartBuilderPage() {
           )}
         </aside>
       </div>
+
+      <ModalApp
+        open={pendingReplace != null}
+        onClose={() => setPendingReplace(null)}
+        title={formDirty ? "Substituir o que está no editor?" : "Carregar no editor?"}
+        description={
+          pendingReplace == null ? undefined : pendingReplace.source === "template" ? (
+            <span>
+              Usar como template: <NotionText text={pendingReplace.start.titulo} />
+            </span>
+          ) : pendingReplace.fileName ? (
+            `Arquivo «${pendingReplace.fileName}».`
+          ) : (
+            "O JSON colado será aplicado ao formulário."
+          )
+        }
+        className="!max-w-lg"
+      >
+        {formDirty ? (
+          <p className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-sm text-amber-100">
+            O editor já tem conteúdo. Confirmar apaga o que está preenchido e coloca este start no lugar.
+          </p>
+        ) : (
+          <p className="text-sm text-zinc-400">O formulário será preenchido com esta cópia.</p>
+        )}
+        <div className="flex justify-end gap-2">
+          <button
+            type="button"
+            className="rounded-lg border border-aom-border px-4 py-2 text-sm text-zinc-100 hover:bg-zinc-800"
+            onClick={() => setPendingReplace(null)}
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-zinc-950 hover:bg-amber-500"
+            onClick={confirmReplace}
+          >
+            {formDirty ? "Substituir" : "Carregar"}
+          </button>
+        </div>
+      </ModalApp>
     </div>
   );
 }

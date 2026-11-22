@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { ListPageStickyHeader } from "@/components/layout/ListPageStickyHeader";
 import { StartAuthorsMeta, startAuthorsSearchText } from "@/components/start/StartAuthorsMeta";
@@ -10,6 +10,7 @@ import { EntityCard } from "@/components/ui/EntityCard";
 import { NotionText } from "@/components/ui/NotionText";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SearchField } from "@/components/ui/SearchField";
+import { useAuth } from "@/context/AuthContext";
 import type { LocaleCatalog } from "@/data/catalogLocale";
 import { useCatalog } from "@/hooks/useCatalog";
 import { useListPageSearchQuery } from "@/hooks/useListPageSearchQuery";
@@ -35,8 +36,15 @@ function matchesStart(
   return hay.includes(needle);
 }
 
+const createStartLinkClass = cn(
+  "inline-flex shrink-0 items-center justify-center rounded-xl border border-amber-500/45 bg-amber-500/15 px-4 py-2 text-sm font-semibold text-amber-100 transition",
+  "hover:border-amber-400/55 hover:bg-amber-500/25 focus:outline-none focus:ring-2 focus:ring-amber-500/35",
+);
+
 export function StartsPage() {
   const { t } = useTranslation();
+  const { status, profile, profileLoadState } = useAuth();
+  const canCreateStart = status === "authenticated" && profileLoadState === "ready" && profile?.role === "admin";
   const { startsBuildOrder, panteoes } = useCatalog();
   const { pathname, search: locSearch } = useLocation();
   const listIndexState = useMemo(
@@ -67,6 +75,13 @@ export function StartsPage() {
           title={t("pages.starts.title")}
           description={t("pages.starts.description")}
           className="!mb-0"
+          siblingNav={
+            canCreateStart ? (
+              <Link to="/admin/novo-start" className={createStartLinkClass}>
+                {t("pages.starts.createStart")}
+              </Link>
+            ) : null
+          }
         />
         <div className="flex w-full flex-col gap-3">
           <button
