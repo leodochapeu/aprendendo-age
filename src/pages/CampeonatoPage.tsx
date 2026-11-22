@@ -39,10 +39,25 @@ const PANEL_SEGMENT: Record<Tab, { campeonato: string; championship: string }> =
   calendar: { campeonato: "calendario", championship: "calendar" },
 };
 
+type RosterMode = "list" | "show";
+
+const ROSTER_MODE_SEGMENT: Record<RosterMode, { campeonato: string; championship: string }> = {
+  list: { campeonato: "lista", championship: "list" },
+  show: { campeonato: "apresentacao", championship: "presentation" },
+};
+
 function tabFromPanel(panel: string | undefined): Tab | null {
   if (!panel) return null;
   for (const [tab, segments] of Object.entries(PANEL_SEGMENT) as [Tab, (typeof PANEL_SEGMENT)[Tab]][]) {
     if (segments.campeonato === panel || segments.championship === panel) return tab;
+  }
+  return null;
+}
+
+function rosterModeFromView(view: string | undefined): RosterMode | null {
+  if (!view) return null;
+  for (const [mode, segments] of Object.entries(ROSTER_MODE_SEGMENT) as [RosterMode, (typeof ROSTER_MODE_SEGMENT)[RosterMode]][]) {
+    if (segments.campeonato === view || segments.championship === view) return mode;
   }
   return null;
 }
@@ -53,9 +68,10 @@ function panelBase(pathname: string): PanelBase {
   return pathname.startsWith("/championship") ? "championship" : "campeonato";
 }
 
-function tabPath(base: PanelBase, slug: string, tab: Tab, preview = false) {
+function tabPath(base: PanelBase, slug: string, tab: Tab, preview = false, rosterMode: RosterMode | null = null) {
   const segment = tab === "about" ? "" : `/${PANEL_SEGMENT[tab][base]}`;
-  return `/${base}/${slug}${segment}${preview ? "?preview=1" : ""}`;
+  const view = tab === "roster" && rosterMode ? `/${ROSTER_MODE_SEGMENT[rosterMode][base]}` : "";
+  return `/${base}/${slug}${segment}${view}${preview ? "?preview=1" : ""}`;
 }
 
 const PHASE_KEY: Record<ChampionshipPhase, string> = {
@@ -173,13 +189,15 @@ function playerName(camp: ChampionshipDetail, id: string | null | undefined) {
 }
 
 export function CampeonatoPage() {
-  const { slug = "", panel } = useParams();
+  const { slug = "", panel, view } = useParams();
   const { pathname, search } = useLocation();
   const [searchParams] = useSearchParams();
   const panelTab = tabFromPanel(panel);
+  const rosterMode = rosterModeFromView(view);
   const base = panelBase(pathname);
   const preview = searchParams.get("preview") === "1";
-  const panelInvalid = Boolean(panel && !panelTab);
+  const viewInvalid = Boolean(view) && (panelTab !== "roster" || !rosterMode);
+  const panelInvalid = Boolean(panel && !panelTab) || viewInvalid;
   const { t, locale } = useTranslation();
   const { user, profile, profileLoadState, status } = useAuth();
   // Qualquer logado: RLS libera Modo Dev só para admin, dono ou quem pode lançar.
@@ -479,7 +497,7 @@ export function CampeonatoPage() {
               {visibleTabs.map((item) => (
                 <Link
                   key={item.id}
-                  to={tabPath(base, camp.slug, item.id)}
+                  to={tabPath(base, camp.slug, item.id, false, item.id === "roster" ? rosterMode : null)}
                   aria-current={shownTab === item.id ? "page" : undefined}
                   className={`rounded-full px-3 py-1 text-sm ${shownTab === item.id ? "bg-amber-400/15 text-amber-100 ring-1 ring-amber-400/40" : "text-zinc-400 hover:text-zinc-100"}`}
                 >
@@ -496,7 +514,7 @@ export function CampeonatoPage() {
                   />
                 ) : null}
                 {camp.showPreviews[shownTab] ? (
-                  <PreviewLink href={tabPath(base, camp.slug, shownTab, true)} label={t("pages.championship.openPreview")} />
+                  <PreviewLink href={tabPath(base, camp.slug, shownTab, true, shownTab === "roster" ? rosterMode : null)} label={t("pages.championship.openPreview")} />
                 ) : null}
               </div>
             </div>
@@ -571,6 +589,11 @@ export function CampeonatoPage() {
               {shownTab === "roster" ? (
                 <Roster
                   camp={camp}
+                  mode={rosterMode ?? "list"}
+                  modeHref={{
+                    list: tabPath(base, camp.slug, "roster", preview, "list"),
+                    show: tabPath(base, camp.slug, "roster", preview, "show"),
+                  }}
                   entryStatus={entryStatus}
                   entryMessage={entryMessage}
                   pending={entryPending}
@@ -1479,6 +1502,8 @@ function Calendar({
 
 function Roster({
   camp,
+  mode,
+  modeHref,
   entryStatus,
   entryMessage,
   pending,
@@ -1487,6 +1512,8 @@ function Roster({
   onSubmit,
 }: {
   camp: ChampionshipDetail;
+  mode: RosterMode;
+  modeHref: Record<RosterMode, string>;
   entryStatus: string | null;
   entryMessage: string | null;
   pending: boolean;
@@ -1495,7 +1522,6 @@ function Roster({
   onSubmit: () => void;
 }) {
   const { t } = useTranslation();
-  const [mode, setMode] = useState<"list" | "show">("list");
   const [showWeightedRr, setShowWeightedRr] = useState(camp.showWeightedRr);
   const [stats, setStats] = useState<AomRacePlayer[]>([]);
   const profileKey = camp.players.map((player) => player.profileId).join("|");
@@ -1531,18 +1557,17 @@ function Roster({
           </label>
           <div role="group" aria-label={t("pages.championship.rosterView")} className="inline-flex rounded-lg border border-white/10 bg-zinc-900/50 p-0.5">
             {(["list", "show"] as const).map((option) => (
-              <button
+              <Link
                 key={option}
-                type="button"
-                aria-pressed={mode === option}
-                onClick={() => setMode(option)}
+                to={modeHref[option]}
+                aria-current={mode === option ? "page" : undefined}
                 className={cn(
                   "rounded-md px-2.5 py-1 text-xs font-medium transition",
                   mode === option ? "bg-amber-500/20 text-amber-100" : "text-zinc-400 hover:text-zinc-200",
                 )}
               >
                 {option === "list" ? t("pages.championship.rosterList") : t("pages.championship.rosterShow")}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

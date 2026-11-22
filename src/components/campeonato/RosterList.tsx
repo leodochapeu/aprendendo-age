@@ -24,13 +24,19 @@ type Row = {
   ranked: AomRacePlayer | null;
 };
 
-function sortRoster(players: ChampionshipPlayer[], stats: AomRacePlayer[]): Row[] {
+function rosterScore(ranked: AomRacePlayer | null, showWeightedRr: boolean): number | null {
+  if (!ranked || !Number.isFinite(ranked.rr)) return null;
+  if (!showWeightedRr) return ranked.rr;
+  return computeWeightedRr(ranked.rr, ranked.rrBest);
+}
+
+function sortRoster(players: ChampionshipPlayer[], stats: AomRacePlayer[], showWeightedRr: boolean): Row[] {
   const byId = new Map(stats.map((player) => [player.id, player]));
   return players
     .map((entry) => ({ entry, ranked: byId.get(entry.profileId) ?? null }))
     .sort((a, b) => {
-      const left = a.ranked?.rr;
-      const right = b.ranked?.rr;
+      const left = rosterScore(a.ranked, showWeightedRr);
+      const right = rosterScore(b.ranked, showWeightedRr);
       if (left != null && right == null) return -1;
       if (left == null && right != null) return 1;
       if (left != null && right != null && left !== right) return right - left;
@@ -96,7 +102,7 @@ export function RosterList({
   showWeightedRr?: boolean;
 }) {
   const { t } = useTranslation();
-  const rows = useMemo(() => sortRoster(players, stats), [players, stats]);
+  const rows = useMemo(() => sortRoster(players, stats, showWeightedRr), [players, stats, showWeightedRr]);
 
   if (rows.length === 0) return null;
 
