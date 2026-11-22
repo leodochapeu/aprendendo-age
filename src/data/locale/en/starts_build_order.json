@@ -8091,5 +8091,226 @@
     },
     "slug": "tezcatlipoca-por-husksuppe-husksuppe",
     "pantheon": "Aztecs"
+  },
+  {
+    "id": 39,
+    "status": "new",
+    "titulo": ":aomr_freyr_icon: Freyr (+ Freyja)",
+    "author": [
+      {
+        "name": "Errow"
+      }
+    ],
+    "god": [
+      "Frey"
+    ],
+    "image": "aomr_freyr_icon",
+    "youtube": [],
+    "descricao_curta": "Sequence of actions for the beginning of the game from Archaic to Classical.",
+    "structured": {
+      "segments": [
+        {
+          "lead": [
+            {
+              "kind": "callout",
+              "text": "Starts with 3 Collectors + 1 Ox Cart + 1 Berserker"
+            }
+          ],
+          "table": [
+            {
+              "description": "The TC :aomr_town_center_norse_icon: starts training a Dwarf for gold, switching between Dwarf and Collector (only until there are 2 dwarves)",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "3 starting Collectors on gold along with the Ox Cart",
+              "food": "-",
+              "wood": "-",
+              "gold": "4",
+              "favor": null,
+              "pop": "5/15",
+              "type": null
+            },
+            {
+              "description": "The Berserker attacks the passive hunts to bring them close to the TC :aomr_town_center_norse_icon:",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": "hint"
+            },
+            {
+              "description": "1 Collector on food",
+              "food": "1",
+              "wood": "-",
+              "gold": "4",
+              "favor": null,
+              "pop": "6/15",
+              "type": null
+            },
+            {
+              "description": "Next Dwarf on gold (last one)",
+              "food": "1",
+              "wood": "-",
+              "gold": "5",
+              "favor": null,
+              "pop": "7/15",
+              "type": null
+            },
+            {
+              "description": "Once there are 2 dwarves on gold, move the 2 collectors to food and 1 to wood",
+              "food": "4",
+              "wood": "1",
+              "gold": "2",
+              "favor": null,
+              "pop": "8/15",
+              "type": null
+            },
+            {
+              "description": "Build the Temple with the Berserker (<strong>≈</strong><code>1:26</code>)",
+              "food": null,
+              "wood": null,
+              "gold": null,
+              "favor": null,
+              "pop": null,
+              "type": "blue"
+            },
+            {
+              "description": "TC :aomr_town_center_norse_icon: → Focus Collectors on food",
+              "food": "10",
+              "wood": "1",
+              "gold": "2",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Berserker builds +House",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Train 1 Hersir and search for relics :aomr_relic_anim:",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Make 2 dwarves for gold",
+              "food": "10",
+              "wood": "1",
+              "gold": "4",
+              "favor": null,
+              "pop": "19/25",
+              "type": null
+            },
+            {
+              "description": "Rebalance the Collectors immediately",
+              "food": "6",
+              "wood": "5",
+              "gold": "4",
+              "favor": null,
+              "pop": "19/25",
+              "type": null
+            },
+            {
+              "description": "<strong>Ascending Age by Freyja</strong> (<strong>≈</strong><code>3:25</code>)",
+              "food": null,
+              "wood": null,
+              "gold": null,
+              "favor": null,
+              "pop": null,
+              "type": "pink"
+            },
+            {
+              "description": "Berserker builds +House",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Pre-queue the <highlight-pink>Hand Axe</highlight-pink> :aomr_hand_axe_icon: upgrade",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": "hint"
+            },
+            {
+              "description": "Train + Hersir",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Build an Ox Cart for wood",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "<strong>Age advanced</strong>(<strong>≈</strong><code>4:25</code>)",
+              "food": null,
+              "wood": null,
+              "gold": null,
+              "favor": null,
+              "pop": null,
+              "type": "pink"
+            },
+            {
+              "description": "Switch between Dwarf and Collector",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Build Great Hall or Longhouse",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "With Hersir and Valkyrie, scout the enemy and raid",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            }
+          ]
+        }
+      ]
+    },
+    "slug": "freyr-errow",
+    "pantheon": "Nordic"
   }
 ]

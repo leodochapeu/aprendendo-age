@@ -8089,5 +8089,226 @@
     },
     "slug": "tezcatlipoca-por-husksuppe-husksuppe",
     "pantheon": "Astecas"
+  },
+  {
+    "id": 39,
+    "status": "new",
+    "titulo": ":aomr_freyr_icon: Freyr (+ Freyja)",
+    "author": [
+      {
+        "name": "Errow"
+      }
+    ],
+    "god": [
+      "Frey"
+    ],
+    "image": "aomr_freyr_icon",
+    "youtube": [],
+    "descricao_curta": "Sequência de ações para o início do jogo da Arcaica até a Clássica.",
+    "structured": {
+      "segments": [
+        {
+          "lead": [
+            {
+              "kind": "callout",
+              "text": "Começa com 3 Coletores + 1 Carro de Boi + 1 Berserker"
+            }
+          ],
+          "table": [
+            {
+              "description": "O TC :aomr_town_center_norse_icon: começa criando Anão para o ouro, alternando entre Anão e Coletor (só até ter 2 anões)",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "3 Coletores iniciais no ouro junto com Carro de Boi",
+              "food": "-",
+              "wood": "-",
+              "gold": "4",
+              "favor": null,
+              "pop": "5/15",
+              "type": null
+            },
+            {
+              "description": "O Berserker ataca as caças passivas para próximo do TC :aomr_town_center_norse_icon:",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": "hint"
+            },
+            {
+              "description": "1 Coletor na comida",
+              "food": "1",
+              "wood": "-",
+              "gold": "4",
+              "favor": null,
+              "pop": "6/15",
+              "type": null
+            },
+            {
+              "description": "Próximo Anão no ouro (último)",
+              "food": "1",
+              "wood": "-",
+              "gold": "5",
+              "favor": null,
+              "pop": "7/15",
+              "type": null
+            },
+            {
+              "description": "Quando tiver 2 anões no ouro transfira os 2 coletores para comida e 1 para madeira",
+              "food": "4",
+              "wood": "1",
+              "gold": "2",
+              "favor": null,
+              "pop": "8/15",
+              "type": null
+            },
+            {
+              "description": "Construa o Templo com Berseker (<strong>≈</strong><code>1:26</code>)",
+              "food": null,
+              "wood": null,
+              "gold": null,
+              "favor": null,
+              "pop": null,
+              "type": "blue"
+            },
+            {
+              "description": "TC :aomr_town_center_norse_icon: → Foque Coletores na comida",
+              "food": "10",
+              "wood": "1",
+              "gold": "2",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Berseker constrói +Casa",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Treine 1 Hersir e busque relíquias :aomr_relic_anim:",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Faça 2 anões para o ouro",
+              "food": "10",
+              "wood": "1",
+              "gold": "4",
+              "favor": null,
+              "pop": "19/25",
+              "type": null
+            },
+            {
+              "description": "Rebalanceie as Coletores imediatamente",
+              "food": "6",
+              "wood": "5",
+              "gold": "4",
+              "favor": null,
+              "pop": "19/25",
+              "type": null
+            },
+            {
+              "description": "<strong>Subindo de Era por Freia</strong> (<strong>≈</strong><code>3:25</code>)",
+              "food": null,
+              "wood": null,
+              "gold": null,
+              "favor": null,
+              "pop": null,
+              "type": "pink"
+            },
+            {
+              "description": "Berseker constrói +Casa",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Pré queue do up da <highlight-pink>Machadinha</highlight-pink> :aomr_hand_axe_icon:",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": "hint"
+            },
+            {
+              "description": "Treine + Hersir",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Construa um carro de boi para a madeira",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "<strong>Subiu Era</strong>(<strong>≈</strong><code>4:25</code>)",
+              "food": null,
+              "wood": null,
+              "gold": null,
+              "favor": null,
+              "pop": null,
+              "type": "pink"
+            },
+            {
+              "description": "Alternar entre anão e coletor",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Constrói Grande Salão ou Casa Comunal",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            },
+            {
+              "description": "Com Hersir e Valquíria, explore o campo inimigo e raid",
+              "food": "-",
+              "wood": "-",
+              "gold": "-",
+              "favor": null,
+              "pop": "-",
+              "type": null
+            }
+          ]
+        }
+      ]
+    },
+    "slug": "freyr-errow",
+    "pantheon": "Nórdico"
   }
 ]
