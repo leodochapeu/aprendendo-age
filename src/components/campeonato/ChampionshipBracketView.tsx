@@ -327,7 +327,7 @@ function orbitMotion(id: string, kind: "match" | "initializer" | "finalizer") {
 
 function edgeStroke(fromType: ChampionshipStage["flowNodes"][number]["type"]) {
   if (fromType === "initializer") return { glow: "rgba(56,189,248,0.55)", wire: "#7dd3fc", spark: "#e0f2fe" };
-  if (fromType === "finalizer") return { glow: "rgba(52,211,153,0.5)", wire: "#6ee7b7", spark: "#d1fae5" };
+  if (fromType === "finalizer") return { glow: "rgba(248,113,113,0.5)", wire: "#f87171", spark: "#fecaca" };
   return { glow: "rgba(251,191,36,0.55)", wire: "#fbbf24", spark: "#fef3c7" };
 }
 
@@ -441,17 +441,17 @@ function FlowPortalCard({
   const isInit = kind === "initializer";
   return (
     <div className="px-3 py-2.5">
-      <p className={cn("text-[9px] tracking-[0.24em] uppercase", isInit ? "text-sky-300/80" : "text-emerald-300/80")}>
+      <p className={cn("text-[9px] tracking-[0.24em] uppercase", isInit ? "text-sky-300/80" : "text-red-300/85")}>
         {isInit ? "Inicializador" : "Finalizador"}
       </p>
-      <p className={cn("mt-0.5 truncate font-[family-name:var(--font-display)] text-base", isInit ? "text-sky-50" : "text-emerald-50")}>
+      <p className={cn("mt-0.5 truncate font-[family-name:var(--font-display)] text-base", isInit ? "text-sky-50" : "text-red-50")}>
         {label}
       </p>
       <div className="mt-2 flex items-center gap-2">
         <div
           className={cn(
             "h-7 w-7 shrink-0 overflow-hidden rounded-full border bg-zinc-950 shadow-[0_0_14px_rgba(255,255,255,0.12)]",
-            isInit ? "border-sky-300/50" : "border-emerald-300/50",
+            isInit ? "border-sky-300/50" : "border-red-300/50",
           )}
         >
           <PlayerAvatarMark src={logoUrl} className="h-full w-full" width={28} height={28} />
