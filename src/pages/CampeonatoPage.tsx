@@ -1022,34 +1022,27 @@ function MonitorIcon() {
 function StageFoldButton({ collapsed, onClick, collapseLabel, expandLabel }: { collapsed: boolean; onClick: () => void; collapseLabel: string; expandLabel: string }) {
   const label = collapsed ? expandLabel : collapseLabel;
   return (
-    <div className="group/fold relative shrink-0">
-      <button
-        type="button"
-        aria-expanded={!collapsed}
-        aria-label={label}
-        onClick={onClick}
-        className="inline-flex h-7 w-7 items-center justify-center rounded-full text-zinc-500/80 transition hover:bg-white/5 hover:text-amber-100/90"
+    <button
+      type="button"
+      aria-expanded={!collapsed}
+      aria-label={label}
+      title={label}
+      onClick={onClick}
+      className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-zinc-500/80 transition hover:bg-white/5 hover:text-amber-100/90"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        className={cn("h-3.5 w-3.5 transition-transform duration-300", collapsed && "rotate-180")}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          className={cn("h-3.5 w-3.5 transition-transform duration-300", collapsed && "rotate-180")}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.75"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M6 14.5 12 8.5l6 6" />
-        </svg>
-      </button>
-      <div
-        role="tooltip"
-        className="pointer-events-none absolute top-full right-0 z-30 mt-2 whitespace-nowrap rounded-lg border border-zinc-700/80 bg-zinc-950/95 px-2.5 py-1.5 text-xs text-zinc-200 opacity-0 shadow-xl shadow-black/40 transition duration-150 group-hover/fold:opacity-100 group-focus-within/fold:opacity-100"
-      >
-        {label}
-      </div>
-    </div>
+        <path d="M6 14.5 12 8.5l6 6" />
+      </svg>
+    </button>
   );
 }
 
