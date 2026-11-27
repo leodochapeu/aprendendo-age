@@ -8,7 +8,7 @@ export type SummerPot = {
   names: string[];
 };
 
-/** Ordem e nomes da planilha de potes. A vaga A1 é o primeiro nome do pote A, e assim por diante. */
+/** Quem pertence a cada pote. A vaga no chaveamento (F1, D1…) fica em SUMMER_DRAW. */
 export const SUMMER_POTS: SummerPot[] = [
   {
     id: "A",
@@ -159,7 +159,7 @@ export function foldSummerName(value: string) {
     .replace(/[^a-z0-9]+/g, "");
 }
 
-function nameKey(value: string) {
+export function nameKey(value: string) {
   const folded = foldSummerName(value);
   return NAME_ALIAS[folded] ?? folded;
 }

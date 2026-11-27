@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { SUMMER_MATCHES, SUMMER_ROUNDS } from "@/components/campeonato/verao/bracket";
 import { buildSummerFixtureDrafts, summerFixtureLabel } from "@/components/campeonato/verao/fixtures";
+import { SUMMER_DRAW, linkSummerDraw, summerSlotCodes } from "@/components/campeonato/verao/draw";
 import { linkSummerPots, SUMMER_POTS } from "@/components/campeonato/verao/pots";
 
 describe("chave do Torneio de Verão", () => {
@@ -89,5 +90,19 @@ describe("potes do Torneio de Verão", () => {
     expect(slots.find((slot) => slot.code === "A1")?.player?.id).toBe("mosca");
     expect(slots.find((slot) => slot.code === "D1")?.player?.id).toBe("c-high");
     expect(slots.find((slot) => slot.code === "F10")?.player?.id).toBe("c-low");
+  });
+
+  it("o sorteio da chave começa vazio e não segue a ordem do pote", () => {
+    expect(summerSlotCodes()).toHaveLength(97);
+    expect(Object.values(SUMMER_DRAW).every((name) => name == null)).toBe(true);
+    const slots = linkSummerDraw(
+      [
+        { id: "cebo", name: "cebolinha_H4ck3r" },
+        { id: "sala", name: "Salahuddin" },
+      ],
+      { F1: "Salahuddin", F2: "cebolinha_H4ck3r" },
+    );
+    expect(slots.find((slot) => slot.code === "F1")?.player?.id).toBe("sala");
+    expect(slots.find((slot) => slot.code === "F2")?.player?.id).toBe("cebo");
   });
 });

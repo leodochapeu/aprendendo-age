@@ -5,7 +5,7 @@ import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { SUMMER_MATCHES, SUMMER_ROUNDS, type SummerMatch } from "@/components/campeonato/verao/bracket";
 import { SUMMER_STAGE_NAME, summerSlotIndexes } from "@/components/campeonato/verao/fixtures";
 import { SUMMER_PHASES, summerPhaseById, type SummerPhaseId } from "@/components/campeonato/verao/phases";
-import { linkSummerPots } from "@/components/campeonato/verao/pots";
+import { SUMMER_DRAW, linkSummerDraw } from "@/components/campeonato/verao/draw";
 import { ModalApp } from "@/components/ui/ModalApp";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { Locale } from "@/i18n/types";
@@ -94,7 +94,7 @@ export function SummerBracketView({
   const seriesLength = stage?.seriesLength ?? camp.stages[0]?.seriesLength ?? 3;
   const playerById = useMemo(() => new Map(camp.players.map((player) => [player.id, player])), [camp.players]);
   const byCode = useMemo(() => {
-    const linked = linkSummerPots(
+    const linked = linkSummerDraw(
       camp.players.map((player) => ({
         id: player.id,
         name: player.name,
@@ -102,12 +102,10 @@ export function SummerBracketView({
       })),
     );
     const map = new Map<string, ChampionshipPlayer>();
-    for (const pot of linked.pots) {
-      for (const slot of pot.slots) {
-        if (!slot.player) continue;
-        const entry = playerById.get(slot.player.id);
-        if (entry) map.set(slot.code, entry);
-      }
+    for (const slot of linked) {
+      if (!slot.player) continue;
+      const entry = playerById.get(slot.player.id);
+      if (entry) map.set(slot.code, entry);
     }
     return map;
   }, [camp.players, playerById, ratings]);
@@ -151,6 +149,20 @@ export function SummerBracketView({
   function seatOf(match: SummerMatch, side: "a" | "b", showPlayers: boolean): Seat {
     if (!showPlayers) return positionSeat(match, side);
     const slot = match[side];
+    if (slot.kind === "seed") {
+      const drawn = SUMMER_DRAW[slot.code]?.trim() || null;
+      if (!drawn) {
+        return { name: slot.code, logoUrl: "", hint: "", waiting: true, phase: phaseOfSeed(slot.code) };
+      }
+      const entry = byCode.get(slot.code);
+      return {
+        name: entry?.name ?? drawn,
+        logoUrl: entry?.logoUrl ?? "",
+        hint: slot.code,
+        waiting: !entry,
+        phase: phaseOfSeed(slot.code),
+      };
+    }
     const fixture = fixtureOf(match);
     const entryId = side === "a" ? fixture?.playerAId : fixture?.playerBId;
     const fromFixture = entryId ? playerById.get(entryId) : null;
@@ -158,19 +170,9 @@ export function SummerBracketView({
       return {
         name: fromFixture.name,
         logoUrl: fromFixture.logoUrl,
-        hint: slot.kind === "seed" ? slot.code : "",
+        hint: "",
         waiting: false,
-        phase: slot.kind === "seed" ? phaseOfSeed(slot.code) : summerPhaseById(SUMMER_ROUNDS[match.round].phase).id,
-      };
-    }
-    if (slot.kind === "seed") {
-      const entry = byCode.get(slot.code);
-      return {
-        name: entry?.name ?? slot.code,
-        logoUrl: entry?.logoUrl ?? "",
-        hint: slot.code,
-        waiting: !entry,
-        phase: phaseOfSeed(slot.code),
+        phase: summerPhaseById(SUMMER_ROUNDS[match.round].phase).id,
       };
     }
     const source = byId.get(slot.of);

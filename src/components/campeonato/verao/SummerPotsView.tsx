@@ -4,6 +4,7 @@ import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
 import { PlayerClanLink } from "@/components/jogadores/PlayerClanLink";
 import { PlayerProfileLink } from "@/components/jogadores/PlayerProfileLink";
 import { SUMMER_PHASES, summerPhaseById } from "@/components/campeonato/verao/phases";
+import { linkSummerDraw } from "@/components/campeonato/verao/draw";
 import { linkSummerPots, type LinkedSummerPot } from "@/components/campeonato/verao/pots";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { ChampionshipPlayer } from "@/lib/championshipsApi";
@@ -49,10 +50,13 @@ function PotPlayerRow({
   return (
     <li className="flex items-center gap-3 px-3 py-2.5 transition-colors hover:bg-white/[0.04]">
       <span
-        className="flex h-8 w-10 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold tracking-wide"
+        className={cn(
+          "flex h-8 w-10 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold tracking-wide",
+          !code && "border-dashed opacity-40",
+        )}
         style={{ borderColor: accent, color: accent, backgroundColor: "rgba(0,0,0,0.35)" }}
       >
-        {code}
+        {code || "—"}
       </span>
       {ranked ? <PlayerProfileLink player={ranked}>{avatar}</PlayerProfileLink> : avatar}
       <div className="min-w-0 flex-1">
@@ -76,11 +80,13 @@ function PotColumn({
   pot,
   stats,
   logos,
+  codes,
   showWeightedRr,
 }: {
   pot: LinkedSummerPot;
   stats: Map<string, AomRacePlayer>;
   logos: Map<string, string>;
+  codes: Map<string, string>;
   showWeightedRr: boolean;
 }) {
   const phase = summerPhaseById(pot.phase);
@@ -105,7 +111,7 @@ function PotColumn({
           return (
             <PotPlayerRow
               key={slot.code}
-              code={slot.code}
+              code={slot.player ? codes.get(slot.player.id) ?? "" : ""}
               name={name}
               ranked={ranked}
               logoUrl={logoUrl}
@@ -141,6 +147,16 @@ export function SummerPotsView({
       ),
     [players, byProfile],
   );
+  const codeByPlayer = useMemo(() => {
+    const drawn = linkSummerDraw(
+      players.map((player) => ({
+        id: player.profileId,
+        name: player.name,
+        rating: byProfile.get(player.profileId)?.rr ?? null,
+      })),
+    );
+    return new Map(drawn.flatMap((slot) => (slot.player ? [[slot.player.id, slot.code] as const] : [])));
+  }, [players, byProfile]);
   const logos = useMemo(() => new Map(players.map((player) => [player.profileId, player.logoUrl])), [players]);
   const potById = useMemo(() => new Map(linked.pots.map((pot) => [pot.id, pot])), [linked.pots]);
 
@@ -172,7 +188,7 @@ export function SummerPotsView({
             {phase.pots.map((id) => {
               const pot = potById.get(id);
               if (!pot) return null;
-              return <PotColumn key={id} pot={pot} stats={byProfile} logos={logos} showWeightedRr={showWeightedRr} />;
+              return <PotColumn key={id} pot={pot} stats={byProfile} logos={logos} codes={codeByPlayer} showWeightedRr={showWeightedRr} />;
             })}
           </div>
         </section>
