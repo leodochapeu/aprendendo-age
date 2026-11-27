@@ -1019,6 +1019,40 @@ function MonitorIcon() {
   );
 }
 
+function StageFoldButton({ collapsed, onClick, collapseLabel, expandLabel }: { collapsed: boolean; onClick: () => void; collapseLabel: string; expandLabel: string }) {
+  const label = collapsed ? expandLabel : collapseLabel;
+  return (
+    <div className="group/fold relative shrink-0">
+      <button
+        type="button"
+        aria-expanded={!collapsed}
+        aria-label={label}
+        onClick={onClick}
+        className="inline-flex h-7 w-7 items-center justify-center rounded-full text-zinc-500/80 transition hover:bg-white/5 hover:text-amber-100/90"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className={cn("h-3.5 w-3.5 transition-transform duration-300", collapsed && "rotate-180")}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M6 14.5 12 8.5l6 6" />
+        </svg>
+      </button>
+      <div
+        role="tooltip"
+        className="pointer-events-none absolute top-full right-0 z-30 mt-2 whitespace-nowrap rounded-lg border border-zinc-700/80 bg-zinc-950/95 px-2.5 py-1.5 text-xs text-zinc-200 opacity-0 shadow-xl shadow-black/40 transition duration-150 group-hover/fold:opacity-100 group-focus-within/fold:opacity-100"
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
+
 function PreviewLink({ href, label }: { href: string; label: string }) {
   return (
     <div className="group/preview relative shrink-0">
@@ -1048,65 +1082,104 @@ const PreviewStage = forwardRef<
     tabLabel: string;
     backTo: string;
     backLabel: string;
+    collapsed: boolean;
+    onToggleCollapsed: () => void;
     reveal: ReactNode;
   }
->(function PreviewStage({ camp, tabLabel, backTo, backLabel, reveal }, ref) {
+>(function PreviewStage({ camp, tabLabel, backTo, backLabel, collapsed, onToggleCollapsed, reveal }, ref) {
   const { t } = useTranslation();
-  const frame = "calc(12rem - var(--compact) * 7.25rem)";
+  const openFrame = "(12rem - var(--compact) * 7.25rem)";
+  const frame = `calc((1 - var(--folded)) * ${openFrame} + var(--folded) * 2.65rem)`;
   return (
-    <header ref={ref} className="preview-stage relative z-30 shrink-0 px-1 pb-2">
+    <header
+      ref={ref}
+      className="preview-stage relative z-30 shrink-0 px-1"
+      style={{ ["--folded" as string]: collapsed ? 1 : 0, paddingBottom: "calc(0.5rem - var(--folded) * 0.38rem)" }}
+    >
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-x-8 -top-8 -bottom-28"
+        className="pointer-events-none absolute -inset-x-8 -top-8"
         style={{
+          bottom: "calc(-7rem + var(--folded) * 6.15rem)",
+          opacity: "calc(1 - var(--folded) * 0.45)",
           background:
             "radial-gradient(ellipse 78% 68% at 50% 34%, rgba(7,8,12,0.94) 0%, rgba(7,8,12,0.62) 42%, rgba(7,8,12,0.22) 64%, rgba(7,8,12,0) 78%)",
         }}
       />
-      <div className="relative flex items-center justify-between gap-3">
-        <Link to={backTo} className="text-xs text-zinc-500 hover:text-amber-100">
-          {backLabel}
-        </Link>
-        {reveal ? <div className="shrink-0">{reveal}</div> : <span />}
-      </div>
-      <div className="flex flex-col items-center text-center" style={{ marginTop: "calc(0.85rem - var(--compact) * 0.55rem)" }}>
-        {camp.logoUrl ? (
-          <ChampionshipEmblem
-            src={camp.logoUrl}
-            burst={1.82}
-            style={{ width: frame, height: frame, marginTop: `calc(${frame} * 0.34)`, marginBottom: `calc(${frame} * 0.22)` }}
-          />
-        ) : null}
+      <div className="relative min-h-8">
         <div
-          className="uppercase text-amber-200/75"
-          style={{
-            marginTop: "calc(0.35rem - var(--compact) * 0.15rem)",
-            fontSize: "calc(0.75rem - var(--compact) * 0.125rem)",
-            letterSpacing: "0.28em",
-          }}
+          className="flex flex-col items-center text-center"
+          style={{ marginTop: `calc((1 - var(--folded)) * (2.85rem - var(--compact) * 0.55rem) + var(--folded) * 0.05rem)` }}
         >
-          {t(PHASE_KEY[camp.phase])}
-          {camp.devMode ? " · Modo Dev" : ""}
+          {camp.logoUrl ? (
+            <ChampionshipEmblem
+              src={camp.logoUrl}
+              burst={1.82}
+              style={{
+                width: frame,
+                height: frame,
+                marginTop: `calc((1 - var(--folded)) * ${openFrame} * 0.34 + var(--folded) * 0.04rem)`,
+                marginBottom: `calc((1 - var(--folded)) * ${openFrame} * 0.22)`,
+                ["--emblem-burst" as string]: "calc(1.82 - var(--folded) * 0.62)",
+                ["--emblem-glow" as string]: "calc(70 - var(--folded) * 48)",
+                ["--emblem-radius" as string]: "calc(1.7 - var(--folded) * 1.05)",
+              }}
+            />
+          ) : null}
+          <div
+            className="w-full overflow-hidden"
+            style={{
+              maxHeight: "calc((1 - var(--folded)) * 16rem)",
+              opacity: "calc(1 - var(--folded))",
+            }}
+            aria-hidden={collapsed || undefined}
+          >
+            <div
+              className="uppercase text-amber-200/75"
+              style={{
+                marginTop: "calc(0.35rem - var(--compact) * 0.15rem)",
+                fontSize: "calc(0.75rem - var(--compact) * 0.125rem)",
+                letterSpacing: "0.28em",
+              }}
+            >
+              {t(PHASE_KEY[camp.phase])}
+              {camp.devMode ? " · Modo Dev" : ""}
+            </div>
+            <h1
+              className="max-w-4xl font-[family-name:var(--font-display)] leading-none text-amber-50"
+              style={{
+                marginTop: "calc(0.7rem - var(--compact) * 0.4rem)",
+                fontSize: "clamp(1.55rem, calc(3.4rem - var(--compact) * 1.85rem), 3.4rem)",
+              }}
+            >
+              {camp.name}
+            </h1>
+            <p
+              className="uppercase text-zinc-400"
+              style={{
+                marginTop: "calc(0.65rem - var(--compact) * 0.35rem)",
+                fontSize: "calc(0.8rem - var(--compact) * 0.15rem)",
+                letterSpacing: "0.22em",
+              }}
+            >
+              {tabLabel}
+            </p>
+          </div>
         </div>
-        <h1
-          className="max-w-4xl font-[family-name:var(--font-display)] leading-none text-amber-50"
-          style={{
-            marginTop: "calc(0.7rem - var(--compact) * 0.4rem)",
-            fontSize: "clamp(1.55rem, calc(3.4rem - var(--compact) * 1.85rem), 3.4rem)",
-          }}
-        >
-          {camp.name}
-        </h1>
-        <p
-          className="uppercase text-zinc-400"
-          style={{
-            marginTop: "calc(0.65rem - var(--compact) * 0.35rem)",
-            fontSize: "calc(0.8rem - var(--compact) * 0.15rem)",
-            letterSpacing: "0.22em",
-          }}
-        >
-          {tabLabel}
-        </p>
+        <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-3">
+          <Link to={backTo} className="text-xs text-zinc-500 hover:text-amber-100">
+            {backLabel}
+          </Link>
+          <div className="flex items-center gap-1">
+            {reveal ? <div className="shrink-0">{reveal}</div> : null}
+            <StageFoldButton
+              collapsed={collapsed}
+              onClick={onToggleCollapsed}
+              collapseLabel={t("pages.championship.collapseStage")}
+              expandLabel={t("pages.championship.expandStage")}
+            />
+          </div>
+        </div>
       </div>
     </header>
   );
