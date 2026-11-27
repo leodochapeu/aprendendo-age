@@ -579,6 +579,7 @@ export function CampeonatoPage() {
             <div ref={previewScrollerRef} className={cn(preview ? "min-h-0 flex-1 overflow-y-auto overscroll-y-contain pb-10" : "mt-6")} onScroll={preview ? onPreviewScroll : undefined}>
               {shownTab === "about" ? (
                 <div className="space-y-6">
+                  {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
                   {camp.description ? (
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
                       <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.description")}</h2>
@@ -599,7 +600,6 @@ export function CampeonatoPage() {
                       </div>
                     </section>
                   ) : null}
-                  {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
                 </div>
               ) : null}
               {shownTab === "brackets" ? (
