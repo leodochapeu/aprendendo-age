@@ -120,7 +120,7 @@ export const SUMMER_POTS: SummerPot[] = [
       "Jethro Tull",
       "marcelo.f",
       "Bo2Paraizo",
-      "Thiago_Striker",
+      "Cajocu01",
       "davihakodesh",
       "areczin",
       "KyllByo",

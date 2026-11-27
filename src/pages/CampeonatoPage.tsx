@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode, type TouchEvent, type UIEvent, type WheelEvent } from "react";
+import { forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode, type TouchEvent, type UIEvent, type WheelEvent } from "react";
 import { Link, Navigate, useLocation, useParams, useSearchParams } from "react-router-dom";
 
 import { ChampionshipBracketView } from "@/components/campeonato/ChampionshipBracketView";
@@ -335,12 +335,24 @@ export function CampeonatoPage() {
   const previewScrollerRef = useRef<HTMLDivElement>(null);
   const compactRef = useRef(0);
   const compactLockRef = useRef(0);
+  const previewFoldedRef = useRef(false);
+  const [previewFolded, setPreviewFolded] = useState(false);
 
   function setPreviewCompact(next: number) {
+    if (previewFoldedRef.current) return;
     if (next === compactRef.current) return;
     compactRef.current = next;
     compactLockRef.current = performance.now() + 420;
     previewHeaderRef.current?.style.setProperty("--compact", String(next));
+  }
+
+  function togglePreviewFold() {
+    const next = !previewFoldedRef.current;
+    previewFoldedRef.current = next;
+    setPreviewFolded(next);
+    if (next) return;
+    const top = previewScrollerRef.current?.scrollTop ?? 0;
+    setPreviewCompact(top > 8 ? 1 : 0);
   }
 
   function syncPreviewCompact(deltaY: number) {
@@ -438,9 +450,18 @@ export function CampeonatoPage() {
                       : shownTab === "roster" && !sectionBlock
                         ? "max-w-6xl"
                         : "max-w-5xl",
-                preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8",
+                preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden" : "py-8",
+                preview ? "preview-shell" : sectionBlock ? "pt-3" : "",
               ),
         )}
+        style={
+          preview
+            ? ({
+                "--folded": previewFolded ? 1 : 0,
+                paddingTop: "calc(0.7rem - var(--folded) * 0.5rem)",
+              } as CSSProperties)
+            : undefined
+        }
         onWheel={preview ? onPreviewWheel : undefined}
         onTouchStart={preview ? onPreviewTouchStart : undefined}
         onTouchMove={preview ? onPreviewTouchMove : undefined}
@@ -496,6 +517,8 @@ export function CampeonatoPage() {
                 tabLabel={tabs.find((item) => item.id === shownTab)?.label ?? ""}
                 backTo={championshipPath}
                 backLabel={t("pages.championship.backToChampionship")}
+                collapsed={previewFolded}
+                onToggleCollapsed={togglePreviewFold}
                 reveal={
                   showResultSpoiler(shownTab, camp) ? (
                     <RevealAllButton

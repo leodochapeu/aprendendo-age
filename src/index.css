@@ -25,11 +25,19 @@
   initial-value: 0;
 }
 
+@property --folded {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.preview-shell,
 .preview-stage {
-  transition: --compact 280ms ease;
+  transition: --compact 280ms ease, --folded 280ms ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .preview-shell,
   .preview-stage {
     transition: none;
   }

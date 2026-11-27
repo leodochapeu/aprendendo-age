@@ -223,6 +223,8 @@ export const ptMessages: TranslationTree = {
       entryRejected: "Sua inscrição não foi aceita.",
       revealAll: "Revelar tudo",
       openPreview: "Abrir preview",
+      collapseStage: "Mostrar só o logo",
+      expandStage: "Mostrar títulos",
       hiddenByAdmin: "Esses dados foram ocultados pelo administrador do campeonato.",
       emptySection: "Ainda não há dados nesta seção.",
       backToChampionship: "Voltar ao campeonato",
