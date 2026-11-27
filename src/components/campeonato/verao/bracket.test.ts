@@ -88,7 +88,7 @@ describe("potes do Torneio de Verão", () => {
     const slots = pots.flatMap((pot) => pot.slots);
     expect(slots.find((slot) => slot.code === "A9")?.player?.id).toBe("vega");
     expect(slots.find((slot) => slot.code === "A1")?.player?.id).toBe("mosca");
-    expect(slots.find((slot) => slot.code === "D1")?.player?.id).toBe("c-high");
+    expect(slots.find((slot) => slot.code === "D2")?.player?.id).toBe("c-high");
     expect(slots.find((slot) => slot.code === "F10")?.player?.id).toBe("c-low");
   });
 
