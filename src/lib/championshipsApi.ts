@@ -113,6 +113,8 @@ export type PrizePlace = {
 
 export type ChampionshipDetail = ChampionshipCard & {
   rules: string;
+  /** Ids de mapa na ordem da apresentação (`alfheim`, `bluelagoon`). */
+  mapPool: string[];
   registrationEnabled: boolean;
   prizeEnabled: boolean;
   prizeMode: "fixed" | "donations";
@@ -143,7 +145,7 @@ export type ChampionshipDetail = ChampionshipCard & {
 };
 
 const CHAMP_SELECT =
-  "id, slug, name, subtitle, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, show_weighted_rr, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
+  "id, slug, name, subtitle, description, rules, map_pool, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, show_weighted_rr, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
 
 const CHAMP_SELECT_LEGACY =
   "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
@@ -158,6 +160,20 @@ export function championshipAssetUrl(path: string | null | undefined) {
   const env = getSupabaseEnv();
   if (!env) return value;
   return `${env.url.replace(/\/$/, "")}/storage/v1/object/public/${value.replace(/^\//, "")}`;
+}
+
+function mapPoolOf(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const item of value) {
+    if (typeof item !== "string") continue;
+    const id = item.trim().toLowerCase();
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
+    out.push(id);
+  }
+  return out;
 }
 
 function phaseOf(value: unknown): ChampionshipPhase {
@@ -338,6 +354,7 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
     subtitle: typeof (row as { subtitle?: unknown }).subtitle === "string" ? ((row as { subtitle: string }).subtitle ?? "") : "",
     description: (row.description as string) ?? "",
     rules: (row.rules as string) ?? "",
+    mapPool: mapPoolOf((row as { map_pool?: unknown }).map_pool),
     logoUrl: championshipAssetUrl(row.logo_path as string | null),
     phase: phaseOf(row.phase),
     devMode: row.dev_mode === true,

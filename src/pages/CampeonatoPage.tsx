@@ -8,6 +8,7 @@ import { isSummerTournament } from "@/components/campeonato/verao/phases";
 import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
 import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
 import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
+import { MapPoolPresentation } from "@/components/campeonato/MapPoolPresentation";
 import { RosterList } from "@/components/campeonato/RosterList";
 import { RosterPresentation } from "@/components/campeonato/RosterPresentation";
 import { ParticleField } from "@/components/campeonato/ParticleField";
@@ -134,7 +135,9 @@ function fixtureHasResult(fixture: ChampionshipFixture) {
 }
 
 function tabHasContent(tab: Tab, camp: ChampionshipDetail) {
-  if (tab === "about") return Boolean(camp.description.trim()) || Boolean(camp.rules.trim()) || camp.prizeEnabled;
+  if (tab === "about") {
+    return Boolean(camp.description.trim()) || Boolean(camp.rules.trim()) || camp.mapPool.length > 0 || camp.prizeEnabled;
+  }
   if (tab === "roster") return camp.players.length > 0 || camp.registrationEnabled;
   if (tab === "table") return camp.fixtures.some(fixtureHasResult);
   return camp.fixtures.length > 0;
@@ -586,6 +589,14 @@ export function CampeonatoPage() {
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
                       <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.rules")}</h2>
                       <ChampionshipMarkdown source={camp.rules} className="mt-3" />
+                    </section>
+                  ) : null}
+                  {camp.mapPool.length > 0 ? (
+                    <section>
+                      <h2 className="text-center font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.maps")}</h2>
+                      <div className="mt-4">
+                        <MapPoolPresentation mapIds={camp.mapPool} />
+                      </div>
                     </section>
                   ) : null}
                   {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
