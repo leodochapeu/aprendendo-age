@@ -34,9 +34,7 @@ export function PlayerClanLink({
   const logoUrl = playerClanLogoUrl(player);
   const path = playerClanPagePath(player);
 
-  if (!tag && !logoUrl) {
-    return <span className={cn("text-sm text-zinc-600", className)}>—</span>;
-  }
+  if (!tag && !logoUrl) return null;
 
   const logoBox = (
     <div

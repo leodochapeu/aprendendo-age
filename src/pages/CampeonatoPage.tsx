@@ -2,6 +2,9 @@ import { forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState, type
 import { Link, Navigate, useLocation, useParams, useSearchParams } from "react-router-dom";
 
 import { ChampionshipBracketView } from "@/components/campeonato/ChampionshipBracketView";
+import { SummerBracketView } from "@/components/campeonato/verao/SummerBracketView";
+import { SummerPotsView } from "@/components/campeonato/verao/SummerPotsView";
+import { isSummerTournament } from "@/components/campeonato/verao/phases";
 import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
 import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
 import { EpicMatchCard } from "@/components/campeonato/EpicMatchCard";
@@ -9,7 +12,9 @@ import { RosterList } from "@/components/campeonato/RosterList";
 import { RosterPresentation } from "@/components/campeonato/RosterPresentation";
 import { ParticleField } from "@/components/campeonato/ParticleField";
 import { PlayerAvatarMark } from "@/components/jogadores/PlayerAvatarMark";
+import { LocaleFlag } from "@/components/ui/LocaleFlag";
 import { useAuth } from "@/context/AuthContext";
+import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useTranslation } from "@/hooks/useTranslation";
 import type { Locale } from "@/i18n/types";
 import { cn } from "@/lib/cn";
@@ -39,11 +44,12 @@ const PANEL_SEGMENT: Record<Tab, { campeonato: string; championship: string }> =
   calendar: { campeonato: "calendario", championship: "calendar" },
 };
 
-type RosterMode = "list" | "show";
+type RosterMode = "list" | "show" | "pots";
 
 const ROSTER_MODE_SEGMENT: Record<RosterMode, { campeonato: string; championship: string }> = {
   list: { campeonato: "lista", championship: "list" },
   show: { campeonato: "apresentacao", championship: "presentation" },
+  pots: { campeonato: "potes", championship: "pots" },
 };
 
 function tabFromPanel(panel: string | undefined): Tab | null {
@@ -119,6 +125,10 @@ function isSpoilerTab(tab: Tab): tab is SpoilerTab {
   return tab === "brackets" || tab === "table" || tab === "calendar";
 }
 
+function showResultSpoiler(tab: Tab, camp: ChampionshipDetail): tab is SpoilerTab {
+  return isSpoilerTab(tab) && !(tab === "brackets" && isSummerTournament(camp.slug) && camp.fixtures.length === 0);
+}
+
 function fixtureHasResult(fixture: ChampionshipFixture) {
   return fixture.status === "finished" || fixture.games.length > 0;
 }
@@ -133,6 +143,7 @@ function tabHasContent(tab: Tab, camp: ChampionshipDetail) {
 function tabBlock(tab: Tab, camp: ChampionshipDetail, preview = false) {
   if (preview ? !camp.showPreviews[tab] : !camp.showTabs[tab]) return "admin" as const;
   if (camp.devMode) return null;
+  if (tab === "brackets" && isSummerTournament(camp.slug)) return null;
   return tabHasContent(tab, camp) ? null : ("empty" as const);
 }
 
@@ -199,6 +210,7 @@ export function CampeonatoPage() {
   const viewInvalid = Boolean(view) && (panelTab !== "roster" || !rosterMode);
   const panelInvalid = Boolean(panel && !panelTab) || viewInvalid;
   const { t, locale } = useTranslation();
+  const { targetLocale, switchLocale, switchLanguageLabel } = useLocaleSwitch();
   const { user, profile, profileLoadState, status } = useAuth();
   // Qualquer logado: RLS libera Modo Dev só para admin, dono ou quem pode lançar.
   const includeDev = status === "authenticated" && profileLoadState === "ready";
@@ -224,18 +236,20 @@ export function CampeonatoPage() {
   }, [slug, spoilers, spoilersSlug]);
 
   const activeTab: Tab = panelTab ?? "about";
+  const tRef = useRef(t);
+  tRef.current = t;
 
   useEffect(() => {
     if (!authReady) return;
     if (panelInvalid) {
       setCamp(null);
       setLoading(false);
-      setError(t("pages.championship.notFound"));
+      setError(tRef.current("pages.championship.notFound"));
       return;
     }
     if (!isSupabaseConfigured()) {
       setLoading(false);
-      setError(t("pages.championship.unconfigured"));
+      setError(tRef.current("pages.championship.unconfigured"));
       return;
     }
     let cancelled = false;
@@ -244,10 +258,10 @@ export function CampeonatoPage() {
       .then((row) => {
         if (cancelled) return;
         setCamp(row);
-        setError(row ? null : t("pages.championship.notFound"));
+        setError(row ? null : tRef.current("pages.championship.notFound"));
       })
       .catch((err: unknown) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : t("pages.championship.loadError"));
+        if (!cancelled) setError(err instanceof Error ? err.message : tRef.current("pages.championship.loadError"));
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -255,7 +269,7 @@ export function CampeonatoPage() {
     return () => {
       cancelled = true;
     };
-  }, [authReady, includeDev, panelInvalid, slug, t]);
+  }, [authReady, includeDev, panelInvalid, slug]);
 
   useEffect(() => {
     if (!camp || !user) return;
@@ -374,7 +388,11 @@ export function CampeonatoPage() {
   const visibleTabs = camp ? tabs.filter((item) => tabBlock(item.id, camp, false) === null) : tabs;
   const sectionTab: Tab = panelTab ?? "about";
   const sectionBlock = camp && (panel || preview) ? tabBlock(sectionTab, camp, preview) : null;
-  const shownTab: Tab = visibleTabs.some((item) => item.id === activeTab) ? activeTab : (visibleTabs[0]?.id ?? "about");
+  const shownTab: Tab = preview
+    ? sectionTab
+    : visibleTabs.some((item) => item.id === activeTab)
+      ? activeTab
+      : (visibleTabs[0]?.id ?? "about");
   const championshipPath = camp ? tabPath(base, camp.slug, "about") : "/campeonato";
 
   useEffect(() => {
@@ -413,9 +431,13 @@ export function CampeonatoPage() {
             : cn(
                 shownTab === "calendar" && !sectionBlock
                   ? "max-w-[90rem]"
-                  : shownTab === "roster" && !sectionBlock
-                    ? "max-w-6xl"
-                    : "max-w-5xl",
+                  : shownTab === "brackets" && isSummerTournament(slug) && !sectionBlock
+                    ? "max-w-[100rem]"
+                    : shownTab === "roster" && rosterMode === "pots" && !sectionBlock
+                      ? "max-w-[90rem]"
+                      : shownTab === "roster" && !sectionBlock
+                        ? "max-w-6xl"
+                        : "max-w-5xl",
                 preview || sectionBlock ? "flex h-dvh max-h-dvh flex-col overflow-hidden pt-3" : "py-8",
               ),
         )}
@@ -443,9 +465,16 @@ export function CampeonatoPage() {
           <Link to="/" className="font-[family-name:var(--font-display)] tracking-wide text-amber-100/90">
             Aprendendo AGE
           </Link>
-          <Link to="/campeonato" className="text-zinc-400 hover:text-amber-100">
-            {t("pages.championship.backToIndex")}
-          </Link>
+          <button
+            type="button"
+            onClick={switchLocale}
+            aria-label={switchLanguageLabel}
+            title={switchLanguageLabel}
+            className="inline-flex items-center gap-2.5 rounded-xl border border-white/10 bg-zinc-900/95 px-3.5 py-2 text-sm font-medium text-zinc-100 shadow-lg shadow-black/40 transition hover:border-white/20 hover:bg-zinc-800"
+          >
+            <LocaleFlag locale={targetLocale} className="h-4 w-[1.45rem]" />
+            {t("settings.changeLanguage")}
+          </button>
         </div>
         )}
 
@@ -468,7 +497,7 @@ export function CampeonatoPage() {
                 backTo={championshipPath}
                 backLabel={t("pages.championship.backToChampionship")}
                 reveal={
-                  isSpoilerTab(shownTab) ? (
+                  showResultSpoiler(shownTab, camp) ? (
                     <RevealAllButton
                       revealed={isTabFullyRevealed(shownTab, camp.fixtures, spoilers[shownTab])}
                       revealLabel={t("pages.championship.revealAll")}
@@ -505,7 +534,7 @@ export function CampeonatoPage() {
                 </Link>
               ))}
               <div className="ml-auto flex items-center gap-2">
-                {isSpoilerTab(shownTab) ? (
+                {showResultSpoiler(shownTab, camp) ? (
                   <RevealAllButton
                     revealed={isTabFullyRevealed(shownTab, camp.fixtures, spoilers[shownTab])}
                     revealLabel={t("pages.championship.revealAll")}
@@ -540,7 +569,17 @@ export function CampeonatoPage() {
                 </div>
               ) : null}
               {shownTab === "brackets" ? (
-                <div className="space-y-4">
+                <div className="space-y-8">
+                  {isSummerTournament(camp.slug) ? (
+                    <SummerBracketView
+                      camp={camp}
+                      revealedAll={spoilers.brackets.all}
+                      revealedIds={spoilers.brackets.ids}
+                      onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
+                    />
+                  ) : null}
+                  {isSummerTournament(camp.slug) ? null : (
+                  <div className="space-y-4">
                   {camp.stages.length > 0 ? (
                     <div className="flex flex-wrap gap-2">
                       <button
@@ -584,6 +623,8 @@ export function CampeonatoPage() {
                       onReveal={(fixtureId) => revealFixture("brackets", fixtureId)}
                     />
                   )}
+                  </div>
+                  )}
                 </div>
               ) : null}
               {shownTab === "roster" ? (
@@ -593,6 +634,7 @@ export function CampeonatoPage() {
                   modeHref={{
                     list: tabPath(base, camp.slug, "roster", preview, "list"),
                     show: tabPath(base, camp.slug, "roster", preview, "show"),
+                    pots: tabPath(base, camp.slug, "roster", preview, "pots"),
                   }}
                   entryStatus={entryStatus}
                   entryMessage={entryMessage}
@@ -1556,7 +1598,7 @@ function Roster({
             <span>{t("pages.championship.showWeightedRr")}</span>
           </label>
           <div role="group" aria-label={t("pages.championship.rosterView")} className="inline-flex rounded-lg border border-white/10 bg-zinc-900/50 p-0.5">
-            {(["list", "show"] as const).map((option) => (
+            {(["list", "show", ...(isSummerTournament(camp.slug) ? (["pots"] as const) : [])] as RosterMode[]).map((option) => (
               <Link
                 key={option}
                 to={modeHref[option]}
@@ -1566,13 +1608,23 @@ function Roster({
                   mode === option ? "bg-amber-500/20 text-amber-100" : "text-zinc-400 hover:text-zinc-200",
                 )}
               >
-                {option === "list" ? t("pages.championship.rosterList") : t("pages.championship.rosterShow")}
+                {option === "list"
+                  ? t("pages.championship.rosterList")
+                  : option === "show"
+                    ? t("pages.championship.rosterShow")
+                    : t("pages.championship.rosterPots")}
               </Link>
             ))}
           </div>
         </div>
       ) : null}
-      {mode === "show" ? (
+      {mode === "pots" ? (
+        isSummerTournament(camp.slug) ? (
+          <SummerPotsView players={camp.players} stats={stats} showWeightedRr={showWeightedRr} />
+        ) : (
+          <Navigate to={modeHref.list} replace />
+        )
+      ) : mode === "show" ? (
         <RosterPresentation players={camp.players} stats={stats} showWeightedRr={showWeightedRr} />
       ) : (
         <RosterList players={camp.players} stats={stats} showWeightedRr={showWeightedRr} />

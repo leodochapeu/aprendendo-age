@@ -192,7 +192,7 @@ export function RosterList({
                     </div>
                   </td>
                   <td className="px-2 py-3 text-center">
-                    {ranked ? <PlayerClanLink player={ranked} size="sm" className="justify-center" /> : <span className="text-zinc-600">—</span>}
+                    {ranked ? <PlayerClanLink player={ranked} size="sm" className="justify-center" /> : null}
                   </td>
                   <td className="px-3 py-3 text-zinc-400">{cls?.categoryLabel ?? "—"}</td>
                   <td className="relative overflow-visible px-2 py-3 text-center">
