@@ -101,7 +101,9 @@ describe("potes do Torneio de Verão", () => {
     expect(SUMMER_DRAW.D1).toBe("Shotokai");
     expect(SUMMER_DRAW.D13).toBe("Carlos");
     expect(SUMMER_DRAW.D24).toBe("Pe-Vermei");
-    expect(SUMMER_DRAW.C1).toBeNull();
+    expect(SUMMER_DRAW.C1).toBe("Light Yagami");
+    expect(SUMMER_DRAW.C24).toBe("ST4RC0");
+    expect(SUMMER_DRAW.B1).toBeNull();
     const slots = linkSummerDraw([
       { id: "c-low", name: "Carlos", rating: 939 },
       { id: "c-high", name: "Carlos", rating: 1308 },
