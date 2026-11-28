@@ -86,6 +86,22 @@ const DRAWN_SLOTS: Record<string, string> = {
   C22: "Semente",
   C23: "TREMBOLONO",
   C24: "ST4RC0",
+  B1: "Annubis",
+  B2: "IamKlaus",
+  B3: "GASPARZINHO",
+  B4: "Zac involker",
+  B5: "Nito",
+  B6: "ThunderBR",
+  B7: "Motaba",
+  B8: "Mito",
+  B9: "Errow",
+  B10: "Cajocu01",
+  B11: "zuzuzu",
+  B12: "Phantom",
+  B13: "GUN",
+  B14: "Dexito",
+  B15: "Cafeína",
+  B16: "FnxllClayll",
 };
 
 export const SUMMER_DRAW: Record<string, string | null> = {
