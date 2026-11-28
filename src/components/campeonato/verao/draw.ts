@@ -14,9 +14,25 @@ export function summerSlotCodes() {
  * Sorteio das vagas do chaveamento.
  * Troque `null` pelo nome do inscrito. A chave lê estes nomes;
  * as partidas geradas são atualizadas no mesmo passo.
- * Com dois jogadores do mesmo nome, o de maior elo ocupa a vaga do pote anterior (A antes de F).
+ * Com dois jogadores do mesmo nome, o de maior elo fica no pote anterior (A antes de F).
  */
-export const SUMMER_DRAW: Record<string, string | null> = Object.fromEntries(summerSlotCodes().map((code) => [code, null]));
+const DRAWN_SLOTS: Record<string, string> = {
+  F1: "Carlos",
+  F2: "Takuje",
+  F3: "Hades",
+  F4: "Felipão",
+  F5: "Makise_Kurisu_00",
+  F6: "NHONHO",
+  F7: "cebolinha_H4ck3r",
+  F8: "Tabuada",
+  F9: "Salahuddin",
+  F10: "Dondonees",
+};
+
+export const SUMMER_DRAW: Record<string, string | null> = {
+  ...Object.fromEntries(summerSlotCodes().map((code) => [code, null])),
+  ...DRAWN_SLOTS,
+};
 
 export type SummerDrawSlot = {
   code: string;
@@ -45,6 +61,22 @@ export function linkSummerDraw(players: SummerPotPlayer[], draw: Record<string, 
 
   const used = new Set<string>();
   const codes = Object.keys(draw).sort((a, b) => slotRank(a) - slotRank(b));
+  const pools = new Map<string, Map<SummerPotId, SummerPotPlayer[]>>();
+  const leftovers = new Map<string, SummerPotPlayer[]>();
+  for (const [key, list] of buckets) {
+    const sorted = [...list].sort((a, b) => (b.rating ?? -1) - (a.rating ?? -1));
+    const byPot = new Map<SummerPotId, SummerPotPlayer[]>();
+    let cursor = 0;
+    for (const id of ["A", "B", "C", "D", "E", "F"] as SummerPotId[]) {
+      const pot = SUMMER_POTS.find((item) => item.id === id);
+      const count = (pot?.names ?? []).filter((item) => nameKey(item) === key).length;
+      byPot.set(id, sorted.slice(cursor, cursor + count));
+      cursor += count;
+    }
+    pools.set(key, byPot);
+    leftovers.set(key, sorted.slice(cursor));
+  }
+
   const assigned = new Map<string, SummerPotPlayer | null>();
   for (const code of codes) {
     const sheetName = draw[code];
@@ -52,8 +84,12 @@ export function linkSummerDraw(players: SummerPotPlayer[], draw: Record<string, 
       assigned.set(code, null);
       continue;
     }
-    const list = buckets.get(nameKey(sheetName)) ?? [];
-    const player = list.find((item) => !used.has(item.id)) ?? null;
+    const key = nameKey(sheetName);
+    const pot = code.charAt(0) as SummerPotId;
+    const fromPot = pools.get(key)?.get(pot)?.find((item) => !used.has(item.id));
+    const fromLeftover = leftovers.get(key)?.find((item) => !used.has(item.id));
+    const fromAny = buckets.get(key)?.find((item) => !used.has(item.id));
+    const player = fromPot ?? fromLeftover ?? fromAny ?? null;
     if (player) used.add(player.id);
     assigned.set(code, player);
   }

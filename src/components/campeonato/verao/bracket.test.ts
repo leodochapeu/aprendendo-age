@@ -92,17 +92,29 @@ describe("potes do Torneio de Verão", () => {
     expect(slots.find((slot) => slot.code === "F10")?.player?.id).toBe("c-low");
   });
 
-  it("o sorteio da chave começa vazio e não segue a ordem do pote", () => {
+  it("o pote F já foi sorteado e o Carlos de menor elo fica no F1", () => {
     expect(summerSlotCodes()).toHaveLength(97);
-    expect(Object.values(SUMMER_DRAW).every((name) => name == null)).toBe(true);
-    const slots = linkSummerDraw(
+    expect(SUMMER_DRAW.F1).toBe("Carlos");
+    expect(SUMMER_DRAW.F10).toBe("Dondonees");
+    expect(SUMMER_DRAW.E1).toBeNull();
+    const slots = linkSummerDraw([
+      { id: "c-low", name: "Carlos", rating: 939 },
+      { id: "c-high", name: "Carlos", rating: 1308 },
+      { id: "cebo", name: "cebolinha_H4ck3r" },
+      { id: "sala", name: "Salahuddin" },
+    ]);
+    expect(slots.find((slot) => slot.code === "F1")?.player?.id).toBe("c-low");
+    expect(slots.find((slot) => slot.code === "F7")?.player?.id).toBe("cebo");
+    expect(slots.find((slot) => slot.code === "F9")?.player?.id).toBe("sala");
+    expect(slots.some((slot) => slot.player?.id === "c-high")).toBe(false);
+    const override = linkSummerDraw(
       [
         { id: "cebo", name: "cebolinha_H4ck3r" },
         { id: "sala", name: "Salahuddin" },
       ],
       { F1: "Salahuddin", F2: "cebolinha_H4ck3r" },
     );
-    expect(slots.find((slot) => slot.code === "F1")?.player?.id).toBe("sala");
-    expect(slots.find((slot) => slot.code === "F2")?.player?.id).toBe("cebo");
+    expect(override.find((slot) => slot.code === "F1")?.player?.id).toBe("sala");
+    expect(override.find((slot) => slot.code === "F2")?.player?.id).toBe("cebo");
   });
 });
