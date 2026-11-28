@@ -102,6 +102,18 @@ const DRAWN_SLOTS: Record<string, string> = {
   B14: "Dexito",
   B15: "Cafeína",
   B16: "FnxllClayll",
+  A1: "Tunison",
+  A2: "Vega",
+  A3: "Mosca_",
+  A4: "[KeeN]_Grass",
+  A5: "ShaolimMatadordePorco",
+  A6: "Eisomarto",
+  A7: "Axel_Rose",
+  A8: "NeymarMD",
+  A9: "Borg-",
+  A10: "Immortalit",
+  A11: "Assem",
+  A12: "Zapata",
 };
 
 export const SUMMER_DRAW: Record<string, string | null> = {
