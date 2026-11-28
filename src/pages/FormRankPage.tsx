@@ -23,7 +23,7 @@ import { getRankClassification } from "@/lib/rankClassification";
 import { getTokenAssetUrl } from "@/lib/notionTokenAssets";
 
 export function FormRankPage() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const headerIcon = getTokenAssetUrl("aomr_wonder_age_icon");
   const [searchParams, setSearchParams] = useSearchParams();
   const playerParam = searchParams.get("player")?.trim() ?? "";
@@ -42,7 +42,7 @@ export function FormRankPage() {
   const [pickSelectedId, setPickSelectedId] = useState<number | null>(null);
 
   const rr = row1v1 ? parseElo(row1v1.elo) : undefined;
-  const classification = rr != null ? getRankClassification(rr) : null;
+  const classification = rr != null ? getRankClassification(rr, locale) : null;
 
   useEffect(() => {
     if (!playerParam && !hasAomstatsId) {

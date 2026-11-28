@@ -42,7 +42,7 @@ function PlayerAvatar({
 }
 
 export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const tiers = useMemo(() => getRankGuideTiers(t), [t]);
   const [tierFilter, setTierFilter] = useState<RankTierId | null>(null);
 
@@ -53,8 +53,8 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
 
   const filtered = useMemo(() => {
     if (!tierFilter) return sorted;
-    return sorted.filter((player) => getRankClassification(player.rr).tierId === tierFilter);
-  }, [sorted, tierFilter]);
+    return sorted.filter((player) => getRankClassification(player.rr, locale).tierId === tierFilter);
+  }, [sorted, tierFilter, locale]);
 
   if (sorted.length === 0) {
     return (
@@ -154,7 +154,7 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
               </thead>
               <tbody>
                 {filtered.map((player, i) => {
-                  const cls = getRankClassification(player.rr);
+                  const cls = getRankClassification(player.rr, locale);
                   const theme = TIER_ACHIEVEMENT_THEME[cls.tierId];
                   const label = playerDisplayLabel(player);
                   const roman = rankRomanStepFromRr(player.rr);
@@ -223,7 +223,7 @@ export function JogadoresAomTab({ players }: { players: AomRacePlayer[] }) {
 
           <ul className="divide-y divide-zinc-800/90 lg:hidden" aria-label={t("pages.players.listAria")}>
             {filtered.map((player, i) => {
-              const cls = getRankClassification(player.rr);
+              const cls = getRankClassification(player.rr, locale);
               const theme = TIER_ACHIEVEMENT_THEME[cls.tierId];
               const label = playerDisplayLabel(player);
               const roman = rankRomanStepFromRr(player.rr);

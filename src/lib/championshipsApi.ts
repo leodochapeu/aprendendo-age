@@ -6,6 +6,7 @@ import {
 } from "@/lib/steamAvatarUrl";
 import { createSupabaseClient, createSupabasePublicClient } from "@/lib/supabase/client";
 import { getSupabaseEnv } from "@/lib/supabase/env";
+import type { Locale } from "@/i18n/types";
 
 export type ChampionshipPhase = "registration" | "ongoing" | "finished";
 
@@ -24,7 +25,18 @@ export type ChampionshipCard = {
   logoUrl: string;
   phase: ChampionshipPhase;
   devMode: boolean;
+  /** Quando ligado, a página em inglês usa os campos `*En` preenchidos. */
+  translationEnabled: boolean;
+  nameEn: string;
+  subtitleEn: string;
+  descriptionEn: string;
+  rulesEn: string;
 };
+
+export function localizedChampionshipField(locale: Locale, enabled: boolean, primary: string, english: string) {
+  if (locale === "en" && enabled && english.trim()) return english;
+  return primary;
+}
 
 export type ChampionshipPlayer = {
   id: string;
@@ -145,7 +157,7 @@ export type ChampionshipDetail = ChampionshipCard & {
 };
 
 const CHAMP_SELECT =
-  "id, slug, name, subtitle, description, rules, map_pool, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, show_weighted_rr, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
+  "id, slug, name, subtitle, description, rules, map_pool, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, show_preview_about, show_preview_brackets, show_preview_roster, show_preview_table, show_preview_calendar, show_weighted_rr, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at, translation_enabled, name_en, subtitle_en, description_en, rules_en";
 
 const CHAMP_SELECT_LEGACY =
   "id, slug, name, description, rules, logo_path, phase, public_page, dev_mode, registration_enabled, show_tab_about, show_tab_brackets, show_tab_roster, show_tab_table, show_tab_calendar, prize_enabled, prize_mode, prize_note, prize_goal_cents, prize_raised_cents, prize_updated_at";
@@ -174,6 +186,22 @@ function mapPoolOf(value: unknown): string[] {
     out.push(id);
   }
   return out;
+}
+
+function englishCopy(row: {
+  translation_enabled?: unknown;
+  name_en?: unknown;
+  subtitle_en?: unknown;
+  description_en?: unknown;
+  rules_en?: unknown;
+}) {
+  return {
+    translationEnabled: row.translation_enabled === true,
+    nameEn: typeof row.name_en === "string" ? row.name_en : "",
+    subtitleEn: typeof row.subtitle_en === "string" ? row.subtitle_en : "",
+    descriptionEn: typeof row.description_en === "string" ? row.description_en : "",
+    rulesEn: typeof row.rules_en === "string" ? row.rules_en : "",
+  };
 }
 
 function phaseOf(value: unknown): ChampionshipPhase {
@@ -209,7 +237,7 @@ function listedOnAprendendoAge(row: { phase?: unknown; public_page?: unknown; de
   return row.public_page === true;
 }
 
-const PUBLIC_LIST_SELECT = "id, slug, name, subtitle, description, logo_path, phase, public_page, dev_mode";
+const PUBLIC_LIST_SELECT = "id, slug, name, subtitle, description, logo_path, phase, public_page, dev_mode, translation_enabled, name_en, subtitle_en, description_en, rules_en";
 const PUBLIC_LIST_SELECT_LEGACY = "id, slug, name, description, logo_path, phase, public_page, dev_mode";
 
 export async function fetchPublicChampionships(includeDev = false): Promise<ChampionshipCard[]> {
@@ -243,6 +271,11 @@ export async function fetchPublicChampionships(includeDev = false): Promise<Cham
     phase: unknown;
     public_page: unknown;
     dev_mode: unknown;
+    translation_enabled?: unknown;
+    name_en?: unknown;
+    subtitle_en?: unknown;
+    description_en?: unknown;
+    rules_en?: unknown;
   }>;
   return data
     .filter((row) => listedOnAprendendoAge(row, includeDev) && typeof row.slug === "string" && row.slug)
@@ -255,6 +288,7 @@ export async function fetchPublicChampionships(includeDev = false): Promise<Cham
       logoUrl: championshipAssetUrl(row.logo_path as string | null),
       phase: phaseOf(row.phase),
       devMode: row.dev_mode === true,
+      ...englishCopy(row),
     }));
 }
 
@@ -354,6 +388,13 @@ export async function fetchChampionshipBySlug(slug: string, includeDev = false):
     subtitle: typeof (row as { subtitle?: unknown }).subtitle === "string" ? ((row as { subtitle: string }).subtitle ?? "") : "",
     description: (row.description as string) ?? "",
     rules: (row.rules as string) ?? "",
+    ...englishCopy(row as {
+      translation_enabled?: unknown;
+      name_en?: unknown;
+      subtitle_en?: unknown;
+      description_en?: unknown;
+      rules_en?: unknown;
+    }),
     mapPool: mapPoolOf((row as { map_pool?: unknown }).map_pool),
     logoUrl: championshipAssetUrl(row.logo_path as string | null),
     phase: phaseOf(row.phase),

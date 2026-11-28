@@ -16,23 +16,26 @@ export type SummerMatch = {
 };
 
 export type SummerRound = {
+  /** Chave de `pages.championship.summer.rounds`. */
+  key: string;
+  /** Nome em português, usado quando a rodada é gravada na agenda. */
   name: string;
   phase: SummerPhaseId;
 };
 
 export const SUMMER_ROUNDS: SummerRound[] = [
-  { name: "Pote F", phase: "green" },
-  { name: "Pote E", phase: "green" },
-  { name: "Pote D", phase: "yellow" },
-  { name: "Avanço D", phase: "yellow" },
-  { name: "Pote C", phase: "yellow" },
-  { name: "Pote B", phase: "yellow" },
-  { name: "Avanço B", phase: "yellow" },
-  { name: "Pré-A", phase: "yellow" },
-  { name: "Pote A", phase: "red" },
-  { name: "Quartas", phase: "red" },
-  { name: "Semifinal", phase: "red" },
-  { name: "Final", phase: "red" },
+  { key: "potF", name: "Pote F", phase: "green" },
+  { key: "potE", name: "Pote E", phase: "green" },
+  { key: "potD", name: "Pote D", phase: "yellow" },
+  { key: "advanceD", name: "Avanço D", phase: "yellow" },
+  { key: "potC", name: "Pote C", phase: "yellow" },
+  { key: "potB", name: "Pote B", phase: "yellow" },
+  { key: "advanceB", name: "Avanço B", phase: "yellow" },
+  { key: "preA", name: "Pré-A", phase: "yellow" },
+  { key: "potA", name: "Pote A", phase: "red" },
+  { key: "quarters", name: "Quartas", phase: "red" },
+  { key: "semi", name: "Semifinal", phase: "red" },
+  { key: "final", name: "Final", phase: "red" },
 ];
 
 function seed(code: string): SummerSlot {

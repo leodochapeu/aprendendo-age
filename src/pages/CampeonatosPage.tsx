@@ -5,7 +5,7 @@ import { ChampionshipEmblem } from "@/components/campeonato/ChampionshipEmblem";
 import { ChampionshipMarkdown } from "@/components/campeonato/ChampionshipMarkdown";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/hooks/useTranslation";
-import { fetchPublicChampionships, type ChampionshipCard, type ChampionshipPhase } from "@/lib/championshipsApi";
+import { fetchPublicChampionships, localizedChampionshipField, type ChampionshipCard, type ChampionshipPhase } from "@/lib/championshipsApi";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 const PHASE_KEY: Record<ChampionshipPhase, string> = {
@@ -15,7 +15,7 @@ const PHASE_KEY: Record<ChampionshipPhase, string> = {
 };
 
 export function CampeonatosPage() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { status, profileLoadState } = useAuth();
   // Qualquer logado: RLS libera Modo Dev só para admin, dono ou quem pode lançar.
   const includeDev = status === "authenticated" && profileLoadState === "ready";
@@ -68,13 +68,18 @@ export function CampeonatosPage() {
                 <div className="h-16 w-16 shrink-0 rounded-xl border border-white/10 bg-black/40" />
               )}
               <div className="min-w-0">
-                <div className="font-[family-name:var(--font-display)] text-xl text-amber-50 group-hover:text-amber-200">{camp.name}</div>
+                <div className="font-[family-name:var(--font-display)] text-xl text-amber-50 group-hover:text-amber-200">
+                  {localizedChampionshipField(locale, camp.translationEnabled, camp.name, camp.nameEn)}
+                </div>
                 <div className="mt-1 text-xs uppercase tracking-wide text-amber-200/80">
                   {t(PHASE_KEY[camp.phase])}
-                  {camp.devMode ? " · Modo Dev" : ""}
+                  {camp.devMode ? ` · ${t("pages.championship.devMode")}` : ""}
                 </div>
-                {camp.subtitle ? (
-                  <ChampionshipMarkdown source={camp.subtitle} className="mt-2 line-clamp-3 text-sm text-zinc-400" />
+                {localizedChampionshipField(locale, camp.translationEnabled, camp.subtitle, camp.subtitleEn) ? (
+                  <ChampionshipMarkdown
+                    source={localizedChampionshipField(locale, camp.translationEnabled, camp.subtitle, camp.subtitleEn)}
+                    className="mt-2 line-clamp-3 text-sm text-zinc-400"
+                  />
                 ) : null}
               </div>
             </div>

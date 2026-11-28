@@ -23,6 +23,7 @@ import { localeAuthPath } from "@/lib/localeRoutes";
 import {
   fetchChampionshipBySlug,
   fetchMyChampionshipEntry,
+  localizedChampionshipField,
   submitChampionshipEntry,
   type ChampionshipDetail,
   type ChampionshipFixture,
@@ -134,9 +135,18 @@ function fixtureHasResult(fixture: ChampionshipFixture) {
   return fixture.status === "finished" || fixture.games.length > 0;
 }
 
+function hasCopy(primary: string, english: string, enabled: boolean) {
+  return Boolean(primary.trim()) || (enabled && Boolean(english.trim()));
+}
+
 function tabHasContent(tab: Tab, camp: ChampionshipDetail) {
   if (tab === "about") {
-    return Boolean(camp.description.trim()) || Boolean(camp.rules.trim()) || camp.mapPool.length > 0 || camp.prizeEnabled;
+    return (
+      hasCopy(camp.description, camp.descriptionEn, camp.translationEnabled) ||
+      hasCopy(camp.rules, camp.rulesEn, camp.translationEnabled) ||
+      camp.mapPool.length > 0 ||
+      camp.prizeEnabled
+    );
   }
   if (tab === "roster") return camp.players.length > 0 || camp.registrationEnabled;
   if (tab === "table") return camp.fixtures.some(fixtureHasResult);
@@ -409,6 +419,10 @@ export function CampeonatoPage() {
       ? activeTab
       : (visibleTabs[0]?.id ?? "about");
   const championshipPath = camp ? tabPath(base, camp.slug, "about") : "/campeonato";
+  const title = camp ? localizedChampionshipField(locale, camp.translationEnabled, camp.name, camp.nameEn) : "";
+  const subtitle = camp ? localizedChampionshipField(locale, camp.translationEnabled, camp.subtitle, camp.subtitleEn) : "";
+  const description = camp ? localizedChampionshipField(locale, camp.translationEnabled, camp.description, camp.descriptionEn) : "";
+  const rules = camp ? localizedChampionshipField(locale, camp.translationEnabled, camp.rules, camp.rulesEn) : "";
 
   useEffect(() => {
     compactRef.current = 0;
@@ -539,10 +553,10 @@ export function CampeonatoPage() {
               <div>
                 <div className="text-xs uppercase tracking-[0.2em] text-amber-200/80">
                   {t(PHASE_KEY[camp.phase])}
-                  {camp.devMode ? " · Modo Dev" : ""}
+                  {camp.devMode ? ` · ${t("pages.championship.devMode")}` : ""}
                 </div>
-                <h1 className="font-[family-name:var(--font-display)] text-4xl text-amber-50">{camp.name}</h1>
-                {camp.subtitle ? <ChampionshipMarkdown source={camp.subtitle} className="mt-2 max-w-2xl text-base text-zinc-100 sm:text-lg" /> : null}
+                <h1 className="font-[family-name:var(--font-display)] text-4xl text-amber-50">{title}</h1>
+                {subtitle ? <ChampionshipMarkdown source={subtitle} className="mt-2 max-w-2xl text-base text-zinc-100 sm:text-lg" /> : null}
               </div>
             </header>
             )}
@@ -580,16 +594,16 @@ export function CampeonatoPage() {
               {shownTab === "about" ? (
                 <div className="space-y-6">
                   {camp.prizeEnabled ? <PrizeBlock camp={camp} /> : null}
-                  {camp.description ? (
+                  {description ? (
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
                       <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.description")}</h2>
-                      <ChampionshipMarkdown source={camp.description} className="mt-3" />
+                      <ChampionshipMarkdown source={description} className="mt-3" />
                     </section>
                   ) : null}
-                  {camp.rules ? (
+                  {rules ? (
                     <section className="rounded-2xl border border-white/10 bg-black/35 p-5">
                       <h2 className="font-[family-name:var(--font-display)] text-amber-100">{t("pages.championship.rules")}</h2>
-                      <ChampionshipMarkdown source={camp.rules} className="mt-3" />
+                      <ChampionshipMarkdown source={rules} className="mt-3" />
                     </section>
                   ) : null}
                   {camp.mapPool.length > 0 ? (
@@ -1091,7 +1105,8 @@ const PreviewStage = forwardRef<
     reveal: ReactNode;
   }
 >(function PreviewStage({ camp, tabLabel, backTo, backLabel, collapsed, onToggleCollapsed, reveal }, ref) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+  const title = localizedChampionshipField(locale, camp.translationEnabled, camp.name, camp.nameEn);
   const openFrame = "(12rem - var(--compact) * 7.25rem)";
   const frame = `calc((1 - var(--folded)) * ${openFrame} + var(--folded) * 2.65rem)`;
   return (
@@ -1147,7 +1162,7 @@ const PreviewStage = forwardRef<
               }}
             >
               {t(PHASE_KEY[camp.phase])}
-              {camp.devMode ? " · Modo Dev" : ""}
+              {camp.devMode ? ` · ${t("pages.championship.devMode")}` : ""}
             </div>
             <h1
               className="max-w-4xl font-[family-name:var(--font-display)] leading-none text-amber-50"
@@ -1156,7 +1171,7 @@ const PreviewStage = forwardRef<
                 fontSize: "clamp(1.55rem, calc(3.4rem - var(--compact) * 1.85rem), 3.4rem)",
               }}
             >
-              {camp.name}
+              {title}
             </h1>
             <p
               className="uppercase text-zinc-400"

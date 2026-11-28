@@ -101,7 +101,7 @@ export function RosterList({
   stats: AomRacePlayer[];
   showWeightedRr?: boolean;
 }) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const rows = useMemo(() => sortRoster(players, stats, showWeightedRr), [players, stats, showWeightedRr]);
 
   if (rows.length === 0) return null;
@@ -147,7 +147,7 @@ export function RosterList({
           <tbody>
             {rows.map((row, i) => {
               const ranked = row.ranked;
-              const cls = ranked ? getRankClassification(ranked.rr) : null;
+              const cls = ranked ? getRankClassification(ranked.rr, locale) : null;
               const theme = cls ? TIER_ACHIEVEMENT_THEME[cls.tierId] : null;
               const portrait = ranked?.logoPath || row.entry.logoUrl;
               const roman = ranked ? rankRomanStepFromRr(ranked.rr) : null;
@@ -234,7 +234,7 @@ export function RosterList({
       <ul className="divide-y divide-white/10 lg:hidden" aria-label={t("pages.championship.tabs.roster")}>
         {rows.map((row, i) => {
           const ranked = row.ranked;
-          const cls = ranked ? getRankClassification(ranked.rr) : null;
+          const cls = ranked ? getRankClassification(ranked.rr, locale) : null;
           const theme = cls ? TIER_ACHIEVEMENT_THEME[cls.tierId] : null;
           const portrait = ranked?.logoPath || row.entry.logoUrl;
           const roman = ranked ? rankRomanStepFromRr(ranked.rr) : null;

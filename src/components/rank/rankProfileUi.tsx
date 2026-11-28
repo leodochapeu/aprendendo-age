@@ -555,7 +555,8 @@ export function GodAchievementCard({
   t: (key: string) => string;
   insignias?: GodInsigniaKind[];
 }) {
-  const cls = getRankClassification(god.elo);
+  const { locale } = useTranslation();
+  const cls = getRankClassification(god.elo, locale);
   const theme = TIER_ACHIEVEMENT_THEME[cls.tierId];
   const portrait = getGodPortraitUrl(god.god);
   const { rank: rankWord, era: eraWord } = splitCategoryLabel(cls.categoryLabel);

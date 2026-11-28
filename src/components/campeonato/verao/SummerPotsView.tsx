@@ -7,15 +7,16 @@ import { SUMMER_PHASES, summerPhaseById } from "@/components/campeonato/verao/ph
 import { linkSummerDraw } from "@/components/campeonato/verao/draw";
 import { linkSummerPots, type LinkedSummerPot } from "@/components/campeonato/verao/pots";
 import { useTranslation } from "@/hooks/useTranslation";
+import type { Locale } from "@/i18n/types";
 import type { ChampionshipPlayer } from "@/lib/championshipsApi";
 import { cn } from "@/lib/cn";
 import type { AomRacePlayer } from "@/lib/playersApi";
 import { TIER_ACHIEVEMENT_THEME, getRankClassification } from "@/lib/rankClassification";
 import { computeWeightedRr } from "@/lib/weightedRr";
 
-function ratingLine(ranked: AomRacePlayer | null, showWeightedRr: boolean) {
+function ratingLine(ranked: AomRacePlayer | null, showWeightedRr: boolean, locale: Locale) {
   if (!ranked || !Number.isFinite(ranked.rr)) return null;
-  const cls = getRankClassification(ranked.rr);
+  const cls = getRankClassification(ranked.rr, locale);
   const rr = showWeightedRr ? computeWeightedRr(ranked.rr, ranked.rrBest) : ranked.rr;
   return { cls, rr, theme: TIER_ACHIEVEMENT_THEME[cls.tierId] };
 }
@@ -27,6 +28,7 @@ function PotPlayerRow({
   logoUrl,
   accent,
   showWeightedRr,
+  locale,
 }: {
   code: string;
   name: string;
@@ -34,8 +36,9 @@ function PotPlayerRow({
   logoUrl: string;
   accent: string;
   showWeightedRr: boolean;
+  locale: Locale;
 }) {
-  const rank = ratingLine(ranked, showWeightedRr);
+  const rank = ratingLine(ranked, showWeightedRr, locale);
   const avatar = (
     <div
       className={cn(
@@ -82,12 +85,16 @@ function PotColumn({
   logos,
   codes,
   showWeightedRr,
+  locale,
+  potWord,
 }: {
   pot: LinkedSummerPot;
   stats: Map<string, AomRacePlayer>;
   logos: Map<string, string>;
   codes: Map<string, string>;
   showWeightedRr: boolean;
+  locale: Locale;
+  potWord: string;
 }) {
   const phase = summerPhaseById(pot.phase);
   return (
@@ -95,7 +102,7 @@ function PotColumn({
       <header className="flex items-end justify-between border-b border-white/10 px-4 py-3" style={{ background: phase.wash }}>
         <div>
           <p className="text-[10px] tracking-[0.28em] uppercase" style={{ color: phase.accent }}>
-            Pote
+            {potWord}
           </p>
           <h3 className="font-[family-name:var(--font-display)] text-3xl leading-none" style={{ color: phase.ink }}>
             {pot.id}
@@ -117,6 +124,7 @@ function PotColumn({
               logoUrl={logoUrl}
               accent={phase.accent}
               showWeightedRr={showWeightedRr}
+              locale={locale}
             />
           );
         })}
@@ -134,7 +142,7 @@ export function SummerPotsView({
   stats: AomRacePlayer[];
   showWeightedRr?: boolean;
 }) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const byProfile = useMemo(() => new Map(stats.map((player) => [player.id, player])), [stats]);
   const linked = useMemo(
     () =>
@@ -181,14 +189,25 @@ export function SummerPotsView({
               {t(`pages.championship.summer.phase.${phase.id}`)}
             </p>
             <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-amber-50">
-              {phase.pots.map((id) => `Pote ${id}`).join(" · ")}
+              {phase.pots.map((id) => t("pages.championship.summer.potNamed", { id })).join(" · ")}
             </h2>
           </header>
           <div className="relative grid max-w-xl gap-4">
             {phase.pots.map((id) => {
               const pot = potById.get(id);
               if (!pot) return null;
-              return <PotColumn key={id} pot={pot} stats={byProfile} logos={logos} codes={codeByPlayer} showWeightedRr={showWeightedRr} />;
+              return (
+                <PotColumn
+                  key={id}
+                  pot={pot}
+                  stats={byProfile}
+                  logos={logos}
+                  codes={codeByPlayer}
+                  showWeightedRr={showWeightedRr}
+                  locale={locale}
+                  potWord={t("pages.championship.summer.potWord")}
+                />
+              );
             })}
           </div>
         </section>

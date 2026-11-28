@@ -1,3 +1,5 @@
+import type { Locale } from "@/i18n/types";
+
 export type RankTierId = "bronze" | "prata" | "ouro" | "esmeralda" | "diamante";
 
 /** Visual dos cards de conquista (alinhado ao `RankPage` / `TierAchievement`). */
@@ -164,16 +166,46 @@ export function getRankRrBounds(rr: number): RankRrBounds {
   return { min: 2000, max: null };
 }
 
-/** Alinhado ao form-retold (locales pt): Diamante | Titã, etc. */
-export function getRankClassification(rr: number): RankClassification {
+type RankWords = {
+  categoryLabel: string;
+  rankName: string;
+  hintCategory: string;
+};
+
+/** Nomes do elo. A era do Diamante aqui é Titã, como no card do jogador. */
+const RANK_WORDS: Record<Locale, Record<RankTierId, RankWords>> = {
+  pt: {
+    bronze: { categoryLabel: "Bronze | Arcáico", rankName: "Bronze", hintCategory: "Bronze → Abaixo de 1000 RR" },
+    prata: { categoryLabel: "Prata | Clássico", rankName: "Prata", hintCategory: "Prata → 1000 – 1299 RR" },
+    ouro: { categoryLabel: "Ouro | Heróico", rankName: "Ouro", hintCategory: "Ouro → 1300 – 1599 RR" },
+    esmeralda: { categoryLabel: "Esmeralda | Mítico", rankName: "Esmeralda", hintCategory: "Esmeralda → 1600 – 1799 RR" },
+    diamante: { categoryLabel: "Diamante | Titã", rankName: "Diamante", hintCategory: "Diamante → 1800+ RR" },
+  },
+  en: {
+    bronze: { categoryLabel: "Bronze | Archaic", rankName: "Bronze", hintCategory: "Bronze → Below 1000 RR" },
+    prata: { categoryLabel: "Silver | Classical", rankName: "Silver", hintCategory: "Silver → 1000 – 1299 RR" },
+    ouro: { categoryLabel: "Gold | Heroic", rankName: "Gold", hintCategory: "Gold → 1300 – 1599 RR" },
+    esmeralda: { categoryLabel: "Emerald | Mythic", rankName: "Emerald", hintCategory: "Emerald → 1600 – 1799 RR" },
+    diamante: { categoryLabel: "Diamond | Titan", rankName: "Diamond", hintCategory: "Diamond → 1800+ RR" },
+  },
+};
+
+function rankStep(rankName: string, roman: RankRomanStep, range: string) {
+  return { label: `${rankName} ${roman}`, hint: `${rankName} ${roman} → ${range}` };
+}
+
+/** Alinhado ao form-retold: Diamante | Titã, Diamond | Titan, etc. */
+export function getRankClassification(rr: number, locale: Locale = "pt"): RankClassification {
+  const words = RANK_WORDS[locale];
   if (rr < 1000) {
+    const copy = words.bronze;
     const sub =
-      rr < 800 ? { label: "Bronze III", hint: "Bronze III → 0 – 799 RR" } : rr < 900 ? { label: "Bronze II", hint: "Bronze II → 800 – 899 RR" } : { label: "Bronze I", hint: "Bronze I → 900 – 999 RR" };
+      rr < 800 ? rankStep(copy.rankName, "III", "0 – 799 RR") : rr < 900 ? rankStep(copy.rankName, "II", "800 – 899 RR") : rankStep(copy.rankName, "I", "900 – 999 RR");
     return {
       tierId: "bronze",
-      categoryLabel: "Bronze | Arcáico",
+      categoryLabel: copy.categoryLabel,
       subcategoryLabel: sub.label,
-      hintCategory: "Bronze → Abaixo de 1000 RR",
+      hintCategory: copy.hintCategory,
       hintSub: sub.hint,
       ageToken: "aomr_archaic_age_icon",
       avatarGlowClass: "bg-amber-600/35",
@@ -181,17 +213,18 @@ export function getRankClassification(rr: number): RankClassification {
     };
   }
   if (rr < 1300) {
+    const copy = words.prata;
     const sub =
       rr < 1100
-        ? { label: "Prata III", hint: "Prata III → 1000 – 1099 RR" }
+        ? rankStep(copy.rankName, "III", "1000 – 1099 RR")
         : rr < 1200
-          ? { label: "Prata II", hint: "Prata II → 1100 – 1199 RR" }
-          : { label: "Prata I", hint: "Prata I → 1200 – 1299 RR" };
+          ? rankStep(copy.rankName, "II", "1100 – 1199 RR")
+          : rankStep(copy.rankName, "I", "1200 – 1299 RR");
     return {
       tierId: "prata",
-      categoryLabel: "Prata | Clássico",
+      categoryLabel: copy.categoryLabel,
       subcategoryLabel: sub.label,
-      hintCategory: "Prata → 1000 – 1299 RR",
+      hintCategory: copy.hintCategory,
       hintSub: sub.hint,
       ageToken: "aomr_classical_age_icon",
       avatarGlowClass: "bg-zinc-400/25",
@@ -199,17 +232,18 @@ export function getRankClassification(rr: number): RankClassification {
     };
   }
   if (rr < 1600) {
+    const copy = words.ouro;
     const sub =
       rr < 1400
-        ? { label: "Ouro III", hint: "Ouro III → 1300 – 1399 RR" }
+        ? rankStep(copy.rankName, "III", "1300 – 1399 RR")
         : rr < 1500
-          ? { label: "Ouro II", hint: "Ouro II → 1400 – 1499 RR" }
-          : { label: "Ouro I", hint: "Ouro I → 1500 – 1599 RR" };
+          ? rankStep(copy.rankName, "II", "1400 – 1499 RR")
+          : rankStep(copy.rankName, "I", "1500 – 1599 RR");
     return {
       tierId: "ouro",
-      categoryLabel: "Ouro | Heróico",
+      categoryLabel: copy.categoryLabel,
       subcategoryLabel: sub.label,
-      hintCategory: "Ouro → 1300 – 1599 RR",
+      hintCategory: copy.hintCategory,
       hintSub: sub.hint,
       ageToken: "aomr_heroic_age_icon",
       avatarGlowClass: "bg-amber-400/30",
@@ -217,34 +251,36 @@ export function getRankClassification(rr: number): RankClassification {
     };
   }
   if (rr < 1800) {
+    const copy = words.esmeralda;
     const sub =
       rr < 1700
-        ? { label: "Esmeralda III", hint: "Esmeralda III → 1600 – 1699 RR" }
+        ? rankStep(copy.rankName, "III", "1600 – 1699 RR")
         : rr < 1750
-          ? { label: "Esmeralda II", hint: "Esmeralda II → 1700 – 1749 RR" }
-          : { label: "Esmeralda I", hint: "Esmeralda I → 1750 – 1799 RR" };
+          ? rankStep(copy.rankName, "II", "1700 – 1749 RR")
+          : rankStep(copy.rankName, "I", "1750 – 1799 RR");
     return {
       tierId: "esmeralda",
-      categoryLabel: "Esmeralda | Mítico",
+      categoryLabel: copy.categoryLabel,
       subcategoryLabel: sub.label,
-      hintCategory: "Esmeralda → 1600 – 1799 RR",
+      hintCategory: copy.hintCategory,
       hintSub: sub.hint,
       ageToken: "aomr_mythic_age_icon",
       avatarGlowClass: "bg-emerald-500/30",
       avatarRingClass: "ring-emerald-400/50 border-emerald-300/35",
     };
   }
+  const copy = words.diamante;
   const sub =
     rr < 1900
-      ? { label: "Diamante III", hint: "Diamante III → 1800 – 1899 RR" }
+      ? rankStep(copy.rankName, "III", "1800 – 1899 RR")
       : rr < 2000
-        ? { label: "Diamante II", hint: "Diamante II → 1900 – 1999 RR" }
-        : { label: "Diamante I", hint: "Diamante I → 2000+ RR" };
+        ? rankStep(copy.rankName, "II", "1900 – 1999 RR")
+        : rankStep(copy.rankName, "I", "2000+ RR");
   return {
     tierId: "diamante",
-    categoryLabel: "Diamante | Titã",
+    categoryLabel: copy.categoryLabel,
     subcategoryLabel: sub.label,
-    hintCategory: "Diamante → 1800+ RR",
+    hintCategory: copy.hintCategory,
     hintSub: sub.hint,
     ageToken: "aomr_wonder_age_icon",
     avatarGlowClass: "bg-sky-500/35",

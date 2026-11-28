@@ -28,8 +28,8 @@ function ClanMemberCard({
   variant: MemberVariant;
   theme: ClanTheme;
 }) {
-  const { t } = useTranslation();
-  const cls = getRankClassification(player.rr);
+  const { t, locale } = useTranslation();
+  const cls = getRankClassification(player.rr, locale);
   const tierTheme = TIER_ACHIEVEMENT_THEME[cls.tierId];
   const label = playerDisplayLabel(player);
   const roman = rankRomanStepFromRr(player.rr);

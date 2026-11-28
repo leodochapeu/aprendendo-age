@@ -86,7 +86,7 @@ export function ProfilePage() {
   }, [profile?.id, profile?.aomstatsId, profile?.aomstatsSnapshotAt]);
 
   const rankHero = useMemo(() => (profile ? buildRankHeroFromProfile(profile) : null), [profile]);
-  const classification = rankHero ? getRankClassification(rankHero.rr) : null;
+  const classification = rankHero ? getRankClassification(rankHero.rr, locale) : null;
 
   if (status === "loading" || status === "unauthenticated" || status === "unconfigured") {
     return (

@@ -71,6 +71,10 @@ export function SummerBracketView({
   onReveal: (fixtureId: string) => void;
 }) {
   const { t, locale } = useTranslation();
+  const roundTitle = (index: number) => {
+    const round = SUMMER_ROUNDS[index];
+    return round ? t(`pages.championship.summer.rounds.${round.key}`) : "";
+  };
   const boardRef = useRef<HTMLDivElement>(null);
   const [openId, setOpenId] = useState<string | null>(null);
   const [ratings, setRatings] = useState<Map<string, number>>(new Map());
@@ -140,7 +144,7 @@ export function SummerBracketView({
     return {
       name: t(slot.kind === "winner" ? "pages.championship.summer.winner" : "pages.championship.summer.loser"),
       logoUrl: "",
-      hint: source ? SUMMER_ROUNDS[source.round].name : "",
+      hint: source ? roundTitle(source.round) : "",
       waiting: true,
       phase: SUMMER_ROUNDS[source?.round ?? match.round].phase,
     };
@@ -179,7 +183,7 @@ export function SummerBracketView({
     return {
       name: t(slot.kind === "winner" ? "pages.championship.summer.winner" : "pages.championship.summer.loser"),
       logoUrl: "",
-      hint: source ? SUMMER_ROUNDS[source.round].name : "",
+      hint: source ? roundTitle(source.round) : "",
       waiting: true,
       phase: SUMMER_ROUNDS[source?.round ?? match.round].phase,
     };
@@ -304,7 +308,7 @@ export function SummerBracketView({
                   color: phase.accent,
                 }}
               >
-                {round.name}
+                {roundTitle(index)}
               </p>
             );
           })}
@@ -314,7 +318,7 @@ export function SummerBracketView({
             const revealed = matchRevealed(match);
             const seatA = seatOf(match, "a", revealed);
             const seatB = seatOf(match, "b", revealed);
-            const label = match.badge === "third" ? t("pages.championship.summer.third") : match.badge === "final" ? t("pages.championship.summer.final") : SUMMER_ROUNDS[match.round].name;
+            const label = match.badge === "third" ? t("pages.championship.summer.third") : match.badge === "final" ? t("pages.championship.summer.final") : roundTitle(match.round);
             const cardClass = cn(
               "h-full w-full overflow-hidden rounded-lg border bg-zinc-950/92 text-left shadow-[0_10px_24px_rgba(0,0,0,0.45)]",
               revealed && "transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/70",
@@ -409,7 +413,8 @@ function MatchModal({
   if (!match || !seatA || !seatB) {
     return <ModalApp open={false} onClose={onClose} title="" />;
   }
-  const roundName = match.badge === "third" ? t("pages.championship.summer.third") : match.badge === "final" ? t("pages.championship.summer.final") : SUMMER_ROUNDS[match.round].name;
+  const round = SUMMER_ROUNDS[match.round];
+  const roundName = match.badge === "third" ? t("pages.championship.summer.third") : match.badge === "final" ? t("pages.championship.summer.final") : round ? t(`pages.championship.summer.rounds.${round.key}`) : "";
   const revealed = Boolean(fixture && (revealedAll || revealedIds.includes(fixture.id) || fixture.status === "finished"));
   const when = fixture?.scheduledAt ? new Date(fixture.scheduledAt) : null;
   const whenLabel =

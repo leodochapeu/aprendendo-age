@@ -96,7 +96,7 @@ export function PublicPlayerProfilePage() {
   }, [profileId, t]);
 
   const rankHero = useMemo(() => (player ? buildRankHeroFromRacePlayer(player) : null), [player]);
-  const classification = rankHero ? getRankClassification(rankHero.rr) : null;
+  const classification = rankHero ? getRankClassification(rankHero.rr, locale) : null;
   const label = player ? playerDisplayLabel(player) : "";
   const clanTag = player ? playerClanTag(player) : null;
 

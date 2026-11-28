@@ -42,8 +42,8 @@ export const RacePlayerCard = forwardRef<
     labelOverride?: string;
   }
 >(function RacePlayerCard({ player, onNavigate, className, style, role, showFlag = false, showWeightedRr = false, labelOverride }, ref) {
-  const { t } = useTranslation();
-  const cls = getRankClassification(player.rr);
+  const { t, locale } = useTranslation();
+  const cls = getRankClassification(player.rr, locale);
   const theme = TIER_ACHIEVEMENT_THEME[cls.tierId];
   const label = labelOverride?.trim() || playerDisplayLabel(player);
   const tierPortrait = getFormRankPortraitPath(cls.tierId);
