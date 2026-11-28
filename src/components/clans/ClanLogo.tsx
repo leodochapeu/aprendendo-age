@@ -2,7 +2,7 @@ import { cn } from "@/lib/cn";
 
 function logoInitials(tag: string) {
   const t = tag.replace(/[^a-zA-Z0-9]/g, "");
-  if (t.length <= 2) return t.toUpperCase() || "?";
+  if (t.length <= 2 || t.length === 4) return t.toUpperCase() || "?";
   return (t.slice(0, 1) + t.slice(-1)).toUpperCase();
 }
 
@@ -29,6 +29,7 @@ export function ClanLogo({
   className,
 }: ClanLogoProps) {
   const box = SIZE_CLASS[size];
+  const initials = logoInitials(tag);
 
   if (logoSrc) {
     return (
@@ -48,15 +49,15 @@ export function ClanLogo({
   return (
     <div
       className={cn(
-        "flex shrink-0 items-center justify-center rounded-2xl border border-dashed border-zinc-600/90 bg-zinc-950/80 font-mono font-semibold uppercase tracking-tight text-zinc-500 shadow-inner shadow-black/30",
-        size === "hero" ? "text-lg" : "text-xs",
+        "flex shrink-0 items-center justify-center rounded-2xl border border-dashed border-zinc-600/90 bg-zinc-950/80 px-1 font-mono font-semibold uppercase leading-none tracking-tight whitespace-nowrap text-zinc-500 shadow-inner shadow-black/30",
+        size === "hero" ? "text-lg" : initials.length >= 4 ? "text-[10px]" : "text-xs",
         box,
         className,
       )}
       title={logoComingSoonLabel}
       aria-hidden
     >
-      {logoInitials(tag)}
+      {initials}
     </div>
   );
 }

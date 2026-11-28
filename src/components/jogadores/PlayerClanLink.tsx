@@ -36,6 +36,10 @@ export function PlayerClanLink({
 
   if (!tag && !logoUrl) return null;
 
+  const mark = tag?.trim() ?? "";
+  const markText =
+    mark.length <= 3 ? "text-[9px]" : mark.length === 4 ? "text-[8px] tracking-tight" : "text-[7px] tracking-tighter";
+
   const logoBox = (
     <div
       className={cn(
@@ -46,8 +50,13 @@ export function PlayerClanLink({
       {logoUrl ? (
         <img src={logoUrl} alt="" className="size-full object-cover" width={36} height={36} />
       ) : (
-        <div className="flex size-full items-center justify-center bg-zinc-900 font-mono text-[9px] font-bold uppercase text-zinc-400">
-          {tag?.slice(0, 3)}
+        <div
+          className={cn(
+            "flex size-full items-center justify-center bg-zinc-900 px-0.5 font-mono font-bold uppercase leading-none text-zinc-400",
+            markText,
+          )}
+        >
+          {mark}
         </div>
       )}
     </div>
