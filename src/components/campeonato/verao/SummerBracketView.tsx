@@ -308,7 +308,6 @@ export function SummerBracketView({
           {SUMMER_ROUNDS.map((round, index) => {
             const phase = summerPhaseById(round.phase);
             const name = roundTitle(index);
-            const isPot = round.key.startsWith("pot");
             const open = revealedAll || openRounds.has(index);
             return (
               <div
@@ -326,22 +325,20 @@ export function SummerBracketView({
                 >
                   {name}
                 </p>
-                {isPot ? (
-                  <button
-                    type="button"
-                    aria-pressed={open}
-                    aria-label={t(open ? "pages.championship.summer.hideColumn" : "pages.championship.summer.revealColumn", { name })}
-                    onClick={() => toggleRound(index)}
-                    className="inline-flex h-6 w-6 items-center justify-center rounded-full border transition hover:brightness-125"
-                    style={{
-                      borderColor: open ? phase.accent : `${phase.accent}66`,
-                      color: phase.ink,
-                      background: open ? phase.wash : "rgba(0,0,0,0.35)",
-                    }}
-                  >
-                    <ColumnEye off={!open} />
-                  </button>
-                ) : null}
+                <button
+                  type="button"
+                  aria-pressed={open}
+                  aria-label={t(open ? "pages.championship.summer.hideColumn" : "pages.championship.summer.revealColumn", { name })}
+                  onClick={() => toggleRound(index)}
+                  className="inline-flex h-6 w-6 items-center justify-center rounded-full border transition hover:brightness-125"
+                  style={{
+                    borderColor: open ? phase.accent : `${phase.accent}66`,
+                    color: phase.ink,
+                    background: open ? phase.wash : "rgba(0,0,0,0.35)",
+                  }}
+                >
+                  <ColumnEye off={!open} />
+                </button>
               </div>
             );
           })}
