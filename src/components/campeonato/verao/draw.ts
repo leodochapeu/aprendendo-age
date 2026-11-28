@@ -27,6 +27,17 @@ const DRAWN_SLOTS: Record<string, string> = {
   F8: "Tabuada",
   F9: "Salahuddin",
   F10: "Dondonees",
+  E1: "davihakodesh",
+  E2: "Jethro Tull",
+  E3: "HermesAOM",
+  E4: "nemui_kuma",
+  E5: "Bo2Paraizo",
+  E6: "areczin",
+  E7: "drcaiohistoriador (YT)",
+  E8: "KyllByo",
+  E9: "MinhaMae~",
+  E10: "marcelo.f",
+  E11: "TheVoidIs99",
 };
 
 export const SUMMER_DRAW: Record<string, string | null> = {
