@@ -98,7 +98,10 @@ describe("potes do Torneio de Verão", () => {
     expect(SUMMER_DRAW.F10).toBe("Dondonees");
     expect(SUMMER_DRAW.E1).toBe("davihakodesh");
     expect(SUMMER_DRAW.E11).toBe("TheVoidIs99");
-    expect(SUMMER_DRAW.D1).toBeNull();
+    expect(SUMMER_DRAW.D1).toBe("Shotokai");
+    expect(SUMMER_DRAW.D13).toBe("Carlos");
+    expect(SUMMER_DRAW.D24).toBe("Pe-Vermei");
+    expect(SUMMER_DRAW.C1).toBeNull();
     const slots = linkSummerDraw([
       { id: "c-low", name: "Carlos", rating: 939 },
       { id: "c-high", name: "Carlos", rating: 1308 },
@@ -106,9 +109,9 @@ describe("potes do Torneio de Verão", () => {
       { id: "sala", name: "Salahuddin" },
     ]);
     expect(slots.find((slot) => slot.code === "F1")?.player?.id).toBe("c-low");
+    expect(slots.find((slot) => slot.code === "D13")?.player?.id).toBe("c-high");
     expect(slots.find((slot) => slot.code === "F7")?.player?.id).toBe("cebo");
     expect(slots.find((slot) => slot.code === "F9")?.player?.id).toBe("sala");
-    expect(slots.some((slot) => slot.player?.id === "c-high")).toBe(false);
     const override = linkSummerDraw(
       [
         { id: "cebo", name: "cebolinha_H4ck3r" },
