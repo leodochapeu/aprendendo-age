@@ -17,7 +17,7 @@ const CARD_W = 200;
 const CARD_H = 68;
 const COL_GAP = 64;
 const ROW_UNIT = 36;
-const HEADER_H = 36;
+const HEADER_H = 64;
 const MIN_ROW = 5;
 const PAD = 20;
 
@@ -77,6 +77,7 @@ export function SummerBracketView({
   };
   const boardRef = useRef<HTMLDivElement>(null);
   const [openId, setOpenId] = useState<string | null>(null);
+  const [openRounds, setOpenRounds] = useState<Set<number>>(() => new Set());
   const [ratings, setRatings] = useState<Map<string, number>>(new Map());
   const profileKey = camp.players.map((player) => player.profileId).join("|");
 
@@ -130,9 +131,18 @@ export function SummerBracketView({
   }
 
   function matchRevealed(match: SummerMatch) {
-    if (revealedAll) return true;
+    if (revealedAll || openRounds.has(match.round)) return true;
     const fixture = fixtureOf(match);
     return Boolean(fixture && revealedIds.includes(fixture.id));
+  }
+
+  function toggleRound(index: number) {
+    setOpenRounds((current) => {
+      const next = new Set(current);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
   }
 
   function positionSeat(match: SummerMatch, side: "a" | "b"): Seat {
@@ -297,19 +307,42 @@ export function SummerBracketView({
           </svg>
           {SUMMER_ROUNDS.map((round, index) => {
             const phase = summerPhaseById(round.phase);
+            const name = roundTitle(index);
+            const isPot = round.key.startsWith("pot");
+            const open = revealedAll || openRounds.has(index);
             return (
-              <p
+              <div
                 key={`${round.name}-${index}`}
-                className="absolute text-center text-[11px] font-semibold tracking-[0.22em] uppercase"
+                className="absolute flex flex-col items-center gap-1"
                 style={{
                   left: PAD + index * (CARD_W + COL_GAP),
                   top: PAD,
                   width: CARD_W,
-                  color: phase.accent,
                 }}
               >
-                {roundTitle(index)}
-              </p>
+                <p
+                  className="w-full text-center text-[11px] font-semibold tracking-[0.22em] uppercase"
+                  style={{ color: phase.accent }}
+                >
+                  {name}
+                </p>
+                {isPot ? (
+                  <button
+                    type="button"
+                    aria-pressed={open}
+                    aria-label={t(open ? "pages.championship.summer.hideColumn" : "pages.championship.summer.revealColumn", { name })}
+                    onClick={() => toggleRound(index)}
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-full border transition hover:brightness-125"
+                    style={{
+                      borderColor: open ? phase.accent : `${phase.accent}66`,
+                      color: phase.ink,
+                      background: open ? phase.wash : "rgba(0,0,0,0.35)",
+                    }}
+                  >
+                    <ColumnEye off={!open} />
+                  </button>
+                ) : null}
+              </div>
             );
           })}
           {SUMMER_MATCHES.map((match) => {
@@ -363,6 +396,26 @@ export function SummerBracketView({
         onReveal={onReveal}
       />
     </section>
+  );
+}
+
+function ColumnEye({ off }: { off?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      {off ? (
+        <>
+          <path d="M3 3l18 18" />
+          <path d="M10.6 6.2A10.6 10.6 0 0 1 12 6c5.5 0 9.2 4.2 10 6-.3.7-1 1.8-2 2.9" />
+          <path d="M6.1 6.7C4 8.1 2.6 10.2 2 12c.8 1.8 4.5 6 10 6 1.5 0 2.9-.3 4.1-.9" />
+          <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+        </>
+      ) : (
+        <>
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+          <circle cx="12" cy="12" r="3" />
+        </>
+      )}
+    </svg>
   );
 }
 

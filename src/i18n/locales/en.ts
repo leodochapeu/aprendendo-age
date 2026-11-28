@@ -268,6 +268,8 @@ export const enMessages: TranslationTree = {
         draw: "Draw",
         unscheduled: "Time not set yet",
         jump: "Jump to phase",
+        revealColumn: "Reveal {{name}}",
+        hideColumn: "Hide {{name}}",
         final: "Final",
         third: "3rd place",
         phase: {

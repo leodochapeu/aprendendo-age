@@ -268,6 +268,8 @@ export const ptMessages: TranslationTree = {
         draw: "Sorteio",
         unscheduled: "Horário ainda não definido",
         jump: "Ir para a fase",
+        revealColumn: "Revelar {{name}}",
+        hideColumn: "Ocultar {{name}}",
         final: "Final",
         third: "3º lugar",
         phase: {
